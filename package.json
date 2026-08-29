@@ -1,0 +1,14 @@
+{
+  "name": "achadinhos-ad-engine",
+  "version": "2.4.0",
+  "description": "Ad Engine, Realtime Exchange Rates, Dynamic SID Tracking & Affiliate Gateway",
+  "main": "api/ads/status.js",
+  "scripts": {
+    "test": "node tests/currency.test.js",
+    "status": "node -e 'console.log(\"Ad Engine Status: Online\")'",
+    "sync:rates": "node scripts/sync-rates.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "private": true
+}
