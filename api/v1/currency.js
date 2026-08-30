@@ -20,14 +20,19 @@ const COUNTRY_MAP = {
 };
 
 function loadRates() {
-  try {
-    const file = path.join(process.cwd(), 'data', 'exchange-rates.json');
-    if (fs.existsSync(file)) {
-      return JSON.parse(fs.readFileSync(file, 'utf8'));
-    }
-  } catch (e) {
-    console.error('Error loading fallback exchange-rates.json:', e);
+  const possiblePaths = [
+    path.join(__dirname, '..', '..', 'data', 'exchange-rates.json'),
+    path.join(process.cwd(), 'data', 'exchange-rates.json')
+  ];
+
+  for (const p of possiblePaths) {
+    try {
+      if (fs.existsSync(p)) {
+        return JSON.parse(fs.readFileSync(p, 'utf8'));
+      }
+    } catch (e) {}
   }
+
   return {
     base: 'USD',
     date: '2026-08-28',
