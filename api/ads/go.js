@@ -5,9 +5,9 @@ const path = require('path');
 const VERIFIED_TARGETS = {
   booking: "https://www.tkqlhce.com/click-8041957-17288448",
   carla: "https://www.jdoqocy.com/click-8041957-17075184",
-  nordvpn: "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=8041957",
+  nordvpn: "https://www.tkqlhce.com/click-8041957-12884704",
   nordpass: "https://www.tkqlhce.com/click-8041957-14068571",
-  surfshark: "https://get.surfshark.net/aff_c?offer_id=6&aff_id=8041957",
+  surfshark: "https://www.dpbolvw.net/click-8041957-13936081",
   shopee: "https://s.shopee.com.br/9pG4O5hX8q",
   mercadolivre: "https://meli.la/1U3rtgV",
   amazon: "https://amazon.com.br/?tag=aquitemachadinhos-20",
@@ -15,8 +15,8 @@ const VERIFIED_TARGETS = {
   udemy: "https://www.udemy.com/courses/search/?src=ukw&q=",
   faculdade: "https://faculdade-interativa-core.vercel.app",
   clickbus: "https://www.clickbus.com.br/",
-  brunoyam: "https://brunoyam.com/?admitad_uid=8041957",
-  nadpo: "https://nadpo.ru/?admitad_uid=8041957",
+  brunoyam: "https://brunoyam.com/",
+  nadpo: "https://nadpo.ru/",
   aliexpress: "https://www.anrdoezrs.net/click-8041957-14298102",
   ebay: "https://www.anrdoezrs.net/click-8041957-13892019",
   malwarebytes: "https://www.anrdoezrs.net/click-8041957-15243102",
@@ -85,9 +85,6 @@ module.exports = async (req, res) => {
   ).toUpperCase().substring(0, 2);
 
   const device = detectDevice(req.headers['user-agent'] || '');
-  const timestamp = Math.floor(Date.now() / 1000);
-
-  // Multi-dimensional Forensic SID
   const sid = req.query.sid || `${site}_${country.toLowerCase()}_${slot}_${device}`;
 
   // Smart Geo-Waterfall Algorithm
@@ -137,17 +134,17 @@ module.exports = async (req, res) => {
   }
 
   // CJ Deep Link Encoding Compliance
-  if (rawDest && targetUrl.includes('click-8041957') && !targetUrl.includes('url=')) {
+  if (rawDest && (targetUrl.includes('click-8041957') || targetUrl.includes('tkqlhce.com') || targetUrl.includes('jdoqocy.com') || targetUrl.includes('anrdoezrs.net') || targetUrl.includes('dpbolvw.net')) && !targetUrl.includes('url=')) {
     const sep = targetUrl.includes('?') ? '&' : '?';
     targetUrl = `${targetUrl}${sep}url=${encodeURIComponent(rawDest)}`;
   }
 
-  // Multi-Network Dynamic Tracking Ingestion (CJ, Admitad, Impact, Shopee, Amazon, HasOffers)
+  // Multi-Network Dynamic Tracking Ingestion
   try {
     const urlObj = new URL(targetUrl);
     // CJ Affiliate
     urlObj.searchParams.set('sid', sid);
-    // HasOffers / Tune / NordVPN / Surfshark
+    // HasOffers / Tune
     urlObj.searchParams.set('aff_sub', sid);
     urlObj.searchParams.set('aff_sub2', country);
     // Admitad
