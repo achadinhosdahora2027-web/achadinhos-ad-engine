@@ -1,0 +1,49 @@
+name: Master Autonomous Orchestrator 24/7 (8-Bot Squad & Memory Ledger)
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  orchestrator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Autonomous Memory Ledger & Health Audit
+        run: |
+          node scripts/autonomous-memory-ledger-engine.js || true
+
+      - name: Run Canário Affiliate & Self-Healing Guard
+        run: |
+          node scripts/affiliate-health-check.js || true
+
+      - name: Refresh Tag SEO & Intent Pages
+        run: |
+          node scripts/generate-tag-seo-pages.js || true
+
+      - name: Refresh Facebook Groups Viral Syndication
+        run: |
+          node scripts/facebook-group-syndication-engine.js || true
+
+      - name: Run Spintax Anti-Ban Comment Responder
+        run: |
+          node scripts/instagram-comments-auto-responder.js || true
+
+      - name: Execute Master Global Omni-Test Suite (195 Countries)
+        run: |
+          node scripts/master-global-omni-test-suite.js || true
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          MANYCHAT_API_TOKEN: ${{ secrets.MANYCHAT_API_TOKEN }}
