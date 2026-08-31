@@ -1,0 +1,34 @@
+{
+  "updated_at": "2026-08-31T04:20:00.000Z",
+  "status": "active",
+  "master_user": {
+    "name": "Daniel Fernandes",
+    "id": "1108663671676718",
+    "user_token": "EAATdaZCZBKKRgBSYTH6Byd1ozkHZAuGUx4ZBTNssomFRCwd64GFGAc5Q02qCyHZAh0ZBIjhdWKqTZCXOZCT23DHSe6QiGcBV7zUWB28ZCwlZB9LshQrrA9J4Eu9BcEX7uYZA7BRJWng3vyzZAHI8lHdYLixRXMZCqbl7aN2Pb91kd6o61ter8gxDXfiLdk9xIMRurPedQV3rWQcGItFWYz5iC87qmeQ10yKYyMG5XeD8vNLGCfyj9RpZCdAKSGNgZDZD"
+  },
+  "accounts": [
+    {
+      "handle": "@achadinhosdahora24hrs",
+      "name": "Achadinhos da Hora",
+      "instagram_business_id": "17841443518469482",
+      "facebook_page_id": "1163959393474762",
+      "page_name": "Achadinhos da Hora - Cupons",
+      "page_access_token": "EAATdaZCZBKKRgBSfY45Nl8NZCEq4Ce1G79zhIZAC3IJH9UeR4X7H9Bvy56g2MiNLhglP5M1XYdaxSlKriZCkCfnTQ4TvZCaJcHSfnZAZAwmh3sP3nc75pxuNZCCKqXmrKcd9l5CFXJ2pZBkWkaaWZBGQ93uCHgLXDzvMmwHZBqnXfWZAfoHthA9e78gsK596nACD7E7boXqbu",
+      "niche": "Cupons, Ofertas, Shopee, Mercado Livre, Viagens"
+    },
+    {
+      "handle": "@aquitatem",
+      "name": "AQUITÉM | Guias Locais",
+      "instagram_business_id": "17841460133220961",
+      "facebook_page_id": "1289123464275730",
+      "page_name": "Aqui Tem",
+      "page_access_token": "EAATdaZCZBKKRgBSSV1Yy7UWClQZCbB6KvAKauJcL9JXywHnPjMrEGauei5O09v026bUcwKAcC9Dk6f7UYdN4U3d39liwmfLDaWUO2kggWGklMFDXQjWETcCI3gPGgO0XUN62rLWDL6WnXZAENwwF3uRSelOBZBJCS9JXZCz2krH085FRxtZB6wo1InWHmoxGjAHeKe7",
+      "niche": "Guias Turísticos, Gramado, Barretos, Natal Luz, Astrologia 3D"
+    }
+  ],
+  "manychat_integration": {
+    "token": "12374977:8eddb10ae0ead660b91eb764d1511090",
+    "webhook_endpoint": "https://achadinhos-ad-engine.vercel.app/api/manychat/webhook",
+    "keywords": ["TAROT", "ORACULO", "CUPOM", "ACHADINHO", "GRAMADO", "VIAGEM", "BARRETOS"]
+  }
+}
