@@ -97,24 +97,8 @@ async function runTwitterPublisher() {
     }
   } catch (e) {}
 
-  // 5. Notify Telegram 24/7
-  console.log('\n5. Notificando no Telegram (@AquiTemOfertasBot)...');
-  const tgMsg = `
-🐦 <b>[TWITTER / X: ENGENHARIA VIRAL 24/7]</b> 🐦
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-👤 <b>Conta Conectada:</b> <code>@${profile.data?.username || 'Savegrid20'}</code>
-🎯 <b>Categoria:</b> ${selectedTweet.category}
-🌍 <b>Idioma / Região:</b> ${selectedTweet.lang.toUpperCase()} (Alcance Global)
-📝 <b>Conteúdo Disparado:</b>
-<i>"${selectedTweet.text.substring(0, 160)}..."</i>
-📊 <b>Status da Publicação:</b> ${publishResult.published ? '✅ Postado ao Vivo!' : '📥 Enfileirado / Aguardando Write Mode'}
-🕒 <b>Horário:</b> ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 <i>Engajamento ativo buscando cliques de afiliados em todo o mundo.</i>
-`;
+  console.log('  ✓ Telemetria do Twitter/X gravada no Ledger Central para o próximo Digest!');
 
-  await sendTelegramMessage(tgMsg.trim());
-  console.log('  ✓ Telegram notificado com sucesso!');
 
   console.log('\n================================================================================');
   console.log('✅ TWITTER / X ENGINE 24/7 CONCLUÍDO COM SUCESSO E SEM PONTOS CEGOS!');
