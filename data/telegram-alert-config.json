@@ -1,10 +1,14 @@
 {
-  "system_version": "2026.5-TELEGRAM-TELEMETRY",
+  "system_version": "2026.5-TELEGRAM-TELEMETRY-LIVE",
   "organization": "Aqui Tem Achadinhos & Nexus AI Ecosystem",
   "telegram_notifications": {
     "enabled": true,
     "mode": "realtime_and_heartbeat_24_7",
-    "bot_name": "Achadinhos & Nexus 24/7 Executive Alert Bot",
+    "bot_name": "AQUITEM (@AquiTemOfertasBot)",
+    "bot_username": "AquiTemOfertasBot",
+    "bot_token": "8910879073:AAH0Jdf9t5UEekjjI0kdAU7hBogyXKUE8zM",
+    "chat_id": "5808022745",
+    "recipient": "Nando (@doutordanielfernandes)",
     "channel_purposes": {
       "sales_and_commissions": "Notificação instantânea de vendas e comissões reais de afiliados (CJ, Shopee, Booking, etc.)",
       "sprint_and_goals": "Notificação de alcance de metas diárias, sprint de 21 dias e auto-escalonamento de +15%",

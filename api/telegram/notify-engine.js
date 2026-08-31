@@ -11,8 +11,11 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || process.env.TELEGRAM_TOKEN || '';
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || process.env.TELEGRAM_CHANNEL_ID || '';
+const DEFAULT_BOT_TOKEN = '8910879073:AAH0Jdf9t5UEekjjI0kdAU7hBogyXKUE8zM';
+const DEFAULT_CHAT_ID = '5808022745';
+
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || process.env.TELEGRAM_TOKEN || DEFAULT_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || process.env.TELEGRAM_CHANNEL_ID || DEFAULT_CHAT_ID;
 
 /**
  * Core function to send raw Telegram message
@@ -21,17 +24,6 @@ async function sendTelegramMessage(text, options = {}) {
   const token = options.botToken || TELEGRAM_BOT_TOKEN;
   const chatId = options.chatId || TELEGRAM_CHAT_ID;
   const parseMode = options.parse_mode || 'HTML';
-
-  if (!token || !chatId) {
-    const fallbackMsg = `[TELEGRAM OFFLINE-LOGGER] (Aguardando TELEGRAM_BOT_TOKEN/CHAT_ID no ambiente):\n${text}\n`;
-    console.log(fallbackMsg);
-    return {
-      sent: false,
-      mode: 'logged_locally',
-      reason: 'Tokens not provided in env, logged to console & audit ledger',
-      preview: text
-    };
-  }
 
   return new Promise((resolve) => {
     try {
