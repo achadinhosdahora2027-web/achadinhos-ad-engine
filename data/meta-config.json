@@ -1,28 +1,43 @@
 {
-  "updated_at": "2026-08-31T17:55:00.000Z",
+  "updated_at": "2026-08-31T18:10:00.000Z",
   "status": "active",
+  "meta_app": {
+    "app_id": "1369355825326360",
+    "app_name": "Aqui Tem",
+    "app_secret_token": "1369355825326360|JzwVPAoK1uP9rB5HZZY3LALkXAo"
+  },
   "master_user": {
     "name": "Daniel Fernandes",
-    "id": "1108663671676718"
+    "id": "1108663671676718",
+    "long_lived_user_token": "EAATdaZCZBKKRgBSWbC5SnGJ8ozA6M3fqgm3wXKXeSZAWjC6d2giPhlJHz0PkAeZBIFAffFCkBAINJNoCh7zPpXgyx3MTZBw1ZAU5JYCJyviI0oa2zzQj6LoiloHbz4EIMiwTrZA58fCiq9ZAer4CybzseVbIH8Ubav4yA27afmCrvKfdIMmaR0MnMjqvAyBl0wQoDwZDZD",
+    "expires_at": 0
   },
   "accounts": [
-    {
-      "handle": "@achadinhosdahora24hrs",
-      "name": "Achadinhos da Hora",
-      "instagram_business_id": "17841443518469482",
-      "facebook_page_id": "1163959393474762",
-      "page_name": "Achadinhos da Hora - Cupons",
-      "page_access_token": "EAATdaZCZBKKRgBSfY45Nl8NZCEq4Ce1G79zhIZAC3IJH9UeR4X7H9Bvy56g2MiNLhglP5M1XYdaxSlKriZCkCfnTQ4TvZCaJcHSfnZAZAwmh3sP3nc75pxuNZCCKqXmrKcd9l5CFXJ2pZBkWkaaWZBGQ93uCHgLXDzvMmwHZBqnXfWZAfoHthA9e78gsK596nACD7E7boXqbu",
-      "niche": "Cupons, Ofertas, Shopee, Mercado Livre, Viagens"
-    },
     {
       "handle": "@aquitatem",
       "name": "AQUITÉM | Guias Locais",
       "instagram_business_id": "17841460133220961",
       "facebook_page_id": "1289123464275730",
       "page_name": "Aqui Tem",
-      "page_access_token": "EAATdaZCZBKKRgBSYyZBNkAzObZAAIasfEuMOgg2TRqiYAt8mPS5X2pLj3KfpWwaotGZAeXQXRh2D87rsZBgVCr5RwEJRoZCfRHO4mu97eOurdHmSbk5P9oeHeAoVLcO2sHQXJ8VZC4SQlhjonz8XrY9l54Yb4G4s7P1ANMfkNeBmueNufIpKGHlHbU8ZCNd9zzZBX871sd8ZByzyskJsiKEzruoqAvO07A1WZClV3KdOOzOe4F0ZD",
+      "page_access_token": "EAATdaZCZBKKRgBSdszlM9ZAl3qh1L9Rlgfns3OKle2MwGVazEZCR6nJKQMdtmZCJMpYa6ZBZCJQ8rVUP9OCKKQzDIcNB44epfVcZBypb5lNWBecpukMpCankxEcD4VZCO7KPh40AMK9EKtglDHdHVQywvQ4S7JTpVuJOEY7t9cgHodWLTuJkBxoEGHCCnkn9c6NhvVZBpFFPAq",
       "niche": "Guias Turísticos, Gramado, Barretos, Natal Luz, Astrologia 3D"
+    },
+    {
+      "handle": "@achadinhosdahora24hrs",
+      "name": "Achadinhos da Hora",
+      "instagram_business_id": "17841443518469482",
+      "facebook_page_id": "1163959393474762",
+      "page_name": "Achadinhos da Hora - Cupons",
+      "page_access_token": "EAATdaZCZBKKRgBSVg5X2cofdkwthBT7ZACVbwihCJ2kXOOI6RZAwRNwVy0BBwDWZBvr8BpzhvTGHneq68NEBPmw8MZClb260X4PsxYrgJlFhm14VZA1yh3WZBp9IyzCbwK4otoLONFBp9VJDskUAKBiciSg3Ybt4UdAmh0OOF3H2YIWVFHkiY5ieS6GnZAsNZB8ykYPgm6ZAxAf",
+      "niche": "Cupons, Ofertas, Shopee, Mercado Livre, Viagens"
+    },
+    {
+      "handle": "@danielfernandesccd",
+      "name": "Daniel Fernandes CCD",
+      "facebook_page_id": "1243799275475153",
+      "page_name": "Daniel Fernandes CCD",
+      "page_access_token": "EAATdaZCZBKKRgBSQHECC0KLatWQVo4JY1osTBdloe66oW6f3NBG9kL9ZCa1UmlHZBGDVtr1DEazowYNLqL3lXO3l5ZAtoWVQ2ZCrZBw4GT4Cz3BatNH2L740jBZCz89uwfVU4IC3nojF1OaZC2qkcmbyOabxYKvkobYyfpj0AgkZCvVJImiREaYSOMylYgK7q7uvamttTcRKN1",
+      "niche": "Criador de Conteúdo Digital"
     }
   ],
   "manychat_integration": {
