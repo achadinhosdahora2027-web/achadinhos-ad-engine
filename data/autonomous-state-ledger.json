@@ -149,6 +149,16 @@
   },
   "self_healing_audit_log": [
     {
+      "timestamp": "2026-08-31T21:51:35.240Z",
+      "action": "WATCHDOG_AFFILIATE_IMPRESSIONS_AND_PIXELS_AUDIT",
+      "result": "214 páginas auditadas. 100% de conformidade com pixels de impressão CJ e gateway de cliques."
+    },
+    {
+      "timestamp": "2026-08-31T21:51:25.474Z",
+      "action": "WATCHDOG_AFFILIATE_IMPRESSIONS_AND_PIXELS_AUDIT",
+      "result": "214 páginas auditadas. 100% de conformidade com pixels de impressão CJ e gateway de cliques."
+    },
+    {
       "timestamp": "2026-08-31T15:30:00.000Z",
       "action": "UNIFIED_LIVE_MONITORING_INITIALIZED",
       "result": "Monitoramento ao vivo consolidado em 1 mensagem única por ciclo com controle anti-repetição."
