@@ -62,6 +62,35 @@ CREATE TABLE IF NOT EXISTS affiliate_conversions_ledger (
   estimated_payout_brl NUMERIC(10,2),
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- 5. Tabela de Credenciais e Configurações do Twitter / X
+CREATE TABLE IF NOT EXISTS twitter_creds (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  account_id TEXT NOT NULL,
+  username TEXT NOT NULL,
+  account_name TEXT,
+  bearer_token TEXT,
+  consumer_key TEXT,
+  consumer_secret TEXT,
+  access_token TEXT,
+  access_token_secret TEXT,
+  status TEXT DEFAULT 'active',
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 6. Tabela de Registro de Tweets & Engajamento Global
+CREATE TABLE IF NOT EXISTS twitter_posts_ledger (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  tweet_id TEXT,
+  category TEXT NOT NULL,
+  language TEXT NOT NULL,
+  content TEXT NOT NULL,
+  status TEXT DEFAULT 'published',
+  impressions INT DEFAULT 0,
+  clicks INT DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 `;
 
 async function syncToSupabase(payload) {

@@ -1,0 +1,75 @@
+{
+  "system_version": "2026.5-TWITTER-X-GLOBAL-ENGINE",
+  "organization": "Aqui Tem Achadinhos, SolveGrid & Nexus AI Worldwide",
+  "account": {
+    "id": "2091005965260783616",
+    "name": "SaveGrid",
+    "username": "Savegrid20",
+    "status": "connected_verified",
+    "api_version": "v2"
+  },
+  "credentials": {
+    "bearer_token": "AAAAAAAAAAAAAAAAAAAAAFNh%2FQEAAAAA3zJfe3Y%2BQq%2FPc%2F%2BgGyS63tmZhEQ%3DP5ns5oHdYdBv9WQHBahblwQbJNwPhtv41fdY9ZJcdzHIy9slOO",
+    "consumer_key": "ztTWpErur9ev5a1Ocwbgxk4hE",
+    "consumer_secret": "43YHhq3w5FpnDIGfV4snlvC0wwo0EnEc0icypbAcXUK1anPujY",
+    "access_token": "2091005965260783616-gF3jdVKRu4pfNMmco8IyNrwTyXEZqf",
+    "access_token_secret": "JIOiIP4E0KBD4qUOS8uttHdqkPX6odHBdgDJhNRoAPR3l"
+  },
+  "global_hashtags": {
+    "pt": ["#Achadinhos", "#Promocoes", "#Cupons", "#Viagens", "#Tecnologia", "#Tarot", "#DevOps"],
+    "en": ["#TechDeals", "#TravelHacks", "#AI", "#CloudComputing", "#Cybersecurity", "#Discounts"],
+    "es": ["#Ofertas", "#Viajes", "#Descuentos", "#Tecnologia", "#Alojamiento", "#Cupones"],
+    "fr": ["#BonsPlans", "#Voyage", "#Reduction", "#Technologie", "#Cybersecurite"],
+    "de": ["#Reisedeals", "#Rabatt", "#Technologie", "#Datenschutz", "#Cloud"],
+    "ja": ["#お得情報", "#旅行", "#テクノロジー", "#セール", "#セキュリティ"]
+  },
+  "categories_matrix": [
+    {
+      "id": "cloud_cybersecurity",
+      "brand": "nordvpn",
+      "name": "SolveGrid Cloud & NordVPN Privacy",
+      "payout": "CPA 40%",
+      "languages": ["pt", "en", "es", "de", "fr"]
+    },
+    {
+      "id": "travel_booking",
+      "brand": "booking",
+      "name": "Global Travel & Hotel Booking",
+      "payout": "CPA 4.5%",
+      "languages": ["pt", "en", "es", "fr", "de"]
+    },
+    {
+      "id": "car_rental",
+      "brand": "carla",
+      "name": "Carla Car Rental Worldwide",
+      "payout": "CPA $12-$35",
+      "languages": ["pt", "en", "es"]
+    },
+    {
+      "id": "tech_courses",
+      "brand": "udemy",
+      "name": "Udemy AI & Tech Certifications",
+      "payout": "CPA 15%",
+      "languages": ["pt", "en", "es"]
+    },
+    {
+      "id": "entertainment_tarot",
+      "brand": "tarot",
+      "name": "Tarot 3D & Astrologia Diária",
+      "payout": "CPA 12%",
+      "languages": ["pt", "en", "es"]
+    },
+    {
+      "id": "shopee_deals",
+      "brand": "shopee",
+      "name": "Shopee Achadinhos & Cupons Relâmpago",
+      "payout": "CPA 6.5%",
+      "languages": ["pt"]
+    }
+  ],
+  "posting_schedule": {
+    "slots_per_day": 8,
+    "cron_expression": "0 */3 * * *",
+    "timezone_targeting": ["Americas", "Europe", "Asia-Pacific"]
+  }
+}

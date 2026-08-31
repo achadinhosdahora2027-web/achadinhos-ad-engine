@@ -125,7 +125,12 @@
         "recorded_at": "2026-08-31T13:38:31.247Z"
       }
     ],
-    "estimated_revenue_brl": 12.34
+    "estimated_revenue_brl": 12.34,
+    "twitter_stats": {
+      "total_tweets_queued_or_published": 1,
+      "last_account": "Savegrid20",
+      "last_tweet_category": "Udemy Tech & AI Courses"
+    }
   },
   "self_healing_audit_log": [
     {
