@@ -1,4 +1,4 @@
-name: Master Autonomous Hierarchical Orchestrator 24/7 (Council & Telegram Telemetry)
+name: Master Autonomous Hierarchical Orchestrator 24/7 (Full Meta & Affiliate Distribution)
 
 on:
   schedule:
@@ -20,38 +20,55 @@ jobs:
         with:
           node-version: 20
 
-      - name: Execute Autonomous Council & Hierarchical Governance Audit
+      - name: 1. Execute Autonomous Council & Hierarchical Governance Audit
         run: |
           node scripts/autonomous-hierarchical-governance-engine.js || true
 
-      - name: Run Autonomous Memory Ledger & Health Audit
+      - name: 2. Run Autonomous Memory Ledger & Dynamic Escalation Engine
         run: |
           node scripts/autonomous-memory-ledger-engine.js || true
 
-      - name: Run Canário Affiliate & Self-Healing Guard
+      - name: 3. Execute Master Affiliate Distribution & Meta Graph Orchestrator
+        run: |
+          node scripts/master-affiliate-distribution-runner.js || true
+        env:
+          META_PAGE_TOKEN_ACHADINHOS: ${{ secrets.META_PAGE_TOKEN_ACHADINHOS }}
+          META_PAGE_TOKEN_AQUITATEM: ${{ secrets.META_PAGE_TOKEN_AQUITATEM }}
+
+      - name: 4. Run Canário Affiliate & Self-Healing Guard
         run: |
           node scripts/affiliate-health-check.js || true
 
-      - name: Refresh Tag SEO & Intent Pages
+      - name: 5. Refresh Tag SEO & Intent Pages
         run: |
           node scripts/generate-tag-seo-pages.js || true
 
-      - name: Refresh Facebook Groups Viral Syndication
+      - name: 6. Refresh Facebook Groups Viral Syndication
         run: |
           node scripts/facebook-group-syndication-engine.js || true
 
-      - name: Run Spintax Anti-Ban Comment Responder
+      - name: 7. Run Spintax Anti-Ban Comment Responder
         run: |
           node scripts/instagram-comments-auto-responder.js || true
 
-      - name: Dispatch 24/7 Autonomous Telegram Progress & Heartbeat Telemetry
+      - name: 8. Execute Twitter / X Viral Publisher & Multi-Country Syndication
+        run: |
+          node scripts/twitter-global-viral-publisher.js || true
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
+      - name: 9. Dispatch 24/7 Consolidated Live Executive Digest to Telegram
         run: |
           node scripts/telegram-autonomous-notifier.js || true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-      - name: Execute Master Global Omni-Test Suite (195 Countries)
+      - name: 10. Execute Master Global Omni-Test Suite (195 Countries)
         run: |
           node scripts/master-global-omni-test-suite.js || true
         env:
