@@ -111,7 +111,21 @@
     "manychat_webhook_status": "active",
     "meta_api_status": "active",
     "anti_ban_permutations_ready": 20160,
-    "uptime_percentage": 100
+    "uptime_percentage": 100,
+    "conversions_history": [
+      {
+        "brand": "Shopee",
+        "order_id": "SHP-882319",
+        "amount_brl": 189.9,
+        "commission_brl": 12.34,
+        "country": "BR",
+        "sid": "achadinhos_instagram_dm_bio",
+        "category": "Achadinhos & Utilidades",
+        "timestamp": "2026-08-31T13:38:31.242Z",
+        "recorded_at": "2026-08-31T13:38:31.247Z"
+      }
+    ],
+    "estimated_revenue_brl": 12.34
   },
   "self_healing_audit_log": [
     {

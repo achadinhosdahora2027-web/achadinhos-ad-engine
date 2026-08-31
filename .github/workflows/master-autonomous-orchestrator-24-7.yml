@@ -1,4 +1,4 @@
-name: Master Autonomous Hierarchical Orchestrator 24/7 (Council & Memory Ledger)
+name: Master Autonomous Hierarchical Orchestrator 24/7 (Council & Telegram Telemetry)
 
 on:
   schedule:
@@ -44,6 +44,13 @@ jobs:
         run: |
           node scripts/instagram-comments-auto-responder.js || true
 
+      - name: Dispatch 24/7 Autonomous Telegram Progress & Heartbeat Telemetry
+        run: |
+          node scripts/telegram-autonomous-notifier.js || true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
       - name: Execute Master Global Omni-Test Suite (195 Countries)
         run: |
           node scripts/master-global-omni-test-suite.js || true
@@ -53,3 +60,5 @@ jobs:
           MANYCHAT_API_TOKEN: ${{ secrets.MANYCHAT_API_TOKEN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

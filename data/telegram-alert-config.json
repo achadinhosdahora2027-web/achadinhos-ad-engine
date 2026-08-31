@@ -1,0 +1,39 @@
+{
+  "system_version": "2026.5-TELEGRAM-TELEMETRY",
+  "organization": "Aqui Tem Achadinhos & Nexus AI Ecosystem",
+  "telegram_notifications": {
+    "enabled": true,
+    "mode": "realtime_and_heartbeat_24_7",
+    "bot_name": "Achadinhos & Nexus 24/7 Executive Alert Bot",
+    "channel_purposes": {
+      "sales_and_commissions": "Notificação instantânea de vendas e comissões reais de afiliados (CJ, Shopee, Booking, etc.)",
+      "sprint_and_goals": "Notificação de alcance de metas diárias, sprint de 21 dias e auto-escalonamento de +15%",
+      "council_heartbeat": "Relatório executivo 24/7 a cada 2 horas com o status dos 8 diretores e robôs",
+      "self_healing_watchdog": "Alertas forenses de integridade, 404s curados e blindagem de segurança"
+    },
+    "alert_rules": {
+      "notify_on_affiliate_sale": true,
+      "notify_on_daily_goal_reached": true,
+      "notify_on_goal_escalation": true,
+      "notify_on_heartbeat_cron_2h": true,
+      "notify_on_self_healing_event": true
+    },
+    "realistic_telemetry_parameters": {
+      "commission_waterfall": {
+        "booking_cpa_percent": 4.5,
+        "carla_rental_cpa_percent": 8.0,
+        "nordvpn_cpa_percent": 40.0,
+        "shopee_cpa_percent": 6.5,
+        "udemy_cpa_percent": 15.0,
+        "amazon_cpa_percent": 8.0,
+        "mercado_livre_cpa_percent": 9.0
+      },
+      "sprint_tracking": {
+        "active_sprint": "Sprint de 21 Dias - Fundação & Tração",
+        "total_days": 21,
+        "target_pageviews": 85000,
+        "target_revenue_brl": 10900.00
+      }
+    }
+  }
+}
