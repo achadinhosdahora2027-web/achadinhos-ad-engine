@@ -151,6 +151,9 @@ async function notifyLiveExecutiveDigest(options = {}) {
   const sprintPvPercent = sprint.sprint_pageviews_progress_percent || 1.7;
 
   const dateStr = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  const learning = ledger.dynamic_learning_matrix || {};
+  const topProduct = learning.top_winning_product || 'Hotéis Booking & NordVPN Security';
+  const scaleNote = learning.scaling_strategy || 'Escalando automaticamente o volume dos produtos com maior CTR e conversão';
 
   const message = `
 📊 <b>[PAINEL AO VIVO: ANDAMENTO DO DIA E DO MÊS]</b> 📊
@@ -170,12 +173,17 @@ async function notifyLiveExecutiveDigest(options = {}) {
 • 🗓️ <b>Dias Restantes do Sprint:</b> <b>${sprintDaysRemaining} dias</b>
 • 📈 <b>Projeção Realista Ano 1:</b> R$ 1.065.900,00 (21M PVs)
 
-⚙️ <b>3. AÇÕES EXECUTADAS AO VIVO NESTE CICLO:</b>
+🔥 <b>3. PRODUÇÃO CONTROLADA & APRENDIZADO AO VIVO:</b>
+• 🏆 <b>Oferta Campeã do Ciclo:</b> <code>${topProduct}</code>
+• 🧠 <b>Inteligência de Escala:</b> ${scaleNote}
+• 🎯 <b>Controle de Qualidade:</b> 15 ofertas fortes selecionadas (foco em conversão real)
+
+⚙️ <b>4. AÇÕES EXECUTADAS NESTE CICLO:</b>
 • 🏛️ <b>Conselho & Robôs:</b> 8 Diretorias C-Level & 8 Bots 100% Online
 • 🌐 <b>Indexação Mundial:</b> 214 URLs ativas no IndexNow & Bing (195 Países)
-• 📸 <b>Instagram & ManyChat:</b> Respostas Spintax Anti-Ban prontas (+20k)
+• 📸 <b>Instagram & Facebook:</b> 2 Contas IG + 2 Páginas FB oficiais ativas
 • 🐦 <b>Twitter / X (@Savegrid20):</b> Esteira viral global ativa
-• 🛡️ <b>Auditoria Canário:</b> 28 marcas comissionadas CJ/Shopee blindadas (0 links 404)
+• 🛡️ <b>Auditoria Canário:</b> 28 marcas comissionadas CJ/Shopee blindadas
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 🚀 <i>Monitoramento real, consolidado e sem duplicações. Próximo ciclo em 2h.</i>
 `;

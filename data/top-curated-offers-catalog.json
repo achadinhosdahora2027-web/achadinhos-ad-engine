@@ -1,0 +1,427 @@
+{
+  "system_version": "2026.5-CONTROLLED-PRODUCTION",
+  "strategy": "Controlled High-Impact 15-Offer Production & Dynamic Scale Loop",
+  "updated_at": "2026-08-31T16:00:00.000Z",
+  "offers": [
+    {
+      "id": "off_03_nordvpn_security",
+      "title": "NordVPN Proteção Total 70% OFF + 3 Meses Grátis",
+      "brand": "NordVPN",
+      "merchant": "Nord Security",
+      "category": "Cibersegurança & Tech",
+      "network": "cj",
+      "payout_model": "CPA 40% (R$ 120 a R$ 280 por assinatura)",
+      "avg_commission_brl": 145,
+      "country": "GLOBAL",
+      "language": "en",
+      "priority_weight": 1.61,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=meta_controlled&slot=top_offer_03&sid=tw_nordvpn_sec",
+      "target_channels": [
+        "twitter_savegrid20",
+        "fb_page_1163959393474762"
+      ],
+      "best_hours_utc": [
+        11,
+        15,
+        21
+      ],
+      "best_hours_brt": [
+        "08:00",
+        "12:00",
+        "18:00"
+      ]
+    },
+    {
+      "id": "off_13_tarot_astrologia_3d",
+      "title": "Tarot 3D Interativo: Consulta Cósmica dos Arcanos Maiores",
+      "brand": "Tarot 3D",
+      "merchant": "Aqui Tem Achadinhos",
+      "category": "Entretenimento & Astrologia",
+      "network": "direct",
+      "payout_model": "CPA 12% (R$ 15 a R$ 40 por consulta/mapa)",
+      "avg_commission_brl": 22,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.4,
+      "affiliate_url": "https://www.aquitemachadinhos.com.br/entretenimento.html#tarot",
+      "target_channels": [
+        "fb_page_1289123464275730",
+        "ig_biz_17841460133220961"
+      ],
+      "best_hours_utc": [
+        11,
+        17,
+        23
+      ],
+      "best_hours_brt": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_05_shopee_aspirador_robo",
+      "title": "Aspirador Robô Inteligente Bivolt 4.9⭐",
+      "brand": "Shopee",
+      "merchant": "Shopee Brasil",
+      "category": "Achadinhos & Casa",
+      "network": "shopee",
+      "payout_model": "CPA 6.5% (R$ 18 a R$ 35 por venda)",
+      "avg_commission_brl": 24.5,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.35,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=meta_controlled&slot=top_offer_05&sid=ig_shopee_robo",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        12,
+        17,
+        23
+      ],
+      "best_hours_brt": [
+        "09:00",
+        "14:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_11_booking_nordeste_resorts",
+      "title": "Resorts All Inclusive Nordeste (Porto de Galinhas & Maragogi)",
+      "brand": "Booking.com",
+      "merchant": "Booking.com B.V.",
+      "category": "Viagens & Férias",
+      "network": "cj",
+      "payout_model": "CPA 4.5% (R$ 120 a R$ 350 por reserva)",
+      "avg_commission_brl": 165,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.35,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=meta_controlled&slot=top_offer_11&sid=ig_booking_nordeste",
+      "target_channels": [
+        "fb_page_1289123464275730",
+        "ig_biz_17841460133220961"
+      ],
+      "best_hours_utc": [
+        13,
+        18,
+        23
+      ],
+      "best_hours_brt": [
+        "10:00",
+        "15:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_02_carla_rental_br",
+      "title": "Aluguel de Carros com Menor Tarifa Garantida",
+      "brand": "Carla Car Rental",
+      "merchant": "Carla Rental",
+      "category": "Aluguel de Carros",
+      "network": "cj",
+      "payout_model": "CPA $12 a $35 (R$ 66 a R$ 192 por locação)",
+      "avg_commission_brl": 82,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.3,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=meta_controlled&slot=top_offer_02&sid=ig_carla_rental",
+      "target_channels": [
+        "fb_page_1289123464275730",
+        "ig_biz_17841460133220961"
+      ],
+      "best_hours_utc": [
+        13,
+        18,
+        22
+      ],
+      "best_hours_brt": [
+        "10:00",
+        "15:00",
+        "19:00"
+      ]
+    },
+    {
+      "id": "off_07_shopee_projetor_smart",
+      "title": "Mini Projetor Smart Portátil 4K WiFi Cinema",
+      "brand": "Shopee",
+      "merchant": "Shopee Brasil",
+      "category": "Eletrônicos & Cinema",
+      "network": "shopee",
+      "payout_model": "CPA 6.5% (R$ 25 a R$ 55 por venda)",
+      "avg_commission_brl": 32.4,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.3,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=meta_controlled&slot=top_offer_07&sid=ig_shopee_projetor",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        14,
+        21,
+        23
+      ],
+      "best_hours_brt": [
+        "11:00",
+        "18:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_12_carla_rental_eua",
+      "title": "Aluguel de Carro em Orlando & Miami (EUA) com Menor Tarifa",
+      "brand": "Carla Car Rental",
+      "merchant": "Carla Rental",
+      "category": "Viagens Internacionais",
+      "network": "cj",
+      "payout_model": "CPA $25 (R$ 137 por locação)",
+      "avg_commission_brl": 137.5,
+      "country": "GLOBAL",
+      "language": "pt",
+      "priority_weight": 1.3,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=meta_controlled&slot=top_offer_12&sid=ig_carla_orlando",
+      "target_channels": [
+        "fb_page_1289123464275730",
+        "ig_biz_17841460133220961"
+      ],
+      "best_hours_utc": [
+        14,
+        19,
+        23
+      ],
+      "best_hours_brt": [
+        "11:00",
+        "16:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_01_booking_gramado",
+      "title": "Hotéis & Pousadas em Gramado (Natal Luz 2026)",
+      "brand": "Booking.com",
+      "merchant": "Booking.com B.V.",
+      "category": "Viagens & Hospedagem",
+      "network": "cj",
+      "payout_model": "CPA 4.5% (R$ 45 a R$ 180 por reserva)",
+      "avg_commission_brl": 68.5,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.25,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=meta_controlled&slot=top_offer_01&sid=ig_booking_gramado",
+      "target_channels": [
+        "fb_page_1289123464275730",
+        "ig_biz_17841460133220961"
+      ],
+      "best_hours_utc": [
+        12,
+        17,
+        23
+      ],
+      "best_hours_brt": [
+        "09:00",
+        "14:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_06_shopee_airfryer_digital",
+      "title": "Fritadeira Air Fryer Digital Touch 5L Bivolt",
+      "brand": "Shopee",
+      "merchant": "Shopee Brasil",
+      "category": "Cozinha & Utilidades",
+      "network": "shopee",
+      "payout_model": "CPA 6.5% (R$ 22 a R$ 45 por venda)",
+      "avg_commission_brl": 28.9,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.25,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=meta_controlled&slot=top_offer_06&sid=ig_shopee_airfryer",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        15,
+        20,
+        23
+      ],
+      "best_hours_brt": [
+        "12:00",
+        "17:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_09_amazon_echo_pop",
+      "title": "Echo Pop Smart Speaker com Alexa Som Compacto",
+      "brand": "Amazon",
+      "merchant": "Amazon Brasil",
+      "category": "Smart Home & Áudio",
+      "network": "amazon",
+      "payout_model": "CPA 8.0% (R$ 20 a R$ 40 por venda)",
+      "avg_commission_brl": 26.5,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.25,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=amazon_us&site=meta_controlled&slot=top_offer_09&sid=ig_amazon_echo",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        12,
+        17,
+        22
+      ],
+      "best_hours_brt": [
+        "09:00",
+        "14:00",
+        "19:00"
+      ]
+    },
+    {
+      "id": "off_08_amazon_kindle_paperwhite",
+      "title": "Kindle Paperwhite 16GB Tela 6.8\" à Prova D'água",
+      "brand": "Amazon",
+      "merchant": "Amazon Brasil",
+      "category": "Leitura & Tecnologia",
+      "network": "amazon",
+      "payout_model": "CPA 8.0% (R$ 40 a R$ 80 por venda)",
+      "avg_commission_brl": 54,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.2,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=amazon_us&site=meta_controlled&slot=top_offer_08&sid=ig_amazon_kindle",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        13,
+        19,
+        23
+      ],
+      "best_hours_brt": [
+        "10:00",
+        "16:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_14_novakid_english",
+      "title": "Aulas de Inglês Online para Crianças com Nativos",
+      "brand": "Novakid",
+      "merchant": "Novakid Inc.",
+      "category": "Educação Infantil",
+      "network": "cj",
+      "payout_model": "CPA $20 (R$ 110 por matrícula)",
+      "avg_commission_brl": 110,
+      "country": "GLOBAL",
+      "language": "pt",
+      "priority_weight": 1.2,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=novakid&site=meta_controlled&slot=top_offer_14&sid=ig_novakid_br",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        12,
+        16,
+        22
+      ],
+      "best_hours_brt": [
+        "09:00",
+        "13:00",
+        "19:00"
+      ]
+    },
+    {
+      "id": "off_04_udemy_ai_courses",
+      "title": "Cursos Certificados de Inteligência Artificial & Python",
+      "brand": "Udemy",
+      "merchant": "Udemy Inc.",
+      "category": "Educação Online",
+      "network": "cj",
+      "payout_model": "CPA 15% (R$ 25 a R$ 85 por curso)",
+      "avg_commission_brl": 38,
+      "country": "GLOBAL",
+      "language": "en",
+      "priority_weight": 1.15,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=meta_controlled&slot=top_offer_04&sid=tw_udemy_ai",
+      "target_channels": [
+        "twitter_savegrid20",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        14,
+        19,
+        23
+      ],
+      "best_hours_brt": [
+        "11:00",
+        "16:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_10_meli_smartwatch_ultra",
+      "title": "Smartwatch Ultra Series 9 AMOLED com GPS Integrado",
+      "brand": "Mercado Livre",
+      "merchant": "Mercado Livre",
+      "category": "Wearables & Saúde",
+      "network": "meli",
+      "payout_model": "CPA 9.0% (R$ 18 a R$ 38 por venda)",
+      "avg_commission_brl": 27.8,
+      "country": "BR",
+      "language": "pt",
+      "priority_weight": 1.15,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=mercadolivre&site=meta_controlled&slot=top_offer_10&sid=ig_meli_watch",
+      "target_channels": [
+        "fb_page_1163959393474762",
+        "ig_biz_17841443518469482"
+      ],
+      "best_hours_utc": [
+        15,
+        20,
+        23
+      ],
+      "best_hours_brt": [
+        "12:00",
+        "17:00",
+        "20:00"
+      ]
+    },
+    {
+      "id": "off_15_switchbot_smart_lock",
+      "title": "SwitchBot Fechadura Smart Lock & Automação Residencial",
+      "brand": "SwitchBot",
+      "merchant": "SwitchBot Global",
+      "category": "Casa Inteligente & Tech",
+      "network": "cj",
+      "payout_model": "CPA 10% (R$ 45 a R$ 90 por venda)",
+      "avg_commission_brl": 62,
+      "country": "GLOBAL",
+      "language": "en",
+      "priority_weight": 1.15,
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=switchbot&site=meta_controlled&slot=top_offer_15&sid=tw_switchbot_lock",
+      "target_channels": [
+        "twitter_savegrid20",
+        "fb_page_1163959393474762"
+      ],
+      "best_hours_utc": [
+        13,
+        18,
+        22
+      ],
+      "best_hours_brt": [
+        "10:00",
+        "15:00",
+        "19:00"
+      ]
+    }
+  ]
+}

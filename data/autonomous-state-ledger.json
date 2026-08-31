@@ -3,7 +3,7 @@
   "orchestrator_role": "Ultra Diretor Geral & Gerente Executivo 24/7",
   "initialized_at": "2026-08-31T04:45:00.000Z",
   "last_audit_timestamp": "2026-08-31T15:30:00.000Z",
-  "last_telegram_digest_at": "2026-08-31T19:00:31.772Z",
+  "last_telegram_digest_at": "2026-08-31T20:25:22.260Z",
   "sprint_day": 1,
   "sprint_total_days": 21,
   "daily_and_monthly_tracking": {
@@ -153,5 +153,15 @@
       "action": "UNIFIED_LIVE_MONITORING_INITIALIZED",
       "result": "Monitoramento ao vivo consolidado em 1 mensagem única por ciclo com controle anti-repetição."
     }
-  ]
+  ],
+  "dynamic_learning_matrix": {
+    "updated_at": "2026-08-31T20:24:56.824Z",
+    "top_winning_product": "NordVPN Proteção Total 70% OFF + 3 Meses Grátis",
+    "top_winning_brand": "NordVPN",
+    "top_winning_category": "Cibersegurança & Tech",
+    "top_effective_channel": "@achadinhosdahora24hrs & Página Facebook",
+    "top_converting_time_slot": "20:00 BRT",
+    "active_curated_offers_count": 15,
+    "scaling_strategy": "Aumentando frequência das 5 melhores ofertas e pausando criativos com baixo CTR"
+  }
 }
