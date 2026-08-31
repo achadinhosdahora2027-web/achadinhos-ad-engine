@@ -202,3 +202,25 @@ module.exports = async (req, res) => {
 
   return res.status(200).json(response);
 };
+
+// Export library helper for test suites and background runners
+module.exports.matchCommentIntent = function(commentText, username = 'user', country = 'BR') {
+  const { matchedAdv, lang } = matchIntent(commentText);
+  const safeJitterSeconds = Math.floor(Math.random() * (22 - 8 + 1)) + 8;
+  const spintaxPublicReply = generateSpintaxCommentReply(username, lang);
+  const dmTemplate = (matchedAdv.dm_templates && (matchedAdv.dm_templates[lang] || matchedAdv.dm_templates.pt || matchedAdv.dm_templates.en)) || "Aqui está o link: {LINK}";
+  const affiliateUrl = `https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=${matchedAdv.brand}&site=ig_comment&slot=auto_intent&country=${country}&sid=ig_comm_${matchedAdv.brand}_${username}`;
+  const dmMessage = dmTemplate.replace('{LINK}', affiliateUrl);
+
+  return {
+    matched_advertiser: matchedAdv.name,
+    brand: matchedAdv.brand,
+    category: matchedAdv.category,
+    detected_language: lang,
+    public_reply: spintaxPublicReply,
+    affiliate_link: affiliateUrl,
+    anti_ban_jitter_ms: safeJitterSeconds * 1000,
+    dm_message: dmMessage
+  };
+};
+
