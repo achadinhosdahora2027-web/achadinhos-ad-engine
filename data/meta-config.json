@@ -1,10 +1,9 @@
 {
-  "updated_at": "2026-08-31T04:20:00.000Z",
+  "updated_at": "2026-08-31T17:55:00.000Z",
   "status": "active",
   "master_user": {
     "name": "Daniel Fernandes",
-    "id": "1108663671676718",
-    "user_token": "EAATdaZCZBKKRgBSYTH6Byd1ozkHZAuGUx4ZBTNssomFRCwd64GFGAc5Q02qCyHZAh0ZBIjhdWKqTZCXOZCT23DHSe6QiGcBV7zUWB28ZCwlZB9LshQrrA9J4Eu9BcEX7uYZA7BRJWng3vyzZAHI8lHdYLixRXMZCqbl7aN2Pb91kd6o61ter8gxDXfiLdk9xIMRurPedQV3rWQcGItFWYz5iC87qmeQ10yKYyMG5XeD8vNLGCfyj9RpZCdAKSGNgZDZD"
+    "id": "1108663671676718"
   },
   "accounts": [
     {
@@ -22,7 +21,7 @@
       "instagram_business_id": "17841460133220961",
       "facebook_page_id": "1289123464275730",
       "page_name": "Aqui Tem",
-      "page_access_token": "EAATdaZCZBKKRgBSSV1Yy7UWClQZCbB6KvAKauJcL9JXywHnPjMrEGauei5O09v026bUcwKAcC9Dk6f7UYdN4U3d39liwmfLDaWUO2kggWGklMFDXQjWETcCI3gPGgO0XUN62rLWDL6WnXZAENwwF3uRSelOBZBJCS9JXZCz2krH085FRxtZB6wo1InWHmoxGjAHeKe7",
+      "page_access_token": "EAATdaZCZBKKRgBSYyZBNkAzObZAAIasfEuMOgg2TRqiYAt8mPS5X2pLj3KfpWwaotGZAeXQXRh2D87rsZBgVCr5RwEJRoZCfRHO4mu97eOurdHmSbk5P9oeHeAoVLcO2sHQXJ8VZC4SQlhjonz8XrY9l54Yb4G4s7P1ANMfkNeBmueNufIpKGHlHbU8ZCNd9zzZBX871sd8ZByzyskJsiKEzruoqAvO07A1WZClV3KdOOzOe4F0ZD",
       "niche": "Guias Turísticos, Gramado, Barretos, Natal Luz, Astrologia 3D"
     }
   ],

@@ -69,23 +69,25 @@ function detectDevice(userAgent = '') {
 
 module.exports = async (req, res) => {
   const brandCatalog = getBrandCatalog();
-  let brandKey = (req.query.brand || req.query.b || '').toLowerCase().trim();
-  const site = (req.query.site || 'aquitemachadinhos').toLowerCase().replace(/[^a-z0-9_-]/g, '');
-  const slot = (req.query.slot || 'header').toLowerCase().replace(/[^a-z0-9_-]/g, '');
-  const rawDest = req.query.dest || req.query.url || req.query.u;
+  const query = req.query || {};
+  const headers = req.headers || {};
+  let brandKey = (query.brand || query.b || '').toLowerCase().trim();
+  const site = (query.site || 'aquitemachadinhos').toLowerCase().replace(/[^a-z0-9_-]/g, '');
+  const slot = (query.slot || 'header').toLowerCase().replace(/[^a-z0-9_-]/g, '');
+  const rawDest = query.dest || query.url || query.u;
   
   // Extract geo country
   const country = (
-    req.headers['x-vercel-ip-country'] ||
-    req.headers['cf-ipcountry'] ||
-    req.headers['x-country-code'] ||
-    req.query.geo ||
-    req.query.country ||
+    headers['x-vercel-ip-country'] ||
+    headers['cf-ipcountry'] ||
+    headers['x-country-code'] ||
+    query.geo ||
+    query.country ||
     'BR'
   ).toUpperCase().substring(0, 2);
 
-  const device = detectDevice(req.headers['user-agent'] || '');
-  const sid = req.query.sid || `${site}_${country.toLowerCase()}_${slot}_${device}`;
+  const device = detectDevice(headers['user-agent'] || '');
+  const sid = query.sid || `${site}_${country.toLowerCase()}_${slot}_${device}`;
 
   // Smart Geo-Waterfall Algorithm
   if (!brandKey || brandKey === 'auto') {
