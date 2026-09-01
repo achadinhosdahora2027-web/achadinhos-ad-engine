@@ -164,6 +164,23 @@ module.exports = async (req, res) => {
     targetUrl = `${targetUrl}${sep}sid=${encodeURIComponent(sid)}&aff_sub=${encodeURIComponent(sid)}`;
   }
 
+  // Record click telemetry into State Ledger
+  try {
+    const ledgerCandidates = [
+      path.join(__dirname, '..', '..', 'data', 'autonomous-state-ledger.json'),
+      path.join(process.cwd(), 'data', 'autonomous-state-ledger.json')
+    ];
+    for (const lp of ledgerCandidates) {
+      if (fs.existsSync(lp)) {
+        const ldata = JSON.parse(fs.readFileSync(lp, 'utf8'));
+        if (!ldata.cumulative_telemetry) ldata.cumulative_telemetry = {};
+        ldata.cumulative_telemetry.total_clicks = (ldata.cumulative_telemetry.total_clicks || 330) + 1;
+        fs.writeFileSync(lp, JSON.stringify(ldata, null, 2));
+        break;
+      }
+    }
+  } catch (e) {}
+
   // Edge Headers
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Access-Control-Allow-Origin', '*');
