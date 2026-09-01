@@ -47,7 +47,11 @@ jobs:
         run: |
           node scripts/pinterest-rich-pin-engine.js || true
 
-      - name: 7. Run Coupon Freshness & Live Price Drop Radar
+      - name: 7. Run Google Search Console & SEO Health Optimizer
+        run: |
+          node scripts/google-search-console-optimizer.js || true
+
+      - name: 8. Run Coupon Freshness & Live Price Drop Radar
         run: |
           node scripts/coupon-radar-validator.js || true
 
