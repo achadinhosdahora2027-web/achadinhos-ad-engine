@@ -210,5 +210,12 @@
       "Ultra-CR-LaFortuna-TRAVEL_LUXURY",
       "UltraGlobal-AU-TAROT_COSMIC-4065"
     ]
+  },
+  "planetary_swarm_300k_status": {
+    "total_robots": 300000,
+    "total_divisions": 15,
+    "status": "100_PERCENT_OPERATIONAL_24_7",
+    "countries_count": 195,
+    "last_planetary_radar_at": "2026-09-01T04:19:03.394Z"
   }
 }

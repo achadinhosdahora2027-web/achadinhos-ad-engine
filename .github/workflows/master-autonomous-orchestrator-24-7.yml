@@ -36,9 +36,9 @@ jobs:
         run: |
           node scripts/controlled-production-learning-engine.js || true
 
-      - name: 5. Execute 5,000 Ultra Robots Global Social Capture Mega-Swarm (195 Countries)
+      - name: 5. Execute 300,000 Ultra Robots Planetary Social Capture Mega-Swarm (195 Countries)
         run: |
-          node scripts/ultra-5000-global-robots-swarm.js || true
+          node scripts/ultra-300k-planetary-swarm-engine.js || true
 
       - name: 6. Run Pinterest Rich Pin & Vertical Visual Syndication Engine
         run: |
