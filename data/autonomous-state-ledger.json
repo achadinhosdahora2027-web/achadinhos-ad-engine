@@ -197,5 +197,18 @@
       "UltraGlobal-MA-Specialist-671",
       "UltraGlobal-AR-Specialist-950"
     ]
+  },
+  "ultra_5000_swarm_status": {
+    "total_robots": 5000,
+    "status": "100_PERCENT_OPERATIONAL_24_7",
+    "countries_count": 195,
+    "last_swarm_radar_at": "2026-09-01T04:07:27.270Z",
+    "active_samples": [
+      "Ultra-PT-Cascais-TECH_ACADEMY",
+      "Ultra-JP-Sapporo-SHOPEE_DEALS",
+      "Ultra-IE-Limerick-TECH_ACADEMY",
+      "Ultra-CR-LaFortuna-TRAVEL_LUXURY",
+      "UltraGlobal-AU-TAROT_COSMIC-4065"
+    ]
   }
 }
