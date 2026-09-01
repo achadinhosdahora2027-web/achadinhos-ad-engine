@@ -10,41 +10,70 @@
 const fs = require('fs');
 const path = require('path');
 const { getUserProfile, publishTweet } = require('../api/twitter/tweet-publisher');
-const { sendTelegramMessage } = require('../api/telegram/notify-engine');
 
 const CONFIG_PATH = path.join(__dirname, '../data/twitter-config.json');
 const LEDGER_PATH = path.join(__dirname, '../data/autonomous-state-ledger.json');
 
 const TWEET_TEMPLATES = [
   {
-    category: "NordVPN & Cloud Security",
-    lang: "en",
-    text: "🛡️ Protect your AI workloads, cloud servers & browsing with military-grade encryption.\n\n⚡ Get 70% OFF + 3 extra months verified.\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=twitter&slot=global_viral&sid=tw_nordvpn_en\n\n#Cybersecurity #NordVPN #Cloud #DevOps #AI #TechDeals"
-  },
-  {
-    category: "Booking.com Global Travel",
+    category: "Gramado Natal Luz 2026 & Booking",
     lang: "pt",
-    text: "✈️ Vai viajar nas próximas férias? O Booking liberou até 30% OFF em pousadas e hotéis de luxo!\n\n🏨 Garanta sua reserva com cancelamento grátis:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=global_viral&sid=tw_booking_pt\n\n#Viagens #Hotel #Turismo #Booking #Gramado #Achadinhos"
+    text: "🌲 Vai pro Natal Luz em Gramado nas próximas férias? O Booking liberou pousadas e chalés com até 40% OFF e café colonial incluso!\n\n🏨 Garanta sua reserva com cancelamento grátis:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=gramado_viral&sid=tw_gramado_pt\n\n#Gramado #NatalLuz #Viagens #Turismo #Booking #SerraGaucha #DicasDeViagem"
   },
   {
-    category: "Carla Car Rental",
-    lang: "es",
-    text: "🚗 ¿Planeando tu próximo viaje? Compara las mejores rentadoras de autos con tarifa VIP garantizada.\n\n🌟 Descuentos exclusivos aquí:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=twitter&slot=global_viral&sid=tw_carla_es\n\n#Viajes #AlquilerDeAutos #Turismo #Descuentos #Vacaciones"
+    category: "NordVPN & Cloud Cyber Security",
+    lang: "en",
+    text: "🛡️ Protect your AI workloads, cloud servers & remote browsing with military-grade encryption.\n\n⚡ Get 74% OFF + 3 extra months verified.\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=twitter&slot=global_viral&sid=tw_nordvpn_en\n\n#Cybersecurity #NordVPN #Cloud #DevOps #AI #TechDeals"
   },
   {
-    category: "Udemy Tech & AI Courses",
+    category: "Festa do Peão de Barretos 2027 & Aluguel de Carros",
+    lang: "pt",
+    text: "🤠 Planejando ir pra Festa do Peão de Barretos? Alugue seu carro com antecedência sem taxa oculta e com seguro total incluso!\n\n🚗 Compare as melhores locadoras aqui:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=twitter&slot=barretos_viral&sid=tw_barretos_pt\n\n#Barretos #FestaDoPeao #Sertanejo #AluguelDeCarros #Viagens"
+  },
+  {
+    category: "Shopee Achadinhos & Robô Aspirador",
+    lang: "pt",
+    text: "🔥 Esse robô aspirador bivolt com sensor inteligente limpa a casa toda sozinho e está com cupom de frete grátis na Shopee!\n\n🛍️ Resgate seu cupom do dia:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=twitter&slot=shopee_robo&sid=tw_shopee_pt\n\n#Shopee #Achadinhos #Cupons #CasaLimpa #RoboAspirador #AchadinhosShopee"
+  },
+  {
+    category: "Paris Luxury Hotels & Travel",
+    lang: "fr",
+    text: "🗼 Envie d'une escapade à Paris ? Découvrez les plus beaux hôtels et suites avec jusqu'à 35% de réduction sur Booking.com !\n\n🌟 Annulation gratuite garantie :\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=paris_fr&sid=tw_paris_fr\n\n#Paris #Voyage #Hotel #Tourisme #Booking #BonsPlans"
+  },
+  {
+    category: "Dubai 5-Star Resorts & Flights",
+    lang: "en",
+    text: "🏙️ Planning a luxury trip to Dubai? Explore presidential suites, world-class resorts & last-minute flight packages with exclusive perks.\n\n✨ Book with flexible cancellation:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=dubai_en&sid=tw_dubai_en\n\n#Dubai #LuxuryTravel #Resorts #TravelHacks #Hotels"
+  },
+  {
+    category: "Tarot 3D & Previsão Astral Interativa",
+    lang: "pt",
+    text: "🔮 O universo tem um recado importante para o seu signo hoje! Tire sua carta no Tarot 3D Interativo 2026.\n\n✨ Oráculo 100% grátis:\n\n👉 https://www.aquitemachadinhos.com.br/entretenimento.html#tarot\n\n#Tarot #Astrologia #Signos #Previsoes #Horoscopo #Espiritualidade"
+  },
+  {
+    category: "Udemy Certified AI & Python Academy",
     lang: "en",
     text: "🚀 Master Generative AI, Next.js 15, Python & Full-Stack Development with certified top-tier courses.\n\n🎓 Explore exclusive 85% OFF vouchers:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=twitter&slot=global_viral&sid=tw_udemy_en\n\n#Udemy #Python #AI #WebDev #Coding #FullStack"
   },
   {
-    category: "Tarot 3D & Previsão Astral",
-    lang: "pt",
-    text: "🔮 Tire sua carta do dia no Tarot 3D Interativo 2026! Previsões exclusivas para amor, carreira e caminhos abertos.\n\n✨ Consulte 100% grátis agora:\n\n👉 https://www.aquitemachadinhos.com.br/entretenimento.html#tarot\n\n#Tarot #Astrologia #Signos #Previsoes #Horoscopo"
+    category: "Tokyo & Japan Travel Guide",
+    lang: "ja",
+    text: "🇯🇵 日本全国のホテル・温泉宿がお得に予約できる割引クーポン配布中！\n\n🏨 キャンセル無料プラン多数：\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=japan_ja&sid=tw_tokyo_ja\n\n#旅行 #ホテル #Booking #お得情報 #観光"
   },
   {
-    category: "Shopee Achadinhos Imperdíveis",
+    category: "Carla Car Rental Latin America",
+    lang: "es",
+    text: "🚗 ¿Planeando tu próximo viaje? Compara las mejores rentadoras de autos con tarifa VIP garantizada.\n\n🌟 Descuentos exclusivos aquí:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=twitter&slot=global_viral&sid=tw_carla_es\n\n#Viajes #AlquilerDeAutos #Turismo #Descuentos #Vacaciones"
+  },
+  {
+    category: "Lisbon & Portugal Travel",
     lang: "pt",
-    text: "🔥 Achadinho imperdível na Shopee com cupom de frete grátis e desconto relâmpago ativado!\n\n🛍️ Veja o item do dia verificado:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=twitter&slot=global_viral&sid=tw_shopee_pt\n\n#Shopee #Achadinhos #Cupons #Promocoes #Compras"
+    text: "🇵🇹 Planejando conhecer Lisboa e Porto? Hotéis boutique e pousadas históricas em Portugal com desconto no Booking!\n\n🏰 Veja as melhores opções:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=lisbon_pt&sid=tw_lisbon_pt\n\n#Portugal #Lisboa #Porto #Viagens #Turismo"
+  },
+  {
+    category: "Rome Italy Historic Travel",
+    lang: "it",
+    text: "🇮🇹 Scopri le migliori offerte per hotel e resort a Roma, Milano e Firenze con cancellazione gratuita su Booking!\n\n🍕 Prenota ora con tariffe esclusive:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=rome_it&sid=tw_rome_it\n\n#Roma #Viaggi #Hotel #Offerte #Italia"
   }
 ];
 
@@ -98,8 +127,6 @@ async function runTwitterPublisher() {
   } catch (e) {}
 
   console.log('  ✓ Telemetria do Twitter/X gravada no Ledger Central para o próximo Digest!');
-
-
   console.log('\n================================================================================');
   console.log('✅ TWITTER / X ENGINE 24/7 CONCLUÍDO COM SUCESSO E SEM PONTOS CEGOS!');
   console.log('================================================================================');
