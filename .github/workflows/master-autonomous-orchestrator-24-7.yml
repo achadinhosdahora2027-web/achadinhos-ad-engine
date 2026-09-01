@@ -47,7 +47,11 @@ jobs:
         run: |
           node scripts/pinterest-rich-pin-engine.js || true
 
-      - name: 7. Run Google Search Console & SEO Health Optimizer
+      - name: 7. Run Meta Commerce & Instagram Shop Catalog Sync
+        run: |
+          node scripts/meta-commerce-catalog-sync.js || true
+
+      - name: 8. Run Google Search Console & SEO Health Optimizer
         run: |
           node scripts/google-search-console-optimizer.js || true
 
