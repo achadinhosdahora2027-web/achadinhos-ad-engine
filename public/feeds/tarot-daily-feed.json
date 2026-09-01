@@ -1,0 +1,199 @@
+{
+  "date": "01/09/2026",
+  "generated_at": "2026-09-01T03:54:01.321Z",
+  "total_signs": 12,
+  "forecasts": [
+    {
+      "sign": "aries",
+      "symbol": "♈",
+      "name": "Áries",
+      "card_drawn": "O Imperador",
+      "cosmic_advice": "Momento de ação direta. Uma oportunidade financeira ou de viagem surgirá nos próximos dias.",
+      "lucky_numbers": [
+        38,
+        3,
+        35
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "touro",
+      "symbol": "♉",
+      "name": "Touro",
+      "card_drawn": "A Imperatriz",
+      "cosmic_advice": "Abundância material e colheita. Ótimo período para compras planejadas e conforto no lar.",
+      "lucky_numbers": [
+        1,
+        28,
+        7
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "gemeos",
+      "symbol": "♊",
+      "name": "Gêmeos",
+      "card_drawn": "Os Enamorados",
+      "cosmic_advice": "Decisões importantes à vista. Conexões e novidades digitais impulsionam seus projetos.",
+      "lucky_numbers": [
+        21,
+        9,
+        15
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "cancer",
+      "symbol": "♋",
+      "name": "Câncer",
+      "card_drawn": "A Carruagem",
+      "cosmic_advice": "Caminhos abertos para conquistas e viagens em família. Confie na sua intuição protetora.",
+      "lucky_numbers": [
+        28,
+        48,
+        27
+      ],
+      "exclusive_deal": {
+        "title": "Hotéis Booking com até 40% OFF",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "leao",
+      "symbol": "♌",
+      "name": "Leão",
+      "card_drawn": "O Sol",
+      "cosmic_advice": "Brilho pessoal e prosperidade. Oportunidades profissionais e reconhecimento em alta.",
+      "lucky_numbers": [
+        42,
+        56,
+        59
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "virgem",
+      "symbol": "♍",
+      "name": "Virgem",
+      "card_drawn": "O Eremita",
+      "cosmic_advice": "Organização e foco nos detalhes trarão economia e resultados duradouros.",
+      "lucky_numbers": [
+        18,
+        53,
+        9
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "libra",
+      "symbol": "♎",
+      "name": "Libra",
+      "card_drawn": "A Justiça",
+      "cosmic_advice": "Equilíbrio e harmonia nos relacionamentos. Contratos e acordos favoráveis hoje.",
+      "lucky_numbers": [
+        17,
+        4,
+        48
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "escorpiao",
+      "symbol": "♏",
+      "name": "Escorpião",
+      "card_drawn": "A Morte (Renascimento)",
+      "cosmic_advice": "Transformação positiva e superação. Deixe o velho ir para o novo florescer.",
+      "lucky_numbers": [
+        54,
+        19,
+        19
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "sagitario",
+      "symbol": "♐",
+      "name": "Sagitário",
+      "card_drawn": "A Roda da Fortuna",
+      "cosmic_advice": "Sorte inesperada em viagens e novas experiências. O universo conspira a seu favor.",
+      "lucky_numbers": [
+        5,
+        42,
+        49
+      ],
+      "exclusive_deal": {
+        "title": "Hotéis Booking com até 40% OFF",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "capricornio",
+      "symbol": "♑",
+      "name": "Capricórnio",
+      "card_drawn": "O Mundo",
+      "cosmic_advice": "Conclusão vitoriosa de metas e estabilidade financeira consolidada.",
+      "lucky_numbers": [
+        15,
+        32,
+        51
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "aquario",
+      "symbol": "♒",
+      "name": "Aquário",
+      "card_drawn": "A Estrela",
+      "cosmic_advice": "Esperança renovada, inspiração e inovação tecnológica transformando sua rotina.",
+      "lucky_numbers": [
+        39,
+        48,
+        20
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    },
+    {
+      "sign": "peixes",
+      "symbol": "♓",
+      "name": "Peixes",
+      "card_drawn": "A Lua",
+      "cosmic_advice": "Sensibilidade e intuição aguçada. Sonhos e pressentimentos reveladores.",
+      "lucky_numbers": [
+        25,
+        11,
+        41
+      ],
+      "exclusive_deal": {
+        "title": "Cupons Shopee com Frete Grátis",
+        "url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&sid=tarot_astral"
+      }
+    }
+  ]
+}

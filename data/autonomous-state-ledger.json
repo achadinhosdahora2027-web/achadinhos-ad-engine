@@ -178,5 +178,12 @@
     "top_converting_time_slot": "20:00 BRT",
     "active_curated_offers_count": 15,
     "scaling_strategy": "Aumentando frequência das 5 melhores ofertas e pausando criativos com baixo CTR"
+  },
+  "ultra_capture_swarm_status": {
+    "total_robots": 100,
+    "status": "100_PERCENT_OPERATIONAL_24_7",
+    "languages_count": 16,
+    "last_swarm_radar_at": "2026-09-01T03:54:30.306Z",
+    "active_robot_sample": "UltraThematic-NordVPNCyberAI"
   }
 }

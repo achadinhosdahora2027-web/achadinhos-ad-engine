@@ -1,0 +1,1778 @@
+{
+  "swarm_version": "2026.5-ULTRA-SWARM-100-ROBOTS",
+  "total_active_robots": 100,
+  "languages_covered": 16,
+  "countries_covered": 195,
+  "operational_mode": "CONTINUOUS_AUTONOMOUS_24_7",
+  "robots": [
+    {
+      "robot_id": "ROBOT_001",
+      "name": "UltraCaptor-PT-BR",
+      "language": "pt",
+      "language_name": "Português",
+      "target_country": "BR",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for BR",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "cupom shopee",
+        "hotel gramado",
+        "desconto booking",
+        "nordvpn cupom",
+        "passagem barata",
+        "robo aspirador",
+        "tarot online"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=BR&sid=robot_001_pt",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_002",
+      "name": "UltraCaptor-PT-PT",
+      "language": "pt",
+      "language_name": "Português",
+      "target_country": "PT",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for PT",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "cupom shopee",
+        "hotel gramado",
+        "desconto booking",
+        "nordvpn cupom",
+        "passagem barata",
+        "robo aspirador",
+        "tarot online"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=PT&sid=robot_002_pt",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_003",
+      "name": "UltraCaptor-PT-AO",
+      "language": "pt",
+      "language_name": "Português",
+      "target_country": "AO",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AO",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "cupom shopee",
+        "hotel gramado",
+        "desconto booking",
+        "nordvpn cupom",
+        "passagem barata",
+        "robo aspirador",
+        "tarot online"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AO&sid=robot_003_pt",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_004",
+      "name": "UltraCaptor-PT-MZ",
+      "language": "pt",
+      "language_name": "Português",
+      "target_country": "MZ",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for MZ",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "cupom shopee",
+        "hotel gramado",
+        "desconto booking",
+        "nordvpn cupom",
+        "passagem barata",
+        "robo aspirador",
+        "tarot online"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=MZ&sid=robot_004_pt",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_005",
+      "name": "UltraCaptor-EN-US",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "US",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for US",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=US&sid=robot_005_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_006",
+      "name": "UltraCaptor-EN-GB",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "GB",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for GB",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=GB&sid=robot_006_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_007",
+      "name": "UltraCaptor-EN-CA",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "CA",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CA",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CA&sid=robot_007_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_008",
+      "name": "UltraCaptor-EN-AU",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "AU",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AU",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AU&sid=robot_008_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_009",
+      "name": "UltraCaptor-EN-NZ",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "NZ",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for NZ",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=NZ&sid=robot_009_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_010",
+      "name": "UltraCaptor-EN-IE",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "IE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for IE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=IE&sid=robot_010_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_011",
+      "name": "UltraCaptor-EN-SG",
+      "language": "en",
+      "language_name": "English",
+      "target_country": "SG",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SG",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "hotel discount booking",
+        "shopee coupons",
+        "nordvpn 70 off",
+        "cheap car rental",
+        "daily tarot reading",
+        "best flight deals",
+        "udemy free coupon"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SG&sid=robot_011_en",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_012",
+      "name": "UltraCaptor-ES-ES",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "ES",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for ES",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=ES&sid=robot_012_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_013",
+      "name": "UltraCaptor-ES-MX",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "MX",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for MX",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=MX&sid=robot_013_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_014",
+      "name": "UltraCaptor-ES-AR",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "AR",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AR",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AR&sid=robot_014_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_015",
+      "name": "UltraCaptor-ES-CO",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "CO",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CO",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CO&sid=robot_015_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_016",
+      "name": "UltraCaptor-ES-CL",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "CL",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CL",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CL&sid=robot_016_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_017",
+      "name": "UltraCaptor-ES-PE",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "PE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for PE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=PE&sid=robot_017_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_018",
+      "name": "UltraCaptor-ES-UY",
+      "language": "es",
+      "language_name": "Español",
+      "target_country": "UY",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for UY",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codigo descuento shopee",
+        "hotel barato booking",
+        "alquiler de autos carla",
+        "nordvpn oferta",
+        "tarot gratis online",
+        "vuelos baratos"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=UY&sid=robot_018_es",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_019",
+      "name": "UltraCaptor-FR-FR",
+      "language": "fr",
+      "language_name": "Français",
+      "target_country": "FR",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for FR",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "code promo booking",
+        "reduction nordvpn",
+        "location voiture pas cher",
+        "horoscope tarot du jour",
+        "bons plans voyages"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=FR&sid=robot_019_fr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_020",
+      "name": "UltraCaptor-FR-BE",
+      "language": "fr",
+      "language_name": "Français",
+      "target_country": "BE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for BE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "code promo booking",
+        "reduction nordvpn",
+        "location voiture pas cher",
+        "horoscope tarot du jour",
+        "bons plans voyages"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=BE&sid=robot_020_fr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_021",
+      "name": "UltraCaptor-FR-CH",
+      "language": "fr",
+      "language_name": "Français",
+      "target_country": "CH",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CH",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "code promo booking",
+        "reduction nordvpn",
+        "location voiture pas cher",
+        "horoscope tarot du jour",
+        "bons plans voyages"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CH&sid=robot_021_fr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_022",
+      "name": "UltraCaptor-FR-CA",
+      "language": "fr",
+      "language_name": "Français",
+      "target_country": "CA",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CA",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "code promo booking",
+        "reduction nordvpn",
+        "location voiture pas cher",
+        "horoscope tarot du jour",
+        "bons plans voyages"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CA&sid=robot_022_fr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_023",
+      "name": "UltraCaptor-FR-MA",
+      "language": "fr",
+      "language_name": "Français",
+      "target_country": "MA",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for MA",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "code promo booking",
+        "reduction nordvpn",
+        "location voiture pas cher",
+        "horoscope tarot du jour",
+        "bons plans voyages"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=MA&sid=robot_023_fr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_024",
+      "name": "UltraCaptor-FR-SN",
+      "language": "fr",
+      "language_name": "Français",
+      "target_country": "SN",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SN",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "code promo booking",
+        "reduction nordvpn",
+        "location voiture pas cher",
+        "horoscope tarot du jour",
+        "bons plans voyages"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SN&sid=robot_024_fr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_025",
+      "name": "UltraCaptor-DE-DE",
+      "language": "de",
+      "language_name": "Deutsch",
+      "target_country": "DE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for DE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattcode",
+        "nordvpn angebot gutschein",
+        "billige mietwagen",
+        "tageshoroskop tarot",
+        "urlaubsdeals"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=DE&sid=robot_025_de",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_026",
+      "name": "UltraCaptor-DE-AT",
+      "language": "de",
+      "language_name": "Deutsch",
+      "target_country": "AT",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AT",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattcode",
+        "nordvpn angebot gutschein",
+        "billige mietwagen",
+        "tageshoroskop tarot",
+        "urlaubsdeals"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AT&sid=robot_026_de",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_027",
+      "name": "UltraCaptor-DE-CH",
+      "language": "de",
+      "language_name": "Deutsch",
+      "target_country": "CH",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CH",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattcode",
+        "nordvpn angebot gutschein",
+        "billige mietwagen",
+        "tageshoroskop tarot",
+        "urlaubsdeals"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CH&sid=robot_027_de",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_028",
+      "name": "UltraCaptor-DE-LI",
+      "language": "de",
+      "language_name": "Deutsch",
+      "target_country": "LI",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for LI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattcode",
+        "nordvpn angebot gutschein",
+        "billige mietwagen",
+        "tageshoroskop tarot",
+        "urlaubsdeals"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=LI&sid=robot_028_de",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_029",
+      "name": "UltraCaptor-DE-LU",
+      "language": "de",
+      "language_name": "Deutsch",
+      "target_country": "LU",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for LU",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattcode",
+        "nordvpn angebot gutschein",
+        "billige mietwagen",
+        "tageshoroskop tarot",
+        "urlaubsdeals"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=LU&sid=robot_029_de",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_030",
+      "name": "UltraCaptor-IT-IT",
+      "language": "it",
+      "language_name": "Italiano",
+      "target_country": "IT",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for IT",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codice sconto booking",
+        "nordvpn offerta",
+        "noleggio auto low cost",
+        "tarocchi oroscopo oggi",
+        "offerte viaggi"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=IT&sid=robot_030_it",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_031",
+      "name": "UltraCaptor-IT-CH",
+      "language": "it",
+      "language_name": "Italiano",
+      "target_country": "CH",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CH",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codice sconto booking",
+        "nordvpn offerta",
+        "noleggio auto low cost",
+        "tarocchi oroscopo oggi",
+        "offerte viaggi"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CH&sid=robot_031_it",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_032",
+      "name": "UltraCaptor-IT-SM",
+      "language": "it",
+      "language_name": "Italiano",
+      "target_country": "SM",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SM",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codice sconto booking",
+        "nordvpn offerta",
+        "noleggio auto low cost",
+        "tarocchi oroscopo oggi",
+        "offerte viaggi"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SM&sid=robot_032_it",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_033",
+      "name": "UltraCaptor-IT-VA",
+      "language": "it",
+      "language_name": "Italiano",
+      "target_country": "VA",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for VA",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "codice sconto booking",
+        "nordvpn offerta",
+        "noleggio auto low cost",
+        "tarocchi oroscopo oggi",
+        "offerte viaggi"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=VA&sid=robot_033_it",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_034",
+      "name": "UltraCaptor-JA-JP",
+      "language": "ja",
+      "language_name": "日本語",
+      "target_country": "JP",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for JP",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking 割引 クーポン",
+        "nordvpn セール",
+        "格安 レンタカー",
+        "タロット 占い 無料",
+        "お得な旅行プラン"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=JP&sid=robot_034_ja",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_035",
+      "name": "UltraCaptor-KO-KR",
+      "language": "ko",
+      "language_name": "한국어",
+      "target_country": "KR",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for KR",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "부킹닷컴 할인쿠폰",
+        "노드vpn 특가",
+        "렌터카 최저가",
+        "오늘의 타로 운세",
+        "항공권 특가"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=KR&sid=robot_035_ko",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_036",
+      "name": "UltraCaptor-ZH-CN",
+      "language": "zh",
+      "language_name": "中文",
+      "target_country": "CN",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CN",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking 优惠码",
+        "nordvpn 特惠 折扣",
+        "租车 优惠",
+        "塔罗牌 占卜 免费",
+        "特价 机票 酒店"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CN&sid=robot_036_zh",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_037",
+      "name": "UltraCaptor-ZH-TW",
+      "language": "zh",
+      "language_name": "中文",
+      "target_country": "TW",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for TW",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking 优惠码",
+        "nordvpn 特惠 折扣",
+        "租车 优惠",
+        "塔罗牌 占卜 免费",
+        "特价 机票 酒店"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=TW&sid=robot_037_zh",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_038",
+      "name": "UltraCaptor-ZH-HK",
+      "language": "zh",
+      "language_name": "中文",
+      "target_country": "HK",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for HK",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking 优惠码",
+        "nordvpn 特惠 折扣",
+        "租车 优惠",
+        "塔罗牌 占卜 免费",
+        "特价 机票 酒店"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=HK&sid=robot_038_zh",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_039",
+      "name": "UltraCaptor-ZH-SG",
+      "language": "zh",
+      "language_name": "中文",
+      "target_country": "SG",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SG",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking 优惠码",
+        "nordvpn 特惠 折扣",
+        "租车 优惠",
+        "塔罗牌 占卜 免费",
+        "特价 机票 酒店"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SG&sid=robot_039_zh",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_040",
+      "name": "UltraCaptor-ZH-MY",
+      "language": "zh",
+      "language_name": "中文",
+      "target_country": "MY",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for MY",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking 优惠码",
+        "nordvpn 特惠 折扣",
+        "租车 优惠",
+        "塔罗牌 占卜 免费",
+        "特价 机票 酒店"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=MY&sid=robot_040_zh",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_041",
+      "name": "UltraCaptor-AR-AE",
+      "language": "ar",
+      "language_name": "العربية",
+      "target_country": "AE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "كوبون بوكينج حجز فنادق",
+        "خصم نورد في بي ان",
+        "تأجير سيارات رخيص",
+        "توقعات التاروت اليومية"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AE&sid=robot_041_ar",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_042",
+      "name": "UltraCaptor-AR-SA",
+      "language": "ar",
+      "language_name": "العربية",
+      "target_country": "SA",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SA",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "كوبون بوكينج حجز فنادق",
+        "خصم نورد في بي ان",
+        "تأجير سيارات رخيص",
+        "توقعات التاروت اليومية"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SA&sid=robot_042_ar",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_043",
+      "name": "UltraCaptor-AR-EG",
+      "language": "ar",
+      "language_name": "العربية",
+      "target_country": "EG",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for EG",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "كوبون بوكينج حجز فنادق",
+        "خصم نورد في بي ان",
+        "تأجير سيارات رخيص",
+        "توقعات التاروت اليومية"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=EG&sid=robot_043_ar",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_044",
+      "name": "UltraCaptor-AR-QA",
+      "language": "ar",
+      "language_name": "العربية",
+      "target_country": "QA",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for QA",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "كوبون بوكينج حجز فنادق",
+        "خصم نورد في بي ان",
+        "تأجير سيارات رخيص",
+        "توقعات التاروت اليومية"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=QA&sid=robot_044_ar",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_045",
+      "name": "UltraCaptor-AR-KW",
+      "language": "ar",
+      "language_name": "العربية",
+      "target_country": "KW",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for KW",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "كوبون بوكينج حجز فنادق",
+        "خصم نورد في بي ان",
+        "تأجير سيارات رخيص",
+        "توقعات التاروت اليومية"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=KW&sid=robot_045_ar",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_046",
+      "name": "UltraCaptor-AR-OM",
+      "language": "ar",
+      "language_name": "العربية",
+      "target_country": "OM",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for OM",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "كوبون بوكينج حجز فنادق",
+        "خصم نورد في بي ان",
+        "تأجير سيارات رخيص",
+        "توقعات التاروت اليومية"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=OM&sid=robot_046_ar",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_047",
+      "name": "UltraCaptor-RU-RU",
+      "language": "ru",
+      "language_name": "Русский",
+      "target_country": "RU",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for RU",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "скидка booking отели",
+        "промокод nordvpn",
+        "дешевый прокат авто",
+        "гороскоп таро расклад"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=RU&sid=robot_047_ru",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_048",
+      "name": "UltraCaptor-RU-KZ",
+      "language": "ru",
+      "language_name": "Русский",
+      "target_country": "KZ",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for KZ",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "скидка booking отели",
+        "промокод nordvpn",
+        "дешевый прокат авто",
+        "гороскоп таро расклад"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=KZ&sid=robot_048_ru",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_049",
+      "name": "UltraCaptor-RU-BY",
+      "language": "ru",
+      "language_name": "Русский",
+      "target_country": "BY",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for BY",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "скидка booking отели",
+        "промокод nordvpn",
+        "дешевый прокат авто",
+        "гороскоп таро расклад"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=BY&sid=robot_049_ru",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_050",
+      "name": "UltraCaptor-RU-AM",
+      "language": "ru",
+      "language_name": "Русский",
+      "target_country": "AM",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AM",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "скидка booking отели",
+        "промокод nordvpn",
+        "дешевый прокат авто",
+        "гороскоп таро расклад"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AM&sid=robot_050_ru",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_051",
+      "name": "UltraCaptor-RU-GE",
+      "language": "ru",
+      "language_name": "Русский",
+      "target_country": "GE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for GE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "скидка booking отели",
+        "промокод nordvpn",
+        "дешевый прокат авто",
+        "гороскоп таро расклад"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=GE&sid=robot_051_ru",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_052",
+      "name": "UltraCaptor-HI-IN",
+      "language": "hi",
+      "language_name": "हिन्दी",
+      "target_country": "IN",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for IN",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking होटल डिस्काउंट कूपन",
+        "nordvpn ऑफर",
+        "सस्ती कार रेंटल",
+        "दैनिक टैरो राशिफल"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=IN&sid=robot_052_hi",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_053",
+      "name": "UltraCaptor-NL-NL",
+      "language": "nl",
+      "language_name": "Nederlands",
+      "target_country": "NL",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for NL",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking kortingscode",
+        "nordvpn aanbieding",
+        "goedkope autohuur",
+        "dagelijkse tarot horoscoop"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=NL&sid=robot_053_nl",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_054",
+      "name": "UltraCaptor-NL-BE",
+      "language": "nl",
+      "language_name": "Nederlands",
+      "target_country": "BE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for BE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking kortingscode",
+        "nordvpn aanbieding",
+        "goedkope autohuur",
+        "dagelijkse tarot horoscoop"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=BE&sid=robot_054_nl",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_055",
+      "name": "UltraCaptor-NL-SR",
+      "language": "nl",
+      "language_name": "Nederlands",
+      "target_country": "SR",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SR",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking kortingscode",
+        "nordvpn aanbieding",
+        "goedkope autohuur",
+        "dagelijkse tarot horoscoop"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SR&sid=robot_055_nl",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_056",
+      "name": "UltraCaptor-PL-PL",
+      "language": "pl",
+      "language_name": "Polski",
+      "target_country": "PL",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for PL",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking kod rabatowy",
+        "nordvpn promocja znizka",
+        "tani wynajem aut",
+        "tarot horoskop dzienny"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=PL&sid=robot_056_pl",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_057",
+      "name": "UltraCaptor-TR-TR",
+      "language": "tr",
+      "language_name": "Türkçe",
+      "target_country": "TR",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for TR",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking indirim kuponu",
+        "nordvpn kampanya",
+        "ucuz arac kiralama",
+        "gunluk tarot fali"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=TR&sid=robot_057_tr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_058",
+      "name": "UltraCaptor-TR-CY",
+      "language": "tr",
+      "language_name": "Türkçe",
+      "target_country": "CY",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for CY",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking indirim kuponu",
+        "nordvpn kampanya",
+        "ucuz arac kiralama",
+        "gunluk tarot fali"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=CY&sid=robot_058_tr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_059",
+      "name": "UltraCaptor-TR-AZ",
+      "language": "tr",
+      "language_name": "Türkçe",
+      "target_country": "AZ",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for AZ",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking indirim kuponu",
+        "nordvpn kampanya",
+        "ucuz arac kiralama",
+        "gunluk tarot fali"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=AZ&sid=robot_059_tr",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_060",
+      "name": "UltraCaptor-SV-SE",
+      "language": "sv",
+      "language_name": "Svenska",
+      "target_country": "SE",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for SE",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattkod",
+        "nordvpn erbjudande",
+        "billig hyrbil",
+        "dagens tarot horoskop"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=SE&sid=robot_060_sv",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_061",
+      "name": "UltraCaptor-SV-FI",
+      "language": "sv",
+      "language_name": "Svenska",
+      "target_country": "FI",
+      "role": "Hyper-Local Instant Intent Capture & Deal Routing for FI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "booking rabattkod",
+        "nordvpn erbjudande",
+        "billig hyrbil",
+        "dagens tarot horoskop"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&country=FI&sid=robot_061_sv",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_062",
+      "name": "UltraThematic-WorldFlightDeals",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: World Flight Deals",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_62&sid=robot_062",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_063",
+      "name": "UltraThematic-UdemyTechAcademy",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Udemy Tech Academy",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_63&sid=robot_063",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_064",
+      "name": "UltraThematic-GramadoLuxuryTravel",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Gramado Luxury Travel",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_64&sid=robot_064",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_065",
+      "name": "UltraThematic-ShopeeTechGadgets",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Shopee Tech Gadgets",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_65&sid=robot_065",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_066",
+      "name": "UltraThematic-NordVPNCyberAI",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: NordVPN Cyber AI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_66&sid=robot_066",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_067",
+      "name": "UltraThematic-Tarot3DCosmic",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Tarot 3D Cosmic",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_67&sid=robot_067",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_068",
+      "name": "UltraThematic-CarlaVIPCarRental",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Carla VIP Car Rental",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_68&sid=robot_068",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_069",
+      "name": "UltraThematic-WorldFlightDeals",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: World Flight Deals",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_69&sid=robot_069",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_070",
+      "name": "UltraThematic-UdemyTechAcademy",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Udemy Tech Academy",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_70&sid=robot_070",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_071",
+      "name": "UltraThematic-GramadoLuxuryTravel",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Gramado Luxury Travel",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_71&sid=robot_071",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_072",
+      "name": "UltraThematic-ShopeeTechGadgets",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Shopee Tech Gadgets",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_72&sid=robot_072",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_073",
+      "name": "UltraThematic-NordVPNCyberAI",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: NordVPN Cyber AI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_73&sid=robot_073",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_074",
+      "name": "UltraThematic-Tarot3DCosmic",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Tarot 3D Cosmic",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_74&sid=robot_074",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_075",
+      "name": "UltraThematic-CarlaVIPCarRental",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Carla VIP Car Rental",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_75&sid=robot_075",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_076",
+      "name": "UltraThematic-WorldFlightDeals",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: World Flight Deals",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_76&sid=robot_076",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_077",
+      "name": "UltraThematic-UdemyTechAcademy",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Udemy Tech Academy",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_77&sid=robot_077",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_078",
+      "name": "UltraThematic-GramadoLuxuryTravel",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Gramado Luxury Travel",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_78&sid=robot_078",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_079",
+      "name": "UltraThematic-ShopeeTechGadgets",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Shopee Tech Gadgets",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_79&sid=robot_079",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_080",
+      "name": "UltraThematic-NordVPNCyberAI",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: NordVPN Cyber AI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_80&sid=robot_080",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_081",
+      "name": "UltraThematic-Tarot3DCosmic",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Tarot 3D Cosmic",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_81&sid=robot_081",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_082",
+      "name": "UltraThematic-CarlaVIPCarRental",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Carla VIP Car Rental",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_82&sid=robot_082",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_083",
+      "name": "UltraThematic-WorldFlightDeals",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: World Flight Deals",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_83&sid=robot_083",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_084",
+      "name": "UltraThematic-UdemyTechAcademy",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Udemy Tech Academy",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_84&sid=robot_084",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_085",
+      "name": "UltraThematic-GramadoLuxuryTravel",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Gramado Luxury Travel",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_85&sid=robot_085",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_086",
+      "name": "UltraThematic-ShopeeTechGadgets",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Shopee Tech Gadgets",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_86&sid=robot_086",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_087",
+      "name": "UltraThematic-NordVPNCyberAI",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: NordVPN Cyber AI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_87&sid=robot_087",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_088",
+      "name": "UltraThematic-Tarot3DCosmic",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Tarot 3D Cosmic",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_88&sid=robot_088",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_089",
+      "name": "UltraThematic-CarlaVIPCarRental",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Carla VIP Car Rental",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_89&sid=robot_089",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_090",
+      "name": "UltraThematic-WorldFlightDeals",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: World Flight Deals",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_90&sid=robot_090",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_091",
+      "name": "UltraThematic-UdemyTechAcademy",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Udemy Tech Academy",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_91&sid=robot_091",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_092",
+      "name": "UltraThematic-GramadoLuxuryTravel",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Gramado Luxury Travel",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_92&sid=robot_092",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_093",
+      "name": "UltraThematic-ShopeeTechGadgets",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Shopee Tech Gadgets",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_93&sid=robot_093",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_094",
+      "name": "UltraThematic-NordVPNCyberAI",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: NordVPN Cyber AI",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_94&sid=robot_094",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_095",
+      "name": "UltraThematic-Tarot3DCosmic",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Tarot 3D Cosmic",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_95&sid=robot_095",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_096",
+      "name": "UltraThematic-CarlaVIPCarRental",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Carla VIP Car Rental",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_96&sid=robot_096",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_097",
+      "name": "UltraThematic-WorldFlightDeals",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: World Flight Deals",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_97&sid=robot_097",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_098",
+      "name": "UltraThematic-UdemyTechAcademy",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Udemy Tech Academy",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_98&sid=robot_098",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_099",
+      "name": "UltraThematic-GramadoLuxuryTravel",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Gramado Luxury Travel",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_99&sid=robot_099",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    },
+    {
+      "robot_id": "ROBOT_100",
+      "name": "UltraThematic-ShopeeTechGadgets",
+      "language": "en",
+      "language_name": "Global Niche Specialist",
+      "target_country": "GLOBAL_195",
+      "role": "Specialized High-Converting Radar: Shopee Tech Gadgets",
+      "status": "ACTIVE_24_7",
+      "high_intent_keywords": [
+        "best deals 2026",
+        "discount coupon code",
+        "hotel deals",
+        "cyber security sale"
+      ],
+      "affiliate_gateway_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?site=ultra_swarm&slot=niche_100&sid=robot_100",
+      "last_heartbeat": "2026-09-01T03:54:30.304Z"
+    }
+  ]
+}

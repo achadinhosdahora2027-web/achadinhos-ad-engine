@@ -36,12 +36,9 @@ jobs:
         run: |
           node scripts/controlled-production-learning-engine.js || true
 
-      - name: 5. Execute Master Affiliate Distribution & Meta Graph Orchestrator
+      - name: 5. Execute 100 Ultra Robots Global Social Capture Swarm (195 Countries)
         run: |
-          node scripts/master-affiliate-distribution-runner.js || true
-        env:
-          META_PAGE_TOKEN_ACHADINHOS: ${{ secrets.META_PAGE_TOKEN_ACHADINHOS }}
-          META_PAGE_TOKEN_AQUITATEM: ${{ secrets.META_PAGE_TOKEN_AQUITATEM }}
+          node scripts/ultra-global-social-capture-swarm.js || true
 
       - name: 6. Run Pinterest Rich Pin & Vertical Visual Syndication Engine
         run: |
@@ -51,31 +48,39 @@ jobs:
         run: |
           node scripts/meta-commerce-catalog-sync.js || true
 
-      - name: 8. Run Google Search Console & SEO Health Optimizer
+      - name: 8. Run Tarot 3D & Cosmic Forecast Viral Traffic Magnet
+        run: |
+          node scripts/tarot-viral-traffic-magnet.js || true
+
+      - name: 9. Run Google Search Console & SEO Health Optimizer
         run: |
           node scripts/google-search-console-optimizer.js || true
 
-      - name: 8. Run Coupon Freshness & Live Price Drop Radar
+      - name: 10. Run Multi-Engine Global Search Indexing Pinger (IndexNow & Global)
+        run: |
+          node scripts/multi-engine-global-pinger.js || true
+
+      - name: 11. Run Coupon Freshness & Live Price Drop Radar
         run: |
           node scripts/coupon-radar-validator.js || true
 
-      - name: 8. Run Canário Affiliate & Self-Healing Guard
+      - name: 12. Run Canário Affiliate & Self-Healing Guard
         run: |
           node scripts/affiliate-health-check.js || true
 
-      - name: 9. Refresh Tag SEO & Intent Pages
+      - name: 13. Refresh Tag SEO & Intent Pages
         run: |
           node scripts/generate-tag-seo-pages.js || true
 
-      - name: 10. Refresh Facebook Groups Viral Syndication
+      - name: 14. Refresh Facebook Groups Viral Syndication
         run: |
           node scripts/facebook-group-syndication-engine.js || true
 
-      - name: 11. Run Spintax Anti-Ban Comment Responder
+      - name: 15. Run Spintax Anti-Ban Comment Responder
         run: |
           node scripts/instagram-comments-auto-responder.js || true
 
-      - name: 12. Execute Twitter / X Viral Publisher & Multi-Country Syndication
+      - name: 16. Execute Twitter / X Viral Publisher & Multi-Country Syndication
         run: |
           node scripts/twitter-global-viral-publisher.js || true
         env:
@@ -85,14 +90,14 @@ jobs:
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 
-      - name: 13. Dispatch 24/7 Consolidated Live Executive Digest to Telegram
+      - name: 17. Dispatch 24/7 Consolidated Live Executive Digest to Telegram
         run: |
           node scripts/telegram-autonomous-notifier.js || true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-      - name: 14. Execute Master Global Omni-Test Suite (195 Countries)
+      - name: 18. Execute Master Global Omni-Test Suite (195 Countries)
         run: |
           node scripts/master-global-omni-test-suite.js || true
         env:
