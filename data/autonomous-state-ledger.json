@@ -185,5 +185,17 @@
     "languages_count": 16,
     "last_swarm_radar_at": "2026-09-01T03:54:30.306Z",
     "active_robot_sample": "UltraThematic-NordVPNCyberAI"
+  },
+  "ultra_1000_swarm_status": {
+    "total_robots": 1000,
+    "status": "100_PERCENT_OPERATIONAL_24_7",
+    "countries_count": 195,
+    "last_swarm_radar_at": "2026-09-01T04:01:03.692Z",
+    "active_samples": [
+      "UltraCaptor-BE-Bruges",
+      "UltraGlobal-BE-Specialist-496",
+      "UltraGlobal-MA-Specialist-671",
+      "UltraGlobal-AR-Specialist-950"
+    ]
   }
 }
