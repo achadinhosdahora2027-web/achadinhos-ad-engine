@@ -3,9 +3,6 @@ name: Twitter / X 24/7 Global Viral Autopilot (195 Countries)
 on:
   schedule:
     - cron: "0 */3 * * *"
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 env:

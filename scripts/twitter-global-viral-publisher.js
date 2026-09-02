@@ -14,9 +14,51 @@ const { getUserProfile, publishTweet } = require('../lib/twitter/tweet-publisher
 const CONFIG_PATH = path.join(__dirname, '../data/twitter-config.json');
 const LEDGER_PATH = path.join(__dirname, '../data/autonomous-state-ledger.json');
 
+// ─── Anti-spam: dedupe persistente de conteúdo via Supabase social_dedupe ───
+// 1ª publicação = INSERT 201 → liberado. Duplicata em até 72h = bloqueada.
+const httpsLib = require('https');
+const crypto = require('crypto');
+const SUPA_URL_D = (process.env.SUPABASE_URL || '').replace(/\/$/, '');
+const SUPA_KEY_D = process.env.SUPABASE_SERVICE_KEY || '';
+
+function sbReq(method, urlPath, body, prefer) {
+  return new Promise((resolve) => {
+    if (!SUPA_URL_D || !SUPA_KEY_D) return resolve({ status: 0, rows: [] });
+    const payload = body ? JSON.stringify(body) : null;
+    const req = httpsLib.request(`${SUPA_URL_D}${urlPath}`, {
+      method,
+      headers: Object.assign({
+        apikey: SUPA_KEY_D, Authorization: `Bearer ${SUPA_KEY_D}`, 'Content-Type': 'application/json'
+      }, prefer ? { Prefer: prefer } : {})
+    }, (rs) => {
+      let b = ''; rs.on('data', c => b += c);
+      rs.on('end', () => { let rows = []; try { rows = b ? JSON.parse(b) : []; } catch (e) {} resolve({ status: rs.statusCode, rows }); });
+    });
+    req.on('error', () => resolve({ status: 0, rows: [] }));
+    if (payload) req.write(payload);
+    req.end();
+  });
+}
+
+async function acquirePostSlot(kind, text, maxAgeHours = 72) {
+  const key = `${kind}:${crypto.createHash('sha256').update(String(text).trim()).digest('hex').slice(0, 32)}`;
+  const ins = await sbReq('POST', '/rest/v1/social_dedupe', { content_key: key, channel: kind }, 'resolution=ignore-duplicates,return=representation');
+  if (ins.status === 201 && Array.isArray(ins.rows) && ins.rows.length > 0) return { allowed: true, key };
+  if (ins.status === 0) return { allowed: true, key, warn: 'supabase offline — dedupe indisponível' };
+  const q = await sbReq('GET', `/rest/v1/social_dedupe?content_key=${encodeURIComponent(key)}&select=created_at`);
+  const created = q.rows && q.rows[0] && q.rows[0].created_at ? Date.parse(q.rows[0].created_at) : 0;
+  if (Date.now() - created < maxAgeHours * 3600 * 1000) return { allowed: false, key };
+  await sbReq('DELETE', `/rest/v1/social_dedupe?content_key=${encodeURIComponent(key)}`);
+  const ins2 = await sbReq('POST', '/rest/v1/social_dedupe', { content_key: key, channel: kind }, 'return=representation');
+  return { allowed: ins2.status === 201 && ins2.rows.length > 0, key };
+}
+
+
 const TWEET_TEMPLATES = [
   {
     category: "Gramado Natal Luz 2026 & Booking",
+    activeFrom: "2026-11-01",
+    activeTo: "2027-01-06",
     lang: "pt",
     text: "🌲 Vai pro Natal Luz em Gramado nas próximas férias? O Booking liberou pousadas e chalés com até 40% OFF e café colonial incluso!\n\n🏨 Garanta sua reserva com cancelamento grátis:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=gramado_viral&sid=tw_gramado_pt\n\n#Gramado #NatalLuz #Viagens #Turismo #Booking #SerraGaucha #DicasDeViagem"
   },
@@ -26,9 +68,9 @@ const TWEET_TEMPLATES = [
     text: "🛡️ Protect your AI workloads, cloud servers & remote browsing with military-grade encryption.\n\n⚡ Get 74% OFF + 3 extra months verified.\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=twitter&slot=global_viral&sid=tw_nordvpn_en\n\n#Cybersecurity #NordVPN #Cloud #DevOps #AI #TechDeals"
   },
   {
-    category: "Festa do Peão de Barretos 2027 & Aluguel de Carros",
+    category: "Aluguel de Carros Brasil & Carla",
     lang: "pt",
-    text: "🤠 Planejando ir pra Festa do Peão de Barretos? Alugue seu carro com antecedência sem taxa oculta e com seguro total incluso!\n\n🚗 Compare as melhores locadoras aqui:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=twitter&slot=barretos_viral&sid=tw_barretos_pt\n\n#Barretos #FestaDoPeao #Sertanejo #AluguelDeCarros #Viagens"
+    text: "🚗 Viajando pelo Brasil? Compare as melhores locadoras com reserva sem taxa oculta e seguro total incluso em segundos!\n\n🚙 Economize na sua próxima estrada:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=carla&site=twitter&slot=carla_br&sid=tw_carla_pt\n\n#AluguelDeCarros #Viagens #Ofertas #Turismo #DicasDeViagem"
   },
   {
     category: "Shopee Achadinhos & Robô Aspirador",
@@ -92,9 +134,13 @@ async function runTwitterPublisher() {
     console.log(`  ⚠️ Perfil status: ${profile.status || 'Offline'} - ${profile.error || 'Check tokens'}`);
   }
 
-  // 2. Select Tweet based on rotation
-  const hour = new Date().getUTCHours();
-  const selectedTweet = TWEET_TEMPLATES[hour % TWEET_TEMPLATES.length];
+  // 2. Select Tweet: calendário (campanha vencida NUNCA sai) + rotação dia/hora
+  const now = new Date();
+  const today = now.toISOString().slice(0, 10);
+  const dayOfYear = Math.floor((now - new Date(Date.UTC(now.getUTCFullYear(), 0, 0))) / 86400000);
+  const validPool = TWEET_TEMPLATES.filter(t => (!t.activeFrom || today >= t.activeFrom) && (!t.activeTo || today <= t.activeTo));
+  const pool = validPool.length ? validPool : TWEET_TEMPLATES.filter(t => !t.activeFrom && !t.activeTo);
+  const selectedTweet = pool[(now.getUTCHours() + dayOfYear) % pool.length];
 
   console.log(`\n2. Gerando Tweet Viral de Alta Conversão [Categoria: ${selectedTweet.category} | Idioma: ${selectedTweet.lang.toUpperCase()}]:`);
   console.log('--------------------------------------------------------------------------------');
@@ -103,6 +149,11 @@ async function runTwitterPublisher() {
 
   // 3. Publish to Twitter / X
   console.log('\n3. Publicando no Twitter / X API v2...');
+  const tweetSlot = await acquirePostSlot('twitter', selectedTweet.text);
+  if (!tweetSlot.allowed) {
+    console.log('  ⏭️ Tweet idêntico já publicado nas últimas 72h — ciclo encerrado sem repetição (anti-spam Supabase)');
+    process.exit(0);
+  }
   const publishResult = await publishTweet(selectedTweet.text);
 
   const oa2 = global.__lastOAuth2Attempt;
@@ -152,6 +203,10 @@ async function runTwitterPublisher() {
   });
 
   if (!publishResult.published) {
+    const tgSlot = await acquirePostSlot('telegram_cross', selectedTweet.text);
+    if (!tgSlot.allowed) {
+      console.log('  ⏭️ Cross-post idêntico já enviado nas últimas 72h — BLOQUEADO (anti-spam Supabase)');
+    } else {
     try {
       const { sendTelegramMessage } = require('../lib/telegram/notify-engine');
       const tg = await sendTelegramMessage(selectedTweet.text, { chatId: process.env.TELEGRAM_DEALS_CHANNEL || '@ofertasbrasilz' });
@@ -168,6 +223,7 @@ async function runTwitterPublisher() {
     } catch (e) {
       await sbLog({ platform: 'telegram', content: selectedTweet.text, status: 'error', error: String((e && e.message) || e).slice(0, 400) });
       console.log('  ⚠️ Cross-post Telegram falhou:', e.message);
+    }
     }
   }
 
