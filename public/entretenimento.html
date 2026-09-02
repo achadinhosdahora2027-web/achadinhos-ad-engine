@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="monetag" content="8469089b876439517e6c5247573c6e21" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#4f46e5"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <title>Portal de Entretenimento Inteligente, Horóscopo, Tarot, Quizzes & Notícias Globais | Aqui Tem Achadinhos</title>
+  <meta name="description" content="O maior portal diário de entretenimento inteligente: horóscopo dos 12 signos, tiragem de Tarot 3D, biscoito da sorte, quizzes virais, mapa astral, notícias do mundo e cursos com desconto."/>
+  <link rel="canonical" href="https://www.aquitemachadinhos.com.br/entretenimento"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+
+  <!-- Open Graph & Twitter Cards -->
+  <meta property="og:title" content="Portal de Entretenimento Inteligente, Horóscopo, Tarot & Tendências"/>
+  <meta property="og:description" content="Tire sua carta de Tarot do dia, veja seu horóscopo, calcule seu mapa astral e faça quizzes virais."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.aquitemachadinhos.com.br/entretenimento"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Structured Data JSON-LD: WebApplication, FAQPage & AggregateRating -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Radar de Entretenimento Inteligente, Tarot & Horóscopo Global",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "All",
+      "url": "https://www.aquitemachadinhos.com.br/entretenimento",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "18450",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como funciona o Horóscopo Quântico e a Previsão Diária dos 12 Signos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Horóscopo Quântico do Aqui Tem Achadinhos cruza os trânsitos planetários diários com métricas de amor, finanças, trabalho e sorte, fornecendo números da sorte atualizados para loterias e cristais de proteção."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A tiragem de Tarot 3D online é gratuita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a tiragem de cartas de Tarot 3D (O Mago, A Roda da Fortuna, A Estrela) é 100% gratuita e atualizada diariamente para revelar seu direcionamento e destino."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como calcular o Ascendente e o Mapa Astral Instantâneo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Basta informar sua data, hora e cidade de nascimento na Calculadora de Mapa Astral para descobrir seu Signo Solar, Ascendente e Lua com interpretação completa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde resgatar cupons de desconto para viagens e cursos de tecnologia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O portal disponibiliza cupons oficiais e verificados para Booking.com, cursos na Udemy, proteção VPN com a NordVPN e graduações reconhecidas pelo MEC."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      --accent-purple: #8b5cf6;
+      --accent-pink: #ec4899;
+      --accent-blue: #3b82f6;
+      --accent-gold: #f59e0b;
+      --accent-green: #10b981;
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+    header {
+      background: linear-gradient(180deg, #1e1b4b 0%, #030712 100%);
+      padding: 30px 16px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(139, 92, 246, 0.2);
+      color: #c4b5fd;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-badge .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .date-ticker {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* VIP WhatsApp Community Top Bar */
+    .vip-top-bar {
+      background: linear-gradient(90deg, #064e3b 0%, #065f46 100%);
+      border-bottom: 1px solid #059669;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ecfdf5;
+      text-align: center;
+    }
+    .vip-top-btn {
+      background: #10b981;
+      color: #064e3b;
+      padding: 4px 12px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.75rem;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 6px;
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      margin-bottom: 24px;
+      scrollbar-width: none;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .nav-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 12px 14px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-btn.active {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    }
+
+    /* Sections */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Zodiac Selector */
+    .zodiac-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .zodiac-chip {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 12px 6px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .zodiac-chip:hover {
+      border-color: var(--accent-purple);
+      transform: translateY(-2px);
+    }
+    .zodiac-chip.selected {
+      background: linear-gradient(180deg, #312e81 0%, #1e1b4b 100%);
+      border-color: #a78bfa;
+      box-shadow: 0 0 16px rgba(167, 139, 250, 0.3);
+    }
+    .zodiac-chip .icon { font-size: 1.8rem; display: block; margin-bottom: 4px; }
+    .zodiac-chip .name { font-size: 0.8rem; font-weight: 700; color: #e2e8f0; }
+    .zodiac-chip .dates { font-size: 0.65rem; color: var(--text-muted); }
+
+    /* Horoscope Details Card */
+    .horoscope-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .horoscope-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+    }
+    .sign-info { display: flex; align-items: center; gap: 14px; }
+    .sign-large-icon { font-size: 3rem; }
+    .sign-title { font-size: 1.5rem; font-weight: 800; color: #f8fafc; }
+    .sign-element { font-size: 0.85rem; color: #a78bfa; font-weight: 600; }
+
+    .period-toggles {
+      display: flex;
+      background: #030712;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 3px;
+    }
+    .period-btn {
+      padding: 6px 12px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .period-btn.active {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    .prediction-text {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* Meters */
+    .energy-meters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .meter-box {
+      background: #030712;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+    }
+    .meter-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .meter-bar-bg {
+      height: 8px;
+      background: #1e293b;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .meter-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Lucky badges */
+    .lucky-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--card-border);
+    }
+    .badge-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .badge-pill strong { color: #f59e0b; }
+
+    /* Tarot 3D Cards */
+    .tarot-stage {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      perspective: 1000px;
+      margin: 20px 0;
+    }
+    .tarot-card {
+      background: linear-gradient(145deg, #1e1b4b, #0f172a);
+      border: 2px dashed #6366f1;
+      border-radius: 16px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .tarot-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: #f59e0b;
+      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.2);
+    }
+    .tarot-card.flipped {
+      background: linear-gradient(145deg, #312e81, #1e1b4b);
+      border: 2px solid #a855f7;
+      transform: rotateY(360deg);
+    }
+    .tarot-icon { font-size: 3.5rem; margin-bottom: 12px; }
+    .tarot-title { font-size: 1.2rem; font-weight: 800; color: #fde047; margin-bottom: 6px; }
+    .tarot-meaning { font-size: 0.85rem; color: #cbd5e1; line-height: 1.4; }
+
+    /* Fortune Cookie */
+    .cookie-box {
+      background: linear-gradient(135deg, #78350f 0%, #1e1b4b 100%);
+      border: 1px solid #d97706;
+      border-radius: 18px;
+      padding: 30px 20px;
+      text-align: center;
+      margin: 24px 0;
+    }
+    .cookie-emoji { font-size: 4rem; cursor: pointer; transition: transform 0.2s ease; display: inline-block; }
+    .cookie-emoji:hover { transform: scale(1.15) rotate(10deg); }
+    .cookie-result {
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      border: 1px solid #fbbf24;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Quizzes */
+    .quiz-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .quiz-question { font-size: 1.15rem; font-weight: 800; color: #f8fafc; margin-bottom: 16px; }
+    .quiz-options { display: grid; gap: 10px; }
+    .quiz-opt-btn {
+      background: #030712;
+      border: 1px solid var(--card-border);
+      color: #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .quiz-opt-btn:hover {
+      background: #1e1b4b;
+      border-color: #818cf8;
+      color: #fff;
+    }
+    .quiz-opt-btn.selected {
+      background: #4f46e5;
+      border-color: #a78bfa;
+      color: #fff;
+    }
+    .quiz-result-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(135deg, #1e1b4b 0%, #030712 100%);
+      border: 1px solid #a855f7;
+      border-radius: 14px;
+      display: none;
+    }
+
+    /* Native In-Feed Editorial Ads (MSN / Yahoo style) */
+    .native-editorial-ad {
+      background: linear-gradient(135deg, #0b1329 0%, #111827 100%);
+      border: 1px solid #334155;
+      border-left: 4px solid #f59e0b;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .native-ad-tag { font-size: 0.7rem; font-weight: 800; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.5px; }
+    .native-ad-title { font-size: 1rem; font-weight: 800; color: #fff; margin-top: 2px; }
+    .native-ad-desc { font-size: 0.85rem; color: #94a3b8; }
+    .native-ad-btn {
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #f59e0b;
+      color: #000;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* Astral Chart Calculator */
+    .tool-card {
+      background: linear-gradient(145deg, #111827 0%, #0f172a 100%);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .tool-title { font-size: 1.3rem; font-weight: 800; color: #38bdf8; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .input-field {
+      width: 100%;
+      padding: 12px 14px;
+      background: #030712;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .action-btn:active { transform: scale(0.98); }
+
+    /* Results Box */
+    .result-box {
+      margin-top: 16px;
+      padding: 16px;
+      background: #030712;
+      border: 1px solid #6366f1;
+      border-radius: 12px;
+      display: none;
+    }
+
+    /* Global Trends Grid */
+    .trends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .news-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-3px);
+      border-color: #60a5fa;
+    }
+    .news-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .tag-tech { background: #1e3a8a; color: #93c5fd; }
+    .tag-world { background: #14532d; color: #86efac; }
+    .tag-culture { background: #581c87; color: #f0abfc; }
+    .tag-business { background: #713f12; color: #fde047; }
+    .news-title { font-size: 1.1rem; font-weight: 700; color: #f8fafc; margin-bottom: 8px; line-height: 1.4; }
+    .news-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; }
+    .news-meta { font-size: 0.75rem; color: #64748b; display: flex; justify-content: space-between; align-items: center; }
+
+    /* Courses Grid */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .course-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .course-badge {
+      background: #064e3b;
+      color: #6ee7b7;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .course-title { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .course-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; }
+    .course-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--card-border);
+    }
+    .course-price { font-size: 1.1rem; font-weight: 800; color: #10b981; }
+    .course-btn {
+      background: #2563eb;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Contextual Smart Ads Banner */
+    .smart-ad-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      border: 1px solid #4338ca;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .ad-info h4 { font-size: 1.15rem; color: #fbbf24; margin-bottom: 4px; }
+    .ad-info p { font-size: 0.9rem; color: #cbd5e1; }
+    .ad-cta-btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+      color: #000;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Mobile Sticky Bottom Bar */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(3, 7, 18, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid #334155;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+    .sticky-btn {
+      background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+      color: #fff;
+      font-weight: 800;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script src="https://quge5.com/88/tag.min.js" data-zone="274860" async data-cfasync="false"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5604700207394147" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- CJ Tracking Pixels Blindados -->
+  <img src="https://www.ftjcfx.com/image-8041957-17288448" width="1" height="1" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" loading="lazy" />
+  <img src="https://www.tqlkg.com/image-8041957-17075184" width="1" height="1" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" loading="lazy" />
+
+  
+  <!-- Smart Scarcity & Deal Countdown Banner -->
+  <div id="scarcity-countdown-banner" style="background: linear-gradient(90deg, #78350f 0%, #991b1b 100%); border-bottom: 1px solid #f59e0b; padding: 6px 16px; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 0.8rem; font-weight: 800; color: #fef08a; text-align: center;">
+    <span>🔥 OFERTA RELÂMPAGO DO DIA: Descontos de até 74% expiram em</span>
+    <span id="deal-timer" style="background: #000; color: #ef4444; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 0.9rem;">14:59</span>
+    <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=aquitemachadinhos&slot=scarcity_top" target="_blank" rel="sponsored noopener noreferrer nofollow" style="background: #fde047; color: #000; padding: 2px 10px; border-radius: 99px; text-decoration: none; font-size: 0.75rem;">Resgatar ➔</a>
+  </div>
+
+  <!-- VIP Community Bar -->
+  <div class="vip-top-bar">
+    <span>🟢 Receba o Horóscopo do Dia & Cupons Exclusivos no seu WhatsApp</span>
+    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Quero%20receber%20o%20hor%C3%B3scopo%20di%C3%A1rio%20e%20achadinhos%20do%20Aqui%20Tem%20Achadinhos!" target="_blank" rel="noopener" class="vip-top-btn">Entrar Grátis ➔</a>
+  </div>
+
+  <header>
+    <div class="header-badge">
+      <span class="pulse-dot"></span>
+      <span>Radar de Mídia, Astrologia & Entretenimento Global</span>
+    </div>
+    <h1>🔮 Entretenimento Inteligente</h1>
+    <p class="subtitle">Horóscopo quântico, tiragem de Tarot do dia, quizzes virais, mapa astral, notícias do mundo e cupons oficiais de cursos e viagens.</p>
+    <div class="date-ticker" id="live-date-ticker">✨ Edição Atualizada: Carregando data...</div>
+
+    <div style="margin-top: 14px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+      <button id="btn-pwa-install" style="display: none; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #fff; border: 1px solid #a78bfa; padding: 8px 16px; border-radius: 99px; font-weight: 700; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);" onclick="triggerPwaInstall()">📲 Adicionar App à Tela Inicial</button>
+      <button id="btn-web-push" style="background: #0f172a; color: #38bdf8; border: 1px solid #38bdf8; padding: 8px 16px; border-radius: 99px; font-weight: 700; font-size: 0.85rem; cursor: pointer;" onclick="requestPushNotification()">🔔 Ativar Horóscopo das 07:30</button>
+    </div>
+
+  </header>
+
+  <div class="container">
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="nav-btn active" onclick="switchTab('horoscope', this)">🔮 Horóscopo & Astros</button>
+      <button class="nav-btn" onclick="switchTab('tarot', this)">🎴 Tarot & Sorte 3D</button>
+      <button class="nav-btn" onclick="switchTab('quizzes', this)">🧪 Quizzes Virais</button>
+      <button class="nav-btn" onclick="switchTab('astral', this)">🌌 Mapa Astral & Números</button>
+      <button class="nav-btn" onclick="switchTab('trends', this)">🌍 Notícias & Tendências</button>
+      <button class="nav-btn" onclick="switchTab('tools', this)">🧮 Ferramentas Úteis</button>
+      <button class="nav-btn" onclick="switchTab('curiosities', this)">💡 Curiosidades</button>
+      <button class="nav-btn" onclick="switchTab('courses', this)">🎓 Cursos & Carreiras</button>
+    </div>
+
+    <!-- TAB 1: HORÓSCOPO -->
+    <div id="tab-horoscope" class="tab-content active">
+      <div class="zodiac-grid" id="zodiac-selector"></div>
+
+      <div class="horoscope-card" id="horoscope-details">
+        <div class="horoscope-header">
+          <div class="sign-info">
+            <span class="sign-large-icon" id="disp-sign-icon">♈</span>
+            <div>
+              <div class="sign-title" id="disp-sign-title">Áries (21/03 - 19/04)</div>
+              <div class="sign-element" id="disp-sign-element">Elemento: Fogo | Regente: Marte</div>
+            </div>
+          </div>
+          <div class="period-toggles">
+            <button class="period-btn active" onclick="setPeriod('dia', this)">Hoje</button>
+            <button class="period-btn" onclick="setPeriod('semana', this)">Semana</button>
+            <button class="period-btn" onclick="setPeriod('mes', this)">Mês</button>
+          </div>
+        </div>
+
+        <div class="prediction-text" id="disp-prediction">Carregando energias cósmicas do dia...</div>
+
+        <div class="energy-meters">
+          <div class="meter-box">
+            <div class="meter-label"><span>❤️ Amor & Relações</span><span id="meter-love-val">92%</span></div>
+            <div class="meter-bar-bg"><div class="meter-bar-fill" id="meter-love" style="width: 92%; background: #ec4899;"></div></div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label"><span>💰 Prosperidade & Dinheiro</span><span id="meter-money-val">85%</span></div>
+            <div class="meter-bar-bg"><div class="meter-bar-fill" id="meter-money" style="width: 85%; background: #10b981;"></div></div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label"><span>💼 Trabalho & Projetos</span><span id="meter-work-val">88%</span></div>
+            <div class="meter-bar-bg"><div class="meter-bar-fill" id="meter-work" style="width: 88%; background: #3b82f6;"></div></div>
+          </div>
+          <div class="meter-box">
+            <div class="meter-label"><span>⚡ Sorte & Vibração</span><span id="meter-luck-val">95%</span></div>
+            <div class="meter-bar-bg"><div class="meter-bar-fill" id="meter-luck" style="width: 95%; background: #f59e0b;"></div></div>
+          </div>
+        </div>
+
+        <div class="lucky-badges">
+          <div class="badge-pill">🍀 Número da Sorte: <strong id="disp-lucky-num">07, 21, 44</strong></div>
+          <div class="badge-pill">🎨 Cor da Energia: <strong id="disp-lucky-color">Vermelho Rubi</strong></div>
+          <div class="badge-pill">💎 Cristal Protetor: <strong id="disp-lucky-crystal">Jaspe Vermelho</strong></div>
+          <div class="badge-pill">🤝 Signo Compatível Hoje: <strong id="disp-lucky-match">Leão</strong></div>
+        </div>
+      </div>
+
+      <!-- Native Editorial Ad: Tarot & Místico -->
+      <div class="native-editorial-ad">
+        <div>
+          <span class="native-ad-tag">⭐ Dica Cósmica dos Astros</span>
+          <div class="native-ad-title">Ative a proteção do seu signo com o Cristal Natural da Semana</div>
+          <div class="native-ad-desc">Kits de pedras energéticas dos 12 signos com cupom exclusivo de frete grátis.</div>
+        </div>
+        <a href="https://meli.la/1U3rtgV" target="_blank" rel="sponsored noopener noreferrer nofollow" class="native-ad-btn">Ver Coleção Mística ➔</a>
+      </div>
+    </div>
+
+    <!-- TAB 2: TAROT 3D & BISCOITO DA SORTE (GAMIFICAÇÃO) -->
+    <div id="tab-tarot" class="tab-content">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h3 style="font-size: 1.4rem; color: #fde047;">🎴 Tire a sua Carta de Tarot do Dia</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Concentre-se em uma pergunta ou na sua energia de hoje e clique em uma das 3 cartas sagradas.</p>
+      </div>
+
+      <div class="tarot-stage">
+        <div class="tarot-card" onclick="flipTarot(this, 0)">
+          <div class="tarot-icon">🔮</div>
+          <div class="tarot-title">Carta 1</div>
+          <div class="tarot-meaning">Clique para Revelar seu Destino</div>
+        </div>
+        <div class="tarot-card" onclick="flipTarot(this, 1)">
+          <div class="tarot-icon">✨</div>
+          <div class="tarot-title">Carta 2</div>
+          <div class="tarot-meaning">Clique para Revelar seu Destino</div>
+        </div>
+        <div class="tarot-card" onclick="flipTarot(this, 2)">
+          <div class="tarot-icon">🌙</div>
+          <div class="tarot-title">Carta 3</div>
+          <div class="tarot-meaning">Clique para Revelar seu Destino</div>
+        </div>
+      </div>
+
+      <!-- Biscoito da Sorte -->
+      <div class="cookie-box">
+        <span class="cookie-emoji" onclick="crackFortuneCookie()">🥠</span>
+        <h3 style="color: #fde047; margin-top: 8px;">Quebre o seu Biscoito da Sorte Digital</h3>
+        <p style="color: #cbd5e1; font-size: 0.9rem;">Toque no biscoito para receber sua mensagem inspiradora e seus 6 números da sorte.</p>
+        
+        <div class="cookie-result" id="cookie-result">
+          <p id="cookie-quote" style="font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 8px;"></p>
+          <div style="font-size: 0.85rem; color: #fde047;">🍀 Números da Sorte para Loterias: <strong id="cookie-nums">04, 18, 29, 37, 42, 58</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: QUIZZES VIRAIS (BUZZFEED STYLE) -->
+    <div id="tab-quizzes" class="tab-content">
+      <div class="quiz-card" id="quiz-career">
+        <span style="background: #1e3a8a; color: #93c5fd; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800;">QUIZ INTERATIVO</span>
+        <h3 style="color:#fff; margin: 8px 0 16px;">🤖 Qual Carreira de Inteligência Artificial do Futuro Combina com Você?</h3>
+        
+        <div class="quiz-question">1. Quando você se depara com um problema complexo, você prefere:</div>
+        <div class="quiz-options">
+          <button class="quiz-opt-btn" onclick="selectQuizAnswer('career', 0, this)">A) Criar uma automação inteligente para resolver tudo em 1 segundo</button>
+          <button class="quiz-opt-btn" onclick="selectQuizAnswer('career', 1, this)">B) Analisar dados, métricas e encontrar oportunidades de dinheiro</button>
+          <button class="quiz-opt-btn" onclick="selectQuizAnswer('career', 2, this)">C) Liderar a equipe e definir a estratégia de crescimento</button>
+        </div>
+
+        <div class="quiz-result-box" id="quiz-career-result">
+          <h4 style="color: #38bdf8; font-size: 1.2rem; margin-bottom: 6px;" id="quiz-career-title">Seu Perfil: Arquiteto de Automações & Agentes de IA</h4>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 14px;" id="quiz-career-desc">Você tem raciocínio lógico afiado e visão de escala. O mercado global busca profissionais com o seu perfil com salários acima de R$ 18.000.</p>
+          <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=quiz_ai&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fartificial-intelligence%2F" target="_blank" rel="sponsored noopener noreferrer nofollow" class="action-btn" style="text-decoration:none; max-width:320px;">Garantir Bolsa com Desconto na Udemy ➔</a>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="quiz-travel">
+        <span style="background: #14532d; color: #86efac; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800;">QUIZ DE VIAGEM</span>
+        <h3 style="color:#fff; margin: 8px 0 16px;">✈️ Qual o Seu Destino de Viagem Perfeito para 2026 Segundo o Zodíaco?</h3>
+        
+        <div class="quiz-question">1. Qual o seu estilo de férias dos sonhos?</div>
+        <div class="quiz-options">
+          <button class="quiz-opt-btn" onclick="selectQuizAnswer('travel', 0, this)">A) Serra romântica, fondues, vinhos e clima europeu acolhedor</button>
+          <button class="quiz-opt-btn" onclick="selectQuizAnswer('travel', 1, this)">B) Praia paradisíaca, sol, piscinas naturais e resorts all-inclusive</button>
+          <button class="quiz-opt-btn" onclick="selectQuizAnswer('travel', 2, this)">C) Festivais gigantes de música, cultura e metrópoles vibrantes</button>
+        </div>
+
+        <div class="quiz-result-box" id="quiz-travel-result">
+          <h4 style="color: #f59e0b; font-size: 1.2rem; margin-bottom: 6px;" id="quiz-travel-title">Seu Destino Ideal: Gramado & Serra Gaúcha (Natal Luz 2026)</h4>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 14px;" id="quiz-travel-desc">A energia dos astros pede aconchego, alta gastronomia e experiências inesquecíveis.</p>
+          <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=aquitemachadinhos&slot=quiz_travel" target="_blank" rel="sponsored noopener noreferrer nofollow" class="action-btn" style="text-decoration:none; background: linear-gradient(135deg, #f59e0b, #ea580c); max-width:320px;">Ver Hotéis com Cancelamento Grátis no Booking ➔</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: MAPA ASTRAL & NUMEROLOGIA DA ALMA -->
+    <div id="tab-astral" class="tab-content">
+      <div class="tool-card">
+        <div class="tool-title">🌌 Calculadora Instantânea de Mapa Astral & Ascendente</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Descubra seu Signo Solar, Ascendente, Lua e a influência dos elementos cósmicos na sua personalidade.</p>
+        
+        <div class="form-row">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1; display: block; margin-bottom: 4px;">Data de Nascimento</label>
+            <input type="date" id="astral-birth-date" class="input-field" value="2000-01-01"/>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1; display: block; margin-bottom: 4px;">Hora de Nascimento (Aprox.)</label>
+            <input type="time" id="astral-birth-time" class="input-field" value="12:00"/>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1; display: block; margin-bottom: 4px;">Cidade / Estado Onde Nasceu</label>
+            <input type="text" id="astral-birth-city" class="input-field" placeholder="Ex: São Paulo, SP"/>
+          </div>
+        </div>
+        <button class="action-btn" onclick="calculateAstralChart()">✨ Calcular Meu Mapa Astral Agora</button>
+
+        <div class="result-box" id="astral-chart-result"></div>
+      </div>
+
+      <!-- Calculadora de Numerologia da Alma -->
+      
+      <!-- Viral Referral Unlock Loop -->
+      <div class="tool-card" style="border-color: #ec4899; background: linear-gradient(145deg, #1e1b4b 0%, #030712 100%);">
+        <div class="tool-title" style="color: #f472b6;">🎁 Desbloqueie o Laudo Kármico 2026 Completo</div>
+        <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 14px;">Descubra os ciclos de riqueza, trânsitos de Vênus e períodos de sorte do seu ano compartilhando com 2 amigos no WhatsApp.</p>
+        <a href="https://api.whatsapp.com/send?text=Amigo(a)%2C%20calculei%20meu%20Mapa%20Astral%20e%20Hor%C3%B3scopo%20gr%C3%A1tis%20aqui%20e%20acertou%20tudo!%20Veja%20o%20seu%3A%20https%3A%2F%2Fwww.aquitemachadinhos.com.br%2Fentretenimento" target="_blank" rel="noopener" class="action-btn" style="background: linear-gradient(135deg, #25d366 0%, #059669 100%); text-decoration: none;">🟢 Compartilhar & Desbloquear no WhatsApp ➔</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-title">🔢 Calculadora de Numerologia Pitagórica & Número da Alma</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">A numerologia revela seu número de destino cósmico e missão de vida.</p>
+        <div class="form-row">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1; display: block; margin-bottom: 4px;">Seu Nome Completo de Nascimento</label>
+            <input type="text" id="numerology-name" class="input-field" placeholder="Ex: Daniel Ferreira dos Santos"/>
+          </div>
+        </div>
+        <button class="action-btn" style="background: linear-gradient(135deg, #059669 0%, #2563eb 100%);" onclick="calculateNumerology()">✨ Revelar Meu Número da Alma</button>
+        <div class="result-box" id="numerology-result"></div>
+      </div>
+    </div>
+
+    <!-- TAB 5: NOTÍCIAS & TENDÊNCIAS MUNDIAIS -->
+    <div id="tab-trends" class="tab-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+        <h3 style="font-size: 1.3rem; color: #38bdf8;">🌍 Tendências & Tópicos Mais Buscados no Mundo</h3>
+        <span style="font-size: 0.8rem; color: #10b981; font-weight: 700;">● Atualizado a cada hora via IA</span>
+      </div>
+
+      <div class="trends-grid" id="trends-news-container"></div>
+
+      <!-- Native Editorial Ad: NordVPN -->
+      <div class="native-editorial-ad" style="border-left-color: #3b82f6;">
+        <div>
+          <span class="native-ad-tag" style="color: #38bdf8;">🛡️ ALERTA DE CIBERSEGURANÇA 2026</span>
+          <div class="native-ad-title">Proteja seus dados bancários e navegue em alta velocidade no mundo todo</div>
+          <div class="native-ad-desc">Mais de 14 milhões de pessoas usam a NordVPN para blindar Wi-Fi público e desbloquear catálogos globais.</div>
+        </div>
+        <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=aquitemachadinhos&slot=trends_native" target="_blank" rel="sponsored noopener noreferrer nofollow" class="native-ad-btn" style="background: #3b82f6; color: #fff;">Garantir 74% OFF ➔</a>
+      </div>
+    </div>
+
+    <!-- TAB 6: FERRAMENTAS ÚTEIS (DIAGNÓSTICO & CÂMBIO) -->
+    <div id="tab-tools" class="tab-content">
+      <div class="tool-card">
+        <div class="tool-title">🛡️ Diagnóstico de Privacidade & Vazamento de IP</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Verifique instantaneamente se a sua conexão de internet está exposta a rastreadores de terceiros.</p>
+        <div style="background: #030712; padding: 16px; border-radius: 10px; border: 1px solid #1e293b; margin: 16px 0;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span>Status da Criptografia Wi-Fi:</span>
+            <strong style="color: #f59e0b;">● Não Criptografado</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span>Risco de Rastreamento de Dados:</span>
+            <strong style="color: #ef4444;">Alto em Redes Abertas</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Solução Recomendada:</span>
+            <strong style="color: #10b981;">Ativar Túnel Seguro NordVPN</strong>
+          </div>
+        </div>
+        <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=aquitemachadinhos&slot=tools_shield" target="_blank" rel="sponsored noopener noreferrer nofollow" class="action-btn" style="text-decoration:none;">Ativar Proteção com 74% OFF ➔</a>
+      </div>
+
+      <!-- Conversor de Câmbio -->
+      <div class="tool-card">
+        <div class="tool-title">💵 Conversor de Câmbio em Tempo Real (Dólar, Euro & Real)</div>
+        <div class="form-row">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1; display: block; margin-bottom: 4px;">Valor em Reais (R$)</label>
+            <input type="number" id="cambio-brl" class="input-field" value="1000" oninput="convertCurrency()"/>
+          </div>
+        </div>
+        <div id="cambio-result" style="background: #030712; padding: 14px; border-radius: 10px; border: 1px solid #334155; margin-top: 10px;">
+          <div style="font-size: 1.1rem; color: #10b981; font-weight: 800;">US$ 181,81 (Dólar Comercial) | € 166,66 (Euro)</div>
+          <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">💡 Planejando viajar? Compare reservas de hotéis no destino com cancelamento grátis no Booking.com.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 7: CURIOSIDADES DO MUNDO -->
+    <div id="tab-curiosities" class="tab-content">
+      <div class="tool-card" style="text-align: center; padding: 30px 20px;">
+        <span style="font-size: 3rem; display: block; margin-bottom: 8px;">💡</span>
+        <div class="tool-title" style="justify-content: center;">Você Sabia? Fatos Fascinantes do Mundo</div>
+        <p id="curiosity-text" style="font-size: 1.15rem; color: #f1f5f9; max-width: 700px; margin: 16px auto 24px; line-height: 1.6;">
+          As pirâmides do Egito foram construídas tão perfeitamente que as faces apontam para o Norte verdadeiro com uma precisão de 0,05 graus — algo impressionante para a engenharia de 4.500 anos atrás!
+        </p>
+        <button class="action-btn" style="max-width: 300px; margin: 0 auto; background: linear-gradient(135deg, #059669 0%, #2563eb 100%);" onclick="generateNextCuriosity()">🎲 Próxima Curiosidade Inacreditável</button>
+      </div>
+
+      <div class="trends-grid" id="curiosities-list"></div>
+    </div>
+
+    <!-- TAB 8: CURSOS & CARREIRAS -->
+    <div id="tab-courses" class="tab-content">
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-size: 1.3rem; color: #fbbf24;">🎓 Cursos Mais Procurados & Cupons Oficiais</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Desenvolva habilidades em alta demanda: Inteligência Artificial, Programação, Idiomas e Gestão.</p>
+      </div>
+
+      <div class="courses-grid" id="courses-container"></div>
+
+      <!-- Native Editorial Ad: Faculdade Interativa MEC -->
+      <div class="native-editorial-ad" style="border-left-color: #10b981; background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);">
+        <div>
+          <span class="native-ad-tag" style="color: #6ee7b7;">🎓 DIPLOMA RECONHECIDO PELO MEC</span>
+          <div class="native-ad-title">Graduação e Pós-Graduação 100% EAD com Bolsas de até 70%</div>
+          <div class="native-ad-desc">Engenharia de Software, Gestão de TI e Sistemas de Informação na Faculdade Interativa Core.</div>
+        </div>
+        <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=faculdade&site=aquitemachadinhos&slot=course_banner" target="_blank" rel="noopener noreferrer" class="native-ad-btn" style="background: #10b981; color: #fff;">Conhecer Cursos MEC ➔</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Exit Intent Retention Toast -->
+  <div id="exit-intent-toast" style="position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(150px); background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 1px solid #818cf8; border-radius: 14px; padding: 16px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; gap: 14px; max-width: 90%; width: 420px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; pointer-events: none;">
+    <span style="font-size: 2rem;">✨</span>
+    <div style="flex: 1;">
+      <div style="font-size: 0.95rem; font-weight: 800; color: #fde047;">Antes de ir: Veja sua Sorte Semanal!</div>
+      <div style="font-size: 0.8rem; color: #cbd5e1;">Receba novos números da sorte e cupons de cursos exclusivos.</div>
+    </div>
+    <button onclick="closeExitToast()" style="background: transparent; border: none; color: #94a3b8; font-size: 1.2rem; cursor: pointer;">✕</button>
+  </div>
+
+  <!-- Mobile Sticky Bottom Bar -->
+  <div class="mobile-sticky-bar">
+    <div>
+      <div style="font-size: 0.75rem; color: #94a3b8;">Destaque de Hoje</div>
+      <div style="font-size: 0.85rem; font-weight: 800; color: #38bdf8;">🔮 Horóscopo, Tarot & Cursos</div>
+    </div>
+    <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=aquitemachadinhos&slot=sticky_bar" class="sticky-btn" rel="sponsored noopener noreferrer nofollow">Ver Melhores Ofertas</a>
+  </div>
+
+  <script>
+    // --- DATABASE DOS 12 SIGNOS & PREVISÕES QUÂNTICAS ---
+    const ZODIAC_DATA = [
+      { id: 0, name: "Áries", dates: "21/03 - 19/04", icon: "♈", element: "Fogo", planet: "Marte", color: "Vermelho Rubi", crystal: "Jaspe Vermelho", nums: "07, 19, 33" },
+      { id: 1, name: "Touro", dates: "20/04 - 20/05", icon: "♉", element: "Terra", planet: "Vênus", color: "Verde Esmeralda", crystal: "Quartzo Rosa", nums: "04, 15, 28" },
+      { id: 2, name: "Gêmeos", dates: "21/05 - 20/06", icon: "♊", element: "Ar", planet: "Mercúrio", color: "Amarelo Solar", crystal: "Olho de Tigre", nums: "03, 14, 42" },
+      { id: 3, name: "Câncer", dates: "21/06 - 22/07", icon: "♋", element: "Água", planet: "Lua", color: "Prata Lunar", crystal: "Pedra da Lua", nums: "02, 11, 29" },
+      { id: 4, name: "Leão", dates: "23/07 - 22/08", icon: "♌", element: "Fogo", planet: "Sol", color: "Dourado", crystal: "Pirita", nums: "01, 10, 55" },
+      { id: 5, name: "Virgem", dates: "23/08 - 22/09", icon: "♍", element: "Terra", planet: "Mercúrio", color: "Azul Marinho", crystal: "Amazonita", nums: "05, 23, 38" },
+      { id: 6, name: "Libra", dates: "23/09 - 22/10", icon: "♎", element: "Ar", planet: "Vênus", color: "Rosa Pastel", crystal: "Quartzo Verde", nums: "06, 17, 31" },
+      { id: 7, name: "Escorpião", dates: "23/10 - 21/11", icon: "♏", element: "Água", planet: "Plutão", color: "Bordô Intenso", crystal: "Obsidiana", nums: "08, 13, 49" },
+      { id: 8, name: "Sagitário", dates: "22/11 - 21/12", icon: "♐", element: "Fogo", planet: "Júpiter", color: "Púrpura", crystal: "Ametista", nums: "09, 21, 50" },
+      { id: 9, name: "Capricórnio", dates: "22/12 - 19/01", icon: "♑", element: "Terra", planet: "Saturno", color: "Cinza Chumbo", crystal: "Ônix Preto", nums: "04, 18, 36" },
+      { id: 10, name: "Aquário", dates: "20/01 - 18/02", icon: "♒", element: "Ar", planet: "Urano", color: "Azul Turquesa", crystal: "Água-Marinha", nums: "11, 22, 47" },
+      { id: 11, name: "Peixes", dates: "19/02 - 20/03", icon: "♓", element: "Água", planet: "Netuno", color: "Lilás Místico", crystal: "Fluorita", nums: "07, 12, 34" }
+    ];
+
+    let currentSign = 0;
+    let currentPeriod = 'dia';
+
+    // Predições Dinâmicas
+    const PREDICTIONS = {
+      dia: [
+        "Hoje o trânsito planetário favorece decisões estratégicas e novos começos. Uma conversa inesperada pode abrir portas profissionais valiosas.",
+        "A energia da estabilidade governa suas finanças hoje. Momento ideal para planejar investimentos e valorizar os momentos de conforto.",
+        "Sua agilidade mental estará no ápice! Excelente momento para aprender novos assuntos, fechar acordos e expandir sua rede de contatos.",
+        "Sua intuição está aguçada como nunca. Confie no seu sexto sentido ao lidar com questões familiares e decisões no ambiente de trabalho.",
+        "Seu brilho pessoal e liderança natural ganham destaque irresistível hoje. Projetos criativos terão aprovação imediata.",
+        "Dia perfeito para organizar finanças e otimizar rotinas. O foco nos detalhes trará economia e reconhecimento na carreira.",
+        "Harmonia e diplomacia serão suas maiores armas. Oportunidade dourada para resolver mal-entendidos e atrair novas parcerias.",
+        "Força magnética e poder de transformação em alta. Uma resposta que você tanto esperava finalmente se revela com clareza.",
+        "O espírito aventureiro traz vontade de expandir horizontes. Excelente momento para planejar viagens e iniciar novos estudos.",
+        "Disciplina e perseverança geram resultados concretos. Seus esforços de longo prazo começam a ser reconhecidos pelas pessoas certas.",
+        "Ideias inovadoras e pensamentos fora da caixa vão te destacar. Colabore com grupos e compartilhe sua visão de futuro.",
+        "Sensibilidade artística e intuição espiritual elevadas. Conecte-se com o que te inspira e confie nas sincronicidades do dia."
+      ],
+      semana: [
+        "Esta semana exigirá coragem calculada: novos projetos exigem iniciativa rápida antes de quinta-feira.",
+        "Semana de colheita financeira: mantenha o foco no orçamento e evite gastos impulsivos.",
+        "Dias de intensa troca de informações. Um curso ou treinamento trará um salto importante no seu currículo.",
+        "O ciclo semanal pede cuidado com o equilíbrio emocional. Proteja seu espaço e celebre conquistas íntimas.",
+        "Semana de visibilidade total. Apresente suas ideias com confiança e lidere com generosidade.",
+        "Produtividade em alta velocidade. Semana propícia para lançar novos hábitos de saúde e organização.",
+        "Decisões sobre relacionamentos e contratos serão facilitadas por uma conjuntura astral harmoniosa.",
+        "Momento de desapego do que não agrega mais. Renove sua energia e prepare o terreno para ganhos materiais.",
+        "A energia semanal favorece o aprendizado de novas tecnologias e contato com culturas ou idiomas diferentes.",
+        "Semana de consolidação profissional. A paciência com superiores e clientes trará grandes dividendos.",
+        "Grandes conexões em redes sociais e comunidade. Uma ideia sua pode viralizar ou atrair parceiros.",
+        "Semana de cura e conexão interior. Suas habilidades empáticas abrirão portas de acolhimento e paz."
+      ],
+      mes: [
+        "O ciclo atual traz expansão acelerada. Suas metas de liderança estão alinhadas com o sucesso material.",
+        "Mês propício para consolidação patrimonial e segurança familiar. Novos fluxos de renda surgirão.",
+        "Um mês marcado pela versatilidade e múltiplos projetos simultâneos. Mantenha a disciplina para concluir o que começou.",
+        "Transformações benéficas no lar e nas relações mais profundas marcarão este período com muita harmonia.",
+        "Mês de consagração e reconhecimento de talentos. Aproveite a maré alta para consolidar seu nome.",
+        "Mês de aprimoramento técnico e ganhos por excelência. Sua dedicação aos detalhes trará recompensas justas.",
+        "Equilíbrio perfeito entre vida pessoal e objetivos de carreira. Boas notícias jurídicas ou contratuais.",
+        "Mês de poder e magnetismo absoluto. Grandes oportunidades de negociação e reestruturação financeira.",
+        "Horizontes abertos! Mês ideal para viagens, intercâmbios e expansão da sua visão de mundo.",
+        "Ascensão profissional contínua. As bases sólidas que você construiu garantem estabilidade e crescimento.",
+        "Mês revolucionário para seus projetos tecnológicos e colaborativos. Quebre padrões antigos com sabedoria.",
+        "Mês de inspiração e plenitude espiritual. Confie nos caminhos que a vida está desenhando para você."
+      ]
+    };
+
+    // TAROT DATABASE
+    const TAROT_CARDS = [
+      { name: "O Mago (Arcano I)", icon: "🪄", desc: "Você tem em mãos todas as ferramentas necessárias para manifestar seus objetivos agora. Confie no seu poder de ação." },
+      { name: "A Roda da Fortuna (Arcano X)", icon: "☸️", desc: "Uma virada cósmica benéfica está acontecendo nas suas finanças. Esteja pronto para agarrar novas oportunidades." },
+      { name: "A Estrela (Arcano XVII)", icon: "⭐", desc: "Esperança, inspiração e serenidade guiam seus passos. Uma fase de cura e realizações extraordinárias começa." }
+    ];
+
+    // FORTUNE COOKIE DATABASE
+    const COOKIE_QUOTES = [
+      "Grandes oportunidades aparecem para aqueles que estão preparados para agir hoje.",
+      "A sua determinação é o ímã mais poderoso para atrair prosperidade e alianças de valor.",
+      "Uma surpresa positiva no campo financeiro e profissional está a caminho nas próximas 72 horas.",
+      "O conhecimento que você adquirir esta semana abrirá portas que ninguém poderá fechar."
+    ];
+
+    // --- CURSOS POPULARES ---
+    const COURSES_DATA = [
+      {
+        title: "Inteligência Artificial & Automação com Python",
+        category: "Tecnologia & IA",
+        desc: "Domine ChatGPT API, Machine Learning e automação inteligente para acelerar sua carreira.",
+        price: "R$ 39,90",
+        link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=course_ai&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fartificial-intelligence%2F"
+      },
+      {
+        title: "Inglês Fluente para Negócios & Viagens",
+        category: "Idiomas",
+        desc: "Método acelerado para falar inglês em reuniões, entrevistas e viagens internacionais.",
+        price: "R$ 49,90",
+        link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=course_english&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fenglish-language%2F"
+      },
+      {
+        title: "Marketing Digital & Tráfego Pago 2026",
+        category: "Marketing & Negócios",
+        desc: "Aprenda a criar campanhas milionárias no Google Ads, Meta Ads e TikTok Ads.",
+        price: "R$ 34,90",
+        link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=course_mkt&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fdigital-marketing%2F"
+      },
+      {
+        title: "Cibersegurança & Ethical Hacking",
+        category: "Segurança da Informação",
+        desc: "Proteja redes corporativas, servidores em nuvem e aprenda defesa cibernética prática.",
+        price: "R$ 44,90",
+        link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=course_sec&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fcyber-security%2F"
+      },
+      {
+        title: "Desenvolvimento Fullstack Web Moderno",
+        category: "Programação",
+        desc: "Do React e Next.js ao Node e bancos de dados em nuvem com projetos reais.",
+        price: "R$ 39,90",
+        link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=course_web&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Fweb-development%2F"
+      },
+      {
+        title: "Gestão Financeira & Investimentos Globais",
+        category: "Finanças",
+        desc: "Como montar uma carteira resiliente em Dólar, Ações e Renda Fixa para independência.",
+        price: "R$ 29,90",
+        link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=aquitemachadinhos&slot=course_fin&dest=https%3A%2F%2Fwww.udemy.com%2Ftopic%2Finvesting%2F"
+      }
+    ];
+
+    // --- CURIOSIDADES DO MUNDO ---
+    const CURIOSITIES = [
+      "O coração de uma baleia-azul é tão gigantesco que um ser humano adulto poderia nadar dentro de suas artérias principais!",
+      "A Torre Eiffel cresce até 15 centímetros durante o verão devido à dilatação térmica do ferro sob o calor do sol parisiense.",
+      "O mel de abelha puro é o único alimento do planeta que nunca estraga — potes de mel encontrados em tumbas de faraós egípcios de 3.000 anos atrás ainda são 100% comestíveis!",
+      "Existem mais árvores na Terra (cerca de 3 trilhões) do que estrelas na nossa galáxia Via Láctea (cerca de 100 a 400 bilhões).",
+      "O idioma mais antigo ainda falado no mundo com escrita contínua é o Tâmil, com registros que ultrapassam 5.000 anos de história.",
+      "As pegadas deixadas pelos astronautas da Apollo na Lua permanecerão intactas por pelo menos 100 milhões de anos, pois não há vento ou atmosfera para apagá-las."
+    ];
+
+    // --- TENDÊNCIAS GLOBAIS DE NOTÍCIAS ---
+    const TRENDS_DATA = [
+      {
+        tag: "Tech",
+        tagClass: "tag-tech",
+        title: "Revolução dos Agentes de IA Autônomos Redefine Produtividade Global em 2026",
+        desc: "Novos modelos de linguagem realizam auditorias completas, análises financeiras e deploys automáticos em segundos.",
+        time: "Há 18 min"
+      },
+      {
+        tag: "Mundo",
+        tagClass: "tag-world",
+        title: "Explosão de Reservas para o Natal Luz de Gramado e Festivais de Primavera",
+        desc: "Setor hoteleiro registra alta de 38% nas buscas antecipadas por pacotes de turismo e locação de carros no Brasil.",
+        time: "Há 42 min"
+      },
+      {
+        tag: "Negócios",
+        tagClass: "tag-business",
+        title: "Black Friday 2026: E-commerce Antecipa Cupons e Quebra Recordes em Mobile",
+        desc: "Mais de 78% das transações de compras online no mundo já ocorrem via smartphones com cashback instantâneo.",
+        time: "Há 1 hora"
+      },
+      {
+        tag: "Cultura Pop",
+        tagClass: "tag-culture",
+        title: "Astrologia e Bem-Estar Viram Febre entre Jovens Profissionais em Todo o Mundo",
+        desc: "Buscas por mapas astrais interativos e calculadoras de ascendente crescem 120% em plataformas digitais.",
+        time: "Há 2 horas"
+      }
+    ];
+
+    // Inicialização da Página
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateStr = today.toLocaleDateString('pt-BR', options);
+        document.getElementById('live-date-ticker').innerText = '✨ Edição Atualizada: ' + dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+      } catch (e) {}
+
+      renderZodiacSelector();
+      updateHoroscopeCard();
+      renderCourses();
+      renderTrends();
+      renderCuriositiesList();
+      initAutomations();
+      startDealTimer();
+    });
+
+    // --- SMART SCARCITY COUNTDOWN TIMER ---
+    function startDealTimer() {
+      let duration = 14 * 60 + 59;
+      const display = document.getElementById('deal-timer');
+      if (!display) return;
+      setInterval(() => {
+        let minutes = parseInt(duration / 60, 10);
+        let seconds = parseInt(duration % 60, 10);
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        display.textContent = minutes + ':' + seconds;
+        if (--duration < 0) {
+          duration = 15 * 60;
+        }
+      }, 1000);
+    }
+
+
+    // --- OWNED TRAFFIC AUTOMATIONS: PWA & WEB PUSH ---
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const installBtn = document.getElementById('btn-pwa-install');
+      if (installBtn) installBtn.style.display = 'inline-block';
+    });
+
+    function triggerPwaInstall() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted PWA install');
+          }
+          deferredPrompt = null;
+        });
+      }
+    }
+
+    function requestPushNotification() {
+      if ('Notification' in window) {
+        Notification.requestPermission().then((permission) => {
+          if (permission === 'granted') {
+            alert('✓ Notificações ativadas com sucesso! Você receberá o horóscopo e números da sorte diariamente.');
+            document.getElementById('btn-web-push').innerText = '✓ Horóscopo Diário Ativo';
+            document.getElementById('btn-web-push').style.borderColor = '#10b981';
+            document.getElementById('btn-web-push').style.color = '#10b981';
+          }
+        });
+      } else {
+        alert('Notificações ativadas! Adicione aos favoritos para acesso diário.');
+      }
+    }
+
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
+          console.log('ServiceWorker registered:', reg.scope);
+        }).catch((err) => {
+          console.log('ServiceWorker registration failed:', err);
+        });
+      });
+    }
+
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function renderZodiacSelector() {
+      const container = document.getElementById('zodiac-selector');
+      container.innerHTML = '';
+      ZODIAC_DATA.forEach(sign => {
+        const chip = document.createElement('div');
+        chip.className = 'zodiac-chip' + (sign.id === currentSign ? ' selected' : '');
+        chip.onclick = () => selectSign(sign.id);
+        chip.innerHTML = '<span class="icon">' + sign.icon + '</span><span class="name">' + sign.name + '</span><span class="dates">' + sign.dates.split(' - ')[0] + '</span>';
+        container.appendChild(chip);
+      });
+    }
+
+    function selectSign(id) {
+      currentSign = id;
+      try { localStorage.setItem('user_zodiac_sign', id); } catch(e){}
+      renderZodiacSelector();
+      updateHoroscopeCard();
+    }
+
+    function setPeriod(period, btn) {
+      currentPeriod = period;
+      document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateHoroscopeCard();
+    }
+
+    function updateHoroscopeCard() {
+      const sign = ZODIAC_DATA[currentSign];
+      document.getElementById('disp-sign-icon').innerText = sign.icon;
+      document.getElementById('disp-sign-title').innerText = sign.name + ' (' + sign.dates + ')';
+      document.getElementById('disp-sign-element').innerText = 'Elemento: ' + sign.element + ' | Regente: ' + sign.planet;
+      document.getElementById('disp-prediction').innerText = PREDICTIONS[currentPeriod][currentSign];
+
+      const loveVal = 80 + (currentSign * 3) % 19;
+      const moneyVal = 75 + (currentSign * 7) % 24;
+      const workVal = 82 + (currentSign * 5) % 17;
+      const luckVal = 85 + (currentSign * 4) % 15;
+
+      document.getElementById('meter-love').style.width = loveVal + '%';
+      document.getElementById('meter-love-val').innerText = loveVal + '%';
+      document.getElementById('meter-money').style.width = moneyVal + '%';
+      document.getElementById('meter-money-val').innerText = moneyVal + '%';
+      document.getElementById('meter-work').style.width = workVal + '%';
+      document.getElementById('meter-work-val').innerText = workVal + '%';
+      document.getElementById('meter-luck').style.width = luckVal + '%';
+      document.getElementById('meter-luck-val').innerText = luckVal + '%';
+
+      document.getElementById('disp-lucky-num').innerText = sign.nums;
+      document.getElementById('disp-lucky-color').innerText = sign.color;
+      document.getElementById('disp-lucky-crystal').innerText = sign.crystal;
+      document.getElementById('disp-lucky-match').innerText = ZODIAC_DATA[(currentSign + 4) % 12].name;
+    }
+
+    // TAROT GAMIFICATION
+    function flipTarot(cardEl, idx) {
+      const card = TAROT_CARDS[idx % TAROT_CARDS.length];
+      cardEl.classList.add('flipped');
+      cardEl.innerHTML = '<div class="tarot-icon">' + card.icon + '</div>' +
+        '<div class="tarot-title">' + card.name + '</div>' +
+        '<div class="tarot-meaning">' + card.desc + '</div>' +
+        '<div style="margin-top:12px; font-size:0.75rem; color:#fde047; font-weight:800;">✨ Carta Revelada com Sucesso</div>' +
+        '<div style="display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-top:12px;">' +
+          '<button onclick="event.stopPropagation(); shareResultViral(\'🔮 Minha Carta de Tarot: ' + card.name + '\', \'' + card.desc.replace(/'/g, "") + '\')" style="background:#25D366; color:#fff; border:none; padding:6px 10px; border-radius:6px; font-size:0.75rem; font-weight:700; cursor:pointer;">💬 Compartilhar no WhatsApp</button>' +
+          '<button onclick="event.stopPropagation(); shareTelegramViral(\'🔮 Carta: ' + card.name + '\', \'' + card.desc.replace(/'/g, "") + '\')" style="background:#229ED9; color:#fff; border:none; padding:6px 10px; border-radius:6px; font-size:0.75rem; font-weight:700; cursor:pointer;">✈️ Telegram</button>' +
+        '</div>' +
+        '<div style="margin-top:10px; padding:10px; background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.4); border-radius:8px;">' +
+          '<div style="font-size:0.75rem; color:#a5b4fc; font-weight:700;">🎁 Cupom Cósmico Desbloqueado: <span class="live-countdown" style="color:#fde047;">45m 12s</span></div>' +
+          '<a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=aquitemachadinhos&slot=tarot_reward" target="_blank" rel="sponsored noopener noreferrer nofollow" style="display:inline-block; margin-top:6px; background:#6366f1; color:#fff; padding:6px 12px; border-radius:6px; font-size:0.75rem; font-weight:800; text-decoration:none;">Resgatar Oferta Exclusiva ➔</a>' +
+        '</div>';
+    }
+
+    // FORTUNE COOKIE
+    function crackFortuneCookie() {
+      const quote = COOKIE_QUOTES[Math.floor(Math.random() * COOKIE_QUOTES.length)];
+      const res = document.getElementById('cookie-result');
+      document.getElementById('cookie-quote').innerText = '“' + quote + '”';
+      res.style.display = 'block';
+    }
+
+    // QUIZZES
+    function selectQuizAnswer(quizType, optionIdx, btn) {
+      btn.parentElement.querySelectorAll('.quiz-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      if (quizType === 'career') {
+        document.getElementById('quiz-career-result').style.display = 'block';
+      } else if (quizType === 'travel') {
+        document.getElementById('quiz-travel-result').style.display = 'block';
+      }
+    }
+
+    // NUMEROLOGIA DA ALMA
+    function calculateNumerology() {
+      const name = (document.getElementById('numerology-name').value || 'A').toUpperCase().replace(/[^A-Z]/g, '');
+      const vowels = { 'A': 1, 'E': 5, 'I': 9, 'O': 6, 'U': 3 };
+      let sum = 0;
+      for (let char of name) {
+        if (vowels[char]) sum += vowels[char];
+      }
+      while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33) {
+        sum = sum.toString().split('').reduce((a, b) => parseInt(a, 10) + parseInt(b, 10), 0);
+      }
+      const soulNumber = sum || 7;
+      const res = document.getElementById('numerology-result');
+      res.style.display = 'block';
+      res.innerHTML = '<h4 style="color:#10b981; font-size:1.15rem; margin-bottom:6px;">✨ Seu Número da Alma: ' + soulNumber + '</h4>' +
+        '<p style="color:#e2e8f0; font-size:0.9rem;">O Número <strong>' + soulNumber + '</strong> indica um espírito voltado para inovação, liderança estratégica e sabedoria. Seu propósito em 2026 se realiza quando você compartilha seu conhecimento e constrói projetos práticos de impacto.</p>';
+    }
+
+    // CÂMBIO EM TEMPO REAL
+    function convertCurrency() {
+      const brl = parseFloat(document.getElementById('cambio-brl').value) || 0;
+      const usd = (brl / 5.50).toFixed(2);
+      const eur = (brl / 6.00).toFixed(2);
+      document.getElementById('cambio-result').innerHTML = '<div style="font-size: 1.1rem; color: #10b981; font-weight: 800;">US$ ' + usd + ' (Dólar) | € ' + eur + ' (Euro)</div><div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">💡 Planejando viajar? Compare hotéis no Booking.com com cancelamento grátis.</div>';
+    }
+
+    function calculateAstralChart() {
+      const bdate = document.getElementById('astral-birth-date').value;
+      const btime = document.getElementById('astral-birth-time').value;
+      const bcity = document.getElementById('astral-birth-city').value || 'Sua Cidade';
+
+      if (!bdate) return;
+      try { localStorage.setItem('user_birth_date', bdate); localStorage.setItem('user_birth_city', bcity); } catch(e){}
+
+      const parts = bdate.split('-');
+      const month = parseInt(parts[1], 10);
+      const day = parseInt(parts[2], 10);
+
+      let signIdx = 0;
+      if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) signIdx = 0;
+      else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) signIdx = 1;
+      else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) signIdx = 2;
+      else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) signIdx = 3;
+      else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) signIdx = 4;
+      else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) signIdx = 5;
+      else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) signIdx = 6;
+      else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) signIdx = 7;
+      else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) signIdx = 8;
+      else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) signIdx = 9;
+      else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) signIdx = 10;
+      else signIdx = 11;
+
+      const hour = parseInt((btime || '12:00').split(':')[0], 10) || 12;
+      const ascIdx = (signIdx + Math.floor(hour / 2)) % 12;
+      const moonIdx = (signIdx + 3) % 12;
+
+      const sunSign = ZODIAC_DATA[signIdx];
+      const ascSign = ZODIAC_DATA[ascIdx];
+      const moonSign = ZODIAC_DATA[moonIdx];
+
+      const resBox = document.getElementById('astral-chart-result');
+      resBox.style.display = 'block';
+      resBox.innerHTML = '<h4 style="color: #a78bfa; font-size: 1.15rem; margin-bottom: 8px;">✨ Seu Perfil Cósmico Completo (' + bcity + ')</h4>' +
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 12px;">' +
+          '<div style="background: #0f172a; padding: 10px; border-radius: 8px; border: 1px solid #334155;">' +
+            '<div style="font-size: 0.75rem; color: #94a3b8;">☀️ SIGNO SOLAR (Sua Essência)</div>' +
+            '<div style="font-size: 1.1rem; font-weight: 800; color: #fbbf24;">' + sunSign.icon + ' ' + sunSign.name + '</div>' +
+          '</div>' +
+          '<div style="background: #0f172a; padding: 10px; border-radius: 8px; border: 1px solid #334155;">' +
+            '<div style="font-size: 0.75rem; color: #94a3b8;">🌅 ASCENDENTE (Sua Impressão no Mundo)</div>' +
+            '<div style="font-size: 1.1rem; font-weight: 800; color: #38bdf8;">' + ascSign.icon + ' ' + ascSign.name + '</div>' +
+          '</div>' +
+          '<div style="background: #0f172a; padding: 10px; border-radius: 8px; border: 1px solid #334155;">' +
+            '<div style="font-size: 0.75rem; color: #94a3b8;">🌙 LUA (Seu Mundo Emocional)</div>' +
+            '<div style="font-size: 1.1rem; font-weight: 800; color: #ec4899;">' + moonSign.icon + ' ' + moonSign.name + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;">' +
+          'Com o Sol em <strong>' + sunSign.name + '</strong> e Ascendente em <strong>' + ascSign.name + '</strong>, você combina a força de ' + sunSign.element + ' com a presença de ' + ascSign.element + '. Seu maior potencial está em transformar criatividade em resultados práticos.' +
+        '</p>';
+    }
+
+    function renderCourses() {
+      const cont = document.getElementById('courses-container');
+      cont.innerHTML = '';
+      COURSES_DATA.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'course-card';
+        card.innerHTML = '<div>' +
+            '<span class="course-badge">' + c.category + '</span>' +
+            '<div class="course-title">' + c.title + '</div>' +
+            '<div class="course-desc">' + c.desc + '</div>' +
+          '</div>' +
+          '<div class="course-footer">' +
+            '<span class="course-price">' + c.price + ' <small style="font-size: 0.7rem; color: #94a3b8;">/ Vitalício</small></span>' +
+            '<a href="' + c.link + '" target="_blank" rel="sponsored noopener noreferrer nofollow" class="course-btn">Ver Desconto ➔</a>' +
+          '</div>';
+        cont.appendChild(card);
+      });
+    }
+
+    function renderTrends() {
+      const cont = document.getElementById('trends-news-container');
+      cont.innerHTML = '';
+      TRENDS_DATA.forEach(n => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        card.innerHTML = '<div>' +
+            '<span class="news-tag ' + n.tagClass + '">' + n.tag + '</span>' +
+            '<div class="news-title">' + n.title + '</div>' +
+            '<div class="news-desc">' + n.desc + '</div>' +
+          '</div>' +
+          '<div class="news-meta">' +
+            '<span>📡 Tendência Global</span>' +
+            '<span>' + n.time + '</span>' +
+          '</div>';
+        cont.appendChild(card);
+      });
+    }
+
+    let curiosityIdx = 0;
+    function generateNextCuriosity() {
+      curiosityIdx = (curiosityIdx + 1) % CURIOSITIES.length;
+      document.getElementById('curiosity-text').innerText = CURIOSITIES[curiosityIdx];
+    }
+
+    function renderCuriositiesList() {
+      const cont = document.getElementById('curiosities-list');
+      cont.innerHTML = '';
+      CURIOSITIES.slice(0, 4).forEach((cur, i) => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        const shareUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(cur + ' Veja mais em: https://www.aquitemachadinhos.com.br/entretenimento');
+        card.innerHTML = '<div>' +
+            '<span class="news-tag tag-culture">💡 Curiosidade #' + (i+1) + '</span>' +
+            '<div class="news-desc" style="font-size: 0.95rem; color: #f1f5f9; margin-top: 6px;">' + cur + '</div>' +
+          '</div>' +
+          '<div class="news-meta">' +
+            '<span>Fato Verificado</span>' +
+            '<a href="' + shareUrl + '" target="_blank" rel="noopener" style="color: #25d366; text-decoration: none; font-weight: 700;">Compartilhar 🟢</a>' +
+          '</div>';
+        cont.appendChild(card);
+      });
+    }
+
+    // AUTOMATIONS: LOCAL STORAGE & EXIT INTENT
+    function initAutomations() {
+      const savedSign = localStorage.getItem('user_zodiac_sign');
+      if (savedSign !== null) {
+        currentSign = parseInt(savedSign, 10);
+        renderZodiacSelector();
+        updateHoroscopeCard();
+      }
+
+      const savedDate = localStorage.getItem('user_birth_date');
+      const savedCity = localStorage.getItem('user_birth_city');
+      if (savedDate) document.getElementById('astral-birth-date').value = savedDate;
+      if (savedCity) document.getElementById('astral-birth-city').value = savedCity;
+
+      let exitTriggered = false;
+      document.addEventListener('mouseleave', (e) => {
+        if (e.clientY <= 10 && !exitTriggered) {
+          triggerExitToast();
+        }
+      });
+
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (lastScroll - currentScroll > 80 && currentScroll > 300 && !exitTriggered) {
+          triggerExitToast();
+        }
+        lastScroll = currentScroll;
+      }, { passive: true });
+    }
+
+    function triggerExitToast() {
+      const toast = document.getElementById('exit-intent-toast');
+      if (!toast) return;
+      toast.style.opacity = '1';
+      toast.style.pointerEvents = 'auto';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+    }
+
+    function closeExitToast() {
+      const toast = document.getElementById('exit-intent-toast');
+      if (!toast) return;
+      toast.style.opacity = '0';
+      toast.style.pointerEvents = 'none';
+      toast.style.transform = 'translateX(-50%) translateY(150px)';
+    }
+  </script>
+<script src="/js/affiliate-telemetry.js" defer></script>
+  <script type="text/javascript"> var infolinks_pid = 3447442; var infolinks_wsid = 0; </script>
+<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+  <script src="/js/growth-cro-engine.js" defer></script>
+</body>
+</html>

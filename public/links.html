@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+  <meta name="monetag" content="8469089b876439517e6c5247573c6e21" />
+  <title>AQUITÉM & Achadinhos da Hora | Links Oficiais & Cupons VIP 2026</title>
+  <meta name="description" content="Acesse o Tarot 3D Interativo, Guias de Viagem para Gramado e Barretos, Cupons Verificados Shopee e Descontos Exclusivos no Booking.com."/>
+  <link rel="canonical" href="https://www.aquitemachadinhos.com.br/links"/>
+  <meta name="theme-color" content="#6366f1"/>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body {
+      background: radial-gradient(circle at top, #1e1b4b 0%, #0f172a 50%, #020617 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 80px 16px;
+    }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    /* Header Profile */
+    .profile-avatar-wrap {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #f59e0b, #ec4899, #8b5cf6);
+      box-shadow: 0 8px 32px rgba(236, 72, 153, 0.3);
+    }
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+    .verified-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      background: #38bdf8;
+      color: #0f172a;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 900;
+      border: 2px solid #0f172a;
+    }
+    
+    .profile-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .profile-handle {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+    .profile-bio {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      text-align: center;
+      line-height: 1.4;
+      padding: 0 10px;
+    }
+
+    /* Live Counter Badge */
+    .live-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: #4ade80;
+      font-weight: 600;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 10px #22c55e;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 8px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      background: rgba(99, 102, 241, 0.3);
+      color: #fff;
+    }
+
+    /* Link Bento Cards */
+    .links-grid {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .bento-card {
+      width: 100%;
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(99, 102, 241, 0.5);
+      background: rgba(30, 41, 59, 0.85);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+    .bento-card.featured {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(236, 72, 153, 0.25));
+      border: 1px solid rgba(236, 72, 153, 0.4);
+    }
+    .bento-card.featured::before {
+      content: "DESTAQUE";
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: #ec4899;
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-sub {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-arrow {
+      color: #64748b;
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+    .bento-card:hover .card-arrow {
+      transform: translateX(4px);
+      color: #38bdf8;
+    }
+
+    /* WhatsApp ManyChat Sticky CTA */
+    .whatsapp-vip-bar {
+      width: 100%;
+      background: #25d366;
+      color: #022c22;
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 14px 20px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      transition: transform 0.2s;
+    }
+    .whatsapp-vip-bar:hover {
+      transform: scale(1.02);
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5604700207394147" crossorigin="anonymous"></script>
+  <script src="https://quge5.com/88/tag.min.js" data-zone="274860" async data-cfasync="false"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Aqui Tem Achadinhos - Cupons & Ofertas 2026",
+    "url": "https://www.aquitemachadinhos.com.br/links.html",
+    "description": "Guia oficial de achadinhos, cupons de desconto, viagens e previsão astral interativa.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Aqui Tem Achadinhos",
+      "url": "https://www.aquitemachadinhos.com.br"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Profile Avatar & Identity -->
+    <div class="profile-avatar-wrap">
+      <div class="profile-avatar">✨</div>
+      <div class="verified-badge">✓</div>
+    </div>
+
+    <div class="profile-title">
+      AQUITÉM & Achadinhos
+    </div>
+    <div class="profile-handle">@aquitatem • @achadinhosdahora24hrs</div>
+    
+    <div class="profile-bio" id="bio-text">
+      🔮 Tarot 3D & Previsão Cósmica • ✈️ Guias de Viagem & Hotéis • 🔥 Cupons Secretos Shopee & Amazon Verificados Diariamente!
+    </div>
+
+    <!-- Live Verified Badge -->
+    <div class="live-status">
+      <span class="live-dot"></span>
+      <span id="live-update-text">⚡ Cupons verificados hoje às 14:00 (100% Online)</span>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="switchLanguage('pt')">🇧🇷 PT</button>
+      <button class="lang-btn" onclick="switchLanguage('en')">🇺🇸 EN</button>
+      <button class="lang-btn" onclick="switchLanguage('es')">🇪🇸 ES</button>
+      <button class="lang-btn" onclick="switchLanguage('fr')">🇫🇷 FR</button>
+      <button class="lang-btn" onclick="switchLanguage('de')">🇩🇪 DE</button>
+      <button class="lang-btn" onclick="switchLanguage('ja')">🇯🇵 JA</button>
+    </div>
+
+    <!-- WhatsApp ManyChat 1-Click Bot Direct -->
+    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Quero%20receber%20minha%20Carta%20do%20Tarot%20e%20Cupons%20VIP" target="_blank" rel="noopener noreferrer" class="whatsapp-vip-bar" id="wa-btn">
+      <span>💬</span>
+      <span>Falar com o Oráculo no WhatsApp (Grátis)</span>
+    </a>
+
+    <!-- Bento Links Grid -->
+    <div class="links-grid">
+
+      <!-- 1. Tarot 3D Interativo -->
+      <a href="/entretenimento.html#tarot" class="bento-card featured">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(236, 72, 153, 0.15); color: #ec4899;">🔮</div>
+          <div class="card-info">
+            <span class="card-title" id="t-tarot">Tarot 3D dos Arcanos Maiores</span>
+            <span class="card-sub" id="s-tarot">Tire sua carta do dia e desbloqueie o cupom</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+      <!-- 2. Guia de Gramado & Natal Luz 2026 -->
+      <a href="/o-que-fazer-em-gramado.html" class="bento-card">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">✈️</div>
+          <div class="card-info">
+            <span class="card-title" id="t-gramado">Guia Gramado & Natal Luz 2026</span>
+            <span class="card-sub" id="s-gramado">Roteiro completo + 15% a 30% OFF em Hotéis</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+      <!-- 3. Festa do Peão de Barretos 2027 -->
+      <a href="/festa-do-peao-barretos-2027-ingressos.html" class="bento-card">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">🤠</div>
+          <div class="card-info">
+            <span class="card-title" id="t-barretos">Festa do Peão Barretos 2027</span>
+            <span class="card-sub" id="s-barretos">Ingressos, hotéis e dicas antecipadas</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+      <!-- 4. Cupons Shopee & Mercado Livre -->
+      <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=bio_link&slot=shopee_btn" target="_blank" rel="sponsored noopener noreferrer nofollow" class="bento-card">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(251, 146, 60, 0.15); color: #fb923c;">🛍️</div>
+          <div class="card-info">
+            <span class="card-title" id="t-shopee">Cupons Secretos Shopee & Meli</span>
+            <span class="card-sub" id="s-shopee">Frete grátis e descontos até 70% OFF</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+      <!-- 5. Booking.com Hotéis & Pousadas -->
+      <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=bio_link&slot=booking_btn" target="_blank" rel="sponsored noopener noreferrer nofollow" class="bento-card">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(34, 197, 94, 0.15); color: #22c55e;">🏨</div>
+          <div class="card-info">
+            <span class="card-title" id="t-booking">Booking.com: Hotéis no Mundo</span>
+            <span class="card-sub" id="s-booking">Desconto exclusivo em reservas mundiais</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+      <!-- 6. Cibersegurança & NordVPN Shield -->
+      <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=bio_link&slot=nordvpn_btn" target="_blank" rel="sponsored noopener noreferrer nofollow" class="bento-card">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">🛡️</div>
+          <div class="card-info">
+            <span class="card-title" id="t-vpn">NordVPN Shield (74% OFF + 3M)</span>
+            <span class="card-sub" id="s-vpn">Navegação anônima e streaming liberado</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+      <!-- 7. Calculadora de Compatibilidade dos Signos -->
+      <a href="/compatibilidade/aries-e-leao.html" class="bento-card">
+        <div class="card-left">
+          <div class="card-icon" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e;">❤️</div>
+          <div class="card-info">
+            <span class="card-title" id="t-compat">Calculadora de Amor & Signos</span>
+            <span class="card-sub" id="s-compat">144 combinações com teste de afinidade</span>
+          </div>
+        </div>
+        <span class="card-arrow">➔</span>
+      </a>
+
+    </div>
+
+    <!-- Footer Copyright -->
+    <div style="margin-top: 24px; font-size: 0.72rem; color: #64748b; text-align: center;">
+      © 2026 Aqui Tem Achadinhos • Todos os Direitos Reservados<br/>
+      Parceiro Oficial CJ Affiliate, Booking.com, Shopee & NordVPN
+    </div>
+
+  </div>
+
+  <script>
+    const I18N = {
+      pt: {
+        bio: "🔮 Tarot 3D & Previsão Cósmica • ✈️ Guias de Viagem & Hotéis • 🔥 Cupons Secretos Shopee & Amazon Verificados Diariamente!",
+        live: "⚡ Cupons verificados hoje às " + new Date().getHours() + ":" + String(new Date().getMinutes()).padStart(2, '0'),
+        wa: "Falar com o Oráculo no WhatsApp (Grátis)",
+        tarot_t: "Tarot 3D dos Arcanos Maiores", tarot_s: "Tire sua carta do dia e desbloqueie o cupom",
+        gramado_t: "Guia Gramado & Natal Luz 2026", gramado_s: "Roteiro completo + 15% a 30% OFF em Hotéis",
+        barretos_t: "Festa do Peão Barretos 2027", barretos_s: "Ingressos, hotéis e dicas antecipadas",
+        shopee_t: "Cupons Secretos Shopee & Meli", shopee_s: "Frete grátis e descontos até 70% OFF",
+        booking_t: "Booking.com: Hotéis no Mundo", booking_s: "Desconto exclusivo em reservas mundiais",
+        vpn_t: "NordVPN Shield (74% OFF + 3M)", vpn_s: "Navegação anônima e streaming liberado",
+        compat_t: "Calculadora de Amor & Signos", compat_s: "144 combinações com teste de afinidade"
+      },
+      en: {
+        bio: "🔮 3D Tarot & Cosmic Daily Oracle • ✈️ Travel Guides & Hotels • 🔥 Verified Shopee & Amazon VIP Deals Daily!",
+        live: "⚡ Deals verified today at " + new Date().getHours() + ":" + String(new Date().getMinutes()).padStart(2, '0'),
+        wa: "Chat with the Oracle on WhatsApp (Free)",
+        tarot_t: "3D Major Arcana Tarot", tarot_s: "Draw your daily card & unlock VIP deals",
+        gramado_t: "Gramado Travel Guide 2026", gramado_s: "Full 4-day itinerary + 30% OFF hotels",
+        barretos_t: "Barretos Rodeo Guide 2027", barretos_s: "Tickets, lodging & travel insights",
+        shopee_t: "Secret Shopee & Amazon Deals", shopee_s: "Free shipping & verified 70% coupons",
+        booking_t: "Booking.com: Global Stays", booking_s: "Exclusive discounts worldwide",
+        vpn_t: "NordVPN Cyber Shield (74% OFF)", vpn_s: "Encrypted privacy & fast streaming",
+        compat_t: "Zodiac Love Compatibility", compat_s: "144 astrological synergy tests"
+      },
+      es: {
+        bio: "🔮 Tarot 3D & Previsión Cósmica • ✈️ Guías de Viaje & Hoteles • 🔥 Cupones Secretos Verificados Diariamente!",
+        live: "⚡ Cupones verificados hoy a las " + new Date().getHours() + ":" + String(new Date().getMinutes()).padStart(2, '0'),
+        wa: "Hablar con el Oráculo en WhatsApp (Gratis)",
+        tarot_t: "Tarot 3D de Arcanos Mayores", tarot_s: "Saca tu carta del día y reclama cupones",
+        gramado_t: "Guía de Viajes Gramado 2026", gramado_s: "Itinerario completo + 30% OFF en hoteles",
+        barretos_t: "Guía Barretos Rodeo 2027", barretos_s: "Entradas, hoteles y consejos VIP",
+        shopee_t: "Cupones Secretos Shopee & Meli", shopee_s: "Envío gratis y hasta 70% de descuento",
+        booking_t: "Booking.com: Hoteles Globales", booking_s: "Descuento exclusivo en reservas",
+        vpn_t: "NordVPN Escudo de Seguridad", vpn_s: "Privacidad militar y streaming rápido",
+        compat_t: "Calculadora de Amor & Signos", compat_s: "144 combinaciones astrológicas"
+      }
+    };
+
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      const data = I18N[lang] || I18N.en;
+      document.getElementById('bio-text').innerText = data.bio;
+      document.getElementById('live-update-text').innerText = data.live;
+      document.getElementById('wa-btn').querySelector('span:last-child').innerText = data.wa;
+      document.getElementById('t-tarot').innerText = data.tarot_t; document.getElementById('s-tarot').innerText = data.tarot_s;
+      document.getElementById('t-gramado').innerText = data.gramado_t; document.getElementById('s-gramado').innerText = data.gramado_s;
+      document.getElementById('t-barretos').innerText = data.barretos_t; document.getElementById('s-barretos').innerText = data.barretos_s;
+      document.getElementById('t-shopee').innerText = data.shopee_t; document.getElementById('s-shopee').innerText = data.shopee_s;
+      document.getElementById('t-booking').innerText = data.booking_t; document.getElementById('s-booking').innerText = data.booking_s;
+      document.getElementById('t-vpn').innerText = data.vpn_t; document.getElementById('s-vpn').innerText = data.vpn_s;
+      document.getElementById('t-compat').innerText = data.compat_t; document.getElementById('s-compat').innerText = data.compat_s;
+    }
+  </script>
+
+  <script type="text/javascript"> var infolinks_pid = 3447442; var infolinks_wsid = 0; </script>
+  <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+  <script src="/js/growth-cro-engine.js" defer></script>
+<!-- CJ Affiliate Universal Impression Tracking Pixels (Publisher: 8041957) -->
+<img src="https://www.ftjcfx.com/image-8041957-17288448" width="1" height="1" style="display:none; position:absolute; left:-9999px;" alt="" />
+<img src="https://www.ftjcfx.com/image-8041957-17075184" width="1" height="1" style="display:none; position:absolute; left:-9999px;" alt="" />
+<!-- /CJ Affiliate Pixels -->
+</body>
+</html>

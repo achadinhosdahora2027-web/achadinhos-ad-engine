@@ -1,0 +1,18 @@
+# ==============================================================================
+# OFFICIAL AUTHORIZED DIGITAL SELLERS (ads.txt) - 2026
+# ==============================================================================
+
+# 1. Google AdSense (Direct Publisher Authorization)
+google.com, pub-5604700207394147, DIRECT, f08c47fec0942fa0
+
+# 2. Monetag / PropellerAds (Zones: 274860, 11691043)
+propellerads.com, 274860, DIRECT
+propellerads.com, 11691043, DIRECT
+monetag.com, 274860, DIRECT
+monetag.com, 11691043, DIRECT
+
+# 3. Adsterra Programmatic Network
+adsterra.com, DIRECT
+
+# 4. Infolinks Official Network
+infolinks.com, 3447442, DIRECT
