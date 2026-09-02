@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/api/(.*)",
@@ -12,8 +13,8 @@
       ]
     }
   ],
-  "routes": [
-    { "src": "/leiloes-ebay", "dest": "/api/ads/deals" },
-    { "src": "/ferramentas-saas", "dest": "/api/ads/saas" }
+  "rewrites": [
+    { "source": "/leiloes-ebay", "destination": "/api/ads/deals" },
+    { "source": "/ferramentas-saas", "destination": "/api/ads/saas" }
   ]
 }
