@@ -204,6 +204,31 @@ async function runAutonomousDirectorAudit() {
   sprint.sprint_revenue_progress_percent = Number(((sprint.cumulative_revenue_brl / 10900) * 100).toFixed(2));
   sprint.data_source = 'supabase.affiliate_conversions (leitura real)';
 
+  // Indexação multi-buscadores: respostas REAIS do IndexNow (últimas 24h)
+  const dayAgo = new Date(Date.now() - 86400000).toISOString();
+  const idxRows = await sbQuery(`seo_indexation_log?select=engine,status,last_submitted_at&action=eq.indexnow_submit&last_submitted_at=gte.${dayAgo}`);
+  if (idxRows && idxRows.status === 200) {
+    const per = {};
+    let lastTs = 0;
+    (idxRows.rows || []).forEach(r => {
+      per[r.engine] = per[r.engine] || { accepted: 0, rejected: 0, error: 0 };
+      if (per[r.engine][r.status] !== undefined) per[r.engine][r.status]++;
+      const t = Date.parse(r.last_submitted_at);
+      if (Number.isFinite(t) && t > lastTs) lastTs = t;
+    });
+    ledger.search_indexation_metrics = {
+      data_source: 'seo_indexation_log (respostas reais do IndexNow)',
+      window_hours: 24,
+      engines: per,
+      last_response_at: lastTs ? new Date(lastTs).toISOString() : null,
+      measured_at: nowIso
+    };
+    console.log(`   Indexação multi-buscadores: ${Object.keys(per).length} motores responderam nas últimas 24h`);
+  } else {
+    ledger.search_indexation_metrics = { data_source: 'supabase indisponível', engines: {}, measured_at: nowIso };
+    console.log('   Indexação: sem acesso ao log de respostas neste ciclo');
+  }
+
   // GSC: ÚLTIMA AUDITORIA MANUAL — rotulada, nunca "ao vivo"
   ledger.google_search_console_metrics = {
     data_source: 'manual_audit (sem API ao vivo)',
