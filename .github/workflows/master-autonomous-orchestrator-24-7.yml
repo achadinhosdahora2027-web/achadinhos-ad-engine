@@ -8,6 +8,10 @@ on:
       - main
   workflow_dispatch:
 
+  META_PAGE_TOKEN_2: ${{ secrets.META_PAGE_TOKEN_2 }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
 jobs:
   orchestrator:
     runs-on: ubuntu-latest

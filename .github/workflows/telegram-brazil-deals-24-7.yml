@@ -6,6 +6,10 @@ on:
     - cron: "0 11,14,17,20,22,0,2 * * *"
   workflow_dispatch:
 
+  META_PAGE_TOKEN_2: ${{ secrets.META_PAGE_TOKEN_2 }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
 jobs:
   publish-brazil-deals:
     runs-on: ubuntu-latest
