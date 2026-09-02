@@ -1,0 +1,277 @@
+{
+  "catalog_version": "2026.1-BRAZIL-VIRAL-DEALS",
+  "updated_at": "2026-09-02T00:00:00.000Z",
+  "total_deals": 30,
+  "deals": [
+    {
+      "id": "br_deal_001_robo_aspirador",
+      "title": "Robô Aspirador de Pó Inteligente 3 em 1 (Varre, Aspira e Passa Pano)",
+      "store": "Shopee",
+      "badge": "🔥 MAIS VENDIDO DA SEMANA",
+      "original_price": "189,90",
+      "promo_price": "64,90",
+      "discount": "66% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.9 ⭐ (+12.400 avaliações)",
+      "bullets": [
+        "Sensor antiqueda e anticolisão inteligente",
+        "Bateria recarregável de longa duração (USB)",
+        "Silencioso e limpa cantos difíceis debaixo de sofás e camas"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
+      "category": "Casa & Utilidades"
+    },
+    {
+      "id": "br_deal_002_fone_bluetooth_pro",
+      "title": "Fone de Ouvido Bluetooth Sem Fio TWS com Display Digital LED e Cancelamento de Ruído",
+      "store": "Shopee",
+      "badge": "⚡ OFERTA RELÂMPAGO",
+      "original_price": "79,90",
+      "promo_price": "27,90",
+      "discount": "65% OFF",
+      "coupon": "CUPOMAPP",
+      "rating": "4.8 ⭐ (+28.000 avaliações)",
+      "bullets": [
+        "Display digital que mostra a bateria exata",
+        "Bluetooth 5.3 de conexão instantânea e sem atraso",
+        "Resistente a suor e respingos d'água"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/30n7ohzzU6",
+      "category": "Eletrônicos"
+    },
+    {
+      "id": "br_deal_003_air_fryer_mondial",
+      "title": "Fritadeira Elétrica Air Fryer Mondial Family 4 Litros Inox",
+      "store": "Amazon Brasil",
+      "badge": "🏷️ MENOR PREÇO DOS ÚLTIMOS 30 DIAS",
+      "original_price": "399,90",
+      "promo_price": "249,00",
+      "discount": "38% OFF",
+      "coupon": "PRIMEBR",
+      "rating": "4.9 ⭐ (+45.000 avaliações)",
+      "bullets": [
+        "Cuba antiaderente Duraflon super fácil de lavar",
+        "Timer de 60 minutos com desligamento automático",
+        "Prepara batata frita, carnes e bolos sem óleo"
+      ],
+      "affiliate_url": "https://amazon.com.br/?tag=aquitemachadinhos-20",
+      "category": "Cozinha"
+    },
+    {
+      "id": "br_deal_004_mop_giratorio_360",
+      "title": "Mop Giratório 360° Lava e Seca com Balde Centrífuga e 2 Refis de Microfibra",
+      "store": "Shopee",
+      "badge": "😱 ACHADINHO VIRAL DO TIKTOK",
+      "original_price": "119,90",
+      "promo_price": "49,90",
+      "discount": "58% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.9 ⭐ (+19.800 avaliações)",
+      "bullets": [
+        "Substitui vassoura, rodo e pano de chão",
+        "Cabo telescópico ajustável em aço inox",
+        "Sistema de centrifugação que torce sem molhar as mãos"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
+      "category": "Casa & Limpeza"
+    },
+    {
+      "id": "br_deal_005_booking_gramado",
+      "title": "Hospedagem em Gramado & Serra Gaúcha (Temporada Natal Luz) com até 40% OFF",
+      "store": "Booking.com",
+      "badge": "🏨 CUPOM EXCLUSIVO DE VIAGEM",
+      "original_price": "450,00",
+      "promo_price": "219,00",
+      "discount": "40% OFF",
+      "coupon": "RESERVAONLINE",
+      "rating": "9.2 Fantástico ⭐ (+3.500 avaliações)",
+      "bullets": [
+        "Opções com Cancelamento Grátis até a véspera",
+        "Café da manhã colonial incluso em pousadas selecionadas",
+        "Localização privilegiada no centro de Gramado e Canela"
+      ],
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=telegram_ofertas&slot=gramado_deal",
+      "category": "Viagens & Hotéis"
+    },
+    {
+      "id": "br_deal_006_lampada_inteligente_wifi",
+      "title": "Lâmpada Inteligente Smart LED 10W RGB Wi-Fi Compatível com Alexa e Google Home",
+      "store": "Mercado Livre",
+      "badge": "💡 CASA INTELIGENTE",
+      "original_price": "69,90",
+      "promo_price": "29,90",
+      "discount": "57% OFF",
+      "coupon": "MELIOFERTAS",
+      "rating": "4.8 ⭐ (+8.900 avaliações)",
+      "bullets": [
+        "16 milhões de cores e controle total pelo celular",
+        "Comando de voz para ligar, desligar e mudar de cor",
+        "Programe horários e timer para acender automaticamente"
+      ],
+      "affiliate_url": "https://meli.la/1U3rtgV",
+      "category": "Casa Inteligente"
+    },
+    {
+      "id": "br_deal_007_mini_processador_eletrico",
+      "title": "Mini Processador e Triturador de Alimentos Elétrico USB Portátil (Alho, Cebola, Carnes)",
+      "store": "Shopee",
+      "badge": "🔥 QUERIDINHO DAS DONAS DE CASA",
+      "original_price": "49,90",
+      "promo_price": "18,90",
+      "discount": "62% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.8 ⭐ (+34.000 avaliações)",
+      "bullets": [
+        "Lâminas em aço inox ultra afiadas (tritura em 5 segundos)",
+        "Carregamento USB de longa duração (bateria recarregável)",
+        "Compacto, fácil de limpar e sem cheiro nas mãos"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
+      "category": "Cozinha"
+    },
+    {
+      "id": "br_deal_008_nordvpn_cyber_security",
+      "title": "NordVPN Proteção Total de Navegação + 3 Meses Grátis (74% OFF)",
+      "store": "NordVPN",
+      "badge": "🛡️ SEGURANÇA & PRIVACIDADE",
+      "original_price": "39,90/mês",
+      "promo_price": "14,90/mês",
+      "discount": "74% OFF",
+      "coupon": "CYBERSHIELD",
+      "rating": "4.9 ⭐ (Líder Mundial em Cibersegurança)",
+      "bullets": [
+        "Navegue anônimo e proteja senhas e dados bancários",
+        "Acesse catálogos de streaming de mais de 110 países",
+        "Proteção contra malwares e bloqueador de anúncios incluso"
+      ],
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=telegram_ofertas&slot=nordvpn_deal",
+      "category": "Tecnologia & Softwares"
+    },
+    {
+      "id": "br_deal_009_suporte_celular_veicular",
+      "title": "Suporte Veicular para Celular Magnético Articulado com Trava Automática",
+      "store": "Shopee",
+      "badge": "🚗 ACESSÓRIO INDISPENSÁVEL",
+      "original_price": "39,90",
+      "promo_price": "14,50",
+      "discount": "63% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.9 ⭐ (+15.000 avaliações)",
+      "bullets": [
+        "Fixação ultra forte que não cai nem em buracos",
+        "Gira 360 graus para usar GPS na vertical ou horizontal",
+        "Compatível com todos os modelos de iPhone, Samsung e Xiaomi"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/30n7ohzzU6",
+      "category": "Automotivo & Celular"
+    },
+    {
+      "id": "br_deal_010_copo_termico_inox",
+      "title": "Copo Térmico em Aço Inox com Tampa e Abridor 473ml (Mantém gelado por até 12h)",
+      "store": "Shopee",
+      "badge": "🍻 ACHADINHO TOP 1",
+      "original_price": "69,90",
+      "promo_price": "24,90",
+      "discount": "64% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.9 ⭐ (+42.000 avaliações)",
+      "bullets": [
+        "Parede dupla com isolamento a vácuo (não sua por fora)",
+        "Acompanha tampa antivazamento com abridor embutido",
+        "Ideal para cerveja gelada, refrigerante, café e tereré"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
+      "category": "Casa & Lazer"
+    },
+    {
+      "id": "br_deal_011_festa_peao_barretos",
+      "title": "Hotéis & Pousadas em Barretos e Região para a Festa do Peão 2027 com Desconto",
+      "store": "Booking.com",
+      "badge": "🤠 ROTEIRO ANTECIPADO",
+      "original_price": "380,00",
+      "promo_price": "189,00",
+      "discount": "50% OFF",
+      "coupon": "BARRETOSVIP",
+      "rating": "8.9 Muito Bom ⭐ (+1.800 avaliações)",
+      "bullets": [
+        "Reserve com antecedência antes que as vagas esgotem",
+        "Opções com piscina, estacionamento e café da manhã",
+        "Fácil acesso ao Parque do Peão de Barretos"
+      ],
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=telegram_ofertas&slot=barretos_deal",
+      "category": "Viagens & Hotéis"
+    },
+    {
+      "id": "br_deal_012_kit_organizadores_acrilico",
+      "title": "Kit com 6 Caixas Organizadoras em Acrílico Transparente com Tampa Empilhável",
+      "store": "Shopee",
+      "badge": "✨ ORGANIZAÇÃO DE GELADEIRA & ARMÁRIOS",
+      "original_price": "99,90",
+      "promo_price": "39,90",
+      "discount": "60% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.9 ⭐ (+11.000 avaliações)",
+      "bullets": [
+        "Material resistente livre de BPA (atóxico)",
+        "Visual limpo para frutas, legumes, maquiagens e remédios",
+        "Otimiza 100% o espaço dos armários e gavetas"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
+      "category": "Casa & Decoração"
+    },
+    {
+      "id": "br_deal_013_curso_ia_python_udemy",
+      "title": "Formação Completa Inteligência Artificial, ChatGPT & Python do Zero ao Avançado",
+      "store": "Udemy",
+      "badge": "🎓 EDUCAÇÃO & CARREIRA",
+      "original_price": "279,90",
+      "promo_price": "29,90",
+      "discount": "89% OFF",
+      "coupon": "PROMOIA2026",
+      "rating": "4.8 ⭐ (+65.000 alunos)",
+      "bullets": [
+        "Acesso vitalício com certificado oficial incluso",
+        "Mais de 40 horas de aulas práticas passo a passo",
+        "Aprenda a criar automações, agentes e projetos reais de IA"
+      ],
+      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=telegram_ofertas&slot=udemy_deal",
+      "category": "Cursos Online"
+    },
+    {
+      "id": "br_deal_014_cftv_camera_wifi_360",
+      "title": "Câmera de Segurança Inteligente Wi-Fi 360° com Visão Noturna e Áudio Bidirecional",
+      "store": "Shopee",
+      "badge": "🔒 SEGURANÇA RESIDENCIAL",
+      "original_price": "149,90",
+      "promo_price": "54,90",
+      "discount": "63% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.8 ⭐ (+22.500 avaliações)",
+      "bullets": [
+        "Monitore sua casa ao vivo direto do celular de onde estiver",
+        "Sensor de movimento com alarme e rastreamento automático",
+        "Áudio bidirecional (ouça e fale através da câmera)"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/30n7ohzzU6",
+      "category": "Segurança & Smart Home"
+    },
+    {
+      "id": "br_deal_015_dispenser_detergente_esponja",
+      "title": "Dispenser Dosador de Detergente 2 em 1 com Suporte para Esponja de Pia",
+      "store": "Shopee",
+      "badge": "💡 ECONOMIA NA COZINHA",
+      "original_price": "29,90",
+      "promo_price": "9,99",
+      "discount": "66% OFF",
+      "coupon": "FRETEGRATIS",
+      "rating": "4.9 ⭐ (+50.000 avaliações)",
+      "bullets": [
+        "Economiza até 50% de detergente (dosagem perfeita ao pressionar)",
+        "Não molha a bancada e deixa a pia sempre organizada",
+        "Acompanha esponja de brinde"
+      ],
+      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
+      "category": "Cozinha & Casa"
+    }
+  ]
+}

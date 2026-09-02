@@ -1,0 +1,27 @@
+name: Telegram Ofertas Brasil 24/7 Autopilot
+
+on:
+  schedule:
+    # Runs at Brazilian peak shopping times (UTC: 11h, 14h, 17h, 20h, 22h, 00h, 02h)
+    - cron: "0 11,14,17,20,22,0,2 * * *"
+  workflow_dispatch:
+
+jobs:
+  publish-brazil-deals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Publish High-Converting Brazilian Deal to Telegram @ofertasbrasilz
+        env:
+          TELEGRAM_BOT_TOKEN: "8910879073:AAH0Jdf9t5UEekjjI0kdAU7hBogyXKUE8zM"
+          TELEGRAM_DEALS_CHANNEL: "@ofertasbrasilz"
+        run: |
+          node scripts/telegram-brazil-deals-publisher.js
