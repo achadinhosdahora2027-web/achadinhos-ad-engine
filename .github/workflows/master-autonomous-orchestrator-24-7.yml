@@ -46,6 +46,7 @@ jobs:
       - name: 2. Run Autonomous Memory Ledger & Dynamic Escalation Engine
         run: |
           node scripts/autonomous-memory-ledger-engine.js || true
+          node scripts/bing-webmaster-sync.js || true
 
       - name: 3. Run 24/7 Affiliate Impressions, Clicks & Pixel Integrity Watchdog
         run: |
