@@ -86,6 +86,30 @@ async function runMultiEngineGlobalPinger() {
   }
   const results = await Promise.all(jobs);
 
+  // POST em lote para a REDE OFICIAL (api.indexnow.org distribui para todos os parceiros —
+  // é por aqui que Seznam e demais recebem quando o endpoint direto bloqueia nossa região)
+  const batchPost = () => new Promise((resolve) => {
+    const body = JSON.stringify({
+      host: 'www.aquitemachadinhos.com.br',
+      key: KEY,
+      urlList: DOMAINS.map(d => `${d}/`)
+    });
+    const req = https.request({ hostname: 'api.indexnow.org', path: '/indexnow', method: 'POST', timeout: 15000,
+      headers: { 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': Buffer.byteLength(body) } }, (res) => {
+      res.resume();
+      res.on('end', () => resolve({ httpStatus: res.statusCode }));
+    });
+    req.on('error', () => resolve({ httpStatus: 0 }));
+    req.on('timeout', () => { req.destroy(); resolve({ httpStatus: 408 }); });
+    req.write(body);
+    req.end();
+  });
+
+  const batch = await batchPost();
+  const batchOk = batch.httpStatus === 200 || batch.httpStatus === 202;
+  await logResponse({ engine: 'IndexNow-Rede-Lote', httpStatus: batch.httpStatus, pageUrl: 'https://www.aquitemachadinhos.com.br/ (lote)' });
+  console.log(`  [++/12] IndexNow-Rede-Lote (POST batch p/ TODOS os parceiros) ${batchOk ? '✅ ACEITO' : '❌'} (HTTP ${batch.httpStatus})`);
+
   const logResults = await Promise.all(results.map(logResponse));
 
   let accepted = 0, rejected = 0, errored = 0;
