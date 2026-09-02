@@ -14,8 +14,45 @@ function loadToken() {
   if (process.env.YANDEX_OAUTH_ACCESS_TOKEN) return process.env.YANDEX_OAUTH_ACCESS_TOKEN;
   try {
     const t = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/yandex-oauth-tokens.json'), 'utf8'));
-    return t.access_token || '';
-  } catch (e) { return ''; }
+    if (t.access_token && t.obtained_at && (Date.now() - Date.parse(t.obtained_at)) < (t.expires_in - 86400) * 1000) {
+      return t.access_token;
+    }
+  } catch (e) {}
+  return mintToken();
+}
+
+// client_credentials: o app tem esse grant liberado (token válido 365d)
+function mintToken() {
+  const CID = process.env.YANDEX_OAUTH_CLIENT_ID || '';
+  const CSEC = process.env.YANDEX_OAUTH_CLIENT_SECRET || '';
+  if (!CID || !CSEC) return '';
+  return new Promise((resolve) => {
+    const body = new URLSearchParams({ grant_type: 'client_credentials', client_id: CID, client_secret: CSEC }).toString();
+    const req = https.request({ hostname: 'oauth.yandex.ru', path: '/token', method: 'POST', timeout: 15000,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': Buffer.byteLength(body) } }, (res) => {
+      let b = '';
+      res.on('data', c => b += c);
+      res.on('end', () => {
+        try {
+          const d = JSON.parse(b);
+          if (d.access_token) {
+            try {
+              fs.writeFileSync(path.join(__dirname, '../data/yandex-oauth-tokens.json'),
+                JSON.stringify({ ...d, obtained_at: new Date().toISOString() }, null, 2));
+            } catch (e) {}
+            console.log('  🔑 token fabricado via client_credentials (validade: ' + Math.round(d.expires_in / 86400) + 'd)');
+            resolve(d.access_token);
+          } else {
+            console.log(`  ✗ mint falhou: ${d.error || '?'}`);
+            resolve('');
+          }
+        } catch (e) { resolve(''); }
+      });
+    });
+    req.on('error', () => resolve(''));
+    req.write(body);
+    req.end();
+  });
 }
 
 function yandexApi(token, apiPath) {
@@ -37,7 +74,7 @@ function yandexApi(token, apiPath) {
 
 async function runYandexWebmasterSync() {
   console.log('🟡 YANDEX WEBMASTER SYNC (API oficial v4 — dados reais)');
-  const token = loadToken();
+  const token = await loadToken();
   if (!token) {
     console.log('  ⚠️ sem token Yandex (YANDEX_OAUTH_ACCESS_TOKEN) — sync pulado (sem invenção)');
     return;
