@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
-const { notifyAffiliateSale } = require('../telegram/notify-engine');
+const { notifyAffiliateSale } = require('../../lib/telegram/notify-engine');
 
 const LEDGER_PATH = path.join(__dirname, '../../data/autonomous-state-ledger.json');
 
