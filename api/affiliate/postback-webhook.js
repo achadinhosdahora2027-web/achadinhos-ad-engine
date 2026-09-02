@@ -36,8 +36,13 @@ function sbRequest(method, tablePath, body) {
       },
       timeout: 8000
     }, (rs) => {
-      rs.resume();
-      resolve({ status: rs.statusCode, count: rs.headers['content-range'] || null });
+      let data = '';
+      rs.on('data', c => data += c);
+      rs.on('end', () => {
+        let rows = [];
+        try { rows = JSON.parse(data || '[]'); } catch (e) {}
+        resolve({ status: rs.statusCode, rows: Array.isArray(rows) ? rows : [], count: rs.headers['content-range'] || null });
+      });
     });
     req.on('error', () => resolve(null));
     req.on('timeout', () => { req.destroy(); resolve(null); });
@@ -105,7 +110,7 @@ module.exports = async (req, res) => {
 
   // 3. Deduplicação por (brand, order_id)
   const dup = await sbRequest('GET', `affiliate_conversions?order_id=eq.${encodeURIComponent(orderId)}&brand=eq.${encodeURIComponent(brand)}&select=id&limit=1`, null);
-  if (dup && dup.status === 200) {
+  if (dup && dup.status === 200 && dup.rows.length > 0) {
     return res.status(200).json({ status: 'duplicate', message: 'order_id já registrado — nada foi duplicado', order_id: orderId });
   }
 
