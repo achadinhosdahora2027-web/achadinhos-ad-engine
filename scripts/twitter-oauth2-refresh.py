@@ -46,7 +46,9 @@ st, body = api(
     "https://api.twitter.com/2/oauth2/token",
     "POST",
     {"Authorization": f"Basic {auth}", "Content-Type": "application/x-www-form-urlencoded"},
-    urllib.parse.urlencode({"grant_type": "refresh_token", "refresh_token": RT}).encode(),
+    urllib.parse.urlencode({"grant_type": "refresh_token", "refresh_token": RT,
+                            "client_id": CID, "client_secret": CSEC,
+                            "client_type": "third_party_app"}).encode(),
 )
 try:
     d = json.loads(body)
