@@ -55,10 +55,10 @@ function mintToken() {
   });
 }
 
-function yandexApi(token, apiPath) {
+function yandexApiOnce(token, apiPath, timeoutMs) {
   return new Promise((resolve) => {
-    const req = https.request({ hostname: 'api.webmaster.yandex.net', path: apiPath, method: 'GET', timeout: 15000,
-      headers: { Authorization: `OAuth ${token}` } }, (res) => {
+    const req = https.request({ hostname: 'api.webmaster.yandex.net', path: apiPath, method: 'GET', timeout: timeoutMs,
+      headers: { Authorization: `OAuth ${token}`, 'User-Agent': 'AquiTemAchadinhosBot/1.0' } }, (res) => {
       let b = '';
       res.on('data', c => b += c);
       res.on('end', () => {
@@ -70,6 +70,16 @@ function yandexApi(token, apiPath) {
     req.on('timeout', () => { req.destroy(); resolve({ status: 0, data: null }); });
     req.end();
   });
+}
+
+// 3 tentativas com timeout crescente — a API do Yandex é lenta/geoseletiva
+async function yandexApi(token, apiPath) {
+  for (const t of [20000, 30000, 45000]) {
+    const r = await yandexApiOnce(token, apiPath, t);
+    if (r.status !== 0) return r;
+    console.log(`  … tentativa com timeout ${t}ms falhou, repetindo`);
+  }
+  return { status: 0, data: null };
 }
 
 async function runYandexWebmasterSync() {
@@ -86,6 +96,7 @@ async function runYandexWebmasterSync() {
   const user = await yandexApi(token, '/v4/user');
   if (user.status !== 200 || !user.data) {
     console.log(`  ✗ /v4/user HTTP ${user.status} ${JSON.stringify(user.data || {}).slice(0, 120)}`);
+    if (user.status === 0) console.log('  → api.webmaster.yandex.net inacessível desta rede (Yandex costuma bloquear IPs de nuvem EUA). O IndexNow→Yandex segue funcionando; contagem INDEXADA exige rede própria/RU.');
     if (user.status === 403) console.log('  → token expirado/inválido — refazer troca do código de verificação');
     return;
   }
