@@ -42,15 +42,14 @@ function sbReq(method, urlPath, body, prefer) {
 
 async function acquirePostSlot(kind, text, maxAgeHours = 72) {
   const key = `${kind}:${crypto.createHash('sha256').update(String(text).trim()).digest('hex').slice(0, 32)}`;
-  const ins = await sbReq('POST', '/rest/v1/social_dedupe', { content_key: key, channel: kind }, 'resolution=ignore-duplicates,return=representation');
-  if (ins.status === 201 && Array.isArray(ins.rows) && ins.rows.length > 0) return { allowed: true, key };
-  if (ins.status === 0) return { allowed: true, key, warn: 'supabase offline — dedupe indisponível' };
   const q = await sbReq('GET', `/rest/v1/social_dedupe?content_key=${encodeURIComponent(key)}&select=created_at`);
   const created = q.rows && q.rows[0] && q.rows[0].created_at ? Date.parse(q.rows[0].created_at) : 0;
-  if (Date.now() - created < maxAgeHours * 3600 * 1000) return { allowed: false, key };
-  await sbReq('DELETE', `/rest/v1/social_dedupe?content_key=${encodeURIComponent(key)}`);
-  const ins2 = await sbReq('POST', '/rest/v1/social_dedupe', { content_key: key, channel: kind }, 'return=representation');
-  return { allowed: ins2.status === 201 && ins2.rows.length > 0, key };
+  if (created && Date.now() - created < maxAgeHours * 3600 * 1000) return { allowed: false, key };
+  if (created) await sbReq('DELETE', `/rest/v1/social_dedupe?content_key=${encodeURIComponent(key)}`);
+  const ins = await sbReq('POST', '/rest/v1/social_dedupe', { content_key: key, channel: kind }, 'return=representation');
+  if (ins.status === 0) return { allowed: true, key, warn: 'supabase offline — dedupe indisponível' };
+  if (ins.status === 201) return { allowed: true, key };
+  return { allowed: false, key };
 }
 
 
@@ -202,7 +201,7 @@ async function runTwitterPublisher() {
     error: twStatus === 'published' ? null : String(publishResult.error || publishResult.message || (publishResult.response && publishResult.response.detail) || '').slice(0, 400)
   });
 
-  if (!publishResult.published) {
+  if (!publishResult.published && selectedTweet.lang === 'pt') {
     const tgSlot = await acquirePostSlot('telegram_cross', selectedTweet.text);
     if (!tgSlot.allowed) {
       console.log('  ⏭️ Cross-post idêntico já enviado nas últimas 72h — BLOQUEADO (anti-spam Supabase)');
