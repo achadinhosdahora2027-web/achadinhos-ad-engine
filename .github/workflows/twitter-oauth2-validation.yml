@@ -1,0 +1,28 @@
+name: Twitter OAuth2 Validation (on-demand)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validar par OAuth2 + refresh + escopos
+        run: |
+          pip install pynacl -q
+          python scripts/twitter-oauth2-validate.py
+        env:
+          TWITTER_OAUTH2_ACCESS_TOKEN: ${{ secrets.TWITTER_OAUTH2_ACCESS_TOKEN }}
+          TWITTER_OAUTH2_REFRESH_TOKEN: ${{ secrets.TWITTER_OAUTH2_REFRESH_TOKEN }}
+          TWITTER_OAUTH2_CLIENT_ID: ${{ secrets.TWITTER_OAUTH2_CLIENT_ID }}
+          TWITTER_OAUTH2_CLIENT_SECRET: ${{ secrets.TWITTER_OAUTH2_CLIENT_SECRET }}
+          GITHUB_PAT: ${{ secrets.ROTATION_PAT }}
