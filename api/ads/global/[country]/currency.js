@@ -1,4 +1,4 @@
-const { COUNTRY_MAP, convert, formatLocal } = require('../../../../v1/currency');
+const { COUNTRY_MAP, convert, formatLocal } = require('../../../../lib/currency/v1-currency');
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

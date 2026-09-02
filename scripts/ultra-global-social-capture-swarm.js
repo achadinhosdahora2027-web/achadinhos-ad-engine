@@ -10,7 +10,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { publishTweet } = require('../api/twitter/tweet-publisher');
+const { publishTweet } = require('../lib/twitter/tweet-publisher');
 
 const SWARM_MATRIX_PATH = path.join(__dirname, '../data/ultra-robots-swarm-matrix.json');
 const LEDGER_PATH = path.join(__dirname, '../data/autonomous-state-ledger.json');

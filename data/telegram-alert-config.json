@@ -6,8 +6,8 @@
     "mode": "realtime_and_heartbeat_24_7",
     "bot_name": "AQUITEM (@AquiTemOfertasBot)",
     "bot_username": "AquiTemOfertasBot",
-    "bot_token": "8910879073:AAH0Jdf9t5UEekjjI0kdAU7hBogyXKUE8zM",
-    "chat_id": "5808022745",
+    "bot_token": "ENV:TELEGRAM_BOT_TOKEN",
+    "chat_id": "ENV:TELEGRAM_CHAT_ID",
     "recipient": "Nando (@doutordanielfernandes)",
     "channel_purposes": {
       "sales_and_commissions": "Notificação instantânea de vendas e comissões reais de afiliados (CJ, Shopee, Booking, etc.)",
@@ -36,7 +36,7 @@
         "active_sprint": "Sprint de 21 Dias - Fundação & Tração",
         "total_days": 21,
         "target_pageviews": 85000,
-        "target_revenue_brl": 10900.00
+        "target_revenue_brl": 10900.0
       }
     }
   }

@@ -4,12 +4,12 @@
   "meta_app": {
     "app_id": "1369355825326360",
     "app_name": "Aqui Tem",
-    "app_secret_token": "1369355825326360|JzwVPAoK1uP9rB5HZZY3LALkXAo"
+    "app_secret_token": "ENV:META_APP_SECRET_TOKEN"
   },
   "master_user": {
     "name": "Daniel Fernandes",
     "id": "1108663671676718",
-    "long_lived_user_token": "EAATdaZCZBKKRgBSWbC5SnGJ8ozA6M3fqgm3wXKXeSZAWjC6d2giPhlJHz0PkAeZBIFAffFCkBAINJNoCh7zPpXgyx3MTZBw1ZAU5JYCJyviI0oa2zzQj6LoiloHbz4EIMiwTrZA58fCiq9ZAer4CybzseVbIH8Ubav4yA27afmCrvKfdIMmaR0MnMjqvAyBl0wQoDwZDZD",
+    "long_lived_user_token": "ENV:META_MASTER_USER_TOKEN",
     "expires_at": 0
   },
   "accounts": [
@@ -19,7 +19,7 @@
       "instagram_business_id": "17841460133220961",
       "facebook_page_id": "1289123464275730",
       "page_name": "Aqui Tem",
-      "page_access_token": "EAATdaZCZBKKRgBSdszlM9ZAl3qh1L9Rlgfns3OKle2MwGVazEZCR6nJKQMdtmZCJMpYa6ZBZCJQ8rVUP9OCKKQzDIcNB44epfVcZBypb5lNWBecpukMpCankxEcD4VZCO7KPh40AMK9EKtglDHdHVQywvQ4S7JTpVuJOEY7t9cgHodWLTuJkBxoEGHCCnkn9c6NhvVZBpFFPAq",
+      "page_access_token": "ENV:META_PAGE_TOKEN_A",
       "niche": "Guias Turísticos, Gramado, Barretos, Natal Luz, Astrologia 3D"
     },
     {
@@ -28,7 +28,7 @@
       "instagram_business_id": "17841443518469482",
       "facebook_page_id": "1163959393474762",
       "page_name": "Achadinhos da Hora - Cupons",
-      "page_access_token": "EAATdaZCZBKKRgBSVg5X2cofdkwthBT7ZACVbwihCJ2kXOOI6RZAwRNwVy0BBwDWZBvr8BpzhvTGHneq68NEBPmw8MZClb260X4PsxYrgJlFhm14VZA1yh3WZBp9IyzCbwK4otoLONFBp9VJDskUAKBiciSg3Ybt4UdAmh0OOF3H2YIWVFHkiY5ieS6GnZAsNZB8ykYPgm6ZAxAf",
+      "page_access_token": "ENV:META_PAGE_TOKEN_B",
       "niche": "Cupons, Ofertas, Shopee, Mercado Livre, Viagens"
     },
     {
@@ -36,13 +36,21 @@
       "name": "Daniel Fernandes CCD",
       "facebook_page_id": "1243799275475153",
       "page_name": "Daniel Fernandes CCD",
-      "page_access_token": "EAATdaZCZBKKRgBSQHECC0KLatWQVo4JY1osTBdloe66oW6f3NBG9kL9ZCa1UmlHZBGDVtr1DEazowYNLqL3lXO3l5ZAtoWVQ2ZCrZBw4GT4Cz3BatNH2L740jBZCz89uwfVU4IC3nojF1OaZC2qkcmbyOabxYKvkobYyfpj0AgkZCvVJImiREaYSOMylYgK7q7uvamttTcRKN1",
+      "page_access_token": "ENV:META_PAGE_TOKEN_2",
       "niche": "Criador de Conteúdo Digital"
     }
   ],
   "manychat_integration": {
     "token": "12374977:8eddb10ae0ead660b91eb764d1511090",
     "webhook_endpoint": "https://achadinhos-ad-engine.vercel.app/api/manychat/webhook",
-    "keywords": ["TAROT", "ORACULO", "CUPOM", "ACHADINHO", "GRAMADO", "VIAGEM", "BARRETOS"]
+    "keywords": [
+      "TAROT",
+      "ORACULO",
+      "CUPOM",
+      "ACHADINHO",
+      "GRAMADO",
+      "VIAGEM",
+      "BARRETOS"
+    ]
   }
 }

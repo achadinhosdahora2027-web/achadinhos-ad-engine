@@ -7,7 +7,7 @@
  * anti-burst and anti-repetition protection.
  */
 
-const { notifyLiveExecutiveDigest, notifyAffiliateSale } = require('../api/telegram/notify-engine');
+const { notifyLiveExecutiveDigest, notifyAffiliateSale } = require('../lib/telegram/notify-engine');
 
 async function runTelegramNotifier() {
   console.log('================================================================================');

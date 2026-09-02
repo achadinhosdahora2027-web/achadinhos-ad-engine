@@ -4,7 +4,7 @@
  * ==============================================================================
  */
 
-const { runAffiliateDistributionOrchestrator } = require('../api/orchestrator/affiliate-distribution-orchestrator');
+const { runAffiliateDistributionOrchestrator } = require('../lib/orchestrator/affiliate-distribution-orchestrator');
 
 async function main() {
   const isDryRun = process.argv.includes('--dry-run');

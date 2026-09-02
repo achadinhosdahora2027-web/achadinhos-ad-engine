@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { COUNTRY_MAP, convert, formatLocal, priceGrid } = require('../api/v1/currency');
+const { COUNTRY_MAP, convert, formatLocal, priceGrid } = require('../lib/currency/v1-currency');
 
 console.log('--- Testando Motor de Câmbio e Moedas ---');
 

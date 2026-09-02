@@ -14,7 +14,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8910879073:AAH0Jdf9t5UEekjjI0kdAU7hBogyXKUE8zM';
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 const CHANNEL_USERNAME = process.env.TELEGRAM_DEALS_CHANNEL || '@ofertasbrasilz';
 
 const CATALOG_PATH = path.join(__dirname, '../data/brazilian-viral-deals-catalog.json');

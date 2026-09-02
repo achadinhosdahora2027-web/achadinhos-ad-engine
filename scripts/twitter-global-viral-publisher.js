@@ -9,7 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { getUserProfile, publishTweet } = require('../api/twitter/tweet-publisher');
+const { getUserProfile, publishTweet } = require('../lib/twitter/tweet-publisher');
 
 const CONFIG_PATH = path.join(__dirname, '../data/twitter-config.json');
 const LEDGER_PATH = path.join(__dirname, '../data/autonomous-state-ledger.json');

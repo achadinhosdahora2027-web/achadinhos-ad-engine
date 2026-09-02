@@ -153,6 +153,25 @@ module.exports = async (req, res) => {
 
   saveLedger(ledger);
 
+  // Persistência real e auditável do evento no Supabase
+  try {
+    const supaUrl = process.env.SUPABASE_URL;
+    const supaKey = process.env.SUPABASE_ANON_KEY;
+    if (supaUrl && supaKey && process.env.SUPABASE_PERSIST !== 'off') {
+      const eventType = String(type).toLowerCase().replace(/[^a-z0-9_]/g, '').slice(0, 40) || 'event';
+      await fetch(`${supaUrl.replace(/\/$/, '')}/rest/v1/metrics_events`, {
+        method: 'POST',
+        headers: {
+          apikey: supaKey,
+          Authorization: `Bearer ${supaKey}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=minimal'
+        },
+        body: JSON.stringify({ tipo: eventType })
+      }).catch(() => {});
+    }
+  } catch (e) {}
+
   return res.status(200).json({
     ok: true,
     type,

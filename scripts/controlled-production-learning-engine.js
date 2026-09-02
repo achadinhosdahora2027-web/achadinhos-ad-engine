@@ -18,7 +18,7 @@ const META_CONFIG_PATH = path.join(__dirname, '../data/meta-config.json');
 
 function loadJson(p, fallback = {}) {
   try {
-    if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, 'utf8'));
+    if (fs.existsSync(p)) return (function(c){const t=process.env;if(c&&c.accounts){if(t.META_PAGE_TOKEN_A&&c.accounts[0])c.accounts[0].page_access_token=t.META_PAGE_TOKEN_A;if(t.META_PAGE_TOKEN_B&&c.accounts[1])c.accounts[1].page_access_token=t.META_PAGE_TOKEN_B;if(t.META_PAGE_TOKEN_2&&c.accounts[2])c.accounts[2].page_access_token=t.META_PAGE_TOKEN_2;}if(c&&c.master_user&&t.META_MASTER_USER_TOKEN)c.master_user.long_lived_user_token=t.META_MASTER_USER_TOKEN;if(c&&c.meta_app&&t.META_APP_SECRET_TOKEN)c.meta_app.app_secret_token=t.META_APP_SECRET_TOKEN;})(JSON.parse(fs.readFileSync(p, 'utf8')));
   } catch (e) {}
   return fallback;
 }

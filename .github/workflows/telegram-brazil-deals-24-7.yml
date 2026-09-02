@@ -21,7 +21,7 @@ jobs:
 
       - name: Publish High-Converting Brazilian Deal to Telegram @ofertasbrasilz
         env:
-          TELEGRAM_BOT_TOKEN: "8910879073:AAH0Jdf9t5UEekjjI0kdAU7hBogyXKUE8zM"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_DEALS_CHANNEL: "@ofertasbrasilz"
         run: |
           node scripts/telegram-brazil-deals-publisher.js
