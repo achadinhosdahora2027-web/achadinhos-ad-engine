@@ -26,6 +26,8 @@ env:
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
   BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+  YANDEX_OAUTH_CLIENT_ID: ${{ secrets.YANDEX_OAUTH_CLIENT_ID }}
+  YANDEX_OAUTH_CLIENT_SECRET: ${{ secrets.YANDEX_OAUTH_CLIENT_SECRET }}
 
 jobs:
   orchestrator:
@@ -47,6 +49,7 @@ jobs:
         run: |
           node scripts/autonomous-memory-ledger-engine.js || true
           node scripts/bing-webmaster-sync.js || true
+          node scripts/yandex-webmaster-sync.js || true
 
       - name: 3. Run 24/7 Affiliate Impressions, Clicks & Pixel Integrity Watchdog
         run: |
