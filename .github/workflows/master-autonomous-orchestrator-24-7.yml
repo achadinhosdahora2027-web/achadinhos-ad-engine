@@ -25,6 +25,7 @@ env:
   META_PAGE_TOKEN_2: ${{ secrets.META_PAGE_TOKEN_2 }}
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
 
 jobs:
   orchestrator:
