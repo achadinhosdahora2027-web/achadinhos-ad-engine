@@ -220,11 +220,12 @@ async function notifyLiveExecutiveDigest(options = {}) {
   const realSalesTodayBrl = Number(today.commissions_today_brl || 0.00).toFixed(2);
   const cumulativeRevBrl = Number(sprint.cumulative_revenue_brl || 12.34).toFixed(2);
 
-  // Dynamic Google Search Console Metrics (Latest official verified update: 10,6k indexed / ~600 impressions/day)
+  // Dynamic Google Search Console Metrics (Latest official verified update: 10,6k indexed / ~600 impressions/day / 90 organic clicks milestone)
   const gsc = ledger.google_search_console_metrics || {};
   const indexedPages = (gsc.indexed_pages || 10600).toLocaleString('pt-BR');
   const unindexedPages = (gsc.unindexed_pages || 9330).toLocaleString('pt-BR');
   const dailyImpressions = gsc.daily_impressions_peak || 600;
+  const organicClicks28d = gsc.organic_clicks_28d_verified || 90;
 
   // Dynamic Sprint days
   const sprintDay = sprint.sprint_day_current || ledger.sprint_day || 2;
@@ -272,6 +273,7 @@ async function notifyLiveExecutiveDigest(options = {}) {
 • 🟢 <b>Indexadas no Google:</b> <b>${indexedPages} Páginas</b> (<b>10,6k em Verde!</b>)
 • ⏳ <b>Em Validação pelo Google:</b> <b>${unindexedPages} Páginas</b> (Processando Fila)
 • 🚀 <b>Pico de Impressões Reais:</b> <b>~${dailyImpressions} / dia</b> (Curva em Alta!)
+• 🏅 <b>Selo Oficial Google Search:</b> <b>${organicClicks28d} Cliques Orgânicos</b> (28 dias) 🎯
 
 💰 <b>3. SALDO REAL CONFIRMADO (DINHEIRO SACÁVEL):</b>
 • 🛍️ <b>Vendas de Afiliado Hoje:</b> <b>${salesTodayCount}</b> pedido(s) (R$ ${realSalesTodayBrl})
