@@ -105,12 +105,70 @@ async function runTwitterPublisher() {
   console.log('\n3. Publicando no Twitter / X API v2...');
   const publishResult = await publishTweet(selectedTweet.text);
 
+  const oa2 = global.__lastOAuth2Attempt;
+  if (!publishResult.published && oa2) {
+    console.log(`  🔍 Diagnóstico OAuth2 → HTTP ${oa2.statusCode}${oa2.error ? ' | ' + oa2.error : ''}`);
+  }
+  if (!publishResult.published) {
+    const det = publishResult.response ? (publishResult.response.detail || publishResult.response.title || JSON.stringify(publishResult.response).slice(0, 160)) : (publishResult.error || '—');
+    console.log(`  🔍 Diagnóstico OAuth1 → HTTP ${publishResult.statusCode ?? '—'} | ${det}`);
+  }
+
   if (publishResult.published) {
     console.log(`  🎉 TWEET PUBLICADO COM SUCESSO! ID: ${publishResult.tweet_id}`);
   } else if (publishResult.queued) {
     console.log(`  📥 TWEET ENFILEIRADO NA ESTEIRA DE AUTOCURA: ${publishResult.message}`);
   } else {
     console.log(`  ⚠️ Erro na publicação: ${publishResult.error}`);
+  }
+
+  // 3b. LOG REAL NO SUPABASE + CROSS-POST RESILIENTE NO TELEGRAM (motor nunca fica parado)
+  const httpsMod = require('https');
+  const SUPA_URL = process.env.SUPABASE_URL || '';
+  const SUPA_KEY = process.env.SUPABASE_SERVICE_KEY || '';
+  function sbLog(row) {
+    try {
+      if (!SUPA_URL || !SUPA_KEY) return Promise.resolve(0);
+      const body = JSON.stringify(row);
+      return new Promise((resolve) => {
+        const r2 = httpsMod.request(`${SUPA_URL.replace(/\/$/, '')}/rest/v1/social_posts`, {
+          method: 'POST',
+          headers: { apikey: SUPA_KEY, Authorization: `Bearer ${SUPA_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' }
+        }, (rs) => { rs.resume(); resolve(rs.statusCode); });
+        r2.on('error', () => resolve(0));
+        r2.write(body); r2.end();
+      });
+    } catch (e) { return Promise.resolve(0); }
+  }
+  const twStatus = publishResult.published ? 'published' : (publishResult.queued ? 'queued' : 'error');
+  await sbLog({
+    platform: 'twitter',
+    content: selectedTweet.text,
+    brand: String(selectedTweet.category || '').slice(0, 60),
+    sid: `tw_${selectedTweet.lang || 'xx'}_${Date.now()}`,
+    status: twStatus,
+    tweet_id: publishResult.tweet_id || null,
+    error: twStatus === 'published' ? null : String(publishResult.error || publishResult.message || (publishResult.response && publishResult.response.detail) || '').slice(0, 400)
+  });
+
+  if (!publishResult.published) {
+    try {
+      const { sendTelegramMessage } = require('../lib/telegram/notify-engine');
+      const tg = await sendTelegramMessage(selectedTweet.text, { chatId: process.env.TELEGRAM_DEALS_CHANNEL || '@ofertasbrasilz' });
+      const ok = !!(tg && (tg.ok || tg.sent || (tg.response && tg.response.ok)));
+      await sbLog({
+        platform: 'telegram',
+        content: selectedTweet.text,
+        brand: String(selectedTweet.category || '').slice(0, 60),
+        sid: `tg_cross_${Date.now()}`,
+        status: ok ? 'published' : 'error',
+        error: ok ? null : JSON.stringify(tg || {}).slice(0, 400)
+      });
+      console.log(`  📣 Cross-post enviado ao Telegram (@ofertasbrasilz): ${ok ? 'OK' : 'falhou'}`);
+    } catch (e) {
+      await sbLog({ platform: 'telegram', content: selectedTweet.text, status: 'error', error: String((e && e.message) || e).slice(0, 400) });
+      console.log('  ⚠️ Cross-post Telegram falhou:', e.message);
+    }
   }
 
   // 4. Update Ledger Telemetry
