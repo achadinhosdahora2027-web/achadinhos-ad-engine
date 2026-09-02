@@ -9,9 +9,13 @@ Nunca imprime tokens — apenas status HTTP, escopos e erros.
 import os, json, base64, urllib.request, urllib.parse, urllib.error
 
 RT   = os.environ.get("TWITTER_OAUTH2_REFRESH_TOKEN", "")
-CID  = os.environ.get("TWITTER_OAUTH2_CLIENT_ID", "")
-CSEC = os.environ.get("TWITTER_OAUTH2_CLIENT_SECRET", "")
+# override para testar permutações sem alterar os secrets (TEST_CLIENT_ID / TEST_CLIENT_SECRET)
+CID  = os.environ.get("TEST_CLIENT_ID") or os.environ.get("TWITTER_OAUTH2_CLIENT_ID", "")
+CSEC = os.environ.get("TEST_CLIENT_SECRET") or os.environ.get("TWITTER_OAUTH2_CLIENT_SECRET", "")
+VAULTED_CID = os.environ.get("TWITTER_OAUTH2_CLIENT_ID", "")
 PAT  = os.environ.get("GITHUB_PAT", "")
+if os.environ.get("TEST_CLIENT_ID"):
+    print(f"modo teste: id={CID[:14]}… ({len(CID)} chars), secret ({len(CSEC)} chars) — secrets do vault NÃO são alterados a menos que o refresh funcione")
 REPOS = [
     "achadinhosdahora2027-web/aquitemachadinhos",
     "achadinhosdahora2027-web/achadinhos-ad-engine",
