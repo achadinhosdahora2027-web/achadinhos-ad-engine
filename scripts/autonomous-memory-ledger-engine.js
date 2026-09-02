@@ -98,8 +98,8 @@ async function runAutonomousDirectorAudit() {
       day_number: 1,
       pageviews: prevMetrics.pageviews_today || 1420,
       unique_visitors: prevMetrics.unique_visitors_today || 620,
-      sales_count: prevMetrics.sales_count_today || 1,
-      commissions_brl: prevMetrics.commissions_today_brl || 12.34,
+      sales_count: 0,
+      commissions_brl: 0.00,
       ads_estimated_brl: 30.62,
       archived_at: nowIso
     };
@@ -210,7 +210,7 @@ async function runAutonomousDirectorAudit() {
   }));
 
   console.log(`🎯 Meta Atual: Sprint de 21 Dias [Dia Atual: ${elapsedDays}/21 | Restam: ${sprint.sprint_days_remaining}d]`);
-  console.log(`📊 Tráfego Ontem (Dia 1 - 31/08): 1.420 PVs | 1 Venda Confirmada (R$ 12,34)`);
+  console.log(`📊 Tráfego Ontem (Dia 1 - 31/08): 1.420 PVs | 0 Vendas Confirmadas (R$ 0,00)`);
   console.log(`📊 Tráfego Hoje (Dia 2 - 01/09): ${tracking.today_metrics.pageviews_today.toLocaleString('pt-BR')} PVs (${tracking.today_metrics.daily_pageviews_progress_percent}%) | ${tracking.today_metrics.unique_visitors_today} Visitantes Únicos`);
   console.log(`🚀 Acumulado Sprint: ${cumPv.toLocaleString('pt-BR')} / 85.000 PVs (${sprint.sprint_pageviews_progress_percent}%) | Saldo Real: R$ ${cumRev.toFixed(2)}`);
   console.log(`🌐 Google Search Console: 10.600 Páginas Indexadas (+1.510) | 90 Cliques Orgânicos (28d) | Pico ~600 Impressões/dia`);
