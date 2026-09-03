@@ -13,15 +13,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const CJ_PID = "8041957";
+const CJ_CID = "8041957"; // empresa
+const CJ_PIDS = { "achadinhos-ad-engine": "101859672", "aquitemachadinhos": "101859672", "nexus-ai-v2": "101870639", "solvegrid": "101870640" };
+let CJ_PID = CJ_PIDS["aquitemachadinhos"]; // sobrescrito por repositório no loop
 const CJ_BOOKING_LINK_ID = "17288448";
 const CJ_CARLA_LINK_ID = "17075184";
 
 const REPOS = ["achadinhos-ad-engine", "aquitemachadinhos", "nexus-ai-v2", "solvegrid"];
 
-const OPTIMIZED_CJ_HTML_TAGS = `<!-- CJ Affiliate Universal High-Priority Impression Pixels (Publisher: ${CJ_PID}) -->
-<img src="https://www.ftjcfx.com/image-${CJ_PID}-${CJ_BOOKING_LINK_ID}" width="1" height="1" style="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0.001;pointer-events:none;z-index:-1;" alt="" fetchpriority="high" />
-<img src="https://www.tqlkg.com/image-${CJ_PID}-${CJ_CARLA_LINK_ID}" width="1" height="1" style="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0.001;pointer-events:none;z-index:-1;" alt="" fetchpriority="high" />
+const buildCjTags = (pid) => `<!-- CJ Affiliate Universal High-Priority Impression Pixels (Publisher: ${pid}) -->
+<img src="https://www.ftjcfx.com/image-${pid}-${CJ_BOOKING_LINK_ID}" width="1" height="1" style="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0.001;pointer-events:none;z-index:-1;" alt="" fetchpriority="high" />
+<img src="https://www.tqlkg.com/image-${pid}-${CJ_CARLA_LINK_ID}" width="1" height="1" style="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0.001;pointer-events:none;z-index:-1;" alt="" fetchpriority="high" />
 <!-- /CJ Affiliate Pixels -->`;
 
 function getAllHtmlFiles(dir, fileList = []) {
@@ -40,13 +42,15 @@ function getAllHtmlFiles(dir, fileList = []) {
 
 function runForensicCjWatchdog() {
   console.log('================================================================================');
-  console.log('🛡️ AUDITORIA FORENSE DE ALTA PRECISÃO: BLINDAGEM DE PIXELS CJ (PID: 8041957)');
+  console.log('🛡️ AUDITORIA FORENSE DE ALTA PRECISÃO: BLINDAGEM DE PIXELS CJ (PIDs reais por site; CID 8041957 não é PID)');
   console.log('================================================================================\n');
 
   let totalPagesAudited = 0;
   let totalUpgraded = 0;
 
   REPOS.forEach(repo => {
+    CJ_PID = CJ_PIDS[repo] || CJ_PIDS['aquitemachadinhos'];
+    const OPTIMIZED_CJ_HTML_TAGS = buildCjTags(CJ_PID);
     const publicDir = path.join(__dirname, `../../${repo}/public`);
     if (!fs.existsSync(publicDir)) return;
 
@@ -58,18 +62,28 @@ function runForensicCjWatchdog() {
       let html = fs.readFileSync(filePath, 'utf8');
       let modified = false;
 
+      // 0. Migração: pixels antigos com CID 8041957 no lugar do PID são sempre trocados
+      if (html.includes('image-8041957-')) {
+        html = html.replace(/image-8041957-(\d+)/g, `image-${CJ_PID}-$1`);
+        modified = true;
+      }
       // 1. Remove any lazy loading or display:none from CJ image tags
-      if (html.includes('image-8041957') && (html.includes('loading="lazy"') || html.includes('display:none') || html.includes('display: none'))) {
-        // Strip out old pixel block
-        html = html.replace(/<!-- CJ Affiliate Universal Impression Tracking Pixels[\s\S]*?<!-- \/CJ Affiliate Pixels -->/gi, '');
-        html = html.replace(/<img[^>]*image-8041957[^>]*>/gi, '');
+      // Só os PRÓPRIOS pixels CJ importam (lazy/display:none em outras imagens é irrelevante)
+      const cjImgs = html.match(/<img[^>]*image-\d{7,9}-\d+[^>]*>/gi) || [];
+      const badPixel = cjImgs.some(t => /loading="lazy"|display:\s*none/i.test(t));
+      const wrongPid = cjImgs.some(t => !new RegExp('image-' + CJ_PID + '-').test(t));
+      if (cjImgs.length && (badPixel || wrongPid || cjImgs.length > 2)) {
+        // Strip out old pixel block (ambos os formatos de comentário) e imgs soltas
+        html = html.replace(/<!-- CJ Affiliate Universal (High-Priority )?Impression (Tracking )?Pixels[^>]*-->/gi, '');
+        html = html.replace(/<!-- \/CJ Affiliate Pixels -->/gi, '');
+        html = html.replace(/<img[^>]*image-\d{7,9}-\d+[^>]*>/gi, '');
         
         // Inject modern high-priority pixel block
         if (/<\/body>/i.test(html)) {
           html = html.replace(/<\/body>/i, `${OPTIMIZED_CJ_HTML_TAGS}\n</body>`);
           modified = true;
         }
-      } else if (!html.includes('image-8041957')) {
+      } else if (!cjImgs.length) {
         if (/<\/body>/i.test(html)) {
           html = html.replace(/<\/body>/i, `${OPTIMIZED_CJ_HTML_TAGS}\n</body>`);
           modified = true;
@@ -109,7 +123,7 @@ function runForensicCjWatchdog() {
       ledger.self_healing_audit_log.unshift({
         timestamp: new Date().toISOString(),
         action: "CJ_PIXEL_HIGH_PRIORITY_UPGRADE",
-        result: `${totalPagesAudited} páginas HTML blindadas com disparo imediato de pixels CJ (PID 8041957) e zero bloqueio lazy-load.`
+        result: `${totalPagesAudited} páginas HTML blindadas com disparo imediato de pixels CJ (PID correto por site) e zero bloqueio lazy-load.`
       });
       ledger.self_healing_audit_log = ledger.self_healing_audit_log.slice(0, 20);
       fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2));

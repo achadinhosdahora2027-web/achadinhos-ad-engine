@@ -1,13 +1,34 @@
 const fs = require('fs');
 const path = require('path');
 
-// Master Verified Working Affiliate Endpoints & Dynamic Routing Matrix
-const VERIFIED_TARGETS = {
-  booking: "https://www.tkqlhce.com/click-8041957-17288448",
-  carla: "https://www.jdoqocy.com/click-8041957-17075184",
-  nordvpn: "https://www.tkqlhce.com/click-8041957-12884704",
-  nordpass: "https://www.tkqlhce.com/click-8041957-14068571",
-  surfshark: "https://www.dpbolvw.net/click-8041957-13936081",
+// ==========================================================================
+// CJ Affiliate — identidade correta (auditoria 03/09/2026)
+//   CID (empresa/publisher):        8041957   -> usado APENAS em APIs (requestor-cid)
+//   PID (website / promotional property) por site -> usado nos links click-{PID}-{LINK}
+// ==========================================================================
+const CJ_CID = '8041957';
+const CJ_PIDS = {
+  aquitemachadinhos: '101859672',
+  nexus: '101870639',
+  solvegrid: '101870640'
+};
+const CJ_DEFAULT_SITE = 'aquitemachadinhos';
+
+function resolveCjPid(site) {
+  const s = String(site || '').toLowerCase();
+  if (s.startsWith('nexus')) return CJ_PIDS.nexus;
+  if (s.startsWith('solvegrid')) return CJ_PIDS.solvegrid;
+  return CJ_PIDS[CJ_DEFAULT_SITE];
+}
+
+// Links CJ = Evergreen/Text links REAIS dos programas joined (validados via Link Search API).
+// {PID} é substituído em tempo de execução pelo PID do site de origem.
+const CJ_LINKS = {
+  booking: "https://www.kqzyfj.com/click-{PID}-17293138",
+  carla: "https://www.anrdoezrs.net/click-{PID}-17094338",
+  nordvpn: "https://www.anrdoezrs.net/click-{PID}-12814527",
+  nordpass: "https://www.dpbolvw.net/click-{PID}-17262576",
+  surfshark: "https://www.tkqlhce.com/click-{PID}-15736773",
   shopee: "https://s.shopee.com.br/9pG4O5hX8q",
   mercadolivre: "https://meli.la/1U3rtgV",
   amazon: "https://amazon.com.br/?tag=aquitemachadinhos-20",
@@ -17,21 +38,26 @@ const VERIFIED_TARGETS = {
   clickbus: "https://www.clickbus.com.br/",
   brunoyam: "https://brunoyam.com/",
   nadpo: "https://nadpo.ru/",
-  aliexpress: "https://www.anrdoezrs.net/click-8041957-14298102",
-  ebay: "https://www.anrdoezrs.net/click-8041957-13892019",
-  malwarebytes: "https://www.anrdoezrs.net/click-8041957-15243102",
-  wondershare: "https://www.kqzyfj.com/click-8041957-14298109",
-  movavi: "https://www.dpbolvw.net/click-8041957-14318721",
-  parallels: "https://www.jdoqocy.com/click-8041957-14092819",
-  corel: "https://www.tkqlhce.com/click-8041957-13892711",
-  sucuri: "https://www.anrdoezrs.net/click-8041957-15102938",
-  updf: "https://www.tkqlhce.com/click-8041957-15609182",
-  switchbot: "https://www.jdoqocy.com/click-8041957-15392810",
-  bluetti: "https://www.tkqlhce.com/click-8041957-15182903",
-  soundcore: "https://www.anrdoezrs.net/click-8041957-14920194",
-  novakid: "https://www.tkqlhce.com/click-8041957-15201928",
-  economybookings: "https://www.tkqlhce.com/click-8041957-13768291"
+  aliexpress: "https://www.dpbolvw.net/click-{PID}-17291909",
+  malwarebytes: "https://www.dpbolvw.net/click-{PID}-15734534",
+  wondershare: "https://www.anrdoezrs.net/click-{PID}-15733675",
+  movavi: "https://www.anrdoezrs.net/click-{PID}-15735540",
+  parallels: "https://www.jdoqocy.com/click-{PID}-15733336",
+  corel: "https://www.tkqlhce.com/click-{PID}-15734376",
+  sucuri: "https://www.tkqlhce.com/click-{PID}-15735343",
+  updf: "https://www.anrdoezrs.net/click-{PID}-15820753",
+  switchbot: "https://www.dpbolvw.net/click-{PID}-15735830",
+  bluetti: "https://www.anrdoezrs.net/click-{PID}-15736238",
+  soundcore: "https://www.anrdoezrs.net/click-{PID}-17033430",
+  novakid: "https://www.dpbolvw.net/click-{PID}-15735619",
+  economybookings: "https://www.kqzyfj.com/click-{PID}-15736982",
+  booking_latam: "https://www.jdoqocy.com/click-{PID}-17293137",
+  booking_uk: "https://www.jdoqocy.com/click-{PID}-15734754"
 };
+
+// Compatibilidade: mesmo objeto sob o nome antigo
+const VERIFIED_TARGETS = CJ_LINKS;
+
 
 // Regional Tier Mapping
 const REGIONS = {
@@ -121,13 +147,20 @@ module.exports = async (req, res) => {
 
   let targetUrl = '';
 
+  const cjPid = resolveCjPid(site);
+  // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
+  if (brandKey === 'booking') {
+    if (REGIONS.TIER1_EU.includes(country) || country === 'GB') brandKey = 'booking_uk';
+    else if (REGIONS.LATAM.includes(country) && country !== 'BR') brandKey = 'booking_latam';
+  }
+
   if (VERIFIED_TARGETS[brandKey]) {
-    targetUrl = VERIFIED_TARGETS[brandKey];
+    targetUrl = VERIFIED_TARGETS[brandKey].replace('{PID}', cjPid);
     if (brandKey === 'udemy' && rawDest) {
       targetUrl = rawDest;
     }
   } else if (brandCatalog[brandKey] && brandCatalog[brandKey].url) {
-    targetUrl = brandCatalog[brandKey].url;
+    targetUrl = String(brandCatalog[brandKey].url).replace('{PID}', cjPid);
   } else if (rawDest) {
     targetUrl = rawDest;
   } else {
@@ -136,7 +169,7 @@ module.exports = async (req, res) => {
   }
 
   // CJ Deep Link Encoding Compliance
-  if (rawDest && (targetUrl.includes('click-8041957') || targetUrl.includes('tkqlhce.com') || targetUrl.includes('jdoqocy.com') || targetUrl.includes('anrdoezrs.net') || targetUrl.includes('dpbolvw.net')) && !targetUrl.includes('url=')) {
+  if (rawDest && (/\/click-\d{9}-\d+/.test(targetUrl) || targetUrl.includes('tkqlhce.com') || targetUrl.includes('kqzyfj.com') || targetUrl.includes('jdoqocy.com') || targetUrl.includes('anrdoezrs.net') || targetUrl.includes('dpbolvw.net')) && !targetUrl.includes('url=')) {
     const sep = targetUrl.includes('?') ? '&' : '?';
     targetUrl = `${targetUrl}${sep}url=${encodeURIComponent(rawDest)}`;
   }
@@ -174,7 +207,7 @@ module.exports = async (req, res) => {
       if (fs.existsSync(lp)) {
         const ldata = JSON.parse(fs.readFileSync(lp, 'utf8'));
         if (!ldata.cumulative_telemetry) ldata.cumulative_telemetry = {};
-        ldata.cumulative_telemetry.total_clicks = (ldata.cumulative_telemetry.total_clicks || 330) + 1;
+        ldata.cumulative_telemetry.total_clicks = (ldata.cumulative_telemetry.total_clicks || 0) + 1;
         fs.writeFileSync(lp, JSON.stringify(ldata, null, 2));
         break;
       }
@@ -187,6 +220,7 @@ module.exports = async (req, res) => {
   res.setHeader('X-Affiliate-Engine', 'Achadinhos-Global-Gateway-2026');
   res.setHeader('X-Routed-Country', country);
   res.setHeader('X-Routed-Brand', brandKey);
+  res.setHeader('X-CJ-PID', cjPid);
   res.setHeader('Location', targetUrl);
   return res.status(307).end();
 };

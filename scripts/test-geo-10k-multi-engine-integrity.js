@@ -6,7 +6,7 @@
  * Verifies:
  * 1. 10k URL sitemap structure across all 4 search engine clusters (40,000 total URLs).
  * 2. Geo-targeting affinity and niche alignment per engine (Bing, Yandex, Seznam, Naver).
- * 3. Affiliate gateway routing (/api/ads/go), dynamic SID injection, and CJ PID 8041957.
+ * 3. Affiliate gateway routing (/api/ads/go), dynamic SID injection, and real CJ PIDs (101859672 / 101870639 / 101870640).
  * 4. Monetization pixels (AdSense, Monetag, Infolinks) across all pages.
  * 5. Zero broken links, zero 404s, zero blind spots.
  */
@@ -22,7 +22,8 @@ const CLUSTER_SITEMAPS = [
   { name: 'Naver & East Asia APAC', file: 'public/sitemaps/sitemap-naver-apac-10k.xml', expectedCount: 10000, keyBrands: ['booking', 'soundcore', 'novakid', 'udemy', 'shopee'] }
 ];
 
-const VERIFIED_CJ_PID = '8041957';
+const VERIFIED_CJ_PIDS = ['101859672', '101870639', '101870640']; // PIDs reais (CID 8041957 não é PID)
+const VERIFIED_CJ_PID = VERIFIED_CJ_PIDS[0];
 const VERIFIED_MONETAG_ZONE = '274860';
 const VERIFIED_ADSENSE_PUB = 'ca-pub-5604700207394147';
 const VERIFIED_INFOLINKS_PID = '3447442';
@@ -106,7 +107,7 @@ async function runForensicAudit() {
       totalTests++;
       const html = fs.readFileSync(pPath, 'utf8');
       assert.ok(html.includes(VERIFIED_CJ_PID) || html.includes('ca-pub-') || html.includes('monetag'), `Pixel ausente em ${p}`);
-      console.log(`  ✓ [Blindagem de Pixels] Página: ${p.padEnd(24)} | CJ (PID 8041957) + Monetag + AdSense OK.`);
+      console.log(`  ✓ [Blindagem de Pixels] Página: ${p.padEnd(24)} | CJ (PID real) + Monetag + AdSense OK.`);
       passedTests++;
     }
   });

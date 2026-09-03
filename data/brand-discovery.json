@@ -1,34 +1,200 @@
 {
-  "publisher_pid": "8041957",
+  "cj_cid": "8041957",
+  "cj_pids": {
+    "aquitemachadinhos": "101859672",
+    "nexus": "101870639",
+    "solvegrid": "101870640"
+  },
   "admitad_publisher_id": "8041957",
   "brands": {
-    "nordvpn": { "name": "NordVPN", "category": "cybersecurity", "tier": "global", "url": "https://www.anrdoezrs.net/click-8041957-13936081" },
-    "nordpass": { "name": "NordPass", "category": "security", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-14068571" },
-    "surfshark": { "name": "Surfshark", "category": "cybersecurity", "tier": "global", "url": "https://www.dpbolvw.net/click-8041957-13936081" },
-    "booking": { "name": "Booking.com", "category": "travel", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-17288448" },
-    "carla": { "name": "Carla Car Rental", "category": "travel", "tier": "global", "url": "https://www.jdoqocy.com/click-8041957-17075184" },
-    "shopee": { "name": "Shopee Brasil", "category": "ecommerce", "tier": "latam", "url": "https://shopee.com.br" },
-    "mercadolivre": { "name": "Mercado Livre", "category": "marketplace", "tier": "latam", "url": "https://meli.la/1U3rtgV" },
-    "amazon": { "name": "Amazon Brasil", "category": "ecommerce", "tier": "latam", "url": "https://amazon.com.br/?tag=aquitemachadinhos-20" },
-    "amazon_us": { "name": "Amazon US", "category": "ecommerce", "tier": "global", "url": "https://www.amazon.com/?tag=aquitemachadinhos-20" },
-    "clickbus": { "name": "ClickBus", "category": "travel", "tier": "latam", "url": "https://www.clickbus.com.br/" },
-    "faculdade": { "name": "Faculdade Interativa", "category": "education", "tier": "latam", "url": "https://faculdade-interativa-core.vercel.app" },
-    "udemy": { "name": "Udemy", "category": "education", "tier": "global", "url": "https://www.udemy.com/courses/search/?src=ukw&q=" },
-    "brunoyam": { "name": "Brunoyam RU", "category": "education_tech", "tier": "cis", "url": "https://brunoyam.com/" },
-    "nadpo": { "name": "NADPO RU", "category": "education", "tier": "cis", "url": "https://nadpo.ru/" },
-    "aliexpress": { "name": "AliExpress", "category": "ecommerce", "tier": "global", "url": "https://www.anrdoezrs.net/click-8041957-14298102" },
-    "ebay": { "name": "eBay", "category": "marketplace", "tier": "global", "url": "https://www.anrdoezrs.net/click-8041957-13892019" },
-    "malwarebytes": { "name": "Malwarebytes", "category": "security", "tier": "global", "url": "https://www.anrdoezrs.net/click-8041957-15243102" },
-    "wondershare": { "name": "Wondershare", "category": "software", "tier": "global", "url": "https://www.kqzyfj.com/click-8041957-14298109" },
-    "movavi": { "name": "Movavi", "category": "software", "tier": "global", "url": "https://www.dpbolvw.net/click-8041957-14318721" },
-    "parallels": { "name": "Parallels", "category": "software", "tier": "global", "url": "https://www.jdoqocy.com/click-8041957-14092819" },
-    "corel": { "name": "Corel", "category": "software", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-13892711" },
-    "sucuri": { "name": "Sucuri Security", "category": "web-tools", "tier": "global", "url": "https://www.anrdoezrs.net/click-8041957-15102938" },
-    "updf": { "name": "UPDF Editor", "category": "productivity", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-15609182" },
-    "switchbot": { "name": "SwitchBot", "category": "smart-home", "tier": "global", "url": "https://www.jdoqocy.com/click-8041957-15392810" },
-    "bluetti": { "name": "Bluetti", "category": "energy", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-15182903" },
-    "soundcore": { "name": "Soundcore", "category": "audio", "tier": "global", "url": "https://www.anrdoezrs.net/click-8041957-14920194" },
-    "novakid": { "name": "Novakid", "category": "education", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-15201928" },
-    "economybookings": { "name": "EconomyBookings", "category": "travel", "tier": "global", "url": "https://www.tkqlhce.com/click-8041957-13768291" }
+    "nordvpn": {
+      "name": "NordVPN",
+      "category": "cybersecurity",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-12814527",
+      "network": "cj"
+    },
+    "nordpass": {
+      "name": "NordPass",
+      "category": "security",
+      "tier": "global",
+      "url": "https://www.dpbolvw.net/click-{PID}-17262576",
+      "network": "cj"
+    },
+    "surfshark": {
+      "name": "Surfshark",
+      "category": "cybersecurity",
+      "tier": "global",
+      "url": "https://www.tkqlhce.com/click-{PID}-15736773",
+      "network": "cj"
+    },
+    "booking": {
+      "name": "Booking.com",
+      "category": "travel",
+      "tier": "global",
+      "url": "https://www.kqzyfj.com/click-{PID}-17293138",
+      "network": "cj"
+    },
+    "carla": {
+      "name": "Carla Car Rental",
+      "category": "travel",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-17094338",
+      "network": "cj"
+    },
+    "shopee": {
+      "name": "Shopee Brasil",
+      "category": "ecommerce",
+      "tier": "latam",
+      "url": "https://shopee.com.br"
+    },
+    "mercadolivre": {
+      "name": "Mercado Livre",
+      "category": "marketplace",
+      "tier": "latam",
+      "url": "https://meli.la/1U3rtgV"
+    },
+    "amazon": {
+      "name": "Amazon Brasil",
+      "category": "ecommerce",
+      "tier": "latam",
+      "url": "https://amazon.com.br/?tag=aquitemachadinhos-20"
+    },
+    "amazon_us": {
+      "name": "Amazon US",
+      "category": "ecommerce",
+      "tier": "global",
+      "url": "https://www.amazon.com/?tag=aquitemachadinhos-20"
+    },
+    "clickbus": {
+      "name": "ClickBus",
+      "category": "travel",
+      "tier": "latam",
+      "url": "https://www.clickbus.com.br/"
+    },
+    "faculdade": {
+      "name": "Faculdade Interativa",
+      "category": "education",
+      "tier": "latam",
+      "url": "https://faculdade-interativa-core.vercel.app"
+    },
+    "udemy": {
+      "name": "Udemy",
+      "category": "education",
+      "tier": "global",
+      "url": "https://www.udemy.com/courses/search/?src=ukw&q="
+    },
+    "brunoyam": {
+      "name": "Brunoyam RU",
+      "category": "education_tech",
+      "tier": "cis",
+      "url": "https://brunoyam.com/"
+    },
+    "nadpo": {
+      "name": "NADPO RU",
+      "category": "education",
+      "tier": "cis",
+      "url": "https://nadpo.ru/"
+    },
+    "aliexpress": {
+      "name": "AliExpress",
+      "category": "ecommerce",
+      "tier": "global",
+      "url": "https://www.dpbolvw.net/click-{PID}-17291909",
+      "network": "cj"
+    },
+    "malwarebytes": {
+      "name": "Malwarebytes",
+      "category": "security",
+      "tier": "global",
+      "url": "https://www.dpbolvw.net/click-{PID}-15734534",
+      "network": "cj"
+    },
+    "wondershare": {
+      "name": "Wondershare",
+      "category": "software",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-15733675",
+      "network": "cj"
+    },
+    "movavi": {
+      "name": "Movavi",
+      "category": "software",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-15735540",
+      "network": "cj"
+    },
+    "parallels": {
+      "name": "Parallels",
+      "category": "software",
+      "tier": "global",
+      "url": "https://www.jdoqocy.com/click-{PID}-15733336",
+      "network": "cj"
+    },
+    "corel": {
+      "name": "Corel",
+      "category": "software",
+      "tier": "global",
+      "url": "https://www.tkqlhce.com/click-{PID}-15734376",
+      "network": "cj"
+    },
+    "sucuri": {
+      "name": "Sucuri Security",
+      "category": "web-tools",
+      "tier": "global",
+      "url": "https://www.tkqlhce.com/click-{PID}-15735343",
+      "network": "cj"
+    },
+    "updf": {
+      "name": "UPDF Editor",
+      "category": "productivity",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-15820753",
+      "network": "cj"
+    },
+    "switchbot": {
+      "name": "SwitchBot",
+      "category": "smart-home",
+      "tier": "global",
+      "url": "https://www.dpbolvw.net/click-{PID}-15735830",
+      "network": "cj"
+    },
+    "bluetti": {
+      "name": "Bluetti",
+      "category": "energy",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-15736238",
+      "network": "cj"
+    },
+    "soundcore": {
+      "name": "Soundcore",
+      "category": "audio",
+      "tier": "global",
+      "url": "https://www.anrdoezrs.net/click-{PID}-17033430",
+      "network": "cj"
+    },
+    "novakid": {
+      "name": "Novakid",
+      "category": "education",
+      "tier": "global",
+      "url": "https://www.dpbolvw.net/click-{PID}-15735619",
+      "network": "cj"
+    },
+    "economybookings": {
+      "name": "EconomyBookings",
+      "category": "travel",
+      "tier": "global",
+      "url": "https://www.kqzyfj.com/click-{PID}-15736982",
+      "network": "cj"
+    }
+  },
+  "cj": {
+    "cid": "8041957",
+    "pids": {
+      "aquitemachadinhos": "101859672",
+      "nexus": "101870639",
+      "solvegrid": "101870640"
+    },
+    "note": "links usam {PID}; gateway substitui pelo PID do site de origem"
   }
 }

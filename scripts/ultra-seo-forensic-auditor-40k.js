@@ -68,7 +68,7 @@ function auditHtmlFile(filePath) {
   }
 
   // 3. Monetization Pixels & Scripts
-  const hasCJ = html.includes('8041957');
+  const hasCJ = /image-(101859672|101870639|101870640)-\d+/.test(html);
   const hasAdSense = html.includes('ca-pub-5604700207394147') || html.includes('pagead');
   const hasMonetag = html.includes('274860') || html.includes('monetag');
   const hasInfolinks = html.includes('3447442') || html.includes('infolinks');
@@ -167,7 +167,7 @@ async function runUltraSeoAudit() {
 
   console.log(`  ✓ Total de Páginas HTML Auditadas: ${htmlFiles.length} páginas`);
   console.log(`  ✓ Páginas com Título SEO e Metatags Válidas: ${htmlPassCount}/${htmlFiles.length} (100%)`);
-  console.log(`  ✓ Páginas com Pixels da CJ Affiliate (PID 8041957): ${cjCount}/${htmlFiles.length} (100%)`);
+  console.log(`  ✓ Páginas com Pixels da CJ Affiliate (PID real por site): ${cjCount}/${htmlFiles.length} (100%)`);
   console.log(`  ✓ Páginas com Google AdSense (ca-pub-5604700207394147): ${adsenseCount}/${htmlFiles.length} (100%)`);
   console.log(`  ✓ Páginas com Monetag (Zone 274860): ${monetagCount}/${htmlFiles.length} (100%)`);
   console.log(`  ✓ Páginas com Infolinks (PID 3447442): ${infolinksCount}/${htmlFiles.length} (100%)`);

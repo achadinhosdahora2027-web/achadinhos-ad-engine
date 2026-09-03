@@ -3,7 +3,7 @@
  * ACHADINHOS FORENSIC TELEMETRY, CJ PIXEL BEACON & SID AUTO-DECORATOR 2026
  * Managed by: CQO (Auditoria Forense) & CTO (Engenharia de Software)
  * ==============================================================================
- * 1. Immediate High-Priority CJ Impression Pixel Beaconing (PID: 8041957).
+ * 1. Immediate High-Priority CJ Impression Pixel Beaconing (PID: 101859672).
  * 2. Auto-decorates all outbound affiliate links with forensic telemetry (SID, Geo, Device).
  * 3. Real-time Pageview Beacon to /api/telemetry/collect.
  * 4. Zero-delay firing ensuring 100% impression registration in CJ & Ad Networks.
@@ -12,10 +12,10 @@
 (function() {
   'use strict';
 
-  const CJ_PID = '8041957';
+  const CJ_PID = '101859672'; // PID do site (Promotional Property). CID 8041957 NÃO é PID.
   const CJ_PIXELS = [
-    'https://www.ftjcfx.com/image-8041957-17288448', // Booking.com
-    'https://www.tqlkg.com/image-8041957-17075184'   // Carla Car Rental
+    'https://www.ftjcfx.com/image-101859672-17288448', // Booking.com
+    'https://www.tqlkg.com/image-101859672-17075184'   // Carla Car Rental
   ];
 
   // 1. FORENSIC CJ IMPRESSION BEACON (Fires immediately without waiting for scroll)
