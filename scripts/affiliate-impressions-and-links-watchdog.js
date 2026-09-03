@@ -67,9 +67,21 @@ function runForensicCjWatchdog() {
         html = html.replace(/image-8041957-(\d+)/g, `image-${CJ_PID}-$1`);
         modified = true;
       }
-      // 1. Remove any lazy loading or display:none from CJ image tags
-      // Só os PRÓPRIOS pixels CJ importam (lazy/display:none em outras imagens é irrelevante)
+      // 1. Pixel de impressão CJ só faz sentido em páginas que tenham link de afiliado.
+      //    Páginas sem link (home, newsletter, widgets, arquivos de verificação Monetag/IndexNow) só inflam
+      //    impressões e derrubam CTR/EPC no painel — nessas o bloco é removido, nunca injetado.
+      const hasAffiliateLink = /api\/ads\/go|\/click-\d{7,9}-\d+|s\.shopee\.com\.br|amazon\.com[^"']*tag=/i.test(html);
+      const isVerificationFile = /(^|\/)(monetag[_]?)?[a-f0-9]{32}\.html$/i.test(filePath) || html.length < 2000;
       const cjImgs = html.match(/<img[^>]*image-\d{7,9}-\d+[^>]*>/gi) || [];
+      if ((!hasAffiliateLink || isVerificationFile) && cjImgs.length) {
+        html = html.replace(/<!-- CJ Affiliate Universal (High-Priority )?Impression (Tracking )?Pixels[^>]*-->\s*/gi, '');
+        html = html.replace(/<!-- \/CJ Affiliate Pixels -->\s*/gi, '');
+        html = html.replace(/<img[^>]*image-\d{7,9}-\d+[^>]*>\s*/gi, '');
+        modified = true;
+      }
+      if (!hasAffiliateLink || isVerificationFile) {
+        // sem link de afiliado: nada de pixel; segue para o resto da auditoria
+      } else {
       const badPixel = cjImgs.some(t => /loading="lazy"|display:\s*none/i.test(t));
       const wrongPid = cjImgs.some(t => !new RegExp('image-' + CJ_PID + '-').test(t));
       if (cjImgs.length && (badPixel || wrongPid || cjImgs.length > 2)) {
@@ -88,6 +100,7 @@ function runForensicCjWatchdog() {
           html = html.replace(/<\/body>/i, `${OPTIMIZED_CJ_HTML_TAGS}\n</body>`);
           modified = true;
         }
+      }
       }
 
       // 2. Ensure affiliate-telemetry.js is loaded in the <head> or body
