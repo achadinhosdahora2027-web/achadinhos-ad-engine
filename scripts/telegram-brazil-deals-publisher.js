@@ -175,7 +175,7 @@ async function publishNextViralDeal(options = {}) {
 
   // Anti-Repetition Engine
   const publishedIds = new Set((history.published_deals || []).map(d => d.id));
-  let availableDeals = allDeals.filter(d => !publishedIds.has(d.id));
+  let availableDeals = allDeals.filter(d => d.active !== false && !publishedIds.has(d.id));
 
   // If all deals have been published, start a new fresh rotation
   if (availableDeals.length === 0) {

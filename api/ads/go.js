@@ -48,7 +48,9 @@ const CJ_LINKS = {
   nordvpn: "https://www.anrdoezrs.net/click-{PID}-13914989",
   nordpass: "https://www.dpbolvw.net/click-{PID}-17262576",
   surfshark: "https://www.tkqlhce.com/click-{PID}-15736773",
-  shopee: "https://s.shopee.com.br/9pG4O5hX8q",
+  // Shopee: shortlink 9pG4O5hX8q morto (shope.ee/error_page em 03/09/2026). 30n7ohzzU6 e o unico shortlink
+  // valido no projeto (afiliado an_18336420850). Gerar shortlink de home/ofertas no portal Shopee Afiliados.
+  shopee: "https://s.shopee.com.br/30n7ohzzU6",
   mercadolivre: "https://meli.la/1U3rtgV",
   amazon: "https://amazon.com.br/?tag=aquitemachadinhos-20",
   amazon_us: "https://www.amazon.com/?tag=aquitemachadinhos-20",
