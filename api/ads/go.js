@@ -26,7 +26,7 @@ function resolveCjPid(site) {
 const CJ_LINKS = {
   booking: "https://www.kqzyfj.com/click-{PID}-17293138",
   carla: "https://www.anrdoezrs.net/click-{PID}-17094338",
-  nordvpn: "https://www.anrdoezrs.net/click-{PID}-12814527",
+  nordvpn: "https://www.anrdoezrs.net/click-{PID}-13914989",
   nordpass: "https://www.dpbolvw.net/click-{PID}-17262576",
   surfshark: "https://www.tkqlhce.com/click-{PID}-15736773",
   shopee: "https://s.shopee.com.br/9pG4O5hX8q",
@@ -38,7 +38,7 @@ const CJ_LINKS = {
   clickbus: "https://www.clickbus.com.br/",
   brunoyam: "https://brunoyam.com/",
   nadpo: "https://nadpo.ru/",
-  aliexpress: "https://www.dpbolvw.net/click-{PID}-17291909",
+  aliexpress: "https://www.anrdoezrs.net/click-{PID}-17242061",
   malwarebytes: "https://www.dpbolvw.net/click-{PID}-15734534",
   wondershare: "https://www.anrdoezrs.net/click-{PID}-15733675",
   movavi: "https://www.anrdoezrs.net/click-{PID}-15735540",
