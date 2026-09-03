@@ -52,6 +52,8 @@ const CJ_LINKS = {
   // valido no projeto (afiliado an_18336420850). Gerar shortlink de home/ofertas no portal Shopee Afiliados.
   shopee: "https://s.shopee.com.br/30n7ohzzU6",
   mercadolivre: "https://meli.la/1U3rtgV",
+  // eBay Partner Network (campanha 5339193749). /deals resolve p/ bots e users; campid rastreia a campanha.
+  ebay: "https://www.ebay.com/deals?campid=5339193749&toolid=10001&mkevt=1&mkcid=1&mkrid=711-53200-19255-0",
   amazon: "https://amazon.com.br/?tag=aquitemachadinhos-20",
   amazon_us: "https://www.amazon.com/?tag=aquitemachadinhos-20",
   udemy: "https://www.udemy.com/courses/search/?src=ukw&q=",
@@ -216,6 +218,10 @@ module.exports = async (req, res) => {
     // Shopee
     if (urlObj.hostname.includes('shopee')) {
       urlObj.searchParams.set('sub_id', sid);
+    }
+    // eBay Partner Network
+    if (urlObj.hostname.includes('ebay')) {
+      urlObj.searchParams.set('customid', sid);
     }
     targetUrl = urlObj.toString();
   } catch (e) {
