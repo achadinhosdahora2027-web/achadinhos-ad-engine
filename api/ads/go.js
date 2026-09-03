@@ -114,6 +114,9 @@ function detectDevice(userAgent = '') {
   return 'desktop';
 }
 
+// Marcas sem programa de afiliados ativo na conta (trafego sem comissao). Udemy: nao existe na CJ.
+const NON_MONETIZED = new Set(['udemy', 'brunoyam']);
+
 module.exports = async (req, res) => {
   const brandCatalog = getBrandCatalog();
   const query = req.query || {};
@@ -244,6 +247,7 @@ module.exports = async (req, res) => {
   res.setHeader('X-Routed-Country', country);
   res.setHeader('X-Routed-Brand', brandKey);
   res.setHeader('X-CJ-PID', cjPid);
+  res.setHeader('X-Monetized', NON_MONETIZED.has(brandKey) ? 'false' : 'true');
   res.setHeader('Location', targetUrl);
   return res.status(307).end();
 };

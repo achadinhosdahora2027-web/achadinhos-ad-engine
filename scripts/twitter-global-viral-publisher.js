@@ -92,11 +92,6 @@ const TWEET_TEMPLATES = [
     text: "🔮 O universo tem um recado importante para o seu signo hoje! Tire sua carta no Tarot 3D Interativo 2026.\n\n✨ Oráculo 100% grátis:\n\n👉 https://www.aquitemachadinhos.com.br/entretenimento.html#tarot\n\n#Tarot #Astrologia #Signos #Previsoes #Horoscopo #Espiritualidade"
   },
   {
-    category: "Udemy Certified AI & Python Academy",
-    lang: "en",
-    text: "🚀 Master Generative AI, Next.js 15, Python & Full-Stack Development with certified top-tier courses.\n\n🎓 Explore exclusive 85% OFF vouchers:\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=twitter&slot=global_viral&sid=tw_udemy_en\n\n#Udemy #Python #AI #WebDev #Coding #FullStack"
-  },
-  {
     category: "Tokyo & Japan Travel Guide",
     lang: "ja",
     text: "🇯🇵 日本全国のホテル・温泉宿がお得に予約できる割引クーポン配布中！\n\n🏨 キャンセル無料プラン多数：\n\n👉 https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=twitter&slot=japan_ja&sid=tw_tokyo_ja\n\n#旅行 #ホテル #Booking #お得情報 #観光"

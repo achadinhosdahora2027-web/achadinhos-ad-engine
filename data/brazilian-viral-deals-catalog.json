@@ -245,7 +245,9 @@
         "Aprenda a criar automações, agentes e projetos reais de IA"
       ],
       "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=telegram_ofertas&slot=udemy_deal",
-      "category": "Cursos Online"
+      "category": "Cursos Online",
+      "active": false,
+      "inactive_reason": "Udemy sem programa de afiliados na conta (trafego sem comissao) - auditoria 2026-09-03"
     },
     {
       "id": "br_deal_014_cftv_camera_wifi_360",

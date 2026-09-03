@@ -98,9 +98,10 @@
     `;
 
     const site = window.location.hostname.includes('solvegrid') ? 'solvegrid' : (window.location.hostname.includes('nexus') ? 'nexus' : 'aquitemachadinhos');
-    const brand = site === 'solvegrid' ? 'nordvpn' : (site === 'nexus' ? 'udemy' : 'shopee');
-    const offerText = site === 'solvegrid' ? '🛡️ NordVPN 74% OFF + 3 Meses' : (site === 'nexus' ? '🎓 Cursos Tech & IA com Desconto' : '🔥 Achadinho do Dia: Cupons Shopee & Amazon');
-    const btnText = site === 'solvegrid' ? 'Ativar Desconto ➔' : 'Pegar Cupom ➔';
+    // Udemy nao tem programa de afiliados na conta (auditoria 03/09/2026) -> nexus usa NordVPN (top EPC)
+    const brand = site === 'aquitemachadinhos' ? 'shopee' : 'nordvpn';
+    const offerText = site === 'aquitemachadinhos' ? '🔥 Achadinho do Dia: Cupons Shopee & Amazon' : '🛡️ NordVPN 74% OFF + 3 Meses';
+    const btnText = site === 'aquitemachadinhos' ? 'Pegar Cupom ➔' : 'Ativar Desconto ➔';
 
     bar.innerHTML = `
       <div style="display:flex;align-items:center;gap:8px;min-width:0;">

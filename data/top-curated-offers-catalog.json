@@ -340,34 +340,6 @@
       ]
     },
     {
-      "id": "off_04_udemy_ai_courses",
-      "title": "Cursos Certificados de Inteligência Artificial & Python",
-      "brand": "Udemy",
-      "merchant": "Udemy Inc.",
-      "category": "Educação Online",
-      "network": "cj",
-      "payout_model": "CPA 15% (R$ 25 a R$ 85 por curso)",
-      "avg_commission_brl": 38,
-      "country": "GLOBAL",
-      "language": "en",
-      "priority_weight": 1.15,
-      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=meta_controlled&slot=top_offer_04&sid=tw_udemy_ai",
-      "target_channels": [
-        "twitter_savegrid20",
-        "ig_biz_17841443518469482"
-      ],
-      "best_hours_utc": [
-        14,
-        19,
-        23
-      ],
-      "best_hours_brt": [
-        "11:00",
-        "16:00",
-        "20:00"
-      ]
-    },
-    {
       "id": "off_10_meli_smartwatch_ultra",
       "title": "Smartwatch Ultra Series 9 AMOLED com GPS Integrado",
       "brand": "Mercado Livre",
