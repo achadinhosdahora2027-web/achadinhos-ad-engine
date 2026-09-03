@@ -14,8 +14,27 @@ const CJ_PIDS = {
 };
 const CJ_DEFAULT_SITE = 'aquitemachadinhos';
 
-function resolveCjPid(site) {
-  const s = String(site || '').toLowerCase();
+// Valores de site= que NÃO identificam um website (usados por bio/tags/JS compartilhados entre os 3 sites).
+const GENERIC_SITE_PARAMS = new Set(['bio_link', 'tag_seo', 'exit_drawer', 'sticky_mobile', 'vip_club', 'wheel', 'health', 'audit', 'auto', '']);
+
+// Site real a partir do host de origem (Referer/Origin). Retorna '' se não der para saber.
+function siteFromReferer(headers) {
+  const ref = String((headers && (headers.referer || headers.origin)) || '');
+  let host = '';
+  try { host = new URL(ref).hostname.toLowerCase(); } catch (e) { return ''; }
+  if (host.includes('nexusplataforma') || host.startsWith('nexus')) return 'nexus';
+  if (host.includes('solvegrid')) return 'solvegrid';
+  if (host.includes('aquitemachadinhos')) return 'aquitemachadinhos';
+  return '';
+}
+
+// PID CJ do website. Regra: site= explícito (nexus*/solvegrid*/aquitem*) vence; se for genérico
+// (bio_link, tag_seo, exit_drawer...) usa o host de origem; senão o padrão (aquitem).
+function resolveCjPid(site, headers) {
+  let s = String(site || '').toLowerCase();
+  if (GENERIC_SITE_PARAMS.has(s) || !(s.startsWith('nexus') || s.startsWith('solvegrid') || s.startsWith('aquitem'))) {
+    s = siteFromReferer(headers) || s;
+  }
   if (s.startsWith('nexus')) return CJ_PIDS.nexus;
   if (s.startsWith('solvegrid')) return CJ_PIDS.solvegrid;
   return CJ_PIDS[CJ_DEFAULT_SITE];
@@ -98,7 +117,9 @@ module.exports = async (req, res) => {
   const query = req.query || {};
   const headers = req.headers || {};
   let brandKey = (query.brand || query.b || '').toLowerCase().trim();
-  const site = (query.site || 'aquitemachadinhos').toLowerCase().replace(/[^a-z0-9_-]/g, '');
+  // site= ausente ou genérico → tenta descobrir pelo host de origem; senão padrão aquitem.
+  let site = String(query.site || '').toLowerCase().replace(/[^a-z0-9_-]/g, '');
+  if (!site || GENERIC_SITE_PARAMS.has(site)) site = siteFromReferer(headers) || site || 'aquitemachadinhos';
   const slot = (query.slot || 'header').toLowerCase().replace(/[^a-z0-9_-]/g, '');
   const rawDest = query.dest || query.url || query.u;
   
@@ -147,7 +168,7 @@ module.exports = async (req, res) => {
 
   let targetUrl = '';
 
-  const cjPid = resolveCjPid(site);
+  const cjPid = resolveCjPid(site, headers);
   // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
   if (brandKey === 'booking') {
     if (REGIONS.TIER1_EU.includes(country) || country === 'GB') brandKey = 'booking_uk';
