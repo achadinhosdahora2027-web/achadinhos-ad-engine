@@ -5,7 +5,7 @@
     "nexus": "101870639",
     "solvegrid": "101870640"
   },
-  "admitad_publisher_id": "8041957",
+  "admitad_publisher_id": "2565684",
   "brands": {
     "nordvpn": {
       "name": "NordVPN",
@@ -196,5 +196,6 @@
       "solvegrid": "101870640"
     },
     "note": "links usam {PID}; gateway substitui pelo PID do site de origem"
-  }
+  },
+  "admitad_website_id": "2983664"
 }
