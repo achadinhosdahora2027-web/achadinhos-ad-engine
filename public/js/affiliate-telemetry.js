@@ -66,6 +66,7 @@
         cj_pid: CJ_PID
       });
 
+      if (!/aquitemachadinhos\.com\.br$/.test(window.location.hostname)) return;
       if (navigator.sendBeacon) {
         navigator.sendBeacon('/api/telemetry/collect', payload);
       } else {

@@ -135,7 +135,7 @@
             <div class="vip-deal-title">🏨 Hotéis Booking.com</div>
             <span class="vip-deal-discount">ATÉ 40% OFF</span>
           </div>
-          <a href="/api/ads/go?brand=booking&slot=vip_club&sid=vip_booking" class="vip-deal-btn">Resgatar</a>
+          <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&slot=vip_club&sid=vip_booking" class="vip-deal-btn">Resgatar</a>
         </div>
 
         <div class="vip-deal-item">
@@ -143,7 +143,7 @@
             <div class="vip-deal-title">🛍️ Shopee: Cupons Frete Grátis</div>
             <span class="vip-deal-discount">CUPOM R$ 20 OFF</span>
           </div>
-          <a href="/api/ads/go?brand=shopee&slot=vip_club&sid=vip_shopee" class="vip-deal-btn">Resgatar</a>
+          <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&slot=vip_club&sid=vip_shopee" class="vip-deal-btn">Resgatar</a>
         </div>
 
         <div class="vip-deal-item">
@@ -151,7 +151,7 @@
             <div class="vip-deal-title">🛡️ NordVPN Cyber Security</div>
             <span class="vip-deal-discount">74% OFF + 3 MESES</span>
           </div>
-          <a href="/api/ads/go?brand=nordvpn&slot=vip_club&sid=vip_nordvpn" class="vip-deal-btn">Resgatar</a>
+          <a href="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&slot=vip_club&sid=vip_nordvpn" class="vip-deal-btn">Resgatar</a>
         </div>
 
         <div style="text-align: center; margin-top: 14px;">

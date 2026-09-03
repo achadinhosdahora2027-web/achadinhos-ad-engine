@@ -11,9 +11,9 @@
   window.__LUCKY_WHEEL_INITIALIZED__ = true;
 
   const PRIZES = [
-    { title: "🛍️ R$ 20 OFF Shopee", link: "/api/ads/go?brand=shopee&slot=wheel&sid=lucky_wheel_shopee", code: "VIPSHOPEE20" },
-    { title: "🏨 40% OFF Booking", link: "/api/ads/go?brand=booking&slot=wheel&sid=lucky_wheel_booking", code: "BOOKINGVIP40" },
-    { title: "🛡️ 74% OFF NordVPN", link: "/api/ads/go?brand=nordvpn&slot=wheel&sid=lucky_wheel_vpn", code: "NORDVIP74" },
+    { title: "🛍️ R$ 20 OFF Shopee", link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&slot=wheel&sid=lucky_wheel_shopee", code: "VIPSHOPEE20" },
+    { title: "🏨 40% OFF Booking", link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&slot=wheel&sid=lucky_wheel_booking", code: "BOOKINGVIP40" },
+    { title: "🛡️ 74% OFF NordVPN", link: "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&slot=wheel&sid=lucky_wheel_vpn", code: "NORDVIP74" },
     { title: "🔮 Tarot 3D VIP Grátis", link: "/entretenimento.html#tarot", code: "COSMICVIP" }
   ];
 

@@ -24,7 +24,7 @@
         title: '🏨 Vai Viajar? Não Perca até 30% OFF em Hospedagens!',
         desc: 'Compare hotéis e pousadas com cancelamento grátis e menor tarifa garantida no Booking.com.',
         cta: '🌟 Ver Ofertas de Hotéis no Booking',
-        link: '/api/ads/go?brand=booking&site=exit_drawer&slot=travel_retention&sid=exit_booking_cro'
+        link: 'https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=exit_drawer&slot=travel_retention&sid=exit_booking_cro'
       };
     }
     if (p.includes('tarot') || p.includes('signo') || p.includes('compatibilidade') || p.includes('horoscopo') || p.includes('entretenimento')) {
@@ -34,7 +34,7 @@
         title: '✨ Desbloqueie seu Cupom Astral do Dia!',
         desc: 'Achadinhos místicos, incensos, cristais e utilidades com cupons secretos e Frete Grátis na Shopee.',
         cta: '🎁 Resgatar Meu Cupom Shopee',
-        link: '/api/ads/go?brand=shopee&site=exit_drawer&slot=tarot_retention&sid=exit_shopee_tarot'
+        link: 'https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=exit_drawer&slot=tarot_retention&sid=exit_shopee_tarot'
       };
     }
     if (p.includes('vpn') || p.includes('tech') || p.includes('seguran') || p.includes('curso') || p.includes('ia') || p.includes('software')) {
@@ -44,7 +44,7 @@
         title: '🔒 Proteja sua Navegação com 74% OFF + 3 Meses Grátis!',
         desc: 'Navegue de forma 100% anônima, libere streamings mundiais e bloqueie malwares com a NordVPN.',
         cta: '🚀 Ativar Desconto Militar NordVPN',
-        link: '/api/ads/go?brand=nordvpn&site=exit_drawer&slot=tech_retention&sid=exit_nordvpn_cro'
+        link: 'https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=exit_drawer&slot=tech_retention&sid=exit_nordvpn_cro'
       };
     }
     // Universal Shopping & VIP Deals
@@ -54,7 +54,7 @@
       title: '🎁 Espere! Não vá embora sem os Cupons Verificados de Hoje!',
       desc: 'Mais de 1.400 ofertas com frete grátis, descontos até 70% OFF e cupons exclusivos da Shopee e Amazon.',
       cta: '🔥 Ver Cupons Secretos de Hoje',
-      link: '/api/ads/go?brand=shopee&site=exit_drawer&slot=global_retention&sid=exit_shopee_deals'
+      link: 'https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=exit_drawer&slot=global_retention&sid=exit_shopee_deals'
     };
   }
 
