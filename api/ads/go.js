@@ -117,7 +117,7 @@ function detectDevice(userAgent = '') {
 }
 
 // Marcas sem programa de afiliados ativo na conta (trafego sem comissao). Udemy: nao existe na CJ.
-const NON_MONETIZED = new Set(['udemy', 'brunoyam', 'safetywing', 'thefork', 'wise']);
+const NON_MONETIZED = new Set(['udemy', 'brunoyam', 'safetywing', 'thefork', 'wise', 'faculdade']);
 
 module.exports = async (req, res) => {
   const brandCatalog = getBrandCatalog();

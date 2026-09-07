@@ -73,10 +73,11 @@
    "url": "https://www.clickbus.com.br/"
   },
   "faculdade": {
-   "name": "Faculdade Interativa",
+   "name": "Faculdade Interativa (encerrado)",
    "category": "education",
    "tier": "latam",
-   "url": "https://faculdade-interativa-core.vercel.app"
+   "url": "https://www.udemy.com/",
+   "network": "direct"
   },
   "udemy": {
    "name": "Udemy",
