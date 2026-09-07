@@ -117,7 +117,7 @@ function detectDevice(userAgent = '') {
 }
 
 // Marcas sem programa de afiliados ativo na conta (trafego sem comissao). Udemy: nao existe na CJ.
-const NON_MONETIZED = new Set(['udemy', 'brunoyam']);
+const NON_MONETIZED = new Set(['udemy', 'brunoyam', 'safetywing', 'thefork', 'wise']);
 
 module.exports = async (req, res) => {
   const brandCatalog = getBrandCatalog();
@@ -202,8 +202,10 @@ module.exports = async (req, res) => {
     targetUrl = `${targetUrl}${sep}url=${encodeURIComponent(rawDest)}`;
   }
 
-  // Multi-Network Dynamic Tracking Ingestion
+  // Multi-Network Dynamic Tracking Ingestion (apenas marcas monetizadas —
+  // links diretos oficiais (NON_MONETIZED) seguem limpos, sem parâmetros)
   try {
+    if (!NON_MONETIZED.has(brandKey)) {
     const urlObj = new URL(targetUrl);
     // CJ Affiliate
     urlObj.searchParams.set('sid', sid);
@@ -224,6 +226,7 @@ module.exports = async (req, res) => {
       urlObj.searchParams.set('customid', sid);
     }
     targetUrl = urlObj.toString();
+    }
   } catch (e) {
     const sep = targetUrl.includes('?') ? '&' : '?';
     targetUrl = `${targetUrl}${sep}sid=${encodeURIComponent(sid)}&aff_sub=${encodeURIComponent(sid)}`;
@@ -243,6 +246,49 @@ module.exports = async (req, res) => {
         fs.writeFileSync(lp, JSON.stringify(ldata, null, 2));
         break;
       }
+    }
+  } catch (e) {}
+
+  // Clickstream ingestion (fail-closed) — reativa o log de cliques em
+  // ads_clicks (etbx) com click_ref/SID preenchido. Nunca quebra o redirect.
+  try {
+    const dbUrl = process.env.CLICKS_DB_URL;
+    const dbKey = process.env.CLICKS_DB_KEY;
+    if (dbUrl && dbKey) {
+      const net = targetUrl.includes('awin1.com') ? 'awin'
+        : /kqzyfj|jdoqocy|dpbolvw|anrdoezrs|tkqlhce/.test(targetUrl) ? 'cj'
+        : targetUrl.includes('lmdee') ? 'lomadee'
+        : targetUrl.includes('shopee') ? 'shopee'
+        : (targetUrl.includes('mercadolivre') || targetUrl.includes('meli.')) ? 'mercadolivre'
+        : targetUrl.includes('ebay') ? 'ebay'
+        : targetUrl.includes('booking.com') ? 'cj'
+        : NON_MONETIZED.has(brandKey) ? 'direct' : 'generic';
+      let refPage = null;
+      try { refPage = new URL(headers.referer || '').pathname; } catch (e) {}
+      let ipHash = null;
+      try { ipHash = require('crypto').createHash('sha256').update(String(headers['x-forwarded-for'] || '')).digest('hex').slice(0, 16); } catch (e) {}
+      const ctrl = new AbortController();
+      const tmr = setTimeout(() => ctrl.abort(), 2500);
+      await fetch(`${dbUrl.replace(/\/$/, '')}/rest/v1/ads_clicks`, {
+        method: 'POST',
+        headers: { 'apikey': dbKey, 'Authorization': `Bearer ${dbKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          site_slug: site || null,
+          slot: String(query.slot || '').slice(0, 120) || null,
+          ad_id: String(brandKey || '').slice(0, 80) || null,
+          network: net,
+          click_url: String(targetUrl).slice(0, 500),
+          click_ref: String(sid || '').slice(0, 120),
+          country: country || null,
+          user_agent: String(headers['user-agent'] || '').slice(0, 200),
+          referrer: String(headers.referer || '').slice(0, 300),
+          page_path: refPage,
+          device_type: /Mobile|Android|iPhone/i.test(String(headers['user-agent'] || '')) ? 'mobile' : 'desktop',
+          ip_hash: ipHash
+        }),
+        signal: ctrl.signal
+      }).catch(() => {});
+      clearTimeout(tmr);
     }
   } catch (e) {}
 
