@@ -57,7 +57,8 @@ const CJ_LINKS = {
   amazon: "https://amazon.com.br/?tag=aquitemachadinhos-20",
   amazon_us: "https://www.amazon.com/?tag=aquitemachadinhos-20",
   udemy: "https://www.udemy.com/courses/search/?src=ukw&q=",
-  faculdade: "https://faculdade-interativa-core.vercel.app",
+  // faculdade-interativa: projeto ENCERRADO/EXCLUÍDO 08/09 — CTAs de cursos vão p/ Udemy (não-monetizado)
+  faculdade: "https://www.udemy.com/courses/search/?src=ukw&q=",
   clickbus: "https://www.clickbus.com.br/",
   brunoyam: "https://brunoyam.com/",
   nadpo: "https://nadpo.ru/",
