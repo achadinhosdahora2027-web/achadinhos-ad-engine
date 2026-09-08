@@ -44,6 +44,7 @@ function resolveCjPid(site, headers) {
 // {PID} é substituído em tempo de execução pelo PID do site de origem.
 const CJ_LINKS = {
   booking: "https://www.kqzyfj.com/click-{PID}-17293138",
+  voo: "https://www.anrdoezrs.net/click-{PID}-17323048",
   carla: "https://www.anrdoezrs.net/click-{PID}-17094338",
   nordvpn: "https://www.anrdoezrs.net/click-{PID}-13914989",
   nordpass: "https://www.dpbolvw.net/click-{PID}-17262576",
