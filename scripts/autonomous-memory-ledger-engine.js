@@ -148,6 +148,10 @@ async function runAutonomousDirectorAudit() {
   const pvToday = await countReal('metrics_events', 'criado_em', spDayUtcBounds(todayStr));
   const pvYesterday = await countReal('metrics_events', 'criado_em', spDayUtcBounds(yesterdayStr));
   const pvSprint = await countSince('metrics_events', 'criado_em', '2026-08-31');
+  // 21.36: "Ontem" ao vivo do banco — o painel lia history[last] e mostrava
+  // arquivamento velho/zero como se fosse ontem ("Ontem: 0 PVs" com 46 reais)
+  tracking.yesterday_metrics = { date: yesterdayStr, pageviews: pvYesterday ?? null,
+    source: 'supabase.metrics_events (real)', measured_at: nowIso };
   const convToday = await conversionsSince(todayStr);
   const convSprint = await conversionsSince('2026-08-31');
 
