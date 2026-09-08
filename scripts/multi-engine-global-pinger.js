@@ -13,22 +13,23 @@
 
 const https = require('https');
 
-const KEY = '8469089b876439517e6c5247573c6e21';
+const KEY = 'a120ccc82c4e2dbeeda51d4cd6d03284e2909f92f101984a2133e567b748455c';
 const SUPABASE_URL = (process.env.SUPABASE_URL || '').replace(/\/$/, '');
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 // Apenas domínios com arquivo-chave IndexNow acessível (verificado 02/09)
 const DOMAINS = [
   'https://www.aquitemachadinhos.com.br',
-  'https://solvegrid.com.br'
+  'https://www.solvegrid.com.br'
 ];
 
 const ENGINES = [
   { name: 'Bing', host: 'www.bing.com' },
   { name: 'Yandex', host: 'yandex.com' },
-  { name: 'Seznam', host: 'search.seznam.com' },
+  // 21.36: Yep bloqueia IP de datacenter (403 mesmo com chave válida) e
+  // Seznam não responde ao ping direto — ambos cobertos pelo POST na rede
+  // oficial (api.indexnow.org distribui a todos os parceiros)
   { name: 'Naver', host: 'searchadvisor.naver.com' },
-  { name: 'Yep', host: 'yep.com' },
   { name: 'IndexNow-Rede', host: 'api.indexnow.org' }
 ];
 
