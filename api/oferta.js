@@ -185,6 +185,9 @@ module.exports = async (req, res) => {
   .sync { padding: 22px; text-align: center; color: #5b6b7b; background: #fff; border: 1px dashed #cdd6df; border-radius: 12px; }
   .banner { display: flex; justify-content: center; margin: 20px 0; }
   footer { text-align: center; color: #7b8896; font-size: .78rem; padding: 22px 12px 30px; }
+  .live-badge { position: sticky; top: 10px; z-index: 9; display: block; width: max-content; margin: 0 auto 14px; background: #0f2027; color: #ffd166; font-weight: 700; font-size: .82rem; padding: 7px 14px; border-radius: 999px; box-shadow: 0 4px 14px rgba(15,32,39,.35); }
+  .card.destaque { border-color: #d9a400; box-shadow: 0 0 0 2px #ffe29a inset; }
+  .card.destaque .cta::after { content: ' ⚡ em destaque agora'; font-size: .72rem; color: #b8860b; }
   footer a { color: #2c5364; }
 </style>
 </head>
@@ -208,6 +211,24 @@ ${cards}
   Atualizado ${new Date().toISOString().replace('T', ' ').slice(0, 16)} UTC ·
   <a href="/">Aqui Tem Achadinhos</a> · motor Nexus v22.5 · catálogo read-only
 </footer>
+<div id="nxs-live" class="live-badge" hidden></div>
+<script>
+(function(){
+  var SLUG=${JSON.stringify(slug)};
+  var S=null; try{S=localStorage.getItem('nexus_sid')}catch(e){}
+  if(!S){S=(self.crypto&&crypto.randomUUID)?crypto.randomUUID():'s'+Date.now()+Math.random().toString(36).slice(2,10);try{localStorage.setItem('nexus_sid',S)}catch(e){}}
+  var DEV=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)?'mobile':'desktop';
+  function send(k,m){try{fetch('/api/signal',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:k,slug:SLUG,session:S,device:DEV,meta:m||{}}),keepalive:true}).catch(function(){})}catch(e){}}
+  send('view',{ref:document.referrer||''});
+  var sc={};addEventListener('scroll',function(){var h=document.documentElement;var p=Math.round(100*(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight));[25,50,75,100].forEach(function(t){if(p>=t&&!sc[t]){sc[t]=1;send('scroll_depth',{pct:t})}})},{passive:true});
+  var lastExit=0;document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<=0&&Date.now()-lastExit>30000){lastExit=Date.now();send('exit_intent',{})}});
+  var clicks=[],lastRage=0;addEventListener('click',function(){var n=Date.now();clicks.push(n);clicks=clicks.filter(function(t){return n-t<900});if(clicks.length>=3&&n-lastRage>5000){lastRage=n;send('rage_click',{})}},true);
+  setInterval(function(){send('heartbeat',{})},20000);
+  var hb=0;var hbT=setInterval(function(){hb+=20;if(hb>=20){clearInterval(hbT);var c=document.querySelector('.card');if(c){c.classList.add('destaque')}}},1000);setTimeout(function(){clearInterval(hbT)},25000);
+  function live(){try{fetch('/api/live?slug='+encodeURIComponent(SLUG)).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('nxs-live');var n=j&&j.escassez&&j.escassez.assistindo_agora;if(b&&n>0){b.hidden=false;b.textContent='👥 '+n+(n===1?' pessoa assistindo':' pessoas assistindo')+' esta vitrine agora'}}).catch(function(){})}catch(e){}}
+  live();setInterval(live,30000);
+})();
+</script>
 </body>
 </html>`;
 
