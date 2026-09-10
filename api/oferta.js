@@ -16,6 +16,17 @@
 const SUPABASE_URL = process.env.SUPABASE_URL || '';
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || '';
 
+const HUB_NICHES = { // v22.0 — hubs de nicho global (categorias reais do catálogo)
+  'hub-eletronicos-tech': {
+    titulo: 'Eletrônicos e Tecnologia de Ponta — Ofertas e Cupons',
+    cats: ['Electronic*', 'Computer*', '*Games*', '*Tech*', 'Gadget*', 'Home Appliances'],
+  },
+  'hub-passagens-resorts': {
+    titulo: 'Passagens Aéreas e Resorts de Luxo — Ofertas e Cupons',
+    cats: ['Travel', 'Hotel', '*Flight*', '*Resort*', 'Vacation*'],
+  },
+};
+
 const ADS_CLIENT = 'ca-pub-5604700207394147';            // AdSense (verificado no projeto)
 const ADSTERRA_KEY = '55e59bc77878834deb2f1086a87bfbb4'; // banner 320x50 (pool de produção)
 
@@ -90,19 +101,28 @@ module.exports = async (req, res) => {
 
   // 2) ofertas REAIS do catálogo (read-only; hub → topo global por peso)
   let offers = [];
+  const niche = HUB_NICHES[slug] || null;
   try {
     const sel = 'id,name,advertiser,category,promo_type,coupon_code,click_url,weight';
-    const q = page.advertiser
-      ? `ads?active=eq.true&advertiser=eq.${encodeURIComponent(page.advertiser)}` +
-        `&select=${sel}&order=weight.desc&limit=24`
-      : `ads?active=eq.true&select=${sel}&order=weight.desc&limit=24`;
+    let q;
+    if (niche) {
+      const or = niche.cats.map((c) => `category.ilike.${c}`).join(',');
+      q = `ads?active=eq.true&or=(${or})&select=${sel}&order=weight.desc&limit=24`;
+    } else if (page.advertiser) {
+      q = `ads?active=eq.true&advertiser=eq.${encodeURIComponent(page.advertiser)}` +
+          `&select=${sel}&order=weight.desc&limit=24`;
+    } else {
+      q = `ads?active=eq.true&select=${sel}&order=weight.desc&limit=24`;
+    }
     const rows = await supa(q);
     offers = Array.isArray(rows) ? rows.filter((o) => o && o.click_url) : [];
   } catch (e) { offers = []; }
 
-  const titulo = page.advertiser
-    ? `${page.advertiser} — Cupons, Descontos e Ofertas`
-    : `${titleCase(slug)} — Cupons, Descontos e Ofertas`;
+  const titulo = niche
+    ? niche.titulo
+    : page.advertiser
+      ? `${page.advertiser} — Cupons, Descontos e Ofertas`
+      : `${titleCase(slug)} — Cupons, Descontos e Ofertas`;
   const descricao = `Cupons, promoções e descontos verificadas de ${page.advertiser || titleCase(slug)}. ` +
     `${offers.length > 0 ? offers.length + ' ofertas ativas' : 'Ofertas em sincronização'}. Atualizado em tempo real pelo motor Nexus.`;
   const canonical = `https://achadinhos-ad-engine.vercel.app/oferta/${slug}`;
