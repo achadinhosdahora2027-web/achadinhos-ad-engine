@@ -70,7 +70,69 @@ function offerCard(o, slug) {
     </a>`;
 }
 
+const SIGNAL_KINDS = new Set(['view', 'rage_click', 'exit_intent', 'scroll_depth', 'heartbeat']);
+
 module.exports = async (req, res) => {
+  // v24.0 — POST /api/oferta = captura comportamental (fail-closed 204;
+  // antifraude por sessão via RPC → 429 em abuso real)
+  if (req.method === 'POST') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cache-Control', 'no-store');
+    try {
+      const b = req.body || {};
+      if (SIGNAL_KINDS.has(String(b.kind || ''))) {
+        const session = String(b.session || '').replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 64);
+        const slugS = String(b.slug || '').replace(/[^a-z0-9-]/g, '').slice(0, 120);
+        const brand = String(b.brand || '').slice(0, 120);
+        const device = String(b.device || '').slice(0, 40);
+        const meta = (typeof b.meta === 'object' && b.meta) || {};
+        if (session) {
+          try {
+            const r = await fetch(new URL(`${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/rpc/nexus_is_abusive_session`), {
+              method: 'POST',
+              headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' },
+              body: JSON.stringify({ p_session: session }),
+            });
+            if (await r.json() === true) { res.status(429).end(); return; }
+          } catch (e) { /* falha na checagem nunca bloqueia legítimo */ }
+        }
+        try {
+          await fetch(new URL(`${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/nexus_behavior_signals`), {
+            method: 'POST',
+            headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', prefer: 'return=minimal' },
+            body: JSON.stringify({ kind: String(b.kind), slug: slugS || null, brand: brand || null, session_id: session || null, device: device || null, meta }),
+          });
+        } catch (e) { /* sinal pode se perder; a página nunca sabe */ }
+      }
+    } catch (e) { /* fail-closed absoluto */ }
+    res.status(204).end();
+    return;
+  }
+
+  // v24.0 — GET /api/oferta?live=1&slug=... = painel de audiência/escassez REAL
+  if (req.query && req.query.live === '1') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.setHeader('Cache-Control', 'no-store');
+    try {
+      const slugL = String(req.query.slug || '').replace(/[^a-z0-9-]/g, '').slice(0, 120);
+      const rpc = async (name, args) => {
+        const r = await fetch(new URL(`${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/rpc/${name}`), {
+          method: 'POST',
+          headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' },
+          body: JSON.stringify(args || {}),
+        });
+        return r.ok ? await r.json() : null;
+      };
+      const escassez = slugL ? await rpc('nexus_scarcity_board', { p_slug: slugL }) : null;
+      const audiencia = await rpc('nexus_live_audience', {});
+      res.status(200).send(JSON.stringify({ ok: true, slug: slugL || null, escassez, audiencia }));
+    } catch (e) {
+      res.status(200).send(JSON.stringify({ ok: false })); // vitrine segue sem badge
+    }
+    return;
+  }
+
   const slug = String((req.query && req.query.slug) || '')
     .toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 120);
 
@@ -218,14 +280,14 @@ ${cards}
   var S=null; try{S=localStorage.getItem('nexus_sid')}catch(e){}
   if(!S){S=(self.crypto&&crypto.randomUUID)?crypto.randomUUID():'s'+Date.now()+Math.random().toString(36).slice(2,10);try{localStorage.setItem('nexus_sid',S)}catch(e){}}
   var DEV=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)?'mobile':'desktop';
-  function send(k,m){try{fetch('/api/signal',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:k,slug:SLUG,session:S,device:DEV,meta:m||{}}),keepalive:true}).catch(function(){})}catch(e){}}
+  function send(k,m){try{fetch('/api/oferta',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:k,slug:SLUG,session:S,device:DEV,meta:m||{}}),keepalive:true}).catch(function(){})}catch(e){}}
   send('view',{ref:document.referrer||''});
   var sc={};addEventListener('scroll',function(){var h=document.documentElement;var p=Math.round(100*(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight));[25,50,75,100].forEach(function(t){if(p>=t&&!sc[t]){sc[t]=1;send('scroll_depth',{pct:t})}})},{passive:true});
   var lastExit=0;document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<=0&&Date.now()-lastExit>30000){lastExit=Date.now();send('exit_intent',{})}});
   var clicks=[],lastRage=0;addEventListener('click',function(){var n=Date.now();clicks.push(n);clicks=clicks.filter(function(t){return n-t<900});if(clicks.length>=3&&n-lastRage>5000){lastRage=n;send('rage_click',{})}},true);
   setInterval(function(){send('heartbeat',{})},20000);
   var hb=0;var hbT=setInterval(function(){hb+=20;if(hb>=20){clearInterval(hbT);var c=document.querySelector('.card');if(c){c.classList.add('destaque')}}},1000);setTimeout(function(){clearInterval(hbT)},25000);
-  function live(){try{fetch('/api/live?slug='+encodeURIComponent(SLUG)).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('nxs-live');var n=j&&j.escassez&&j.escassez.assistindo_agora;if(b&&n>0){b.hidden=false;b.textContent='👥 '+n+(n===1?' pessoa assistindo':' pessoas assistindo')+' esta vitrine agora'}}).catch(function(){})}catch(e){}}
+  function live(){try{fetch('/api/oferta?live=1&slug='+encodeURIComponent(SLUG)).then(function(r){return r.json()}).then(function(j){var b=document.getElementById('nxs-live');var n=j&&j.escassez&&j.escassez.assistindo_agora;if(b&&n>0){b.hidden=false;b.textContent='👥 '+n+(n===1?' pessoa assistindo':' pessoas assistindo')+' esta vitrine agora'}}).catch(function(){})}catch(e){}}
   live();setInterval(live,30000);
 })();
 </script>
