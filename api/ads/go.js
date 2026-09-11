@@ -277,13 +277,8 @@ module.exports = async (req, res) => {
           }
         }
       }
-    } catch (e) {
-      try { res.setHeader('X-Oferta-Debug', 'erro:' + String(e && e.name || e).slice(0,40)); } catch (_) {}
-    }
+    } catch (e) { /* fail-closed: segue para o roteamento por marca */ }
   }
-  try {
-    if (ofertaId) res.setHeader('X-Oferta-Id', ofertaId.slice(0,8) + '|resolved:' + (targetUrl ? '1' : '0'));
-  } catch (_) {}
 
   // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
   if (brandKey === 'booking') {
@@ -300,11 +295,11 @@ module.exports = async (req, res) => {
     if (brandKey === 'udemy' && rawDest) {
       targetUrl = rawDest;
     }
-  } else if (brandCatalog[brandKey] && brandCatalog[brandKey].url) {
+  } else if (!targetUrl && brandCatalog[brandKey] && brandCatalog[brandKey].url) {
     targetUrl = String(brandCatalog[brandKey].url).replace('{PID}', cjPid);
-  } else if (rawDest) {
+  } else if (!targetUrl && rawDest) {
     targetUrl = rawDest;
-  } else {
+  } else if (!targetUrl) {
     // Ultimate Fallback
     targetUrl = 'https://www.aquitemachadinhos.com.br';
   }
