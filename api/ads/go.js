@@ -142,6 +142,13 @@ module.exports = async (req, res) => {
     'BR'
   ).toUpperCase().substring(0, 2);
 
+  // v113 FIX C3/A1: classificacao de BOT. Antes disto NENHUM clique era
+  // marcado como bot (device_type so tinha mobile/desktop) e 52% da base de
+  // ads_clicks era bot -- inclusive o SkytabBot (URL Resolution), que faz
+  // prefix-scan da querystring e criava 11 variantes truncadas de 'mention_care'.
+  const UA_RAW = String(headers['user-agent'] || '');
+  const IS_BOT = !UA_RAW || /bot|crawl|spider|slurp|headless|preview|scan|curl|wget|python|java|go-http|okhttp|libwww|httpclient|facebookexternalhit|whatsapp|telegrambot|skytab|claude|gptbot|ccbot|anthropic|perplexity|bytespider|amazonbot|applebot/i.test(UA_RAW);
+
   const device = detectDevice(headers['user-agent'] || '');
   const sid = query.sid || `${site}_${country.toLowerCase()}_${slot}_${device}`;
 
@@ -256,7 +263,8 @@ module.exports = async (req, res) => {
   try {
     const dbUrl = process.env.CLICKS_DB_URL;
     const dbKey = process.env.CLICKS_DB_KEY;
-    if (dbUrl && dbKey) {
+    // v113: bot NAO entra em ads_clicks (poluia EPC/CTR/bandit).
+    if (dbUrl && dbKey && !IS_BOT) {
       const net = targetUrl.includes('awin1.com') ? 'awin'
         : /kqzyfj|jdoqocy|dpbolvw|anrdoezrs|tkqlhce/.test(targetUrl) ? 'cj'
         : targetUrl.includes('lmdee') ? 'lomadee'
@@ -285,7 +293,7 @@ module.exports = async (req, res) => {
           user_agent: String(headers['user-agent'] || '').slice(0, 200),
           referrer: String(headers.referer || '').slice(0, 300),
           page_path: refPage,
-          device_type: /Mobile|Android|iPhone/i.test(String(headers['user-agent'] || '')) ? 'mobile' : 'desktop',
+          device_type: IS_BOT ? 'bot' : (/Mobile|Android|iPhone/i.test(UA_RAW) ? 'mobile' : 'desktop'),
           ip_hash: ipHash
         }),
         signal: ctrl.signal
