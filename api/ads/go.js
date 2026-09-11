@@ -133,12 +133,21 @@ module.exports = async (req, res) => {
   const rawDest = query.dest || query.url || query.u;
   
   // Extract geo country
+  // v195: PRECEDENCIA DO GEO — override explicito vem PRIMEIRO.
+  // Medido em 11/09: a Vercel SEMPRE injeta x-vercel-ip-country com o IP do
+  // requisitante, e como ele vinha primeiro na cadeia, `?geo=` era inalcancavel:
+  // GB/DE/BR/PT liam todos "US". Consequencia real: o roteamento geografico
+  // ficava NAO-AUDITAVEL (impossivel provar que BR vai para a loja nacional) e
+  // qualquer teste de QA por pais era impossivel.
+  // `?geo=` agora tem prioridade; na ausencia dele o header real do CDN manda,
+  // exatamente como antes para o trafego organico.
+  const geoOverride = String(query.geo || query.country || '')
+    .toUpperCase().replace(/[^A-Z]/g, '').substring(0, 2);
   const country = (
+    (geoOverride.length === 2 ? geoOverride : '') ||
     headers['x-vercel-ip-country'] ||
     headers['cf-ipcountry'] ||
     headers['x-country-code'] ||
-    query.geo ||
-    query.country ||
     'BR'
   ).toUpperCase().substring(0, 2);
 
@@ -204,6 +213,18 @@ module.exports = async (req, res) => {
 
   if (brandKey === 'amazon' && country !== 'BR' && country !== 'PT') {
     brandKey = 'amazon_us';
+  }
+
+  // v195: MARKETPLACE NACIONAL SO PARA QUEM RECEBE A ENTREGA.
+  // Mesmo furo que a Amazon tinha (corrigido na v126.2): o roteador por SLOT ja
+  // protegia (linha ~172: country==='BR' ? shopee : aliexpress), mas o brand
+  // EXPLICITO `?brand=shopee` ignorava o pais. Um visitante de US/GB/DE caia na
+  // Shopee Brasil, que nao entrega no pais dele — carrinho abandonado garantido.
+  // Fora de BR/PT o equivalente global e o AliExpress (mesmo perfil de catalogo,
+  // frete internacional real).
+  if ((brandKey === 'shopee' || brandKey === 'mercadolivre')
+      && country !== 'BR' && country !== 'PT') {
+    brandKey = 'aliexpress';
   }
 
   let targetUrl = '';
