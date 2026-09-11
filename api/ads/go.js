@@ -288,6 +288,15 @@ module.exports = async (req, res) => {
         || country === 'US' || country === 'CA' || country === 'AU'
         || country === 'NZ' || country === 'IE' || country === 'ZA') brandKey = 'booking_uk';
     else if (REGIONS.LATAM.includes(country) && country !== 'BR') brandKey = 'booking_latam';
+    // v210: TODO O RESTO DO MUNDO (APAC, CIS, Africa, Oriente Medio) tambem vai
+    // para o Booking UK. Antes caia no programa BRASIL por ser o default.
+    // Medido na varredura de 11/09 (EPC 3 meses oficial da CJ):
+    //   Booking UK      328.20   <- aceita reserva mundial, maior EPC da rede
+    //   Booking Brazil   98.68   <- destino errado p/ JP, RU, SG, KR, IN...
+    //   Booking APAC      3.72   <- 26x PIOR que o UK; NAO usar
+    // Trafego afetado: 1.740 cliques/7d de JP+RU+SG+TW+KR+IN.
+    // BR continua no programa Brazil (moeda e checkout nativos).
+    else if (country !== 'BR') brandKey = 'booking_uk';
   }
 
   if (!targetUrl && VERIFIED_TARGETS[brandKey]) {
