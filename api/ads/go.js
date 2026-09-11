@@ -277,8 +277,13 @@ module.exports = async (req, res) => {
           }
         }
       }
-    } catch (e) { /* fail-closed: segue para o roteamento por marca */ }
+    } catch (e) {
+      try { res.setHeader('X-Oferta-Debug', 'erro:' + String(e && e.name || e).slice(0,40)); } catch (_) {}
+    }
   }
+  try {
+    if (ofertaId) res.setHeader('X-Oferta-Id', ofertaId.slice(0,8) + '|resolved:' + (targetUrl ? '1' : '0'));
+  } catch (_) {}
 
   // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
   if (brandKey === 'booking') {
