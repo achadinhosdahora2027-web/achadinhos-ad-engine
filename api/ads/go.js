@@ -238,6 +238,43 @@ module.exports = async (req, res) => {
 
   let targetUrl = '';
 
+  // ==========================================================================
+  // v205: SUPORTE A ?oferta=<uuid> — CORRIGE VAZAMENTO DE COMISSAO.
+  // Medido em 11/09 na varredura CJ: o engine NAO implementava `?oferta=`.
+  // O parametro era silenciosamente ignorado e o clique caia no fallback
+  // (Amazon). Prova: oferta b70db192... (Erommy, EPC3m 202.75, comissao 8%)
+  //   engine   /api/ads/go?oferta=<id>  -> amazon.com/?tag=...   COMISSAO PERDIDA
+  //   satelite /go?oferta=<id>          -> click-101870640-17250692  correto
+  // Ou seja: a mesma oferta pagava no satelite e vazava no engine. Sao 160
+  // advertisers CJ ativos com EPC>0 que so sao alcancaveis por `?oferta=`.
+  // Le o click_url REAL do catalogo (read-only) e reescreve o PID para o do
+  // site que originou o clique. Fail-closed: qualquer falha cai no fluxo
+  // normal de marca, nunca derruba o redirect.
+  // ==========================================================================
+  const ofertaId = String(query.oferta || query.offer || '').trim();
+  if (/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(ofertaId)) {
+    try {
+      const dbU = process.env.CLICKS_DB_URL, dbK = process.env.CLICKS_DB_KEY;
+      if (dbU && dbK) {
+        const ac = new AbortController();
+        const tmo = setTimeout(() => ac.abort(), 2500);
+        const rr = await fetch(
+          `${dbU.replace(/\/$/, '')}/rest/v1/ads?id=eq.${encodeURIComponent(ofertaId)}` +
+          `&active=is.true&select=click_url,advertiser&limit=1`,
+          { headers: { apikey: dbK, Authorization: `Bearer ${dbK}` }, signal: ac.signal });
+        clearTimeout(tmo);
+        if (rr.ok) {
+          const rows = await rr.json();
+          const raw = Array.isArray(rows) && rows[0] && rows[0].click_url;
+          if (raw && /^https?:\/\//i.test(raw)) {
+            // PID do site que originou o clique (mantem a atribuicao correta)
+            targetUrl = String(raw).replace(/click-\d+-/, `click-${cjPid}-`);
+          }
+        }
+      }
+    } catch (e) { /* fail-closed: segue para o roteamento por marca */ }
+  }
+
   const cjPid = resolveCjPid(site, headers);
   // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
   if (brandKey === 'booking') {
@@ -249,7 +286,7 @@ module.exports = async (req, res) => {
     else if (REGIONS.LATAM.includes(country) && country !== 'BR') brandKey = 'booking_latam';
   }
 
-  if (VERIFIED_TARGETS[brandKey]) {
+  if (!targetUrl && VERIFIED_TARGETS[brandKey]) {
     targetUrl = VERIFIED_TARGETS[brandKey].replace('{PID}', cjPid);
     if (brandKey === 'udemy' && rawDest) {
       targetUrl = rawDest;
