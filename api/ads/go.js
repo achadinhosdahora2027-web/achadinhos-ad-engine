@@ -147,7 +147,9 @@ module.exports = async (req, res) => {
   // ads_clicks era bot -- inclusive o SkytabBot (URL Resolution), que faz
   // prefix-scan da querystring e criava 11 variantes truncadas de 'mention_care'.
   const UA_RAW = String(headers['user-agent'] || '');
-  const IS_BOT = !UA_RAW || /bot|crawl|spider|slurp|headless|preview|scan|curl|wget|python|java|go-http|okhttp|libwww|httpclient|facebookexternalhit|whatsapp|telegrambot|skytab|claude|gptbot|ccbot|anthropic|perplexity|bytespider|amazonbot|applebot/i.test(UA_RAW);
+  const IS_BOT = !UA_RAW || /bot|crawl|spider|slurp|headless|preview|scan|curl|wget|python|java|go-http|okhttp|libwww|httpclient|facebookexternalhit|whatsapp|telegrambot|skytab|claude|gptbot|ccbot|anthropic|perplexity|bytespider|amazonbot|applebot|skywatch|healthcheck|canary\/|pubkyweb|friendica|akkoma|lightpanda|http\.rb|mastodon\/|pleroma|misskey|gotosocial|writefreely|nodebb|peertube|owncast|castopod|funkwhale|bookwyrm|hubzilla|iceshrimp|sharkey|calckey|firefish|fediverse|activitypub|webfinger|undici|node-fetch|axios|got\/|superagent|guzzle|restsharp|postman|insomnia|urllib|aiohttp|requests|scrapy|semrush|ahrefs|mj12|dotbot|petalbot|dataforseo|lighthouse|pagespeed|pingdom|uptimerobot|lexicore|monitor|synthetic/i.test(UA_RAW)
+    // v113.2: UA generico demais tambem e bot (ex.: 'Mozilla/5.0' nu, 'node', 'mint/1.9.3').
+    || UA_RAW.trim() === 'Mozilla/5.0' || UA_RAW.trim().length < 20;
 
   const device = detectDevice(headers['user-agent'] || '');
   const sid = query.sid || `${site}_${country.toLowerCase()}_${slot}_${device}`;
