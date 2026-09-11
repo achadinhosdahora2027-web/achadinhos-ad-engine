@@ -189,7 +189,11 @@ module.exports = async (req, res) => {
   const cjPid = resolveCjPid(site, headers);
   // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
   if (brandKey === 'booking') {
-    if (REGIONS.TIER1_EU.includes(country) || country === 'GB') brandKey = 'booking_uk';
+    // v125.5: US/CA e demais anglofonos caiam no programa BR (17293138), de baixo
+    // EPC para esse trafego. Agora seguem o Booking UK (15734754), verificado 302.
+    if (REGIONS.TIER1_EU.includes(country) || country === 'GB'
+        || country === 'US' || country === 'CA' || country === 'AU'
+        || country === 'NZ' || country === 'IE' || country === 'ZA') brandKey = 'booking_uk';
     else if (REGIONS.LATAM.includes(country) && country !== 'BR') brandKey = 'booking_latam';
   }
 
