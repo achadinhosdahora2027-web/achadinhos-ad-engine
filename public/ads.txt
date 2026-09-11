@@ -15,8 +15,12 @@ monetag.com, 11691043, DIRECT
 monetag.com, 3471486, DIRECT
 monetag.com, 3471484, DIRECT
 
-# 3. Adsterra Programmatic Network — ID de conta real do host (v22.5; antes vazio)
-adsterra.com, 5975392, DIRECT
+# 3. Adsterra Programmatic Network — ID do DOMINIO deste host.
+# v113 FIX: era 5975392 (id do dominio aquitemachadinhos.com.br) enquanto este
+# host serve as tags do dominio 6044306 (achadinhos-ad-engine.vercel.app,
+# placements 31180413-19). Mismatch de authorized sellers => serving negado.
+# Confirmado na API oficial /publisher/domains.json.
+adsterra.com, 6044306, DIRECT
 
 # 4. Infolinks Official Network
 infolinks.com, 3447442, DIRECT
