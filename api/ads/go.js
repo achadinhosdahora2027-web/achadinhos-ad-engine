@@ -184,6 +184,17 @@ module.exports = async (req, res) => {
     }
   }
 
+  // v126.2: CORRECAO DE GEO PARA AMAZON.
+  // Medido: 489 de 490 cliques que caiam em amazon.com.br vinham de FORA do
+  // Brasil (297 US, 185 FR...). A Amazon BR nao converte para esse publico —
+  // o visitante cai numa loja em portugues que nao entrega no pais dele, e a
+  // venda simplesmente nao acontece. O roteador por slot ja acertava; o furo
+  // era 'brand=amazon' EXPLICITO, que ignorava o pais. Aqui o brand explicito
+  // passa a respeitar a geografia: so BR (e PT) segue para amazon.com.br.
+  if (brandKey === 'amazon' && country !== 'BR' && country !== 'PT') {
+    brandKey = 'amazon_us';
+  }
+
   let targetUrl = '';
 
   const cjPid = resolveCjPid(site, headers);
