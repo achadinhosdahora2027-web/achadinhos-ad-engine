@@ -227,6 +227,15 @@ module.exports = async (req, res) => {
     brandKey = 'aliexpress';
   }
 
+  // v200: clickbus e rodoviaria EXCLUSIVAMENTE brasileira (clickbus.com.br).
+  // Medido: 5 cliques em 7d, 4 deles de FORA do BR — o visitante gringo caia
+  // numa passagem de onibus interestadual do Brasil. Volume baixo, mas e o
+  // mesmo defeito de entrega das v126.2/v195. Fora de BR/PT vira booking
+  // (intencao de transporte/viagem), que o geo-swap adiante regionaliza.
+  if (brandKey === 'clickbus' && country !== 'BR' && country !== 'PT') {
+    brandKey = 'booking';
+  }
+
   let targetUrl = '';
 
   const cjPid = resolveCjPid(site, headers);
