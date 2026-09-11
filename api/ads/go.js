@@ -238,6 +238,11 @@ module.exports = async (req, res) => {
 
   let targetUrl = '';
 
+  // v205.1: cjPid PRECISA existir antes do bloco ?oferta= (que o usa para
+  // reescrever o PID). Na v205 ele era declarado depois -> ReferenceError
+  // silenciado pelo try/catch, e TODA oferta caia no fallback Amazon.
+  const cjPid = resolveCjPid(site, headers);
+
   // ==========================================================================
   // v205: SUPORTE A ?oferta=<uuid> — CORRIGE VAZAMENTO DE COMISSAO.
   // Medido em 11/09 na varredura CJ: o engine NAO implementava `?oferta=`.
@@ -275,7 +280,6 @@ module.exports = async (req, res) => {
     } catch (e) { /* fail-closed: segue para o roteamento por marca */ }
   }
 
-  const cjPid = resolveCjPid(site, headers);
   // Booking: programas regionais separados na CJ (BR / LATAM / UK-EU)
   if (brandKey === 'booking') {
     // v125.5: US/CA e demais anglofonos caiam no programa BR (17293138), de baixo
