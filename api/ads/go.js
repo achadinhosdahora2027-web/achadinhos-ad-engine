@@ -191,6 +191,17 @@ module.exports = async (req, res) => {
   // venda simplesmente nao acontece. O roteador por slot ja acertava; o furo
   // era 'brand=amazon' EXPLICITO, que ignorava o pais. Aqui o brand explicito
   // passa a respeitar a geografia: so BR (e PT) segue para amazon.com.br.
+  // v185: MARCAS FANTASMA DAS IAs. Medido em producao 11/09: as IAs de reply
+  // publicaram 212x 'brand=voo' e 158x 'brand=carla' — nenhuma existe no
+  // catalogo, e o fail-closed jogava o clique na HOME (clique gasto, zero
+  // chance de venda). 370 de 2.145 links publicados em 48h = 17% desperdicados.
+  // Mapeamento para o destino real da intencao, respeitando geo.
+  if (brandKey === 'voo' || brandKey === 'flight' || brandKey === 'voos') {
+    brandKey = 'booking';           // intencao de viagem -> Booking (geo-swap adiante)
+  } else if (brandKey === 'carla' || brandKey === 'car' || brandKey === 'aluguel') {
+    brandKey = 'economybookings';   // intencao de carro -> EconomyBookings (CJ ativo)
+  }
+
   if (brandKey === 'amazon' && country !== 'BR' && country !== 'PT') {
     brandKey = 'amazon_us';
   }
