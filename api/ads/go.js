@@ -316,6 +316,88 @@ module.exports = async (req, res) => {
   res.setHeader('X-Routed-Brand', brandKey);
   res.setHeader('X-CJ-PID', cjPid);
   res.setHeader('X-Monetized', NON_MONETIZED.has(brandKey) ? 'false' : 'true');
-  res.setHeader('Location', targetUrl);
-  return res.status(307).end();
+  // ==========================================================================
+  // v126: INTERSTITIAL DE MONETIZACAO
+  //
+  // PORQUE ISTO EXISTE (medido, nao suposto): 11.128 de 12.099 cliques humanos
+  // de 7 dias (92%) nao tinham page_path — ou seja, tomavam 307 puro e NUNCA
+  // renderizavam HTML. Um 307 nao executa JavaScript, logo Adsterra/Monetag
+  // jamais contavam impressao. Os cliques chegavam ao Telegram (server-side)
+  // mas eram invisiveis para as redes. Este interstitial e o elo que faltava.
+  //
+  // Regras de seguranca:
+  //  - BOT  -> 307 seco (nao gasta banco nem impressao invalida)
+  //  - ?noint=1 -> 307 seco (escape hatch)
+  //  - Humano -> HTML leve com as tags VERIFICADAS 200 + auto-redirect
+  //  - Tags carregam ASSINCRONAS (nao bloqueiam o paint)
+  //  - <noscript> + <a> visivel: sem JS o usuario ainda chega ao destino
+  //  - meta refresh como 2a rede de seguranca
+  // Tags: Popunder Adsterra 30703817 (dominio 5975392) + Monetag 274860/278800.
+  // Excluidas: 11691043 (404), container 65ecd104 (403). Verificadas ao vivo.
+  // ==========================================================================
+  const WANT_INT = !IS_BOT && String(query.noint || '') !== '1';
+  if (!WANT_INT) {
+    res.setHeader('Location', targetUrl);
+    return res.status(307).end();
+  }
+
+  const DWELL_MS = 1500;
+  const esc = (u) => String(u).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+                              .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const safeTarget = esc(targetUrl);
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  return res.status(200).end(`<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="refresh" content="3;url=${safeTarget}">
+<title>Redirecionando…</title>
+<style>
+ body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:#0f1115;color:#e8eaed;display:flex;min-height:100vh;
+      align-items:center;justify-content:center;text-align:center}
+ .b{max-width:640px;padding:26px}
+ .s{width:34px;height:34px;margin:0 auto 16px;border:3px solid #2a2f3a;
+    border-top-color:#4c8bf5;border-radius:50%;animation:r .9s linear infinite}
+ @keyframes r{to{transform:rotate(360deg)}}
+ a.go{display:inline-block;margin-top:14px;padding:11px 20px;background:#4c8bf5;
+      color:#fff;text-decoration:none;border-radius:8px;font-weight:600}
+ p{opacity:.75;font-size:14px}
+</style></head><body>
+<div class="b">
+  <div class="s"></div>
+  <strong>Levando você à oferta…</strong>
+  <p>Se não avançar automaticamente, toque no botão.</p>
+  <a class="go" id="go" href="${safeTarget}" rel="nofollow noopener">Continuar para a oferta</a>
+  <noscript><p><a href="${safeTarget}" rel="nofollow noopener">Clique aqui para continuar</a></p></noscript>
+</div>
+<script>
+(function(){
+  var DEST=${JSON.stringify(targetUrl)};
+  // Promise.allSettled: uma tag que falhe NUNCA atrasa o redirect nem as outras.
+  function load(src,zone){
+    return new Promise(function(res){
+      try{
+        var s=document.createElement('script');
+        s.src=src; s.async=true; s.setAttribute('data-cfasync','false');
+        if(zone) s.setAttribute('data-zone',zone);
+        s.onload=function(){res('ok')}; s.onerror=function(){res('err')};
+        document.body.appendChild(s);
+      }catch(e){res('err')}
+    });
+  }
+  var tags=[
+    load('https://undergocutlery.com/n125219ufh?key=0474000233cefd60e54ca390d15beaaf'),
+    load('https://quge5.com/88/tag.min.js','274860'),
+    load('https://quge5.com/88/tag.min.js','278800')
+  ];
+  if(Promise.allSettled) Promise.allSettled(tags);
+  // Redirect por tempo fixo: nao depende das tags terminarem (fail-closed).
+  setTimeout(function(){ try{location.replace(DEST)}catch(e){location.href=DEST} }, ${DWELL_MS});
+})();
+</script>
+</body></html>`);
 };
