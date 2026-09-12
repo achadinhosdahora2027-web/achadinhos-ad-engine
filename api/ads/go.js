@@ -449,6 +449,34 @@ module.exports = async (req, res) => {
   // zonas secundarias (que o loader dispara depois) precisam de ~1.2s a mais.
   // 2200ms garante que TODAS as 4 requests completem antes do redirect, sem
   // tornar a espera perceptivel (padrao de mercado para interstitial: 2-3s).
+  // ══════════════════════════════════════════════════════════════════════
+  // v270: TAG ADSTERRA POR HOST — corrige impressao descartada.
+  //
+  // CAUSA RAIZ (provada 12/09 via API + ads.txt): a Adsterra so credita a
+  // impressao se o ads.txt do host que serve a tag declarar o ID do dominio
+  // dono daquela tag. Estavamos servindo SEMPRE a tag do dominio 5975392:
+  //   engine.vercel.app  ads.txt=6044306  tag=5975392  -> DESCARTADA
+  //   solvegrid.com.br   ads.txt=6042199  tag=5975392  -> DESCARTADA
+  //   aquitem/barretos   ads.txt=5975392  tag=5975392  -> ok
+  // 88% dos links publicados (5.058 de 5.749) apontam para o engine, entao a
+  // maioria absoluta das impressoes era jogada fora. Prova na API: em agosto
+  // so 5975392 (54 impr) e 6002104 (11 impr) registraram — exatamente os dois
+  // hosts cujo ads.txt bate com a tag servida. Monetag nao valida dominio,
+  // por isso conta normalmente (11 impressoes hoje vs 0 da Adsterra).
+  //
+  // URLs obtidas da API oficial: /publisher/domain/{id}/placements.json?full=1
+  const ADSTERRA_POR_HOST = {
+    'achadinhos-ad-engine.vercel.app': 'https://undergocutlery.com/v6k6sq45dm?key=90f19ab095cebec116b7ee5f129e1b2b',
+    'solvegrid.com.br':                'https://undergocutlery.com/kpppprb1h5?key=3d010529a102de694b51b617cbfa2221',
+    'aquitemachadinhos.com.br':        'https://undergocutlery.com/n125219ufh?key=0474000233cefd60e54ca390d15beaaf',
+    'nexusplataforma.ia.br':           'https://undergocutlery.com/zqmeg0npik?key=9829517559c74ab7fd87b787ee036287'
+  };
+  const HOST_REQ = String(headers['x-forwarded-host'] || headers['host'] || '').toLowerCase();
+  let TAG_ADSTERRA = ADSTERRA_POR_HOST['achadinhos-ad-engine.vercel.app'];
+  for (const dom in ADSTERRA_POR_HOST) {
+    if (HOST_REQ.endsWith(dom)) { TAG_ADSTERRA = ADSTERRA_POR_HOST[dom]; break; }
+  }
+
   const DWELL_MS = 2200;
   const esc = (u) => String(u).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
                               .replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -498,7 +526,7 @@ module.exports = async (req, res) => {
       (document.head||document.documentElement).appendChild(s);
     }catch(e){}
   }
-  T('https://undergocutlery.com/n125219ufh?key=0474000233cefd60e54ca390d15beaaf');
+  T('${TAG_ADSTERRA}');
   T('https://quge5.com/88/tag.min.js','274860');
   T('https://quge5.com/88/tag.min.js','278800');
 })();
@@ -527,7 +555,7 @@ module.exports = async (req, res) => {
     });
   }
   var tags=[
-    load('https://undergocutlery.com/n125219ufh?key=0474000233cefd60e54ca390d15beaaf'),
+    load('${TAG_ADSTERRA}'),
     load('https://quge5.com/88/tag.min.js','274860'),
     load('https://quge5.com/88/tag.min.js','278800')
   ];
