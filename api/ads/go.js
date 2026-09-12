@@ -443,7 +443,13 @@ module.exports = async (req, res) => {
     return res.status(307).end();
   }
 
-  const DWELL_MS = 1500;
+  // v250: 1500 -> 2200ms. Medicao em navegador real mostrou que as zonas
+  // Monetag (6opo.com) so eram requisitadas aos ~3.055ms com o script no body.
+  // Com as tags no <head> + preconnect a 1a request cai para ~300-600ms, mas as
+  // zonas secundarias (que o loader dispara depois) precisam de ~1.2s a mais.
+  // 2200ms garante que TODAS as 4 requests completem antes do redirect, sem
+  // tornar a espera perceptivel (padrao de mercado para interstitial: 2-3s).
+  const DWELL_MS = 2200;
   const esc = (u) => String(u).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
                               .replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const safeTarget = esc(targetUrl);
@@ -468,7 +474,36 @@ module.exports = async (req, res) => {
  a.go{display:inline-block;margin-top:14px;padding:11px 20px;background:#4c8bf5;
       color:#fff;text-decoration:none;border-radius:8px;font-weight:600}
  p{opacity:.75;font-size:14px}
-</style></head><body>
+</style><link rel="preconnect" href="https://undergocutlery.com" crossorigin>
+<link rel="preconnect" href="https://quge5.com" crossorigin>
+<link rel="preconnect" href="https://6opo.com" crossorigin>
+<link rel="dns-prefetch" href="https://undergocutlery.com">
+<link rel="dns-prefetch" href="https://quge5.com">
+<link rel="dns-prefetch" href="https://6opo.com">
+<script>
+/* v250: TAGS NO HEAD — disparo imediato.
+   MEDIDO em navegador real (12/09): com o script no fim do <body>, a 1a tag
+   so era requisitada aos 2.341ms, mas o redirect ocorre aos 1.500ms. Ou seja:
+   TODA impressao acontecia DEPOIS do usuario ja ter saido da pagina.
+   Requests observados: 2341ms (adsterra+monetag loader), 3055ms (zonas 6opo).
+   Aqui as tags entram no <head>, antes do body existir, usando
+   document.head.appendChild — nao dependem do DOM estar pronto.
+   preconnect/dns-prefetch derrubam a latencia de handshake TLS dos 3 dominios. */
+(function(){
+  function T(src,zone){
+    try{
+      var s=document.createElement('script');
+      s.src=src; s.async=true; s.setAttribute('data-cfasync','false');
+      if(zone) s.setAttribute('data-zone',zone);
+      (document.head||document.documentElement).appendChild(s);
+    }catch(e){}
+  }
+  T('https://undergocutlery.com/n125219ufh?key=0474000233cefd60e54ca390d15beaaf');
+  T('https://quge5.com/88/tag.min.js','274860');
+  T('https://quge5.com/88/tag.min.js','278800');
+})();
+</script>
+</head><body>
 <div class="b">
   <div class="s"></div>
   <strong>Levando você à oferta…</strong>
