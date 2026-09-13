@@ -1,45 +1,68 @@
-name: Telegram Ofertas Brasil 24/7 Autopilot
+name: Telegram Ofertas Brasil 24/7 Autopilot (Multi-Destino)
 
 on:
   schedule:
-    # Runs at Brazilian peak shopping times (UTC: 11h, 14h, 17h, 20h, 22h, 00h, 02h)
+    # Picos de compra do Brasil (UTC) = 08h,11h,14h,17h,20h,23h,02h em Brasilia
     - cron: "0 11,14,17,20,22,0,2 * * *"
+    # Rede de seguranca: a cada hora, garante que o ciclo nunca fica vazio
+    - cron: "25 * * * *"
   workflow_dispatch:
+    inputs:
+      discover_only:
+        description: "Apenas descobrir chat_id de grupos novos (nao publica)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: telegram-deals-publisher
+  cancel-in-progress: false
 
 env:
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
   TELEGRAM_DEALS_CHANNEL: ${{ secrets.TELEGRAM_DEALS_CHANNEL }}
-  TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-  TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-  TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-  TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-  META_APP_ID: ${{ secrets.META_APP_ID }}
-  META_APP_SECRET_TOKEN: ${{ secrets.META_APP_SECRET_TOKEN }}
-  META_MASTER_USER_TOKEN: ${{ secrets.META_MASTER_USER_TOKEN }}
-  META_PAGE_TOKEN_A: ${{ secrets.META_PAGE_TOKEN_A }}
-  META_PAGE_TOKEN_B: ${{ secrets.META_PAGE_TOKEN_B }}
-  META_PAGE_TOKEN_2: ${{ secrets.META_PAGE_TOKEN_2 }}
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  AFFILIATE_GATEWAY: "https://achadinhos-ad-engine.vercel.app/api/ads/go"
 
 jobs:
   publish-brazil-deals:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Publish High-Converting Brazilian Deal to Telegram @ofertasbrasilz
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_DEALS_CHANNEL: "@ofertasbrasilz"
+      - name: "1. Descobrir chat_id de grupos pendentes (se houver)"
+        run: node scripts/telegram-brazil-deals-publisher.js --discover-only || true
+
+      - name: "2. Publicar oferta em TODOS os destinos (canal + grupos + admin)"
+        if: ${{ inputs.discover_only != true }}
+        run: node scripts/telegram-brazil-deals-publisher.js
+
+      - name: "3. Persistir historico anti-repeticao"
+        if: always()
         run: |
-          node scripts/telegram-brazil-deals-publisher.js
+          git config user.name "telegram-autopilot[bot]"
+          git config user.email "telegram-autopilot@users.noreply.github.com"
+          if [ -f data/telegram-published-deals-history.json ]; then
+            git add data/telegram-published-deals-history.json
+            git add data/telegram-destinations.json 2>/dev/null || true
+            if ! git diff --staged --quiet; then
+              git commit -m "chore(telegram): historico de publicacao 24/7 [skip ci]"
+              git pull --rebase --autostash origin main || true
+              git push origin main || echo "push falhou (sem impacto na entrega)"
+            else
+              echo "Nada a persistir."
+            fi
+          fi

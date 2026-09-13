@@ -5,17 +5,47 @@
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "authorization, apikey, content-type, x-client-info" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "authorization, apikey, content-type, x-client-info"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/oferta/:slug", "destination": "/api/oferta?slug=:slug" },
-    { "source": "/leiloes-ebay", "destination": "/api/ads/deals" },
-    { "source": "/ferramentas-saas", "destination": "/api/ads/saas" }
+    {
+      "source": "/oferta/:slug",
+      "destination": "/api/oferta?slug=:slug"
+    },
+    {
+      "source": "/leiloes-ebay",
+      "destination": "/api/ads/deals"
+    },
+    {
+      "source": "/ferramentas-saas",
+      "destination": "/api/ads/saas"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron-autopilot",
+      "schedule": "0 3 * * *"
+    }
   ]
 }

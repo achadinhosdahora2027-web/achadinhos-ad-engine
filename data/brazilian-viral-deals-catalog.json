@@ -1,32 +1,14 @@
 {
-  "catalog_version": "2026.1-BRAZIL-VIRAL-DEALS",
-  "updated_at": "2026-09-02T00:00:00.000Z",
-  "total_deals": 30,
+  "catalog_version": "2026.9-VERIFIED-MULTI-NETWORK",
+  "updated_at": "2026-09-12T16:00:00-03:00",
+  "metodo": "Cada anunciante abaixo foi testado AO VIVO (curl -L, ate 12 hops) e resolveu no dominio do proprio anunciante. Os links de campanha sao gerados em tempo de execucao pelo gateway /api/ads/go, que injeta a TAG do destino (grupo/canal) em sid/subid/customid/utm_content.",
+  "total_deals": 22,
   "deals": [
     {
-      "id": "br_deal_001_robo_aspirador",
-      "title": "Robô Aspirador de Pó Inteligente 3 em 1 (Varre, Aspira e Passa Pano)",
+      "id": "br_shopee_fone_tws",
+      "title": "Fone de Ouvido Bluetooth TWS com Display Digital LED",
       "store": "Shopee",
-      "badge": "🔥 MAIS VENDIDO DA SEMANA",
-      "original_price": "189,90",
-      "promo_price": "64,90",
-      "discount": "66% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.9 ⭐ (+12.400 avaliações)",
-      "bullets": [
-        "Sensor antiqueda e anticolisão inteligente",
-        "Bateria recarregável de longa duração (USB)",
-        "Silencioso e limpa cantos difíceis debaixo de sofás e camas"
-      ],
-      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
-      "category": "Casa & Utilidades",
-      "active": false,
-      "inactive_reason": "shortlink Shopee 9pG4O5hX8q morto (shope.ee/error_page) - auditoria 2026-09-03"
-    },
-    {
-      "id": "br_deal_002_fone_bluetooth_pro",
-      "title": "Fone de Ouvido Bluetooth Sem Fio TWS com Display Digital LED e Cancelamento de Ruído",
-      "store": "Shopee",
+      "brand": "shopee",
       "badge": "⚡ OFERTA RELÂMPAGO",
       "original_price": "79,90",
       "promo_price": "27,90",
@@ -34,17 +16,20 @@
       "coupon": "CUPOMAPP",
       "rating": "4.8 ⭐ (+28.000 avaliações)",
       "bullets": [
-        "Display digital que mostra a bateria exata",
-        "Bluetooth 5.3 de conexão instantânea e sem atraso",
+        "Display digital mostra a bateria exata do estojo",
+        "Bluetooth 5.3 com conexão instantânea e sem atraso",
         "Resistente a suor e respingos d'água"
       ],
-      "affiliate_url": "https://s.shopee.com.br/30n7ohzzU6",
-      "category": "Eletrônicos"
+      "category": "Eletrônicos",
+      "link_verified": "https://s.shopee.com.br/30n7ohzzU6",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "shopee.com.br (HTTP 200)"
     },
     {
-      "id": "br_deal_003_air_fryer_mondial",
+      "id": "br_amazon_air_fryer",
       "title": "Fritadeira Elétrica Air Fryer Mondial Family 4 Litros Inox",
       "store": "Amazon Brasil",
+      "brand": "amazon",
       "badge": "🏷️ MENOR PREÇO DOS ÚLTIMOS 30 DIAS",
       "original_price": "399,90",
       "promo_price": "249,00",
@@ -56,51 +41,56 @@
         "Timer de 60 minutos com desligamento automático",
         "Prepara batata frita, carnes e bolos sem óleo"
       ],
-      "affiliate_url": "https://amazon.com.br/?tag=aquitemachadinhos-20",
-      "category": "Cozinha"
+      "category": "Cozinha",
+      "link_verified": "https://amazon.com.br/?tag=aquitemachadinhos-20",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "amazon.com.br (HTTP 200)"
     },
     {
-      "id": "br_deal_004_mop_giratorio_360",
-      "title": "Mop Giratório 360° Lava e Seca com Balde Centrífuga e 2 Refis de Microfibra",
-      "store": "Shopee",
-      "badge": "😱 ACHADINHO VIRAL DO TIKTOK",
-      "original_price": "119,90",
-      "promo_price": "49,90",
-      "discount": "58% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.9 ⭐ (+19.800 avaliações)",
-      "bullets": [
-        "Substitui vassoura, rodo e pano de chão",
-        "Cabo telescópico ajustável em aço inox",
-        "Sistema de centrifugação que torce sem molhar as mãos"
-      ],
-      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
-      "category": "Casa & Limpeza",
-      "active": false,
-      "inactive_reason": "shortlink Shopee 9pG4O5hX8q morto (shope.ee/error_page) - auditoria 2026-09-03"
-    },
-    {
-      "id": "br_deal_005_booking_gramado",
-      "title": "Hospedagem em Gramado & Serra Gaúcha (Temporada Natal Luz) com até 40% OFF",
+      "id": "br_booking_gramado",
+      "title": "Hospedagem em Gramado & Serra Gaúcha (Temporada Natal Luz)",
       "store": "Booking.com",
-      "badge": "🏨 CUPOM EXCLUSIVO DE VIAGEM",
+      "brand": "booking",
+      "badge": "🏨 ATÉ 40% OFF EM POUSADAS",
       "original_price": "450,00",
       "promo_price": "219,00",
       "discount": "40% OFF",
-      "coupon": "RESERVAONLINE",
       "rating": "9.2 Fantástico ⭐ (+3.500 avaliações)",
       "bullets": [
         "Opções com Cancelamento Grátis até a véspera",
         "Café da manhã colonial incluso em pousadas selecionadas",
         "Localização privilegiada no centro de Gramado e Canela"
       ],
-      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=telegram_ofertas&slot=gramado_deal",
-      "category": "Viagens & Hotéis"
+      "category": "Viagens & Hotéis",
+      "link_verified": "CJ Affiliate (kqzyfj.com click-101859672-17293138)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "booking.com (HTTP 202 — challenge antibot, link CJ válido)"
     },
     {
-      "id": "br_deal_006_lampada_inteligente_wifi",
-      "title": "Lâmpada Inteligente Smart LED 10W RGB Wi-Fi Compatível com Alexa e Google Home",
+      "id": "br_nordvpn_cyber",
+      "title": "NordVPN — Proteção Completa 24/7 + 3 Meses Grátis",
+      "store": "NordVPN",
+      "brand": "nordvpn",
+      "badge": "🔐 SEGURANÇA GLOBAL",
+      "original_price": "59,00",
+      "promo_price": "21,00",
+      "discount": "até 74% OFF",
+      "rating": "⭐ Líder mundial em VPN",
+      "bullets": [
+        "Proteção contra rastreamento em qualquer rede Wi-Fi",
+        "6 dispositivos simultâneos em uma única assinatura",
+        "Garantia de reembolso de 30 dias"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-13914989)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "nordvpn.com (HTTP 403 — bloqueio de datacenter; link CJ válido)"
+    },
+    {
+      "id": "br_ml_lampada_smart",
+      "title": "Lâmpada Inteligente Smart LED 10W RGB Wi-Fi Alexa/Google",
       "store": "Mercado Livre",
+      "brand": "mercadolivre",
       "badge": "💡 CASA INTELIGENTE",
       "original_price": "69,90",
       "promo_price": "29,90",
@@ -112,180 +102,377 @@
         "Comando de voz para ligar, desligar e mudar de cor",
         "Programe horários e timer para acender automaticamente"
       ],
-      "affiliate_url": "https://meli.la/1U3rtgV",
-      "category": "Casa Inteligente"
+      "category": "Casa Inteligente",
+      "link_verified": "https://meli.la/1U3rtgV",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "mercadolivre.com.br/social/danielfsantos (HTTP 200)"
     },
     {
-      "id": "br_deal_007_mini_processador_eletrico",
-      "title": "Mini Processador e Triturador de Alimentos Elétrico USB Portátil (Alho, Cebola, Carnes)",
-      "store": "Shopee",
-      "badge": "🔥 QUERIDINHO DAS DONAS DE CASA",
-      "original_price": "49,90",
-      "promo_price": "18,90",
-      "discount": "62% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.8 ⭐ (+34.000 avaliações)",
+      "id": "br_aliexpress_global",
+      "title": "AliExpress — Frete Grátis em Milhares de Achadinhos Importados",
+      "store": "AliExpress",
+      "brand": "aliexpress",
+      "badge": "🌍 ESCOLHA DO BRASIL",
+      "original_price": "120,00",
+      "promo_price": "54,90",
+      "discount": "até 60% OFF",
+      "rating": "⭐ +5.000.000 avaliações",
       "bullets": [
-        "Lâminas em aço inox ultra afiadas (tritura em 5 segundos)",
-        "Carregamento USB de longa duração (bateria recarregável)",
-        "Compacto, fácil de limpar e sem cheiro nas mãos"
+        "Cupons exclusivos de primeira compra para novos usuários",
+        "Frete grátis em milhares de itens selecionados",
+        "Proteção ao comprador em todos os pedidos"
       ],
-      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
-      "category": "Cozinha",
-      "active": false,
-      "inactive_reason": "shortlink Shopee 9pG4O5hX8q morto (shope.ee/error_page) - auditoria 2026-09-03"
+      "category": "Importados",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-17242061)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "aliexpress.com (HTTP 200)"
     },
     {
-      "id": "br_deal_008_nordvpn_cyber_security",
-      "title": "NordVPN Proteção Total de Navegação + 3 Meses Grátis (74% OFF)",
-      "store": "NordVPN",
-      "badge": "🛡️ SEGURANÇA & PRIVACIDADE",
-      "original_price": "39,90/mês",
-      "promo_price": "14,90/mês",
-      "discount": "74% OFF",
-      "coupon": "CYBERSHIELD",
-      "rating": "4.9 ⭐ (Líder Mundial em Cibersegurança)",
+      "id": "br_ebay_deals",
+      "title": "eBay Deals — Ofertas Internacionais com Envio para o Brasil",
+      "store": "eBay",
+      "brand": "ebay",
+      "badge": "📦 ACHADOS INTERNACIONAIS",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "até 70% OFF",
+      "rating": "⭐ Marketplace global",
       "bullets": [
-        "Navegue anônimo e proteja senhas e dados bancários",
-        "Acesse catálogos de streaming de mais de 110 países",
-        "Proteção contra malwares e bloqueador de anúncios incluso"
+        "Produtos que não existem no mercado brasileiro",
+        "Vendedores com reputação verificada",
+        "Programa de proteção ao comprador eBay"
       ],
-      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=telegram_ofertas&slot=nordvpn_deal",
-      "category": "Tecnologia & Softwares"
+      "category": "Marketplace Global",
+      "link_verified": "eBay Partner Network (campid 5339193749)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "ebay.com/deals (HTTP 200)"
     },
     {
-      "id": "br_deal_009_suporte_celular_veicular",
-      "title": "Suporte Veicular para Celular Magnético Articulado com Trava Automática",
-      "store": "Shopee",
-      "badge": "🚗 ACESSÓRIO INDISPENSÁVEL",
-      "original_price": "39,90",
-      "promo_price": "14,50",
-      "discount": "63% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.9 ⭐ (+15.000 avaliações)",
+      "id": "br_surfshark_vpn",
+      "title": "Surfshark VPN — Internet Livre e Protegida para Toda a Família",
+      "store": "Surfshark",
+      "brand": "surfshark",
+      "badge": "🦈 DISPOSITIVOS ILIMITADOS",
+      "original_price": "47,00",
+      "promo_price": "11,90",
+      "discount": "até 86% OFF",
+      "rating": "⭐ Nota 4.7 na Trustpilot",
       "bullets": [
-        "Fixação ultra forte que não cai nem em buracos",
-        "Gira 360 graus para usar GPS na vertical ou horizontal",
-        "Compatível com todos os modelos de iPhone, Samsung e Xiaomi"
+        "Dispositivos ilimitados na mesma conta",
+        "Bloqueador de anúncios e malware integrado",
+        "Servidores em 100 países"
       ],
-      "affiliate_url": "https://s.shopee.com.br/30n7ohzzU6",
-      "category": "Automotivo & Celular"
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (tkqlhce.com click-101859672-15736773)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "surfshark.com (HTTP 200)"
     },
     {
-      "id": "br_deal_010_copo_termico_inox",
-      "title": "Copo Térmico em Aço Inox com Tampa e Abridor 473ml (Mantém gelado por até 12h)",
-      "store": "Shopee",
-      "badge": "🍻 ACHADINHO TOP 1",
-      "original_price": "69,90",
-      "promo_price": "24,90",
-      "discount": "64% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.9 ⭐ (+42.000 avaliações)",
+      "id": "br_nordpass_gerenciador",
+      "title": "NordPass — Gerenciador de Senhas com Criptografia Militar",
+      "store": "NordPass",
+      "brand": "nordpass",
+      "badge": "🔑 NUNCA MAIS ESQUEÇA UMA SENHA",
+      "original_price": "29,00",
+      "promo_price": "0,00",
+      "discount": "Plano gratuito + premium com desconto",
+      "rating": "⭐ Recomendado por especialistas",
       "bullets": [
-        "Parede dupla com isolamento a vácuo (não sua por fora)",
-        "Acompanha tampa antivazamento com abridor embutido",
-        "Ideal para cerveja gelada, refrigerante, café e tereré"
+        "Guarda todas as senhas em um cofre criptografado",
+        "Preenchimento automático em sites e apps",
+        "Scanner de vazamentos de dados"
       ],
-      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
-      "category": "Casa & Lazer",
-      "active": false,
-      "inactive_reason": "shortlink Shopee 9pG4O5hX8q morto (shope.ee/error_page) - auditoria 2026-09-03"
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-17262576)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "nordpass.com/special (HTTP 200)"
     },
     {
-      "id": "br_deal_011_festa_peao_barretos",
-      "title": "Hotéis & Pousadas em Barretos e Região para a Festa do Peão 2027 com Desconto",
+      "id": "br_economybookings_aluguel",
+      "title": "EconomyBookings — Aluguel de Carro com até 70% de Desconto",
+      "store": "EconomyBookings",
+      "brand": "economybookings",
+      "badge": "🚗 ALUGUEL DE CARRO BARATO",
+      "original_price": "180,00",
+      "promo_price": "54,00",
+      "discount": "até 70% OFF",
+      "rating": "⭐ Comparador global de locadoras",
+      "bullets": [
+        "Compara preços de mais de 800 locadoras",
+        "Cancelamento grátis na maioria das reservas",
+        "Atendimento em português"
+      ],
+      "category": "Viagens & Hotéis",
+      "link_verified": "CJ Affiliate (kqzyfj.com click-101859672-15736982)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "economybookings.com (HTTP 200)"
+    },
+    {
+      "id": "br_malwarebytes",
+      "title": "Malwarebytes Premium — Antivírus que Realmente Remove Pragas",
+      "store": "Malwarebytes",
+      "brand": "malwarebytes",
+      "badge": "🛡️ PROTEÇÃO PREMIUM",
+      "original_price": "39,00",
+      "promo_price": "24,00",
+      "discount": "até 40% OFF",
+      "rating": "⭐ Líder em remoção de malware",
+      "bullets": [
+        "Remove vírus, ransomware e spywares que outros antivírus perdem",
+        "Proteção em tempo real contra sites maliciosos",
+        "Não deixa o computador lento"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-15734534)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "malwarebytes.com (HTTP 200)"
+    },
+    {
+      "id": "br_wondershare",
+      "title": "Wondershare — Editores de Vídeo, PDF e Criatividade com Desconto",
+      "store": "Wondershare",
+      "brand": "wondershare",
+      "badge": "🎬 FERRAMENTAS DE CRIADOR",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "até 50% OFF",
+      "rating": "⭐ Usado por +100 milhões de pessoas",
+      "bullets": [
+        "Filmora para edição de vídeo profissional",
+        "PDFelement para editar e assinar PDFs",
+        "Licença perpétua disponível"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15733675)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "wondershare.com (HTTP 200)"
+    },
+    {
+      "id": "br_movavi",
+      "title": "Movavi — Editor de Vídeo Fácil para Quem Está Começando",
+      "store": "Movavi",
+      "brand": "movavi",
+      "badge": "✂️ EDIÇÃO DE VÍDEO SIMPLES",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Ideal para iniciantes",
+      "bullets": [
+        "Interface arrasta-e-solta sem curva de aprendizado",
+        "Efeitos, transições e legendas automáticas",
+        "Versão de teste gratuita disponível"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15735540)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "movavi.com (HTTP 200)"
+    },
+    {
+      "id": "br_parallels_mac",
+      "title": "Parallels Desktop — Rode Windows no seu Mac sem Reiniciar",
+      "store": "Parallels",
+      "brand": "parallels",
+      "badge": "💻 MAC + WINDOWS JUNTOS",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Padrão de mercado para Mac",
+      "bullets": [
+        "Abra programas de Windows direto no macOS",
+        "Copiar e colar entre sistemas operacionais",
+        "Otimizado para chips Apple M-series"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (jdoqocy.com click-101859672-15733336)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "parallels.com (HTTP 200)"
+    },
+    {
+      "id": "br_corel_software",
+      "title": "Corel — Suíte de Design, Foto e Vídeo com Preço Promocional",
+      "store": "Corel",
+      "brand": "corel",
+      "badge": "🎨 DESIGN PROFISSIONAL",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Marca consagrada em design",
+      "bullets": [
+        "CorelDRAW para vetores e identidade visual",
+        "PaintShop Pro para edição de fotos",
+        "VideoStudio para produção de vídeos"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (tkqlhce.com click-101859672-15734376)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "corel.com (HTTP 200)"
+    },
+    {
+      "id": "br_sucuri_seguranca",
+      "title": "Sucuri — Blindagem e Firewall para Sites e Lojas Online",
+      "store": "Sucuri",
+      "brand": "sucuri",
+      "badge": "🔒 SEGURANÇA PARA SITES",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Referência em segurança web",
+      "bullets": [
+        "Firewall de aplicação (WAF) com CDN incluída",
+        "Scanner de malware e remoção automática",
+        "Ideal para quem tem loja virtual ou blog"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (tkqlhce.com click-101859672-15735343)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "sucuri.net (HTTP 200)"
+    },
+    {
+      "id": "br_updf_editor",
+      "title": "UPDF — Editor de PDF com IA que Converte, Assina e Organiza",
+      "store": "UPDF",
+      "brand": "updf",
+      "badge": "📄 PDF COM INTELIGÊNCIA ARTIFICIAL",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Alternativa moderna ao Adobe",
+      "bullets": [
+        "Resume documentos PDF usando IA",
+        "Converte PDF para Word, Excel e imagem",
+        "Assinatura digital e proteção por senha"
+      ],
+      "category": "Segurança & Software",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15820753)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "updf.com (HTTP 200)"
+    },
+    {
+      "id": "br_switchbot_casa",
+      "title": "SwitchBot — Automatize sua Casa por Menos de R$ 100",
+      "store": "SwitchBot",
+      "brand": "switchbot",
+      "badge": "🤖 CASA INTELIGENTE BARATA",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Automação sem obra",
+      "bullets": [
+        "Transforma qualquer interruptor antigo em inteligente",
+        "Funciona com Alexa, Google Home e Siri",
+        "Instalação sem fiação, sem obra"
+      ],
+      "category": "Casa Inteligente",
+      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-15735830)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "switch-bot.com (HTTP 200)"
+    },
+    {
+      "id": "br_bluetti_energia",
+      "title": "BLUETTI — Estação de Energia Portátil para Apagões e Viagens",
+      "store": "BLUETTI",
+      "brand": "bluetti",
+      "badge": "🔋 ENERGIA SEM TOMADA",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Líder em energia portátil",
+      "bullets": [
+        "Liga geladeira, notebook e TV em apagão",
+        "Carrega por painel solar, tomada ou carro",
+        "Ideal para camping, motorhome e emergência"
+      ],
+      "category": "Casa & Utilidades",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15736238)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "bluettipower.com (HTTP 200)"
+    },
+    {
+      "id": "br_soundcore_audio",
+      "title": "soundcore by Anker — Fones e Caixas com Som de Alta Fidelidade",
+      "store": "soundcore",
+      "brand": "soundcore",
+      "badge": "🎧 SOM PREMIUM BARATO",
+      "original_price": "—",
+      "promo_price": "—",
+      "discount": "com desconto de afiliado",
+      "rating": "⭐ Marca da Anker",
+      "bullets": [
+        "Fones com cancelamento ativo de ruído",
+        "Bateria de até 50 horas de reprodução",
+        "Caixas Bluetooth resistentes à água"
+      ],
+      "category": "Eletrônicos",
+      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-17033430)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "soundcore.com (HTTP 200)"
+    },
+    {
+      "id": "br_novakid_ingles",
+      "title": "Novakid — Aulas de Inglês ao Vivo para Crianças de 4 a 12 anos",
+      "store": "Novakid",
+      "brand": "novakid",
+      "badge": "👧 INGLÊS SEM SAIR DE CASA",
+      "original_price": "—",
+      "promo_price": "0,00",
+      "discount": "aula experimental GRÁTIS",
+      "rating": "⭐ +70.000 famílias atendidas",
+      "bullets": [
+        "Professor nativo ao vivo, em turma individual",
+        "Jogo e gamificação na plataforma",
+        "Horários flexíveis, inclusive fim de semana"
+      ],
+      "category": "Educação",
+      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-15735619)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "novakidschool.com (HTTP 200)"
+    },
+    {
+      "id": "br_booking_barretos_peao",
+      "title": "Festa do Peão de Barretos 2027 — Hotéis e Pousadas com Antecedência",
       "store": "Booking.com",
-      "badge": "🤠 ROTEIRO ANTECIPADO",
-      "original_price": "380,00",
-      "promo_price": "189,00",
-      "discount": "50% OFF",
-      "coupon": "BARRETOSVIP",
-      "rating": "8.9 Muito Bom ⭐ (+1.800 avaliações)",
+      "brand": "booking",
+      "badge": "🤠 BARRETOS 2027",
+      "original_price": "600,00",
+      "promo_price": "359,00",
+      "discount": "40% OFF reservando agora",
+      "rating": "⭐ Reserve com cancelamento grátis",
       "bullets": [
-        "Reserve com antecedência antes que as vagas esgotem",
-        "Opções com piscina, estacionamento e café da manhã",
-        "Fácil acesso ao Parque do Peão de Barretos"
+        "Quanto antes reservar, mais barato fica",
+        "Opções com cancelamento grátis até a véspera",
+        "Fique perto do Parque do Peão"
       ],
-      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=booking&site=telegram_ofertas&slot=barretos_deal",
-      "category": "Viagens & Hotéis"
+      "category": "Viagens & Hotéis",
+      "link_verified": "CJ Affiliate (kqzyfj.com click-101859672-17293138)",
+      "link_verified_at": "2026-09-13T01:00:00Z",
+      "link_final": "booking.com (HTTP 202 — challenge antibot, link CJ válido)"
+    }
+  ],
+  "inactive_removed": [
+    {
+      "id": "br_deal_001_robo_aspirador",
+      "reason": "Shortlink Shopee 9pG4O5hX8q morto (resolve para shope.ee/error_page)",
+      "removed_at": "2026-09-13"
     },
     {
-      "id": "br_deal_012_kit_organizadores_acrilico",
-      "title": "Kit com 6 Caixas Organizadoras em Acrílico Transparente com Tampa Empilhável",
-      "store": "Shopee",
-      "badge": "✨ ORGANIZAÇÃO DE GELADEIRA & ARMÁRIOS",
-      "original_price": "99,90",
-      "promo_price": "39,90",
-      "discount": "60% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.9 ⭐ (+11.000 avaliações)",
-      "bullets": [
-        "Material resistente livre de BPA (atóxico)",
-        "Visual limpo para frutas, legumes, maquiagens e remédios",
-        "Otimiza 100% o espaço dos armários e gavetas"
-      ],
-      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
-      "category": "Casa & Decoração",
-      "active": false,
-      "inactive_reason": "shortlink Shopee 9pG4O5hX8q morto (shope.ee/error_page) - auditoria 2026-09-03"
+      "id": "br_deal_004_mop_giratorio_360",
+      "reason": "Mesmo shortlink morto 9pG4O5hX8q",
+      "removed_at": "2026-09-13"
     },
     {
       "id": "br_deal_013_curso_ia_python_udemy",
-      "title": "Formação Completa Inteligência Artificial, ChatGPT & Python do Zero ao Avançado",
-      "store": "Udemy",
-      "badge": "🎓 EDUCAÇÃO & CARREIRA",
-      "original_price": "279,90",
-      "promo_price": "29,90",
-      "discount": "89% OFF",
-      "coupon": "PROMOIA2026",
-      "rating": "4.8 ⭐ (+65.000 alunos)",
-      "bullets": [
-        "Acesso vitalício com certificado oficial incluso",
-        "Mais de 40 horas de aulas práticas passo a passo",
-        "Aprenda a criar automações, agentes e projetos reais de IA"
-      ],
-      "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=udemy&site=telegram_ofertas&slot=udemy_deal",
-      "category": "Cursos Online",
-      "active": false,
-      "inactive_reason": "Udemy sem programa de afiliados na conta (trafego sem comissao) - auditoria 2026-09-03"
+      "reason": "Udemy esta na lista NON_MONETIZED do gateway — link sem tag de afiliado",
+      "removed_at": "2026-09-13"
+    },
+    {
+      "id": "br_deal_009_suporte_celular_veicular",
+      "reason": "Apontava para o MESMO shortlink do fone TWS (30n7ohzzU6) — produto diferente, link identico. Removido para nao enganar o usuario.",
+      "removed_at": "2026-09-13"
     },
     {
       "id": "br_deal_014_cftv_camera_wifi_360",
-      "title": "Câmera de Segurança Inteligente Wi-Fi 360° com Visão Noturna e Áudio Bidirecional",
-      "store": "Shopee",
-      "badge": "🔒 SEGURANÇA RESIDENCIAL",
-      "original_price": "149,90",
-      "promo_price": "54,90",
-      "discount": "63% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.8 ⭐ (+22.500 avaliações)",
-      "bullets": [
-        "Monitore sua casa ao vivo direto do celular de onde estiver",
-        "Sensor de movimento com alarme e rastreamento automático",
-        "Áudio bidirecional (ouça e fale através da câmera)"
-      ],
-      "affiliate_url": "https://s.shopee.com.br/30n7ohzzU6",
-      "category": "Segurança & Smart Home"
-    },
-    {
-      "id": "br_deal_015_dispenser_detergente_esponja",
-      "title": "Dispenser Dosador de Detergente 2 em 1 com Suporte para Esponja de Pia",
-      "store": "Shopee",
-      "badge": "💡 ECONOMIA NA COZINHA",
-      "original_price": "29,90",
-      "promo_price": "9,99",
-      "discount": "66% OFF",
-      "coupon": "FRETEGRATIS",
-      "rating": "4.9 ⭐ (+50.000 avaliações)",
-      "bullets": [
-        "Economiza até 50% de detergente (dosagem perfeita ao pressionar)",
-        "Não molha a bancada e deixa a pia sempre organizada",
-        "Acompanha esponja de brinde"
-      ],
-      "affiliate_url": "https://s.shopee.com.br/9pG4O5hX8q",
-      "category": "Cozinha & Casa",
-      "active": false,
-      "inactive_reason": "shortlink Shopee 9pG4O5hX8q morto (shope.ee/error_page) - auditoria 2026-09-03"
+      "reason": "Apontava para o MESMO shortlink do fone TWS (30n7ohzzU6) — duplicidade enganosa.",
+      "removed_at": "2026-09-13"
     }
   ]
 }

@@ -1,21 +1,35 @@
 /**
  * ==============================================================================
- * TELEGRAM OFERTAS BRASIL 24/7 VIRAL DEALS PUBLISHER ENGINE (2026)
- * Channel: @ofertasbrasilz (Ofertas Brasil VIP)
- * Managed by: CCO (Comunicação & Vendas) & Head de Afiliados Brasil
+ * TELEGRAM OFERTAS BRASIL 24/7 — MULTI-DESTINATION PUBLISHER  (v3.0 — 2026)
  * ==============================================================================
- * 1. Focuses 100% on high-converting BRAZILIAN DEALS (Shopee, Amazon, Meli, Booking).
- * 2. Strict Anti-Repetition State Machine (Never repeats recently posted deals).
- * 3. High-converting copywriting with emojis, slashed prices, coupons, and clean CTAs.
- * 4. Integrates verified affiliate tracking links with sub_id and SID.
+ * O QUE MUDOU EM RELACAO A v2 (e por que):
+ *
+ *  v2 (defeituoso)                        v3 (esta versao)
+ *  -------------------------------------  -------------------------------------
+ *  Enviava para UM unico destino          Envia para TODOS os destinos ativos
+ *  (TELEGRAM_DEALS_CHANNEL)               (canal + 3 grupos + privado admin)
+ *  Link de afiliado sem tag de origem     Link TAGEADO por destino: cada grupo
+ *                                         tem sua propria tag rastreavel
+ *  Sem retry / sem tratamento de 429      Retry com backoff + respeita retry_after
+ *  Falha silenciosa (log e nada mais)     Resultado auditavel por destino
+ *  Historico unico global                 Anti-repeticao POR destino
+ *  Sem auto-descoberta de grupos          Auto-descobre chat_id dos grupos
+ * ==============================================================================
  */
 
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
-const CHANNEL_USERNAME = process.env.TELEGRAM_DEALS_CHANNEL || '@ofertasbrasilz';
+const {
+  loadRegistry,
+  saveRegistry,
+  activeDestinations,
+  pendingDestinations,
+  buildTaggedLink,
+  broadcast,
+  discoverChatIds,
+  attributionFooter
+} = require('../lib/telegram/multi-destination-sender');
 
 const CATALOG_PATH = path.join(__dirname, '../data/brazilian-viral-deals-catalog.json');
 const HISTORY_PATH = path.join(__dirname, '../data/telegram-published-deals-history.json');
@@ -36,198 +50,269 @@ function saveJson(p, data) {
   }
 }
 
-async function sendTelegramDeal(text, options = {}) {
-  const token = options.botToken || BOT_TOKEN;
-  const chatId = options.chatId || CHANNEL_USERNAME;
+const STORE_BADGE = {
+  Shopee: '🛍️ Shopee Brasil',
+  'Amazon Brasil': '📦 Amazon Brasil',
+  'Booking.com': '🏨 Booking.com',
+  'Mercado Livre': '⚡ Mercado Livre',
+  NordVPN: '🔐 NordVPN',
+  AliExpress: '🌍 AliExpress',
+  eBay: '📦 eBay',
+  Surfshark: '🦈 Surfshark',
+  NordPass: '🔑 NordPass',
+  EconomyBookings: '🚗 EconomyBookings',
+  Malwarebytes: '🛡️ Malwarebytes',
+  Wondershare: '🎬 Wondershare',
+  Movavi: '✂️ Movavi',
+  Parallels: '💻 Parallels',
+  Corel: '🎨 Corel',
+  Sucuri: '🔒 Sucuri',
+  UPDF: '📄 UPDF',
+  SwitchBot: '🤖 SwitchBot',
+  BLUETTI: '🔋 BLUETTI',
+  soundcore: '🎧 soundcore',
+  Novakid: '👧 Novakid'
+};
 
-  return new Promise((resolve) => {
-    try {
-      const payload = JSON.stringify({
-        chat_id: chatId,
-        text: text,
-        parse_mode: 'HTML',
-        disable_web_page_preview: false
-      });
+/**
+ * Monta o texto da oferta JA com o link tageado PARA UM DESTINO ESPECIFICO.
+ */
+function formatDealPost(deal, destination, templateIndex = 0) {
+  const storeBadge = STORE_BADGE[deal.store] || `🏪 ${deal.store}`;
+  const bulletsText = (deal.bullets || []).map((b) => `• ${b}`).join('\n');
 
-      const req = https.request({
-        hostname: 'api.telegram.org',
-        path: `/bot${token}/sendMessage`,
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Content-Length': Buffer.byteLength(payload)
-        },
-        timeout: 10000
-      }, (res) => {
-        let body = '';
-        res.on('data', chunk => body += chunk);
-        res.on('end', () => {
-          let parsed = {};
-          try { parsed = JSON.parse(body); } catch (e) {}
-          resolve({
-            sent: res.statusCode === 200,
-            statusCode: res.statusCode,
-            message_id: parsed?.result?.message_id,
-            response: parsed
-          });
-        });
-      });
-
-      req.on('error', (err) => resolve({ sent: false, error: err.message }));
-      req.on('timeout', () => { req.destroy(); resolve({ sent: false, timeout: true }); });
-      req.write(payload);
-      req.end();
-    } catch (e) {
-      resolve({ sent: false, error: e.message });
-    }
+  // O link carrega a tag do destino -> toda venda futura e atribuivel ao grupo
+  // slot sem o prefixo redundante "br_" (o gateway ja adiciona o pais na sid)
+  const slot = String(deal.id).replace(/^br_/, '');
+  const link = buildTaggedLink(destination, {
+    brand: deal.brand,
+    slot,
+    country: 'BR'
   });
-}
 
-function formatDealPost(deal, templateIndex = 0) {
-  const storeBadge = deal.store === 'Shopee' ? '🛍️ Shopee Brasil' : (deal.store === 'Amazon Brasil' ? '📦 Amazon Brasil' : (deal.store === 'Booking.com' ? '🏨 Booking.com' : (deal.store === 'Mercado Livre' ? '⚡ Mercado Livre' : '🛡️ NordVPN')));
-  
-  const bulletsText = deal.bullets ? deal.bullets.map(b => `• ${b}`).join('\n') : '';
+  const footer = attributionFooter(destination);
+
+  const hasPrice = deal.promo_price && deal.promo_price !== '—';
+  const priceBlock = hasPrice
+    ? `💰 <s>De R$ ${deal.original_price}</s>\n💥 <b>Por apenas: R$ ${deal.promo_price}</b> (<b>${deal.discount}</b>)`
+    : `💥 <b>${deal.discount}</b>`;
+
+  const couponBlock = deal.coupon ? `🎟️ <b>Cupom:</b> <code>${deal.coupon}</code> (toque para copiar)\n` : '';
 
   const templates = [
-    // Template 1: Achadinho Relâmpago
     `
-🔥 <b>[ACHADINHO RELÂMPAGO DO DIA]</b> 🔥
+🔥 <b>[ACHADINHO DO DIA]</b> 🔥
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 <b>${deal.title}</b>
 
-${deal.badge ? `🏷️ <i>${deal.badge}</i>\n` : ''}🏪 <b>Loja:</b> <b>${storeBadge}</b>
-⭐ <b>Avaliação:</b> ${deal.rating}
+🏪 <b>Loja:</b> ${storeBadge}
+⭐ <b>Referência:</b> ${deal.rating}
 
-💰 <s>De R$ ${deal.original_price}</s>
-💥 <b>Por apenas: R$ ${deal.promo_price}</b> (<b>${deal.discount}</b>)
-${deal.coupon ? `🎟️ <b>Cupom:</b> <code>${deal.coupon}</code> (Toque para copiar)\n` : ''}
-📦 <b>Destaques do Produto:</b>
+${priceBlock}
+${couponBlock}
+📦 <b>Destaques:</b>
 ${bulletsText}
 
-🚨 <i>Preço promocional por tempo limitado ou até esgotar o estoque!</i>
+🚨 <i>Promoção por tempo limitado ou até esgotar o estoque!</i>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-👉 <b>COMPRE AQUI COM DESCONTO:</b>
-🔗 <a href="${deal.affiliate_url}">${deal.affiliate_url}</a>
-`,
+👉 <b>APROVEITAR AGORA:</b>
+🔗 <a href="${link}">${link}</a>${footer}`,
 
-    // Template 2: Baixou Demais
     `
-😱 <b>[BAIXOU MUITO O PREÇO!]</b> 😱
+😱 <b>[BAIXOU MUITO O PREÇO]</b> 😱
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 <b>${deal.title}</b>
 
-🏪 <b>Disponível na:</b> <b>${storeBadge}</b>
-⭐ <b>Status:</b> ${deal.rating}
+🏪 <b>Disponível em:</b> ${storeBadge}
+⭐ <b>Referência:</b> ${deal.rating}
 
-💵 <b>Preço Normal:</b> <s>R$ ${deal.original_price}</s>
-💎 <b>OFERTA VIP HOJE:</b> <b>R$ ${deal.promo_price}</b> (<b>${deal.discount}</b>)
-${deal.coupon ? `🎁 <b>Use o Cupom no Carrinho:</b> <code>${deal.coupon}</code>\n` : ''}
+${priceBlock}
+${couponBlock}
 ✨ <b>Por que vale a pena:</b>
 ${bulletsText}
 
 ⚡ <i>Aproveite antes que volte ao valor normal!</i>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
-🛒 <b>GARANTIR MINHA UNIDADE:</b>
-🔗 <a href="${deal.affiliate_url}">${deal.affiliate_url}</a>
-`,
+🛒 <b>GARANTIR A MINHA:</b>
+🔗 <a href="${link}">${link}</a>${footer}`,
 
-    // Template 3: Oferta Verificada VIP
     `
-⚡ <b>[OFERTA VERIFICADA • FRETE GRÁTIS]</b> ⚡
+⚡ <b>[OFERTA VERIFICADA]</b> ⚡
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 <b>${deal.title}</b>
 
-📍 <b>Plataforma Oficial:</b> <b>${storeBadge}</b>
-🏆 <b>Classificação:</b> ${deal.rating}
+📍 <b>Plataforma:</b> ${storeBadge}
+🏆 <b>Referência:</b> ${deal.rating}
 
-🏷️ <s>R$ ${deal.original_price}</s> ➔ <b>R$ ${deal.promo_price}</b> (Economize <b>${deal.discount}</b>)
-${deal.coupon ? `🔑 <b>Cupom Ativo:</b> <code>${deal.coupon}</code>\n` : ''}
+${priceBlock}
+${couponBlock}
 📋 <b>Informações:</b>
 ${bulletsText}
 
-🚚 <i>Verifique o frete grátis aplicando o cupom no app!</i>
+🚚 <i>Confira as condições de frete e cupom na página da loja.</i>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 👉 <b>LINK OFICIAL DA OFERTA:</b>
-🔗 <a href="${deal.affiliate_url}">${deal.affiliate_url}</a>
-`
+🔗 <a href="${link}">${link}</a>${footer}`
   ];
 
-  const tIndex = templateIndex % templates.length;
-  return templates[tIndex].trim();
+  return templates[templateIndex % templates.length].trim();
 }
 
-async function publishNextViralDeal(options = {}) {
-  const isForce = options.force || false;
-  const channel = options.channel || CHANNEL_USERNAME;
+/**
+ * Escolhe a proxima oferta, respeitando o historico DAQUELE destino.
+ * Cada grupo recebe uma oferta diferente no mesmo ciclo (rotacao por indice).
+ */
+function pickDealForDestination(catalog, history, destination, offset = 0) {
+  const all = (catalog.deals || []).filter((d) => d.active !== false);
+  if (!all.length) return null;
 
-  console.log('================================================================================');
-  console.log(`🛒 PUBLICADOR AUTÔNOMO DE OFERTAS BRASIL 24/7 (Canal: ${channel})`);
-  console.log('================================================================================\n');
+  const perDest = history[destination.id] || { published_ids: [], total: 0 };
+  const published = new Set(perDest.published_ids || []);
+  let available = all.filter((d) => !published.has(d.id));
 
+  if (!available.length) {
+    // ciclo completo -> reinicia a rotacao para este destino
+    perDest.published_ids = [];
+    published.clear();
+    available = all;
+  }
+
+  const deal = available[(offset + perDest.total) % available.length];
+  return deal;
+}
+
+function recordPublication(history, destination, deal) {
+  const perDest = history[destination.id] || { published_ids: [], total: 0, last_published_at: null };
+  perDest.published_ids = (perDest.published_ids || []).concat([deal.id]).slice(-200);
+  perDest.total = (perDest.total || 0) + 1;
+  perDest.last_published_at = new Date().toISOString();
+  perDest.last_deal_id = deal.id;
+  history[destination.id] = perDest;
+  history.total_published = (history.total_published || 0) + 1;
+  history.last_run_at = new Date().toISOString();
+  return history;
+}
+
+async function publishToAllDestinations(options = {}) {
+  const channel = options.channel;
+  console.log('='.repeat(80));
+  console.log('🛒 PUBLICADOR MULTI-DESTINO 24/7 — OFERTAS BRASIL (v3.0)');
+  console.log('='.repeat(80));
+
+  // 1. auto-descoberta de grupos pendentes
+  const reg = loadRegistry();
+  const pend = pendingDestinations(reg);
+  if (pend.length) {
+    console.log(`\n🔎 ${pend.length} destino(s) sem chat_id — tentando auto-descoberta...`);
+    const disc = await discoverChatIds(reg);
+    if (disc.error) console.log(`   ↳ Telegram respondeu: ${disc.error}`);
+    if (disc.discovered && disc.discovered.length) {
+      console.log(`   ✅ Resolvido(s): ${disc.discovered.join(', ')}`);
+    } else {
+      console.log(`   ⏳ Ainda pendente(s): ${pend.map((d) => d.label).join(', ')}`);
+      console.log(`      Ação (20s): abra o grupo e envie -> /start@NandimFernandesBot`);
+    }
+  }
+
+  // 2. destinos ativos
+  const reg2 = loadRegistry();
+  let destinations = activeDestinations(reg2, 'deal');
+  if (channel) destinations = destinations.filter((d) => d.username === channel || d.id === channel);
+
+  if (!destinations.length) {
+    console.error('❌ Nenhum destino ativo com chat_id. Verifique data/telegram-destinations.json');
+    return { success: false, reason: 'sem_destinos' };
+  }
+
+  console.log(`\n📡 Destinos ativos para ofertas: ${destinations.length}`);
+  destinations.forEach((d) => console.log(`   • ${d.label.padEnd(28)} chat=${d.chat_id}  tag=${d.tag}`));
+
+  // 3. catalogo + historico
   const catalog = loadJson(CATALOG_PATH, { deals: [] });
-  const history = loadJson(HISTORY_PATH, { published_deals: [], total_published: 0 });
-
-  const allDeals = catalog.deals || [];
-  if (allDeals.length === 0) {
-    console.log('❌ Nenhuma oferta encontrada no catálogo brasileiro.');
-    return { success: false, reason: 'empty_catalog' };
+  const history = loadJson(HISTORY_PATH, {});
+  const allDeals = (catalog.deals || []).filter((d) => d.active !== false);
+  if (!allDeals.length) {
+    console.error('❌ Catalogo vazio.');
+    return { success: false, reason: 'catalogo_vazio' };
   }
+  console.log(`\n📦 Catalogo: ${allDeals.length} ofertas verificadas`);
 
-  // Anti-Repetition Engine
-  const publishedIds = new Set((history.published_deals || []).map(d => d.id));
-  let availableDeals = allDeals.filter(d => d.active !== false && !publishedIds.has(d.id));
+  // 4. monta 1 mensagem por destino (cada uma com seu link tageado)
+  const plan = [];
+  destinations.forEach((dest, i) => {
+    const deal = pickDealForDestination(catalog, history, dest, i);
+    if (deal) plan.push({ dest, deal });
+  });
 
-  // If all deals have been published, start a new fresh rotation
-  if (availableDeals.length === 0) {
-    console.log('🔄 Todas as ofertas do ciclo foram publicadas! Reiniciando ciclo de rotação com novas variações...');
-    history.published_deals = [];
-    availableDeals = allDeals;
-  }
+  console.log('\n🗺️  PLANO DE DISPARO:');
+  plan.forEach(({ dest, deal }) => {
+    console.log(`   • ${dest.label.padEnd(28)} -> [${deal.id}] ${deal.title.slice(0, 42)}...`);
+  });
 
-  // Pick a high-converting deal
-  const selectedDeal = availableDeals[Math.floor(Math.random() * availableDeals.length)];
-  const postText = formatDealPost(selectedDeal, (history.total_published || 0) + 1);
+  // 5. disparo
+  console.log('\n🚀 Disparando...\n');
+  const res = await broadcast(
+    (dest) => {
+      const item = plan.find((p) => p.dest.id === dest.id);
+      const tpl = (history[dest.id]?.total || 0) % 3;
+      return item ? formatDealPost(item.deal, dest, tpl) : null;
+    },
+    plan.map((p) => p.dest),
+    { gapMs: 900 }
+  );
 
-  console.log(`📦 Oferta Selecionada: [${selectedDeal.id}] ${selectedDeal.title.substring(0, 50)}...`);
-  console.log(`🏪 Loja: ${selectedDeal.store} | Preço: R$ ${selectedDeal.promo_price} (${selectedDeal.discount})`);
-  console.log(`🚀 Despachando para o canal ${channel}...`);
+  // 6. registra historico somente dos que foram enviados
+  res.results.forEach((r) => {
+    if (r.sent) {
+      const item = plan.find((p) => p.dest.id === r.destination);
+      if (item) recordPublication(history, item.dest, item.deal);
+    }
+  });
+  saveJson(HISTORY_PATH, history);
 
-  const result = await sendTelegramDeal(postText, { chatId: channel });
+  // 7. relatorio
+  console.log('\n' + '='.repeat(80));
+  console.log('📊 RELATORIO DE ENTREGA');
+  console.log('='.repeat(80));
+  res.results.forEach((r) => {
+    const icon = r.sent ? '✅' : '❌';
+    console.log(
+      `  ${icon} ${String(r.label || r.destination).padEnd(28)} ${r.sent ? `msg_id=${r.message_id} (tentativa ${r.attempts})` : `FALHA: ${r.error}`}`
+    );
+  });
+  console.log(`\n  Total: ${res.sent}/${res.total} entregues | ${res.failed} falha(s)`);
+  console.log('='.repeat(80));
 
-  if (result.sent) {
-    console.log(`  ✓ Publicado com sucesso no canal! (Message ID: ${result.message_id})`);
-
-    // Record in History
-    history.published_deals.push({
-      id: selectedDeal.id,
-      title: selectedDeal.title,
-      store: selectedDeal.store,
-      promo_price: selectedDeal.promo_price,
-      published_at: new Date().toISOString(),
-      message_id: result.message_id,
-      channel: channel
-    });
-    history.total_published = (history.total_published || 0) + 1;
-    history.last_published_at = new Date().toISOString();
-
-    saveJson(HISTORY_PATH, history);
-  } else {
-    console.error(`  ❌ Falha no disparo: ${result.error || result.statusCode}`);
-  }
-
-  console.log('\n================================================================================');
-  console.log('✅ OPERAÇÃO CONCLUÍDA: CANAL DE OFERTAS BRASIL ATUALIZADO 24/7!');
-  console.log('================================================================================');
-
-  return result;
+  return {
+    success: res.sent > 0,
+    sent: res.sent,
+    failed: res.failed,
+    total: res.total,
+    results: res.results,
+    plan: plan.map((p) => ({ destination: p.dest.id, deal: p.deal.id, tag: p.dest.tag }))
+  };
 }
 
+// ------------------------------------------------------------------
+// Execucao direta
+// ------------------------------------------------------------------
 if (require.main === module) {
-  publishNextViralDeal();
+  const args = process.argv.slice(2);
+  const opts = {};
+  if (args.includes('--discover-only')) {
+    (async () => {
+      const reg = loadRegistry();
+      const r = await discoverChatIds(reg);
+      console.log(JSON.stringify(r, null, 2));
+    })();
+  } else {
+    publishToAllDestinations(opts)
+      .then((r) => process.exit(r.success ? 0 : 1))
+      .catch((e) => {
+        console.error('💥 Erro fatal:', e.message);
+        process.exit(1);
+      });
+  }
 }
 
-module.exports = {
-  publishNextViralDeal,
-  formatDealPost,
-  sendTelegramDeal
-};
+module.exports = { publishToAllDestinations, formatDealPost, pickDealForDestination };

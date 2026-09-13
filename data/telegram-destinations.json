@@ -1,0 +1,71 @@
+{
+  "version": "2026.9-MULTI-DESTINATION",
+  "updated_at": "2026-09-13T01:30:00Z",
+  "notes": "Registro central de TODOS os destinos de notificacao 24/7. Cada destino tem uma TAG propria que entra no link de afiliado (SID/subid) para atribuir origem de clique e venda.",
+  "affiliate_gateway": "https://achadinhos-ad-engine.vercel.app/api/ads/go",
+  "dedupe_window_hours": 6,
+  "destinations": [
+    {
+      "id": "canal_ofertas_brasil",
+      "label": "Canal Ofertas Brasil",
+      "chat_id": "-1004317377063",
+      "username": "@ofertasbrasilz",
+      "type": "channel",
+      "tag": "tg_ofertasbrasilz",
+      "enabled": true,
+      "verified": true,
+      "role": "publicacao_de_ofertas",
+      "receives": ["deal", "digest"]
+    },
+    {
+      "id": "grupo_cliques",
+      "label": "Grupo CLIQUES",
+      "chat_id": "-1004417007577",
+      "username": "@cliquesnow",
+      "type": "supergroup",
+      "tag": "tg_cliquesnow",
+      "enabled": true,
+      "verified": true,
+      "role": "trafego_e_cliques",
+      "receives": ["deal", "digest"]
+    },
+    {
+      "id": "grupo_vendas",
+      "label": "Grupo VENDAS",
+      "chat_id": null,
+      "invite": "https://t.me/+-KMiaOcqTic1ZmEx",
+      "type": "supergroup",
+      "tag": "tg_vendas",
+      "enabled": true,
+      "verified": false,
+      "pending_reason": "chat_id nao resolvido - aguardando auto-descoberta",
+      "role": "vendas_e_comissoes",
+      "receives": ["deal", "digest", "sale"]
+    },
+    {
+      "id": "grupo_captura_atendimento",
+      "label": "Grupo CAPTURA E ATENDIMENTO",
+      "chat_id": null,
+      "invite": "https://t.me/+zvXvaNM4fDJlNDMx",
+      "type": "supergroup",
+      "tag": "tg_captura",
+      "enabled": true,
+      "verified": false,
+      "pending_reason": "chat_id nao resolvido - aguardando auto-descoberta",
+      "role": "captura_de_leads",
+      "receives": ["deal", "digest"]
+    },
+    {
+      "id": "privado_admin",
+      "label": "Privado Nando (admin)",
+      "chat_id": "5808022745",
+      "username": "@doutordanielfernandes",
+      "type": "private",
+      "tag": "tg_admin",
+      "enabled": true,
+      "verified": true,
+      "role": "painel_executivo",
+      "receives": ["deal", "digest", "sale", "alert"]
+    }
+  ]
+}

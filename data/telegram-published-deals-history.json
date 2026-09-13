@@ -10,6 +10,31 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 1,
-  "last_published_at": "2026-09-02T05:31:43.414Z"
+  "total_published": 4,
+  "last_published_at": "2026-09-02T05:31:43.414Z",
+  "canal_ofertas_brasil": {
+    "published_ids": [
+      "br_shopee_fone_tws"
+    ],
+    "total": 1,
+    "last_published_at": "2026-09-13T01:21:22.783Z",
+    "last_deal_id": "br_shopee_fone_tws"
+  },
+  "last_run_at": "2026-09-13T01:21:22.799Z",
+  "grupo_cliques": {
+    "published_ids": [
+      "br_amazon_air_fryer"
+    ],
+    "total": 1,
+    "last_published_at": "2026-09-13T01:21:22.798Z",
+    "last_deal_id": "br_amazon_air_fryer"
+  },
+  "privado_admin": {
+    "published_ids": [
+      "br_booking_gramado"
+    ],
+    "total": 1,
+    "last_published_at": "2026-09-13T01:21:22.799Z",
+    "last_deal_id": "br_booking_gramado"
+  }
 }
