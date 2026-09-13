@@ -29,8 +29,11 @@ const JETSTREAM_URL = Deno.env.get("V3000_JETSTREAM_URL") ??
 const NOSTR_RELAYS = (Deno.env.get("V3000_NOSTR_RELAYS") ??
   "wss://nos.lol,wss://relay.damus.io")
   .split(",").map((x) => x.trim()).filter((x) => /^wss:\/\//.test(x)).slice(0, 4);
-const MASTER_URL = String(Deno.env.get("SUPABASE_URL") ?? "").replace(/\/$/, "");
-const MASTER_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+// On a satellite these must point to the Nexus master, not to the satellite's
+// built-in SUPABASE_URL. The local values are only a master-project fallback.
+const MASTER_URL = String(Deno.env.get("NEXUS_MASTER_URL") ?? Deno.env.get("SUPABASE_URL") ?? "").replace(/\/$/, "");
+const MASTER_KEY = Deno.env.get("NEXUS_MASTER_SERVICE_ROLE_KEY") ??
+  Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 const INGEST_HMAC = Deno.env.get("NEXUS_INGEST_HMAC") ?? "";
 const START_SECRET = Deno.env.get("NEXUS_V3000_START_SECRET") ?? "";
 
