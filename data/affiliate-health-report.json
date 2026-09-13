@@ -1,6 +1,6 @@
 {
   "report_version": "1.0-REAL",
-  "generated_at": "2026-09-13T01:49:21.831Z",
+  "generated_at": "2026-09-13T02:09:02.042Z",
   "gateway": "https://achadinhos-ad-engine.vercel.app/api/ads/go",
   "catalog_version": "2026.9-VERIFIED-MULTI-NETWORK",
   "totals": {
@@ -69,9 +69,9 @@
       "tag_param": "sub_id",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 735,
+      "latency_ms": 490,
       "error": null,
-      "checked_at": "2026-09-13T01:48:50.533Z"
+      "checked_at": "2026-09-13T02:08:35.186Z"
     },
     {
       "advertiser": "shopee",
@@ -84,9 +84,9 @@
       "tag_param": "sub_id",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 363,
+      "latency_ms": 339,
       "error": null,
-      "checked_at": "2026-09-13T01:48:50.896Z"
+      "checked_at": "2026-09-13T02:08:35.525Z"
     },
     {
       "advertiser": "shopee",
@@ -99,9 +99,9 @@
       "tag_param": "sub_id",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 452,
+      "latency_ms": 596,
       "error": null,
-      "checked_at": "2026-09-13T01:48:51.349Z"
+      "checked_at": "2026-09-13T02:08:36.121Z"
     },
     {
       "advertiser": "shopee",
@@ -114,9 +114,9 @@
       "tag_param": "sub_id",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 466,
+      "latency_ms": 571,
       "error": null,
-      "checked_at": "2026-09-13T01:48:51.816Z"
+      "checked_at": "2026-09-13T02:08:36.692Z"
     },
     {
       "advertiser": "shopee",
@@ -129,9 +129,9 @@
       "tag_param": "sub_id",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 454,
+      "latency_ms": 359,
       "error": null,
-      "checked_at": "2026-09-13T01:48:52.270Z"
+      "checked_at": "2026-09-13T02:08:37.051Z"
     },
     {
       "advertiser": "amazon",
@@ -144,9 +144,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 289,
+      "latency_ms": 283,
       "error": null,
-      "checked_at": "2026-09-13T01:48:52.559Z"
+      "checked_at": "2026-09-13T02:08:37.335Z"
     },
     {
       "advertiser": "amazon",
@@ -159,9 +159,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 486,
+      "latency_ms": 316,
       "error": null,
-      "checked_at": "2026-09-13T01:48:53.045Z"
+      "checked_at": "2026-09-13T02:08:37.651Z"
     },
     {
       "advertiser": "amazon",
@@ -174,9 +174,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 447,
+      "latency_ms": 477,
       "error": null,
-      "checked_at": "2026-09-13T01:48:53.492Z"
+      "checked_at": "2026-09-13T02:08:38.128Z"
     },
     {
       "advertiser": "amazon",
@@ -189,9 +189,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 208,
+      "latency_ms": 282,
       "error": null,
-      "checked_at": "2026-09-13T01:48:53.700Z"
+      "checked_at": "2026-09-13T02:08:38.411Z"
     },
     {
       "advertiser": "amazon",
@@ -204,9 +204,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 214,
+      "latency_ms": 186,
       "error": null,
-      "checked_at": "2026-09-13T01:48:53.914Z"
+      "checked_at": "2026-09-13T02:08:38.599Z"
     },
     {
       "advertiser": "booking",
@@ -219,9 +219,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 212,
+      "latency_ms": 473,
       "error": null,
-      "checked_at": "2026-09-13T01:48:54.127Z"
+      "checked_at": "2026-09-13T02:08:39.072Z"
     },
     {
       "advertiser": "booking",
@@ -234,9 +234,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 460,
+      "latency_ms": 237,
       "error": null,
-      "checked_at": "2026-09-13T01:48:54.587Z"
+      "checked_at": "2026-09-13T02:08:39.309Z"
     },
     {
       "advertiser": "booking",
@@ -249,9 +249,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 469,
+      "latency_ms": 437,
       "error": null,
-      "checked_at": "2026-09-13T01:48:55.058Z"
+      "checked_at": "2026-09-13T02:08:39.746Z"
     },
     {
       "advertiser": "booking",
@@ -264,9 +264,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 444,
+      "latency_ms": 208,
       "error": null,
-      "checked_at": "2026-09-13T01:48:55.502Z"
+      "checked_at": "2026-09-13T02:08:39.954Z"
     },
     {
       "advertiser": "booking",
@@ -279,9 +279,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 334,
+      "latency_ms": 184,
       "error": null,
-      "checked_at": "2026-09-13T01:48:55.836Z"
+      "checked_at": "2026-09-13T02:08:40.138Z"
     },
     {
       "advertiser": "nordvpn",
@@ -294,9 +294,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 749,
+      "latency_ms": 419,
       "error": null,
-      "checked_at": "2026-09-13T01:48:56.585Z"
+      "checked_at": "2026-09-13T02:08:40.557Z"
     },
     {
       "advertiser": "nordvpn",
@@ -309,9 +309,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 240,
+      "latency_ms": 223,
       "error": null,
-      "checked_at": "2026-09-13T01:48:56.825Z"
+      "checked_at": "2026-09-13T02:08:40.781Z"
     },
     {
       "advertiser": "nordvpn",
@@ -324,9 +324,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 230,
+      "latency_ms": 439,
       "error": null,
-      "checked_at": "2026-09-13T01:48:57.055Z"
+      "checked_at": "2026-09-13T02:08:41.220Z"
     },
     {
       "advertiser": "nordvpn",
@@ -339,9 +339,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 208,
+      "latency_ms": 221,
       "error": null,
-      "checked_at": "2026-09-13T01:48:57.263Z"
+      "checked_at": "2026-09-13T02:08:41.441Z"
     },
     {
       "advertiser": "nordvpn",
@@ -354,9 +354,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 294,
+      "latency_ms": 183,
       "error": null,
-      "checked_at": "2026-09-13T01:48:57.557Z"
+      "checked_at": "2026-09-13T02:08:41.625Z"
     },
     {
       "advertiser": "mercadolivre",
@@ -369,9 +369,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 436,
+      "latency_ms": 171,
       "error": null,
-      "checked_at": "2026-09-13T01:48:57.993Z"
+      "checked_at": "2026-09-13T02:08:41.796Z"
     },
     {
       "advertiser": "mercadolivre",
@@ -384,9 +384,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 208,
+      "latency_ms": 178,
       "error": null,
-      "checked_at": "2026-09-13T01:48:58.202Z"
+      "checked_at": "2026-09-13T02:08:41.974Z"
     },
     {
       "advertiser": "mercadolivre",
@@ -399,9 +399,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 409,
+      "latency_ms": 171,
       "error": null,
-      "checked_at": "2026-09-13T01:48:58.611Z"
+      "checked_at": "2026-09-13T02:08:42.146Z"
     },
     {
       "advertiser": "mercadolivre",
@@ -414,9 +414,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 203,
+      "latency_ms": 171,
       "error": null,
-      "checked_at": "2026-09-13T01:48:58.815Z"
+      "checked_at": "2026-09-13T02:08:42.317Z"
     },
     {
       "advertiser": "mercadolivre",
@@ -429,9 +429,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 201,
+      "latency_ms": 290,
       "error": null,
-      "checked_at": "2026-09-13T01:48:59.016Z"
+      "checked_at": "2026-09-13T02:08:42.607Z"
     },
     {
       "advertiser": "aliexpress",
@@ -444,9 +444,9 @@
       "tag_param": "aff_sub",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 175,
       "error": null,
-      "checked_at": "2026-09-13T01:48:59.220Z"
+      "checked_at": "2026-09-13T02:08:42.782Z"
     },
     {
       "advertiser": "aliexpress",
@@ -459,9 +459,9 @@
       "tag_param": "aff_sub",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 208,
+      "latency_ms": 289,
       "error": null,
-      "checked_at": "2026-09-13T01:48:59.428Z"
+      "checked_at": "2026-09-13T02:08:43.071Z"
     },
     {
       "advertiser": "aliexpress",
@@ -474,9 +474,9 @@
       "tag_param": "aff_sub",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 209,
+      "latency_ms": 238,
       "error": null,
-      "checked_at": "2026-09-13T01:48:59.637Z"
+      "checked_at": "2026-09-13T02:08:43.309Z"
     },
     {
       "advertiser": "aliexpress",
@@ -489,9 +489,9 @@
       "tag_param": "aff_sub",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 210,
       "error": null,
-      "checked_at": "2026-09-13T01:48:59.841Z"
+      "checked_at": "2026-09-13T02:08:43.519Z"
     },
     {
       "advertiser": "aliexpress",
@@ -504,9 +504,9 @@
       "tag_param": "aff_sub",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 291,
+      "latency_ms": 214,
       "error": null,
-      "checked_at": "2026-09-13T01:49:00.132Z"
+      "checked_at": "2026-09-13T02:08:43.733Z"
     },
     {
       "advertiser": "ebay",
@@ -519,9 +519,9 @@
       "tag_param": "customid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 483,
+      "latency_ms": 181,
       "error": null,
-      "checked_at": "2026-09-13T01:49:00.615Z"
+      "checked_at": "2026-09-13T02:08:43.915Z"
     },
     {
       "advertiser": "ebay",
@@ -534,9 +534,9 @@
       "tag_param": "customid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 2562,
+      "latency_ms": 196,
       "error": null,
-      "checked_at": "2026-09-13T01:49:03.177Z"
+      "checked_at": "2026-09-13T02:08:44.111Z"
     },
     {
       "advertiser": "ebay",
@@ -549,9 +549,9 @@
       "tag_param": "customid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 220,
+      "latency_ms": 207,
       "error": null,
-      "checked_at": "2026-09-13T01:49:03.397Z"
+      "checked_at": "2026-09-13T02:08:44.318Z"
     },
     {
       "advertiser": "ebay",
@@ -564,9 +564,9 @@
       "tag_param": "customid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 540,
+      "latency_ms": 185,
       "error": null,
-      "checked_at": "2026-09-13T01:49:03.937Z"
+      "checked_at": "2026-09-13T02:08:44.503Z"
     },
     {
       "advertiser": "ebay",
@@ -579,9 +579,9 @@
       "tag_param": "customid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 225,
+      "latency_ms": 168,
       "error": null,
-      "checked_at": "2026-09-13T01:49:04.163Z"
+      "checked_at": "2026-09-13T02:08:44.672Z"
     },
     {
       "advertiser": "surfshark",
@@ -594,9 +594,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 227,
+      "latency_ms": 201,
       "error": null,
-      "checked_at": "2026-09-13T01:49:04.390Z"
+      "checked_at": "2026-09-13T02:08:44.873Z"
     },
     {
       "advertiser": "surfshark",
@@ -609,9 +609,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 209,
+      "latency_ms": 426,
       "error": null,
-      "checked_at": "2026-09-13T01:49:04.599Z"
+      "checked_at": "2026-09-13T02:08:45.299Z"
     },
     {
       "advertiser": "surfshark",
@@ -624,9 +624,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 202,
+      "latency_ms": 204,
       "error": null,
-      "checked_at": "2026-09-13T01:49:04.801Z"
+      "checked_at": "2026-09-13T02:08:45.503Z"
     },
     {
       "advertiser": "surfshark",
@@ -639,9 +639,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 220,
+      "latency_ms": 203,
       "error": null,
-      "checked_at": "2026-09-13T01:49:05.021Z"
+      "checked_at": "2026-09-13T02:08:45.706Z"
     },
     {
       "advertiser": "surfshark",
@@ -654,9 +654,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 232,
+      "latency_ms": 179,
       "error": null,
-      "checked_at": "2026-09-13T01:49:05.253Z"
+      "checked_at": "2026-09-13T02:08:45.886Z"
     },
     {
       "advertiser": "nordpass",
@@ -669,9 +669,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 222,
+      "latency_ms": 181,
       "error": null,
-      "checked_at": "2026-09-13T01:49:05.476Z"
+      "checked_at": "2026-09-13T02:08:46.067Z"
     },
     {
       "advertiser": "nordpass",
@@ -684,9 +684,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 295,
+      "latency_ms": 418,
       "error": null,
-      "checked_at": "2026-09-13T01:49:05.771Z"
+      "checked_at": "2026-09-13T02:08:46.485Z"
     },
     {
       "advertiser": "nordpass",
@@ -699,9 +699,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 202,
+      "latency_ms": 170,
       "error": null,
-      "checked_at": "2026-09-13T01:49:05.973Z"
+      "checked_at": "2026-09-13T02:08:46.655Z"
     },
     {
       "advertiser": "nordpass",
@@ -714,9 +714,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 221,
+      "latency_ms": 172,
       "error": null,
-      "checked_at": "2026-09-13T01:49:06.194Z"
+      "checked_at": "2026-09-13T02:08:46.828Z"
     },
     {
       "advertiser": "nordpass",
@@ -729,9 +729,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 409,
+      "latency_ms": 200,
       "error": null,
-      "checked_at": "2026-09-13T01:49:06.603Z"
+      "checked_at": "2026-09-13T02:08:47.028Z"
     },
     {
       "advertiser": "economybookings",
@@ -744,9 +744,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 200,
+      "latency_ms": 290,
       "error": null,
-      "checked_at": "2026-09-13T01:49:06.803Z"
+      "checked_at": "2026-09-13T02:08:47.318Z"
     },
     {
       "advertiser": "economybookings",
@@ -759,9 +759,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 434,
+      "latency_ms": 196,
       "error": null,
-      "checked_at": "2026-09-13T01:49:07.237Z"
+      "checked_at": "2026-09-13T02:08:47.514Z"
     },
     {
       "advertiser": "economybookings",
@@ -774,9 +774,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 199,
+      "latency_ms": 174,
       "error": null,
-      "checked_at": "2026-09-13T01:49:07.436Z"
+      "checked_at": "2026-09-13T02:08:47.688Z"
     },
     {
       "advertiser": "economybookings",
@@ -789,9 +789,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 205,
+      "latency_ms": 176,
       "error": null,
-      "checked_at": "2026-09-13T01:49:07.642Z"
+      "checked_at": "2026-09-13T02:08:47.864Z"
     },
     {
       "advertiser": "economybookings",
@@ -804,9 +804,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 206,
+      "latency_ms": 187,
       "error": null,
-      "checked_at": "2026-09-13T01:49:07.848Z"
+      "checked_at": "2026-09-13T02:08:48.052Z"
     },
     {
       "advertiser": "malwarebytes",
@@ -819,9 +819,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 216,
+      "latency_ms": 189,
       "error": null,
-      "checked_at": "2026-09-13T01:49:08.064Z"
+      "checked_at": "2026-09-13T02:08:48.241Z"
     },
     {
       "advertiser": "malwarebytes",
@@ -834,9 +834,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 203,
+      "latency_ms": 227,
       "error": null,
-      "checked_at": "2026-09-13T01:49:08.267Z"
+      "checked_at": "2026-09-13T02:08:48.469Z"
     },
     {
       "advertiser": "malwarebytes",
@@ -849,9 +849,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 199,
+      "latency_ms": 183,
       "error": null,
-      "checked_at": "2026-09-13T01:49:08.466Z"
+      "checked_at": "2026-09-13T02:08:48.652Z"
     },
     {
       "advertiser": "malwarebytes",
@@ -864,9 +864,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 196,
+      "latency_ms": 542,
       "error": null,
-      "checked_at": "2026-09-13T01:49:08.662Z"
+      "checked_at": "2026-09-13T02:08:49.195Z"
     },
     {
       "advertiser": "malwarebytes",
@@ -879,9 +879,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 198,
+      "latency_ms": 210,
       "error": null,
-      "checked_at": "2026-09-13T01:49:08.860Z"
+      "checked_at": "2026-09-13T02:08:49.405Z"
     },
     {
       "advertiser": "wondershare",
@@ -894,9 +894,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 212,
+      "latency_ms": 173,
       "error": null,
-      "checked_at": "2026-09-13T01:49:09.073Z"
+      "checked_at": "2026-09-13T02:08:49.578Z"
     },
     {
       "advertiser": "wondershare",
@@ -909,9 +909,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 214,
+      "latency_ms": 167,
       "error": null,
-      "checked_at": "2026-09-13T01:49:09.287Z"
+      "checked_at": "2026-09-13T02:08:49.745Z"
     },
     {
       "advertiser": "wondershare",
@@ -924,9 +924,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 413,
       "error": null,
-      "checked_at": "2026-09-13T01:49:09.492Z"
+      "checked_at": "2026-09-13T02:08:50.158Z"
     },
     {
       "advertiser": "wondershare",
@@ -939,9 +939,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 197,
+      "latency_ms": 177,
       "error": null,
-      "checked_at": "2026-09-13T01:49:09.690Z"
+      "checked_at": "2026-09-13T02:08:50.335Z"
     },
     {
       "advertiser": "wondershare",
@@ -954,9 +954,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 197,
+      "latency_ms": 179,
       "error": null,
-      "checked_at": "2026-09-13T01:49:09.887Z"
+      "checked_at": "2026-09-13T02:08:50.515Z"
     },
     {
       "advertiser": "movavi",
@@ -969,9 +969,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 205,
+      "latency_ms": 185,
       "error": null,
-      "checked_at": "2026-09-13T01:49:10.092Z"
+      "checked_at": "2026-09-13T02:08:50.700Z"
     },
     {
       "advertiser": "movavi",
@@ -984,9 +984,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 210,
+      "latency_ms": 177,
       "error": null,
-      "checked_at": "2026-09-13T01:49:10.302Z"
+      "checked_at": "2026-09-13T02:08:50.877Z"
     },
     {
       "advertiser": "movavi",
@@ -999,9 +999,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 169,
       "error": null,
-      "checked_at": "2026-09-13T01:49:10.506Z"
+      "checked_at": "2026-09-13T02:08:51.047Z"
     },
     {
       "advertiser": "movavi",
@@ -1014,9 +1014,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 185,
       "error": null,
-      "checked_at": "2026-09-13T01:49:10.710Z"
+      "checked_at": "2026-09-13T02:08:51.232Z"
     },
     {
       "advertiser": "movavi",
@@ -1029,9 +1029,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 213,
+      "latency_ms": 182,
       "error": null,
-      "checked_at": "2026-09-13T01:49:10.924Z"
+      "checked_at": "2026-09-13T02:08:51.414Z"
     },
     {
       "advertiser": "parallels",
@@ -1044,9 +1044,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 213,
+      "latency_ms": 190,
       "error": null,
-      "checked_at": "2026-09-13T01:49:11.137Z"
+      "checked_at": "2026-09-13T02:08:51.604Z"
     },
     {
       "advertiser": "parallels",
@@ -1059,9 +1059,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 205,
+      "latency_ms": 166,
       "error": null,
-      "checked_at": "2026-09-13T01:49:11.342Z"
+      "checked_at": "2026-09-13T02:08:51.770Z"
     },
     {
       "advertiser": "parallels",
@@ -1074,9 +1074,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 219,
+      "latency_ms": 167,
       "error": null,
-      "checked_at": "2026-09-13T01:49:11.561Z"
+      "checked_at": "2026-09-13T02:08:51.937Z"
     },
     {
       "advertiser": "parallels",
@@ -1089,9 +1089,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 173,
       "error": null,
-      "checked_at": "2026-09-13T01:49:11.765Z"
+      "checked_at": "2026-09-13T02:08:52.110Z"
     },
     {
       "advertiser": "parallels",
@@ -1104,9 +1104,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 211,
+      "latency_ms": 218,
       "error": null,
-      "checked_at": "2026-09-13T01:49:11.976Z"
+      "checked_at": "2026-09-13T02:08:52.329Z"
     },
     {
       "advertiser": "corel",
@@ -1119,9 +1119,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 246,
       "error": null,
-      "checked_at": "2026-09-13T01:49:12.180Z"
+      "checked_at": "2026-09-13T02:08:52.575Z"
     },
     {
       "advertiser": "corel",
@@ -1134,9 +1134,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 202,
+      "latency_ms": 173,
       "error": null,
-      "checked_at": "2026-09-13T01:49:12.382Z"
+      "checked_at": "2026-09-13T02:08:52.748Z"
     },
     {
       "advertiser": "corel",
@@ -1149,9 +1149,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 204,
+      "latency_ms": 192,
       "error": null,
-      "checked_at": "2026-09-13T01:49:12.586Z"
+      "checked_at": "2026-09-13T02:08:52.940Z"
     },
     {
       "advertiser": "corel",
@@ -1164,9 +1164,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 203,
+      "latency_ms": 184,
       "error": null,
-      "checked_at": "2026-09-13T01:49:12.789Z"
+      "checked_at": "2026-09-13T02:08:53.124Z"
     },
     {
       "advertiser": "corel",
@@ -1179,9 +1179,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 203,
+      "latency_ms": 360,
       "error": null,
-      "checked_at": "2026-09-13T01:49:12.992Z"
+      "checked_at": "2026-09-13T02:08:53.484Z"
     },
     {
       "advertiser": "sucuri",
@@ -1194,9 +1194,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 199,
+      "latency_ms": 377,
       "error": null,
-      "checked_at": "2026-09-13T01:49:13.191Z"
+      "checked_at": "2026-09-13T02:08:53.861Z"
     },
     {
       "advertiser": "sucuri",
@@ -1209,9 +1209,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 213,
+      "latency_ms": 375,
       "error": null,
-      "checked_at": "2026-09-13T01:49:13.404Z"
+      "checked_at": "2026-09-13T02:08:54.236Z"
     },
     {
       "advertiser": "sucuri",
@@ -1224,9 +1224,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 195,
+      "latency_ms": 375,
       "error": null,
-      "checked_at": "2026-09-13T01:49:13.599Z"
+      "checked_at": "2026-09-13T02:08:54.611Z"
     },
     {
       "advertiser": "sucuri",
@@ -1239,9 +1239,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 199,
+      "latency_ms": 393,
       "error": null,
-      "checked_at": "2026-09-13T01:49:13.798Z"
+      "checked_at": "2026-09-13T02:08:55.004Z"
     },
     {
       "advertiser": "sucuri",
@@ -1254,9 +1254,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 202,
+      "latency_ms": 364,
       "error": null,
-      "checked_at": "2026-09-13T01:49:14.000Z"
+      "checked_at": "2026-09-13T02:08:55.368Z"
     },
     {
       "advertiser": "updf",
@@ -1269,9 +1269,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 235,
+      "latency_ms": 376,
       "error": null,
-      "checked_at": "2026-09-13T01:49:14.235Z"
+      "checked_at": "2026-09-13T02:08:55.744Z"
     },
     {
       "advertiser": "updf",
@@ -1284,9 +1284,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 201,
+      "latency_ms": 368,
       "error": null,
-      "checked_at": "2026-09-13T01:49:14.436Z"
+      "checked_at": "2026-09-13T02:08:56.112Z"
     },
     {
       "advertiser": "updf",
@@ -1299,9 +1299,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 239,
+      "latency_ms": 185,
       "error": null,
-      "checked_at": "2026-09-13T01:49:14.675Z"
+      "checked_at": "2026-09-13T02:08:56.297Z"
     },
     {
       "advertiser": "updf",
@@ -1314,9 +1314,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 191,
+      "latency_ms": 179,
       "error": null,
-      "checked_at": "2026-09-13T01:49:14.867Z"
+      "checked_at": "2026-09-13T02:08:56.476Z"
     },
     {
       "advertiser": "updf",
@@ -1329,9 +1329,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 223,
+      "latency_ms": 183,
       "error": null,
-      "checked_at": "2026-09-13T01:49:15.090Z"
+      "checked_at": "2026-09-13T02:08:56.659Z"
     },
     {
       "advertiser": "switchbot",
@@ -1344,9 +1344,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 307,
+      "latency_ms": 176,
       "error": null,
-      "checked_at": "2026-09-13T01:49:15.397Z"
+      "checked_at": "2026-09-13T02:08:56.835Z"
     },
     {
       "advertiser": "switchbot",
@@ -1359,9 +1359,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 218,
+      "latency_ms": 187,
       "error": null,
-      "checked_at": "2026-09-13T01:49:15.615Z"
+      "checked_at": "2026-09-13T02:08:57.022Z"
     },
     {
       "advertiser": "switchbot",
@@ -1374,9 +1374,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 208,
+      "latency_ms": 187,
       "error": null,
-      "checked_at": "2026-09-13T01:49:15.823Z"
+      "checked_at": "2026-09-13T02:08:57.209Z"
     },
     {
       "advertiser": "switchbot",
@@ -1389,9 +1389,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 200,
+      "latency_ms": 382,
       "error": null,
-      "checked_at": "2026-09-13T01:49:16.023Z"
+      "checked_at": "2026-09-13T02:08:57.591Z"
     },
     {
       "advertiser": "switchbot",
@@ -1404,9 +1404,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 198,
+      "latency_ms": 166,
       "error": null,
-      "checked_at": "2026-09-13T01:49:16.221Z"
+      "checked_at": "2026-09-13T02:08:57.757Z"
     },
     {
       "advertiser": "bluetti",
@@ -1419,9 +1419,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 203,
+      "latency_ms": 230,
       "error": null,
-      "checked_at": "2026-09-13T01:49:16.424Z"
+      "checked_at": "2026-09-13T02:08:57.987Z"
     },
     {
       "advertiser": "bluetti",
@@ -1434,9 +1434,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 198,
+      "latency_ms": 179,
       "error": null,
-      "checked_at": "2026-09-13T01:49:16.622Z"
+      "checked_at": "2026-09-13T02:08:58.166Z"
     },
     {
       "advertiser": "bluetti",
@@ -1449,9 +1449,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 200,
+      "latency_ms": 220,
       "error": null,
-      "checked_at": "2026-09-13T01:49:16.822Z"
+      "checked_at": "2026-09-13T02:08:58.387Z"
     },
     {
       "advertiser": "bluetti",
@@ -1464,9 +1464,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 198,
+      "latency_ms": 180,
       "error": null,
-      "checked_at": "2026-09-13T01:49:17.021Z"
+      "checked_at": "2026-09-13T02:08:58.567Z"
     },
     {
       "advertiser": "bluetti",
@@ -1479,9 +1479,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 250,
+      "latency_ms": 177,
       "error": null,
-      "checked_at": "2026-09-13T01:49:17.271Z"
+      "checked_at": "2026-09-13T02:08:58.745Z"
     },
     {
       "advertiser": "soundcore",
@@ -1496,7 +1496,7 @@
       "verdict": "OK",
       "latency_ms": 194,
       "error": null,
-      "checked_at": "2026-09-13T01:49:17.465Z"
+      "checked_at": "2026-09-13T02:08:58.939Z"
     },
     {
       "advertiser": "soundcore",
@@ -1509,9 +1509,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 206,
+      "latency_ms": 176,
       "error": null,
-      "checked_at": "2026-09-13T01:49:17.671Z"
+      "checked_at": "2026-09-13T02:08:59.115Z"
     },
     {
       "advertiser": "soundcore",
@@ -1524,9 +1524,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 196,
+      "latency_ms": 174,
       "error": null,
-      "checked_at": "2026-09-13T01:49:17.867Z"
+      "checked_at": "2026-09-13T02:08:59.290Z"
     },
     {
       "advertiser": "soundcore",
@@ -1539,9 +1539,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 223,
+      "latency_ms": 170,
       "error": null,
-      "checked_at": "2026-09-13T01:49:18.090Z"
+      "checked_at": "2026-09-13T02:08:59.460Z"
     },
     {
       "advertiser": "soundcore",
@@ -1554,9 +1554,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 215,
+      "latency_ms": 167,
       "error": null,
-      "checked_at": "2026-09-13T01:49:18.305Z"
+      "checked_at": "2026-09-13T02:08:59.628Z"
     },
     {
       "advertiser": "novakid",
@@ -1569,9 +1569,9 @@
       "tag_param": "sid",
       "tag_value": "tg_ofertasbrasilz_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 269,
+      "latency_ms": 171,
       "error": null,
-      "checked_at": "2026-09-13T01:49:18.574Z"
+      "checked_at": "2026-09-13T02:08:59.799Z"
     },
     {
       "advertiser": "novakid",
@@ -1584,9 +1584,9 @@
       "tag_param": "sid",
       "tag_value": "tg_cliquesnow_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 335,
+      "latency_ms": 172,
       "error": null,
-      "checked_at": "2026-09-13T01:49:18.909Z"
+      "checked_at": "2026-09-13T02:08:59.971Z"
     },
     {
       "advertiser": "novakid",
@@ -1599,9 +1599,9 @@
       "tag_param": "sid",
       "tag_value": "tg_vendas_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 218,
+      "latency_ms": 202,
       "error": null,
-      "checked_at": "2026-09-13T01:49:19.127Z"
+      "checked_at": "2026-09-13T02:09:00.174Z"
     },
     {
       "advertiser": "novakid",
@@ -1614,9 +1614,9 @@
       "tag_param": "sid",
       "tag_value": "tg_captura_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 197,
+      "latency_ms": 230,
       "error": null,
-      "checked_at": "2026-09-13T01:49:19.325Z"
+      "checked_at": "2026-09-13T02:09:00.404Z"
     },
     {
       "advertiser": "novakid",
@@ -1629,9 +1629,9 @@
       "tag_param": "sid",
       "tag_value": "tg_admin_br_health_desktop",
       "verdict": "OK",
-      "latency_ms": 207,
+      "latency_ms": 356,
       "error": null,
-      "checked_at": "2026-09-13T01:49:19.532Z"
+      "checked_at": "2026-09-13T02:09:00.760Z"
     }
   ],
   "direct_links": [
@@ -1639,7 +1639,7 @@
       "id": "br_shopee_fone_tws",
       "link": "https://s.shopee.com.br/30n7ohzzU6",
       "http_status": 301,
-      "latency_ms": 123,
+      "latency_ms": 149,
       "verdict": "OK",
       "error": null
     },
@@ -1647,7 +1647,7 @@
       "id": "br_amazon_air_fryer",
       "link": "https://amazon.com.br/?tag=aquitemachadinhos-20",
       "http_status": 301,
-      "latency_ms": 254,
+      "latency_ms": 21,
       "verdict": "OK",
       "error": null
     },
@@ -1655,7 +1655,7 @@
       "id": "br_booking_gramado",
       "link": "https://www.kqzyfj.com/click-101859672-17293138",
       "http_status": 302,
-      "latency_ms": 143,
+      "latency_ms": 15,
       "verdict": "OK",
       "error": null
     },
@@ -1663,7 +1663,7 @@
       "id": "br_nordvpn_cyber",
       "link": "https://www.anrdoezrs.net/click-101859672-13914989",
       "http_status": 302,
-      "latency_ms": 149,
+      "latency_ms": 29,
       "verdict": "OK",
       "error": null
     },
@@ -1671,7 +1671,7 @@
       "id": "br_ml_lampada_smart",
       "link": "https://meli.la/1U3rtgV",
       "http_status": 301,
-      "latency_ms": 164,
+      "latency_ms": 119,
       "verdict": "OK",
       "error": null
     },
@@ -1679,7 +1679,7 @@
       "id": "br_aliexpress_global",
       "link": "https://www.anrdoezrs.net/click-101859672-17242061",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 3,
       "verdict": "OK",
       "error": null
     },
@@ -1687,7 +1687,7 @@
       "id": "br_ebay_deals",
       "link": "https://www.ebay.com/deals?campid=5339193749&toolid=10001&mkevt=1&mkcid=1&mkrid=711-53200-19255-0",
       "http_status": 200,
-      "latency_ms": 528,
+      "latency_ms": 790,
       "verdict": "OK",
       "error": null
     },
@@ -1695,7 +1695,7 @@
       "id": "br_surfshark_vpn",
       "link": "https://www.tkqlhce.com/click-101859672-15736773",
       "http_status": 302,
-      "latency_ms": 125,
+      "latency_ms": 19,
       "verdict": "OK",
       "error": null
     },
@@ -1703,7 +1703,7 @@
       "id": "br_nordpass_gerenciador",
       "link": "https://www.dpbolvw.net/click-101859672-17262576",
       "http_status": 302,
-      "latency_ms": 122,
+      "latency_ms": 17,
       "verdict": "OK",
       "error": null
     },
@@ -1711,7 +1711,7 @@
       "id": "br_economybookings_aluguel",
       "link": "https://www.kqzyfj.com/click-101859672-15736982",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 3,
       "verdict": "OK",
       "error": null
     },
@@ -1719,7 +1719,7 @@
       "id": "br_malwarebytes",
       "link": "https://www.dpbolvw.net/click-101859672-15734534",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 3,
       "verdict": "OK",
       "error": null
     },
@@ -1727,7 +1727,7 @@
       "id": "br_wondershare",
       "link": "https://www.anrdoezrs.net/click-101859672-15733675",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 3,
       "verdict": "OK",
       "error": null
     },
@@ -1735,7 +1735,7 @@
       "id": "br_movavi",
       "link": "https://www.anrdoezrs.net/click-101859672-15735540",
       "http_status": 302,
-      "latency_ms": 128,
+      "latency_ms": 19,
       "verdict": "OK",
       "error": null
     },
@@ -1743,7 +1743,7 @@
       "id": "br_parallels_mac",
       "link": "https://www.jdoqocy.com/click-101859672-15733336",
       "http_status": 302,
-      "latency_ms": 140,
+      "latency_ms": 16,
       "verdict": "OK",
       "error": null
     },
@@ -1751,7 +1751,7 @@
       "id": "br_corel_software",
       "link": "https://www.tkqlhce.com/click-101859672-15734376",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 3,
       "verdict": "OK",
       "error": null
     },
@@ -1759,7 +1759,7 @@
       "id": "br_sucuri_seguranca",
       "link": "https://www.tkqlhce.com/click-101859672-15735343",
       "http_status": 302,
-      "latency_ms": 144,
+      "latency_ms": 39,
       "verdict": "OK",
       "error": null
     },
@@ -1767,7 +1767,7 @@
       "id": "br_updf_editor",
       "link": "https://www.anrdoezrs.net/click-101859672-15820753",
       "http_status": 302,
-      "latency_ms": 28,
+      "latency_ms": 7,
       "verdict": "OK",
       "error": null
     },
@@ -1775,7 +1775,7 @@
       "id": "br_switchbot_casa",
       "link": "https://www.dpbolvw.net/click-101859672-15735830",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 4,
       "verdict": "OK",
       "error": null
     },
@@ -1783,7 +1783,7 @@
       "id": "br_bluetti_energia",
       "link": "https://www.anrdoezrs.net/click-101859672-15736238",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 3,
       "verdict": "OK",
       "error": null
     },
@@ -1791,7 +1791,7 @@
       "id": "br_soundcore_audio",
       "link": "https://www.anrdoezrs.net/click-101859672-17033430",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 7,
       "verdict": "OK",
       "error": null
     },
@@ -1799,7 +1799,7 @@
       "id": "br_novakid_ingles",
       "link": "https://www.dpbolvw.net/click-101859672-15735619",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 4,
       "verdict": "OK",
       "error": null
     },
@@ -1807,7 +1807,7 @@
       "id": "br_booking_barretos_peao",
       "link": "https://www.kqzyfj.com/click-101859672-17293138",
       "http_status": 302,
-      "latency_ms": 25,
+      "latency_ms": 4,
       "verdict": "OK",
       "error": null
     }

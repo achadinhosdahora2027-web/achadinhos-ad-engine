@@ -10,7 +10,7 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 19,
+  "total_published": 22,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
@@ -19,13 +19,14 @@
       "br_ml_lampada_smart",
       "br_ebay_deals",
       "br_nordpass_gerenciador",
-      "br_malwarebytes"
+      "br_malwarebytes",
+      "br_movavi"
     ],
-    "total": 6,
-    "last_published_at": "2026-09-13T02:03:40.297Z",
-    "last_deal_id": "br_malwarebytes"
+    "total": 7,
+    "last_published_at": "2026-09-13T02:09:13.080Z",
+    "last_deal_id": "br_movavi"
   },
-  "last_run_at": "2026-09-13T02:03:40.297Z",
+  "last_run_at": "2026-09-13T02:09:13.081Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
@@ -33,11 +34,12 @@
       "br_aliexpress_global",
       "br_surfshark_vpn",
       "br_economybookings_aluguel",
-      "br_wondershare"
+      "br_wondershare",
+      "br_parallels_mac"
     ],
-    "total": 6,
-    "last_published_at": "2026-09-13T02:03:40.297Z",
-    "last_deal_id": "br_wondershare"
+    "total": 7,
+    "last_published_at": "2026-09-13T02:09:13.081Z",
+    "last_deal_id": "br_parallels_mac"
   },
   "privado_admin": {
     "published_ids": [
@@ -46,10 +48,11 @@
       "br_ebay_deals",
       "br_nordpass_gerenciador",
       "br_malwarebytes",
-      "br_movavi"
+      "br_movavi",
+      "br_corel_software"
     ],
-    "total": 6,
-    "last_published_at": "2026-09-13T02:03:40.297Z",
-    "last_deal_id": "br_movavi"
+    "total": 7,
+    "last_published_at": "2026-09-13T02:09:13.081Z",
+    "last_deal_id": "br_corel_software"
   }
 }

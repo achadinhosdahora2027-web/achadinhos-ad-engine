@@ -14,7 +14,7 @@
       "avg_commission_brl": 145,
       "country": "GLOBAL",
       "language": "en",
-      "priority_weight": 3.73,
+      "priority_weight": 4.29,
       "affiliate_url": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=nordvpn&site=meta_controlled&slot=top_offer_03&sid=tw_nordvpn_sec",
       "target_channels": [
         "twitter_savegrid20",
