@@ -121,5 +121,20 @@ jobs:
             # try again in 24 hours (more than 5000, code: api-upload-free)") e
             # deixou site e gateway sem publicar por um dia inteiro.
             git commit -m "chore(orquestrador): dados atualizados em $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci] [vercel skip]"
-            git push origin HEAD:main
+            # v340.0 — CORRIDA DE PUSH: quando outro fluxo (ou uma publicacao minha)
+            # empurra commits enquanto este job roda, o push cru era REJEITADO
+            # ("remote contains work that you do not have") e o workflow inteiro
+            # morria com exit 1 DEPOIS de ter feito todo o trabalho — o painel
+            # mostrava falha com o motor 100% verde. Agora rebaseia com as
+            # alteracoes locais de data/ (ours = o dado recem-gerado vence) e
+            # tenta algumas vezes antes de desistir.
+            for tent in 1 2 3; do
+              git fetch origin main --quiet || true
+              if git rebase -X ours origin/main --quiet; then
+                if git push origin HEAD:main; then echo "push ok (tentativa $tent)"; break; fi
+              else
+                git rebase --abort || true
+              fi
+              echo "push rejeitado (tentativa $tent) — tentando novamente..."; sleep 5
+            done
           fi
