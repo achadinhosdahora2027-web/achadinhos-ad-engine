@@ -72,5 +72,6 @@ assert.match(sql, /truncate table public\.nexus_telegram_message_buffer/);
 assert.match(sql, /count\(\*\) filter \(where active is true\)/);
 assert.match(sql, /commission_amount/);
 assert.match(sql, /telegram_ok/);
+assert.match(sql, /notify pgrst, 'reload schema'/);
 
 console.log('v420-channel-separation: invariantes estáticas OK');

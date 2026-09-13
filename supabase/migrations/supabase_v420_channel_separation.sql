@@ -1302,6 +1302,11 @@ begin
 end;
 $verify$;
 
+-- PostgREST precisa conhecer a RPC C2 imediatamente após o COMMIT; sem o NOTIFY,
+-- o primeiro produtor pode receber PGRST202 apesar de a função já existir.
+notify pgrst, 'reload schema';
+notify pgrst, 'reload config';
+
 commit;
 
 select * from public.nexus_v420_status_v;

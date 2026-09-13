@@ -1,4 +1,4 @@
-name: Telegram Ofertas Brasil 24/7 Autopilot (Multi-Destino)
+name: Telegram Ofertas Brasil 24/7 — C2 Soberano v420
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       discover_only:
-        description: "Apenas descobrir chat_id de grupos novos (nao publica)"
+        description: "Compatibilidade: apenas validar o produtor C2, sem publicar"
         type: boolean
         default: false
 
@@ -43,10 +43,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: "1. Descobrir chat_id de grupos pendentes (se houver)"
-        run: node scripts/telegram-brazil-deals-publisher.js --discover-only || true
+      - name: "1. Validar produtor C2 e destino 1:1 (dry-run)"
+        run: DRY_RUN=1 node scripts/telegram-brazil-deals-publisher.js
 
-      - name: "2. Publicar oferta em TODOS os destinos (canal + grupos + admin)"
+      - name: "2. Materializar oferta no C2 (somente Ofertas Brasil)"
         if: ${{ inputs.discover_only != true }}
         run: node scripts/telegram-brazil-deals-publisher.js
       - name: "4. Publicar ofertas Shopee REAIS (inventario v330.0: 701 ofertas)"

@@ -201,7 +201,17 @@ async function publishToAllDestinations(options = {}) {
   // 3. catalogo + historico
   const catalog = loadJson(CATALOG_PATH, { deals: [] });
   const history = loadJson(HISTORY_PATH, {});
-  const allDeals = (catalog.deals || []).filter((d) => d.active !== false);
+  const isBrRetailLink = (value) => {
+    try {
+      const h = new URL(String(value || '')).hostname.toLowerCase();
+      return h === 'meli.la' || h.endsWith('.mercadolivre.com.br') ||
+        h === 'mercadolivre.com.br' || h.endsWith('.shopee.com.br') ||
+        h === 'amazon.com.br' || h.endsWith('.amazon.com.br') || h === 'lmdee.link';
+    } catch (e) { return false; }
+  };
+  const allDeals = (catalog.deals || []).filter(
+    (d) => d.active !== false && isBrRetailLink(d.link_verified)
+  );
   if (!allDeals.length) {
     console.error('❌ Catalogo vazio.');
     return { success: false, reason: 'catalogo_vazio' };
@@ -210,8 +220,9 @@ async function publishToAllDestinations(options = {}) {
 
   // 4. monta 1 mensagem por destino (cada uma com seu link tageado)
   const plan = [];
+  const brCatalog = { ...catalog, deals: allDeals };
   destinations.forEach((dest, i) => {
-    const deal = pickDealForDestination(catalog, history, dest, i);
+    const deal = pickDealForDestination(brCatalog, history, dest, i);
     if (deal) plan.push({ dest, deal });
   });
 
