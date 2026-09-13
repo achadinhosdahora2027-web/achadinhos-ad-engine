@@ -8,6 +8,8 @@ import {
 } from "../../../edge/jetstream/copilot-v3200.ts";
 
 const START_SECRET = Deno.env.get("NEXUS_V3200_COPY_SECRET") ?? "";
+const POLICY_VERSION = Deno.env.get("V3300_POLICY_VERSION") ?? "v3200.0";
+const ACTIVATION_PROFILE = Deno.env.get("V3300_ACTIVATION_PROFILE") ?? "v3300.0";
 const ALLOWED_HOSTS = new Set(
   (Deno.env.get("V3200_ALLOWED_LINK_HOSTS") ??
     "achadinhos-ad-engine.vercel.app,www.aquitemachadinhos.com.br,aquitemachadinhos.com.br,www.solvegrid.com.br,solvegrid.com.br,nexusplataforma.ia.br,www.nexusplataforma.ia.br")
@@ -44,6 +46,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
   if (request.method === "GET") {
     return response({
       version: VERSAO_COPILOT,
+      policy_version: POLICY_VERSION,
+      activation_profile: ACTIVATION_PROFILE,
       mode: "factual_product_assistance",
       side_effects: false,
       publication_claimed: false,
@@ -75,6 +79,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
     }, ALLOWED_HOSTS);
     return response({
       ...result,
+      policy_version: POLICY_VERSION,
+      activation_profile: ACTIVATION_PROFILE,
       geo_source: payload.country ? "signed_payload" : edgeCountry.source,
       cdn_country_is_routing_hint: true,
     });
