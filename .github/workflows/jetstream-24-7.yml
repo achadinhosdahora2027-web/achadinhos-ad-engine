@@ -1,0 +1,46 @@
+name: Jetstream Bluesky 24/7 (Ingestao de Keywords v330.0)
+
+on:
+  schedule:
+    # Rede de seguranca: se uma janela cair, a proxima retoma em ate 1h.
+    - cron: "15 * * * *"
+  workflow_dispatch:
+    inputs:
+      seconds:
+        description: "Duração da janela em segundos (0 = contínuo)"
+        default: "3300"
+        type: string
+
+concurrency:
+  group: jetstream-consumer
+  cancel-in-progress: false
+
+env:
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  TELEGRAM_BUFFER_CHAT_ID: "5808022745"
+  AFFILIATE_GATEWAY: "https://achadinhos-ad-engine.vercel.app/api/ads/go"
+  WEBHOOK_HMAC_KEY: ${{ secrets.CRON_SECRET }}
+
+jobs:
+  consumir:
+    runs-on: ubuntu-latest
+    # Janela de 55 min por execucao: o runner e publico (minutos gratuitos) e a
+    # proxima execucao do cron emenda, mantendo a escuta praticamente continua.
+    timeout-minutes: 58
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Dependencia do WebSocket
+        run: npm i ws --no-audit --no-fund --silent
+      - name: Escutar o firehose e casar keywords do inventario real
+        run: node workers/jetstream-consumer.js --seconds ${{ inputs.seconds || 3300 }}
+      - name: Registrar telemetria da janela
+        if: always()
+        run: |
+          curl -s -m 30 -X POST "${SUPABASE_URL}/rest/v1/nexus_sat_telemetry" \
+            -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
+            -H "Content-Type: application/json" -H "Prefer: return=minimal" \
+            -d "[{\"job\":\"v330-jetstream\",\"status\":\"OK\",\"message\":\"janela concluida\"}]" || true

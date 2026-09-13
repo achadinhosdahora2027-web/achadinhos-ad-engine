@@ -8,7 +8,8 @@
     "status": "node -e 'console.log(\"Ad Engine Status: Online\")'",
     "sync:rates": "node scripts/sync-rates.js"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "ws": "^8.21.3"
+  },
   "private": true
 }

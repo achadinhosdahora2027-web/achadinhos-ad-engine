@@ -79,9 +79,17 @@ function keywordsFrom(name) {
       out.add(gram.join(' '));
     }
   }
-  // Termos de marca/modelo com número (ex.: 10000mah, 12v) entram sozinhos: são os
-  // melhores casadores em conversa real ("to precisando de um power bank 10000mah").
-  for (const t of clean) if (/\d/.test(t) && t.length >= 3) out.add(t);
+  // Termos alfanuméricos com número entram sozinhos, mas SÓ se tiverem unidade ou
+  // forem códigos de modelo — testado contra o firehose real do Bluesky: números
+  // soltos ("1000", "2000", "2026") casavam com qualquer conversa e geravam 29
+  // "matches" inúteis em 55s. Casar errado é pior do que não casar.
+  const UNIDADE = /(\d+\s?(mah|wh|w|v|kv|kg|g|ml|l|mm|cm|m|gb|tb|hz|khz|pol|polegadas|btu|led|cri|rgb|lan|wifi|bluetooth))/;
+  for (const t of clean) {
+    if (!/\d/.test(t)) continue;
+    if (/^(19|20)\d{2}$/.test(t)) continue;              // anos
+    if (UNIDADE.test(t)) { out.add(t); continue; }        // 10000mah, 12v, 128gb
+    if (/^[a-z]{2,}\d{2,}$/.test(t) && t.length >= 5) out.add(t); // modelo tipo kt2000
+  }
   return Array.from(out);
 }
 
@@ -399,6 +407,9 @@ ${chunk.map(val).join(',\n')}
     CROSS JOIN LATERAL jsonb_array_elements_text(o.keywords) AS k(kw)
    WHERE o.match_hash = ANY (ARRAY[${chunk.map((x) => sqlEscape(x.match_hash)).join(', ')}]::text[])
      AND length(k.kw) >= 4
+     -- Número solto NÃO é chave de match: testado contra o firehose real do Bluesky,
+     -- '1000'/'2026' casavam com qualquer conversa (29 falsos positivos em 55s).
+     AND k.kw !~ '^[0-9 .]+$'
    -- Comissão maior ganha a keyword compartilhada (do nada, o melhor anúncio paga).
    ORDER BY (o.commission_rate_pct IS NULL), o.commission_rate_pct DESC, o.match_hash
   ON CONFLICT (keyword) DO NOTHING;`).join('\n\n')}
@@ -452,6 +463,7 @@ VALUES ('v330-shopee-ingest', current_setting('nexus.v330_status', true),
     // keyword → oferta de MAIOR comissão (o melhor anúncio paga o clique)
     for (const kw of it.keywords) {
       if (kw.length < 4) continue;
+      if (/^[\d\s.]+$/.test(kw)) continue;  // número solto não é chave de match
       const cur = slim.keywords[kw];
       if (!cur) slim.keywords[kw] = it.match_hash;
       else {

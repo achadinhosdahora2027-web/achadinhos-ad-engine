@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T02:42:02.211Z",
+  "generated_at": "2026-09-13T02:50:59.318Z",
   "generator": "scripts/build-shopee-inventory.js",
   "source": "Excelência Shopee Afiliados — exportações Batch*.csv",
   "network": "shopee_affiliate",
@@ -13,9 +13,9 @@
       "shopee_store": 200,
       "shopee_category": 1
     },
-    "keywords_total": 11504,
-    "keywords_unique": 9731,
-    "keywords_shared": 972
+    "keywords_total": 11264,
+    "keywords_unique": 9612,
+    "keywords_shared": 936
   },
   "integrity": {
     "fabricated_links": 0,
@@ -69,7 +69,6 @@
         "bivolt 110v 220v plug",
         "110v 220v plug p4",
         "12v",
-        "10a",
         "110v",
         "220v"
       ],
@@ -696,7 +695,8 @@
         "parede sem furo fita",
         "furo fita 3m organizador",
         "fita 3m organizador wifi",
-        "3m organizador wifi universal"
+        "3m organizador wifi universal",
+        "3m"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -993,8 +993,7 @@
         "refis cesto em inox",
         "cesto em inox balde",
         "inox balde centrifuga litros",
-        "balde centrifuga litros av",
-        "140"
+        "balde centrifuga litros av"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -1590,8 +1589,7 @@
         "cm refis rodinhas cesto",
         "rodinhas cesto em inox",
         "cesto em inox balde",
-        "inox balde centrifuga ch",
-        "140"
+        "inox balde centrifuga ch"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -1787,8 +1785,7 @@
         "cm cesto em inox",
         "cesto em inox balde",
         "inox balde centrifuga refil",
-        "balde centrifuga refil bnvt",
-        "140"
+        "balde centrifuga refil bnvt"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -1977,7 +1974,8 @@
         "2l premium com medidor",
         "premium com medidor organizador",
         "medidor organizador de alimentos",
-        "organizador de alimentos mantimentos"
+        "organizador de alimentos mantimentos",
+        "2l"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -2710,9 +2708,7 @@
         "polegadas sata iii usb3.0",
         "sata iii usb3.0 exbom",
         "iii usb3.0 exbom cghd",
-        "usb3.0 exbom cghd 36",
-        "2.5",
-        "usb3.0"
+        "usb3.0 exbom cghd 36"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -2808,12 +2804,8 @@
         "metros cat5 montado 8p8c",
         "cat5 montado 8p8c homologado",
         "montado 8p8c homologado pronto",
-        "rj45",
-        "cat5e",
         "2m3m5m10m15m",
-        "e20m",
-        "cat5",
-        "8p8c"
+        "e20m"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -3076,8 +3068,7 @@
         "swap switch bronw red",
         "switch bronw red abnt2",
         "bronw red abnt2 usb",
-        "red abnt2 usb titorion",
-        "abnt2"
+        "red abnt2 usb titorion"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -3113,7 +3104,6 @@
         "potes de condimentos temperos",
         "condimentos temperos mantimentos 8x3",
         "temperos mantimentos 8x3 8cm",
-        "8x3",
         "8cm"
       ],
       "region": "BR",
@@ -3607,7 +3597,8 @@
         "verduras manual 4l",
         "centrifuga de salada secador",
         "salada secador verduras manual",
-        "secador verduras manual 4l"
+        "secador verduras manual 4l",
+        "4l"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -4118,8 +4109,7 @@
         "original total 120 capsulas",
         "total 120 capsulas original",
         "120 capsulas original envio",
-        "capsulas original envio hoje",
-        "120"
+        "capsulas original envio hoje"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -4256,16 +4246,7 @@
         "l4160 l6161 l3110 l3210",
         "l6161 l3110 l3210 l4260",
         "l3110 l3210 l4260 frente",
-        "l3210 l4260 frente transparente",
-        "l3250",
-        "l1250",
-        "l3150",
-        "l4150",
-        "l4160",
-        "l6161",
-        "l3110",
-        "l3210",
-        "l4260"
+        "l3210 l4260 frente transparente"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -4635,8 +4616,7 @@
         "256gb",
         "512gb",
         "64gb",
-        "128gb",
-        "2.0"
+        "128gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -4801,8 +4781,7 @@
         "tablet 360 base ajustavel",
         "360 base ajustavel dobravel",
         "base ajustavel dobravel suporte",
-        "ajustavel dobravel suporte ergonomico",
-        "360"
+        "ajustavel dobravel suporte ergonomico"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -5018,12 +4997,7 @@
         "tinta 544 impressora l3250",
         "544 impressora l3250 l3210",
         "impressora l3250 l3210 l5190",
-        "l3250 l3210 l5190 l3110",
-        "544",
-        "l3250",
-        "l3210",
-        "l5190",
-        "l3110"
+        "l3250 l3210 l5190 l3110"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -5615,8 +5589,7 @@
         "64gb",
         "128gb",
         "256gb",
-        "512gb",
-        "2.0"
+        "512gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -5673,16 +5646,7 @@
         "l4160 l6161 l3110 l3210",
         "l6161 l3110 l3210 l4260",
         "l3110 l3210 l4260 toda",
-        "l3210 l4260 toda transparente",
-        "l3250",
-        "l1250",
-        "l3150",
-        "l4150",
-        "l4160",
-        "l6161",
-        "l3110",
-        "l3210",
-        "l4260"
+        "l3210 l4260 toda transparente"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -5715,8 +5679,7 @@
         "cozinha molhos cosmeticos",
         "organizador giratorio 360 multiuso",
         "360 multiuso para cozinha",
-        "multiuso para cozinha molhos",
-        "360"
+        "multiuso para cozinha molhos"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -5884,7 +5847,6 @@
         "geladeira com torneira capacidade",
         "capacidade 3.5l para agua",
         "3.5l para agua saborizada",
-        "3.5",
         "3.5l"
       ],
       "region": "BR",
@@ -6131,6 +6093,7 @@
         "ate 1200mbps modo ap",
         "1200mbps modo ap porta",
         "modo ap porta lan",
+        "5g",
         "2.4g",
         "1200mbps"
       ],
@@ -6330,8 +6293,7 @@
         "metal portatil de armazenamento",
         "armazenamento de grande capacidade",
         "grande capacidade pen drive",
-        "2tb",
-        "usb3.0"
+        "2tb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -6435,8 +6397,9 @@
         "2m 3m 5m 10m",
         "3m 5m 10m 15m",
         "10m",
-        "rj45",
-        "cat5",
+        "2m",
+        "3m",
+        "5m",
         "15m"
       ],
       "region": "BR",
@@ -6550,13 +6513,7 @@
         "l3110 l3150 l3250 l3160",
         "l3150 l3250 l3160 l5190",
         "l3250 l3160 l5190 l5290",
-        "l3160 l5190 l5290 fast",
-        "l3110",
-        "l3150",
-        "l3250",
-        "l3160",
-        "l5190",
-        "l5290"
+        "l3160 l5190 l5290 fast"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -6613,8 +6570,7 @@
         "notebook pc computador windows",
         "pc computador windows mac",
         "computador windows mac linux",
-        "2.4ghz",
-        "1000"
+        "2.4ghz"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -6730,8 +6686,7 @@
         "refrigeracao gabinete gamer 1200rpm",
         "gabinete gamer 1200rpm preto",
         "gamer 1200rpm preto branco",
-        "120mm",
-        "1200rpm"
+        "120mm"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -6834,12 +6789,7 @@
         "tf m1 4k usb",
         "m1 4k usb 3.0",
         "usb 3.0 para computador",
-        "3.0 para computador todo",
-        "4em1",
-        "5em2",
-        "6em1",
-        "8em1",
-        "3.0"
+        "3.0 para computador todo"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -6887,8 +6837,7 @@
         "alta velocidade armazenamento seguro",
         "64gb",
         "256gb",
-        "512gb",
-        "2.0"
+        "512gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -7280,10 +7229,7 @@
         "6gbps sata 2.5 hhd",
         "2.5 hhd ou ssd",
         "hhd ou ssd ecase",
-        "3.0",
-        "6gbps",
-        "2.5",
-        "300"
+        "6gbps"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -7706,8 +7652,7 @@
         "led kit gamer led",
         "gamer led iluminado rgb",
         "iluminado rgb para jogos",
-        "rgb para jogos 1200dpi",
-        "1200dpi"
+        "rgb para jogos 1200dpi"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -7839,7 +7784,6 @@
         "pc teclado 5gbps speed",
         "teclado 5gbps speed pen",
         "5gbps speed pen drive",
-        "3.0",
         "5gbps"
       ],
       "region": "BR",
@@ -7989,9 +7933,7 @@
         "chique para palito pratico",
         "palito pratico multicolorido 5x5",
         "pratico multicolorido 5x5 5x9",
-        "multicolorido 5x5 5x9 cm",
-        "5x5",
-        "5x9"
+        "multicolorido 5x5 5x9 cm"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -8303,8 +8245,7 @@
         "2tb 4tb expansao usb",
         "4tb expansao usb 3.0",
         "2tb",
-        "4tb",
-        "3.0"
+        "4tb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -8492,10 +8433,7 @@
         "mhz cat rj45 cabo",
         "rj45 cabo de conexao",
         "conexao de rede lan",
-        "rede lan para computador",
-        "cat8",
-        "2000",
-        "rj45"
+        "rede lan para computador"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -8584,8 +8522,7 @@
         "frutas legumes verduras queijos",
         "legumes verduras queijos cozinha",
         "queijos cozinha pecas tabletop",
-        "cozinha pecas tabletop u11",
-        "u11"
+        "cozinha pecas tabletop u11"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -8751,8 +8688,7 @@
         "100 comestiveis tamanhos diversas",
         "comestiveis tamanhos diversas cores",
         "tamanhos diversas cores opcoes",
-        "50g",
-        "100"
+        "50g"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -8809,8 +8745,10 @@
         "preto 110v 220v pronta",
         "110v 220v pronta entrega",
         "220v pronta entrega 5w",
+        "5v",
         "110v",
-        "220v"
+        "220v",
+        "5w"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -8856,7 +8794,6 @@
         "bluetooth 5.4 ax900mbps conexao",
         "5.4 ax900mbps conexao ultrarrapida",
         "ax900mbps conexao ultrarrapida estavel",
-        "5.4",
         "ax900mbps"
       ],
       "region": "BR",
@@ -8948,8 +8885,6 @@
         "estabilidade 10m 20m 30m",
         "10m 20m 30m interno",
         "20m 30m interno externo",
-        "cat6",
-        "rj45",
         "1000mbps",
         "10m",
         "20m",
@@ -9018,8 +8953,7 @@
         "cabo alongador d10",
         "limpeza em recarregavel eletrica",
         "eletrica giratoria com cabo",
-        "giratoria com cabo alongador",
-        "d10"
+        "giratoria com cabo alongador"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -9251,9 +9185,8 @@
         "placa de video pc",
         "video pc 1g 8w",
         "gd900",
-        "ps2",
-        "ps3",
-        "ps4"
+        "1g",
+        "8w"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -9323,7 +9256,8 @@
         "5g com antenas externas",
         "externas porta de rede",
         "1200mbps",
-        "2.4g"
+        "2.4g",
+        "5g"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -9363,8 +9297,7 @@
         "bluetooth 5.0 receptor wireless",
         "5.0 receptor wireless audio",
         "wireless audio para pc",
-        "audio para pc automovel",
-        "5.0"
+        "audio para pc automovel"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -9633,9 +9566,7 @@
         "ajuste de angulo livre",
         "angulo livre para pc",
         "livre para pc notebook",
-        "pc notebook home office",
-        "1080p",
-        "360"
+        "pc notebook home office"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -9867,8 +9798,7 @@
         "usb com fio abnt2",
         "fio abnt2 ergonomico preto",
         "ergonomico preto para pc",
-        "preto para pc notebook",
-        "abnt2"
+        "preto para pc notebook"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -10149,7 +10079,8 @@
         "pasta termica rise mode",
         "termica rise mode frost",
         "rise mode frost 5g",
-        "mode frost 5g m.k"
+        "mode frost 5g m.k",
+        "5g"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -10392,8 +10323,7 @@
         "bluetooth 5.0 usb transmissor",
         "5.0 usb transmissor audio",
         "transmissor audio sem fio",
-        "fio para notebook carros",
-        "5.0"
+        "fio para notebook carros"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -10449,10 +10379,7 @@
         "2.4g bt5.0 22000dpi rgb",
         "bt5.0 22000dpi rgb recarregavel",
         "22000dpi rgb recarregavel pc",
-        "x11",
-        "2.4g",
-        "bt5.0",
-        "22000dpi"
+        "2.4g"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -10504,7 +10431,8 @@
         "5g usb 3.0 5ghz",
         "usb 3.0 5ghz 1300mbps",
         "3.0 5ghz 1300mbps antenas",
-        "3.0",
+        "4g",
+        "5g",
         "5ghz",
         "1300mbps"
       ],
@@ -10614,8 +10542,7 @@
         "usb 2.0 de alta",
         "2.0 de alta velocidade",
         "alta velocidade com botao",
-        "velocidade com botao liga",
-        "2.0"
+        "velocidade com botao liga"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -10869,7 +10796,6 @@
         "alta taxa de atualizacao",
         "144hz",
         "0.5ms",
-        "1920x1080",
         "hdr10"
       ],
       "region": "BR",
@@ -11009,8 +10935,7 @@
         "crimpado giga lan ethernet",
         "giga lan ethernet boyu",
         "lan ethernet boyu cell",
-        "30m",
-        "cat6"
+        "30m"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -11250,6 +11175,7 @@
         "processador cozinha casa alho",
         "cozinha casa alho 110v",
         "casa alho 110v 220v",
+        "3l",
         "110v",
         "220v"
       ],
@@ -11352,10 +11278,7 @@
         "400 mais economia higiene",
         "economia higiene no dia",
         "higiene no dia dia",
-        "100",
-        "200",
-        "300",
-        "400"
+        "5g"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -11396,8 +11319,7 @@
         "duplo em plastico tipo",
         "plastico tipo porta 32",
         "tipo porta 32 ovos",
-        "ovos com para cozinha",
-        "4andar"
+        "ovos com para cozinha"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -11453,7 +11375,7 @@
         "5m 10m 15m 30m",
         "10m 15m 30m pronto",
         "30m pronto para uso",
-        "rj45",
+        "5m",
         "10m",
         "15m",
         "30m"
@@ -12025,9 +11947,7 @@
         "game 10 15 20",
         "10 15 20 25",
         "15 20 25 30",
-        "20 25 30 metros",
-        "rj45",
-        "cat5e"
+        "20 25 30 metros"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12225,7 +12145,8 @@
         "mk frostbite silver alta",
         "frostbite silver alta condutividade",
         "silver alta condutividade espatula",
-        "alta condutividade espatula cleaner"
+        "alta condutividade espatula cleaner",
+        "5g"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12272,7 +12193,6 @@
         "3.42a 65w pino 5.5mm",
         "65w pino 5.5mm 1.7mm",
         "19v",
-        "3.42a",
         "65w",
         "5.5mm",
         "1.7mm"
@@ -12332,8 +12252,7 @@
         "rgb rainbow anti ghosting",
         "rainbow anti ghosting resistente",
         "anti ghosting resistente agua",
-        "ghosting resistente agua abnt2",
-        "abnt2"
+        "ghosting resistente agua abnt2"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12377,8 +12296,7 @@
         "rapido terminal eletrico isolado",
         "terminal eletrico isolado vias",
         "isolado vias para instalacao",
-        "vias para instalacao eletrica",
-        "180"
+        "vias para instalacao eletrica"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12518,7 +12436,6 @@
         "90 preto com trava",
         "preto com trava metalica",
         "6gb",
-        "sata3",
         "40cm"
       ],
       "region": "BR",
@@ -12662,9 +12579,7 @@
         "2.5 sata usb 3.0",
         "sata usb 3.0 externo",
         "3.0 externo com capa",
-        "capa de protecao bag",
-        "2.5",
-        "3.0"
+        "capa de protecao bag"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12711,8 +12626,7 @@
         "type interface dupla usb3.0",
         "128gb",
         "512gb",
-        "2tb",
-        "usb3.0"
+        "2tb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12804,8 +12718,7 @@
         "fio abnt2 usb office",
         "abnt2 usb office 5+",
         "usb office 5+ cor",
-        "office 5+ cor preto",
-        "abnt2"
+        "office 5+ cor preto"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12851,8 +12764,7 @@
         "antibacteriana prova de mofo",
         "prova de mofo 46",
         "mofo 46 cm tabua",
-        "cm tabua de cozinha",
-        "304"
+        "cm tabua de cozinha"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -12890,7 +12802,6 @@
         "espetos varetas de bambu",
         "bambu para churrasco 18cm",
         "churrasco 18cm 25cm 30cm",
-        "1000",
         "18cm",
         "25cm",
         "30cm"
@@ -12978,11 +12889,7 @@
         "ssd 120 gb 256",
         "120 gb 256 gb",
         "gb 256 gb 240",
-        "256 gb 240 gb",
-        "2.5",
-        "120",
-        "256",
-        "240"
+        "256 gb 240 gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13026,9 +12933,7 @@
         "3.0 hd 2.5 sata",
         "hd 2.5 sata externo",
         "2.5 sata externo alta",
-        "sata externo alta qualidade",
-        "3.0",
-        "2.5"
+        "sata externo alta qualidade"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13071,12 +12976,7 @@
         "preta black l3250 l3150",
         "black l3250 l3150 l3110",
         "l3250 l3150 l3110 l3210",
-        "l3150 l3110 l3210 l1250",
-        "l3250",
-        "l3150",
-        "l3110",
-        "l3210",
-        "l1250"
+        "l3150 l3110 l3210 l1250"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13125,8 +13025,6 @@
         "disponivel em 10m 20m",
         "10m 20m 30m interno",
         "20m 30m interno externo",
-        "rj45",
-        "cat6",
         "10m",
         "20m",
         "30m"
@@ -13212,9 +13110,7 @@
         "usb 3.1 led colorido",
         "3.1 led colorido ecase",
         "led colorido ecase 352",
-        "colorido ecase 352 infokit",
-        "3.1",
-        "352"
+        "colorido ecase 352 infokit"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13668,8 +13564,7 @@
         "mouse 2400dpi usb rgb",
         "2400dpi usb rgb iluminado",
         "usb rgb iluminado jogos",
-        "rgb iluminado jogos pc",
-        "2400dpi"
+        "rgb iluminado jogos pc"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13762,8 +13657,7 @@
         "prova de mofo 46",
         "mofo 46 cm tabua",
         "cm tabua de cozinha",
-        "tabua de cozinha real",
-        "304"
+        "tabua de cozinha real"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13820,9 +13714,7 @@
         "alta velocidade para notebook",
         "velocidade para notebook pc",
         "notebook pc macbook plug",
-        "pc macbook plug play",
-        "3.0",
-        "2.0"
+        "pc macbook plug play"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13865,8 +13757,7 @@
         "wifi 600 mbps ultra",
         "600 mbps ultra rapido",
         "mbps ultra rapido sinal",
-        "ultra rapido sinal forte",
-        "600"
+        "ultra rapido sinal forte"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -13940,8 +13831,7 @@
         "wifi 600 mbps ultra",
         "600 mbps ultra rapido",
         "mbps ultra rapido sinal",
-        "ultra rapido sinal forte",
-        "600"
+        "ultra rapido sinal forte"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -14191,8 +14081,7 @@
         "talheres dispenser detergente aco",
         "dispenser detergente aco inox",
         "detergente aco inox bancada",
-        "aco inox bancada cozinha",
-        "2em1"
+        "aco inox bancada cozinha"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -14320,9 +14209,7 @@
         "adaptador notebook pc expansor",
         "notebook pc expansor usb",
         "pc expansor usb alta",
-        "expansor usb alta velocidade",
-        "3.0",
-        "2.0"
+        "expansor usb alta velocidade"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -14354,7 +14241,6 @@
         "pastilha mini com 100",
         "mini com 100 unidades",
         "100 unidades 240g docile",
-        "100",
         "240g"
       ],
       "region": "BR",
@@ -14403,8 +14289,7 @@
         "inox 304 esferico cozinha",
         "304 esferico cozinha luxuoso",
         "esferico cozinha luxuoso moderno",
-        "cozinha luxuoso moderno organizador",
-        "304"
+        "cozinha luxuoso moderno organizador"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -14594,8 +14479,7 @@
         "led usb abnt2 profissional",
         "usb abnt2 profissional iluminado",
         "abnt2 profissional iluminado conforto",
-        "profissional iluminado conforto performance",
-        "abnt2"
+        "profissional iluminado conforto performance"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -14629,7 +14513,6 @@
         "conector neon mangueira led",
         "neon mangueira led 110",
         "mangueira led 110 220v",
-        "110",
         "220v"
       ],
       "region": "BR",
@@ -14685,9 +14568,6 @@
         "60 50m para caneta",
         "50m para caneta 3d",
         "caneta 3d impressora 3d",
-        "120",
-        "110",
-        "100",
         "50m"
       ],
       "region": "BR",
@@ -14759,8 +14639,7 @@
         "16gb",
         "32gb",
         "64gb",
-        "128gb",
-        "2.0"
+        "128gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15009,15 +14888,7 @@
         "l3110 l3115 l3150 l3250",
         "l3115 l3150 l3250 l3160",
         "l3150 l3250 l3160 l5190",
-        "l3250 l3160 l5190 l5290",
-        "l3100",
-        "l3110",
-        "l3115",
-        "l3150",
-        "l3250",
-        "l3160",
-        "l5190",
-        "l5290"
+        "l3250 l3160 l5190 l5290"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15070,10 +14941,7 @@
         "botoes 1000 1600 dpi",
         "1600 dpi para pc",
         "dpi para pc notebook",
-        "pc notebook escritorio ms01",
-        "ms01",
-        "1000",
-        "1600"
+        "pc notebook escritorio ms01"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15336,7 +15204,8 @@
         "furo com fita 3m",
         "fita 3m universal organizador",
         "3m universal organizador wifi",
-        "universal organizador wifi adesivo"
+        "universal organizador wifi adesivo",
+        "3m"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15407,7 +15276,8 @@
         "louca lixeira 5l porta",
         "lixeira 5l porta detergente",
         "5l porta detergente rodinho",
-        "detergente rodinho de pia"
+        "detergente rodinho de pia",
+        "5l"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15573,8 +15443,7 @@
         "impressora 3d fdm voolt3d",
         "3d fdm voolt3d oficial",
         "1kg",
-        "75mm",
-        "voolt3d"
+        "75mm"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15711,8 +15580,7 @@
         "impressora 3d fdm voolt3d",
         "3d fdm voolt3d oficial",
         "1kg",
-        "75mm",
-        "voolt3d"
+        "75mm"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15754,8 +15622,7 @@
         "iluminacao rgb design ergonomico",
         "rgb design ergonomico confortavel",
         "design ergonomico confortavel 4800",
-        "ergonomico confortavel 4800 dpi",
-        "4800"
+        "ergonomico confortavel 4800 dpi"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15842,8 +15709,7 @@
         "120mm aitek delta c1263p",
         "aitek delta c1263p controle",
         "c1263p controle de cores",
-        "120mm",
-        "c1263p"
+        "120mm"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -15965,8 +15831,7 @@
         "separar conservar frutas verduras",
         "conservar frutas verduras proprios",
         "verduras proprios para geladeira",
-        "proprios para geladeira micro",
-        "kit2"
+        "proprios para geladeira micro"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16065,8 +15930,7 @@
         "game ps2 som cabo",
         "som cabo de alimentacao",
         "alimentacao de energia bivolt",
-        "10a",
-        "ps2"
+        "2m"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16133,9 +15997,7 @@
         "8gb",
         "16gb",
         "32gb",
-        "64gb",
-        "2.0",
-        "4.5"
+        "64gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16314,8 +16176,7 @@
         "3.0 otg conversor macho",
         "otg conversor macho usb",
         "conversor macho usb adaptador",
-        "usb adaptador de sincronizacao",
-        "3.0"
+        "usb adaptador de sincronizacao"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16466,9 +16327,7 @@
         "8gb",
         "16gb",
         "32gb",
-        "64gb",
-        "2.0",
-        "4.5"
+        "64gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16557,8 +16416,7 @@
         "portas gbps super rapido",
         "gbps super rapido mouse",
         "super rapido mouse teclado",
-        "rapido mouse teclado hd",
-        "3.0"
+        "rapido mouse teclado hd"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16794,8 +16652,7 @@
         "1tb",
         "512gb",
         "256gb",
-        "128gb",
-        "usb2.0"
+        "128gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16896,8 +16753,7 @@
         "abnt2 brasileiro super macio",
         "brasileiro super macio notebook",
         "super macio notebook pc",
-        "macio notebook pc computador",
-        "abnt2"
+        "macio notebook pc computador"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -16971,7 +16827,6 @@
         "128gb",
         "256gb",
         "2tb",
-        "2.0",
         "512gb",
         "1tb",
         "16gb"
@@ -17115,8 +16970,7 @@
         "rj45 10 15 20",
         "10 15 20 25",
         "15 20 25 30",
-        "20 25 30 metros",
-        "rj45"
+        "20 25 30 metros"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -17311,9 +17165,7 @@
         "original 10 150 250.",
         "10 150 250. novo",
         "150 250. novo lacrado",
-        "250. novo lacrado promocao.",
-        "150",
-        "250."
+        "250. novo lacrado promocao."
       ],
       "region": "BR",
       "currency": "BRL",
@@ -17371,12 +17223,8 @@
         "core 12 threads am4",
         "12 threads am4 100",
         "threads am4 100 100000457box",
-        "5500",
         "3.6ghz",
-        "16mb",
-        "am4",
-        "100",
-        "100000457box"
+        "16mb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -17427,8 +17275,7 @@
         "pc notebook home office",
         "notebook home office nova",
         "home office nova pronta",
-        "office nova pronta entrega",
-        "1080p"
+        "office nova pronta entrega"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -17627,8 +17474,8 @@
         "5m 10m 15m 20m",
         "10m 15m 20m 30m",
         "15m 20m 30m 50m",
-        "cat6",
-        "rj45",
+        "3m",
+        "5m",
         "10m",
         "15m",
         "20m",
@@ -17815,8 +17662,7 @@
         "pote hermetico com adesivo",
         "hermetico com adesivo grande",
         "adesivo grande opcional cantinho",
-        "opcional cantinho do cafe",
-        "830"
+        "opcional cantinho do cafe"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -17864,7 +17710,6 @@
         "metal prova agua plug",
         "agua plug and play",
         "play de alta velocidade",
-        "3.0",
         "2tb"
       ],
       "region": "BR",
@@ -17934,8 +17779,7 @@
         "compativel com tablet notebook",
         "tablet notebook celular recarregavel",
         "notebook celular recarregavel 150h",
-        "recarregavel 150h de bateria",
-        "150h"
+        "recarregavel 150h de bateria"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18016,8 +17860,7 @@
         "office 2026 profissional entrega",
         "2026 profissional entrega fisica",
         "profissional entrega fisica nota",
-        "entrega fisica nota fiscal",
-        "2026"
+        "entrega fisica nota fiscal"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18196,17 +18039,7 @@
         "g1100 g3111 g3102 g4100",
         "g3111 g3102 g4100 g4102",
         "g3102 g4100 g4102 g4110",
-        "g4100 g4102 g4110 g4111",
-        "g3110",
-        "g2010",
-        "g3100",
-        "g1100",
-        "g3111",
-        "g3102",
-        "g4100",
-        "g4102",
-        "g4110",
-        "g4111"
+        "g4100 g4102 g4110 g4111"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18277,8 +18110,7 @@
         "16gb",
         "32gb",
         "64gb",
-        "128gb",
-        "2.0"
+        "128gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18327,10 +18159,8 @@
         "tuf gaming b550m plus",
         "gaming b550m plus 90mb14a0",
         "b550m plus 90mb14a0 c1bay0",
-        "am4",
         "b550m",
-        "90mb14a0",
-        "c1bay0"
+        "90mb14a0"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18388,7 +18218,6 @@
         "16gb 32gb 64gb bastao",
         "64gb bastao de memoria",
         "disco de alta velocidade",
-        "3.0",
         "2tb",
         "1tb",
         "128gb",
@@ -18488,8 +18317,7 @@
         "compativel com s8 s9",
         "s8 s9 s10 note",
         "s9 s10 note 10",
-        "s10 note 10 macbook",
-        "s10"
+        "s10 note 10 macbook"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18596,8 +18424,7 @@
         "120 90 50 30",
         "90 50 30 amperes",
         "50 30 amperes escolha",
-        "30 amperes escolha abaixo",
-        "120"
+        "30 amperes escolha abaixo"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18690,8 +18517,7 @@
         "ssd sata gaveta adaptador",
         "sata gaveta adaptador portatil",
         "gaveta adaptador portatil notebook",
-        "adaptador portatil notebook pc",
-        "3.0"
+        "adaptador portatil notebook pc"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18732,8 +18558,7 @@
         "tinta mega tank g3110",
         "mega tank g3110 wifi",
         "tank g3110 wifi preta",
-        "g3110 wifi preta canon",
-        "g3110"
+        "g3110 wifi preta canon"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18784,8 +18609,6 @@
         "1000mbps gigabit alta velocidade",
         "gigabit alta velocidade 15",
         "alta velocidade 15 metros",
-        "cat6",
-        "rj45",
         "1000mbps"
       ],
       "region": "BR",
@@ -18842,9 +18665,7 @@
         "16 32 64 128",
         "32 64 128 tb",
         "128 tb unidade flash",
-        "flash de alta velocidade",
-        "2.0",
-        "128"
+        "flash de alta velocidade"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -18921,7 +18742,6 @@
         "128gb",
         "256gb",
         "2tb",
-        "2.0",
         "512gb",
         "1tb"
       ],
@@ -19105,7 +18925,6 @@
         "alta velocidade para smartphone",
         "velocidade para smartphone notebook",
         "smartphone notebook pc android",
-        "2.0",
         "2tb"
       ],
       "region": "BR",
@@ -19349,8 +19168,7 @@
         "8gb",
         "16gb",
         "32gb",
-        "64gb",
-        "2.0"
+        "64gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -19411,12 +19229,7 @@
         "2x oc 912 v537",
         "oc 912 v537 037",
         "rtx5060",
-        "8gb",
-        "gddr7",
-        "128bits",
-        "912",
-        "v537",
-        "037"
+        "8gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -19473,9 +19286,7 @@
         "abnt2 switch marrom preto",
         "switch marrom preto tgt",
         "marrom preto tgt shrc",
-        "preto tgt shrc br01",
-        "abnt2",
-        "br01"
+        "preto tgt shrc br01"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -19554,10 +19365,7 @@
         "rj45 de passagem ez",
         "passagem ez crimpagem cat5e",
         "ez crimpagem cat5e ouro",
-        "crimpagem cat5e ouro vazado",
-        "100",
-        "rj45",
-        "cat5e"
+        "crimpagem cat5e ouro vazado"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -19607,11 +19415,8 @@
         "a515 54g a514 52",
         "54g a514 52 19v",
         "a514 52 19v 42a",
-        "a515",
         "54g",
-        "a514",
-        "19v",
-        "42a"
+        "19v"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -19669,9 +19474,6 @@
         "xbox one pc 6gbps",
         "one pc 6gbps envio",
         "pc 6gbps envio rapido",
-        "2.5",
-        "3.0",
-        "ps4",
         "6gbps"
       ],
       "region": "BR",
@@ -19717,8 +19519,6 @@
         "rainbow abnt2 branco tgt",
         "abnt2 branco tgt m90b",
         "branco tgt m90b rbw01",
-        "m90b",
-        "abnt2",
         "rbw01"
       ],
       "region": "BR",
@@ -19914,7 +19714,6 @@
         "memoria de disco flash",
         "disco flash de alta",
         "flash de alta velocidade",
-        "3.0",
         "2tb",
         "4gb",
         "8gb",
@@ -19968,7 +19767,6 @@
         "dual band 2.4g 5.8g",
         "band 2.4g 5.8g 1300mbps",
         "5.8g 1300mbps com antenas",
-        "3.0",
         "2.4g",
         "5.8g",
         "1300mbps"
@@ -20064,7 +19862,6 @@
         "acrilico fans preto tgt",
         "fans preto tgt jsrv2",
         "preto tgt jsrv2 bkgf02",
-        "jsrv2",
         "bkgf02"
       ],
       "region": "BR",
@@ -20148,9 +19945,7 @@
         "metros conector banhado ouro",
         "conector banhado ouro internet",
         "banhado ouro internet alta",
-        "ouro internet alta velocidade",
-        "rj45",
-        "cat6"
+        "ouro internet alta velocidade"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20303,8 +20098,6 @@
         "5x120mm preto ag rw12",
         "preto ag rw12 5x1",
         "ag rw12 5x1 bk",
-        "rw12",
-        "5x1",
         "5x120mm"
       ],
       "region": "BR",
@@ -20344,9 +20137,7 @@
         "conector extensor rj45 1x2",
         "extensor rj45 1x2 splitter",
         "rj45 1x2 splitter plug",
-        "1x2 splitter plug preto",
-        "rj45",
-        "1x2"
+        "1x2 splitter plug preto"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20441,8 +20232,7 @@
         "plus bronze mcr thr600",
         "bronze mcr thr600 bl01",
         "600w",
-        "thr600",
-        "bl01"
+        "thr600"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20481,8 +20271,7 @@
         "pla kit 20 cores",
         "20 cores 100 caneta",
         "cores 100 caneta 3d",
-        "100 caneta 3d impressora",
-        "100"
+        "100 caneta 3d impressora"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20596,8 +20385,7 @@
         "atx bivolt preto tgt",
         "bivolt preto tgt efd",
         "preto tgt efd bk01",
-        "500w",
-        "bk01"
+        "500w"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20662,7 +20450,6 @@
         "drive memoria portatil pendrive",
         "portatil pendrive para celular",
         "pendrive para celular pc",
-        "2.0",
         "8gb",
         "16gb",
         "32gb",
@@ -20733,8 +20520,7 @@
         "4gb",
         "8gb",
         "16gb",
-        "32gb",
-        "2.0"
+        "32gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20807,8 +20593,7 @@
         "ergonomico inclinavel com antiderrapante",
         "inclinavel com antiderrapante escritorio",
         "antiderrapante escritorio home office",
-        "escritorio home office nr17",
-        "nr17"
+        "escritorio home office nr17"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -20898,8 +20683,7 @@
         "usb office preto 1000dpi",
         "office preto 1000dpi alta",
         "preto 1000dpi alta qualidade",
-        "1000dpi alta qualidade original",
-        "1000dpi"
+        "1000dpi alta qualidade original"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21001,14 +20785,10 @@
         "gen2 disco rigido movel",
         "rigido movel para pc",
         "movel para pc ps5",
-        "e61",
         "4tb",
         "128tb",
         "1tb",
-        "2tb",
-        "3.2",
-        "gen2",
-        "ps5"
+        "2tb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21089,9 +20869,7 @@
         "3.0 2.0 sd tf",
         "2.0 sd tf docking",
         "sd tf docking station",
-        "tf docking station bombom",
-        "3.0",
-        "2.0"
+        "tf docking station bombom"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21223,8 +21001,7 @@
         "ergonomico inclinavel com antiderrapante",
         "inclinavel com antiderrapante escritorio",
         "antiderrapante escritorio home office",
-        "escritorio home office nr17",
-        "nr17"
+        "escritorio home office nr17"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21266,9 +21043,7 @@
         "2.5 transparente com usb",
         "transparente com usb 3.0",
         "usb 3.0 com cabo",
-        "3.0 com cabo destacavel",
-        "2.5",
-        "3.0"
+        "3.0 com cabo destacavel"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21332,8 +21107,7 @@
         "8gb",
         "16gb",
         "32gb",
-        "64gb",
-        "2.0"
+        "64gb"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21387,9 +21161,7 @@
         "adaptador notebook pc expansor",
         "notebook pc expansor usb",
         "pc expansor usb alta",
-        "expansor usb alta velocidade",
-        "3.0",
-        "2.0"
+        "expansor usb alta velocidade"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21507,13 +21279,7 @@
         "662 122 60 664",
         "122 60 664 901",
         "300ml",
-        "60ml",
-        "667",
-        "668",
-        "662",
-        "122",
-        "664",
-        "901"
+        "60ml"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21552,9 +21318,7 @@
         "ethernet usb 3.0 rede",
         "usb 3.0 rede gigabit",
         "3.0 rede gigabit rj45",
-        "rede gigabit rj45 cabo",
-        "3.0",
-        "rj45"
+        "rede gigabit rj45 cabo"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -21633,8 +21397,7 @@
         "striker rainbow 5x120mm tgt",
         "rainbow 5x120mm tgt stk5",
         "5x120mm tgt stk5 blrbw",
-        "5x120mm",
-        "stk5"
+        "5x120mm"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -22753,8 +22516,7 @@
       "offer_shortcode": "8KpTG3ghPv",
       "offer_period_start": "2026-07-25",
       "keywords": [
-        "4action lab",
-        "4action"
+        "4action lab"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -24062,8 +23824,7 @@
       "keywords": [
         "lira modas",
         "modas 333",
-        "lira modas 333",
-        "333"
+        "lira modas 333"
       ],
       "region": "BR",
       "currency": "BRL",
@@ -24267,8 +24028,7 @@
       "offer_shortcode": "6fhFH2Ppj0",
       "offer_period_start": "2026-08-04",
       "keywords": [
-        "w12 streetwear",
-        "w12"
+        "w12 streetwear"
       ],
       "region": "BR",
       "currency": "BRL",
