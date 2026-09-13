@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T11:03:47.335Z",
+  "generated_at": "2026-09-13T11:32:18.906Z",
   "inventory_file": "data/shopee-offer-links.json",
   "inventory_counts": {
     "offers_total": 1141,
@@ -21,7 +21,7 @@
       "chat_id": "-1004317377063",
       "tag": "tg_ofertasbrasilz",
       "sent": true,
-      "message_id": 2061,
+      "message_id": 2080,
       "attempts": 1,
       "offer_hash": "9de674e4f9137855ffef4e7f5ccc8f3b",
       "offer_name": "KIT 2 Bermuda Shorts Tactel com Elastano Academia Corrida CASUAL",
@@ -35,7 +35,7 @@
       "chat_id": "-1004417007577",
       "tag": "tg_cliquesnow",
       "sent": true,
-      "message_id": 4118,
+      "message_id": 4135,
       "attempts": 1,
       "offer_hash": "2fd22aecf88fa5153b615f46063a2a3d",
       "offer_name": "Óculos de Sol Capri Feminino Quadrado Grande Premium Clássico Blogueira Com Case uv400",
@@ -49,7 +49,7 @@
       "chat_id": "5808022745",
       "tag": "tg_admin",
       "sent": true,
-      "message_id": 521,
+      "message_id": 523,
       "attempts": 1,
       "offer_hash": "d28a21f1d41731bd26fc074e4a36e005",
       "offer_name": "Jogo/Kit 4 Toalhas de Banho Grande e Grossa Branca Volume Extra 72x140cm Algodão Premium Luxo",

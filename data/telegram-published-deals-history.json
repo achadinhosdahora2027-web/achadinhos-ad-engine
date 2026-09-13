@@ -10,7 +10,7 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 55,
+  "total_published": 58,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
@@ -31,13 +31,14 @@
       "br_soundcore_audio",
       "br_aliexpress_global",
       "br_switchbot_casa",
-      "br_wondershare"
+      "br_wondershare",
+      "br_sucuri_seguranca"
     ],
-    "total": 18,
-    "last_published_at": "2026-09-13T11:03:42.160Z",
-    "last_deal_id": "br_wondershare"
+    "total": 19,
+    "last_published_at": "2026-09-13T11:32:13.850Z",
+    "last_deal_id": "br_sucuri_seguranca"
   },
-  "last_run_at": "2026-09-13T11:03:42.160Z",
+  "last_run_at": "2026-09-13T11:32:13.850Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
@@ -57,11 +58,12 @@
       "br_novakid_ingles",
       "br_ebay_deals",
       "br_bluetti_energia",
-      "br_movavi"
+      "br_movavi",
+      "br_updf_editor"
     ],
-    "total": 18,
-    "last_published_at": "2026-09-13T11:03:42.160Z",
-    "last_deal_id": "br_movavi"
+    "total": 19,
+    "last_published_at": "2026-09-13T11:32:13.850Z",
+    "last_deal_id": "br_updf_editor"
   },
   "privado_admin": {
     "published_ids": [
@@ -82,10 +84,11 @@
       "br_amazon_air_fryer",
       "br_parallels_mac",
       "br_nordvpn_cyber",
-      "br_booking_barretos_peao"
+      "br_booking_barretos_peao",
+      "br_surfshark_vpn"
     ],
-    "total": 18,
-    "last_published_at": "2026-09-13T11:03:42.160Z",
-    "last_deal_id": "br_booking_barretos_peao"
+    "total": 19,
+    "last_published_at": "2026-09-13T11:32:13.850Z",
+    "last_deal_id": "br_surfshark_vpn"
   }
 }
