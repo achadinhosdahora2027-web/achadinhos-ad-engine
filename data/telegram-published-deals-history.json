@@ -10,94 +10,31 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 67,
+  "total_published": 70,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
-      "br_shopee_fone_tws",
-      "br_booking_gramado",
-      "br_ml_lampada_smart",
-      "br_ebay_deals",
-      "br_nordpass_gerenciador",
-      "br_malwarebytes",
-      "br_movavi",
-      "br_corel_software",
-      "br_updf_editor",
-      "br_bluetti_energia",
-      "br_novakid_ingles",
-      "br_amazon_air_fryer",
-      "br_surfshark_vpn",
-      "br_parallels_mac",
-      "br_soundcore_audio",
-      "br_aliexpress_global",
-      "br_switchbot_casa",
-      "br_wondershare",
-      "br_sucuri_seguranca",
-      "br_economybookings_aluguel",
-      "br_nordvpn_cyber",
-      "br_booking_barretos_peao"
-    ],
-    "total": 22,
-    "last_published_at": "2026-09-13T14:03:31.306Z",
-    "last_deal_id": "br_booking_barretos_peao"
-  },
-  "last_run_at": "2026-09-13T14:03:31.306Z",
-  "grupo_cliques": {
-    "published_ids": [
-      "br_amazon_air_fryer",
-      "br_nordvpn_cyber",
-      "br_aliexpress_global",
-      "br_surfshark_vpn",
-      "br_economybookings_aluguel",
-      "br_wondershare",
-      "br_parallels_mac",
-      "br_sucuri_seguranca",
-      "br_switchbot_casa",
-      "br_soundcore_audio",
-      "br_booking_barretos_peao",
-      "br_booking_gramado",
-      "br_nordpass_gerenciador",
-      "br_corel_software",
-      "br_novakid_ingles",
-      "br_ebay_deals",
-      "br_bluetti_energia",
-      "br_movavi",
-      "br_updf_editor",
-      "br_malwarebytes",
-      "br_ml_lampada_smart",
       "br_shopee_fone_tws"
     ],
-    "total": 22,
-    "last_published_at": "2026-09-13T14:03:31.306Z",
+    "total": 23,
+    "last_published_at": "2026-09-13T14:32:40.434Z",
     "last_deal_id": "br_shopee_fone_tws"
+  },
+  "last_run_at": "2026-09-13T14:32:40.434Z",
+  "grupo_cliques": {
+    "published_ids": [
+      "br_amazon_air_fryer"
+    ],
+    "total": 23,
+    "last_published_at": "2026-09-13T14:32:40.434Z",
+    "last_deal_id": "br_amazon_air_fryer"
   },
   "privado_admin": {
     "published_ids": [
-      "br_booking_gramado",
-      "br_ml_lampada_smart",
-      "br_ebay_deals",
-      "br_nordpass_gerenciador",
-      "br_malwarebytes",
-      "br_movavi",
-      "br_corel_software",
-      "br_updf_editor",
-      "br_bluetti_energia",
-      "br_novakid_ingles",
-      "br_shopee_fone_tws",
-      "br_aliexpress_global",
-      "br_wondershare",
-      "br_switchbot_casa",
-      "br_amazon_air_fryer",
-      "br_parallels_mac",
-      "br_nordvpn_cyber",
-      "br_booking_barretos_peao",
-      "br_surfshark_vpn",
-      "br_economybookings_aluguel",
-      "br_sucuri_seguranca",
-      "br_soundcore_audio"
+      "br_booking_gramado"
     ],
-    "total": 22,
-    "last_published_at": "2026-09-13T14:03:31.306Z",
-    "last_deal_id": "br_soundcore_audio"
+    "total": 23,
+    "last_published_at": "2026-09-13T14:32:40.434Z",
+    "last_deal_id": "br_booking_gramado"
   }
 }
