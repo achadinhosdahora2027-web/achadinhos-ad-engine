@@ -133,17 +133,20 @@ function main() {
 
     if (DRY) { console.log('[dry] match:', hit.kw, '→', oferta.s, oferta.u); return; }
 
-    // 1) fila UNLOGGED: o cron 'tg-flush' entrega ao grupo em blocos de 18/min
+    // 1) fila UNLOGGED: o cron 'tg-flush' entrega em blocos de 18/min POR DESTINO.
+    //    v336.0: chat_id = 'fanout' — o flush expande para TODOS os destinos ativos
+    //    do registro, com a TAG de cada grupo dentro do link de afiliado. Antes o
+    //    chat_id era o privado do admin e os GRUPOS ficavam sem notificacao nenhuma.
     if (BUFFER_CHAT) {
       const r = await post('/rest/v1/nexus_telegram_message_buffer', [{
         dedupe_key: `jetstream:${hit.hash}:${handle}:${new Date().toISOString().slice(0, 16)}`,
-        chat_id: String(BUFFER_CHAT),
+        chat_id: 'fanout',
         body_text: `🐦 <b>Buscou no Bluesky:</b> “${esc(hit.kw)}”\n`
           + `🛒 <b>${esc(oferta.n)}</b>\n🏬 ${esc(oferta.s || 'Shopee')}`
           + (oferta.p != null ? ` • R$ ${Number(oferta.p).toFixed(2)}` : '')
           + `\n👉 <a href="${link}">Ver oferta na Shopee</a>`,
         parse_mode: 'HTML',
-        payload,
+        payload: { ...payload, fanout: true, kind: 'publish' },
         status: 'pending', attempts: 0, max_attempts: 3
       }], { Prefer: 'return=minimal' });
       if (r.ok) stats.enfileirados++; else { stats.falhas++; console.error('[jetstream] fila:', r.status || r.error, r.text || ''); }

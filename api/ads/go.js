@@ -306,6 +306,12 @@ module.exports = async (req, res) => {
     const sbUrl = process.env.SUPABASE_URL;
     const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
     const bufferChat = process.env.TELEGRAM_BUFFER_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID;
+    /* v336.0 — o clique agora vai para o FAN-OUT: quem resolve os destinos é o flush
+       (registro data/telegram-destinations.json). O bufferChat deixou de ser
+       pré-requisito: exigí-lo aqui era o que silenciava os grupos quando a variável
+       não estava no painel da Vercel. */
+    let destinosClique = 0;
+    try { destinosClique = require('../../lib/telegram/fanout').destinationsFor('clicks').length; } catch (e) { destinosClique = 0; }
     // Diagnóstico observável: X-Buffer-Enqueued diz se o clique entrou na fila e,
     // se não entrou, exatamente qual peça de configuração faltou.
     // Tráfego SINTÉTICO não entra na fila: sem isso o próprio health-check do CI
@@ -313,9 +319,10 @@ module.exports = async (req, res) => {
     // com cliques que nunca existiram — 40 linhas pendentes observadas na prática.
     const ehTeste = String(query.noint || '') === '1' || slot.startsWith('health') || String(query.monitor || '') === '1';
     res.setHeader('X-Buffer-Enqueued', !sbUrl ? 'sem_supabase_url'
-      : (!sbKey ? 'sem_supabase_key' : (!bufferChat ? 'sem_chat_id'
-        : (IS_BOT ? 'ignorado_bot' : (ehTeste ? 'ignorado_sintetico' : 'sim')))));
-    if (sbUrl && sbKey && bufferChat && !IS_BOT && !ehTeste) {
+      : (!sbKey ? 'sem_supabase_key'
+        : (IS_BOT ? 'ignorado_bot' : (ehTeste ? 'ignorado_sintetico' : 'sim_fanout_' + destinosClique))));
+    res.setHeader('X-Telegram-Destinos', String(destinosClique));
+    if (sbUrl && sbKey && !IS_BOT && !ehTeste) {
       // OBS: precisa ser AGUARDADO. Sem await, a Vercel encerra a função assim que
       // a resposta sai e o INSERT é morto no meio — o clique nunca entrava na fila
       // (o header dizia 'sim' e o banco ficava vazio). Teto curto de 800ms: se o
@@ -331,15 +338,19 @@ module.exports = async (req, res) => {
         },
         body: JSON.stringify([{
           dedupe_key: `click:${sid}:${(shopeeHit && shopeeHit.hash) || brandKey}:${agora.slice(0, 16)}`,
-          chat_id: String(bufferChat),
+          /* v336.0 — FAN-OUT: em vez de um único chat (era o privado do admin, e os
+             grupos não recebiam nada), a linha vai para 'fanout'. O flush do cron
+             entrega uma cópia por destino ativo, cada uma com a TAG do grupo no
+             link de afiliado (site=<tag> → utm_content/subid/customid). */
+          chat_id: 'fanout',
           body_text: `🖱️ <b>Clique</b> ${String(brandKey || '')} | ${String(country || '')}\n`
             + `tag: <code>${String(sid || '').slice(0, 60)}</code>\n`
             + `slot: ${String(slot || '')} | ${IS_BOT ? 'bot' : 'humano'}`,
           parse_mode: 'HTML',
           payload: {
-            tipo: 'clique', brand: brandKey, country, sid,
+            tipo: 'clique', kind: 'clicks', fanout: true, brand: brandKey, country, sid,
             slot, site, oferta: (shopeeHit && shopeeHit.hash) || null,
-            destino: String(targetUrl || '').slice(0, 300), em: agora
+            base_link: String(targetUrl || '').slice(0, 300), em: agora
           },
           status: 'pending', attempts: 0, max_attempts: 3
         }]),

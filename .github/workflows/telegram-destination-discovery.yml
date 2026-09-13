@@ -1,0 +1,66 @@
+name: Descoberta de destinos Telegram (chat_id dos grupos)
+
+# POR QUE EXISTE
+#   Dois grupos operados por convite privado não têm chat_id conhecido, e o Bot API
+#   não converte convite em id. O gancho correto é o update `my_chat_member`, que o
+#   Telegram envia quando o bot É ADICIONADO ao grupo. Este job roda em ciclo curto:
+#   no minuto em que o bot entrar em https://t.me/+-KMiaOcqTic1ZmEx ou
+#   https://t.me/+zvXvaNM4fDJlNDMx, o chat_id é gravado no registro, o deploy é
+#   disparado e as notificações começam a chegar naquele grupo — sem intervenção.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Só verificar, sem gravar"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: telegram-destination-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Descobrir chat_id pendentes
+        id: disc
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          set +e
+          node workers/telegram-destination-discovery.js ${{ inputs.dry_run && '--dry' || '' }}
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          # 10 = gravou destino novo; 0 = nada novo; outros = falha real
+          if [ "$code" != "0" ] && [ "$code" != "10" ]; then exit "$code"; fi
+
+      - name: Commit do registro (se mudou)
+        if: steps.disc.outputs.exit_code == '10'
+        run: |
+          git config user.name "nexus-discovery-bot"
+          git config user.email "bot@achadinhosdahora.com"
+          git add data/telegram-destinations.json
+          git commit -m "chore(telegram): chat_id descoberto para destino pendente (auto-descoberta v336)"
+          git push
+
+      - name: Disparar deploy (data/** é ignorado pelo gatilho de push)
+        if: steps.disc.outputs.exit_code == '10'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy-production.yml --ref main

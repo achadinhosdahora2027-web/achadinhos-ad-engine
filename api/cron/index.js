@@ -184,7 +184,11 @@ async function jobTwitter() {
  */
 async function jobTgFlush() {
   const BLOCK = Math.max(1, Math.min(50, Number(process.env.TG_FLUSH_BLOCK_SIZE || 18)));
+  /* Teto POR DESTINO por rodada (= por minuto, já que o cron roda de 1 em 1 min).
+     O limite real do Telegram é ~20 mensagens/min por grupo; 18 dá folga. */
+  const CAP = Math.max(1, Math.min(30, Number(process.env.TG_DEST_CAP || 18)));
   const token = process.env.TELEGRAM_BOT_TOKEN || '';
+  const fanout = require('../../lib/telegram/fanout');
   const diag = {
     tem_url: Boolean(SUPABASE_URL),
     tem_chave: Boolean(SUPABASE_KEY),
@@ -206,72 +210,189 @@ async function jobTgFlush() {
       return { ok: false, status: 0, text: String(e.name === 'AbortError' ? 'timeout' : (e.message || e)) };
     } finally { clearTimeout(t); }
   }
-
+  const H = { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json' };
+  const HREP = { ...H, Prefer: 'return=representation' };
+  const TBL = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`;
   const nowIso = new Date().toISOString();
-  const listUrl = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`
-    + `?status=eq.pending&not_before=lte.${encodeURIComponent(nowIso)}`
-    + `&order=id.asc&limit=${BLOCK}`;
-  const listRes = await raw(listUrl, {
-    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json' }
+  /* ATENÇÃO: nexus_telegram_message_buffer.request_id é BIGINT. Uma string aqui
+     devolvia HTTP 400 no claim e a rodada terminava "com sucesso" sem processar
+     NADA — o defeito mais perigoso possível numa fila. Só inteiro. */
+  const runId = Date.now();
+
+  /* ── 0) Registro de destinos ─────────────────────────────────────────────── */
+  const registry = fanout.loadRegistry();
+  const registryIds = (registry.destinations || []).map((d) => `${d.id}=${d.chat_id || 'SEM_CHAT_ID'}`);
+  diag.registro = registryIds;
+  diag.registro_arquivo = fanout.registryPath();
+
+  /* ── 0.1) Linhas presas em 'dispatched' por uma rodada que morreu (timeout 57014,
+     deploy no meio, etc.) voltam para 'pending' depois de 5 minutos. Sem isso a
+     fila entope e as notificações param em silêncio. */
+  const staleCut = new Date(Date.now() - 5 * 60000).toISOString();
+  await raw(`${TBL}?status=eq.dispatched&updated_at=lt.${encodeURIComponent(staleCut)}`, {
+    method: 'PATCH', headers: H,
+    body: JSON.stringify({ status: 'pending', request_id: null, last_error: 'retomado de dispatched preso' })
   });
-  let rows = [];
-  try { rows = JSON.parse(listRes.text); } catch (e) { rows = []; }
-  if (!Array.isArray(rows)) rows = [];
+
+  /* ── 1) Reivindicação atômica do bloco ────────────────────────────────────
+     Lê os ids elegíveis e marca como 'dispatched' com filtro status=eq.pending:
+     o que voltar em return=representation é EXATAMENTE o que esta rodada é dona.
+     Duas rodadas concorrentes (pg_cron do shard, GitHub Actions e Vercel) nunca
+     entregam a mesma linha duas vezes. */
+  const listRes = await raw(`${TBL}?status=eq.pending&not_before=lte.${encodeURIComponent(nowIso)}&order=id.asc&limit=${BLOCK}`, { headers: H });
+  let candidatos = [];
+  try { candidatos = JSON.parse(listRes.text); } catch (e) { candidatos = []; }
+  if (!Array.isArray(candidatos)) candidatos = [];
   diag.fila_status = listRes.status;
-  diag.fila_resposta = String(listRes.text).slice(0, 200);
+  diag.fila_resposta = String(listRes.text).slice(0, 160);
+  /* FAIL-CLOSED: fila ilegível (401/403/404/erro de rede) NUNCA pode ser lida
+     como "fila vazia" — foi assim que uma chave inválida reportava sucesso com a
+     fila parada. Aqui o job falha alto e o painel vê. */
+  if (!listRes.ok || !Array.isArray(candidatos)) {
+    return { ok: false, reason: 'fila_indisponivel', status_http: listRes.status, diag };
+  }
 
-  let sent = 0, failed = 0;
-  const enviados = [];
-  for (const row of rows) {
-    const sendRes = await raw(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: row.chat_id,
-        text: row.body_text,
-        parse_mode: row.parse_mode || 'HTML',
-        disable_web_page_preview: true
-      })
+  let rows = [];
+  if (candidatos.length) {
+    const ids = candidatos.map((r) => r.id).join(',');
+    const claim = await raw(`${TBL}?id=in.(${ids})&status=eq.pending`, {
+      method: 'PATCH', headers: HREP,
+      body: JSON.stringify({ status: 'dispatched', request_id: runId, updated_at: new Date().toISOString() })
     });
-    let ok = false, mid = null, erro = '';
-    try { const j = JSON.parse(sendRes.text); ok = Boolean(j.ok); mid = j.result && j.result.message_id; erro = j.description || ''; }
-    catch (e) { erro = sendRes.text; }
+    try { rows = JSON.parse(claim.text); } catch (e) { rows = []; }
+    if (!Array.isArray(rows)) rows = [];
+    if (!claim.ok) {
+      return { ok: false, reason: 'claim_falhou', status_http: claim.status,
+               resposta: String(claim.text).slice(0, 200), run_id: runId, diag };
+    }
+  }
+  diag.reivindicadas = rows.length;
+  diag.candidatas = candidatos.length;
 
-    if (ok) sent++; else failed++;
-    enviados.push({ id: row.id, ok, message_id: mid || undefined, erro: ok ? undefined : erro });
+  let sent = 0, failed = 0, puladas = 0, adiadas = 0;
+  const enviados = [];
+  const por_destino = {};
 
-    const patch = ok
-      ? { status: 'sent', sent_at: new Date().toISOString(), response_body: `message_id=${mid}`, attempts: (row.attempts || 0) + 1 }
-      : { status: ((row.attempts || 0) + 1 >= (row.max_attempts || 3)) ? 'failed' : 'pending',
-          attempts: (row.attempts || 0) + 1, last_error: String(erro).slice(0, 300),
-          /* backoff exponencial: 57014/timeout de madrugada nao martela o grupo */
-          not_before: new Date(Date.now() + Math.pow(2, (row.attempts || 0) + 1) * 60000).toISOString() };
-    await raw(`${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer?id=eq.${row.id}`, {
-      method: 'PATCH',
-      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-      body: JSON.stringify(patch)
+  for (const row of rows) {
+    const payload = row.payload && typeof row.payload === 'object' ? row.payload : {};
+    const ehFanout = row.chat_id === 'fanout' || payload.fanout === true;
+
+    /* Monta a lista de alvos desta linha. */
+    let alvos;
+    if (ehFanout) {
+      const kind = payload.kind || 'publish';
+      const dests = fanout.destinationsFor(kind, registry);
+      const feitos = payload.fanout_done && typeof payload.fanout_done === 'object' ? payload.fanout_done : {};
+      alvos = dests
+        .filter((d) => !feitos[d.id])
+        .map((d) => ({
+          id: d.id, chat_id: String(d.chat_id), label: d.label || d.id,
+          texto: fanout.bodyFor(d, row.body_text, {})
+        }))
+        .filter((a) => (por_destino[a.id] = por_destino[a.id] || 0) < CAP);
+      if (!dests.length) {
+        /* Nenhum destino resolvido: NÃO some com a mensagem. Volta para a fila
+           e a causa fica registrada (o operador resolve e a fila drena). */
+        await raw(`${TBL}?id=eq.${row.id}`, {
+          method: 'PATCH', headers: H,
+          body: JSON.stringify({
+            status: 'pending', request_id: null, attempts: (row.attempts || 0) + 1,
+            last_error: 'fanout sem destino com chat_id resolvido',
+            not_before: new Date(Date.now() + 5 * 60000).toISOString(), updated_at: new Date().toISOString()
+          })
+        });
+        adiadas++; enviados.push({ id: row.id, fanout: true, ok: false, erro: 'sem_destino_resolvido' }); continue;
+      }
+      if (!alvos.length) { /* todos os destinos já receberam ou bateram o teto agora */
+        const todosFeitos = dests.every((d) => (payload.fanout_done || {})[d.id]);
+        await raw(`${TBL}?id=eq.${row.id}`, {
+          method: 'PATCH', headers: H,
+          body: JSON.stringify(todosFeitos
+            ? { status: 'sent', sent_at: new Date().toISOString(), request_id: null, response_body: 'fanout completo', updated_at: new Date().toISOString() }
+            : { status: 'pending', request_id: null, not_before: new Date(Date.now() + 60000).toISOString(), updated_at: new Date().toISOString() })
+        });
+        if (todosFeitos) sent++; else adiadas++;
+        continue;
+      }
+    } else {
+      alvos = [{ id: 'direto', chat_id: String(row.chat_id), label: 'direto', texto: row.body_text }];
+    }
+
+    /* Entrega uma cópia por destino, com a tag do destino no link. */
+    const done = ehFanout ? { ...(payload.fanout_done || {}) } : null;
+    let algumOk = false, algumErro = '';
+    for (const alvo of alvos) {
+      const sendRes = await raw(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: alvo.chat_id,
+          text: alvo.texto,
+          parse_mode: row.parse_mode || 'HTML',
+          disable_web_page_preview: true
+        })
+      });
+      let ok = false, mid = null, erro = '';
+      try {
+        const j = JSON.parse(sendRes.text);
+        ok = Boolean(j.ok); mid = j.result && j.result.message_id;
+        erro = j.description || '';
+      } catch (e) { erro = sendRes.text; }
+
+      if (ok) {
+        sent++; algumOk = true;
+        por_destino[alvo.id] = (por_destino[alvo.id] || 0) + 1;
+        if (done) done[alvo.id] = new Date().toISOString();
+      } else {
+        failed++; if (!algumErro) algumErro = `${alvo.id}: ${erro}`;
+      }
+      enviados.push({ id: row.id, destino: alvo.id, chat_id: alvo.chat_id, ok, message_id: mid || undefined, erro: ok ? undefined : erro });
+      await new Promise((r) => setTimeout(r, 350)); /* respiro entre envios */
+    }
+
+    if (!ehFanout) {
+      const patch = algumOk
+        ? { status: 'sent', sent_at: new Date().toISOString(), response_body: `message_id=${enviados[enviados.length - 1].message_id}`, request_id: null, attempts: (row.attempts || 0) + 1, updated_at: new Date().toISOString() }
+        : { status: ((row.attempts || 0) + 1 >= (row.max_attempts || 3)) ? 'failed' : 'pending',
+            attempts: (row.attempts || 0) + 1, request_id: null, last_error: String(algumErro).slice(0, 300),
+            not_before: new Date(Date.now() + Math.pow(2, (row.attempts || 0) + 1) * 60000).toISOString(),
+            updated_at: new Date().toISOString() };
+      await raw(`${TBL}?id=eq.${row.id}`, { method: 'PATCH', headers: H, body: JSON.stringify(patch) });
+      continue;
+    }
+
+    /* Linha de fan-out: grava o progresso por destino. Só vira 'sent' quando
+       TODOS os destinos ativos receberam. O que faltar continua na fila. */
+    const restantes = fanout.destinationsFor(payload.kind || 'publish', registry);
+    const completo = restantes.every((d) => done[d.id]);
+    await raw(`${TBL}?id=eq.${row.id}`, {
+      method: 'PATCH', headers: H,
+      body: JSON.stringify(completo
+        ? { status: 'sent', sent_at: new Date().toISOString(), request_id: null, payload: { ...payload, fanout_done: done }, response_body: `fanout completo (${Object.keys(done).length} destinos)`, updated_at: new Date().toISOString() }
+        : { status: 'pending', request_id: null, payload: { ...payload, fanout_done: done }, attempts: (row.attempts || 0) + 1, last_error: String(algumErro || 'aguardando destinos restantes').slice(0, 300), not_before: new Date(Date.now() + 60000).toISOString(), updated_at: new Date().toISOString() })
     });
   }
 
   /* Telemetria no lugar certo: no projeto MESTRE existe nexus_telegram_dispatch_state
-     (a nexus_sat_telemetry só existe nos shards — gravar nela daqui daria 404).
-     Atualiza o estado do dispatcher que o painel lê. */
+     (a nexus_sat_telemetry só existe nos shards — gravar nela daqui daria 404). */
   await raw(`${SUPABASE_URL}/rest/v1/nexus_telegram_dispatch_state?on_conflict=id`, {
     method: 'POST',
-    headers: {
-      apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`,
-      'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal'
-    },
+    headers: { ...H, Prefer: 'resolution=merge-duplicates,return=minimal' },
     body: JSON.stringify([{
       id: true,
       block_size: BLOCK,
       block_ms: 60000,
       last_dispatch_at: new Date().toISOString(),
-      last_result: { job: 'v325-tg-flush', pendentes: rows.length, enviados: sent, falhas: failed, em: nowIso }
+      last_result: {
+        job: 'v336-tg-flush', run_id: String(runId), pendentes: rows.length, enviados: sent, falhas: failed,
+        adiadas, por_destino, destinos_com_chat: registryIds.filter((x) => !x.endsWith('SEM_CHAT_ID')),
+        destinos_sem_chat: registryIds.filter((x) => x.endsWith('SEM_CHAT_ID')), em: nowIso
+      },
+      updated_at: new Date().toISOString()
     }])
   }, 5000);
 
-  return { ok: failed === 0, block_size: BLOCK, pendentes: rows.length, enviados: sent, falhas: failed, detalhe: enviados, diag };
+  return { ok: failed === 0, run_id: String(runId), block_size: BLOCK, cap_por_destino: CAP,
+           pendentes: rows.length, enviados: sent, falhas: failed, adiadas, por_destino, diag, detalhe: enviados };
 }
 
 const JOBS = {
@@ -331,7 +452,12 @@ module.exports = async (req, res) => {
     }
     try {
       const r = await fn();
-      results[t] = { ok: r.ok, ...(r.skipped ? { skipped: true, reason: r.reason } : {}), ...(r.detail ? { detail: r.detail } : {}) };
+      /* v336.0 — o resumo antigo descartava TUDO que não fosse ok/reason/detail, e
+         por isso a resposta dizia apenas '{"ok":true}' mesmo quando o job tinha
+         entregado 18 mensagens ou devolvido uma fila ilegível. O painel precisa ver
+         o trabalho real: propagamos todos os campos. */
+      const { ok, skipped, reason, ...resto } = r || {};
+      results[t] = { ok, ...(skipped ? { skipped: true, reason } : {}), ...resto };
     } catch (e) {
       results[t] = { ok: false, error: e.message };
     }
