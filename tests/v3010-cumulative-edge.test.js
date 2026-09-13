@@ -1,0 +1,76 @@
+'use strict';
+const assert = require('assert');
+const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '..');
+const SQL = fs.readFileSync(path.join(ROOT, 'supabase/migrations/supabase_v3010_cumulative_edge.sql'), 'utf8');
+const EDGE = fs.readFileSync(path.join(ROOT, 'supabase/functions/nexus-trends-ingest-v3010/index.ts'), 'utf8');
+const EVIDENCE = fs.readFileSync(path.join(ROOT, 'supabase/migrations/supabase_v3010_postdeploy_evidence.sql'), 'utf8');
+const GO_PATH = path.join(ROOT, 'api/ads/go.js');
+const COMPOSE_PATH = path.join(ROOT, 'edge/jetstream/compose.ts');
+const GO = fs.readFileSync(GO_PATH, 'utf8');
+const COMPOSE = fs.readFileSync(COMPOSE_PATH, 'utf8');
+const sha = (p) => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+
+assert.match(SQL, /^-- Nexus v3010\.0/);
+assert.match(SQL, /begin;[\s\S]*set local statement_timeout = '2000ms';/i);
+assert.match(SQL, /set local lock_timeout = '1000ms';/i);
+assert.match(SQL, /create table if not exists public\.nexus_v3010_trends_staging/);
+assert.match(SQL, /create table if not exists public\.nexus_v3010_indexnow_queue/);
+assert.match(SQL, /alter table public\.nexus_v3010_trends_staging set logged/);
+assert.match(SQL, /alter table public\.nexus_v3010_indexnow_queue set logged/);
+assert.match(SQL, /jsonb_array_length\(p_items\)>20/);
+assert.match(SQL, /on conflict do nothing/gi);
+assert.match(SQL, /from public\.nexus_v370_keyword_source k/);
+assert.doesNotMatch(SQL, /(insert\s+into|update|delete\s+from)\s+public\.nexus_v370_keyword_source/i);
+assert.doesNotMatch(SQL, /(insert\s+into|update|delete\s+from)\s+public\.ads\b/i);
+assert.match(SQL, /https:\/\/api\.indexnow\.org\/indexnow/);
+assert.doesNotMatch(SQL, /'User-Agent','NexusIndexNow\/3010'/);
+assert.doesNotMatch(SQL, /https:\/\/(?:www\.)?bing\.com\/indexnow|https:\/\/yandex\.com\/indexnow/i);
+assert.match(SQL, /r\.status_code in \(200,202\)/);
+assert.match(SQL, /r\.status_code=200[\s\S]*noindex/);
+assert.match(SQL, /'delivery_confirmed',false/);
+assert.match(SQL, /state='confirmed'/);
+assert.match(SQL, /indexnow_engine_ready/);
+assert.match(SQL, /nexus_v420_sintonizado/);
+assert.match(SQL, /cron\.alter_job\(23,active=>false\)/);
+assert.match(SQL, /cron\.alter_job\(33,active=>false\)/);
+assert.match(SQL, /v3010-indexnow-durable-10min/);
+assert.match(SQL, /v3010-trends-hourly/);
+assert.match(SQL, /jobid in\(15,16,64\) and active/);
+assert.match(SQL, /jobid=60 and active[\s\S]*schedule='10 seconds'/);
+assert.match(SQL, /canonical_keywords_modified',false/);
+assert.doesNotMatch(SQL, /googleapis\.com\/indexing|indexing\.googleapis/i);
+
+assert.match(EDGE, /https:\/\/trends\.google\.com\/trending\/rss\?geo=BR/);
+assert.match(EDGE, /const MAX_ITEMS = 20/);
+assert.match(EDGE, /slice\(0, MAX_ITEMS\)/);
+assert.match(EDGE, /nexus_v3010_stage_trends/);
+assert.match(EDGE, /status: 201/);
+assert.match(EDGE, /canonical_keywords_modified: false/);
+assert.match(EDGE, /Sintonizado em Análise/);
+assert.doesNotMatch(EDGE, /console\.(?:log|error)\([^\n]*(?:MASTER_KEY|START_SECRET)/);
+
+assert.match(EVIDENCE, /begin;[\s\S]*set local statement_timeout = '2000ms';/i);
+assert.match(EVIDENCE, /set local lock_timeout = '1000ms';/i);
+assert.match(EVIDENCE, /state='succeeded' and http_status=201/);
+assert.match(EVIDENCE, /source_table='site_pages_inventory'[\s\S]*state='confirmed' and last_http_status in \(200,202\)/);
+assert.match(EVIDENCE, /'source_relation','site_pages_inventory'/);
+assert.match(EVIDENCE, /'edge_deployment_scope','master_only'/);
+assert.match(EVIDENCE, /'edge_projects_deployed',1/);
+assert.match(EVIDENCE, /'crawl_or_indexing_proven',false/);
+assert.match(EVIDENCE, /'continuous_24x7_guaranteed',false/);
+assert.match(EVIDENCE, /jobid=60 and active and schedule='10 seconds'/);
+assert.match(EVIDENCE, /jobid in\(15,16,64\) and active/);
+assert.doesNotMatch(EVIDENCE, /crawl_or_indexing_proven',true|continuous_24x7_guaranteed',true/);
+
+assert.strictEqual(sha(GO_PATH), 'e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716');
+assert.strictEqual(sha(COMPOSE_PATH), 'd99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0');
+assert.match(GO, /X-Adsterra-Binding', TAG_BINDING/);
+assert.match(GO, /const TAG_BINDING = 'pop=' \+ \(TAG_ADSTERRA \? 'bound' : 'none'\) \+ ';sb=' \+ \(TAG_SOCIALBAR \? 'bound' : 'none'\)/);
+assert.match(COMPOSE, /linhas\.splice\(indice, 0, rotulo\)/);
+assert.match(COMPOSE, /"#publi" \| "#ad"/);
+
+console.log('v3010 cumulative safe edge tests: PASS');
