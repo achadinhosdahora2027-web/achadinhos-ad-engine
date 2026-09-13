@@ -1,5 +1,44 @@
 const fs = require('fs');
 const path = require('path');
+
+// ══════════════════════════════════════════════════════════════════════════════
+// v330.0 — INVENTÁRIO SHOPEE REAL (701 ofertas exportadas do painel de afiliado)
+// O arquivo data/shopee-offer-links.json é gerado por
+// scripts/build-shopee-inventory.js a partir dos CSVs oficiais. Nada aqui é
+// inventado: cada link é um short link s.shopee.com.br do próprio painel.
+// ══════════════════════════════════════════════════════════════════════════════
+let __SHOPEE_INV = null;
+function getShopeeInventory() {
+  if (__SHOPEE_INV !== null) return __SHOPEE_INV;
+  const candidates = [
+    path.join(process.cwd(), 'data', 'shopee-offer-links.json'),
+    path.join(__dirname, '..', '..', 'data', 'shopee-offer-links.json')
+  ];
+  for (const f of candidates) {
+    try { __SHOPEE_INV = JSON.parse(fs.readFileSync(f, 'utf8')); return __SHOPEE_INV; } catch (e) {}
+  }
+  __SHOPEE_INV = false; // falha fechado: sem inventário, cai no link genérico de marca
+  return __SHOPEE_INV;
+}
+/** Resolve uma oferta Shopee por hash exato ou por keyword contida na consulta. */
+function resolveShopeeOffer(query) {
+  const inv = getShopeeInventory();
+  if (!inv || !inv.offers) return null;
+  const hash = String(query.offer || '').trim();
+  if (hash && inv.offers[hash]) return { hash, ...inv.offers[hash], matched_by: 'offer' };
+  const kwq = String(query.kw || query.q || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+  if (!kwq) return null;
+  if (inv.keywords[kwq] && inv.offers[inv.keywords[kwq]]) {
+    return { hash: inv.keywords[kwq], ...inv.offers[inv.keywords[kwq]], matched_by: 'keyword_exata' };
+  }
+  // chave mais longa contida na consulta = match mais específico (autômato simples)
+  let best = '';
+  for (const k of Object.keys(inv.keywords)) {
+    if (k.length > best.length && kwq.includes(k)) best = k;
+  }
+  if (best) return { hash: inv.keywords[best], ...inv.offers[inv.keywords[best]], matched_by: 'keyword_contida' };
+  return null;
+}
 const CJ_CID = '8041957';
 const CJ_PIDS = { aquitemachadinhos: '101859672', nexus: '101870639', solvegrid: '101870640' };
 const CJ_DEFAULT_SITE = 'aquitemachadinhos';
@@ -152,6 +191,17 @@ module.exports = async (req, res) => {
     else if (REGIONS.LATAM.includes(country) && country !== 'BR') brandKey = 'booking_latam';
     else if (country !== 'BR') brandKey = 'booking_uk';
   }
+  // v330.0 — inventário Shopee real tem prioridade sobre o short link genérico.
+  // Só em BR (a oferta é do painel Shopee Brasil); fora do BR o geo-swap existente
+  // continua mandando para aliexpress/booking.
+  let shopeeHit = null;
+  if (!targetUrl && country === 'BR' && (brandKey === 'shopee' || query.offer || query.kw || query.q)) {
+    shopeeHit = resolveShopeeOffer(query);
+    if (shopeeHit && shopeeHit.u) {
+      targetUrl = shopeeHit.u;
+      brandKey = 'shopee';
+    }
+  }
   if (!targetUrl && VERIFIED_TARGETS[brandKey]) {
     targetUrl = VERIFIED_TARGETS[brandKey].replace('{PID}', cjPid);
     if (brandKey === 'udemy' && rawDest) targetUrl = rawDest;
@@ -197,7 +247,7 @@ module.exports = async (req, res) => {
         body: JSON.stringify({
           site_slug: site || null,
           slot: String(query.slot || '').slice(0, 120) || null,
-          ad_id: String(brandKey || '').slice(0, 80) || null,
+          ad_id: String((typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.hash) || brandKey || '').slice(0, 80) || null,
           network: net,
           click_url: String(targetUrl).slice(0, 500),
           click_ref: String(sid || '').slice(0, 120),
@@ -218,6 +268,11 @@ module.exports = async (req, res) => {
   res.setHeader('X-Affiliate-Engine', 'Achadinhos-Global-Gateway-2026-v128');
   res.setHeader('X-Routed-Country', country);
   res.setHeader('X-Routed-Brand', brandKey);
+  if (shopeeHit) {
+    res.setHeader('X-Shopee-Offer', shopeeHit.hash);
+    res.setHeader('X-Shopee-Store', String(shopeeHit.s || '').slice(0, 60));
+    res.setHeader('X-Shopee-Match', shopeeHit.matched_by || 'offer');
+  }
   res.setHeader('X-CJ-PID', cjPid);
   res.setHeader('X-Monetized', NON_MONETIZED.has(brandKey) ? 'false' : 'true');
   const WANT_INT = !IS_BOT && String(query.noint || '') !== '1';
