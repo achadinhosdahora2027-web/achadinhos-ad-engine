@@ -621,8 +621,10 @@ end;
 $function$;
 revoke all on function public.nexus_v1510_queue_content_trigger(text,text,text)
   from public,anon,authenticated,service_role;
+-- The live worker authenticates with service_role. HMAC validation remains a
+-- second gate, but this internal intent RPC is not exposed to anon/authenticated.
 grant execute on function public.nexus_v1510_queue_content_trigger(text,text,text)
-  to anon,authenticated,service_role;
+  to service_role;
 
 -- One-time/idempotent containment for receipts accepted before the commerce-intent
 -- gate existed. The immutable source mention and real Telegram receipt remain;
