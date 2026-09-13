@@ -10,7 +10,7 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 34,
+  "total_published": 37,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
@@ -24,13 +24,14 @@
       "br_corel_software",
       "br_updf_editor",
       "br_bluetti_energia",
-      "br_novakid_ingles"
+      "br_novakid_ingles",
+      "br_amazon_air_fryer"
     ],
-    "total": 11,
-    "last_published_at": "2026-09-13T04:34:09.626Z",
-    "last_deal_id": "br_novakid_ingles"
+    "total": 12,
+    "last_published_at": "2026-09-13T05:32:51.969Z",
+    "last_deal_id": "br_amazon_air_fryer"
   },
-  "last_run_at": "2026-09-13T04:34:09.627Z",
+  "last_run_at": "2026-09-13T05:32:51.969Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
@@ -43,11 +44,12 @@
       "br_sucuri_seguranca",
       "br_switchbot_casa",
       "br_soundcore_audio",
-      "br_booking_barretos_peao"
+      "br_booking_barretos_peao",
+      "br_booking_gramado"
     ],
-    "total": 11,
-    "last_published_at": "2026-09-13T04:34:09.627Z",
-    "last_deal_id": "br_booking_barretos_peao"
+    "total": 12,
+    "last_published_at": "2026-09-13T05:32:51.969Z",
+    "last_deal_id": "br_booking_gramado"
   },
   "privado_admin": {
     "published_ids": [
@@ -61,10 +63,11 @@
       "br_updf_editor",
       "br_bluetti_energia",
       "br_novakid_ingles",
-      "br_shopee_fone_tws"
+      "br_shopee_fone_tws",
+      "br_aliexpress_global"
     ],
-    "total": 11,
-    "last_published_at": "2026-09-13T04:34:09.627Z",
-    "last_deal_id": "br_shopee_fone_tws"
+    "total": 12,
+    "last_published_at": "2026-09-13T05:32:51.969Z",
+    "last_deal_id": "br_aliexpress_global"
   }
 }
