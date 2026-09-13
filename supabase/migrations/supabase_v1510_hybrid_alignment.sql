@@ -416,6 +416,10 @@ begin
        or v_classification<>'human_likely' or v_human<0.800 then
       return jsonb_build_object('ok',false,'reason','human_gate_closed');
     end if;
+    if not coalesce((p_event->>'commerce_intent')::boolean,false)
+       or lower(v_text) !~ '(buy|buying|purchase|price|prices|deal|discount|coupon|shop|shopping|order|recommend|looking for|compar|worth buying|in stock|comprar|comprei|preço|precos|preços|oferta|promoção|promocao|cupom|desconto|procurando|recomendam|vale a pena|acheter|prix|promo|réduction|kaufen|preis|angebot|rabatt)' then
+      return jsonb_build_object('ok',false,'reason','no_commerce_intent');
+    end if;
     -- Contain obvious unsafe/illegal solicitation before it can reach CAPTURA.
     if lower(v_text) ~ '(date[ -]?rape|rape drug|flunitrazepam|rohypnol|fentanyl|methamphetamine|child porn|buy cocaine|comprar coca[ií]na|arma ilegal)' then
       return jsonb_build_object('ok',false,'reason','unsafe_content');
@@ -566,6 +570,9 @@ declare
   v_secret text;
   v_expected text;
   v_id bigint;
+  v_minute integer;
+  v_hour integer;
+  v_total integer;
 begin
   perform set_config('statement_timeout','500',true);
   perform set_config('lock_timeout','250',true);
@@ -584,6 +591,22 @@ begin
         <>encode(extensions.digest(v_expected,'sha256'),'hex') then
     return jsonb_build_object('ok',false,'reason','signature_mismatch');
   end if;
+
+  -- On-demand expiry + strict per-destination pacing. No timer wakes this queue.
+  perform pg_advisory_xact_lock(hashtext('v1510-content:'||p_channel));
+  update public.nexus_v1510_content_triggers
+     set state='contained',finished_at=now(),error_code='expired_unclaimed'
+   where channel=p_channel and state='queued' and queued_at<now()-interval '24 hours';
+  select count(*) into v_minute from public.nexus_v1510_content_triggers
+   where channel=p_channel and queued_at>now()-interval '1 minute';
+  select count(*) into v_hour from public.nexus_v1510_content_triggers
+   where channel=p_channel and queued_at>now()-interval '1 hour';
+  select count(*) into v_total from public.nexus_v1510_content_triggers
+   where channel=p_channel and state='queued';
+  if v_minute>=3 or v_hour>=40 or v_total>=500 then
+    return jsonb_build_object('ok',false,'contained',true,'reason','pacing_3m_40h_or_queue_cap');
+  end if;
+
   insert into public.nexus_v1510_content_triggers(event_id,channel,keyword,offer_hash)
   values(p_event_id,p_channel,r.keyword,r.offer_hash)
   on conflict(event_id,channel) do update set event_id=excluded.event_id
@@ -600,6 +623,26 @@ revoke all on function public.nexus_v1510_queue_content_trigger(text,text,text)
   from public,anon,authenticated,service_role;
 grant execute on function public.nexus_v1510_queue_content_trigger(text,text,text)
   to anon,authenticated,service_role;
+
+-- One-time/idempotent containment for receipts accepted before the commerce-intent
+-- gate existed. The immutable source mention and real Telegram receipt remain;
+-- only unexecuted content intents are prevented from publishing.
+with non_commercial as (
+  select r.event_id
+    from public.nexus_v1510_ingest_receipts r
+    join public.nexus_v385_nostr_mentions m on m.id=r.canonical_mention_id
+   where r.status='accepted'
+     and lower(m.texto) !~ '(buy|buying|purchase|price|prices|deal|discount|coupon|shop|shopping|order|recommend|looking for|compar|worth buying|in stock|comprar|comprei|preço|precos|preços|oferta|promoção|promocao|cupom|desconto|procurando|recomendam|vale a pena|acheter|prix|promo|réduction|kaufen|preis|angebot|rabatt)'
+), stopped as (
+  update public.nexus_v1510_content_triggers c
+     set state='contained',finished_at=coalesce(finished_at,now()),
+         error_code=coalesce(error_code,'pre_commerce_gate')
+    from non_commercial n
+   where c.event_id=n.event_id and c.state in ('queued','claimed')
+  returning c.event_id
+)
+update public.nexus_v1510_ingest_receipts r set status='contained'
+ from non_commercial n where r.event_id=n.event_id;
 
 -- -----------------------------------------------------------------------------
 -- 5. Immutable ad binding for the three COMPLETE 1:1 host bindings.

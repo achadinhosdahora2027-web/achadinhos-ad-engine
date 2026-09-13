@@ -26,6 +26,7 @@ assert.strictEqual(core.keywordEligible('smart television'), true);
 
 assert.strictEqual(core.classifyLikelyHuman({ actor: 'deal-bot', text: 'texto humano longo para teste seguro', langs: ['pt'] }).allowed, false);
 assert.strictEqual(core.classifyLikelyHuman({ actor: 'did:plc:abc', text: 'buy cocaine now with a guaranteed discount', langs: ['en'] }).allowed, false);
+assert.strictEqual(core.classifyLikelyHuman({ actor: 'did:plc:abc', text: 'I am discussing a wireless keyboard as a work of art.', langs: ['en'] }).allowed, false, 'non-commerce mention rejected');
 assert.strictEqual(core.classifyLikelyHuman({ actor: 'did:plc:abc', text: 'I am comparing a wireless keyboard before buying one.', langs: [] }).allowed, false);
 assert.strictEqual(core.classifyLikelyHuman({ actor: 'did:plc:abc', text: 'I am comparing a wireless keyboard before buying one.', langs: ['en'] }).allowed, true);
 

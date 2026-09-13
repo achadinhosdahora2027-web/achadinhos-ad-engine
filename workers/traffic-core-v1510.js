@@ -38,7 +38,7 @@ const RECONNECT_MAX_MS = 60000;
 
 const stats = {
   frames: 0, candidates: 0, accepted: 0, duplicates: 0,
-  rejectedBot: 0, rejectedSafety: 0, rejectedKeyword: 0,
+  rejectedBot: 0, rejectedSafety: 0, rejectedIntent: 0, rejectedKeyword: 0,
   rpcErrors: 0, triggersQueued: 0, triggersFailed: 0,
 };
 
@@ -109,6 +109,7 @@ function keywordEligible(keyword) {
 const BOT_MARKERS = /(?:^|[._-])(bot|feed|cron|rss|auto|mirror|bridge|relay|aggregator)(?:$|[._-])/i;
 const UNSAFE_CONTENT = /(date[ -]?rape|rape drug|flunitrazepam|rohypnol|fentanyl|methamphetamine|child porn|buy cocaine|comprar coca[ií]na|arma ilegal)/i;
 const SPAM_CONTENT = /(guaranteed profit|instant followers|dm me for investment|airdrop claim|seed phrase)/i;
+const COMMERCE_INTENT = /\b(buy|buying|purchase|price|prices|deal|discount|coupon|shop|shopping|order|recommend|recommendation|looking for|compare|comparing|worth buying|in stock|comprar|comprei|preço|precos|preços|oferta|promoção|promocao|cupom|desconto|procurando|recomendam|comparando|vale a pena|acheter|prix|promo|réduction|kaufen|preis|angebot|rabatt)\b/i;
 
 function classifyLikelyHuman({ actor, text, langs, signatureVerified }) {
   const body = String(text || '').trim();
@@ -116,6 +117,7 @@ function classifyLikelyHuman({ actor, text, langs, signatureVerified }) {
   if (body.length < 20 || body.length > 1200) return { allowed: false, reason: 'text_bounds' };
   if (UNSAFE_CONTENT.test(body)) return { allowed: false, reason: 'unsafe_content' };
   if (SPAM_CONTENT.test(body)) return { allowed: false, reason: 'spam_content' };
+  if (!COMMERCE_INTENT.test(body)) return { allowed: false, reason: 'no_commerce_intent' };
   const language = (Array.isArray(langs) ? langs : [langs]).map((x) => String(x || '').slice(0, 2).toLowerCase())
     .find((x) => ALLOWED_LANGS.has(x));
   if (!language) return { allowed: false, reason: 'unsupported_or_missing_language' };
@@ -222,6 +224,7 @@ function makeEvent({ platform, protocolId, relayUrl, actor, sourceUrl, text, lan
   const gate = classifyLikelyHuman({ actor, text, langs, signatureVerified });
   if (!gate.allowed) {
     if (gate.reason === 'unsafe_content' || gate.reason === 'spam_content') stats.rejectedSafety++;
+    else if (gate.reason === 'no_commerce_intent') stats.rejectedIntent++;
     else stats.rejectedBot++;
     return null;
   }
@@ -239,6 +242,7 @@ function makeEvent({ platform, protocolId, relayUrl, actor, sourceUrl, text, lan
     human_score: gate.humanScore,
     classification: 'human_likely',
     is_bot: false,
+    commerce_intent: true,
     language: gate.language,
     country: null,
     occurred_at_ms: Number(occurredAtMs),
