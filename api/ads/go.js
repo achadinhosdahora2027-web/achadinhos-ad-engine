@@ -37,6 +37,21 @@ function resolveShopeeOffer(query) {
     if (k.length > best.length && kwq.includes(k)) best = k;
   }
   if (best) return { hash: inv.keywords[best], ...inv.offers[inv.keywords[best]], matched_by: 'keyword_contida' };
+  /* 1b) FORMA COMPACTA — v340.0: "powerbank" (uma palavra) precisa achar
+     "Power Bank" e vice-versa. É normalização de escrita, não invenção: só casa
+     quando as letras são IDÊNTICAS sem espaços, com no mínimo 6 caracteres. */
+  const kwCompacto = kwq.replace(/\s+/g, '');
+  if (kwCompacto.length >= 6) {
+    let bestC = '';
+    for (const k of Object.keys(inv.keywords)) {
+      const kc = k.replace(/\s+/g, '');
+      if (kc.length < 6) continue;
+      if (kc === kwCompacto || kwCompacto.includes(kc) || kc.includes(kwCompacto)) {
+        if (k.length > bestC.length) bestC = k;
+      }
+    }
+    if (bestC) return { hash: inv.keywords[bestC], ...inv.offers[inv.keywords[bestC]], matched_by: 'keyword_compacta' };
+  }
   // 2) fallback por n-grama: "kit higiene bebe" não casa com "kit higiene cuidados bebe"
   //    (a frase tem 'cuidados' no meio). Geramos as combinações da PRÓPRIA consulta e
   //    testamos da maior para a menor — assim a busca do grupo acha a oferta certa sem
