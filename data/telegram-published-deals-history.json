@@ -10,7 +10,7 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 25,
+  "total_published": 28,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
@@ -21,13 +21,14 @@
       "br_nordpass_gerenciador",
       "br_malwarebytes",
       "br_movavi",
-      "br_corel_software"
+      "br_corel_software",
+      "br_updf_editor"
     ],
-    "total": 8,
-    "last_published_at": "2026-09-13T02:33:50.336Z",
-    "last_deal_id": "br_corel_software"
+    "total": 9,
+    "last_published_at": "2026-09-13T02:45:11.481Z",
+    "last_deal_id": "br_updf_editor"
   },
-  "last_run_at": "2026-09-13T02:33:50.337Z",
+  "last_run_at": "2026-09-13T02:45:11.481Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
@@ -37,11 +38,12 @@
       "br_economybookings_aluguel",
       "br_wondershare",
       "br_parallels_mac",
-      "br_sucuri_seguranca"
+      "br_sucuri_seguranca",
+      "br_switchbot_casa"
     ],
-    "total": 8,
-    "last_published_at": "2026-09-13T02:33:50.337Z",
-    "last_deal_id": "br_sucuri_seguranca"
+    "total": 9,
+    "last_published_at": "2026-09-13T02:45:11.481Z",
+    "last_deal_id": "br_switchbot_casa"
   },
   "privado_admin": {
     "published_ids": [
@@ -52,10 +54,11 @@
       "br_malwarebytes",
       "br_movavi",
       "br_corel_software",
-      "br_updf_editor"
+      "br_updf_editor",
+      "br_bluetti_energia"
     ],
-    "total": 8,
-    "last_published_at": "2026-09-13T02:33:50.337Z",
-    "last_deal_id": "br_updf_editor"
+    "total": 9,
+    "last_published_at": "2026-09-13T02:45:11.481Z",
+    "last_deal_id": "br_bluetti_energia"
   }
 }
