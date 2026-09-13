@@ -153,6 +153,62 @@ function detectDevice(userAgent = '') {
   if (/ipad|tablet|playbook|silk|kindle/i.test(ua)) return 'tablet';
   return 'desktop';
 }
+/* ══════════════════════════════════════════════════════════════════════════
+   v340.0 — SOVEREIGN GEO-TARGETING CORE (regras medidas, não inventadas)
+   ══════════════════════════════════════════════════════════════════════════
+   1. TIER-1 EXCLUSIVO: Booking UK (15734754) e eBay Partner Network
+      (campid 5339193749) só para US, CA, GB, DE, FR.
+   2. TRAVA NACIONAL BR: visitante humano com IP brasileiro NUNCA sai para
+      merchant em moeda estrangeira — recebe link curto rastreado da Shopee
+      Brasil (catálogo real de até 83% de comissão) ou https://meli.la.
+   3. SLOT DINÂMICO: a suborigem passa a ser a keyword REAL do produto que
+      disparou o match + a arquitetura do user-agent (ex.: mop_desktop).
+      A string sintética '_health_desktop' é recusada por regra.
+   ══════════════════════════════════════════════════════════════════════════ */
+const TIER1_CORE = Object.freeze(['US', 'CA', 'GB', 'DE', 'FR']);
+const MOEDA_ESTRANGEIRA = Object.freeze([
+  'booking', 'booking_uk', 'booking_latam', 'ebay', 'ebay_us', 'amazon', 'amazon_us',
+  'aliexpress', 'udemy', 'nordvpn', 'economybookings', 'brunoyam'
+]);
+const HOSTS_MOEDA_ESTRANGEIRA = /(^|\.)(booking\.com|ebay\.(com|co\.uk|de|fr|it|es|ca|com\.au)|amazon\.(com|co\.uk|de|fr|es|it|ca)|aliexpress\.com|udemy\.com|nordvpn\.com|economybookings\.com|brunoyam\.com)$/i;
+const HOSTS_CJ_FOREIGN = /(kqzyfj|jdoqocy|dpbolvw|anrdoezrs|tkqlhce)\.(com|net)/i;
+const SLOTS_SINTETICOS = Object.freeze(['_health_desktop', 'health', '_health', 'health_desktop']);
+
+/** Arquitetura do user-agent — a "flag" que entra no slot dinâmico. */
+function arquiteturaUA(ua) {
+  const s = String(ua || '').toLowerCase();
+  if (!s || s.length < 20) return 'desconhecido';
+  if (/bot|crawl|spider|slurp|headless|preview|scan|curl|wget|python|java|okhttp|libwww|httpclient|monitor|synthetic|lighthouse|pagespeed/.test(s)) return 'bot';
+  if (/ipad|tablet/.test(s)) return 'tablet';
+  if (/mobile|android|iphone/.test(s)) return 'mobile';
+  return 'desktop';
+}
+
+/** Slug da keyword real (sem acento, só [a-z0-9] simples). */
+function slugKeyword(txt) {
+  return String(txt || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 40);
+}
+
+/** Slot dinâmico: keyword real + arquitetura. Sintético é recusado. */
+function slotDinamico_(keyword, ua) {
+  const kw = slugKeyword(keyword);
+  const arch = arquiteturaUA(ua);
+  if (!kw || /^[0-9]+$/.test(kw) || SLOTS_SINTETICOS.includes(kw)) return `sem_keyword_${arch}`;
+  return `${kw}_${arch}`;
+}
+
+/** O destino final é merchant de moeda estrangeira? */
+function destinoMoedaEstrangeira(url) {
+  try {
+    const u = new URL(url);
+    const host = u.hostname.toLowerCase();
+    if (HOSTS_CJ_FOREIGN.test(host)) return true;      // redes CJ dos parceiros internacionais
+    if (HOSTS_MOEDA_ESTRANGEIRA.test(host)) return true;
+    return false;
+  } catch (e) { return false; }
+}
+
 const NON_MONETIZED = new Set(['udemy', 'brunoyam', 'safetywing', 'thefork', 'wise', 'faculdade']);
 module.exports = async (req, res) => {
   const brandCatalog = getBrandCatalog();
@@ -164,7 +220,17 @@ module.exports = async (req, res) => {
   const slot = (query.slot || 'header').toLowerCase().replace(/[^a-z0-9_-]/g, '');
   const rawDest = query.dest || query.url || query.u;
   const geoOverride = String(query.geo || query.country || '').toUpperCase().replace(/[^A-Z]/g, '').substring(0, 2);
-  const country = ((geoOverride.length === 2 ? geoOverride : '') || headers['x-vercel-ip-country'] || headers['cf-ipcountry'] || headers['x-country-code'] || 'BR').toUpperCase().substring(0, 2);
+  /* v340.0 — IP REAL PRIMEIRO. Antes o parâmetro ?geo= vencia o cabeçalho e
+     qualquer link (inclusive de robô ou de terceiro) forçava a rota do país que
+     quisesse. Agora a ordem é: x-vercel-ip-country → cf-ipcountry → x-country-code
+     → e só então o parâmetro, que fica reservado para teste explícito (?geoforce=1). */
+  const geoForcado = String(query.geoforce || '') === '1';
+  const country = (
+    headers['x-vercel-ip-country'] || headers['cf-ipcountry'] || headers['x-country-code']
+    || (geoForcado && geoOverride.length === 2 ? geoOverride : '')
+    || (geoOverride.length === 2 && process.env.GEO_PARAM_ALLOW === '1' ? geoOverride : '')
+    || 'BR'
+  ).toUpperCase().substring(0, 2);
   const UA_RAW = String(headers['user-agent'] || '');
   const IS_BOT = !UA_RAW || /bot|crawl|spider|slurp|headless|preview|scan|curl|wget|python|java|go-http|okhttp|libwww|httpclient|facebookexternalhit|whatsapp|telegrambot|skytab|claude|gptbot|ccbot|anthropic|perplexity|bytespider|amazonbot|applebot|skywatch|healthcheck|canary\/|pubkyweb|friendica|akkoma|lightpanda|http\.rb|mastodon\/|pleroma|misskey|gotosocial|writefreely|nodebb|peertube|owncast|castopod|funkwhale|bookwyrm|hubzilla|iceshrimp|sharkey|calckey|firefish|fediverse|activitypub|webfinger|undici|node-fetch|axios|got\/|superagent|guzzle|restsharp|postman|insomnia|urllib|aiohttp|requests|scrapy|semrush|ahrefs|mj12|dotbot|petalbot|dataforseo|lighthouse|pagespeed|pingdom|uptimerobot|lexicore|monitor|synthetic|mention_c|mention_ca|mention_car/i.test(UA_RAW) || UA_RAW.trim() === 'Mozilla/5.0' || UA_RAW.trim().length < 20;
   const device = detectDevice(headers['user-agent'] || '');
@@ -220,10 +286,12 @@ module.exports = async (req, res) => {
       }
     } catch (e) {}
   }
+  /* v340.0 — SWAP EXCLUSIVO TIER-1 (US, CA, GB, DE, FR). Fora desse núcleo não
+     há desvio para Booking UK: a rota regional assumida é a do bloco abaixo. */
   if (brandKey === 'booking') {
-    if (REGIONS.TIER1_EU.includes(country) || country === 'GB' || country === 'US' || country === 'CA' || country === 'AU' || country === 'NZ' || country === 'IE' || country === 'ZA') brandKey = 'booking_uk';
+    if (TIER1_CORE.includes(country)) brandKey = 'booking_uk';
     else if (REGIONS.LATAM.includes(country) && country !== 'BR') brandKey = 'booking_latam';
-    else if (country !== 'BR') brandKey = 'booking_uk';
+    /* sem 'else booking_uk': era exatamente esse o ralo internacional aberto */
   }
   // v330.0 — inventário Shopee real tem prioridade sobre o short link genérico.
   // Só em BR (a oferta é do painel Shopee Brasil); fora do BR o geo-swap existente
@@ -247,6 +315,51 @@ module.exports = async (req, res) => {
     const sep = targetUrl.includes('?') ? '&' : '?';
     targetUrl = `${targetUrl}${sep}url=${encodeURIComponent(rawDest)}`;
   }
+  /* ══════════════════════════════════════════════════════════════════════════
+     v340.0 — TRAVA NACIONAL DE TRÁFEGO (Brasil / humano / moeda nativa)
+     Se o visitante é humano e veio do Brasil, o destino NÃO pode ser merchant
+     de moeda estrangeira. Troca-se pelo link curto rastreado da Shopee Brasil
+     (oferta real do catálogo quando houver keyword) ou meli.la. O bot não é
+     afetado: rastreador não compra e não deve consumir cota de parceiro.
+     ══════════════════════════════════════════════════════════════════════════ */
+  let brLock = country === 'BR' ? (IS_BOT ? 'br_bot' : 'br_humano') : 'nao_br';
+  let brLockMotivo = null;
+  if (country === 'BR' && !IS_BOT) {
+    const trocar = MOEDA_ESTRANGEIRA.includes(brandKey) || destinoMoedaEstrangeira(targetUrl);
+    if (trocar) {
+      const antigo = targetUrl;
+      const ofertaShopee = (typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.u) || null;
+      if (ofertaShopee) {
+        targetUrl = ofertaShopee; brandKey = 'shopee'; brLockMotivo = 'oferta_catalogo_shopee';
+      } else if (query.q || query.kw || query.keyword) {
+        const achou = resolveShopeeOffer(query);
+        if (achou && achou.u) { targetUrl = achou.u; brandKey = 'shopee'; brLockMotivo = 'busca_catalogo_shopee'; }
+      }
+      if (!brLockMotivo) {
+        targetUrl = VERIFIED_TARGETS.mercadolivre || 'https://meli.la/1U3rtgV';
+        brandKey = 'mercadolivre'; brLockMotivo = 'meli_la_fallback';
+      }
+      brLock = 'aplicada';
+      try {
+        console.log(JSON.stringify({ v: 'v340.0', br_lock: brLockMotivo, de: String(antigo).slice(0, 90), para: String(targetUrl).slice(0, 90), country }));
+      } catch (e) {}
+    } else {
+      brLock = 'nativa';
+    }
+  }
+  /* Slot dinâmico: keyword real + arquitetura do UA (nunca slot sintético). */
+  const keywordDoClique = String(query.q || query.kw || query.keyword || (typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.n) || '').slice(0, 120);
+  const slotDinamico2 = slotDinamico_(keywordDoClique, headers['user-agent']);
+  /* Regra de precedência da suborigem:
+       1) keyword REAL do produto que disparou o match  → <keyword>_<arquitetura>
+       2) slot sintético (_health_desktop/health)       → descartado, usa dinâmico
+       3) slot declarado pelo próprio link da campanha  → mantido (atribuição do CTA)
+     O slot original nunca é perdido: vai em slot_origem para auditoria. */
+  const slotLink = String(query.slot || '').trim();
+  const slotEhSintetico = SLOTS_SINTETICOS.includes(slotLink.toLowerCase());
+  const slotFinal = keywordDoClique ? slotDinamico2
+                  : (slotEhSintetico ? slotDinamico2 : (slotLink || slotDinamico2));
+
   try {
     if (!NON_MONETIZED.has(brandKey)) {
       const urlObj = new URL(targetUrl);
@@ -280,7 +393,7 @@ module.exports = async (req, res) => {
         headers: { 'apikey': dbKey, 'Authorization': `Bearer ${dbKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
           site_slug: site || null,
-          slot: String(query.slot || '').slice(0, 120) || null,
+          slot: String(slotFinal || '').slice(0, 120) || null,
           ad_id: String((typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.hash) || brandKey || '').slice(0, 80) || null,
           network: net,
           click_url: String(targetUrl).slice(0, 500),
@@ -345,11 +458,15 @@ module.exports = async (req, res) => {
           chat_id: 'fanout',
           body_text: `🖱️ <b>Clique</b> ${String(brandKey || '')} | ${String(country || '')}\n`
             + `tag: <code>${String(sid || '').slice(0, 60)}</code>\n`
-            + `slot: ${String(slot || '')} | ${IS_BOT ? 'bot' : 'humano'}`,
+            + `slot: <code>${String(slotFinal || '')}</code> | ${IS_BOT ? 'bot' : 'humano'}`
+            + (brLock === 'aplicada' ? `\n🔒 trava BR: moeda estrangeira bloqueada (${brLockMotivo})` : ''),
           parse_mode: 'HTML',
           payload: {
             tipo: 'clique', kind: 'clicks', fanout: true, brand: brandKey, country, sid,
-            slot, site, oferta: (shopeeHit && shopeeHit.hash) || null,
+            slot: slotFinal, slot_dinamico: Boolean(keywordDoClique), slot_origem: slotLink || null,
+            keyword: keywordDoClique || null, arquitetura: arquiteturaUA(headers['user-agent']),
+            br_lock: brLock, br_lock_motivo: brLockMotivo,
+            site, oferta: (shopeeHit && shopeeHit.hash) || null,
             base_link: String(targetUrl || '').slice(0, 300), em: agora
           },
           status: 'pending', attempts: 0, max_attempts: 3
@@ -363,7 +480,11 @@ module.exports = async (req, res) => {
 
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('X-Affiliate-Engine', 'Achadinhos-Global-Gateway-2026-v128');
+  res.setHeader('X-Affiliate-Engine', 'Achadinhos-Global-Gateway-2026-v340');
+  res.setHeader('X-Br-Lock', brLock);
+  if (brLockMotivo) res.setHeader('X-Br-Lock-Motivo', brLockMotivo);
+  res.setHeader('X-Slot-Dinamico', String(slotFinal || ''));
+  res.setHeader('X-Tier1-Core', TIER1_CORE.join(','));
   res.setHeader('X-Routed-Country', country);
   res.setHeader('X-Routed-Brand', brandKey);
   if (shopeeHit) {
