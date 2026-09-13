@@ -1,46 +1,57 @@
-name: Jetstream Bluesky 24/7 (Ingestao de Keywords v330.0)
+name: Traffic Core v1510 — WebSockets assinados (janela contínua)
 
 on:
   schedule:
-    # Rede de seguranca: se uma janela cair, a proxima retoma em ate 1h.
+    # Orquestra uma janela event-driven por hora. Isto NÃO é polling de dados e
+    # não é descrito como SLA de processo permanente: runners hospedados têm fim.
     - cron: "15 * * * *"
   workflow_dispatch:
     inputs:
       seconds:
-        description: "Duração da janela em segundos (0 = contínuo)"
+        description: "Duração da janela WebSocket (0 = até o limite do runner)"
         default: "3300"
         type: string
+      dry_run:
+        description: "Conectar e filtrar sem gravar no mestre"
+        default: true
+        type: boolean
 
 concurrency:
-  group: jetstream-consumer
+  group: traffic-core-v1510-rolling-worker
   cancel-in-progress: false
 
 env:
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-  TELEGRAM_BUFFER_CHAT_ID: "5808022745"
-  AFFILIATE_GATEWAY: "https://achadinhos-ad-engine.vercel.app/api/ads/go"
-  WEBHOOK_HMAC_KEY: ${{ secrets.CRON_SECRET }}
+  NEXUS_INGEST_HMAC: ${{ secrets.NEXUS_INGEST_HMAC }}
+  JETSTREAM_URL: "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post"
+  NOSTR_RELAYS: "wss://relay.primal.net,wss://nos.lol"
 
 jobs:
-  consumir:
+  consume-streams:
     runs-on: ubuntu-latest
-    # Janela de 55 min por execucao: o runner e publico (minutos gratuitos) e a
-    # proxima execucao do cron emenda, mantendo a escuta praticamente continua.
     timeout-minutes: 58
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Dependencia do WebSocket
-        run: npm i ws --no-audit --no-fund --silent
-      - name: Escutar o firehose e casar keywords do inventario real
-        run: node workers/jetstream-consumer.js --seconds ${{ inputs.seconds || 3300 }}
-      - name: Registrar telemetria da janela
+          cache: npm
+      - name: Instalar dependências travadas
+        run: npm ci --no-audit --no-fund
+      - name: Consumir Jetstream e Nostr via RFC 6455
+        shell: bash
+        run: |
+          EXTRA=""
+          if [ "${{ inputs.dry_run || github.event_name == 'schedule' && false }}" = "true" ]; then EXTRA="--dry"; fi
+          node workers/traffic-core-v1510.js --seconds "${{ inputs.seconds || 3300 }}" $EXTRA
+      - name: Registrar término real da janela
         if: always()
         run: |
-          curl -s -m 30 -X POST "${SUPABASE_URL}/rest/v1/nexus_sat_telemetry" \
-            -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
+          curl -sS -m 15 -X POST "${SUPABASE_URL}/rest/v1/nexus_sat_telemetry" \
+            -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
             -H "Content-Type: application/json" -H "Prefer: return=minimal" \
-            -d "[{\"job\":\"v330-jetstream\",\"status\":\"OK\",\"message\":\"janela concluida\"}]" || true
+            -d '[{"job":"v1510-websocket-window","status":"${{ job.status }}","message":"runner window ended; no permanence SLA claimed"}]' || true

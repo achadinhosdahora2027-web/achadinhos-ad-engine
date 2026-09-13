@@ -1,2 +1,5 @@
 .vercel
 .env*
+
+# Dependencies are installed from package-lock.json in CI.
+node_modules/
