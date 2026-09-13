@@ -194,7 +194,14 @@ module.exports = async (req, res) => {
 
   const started = Date.now();
   const query = req.query || {};
-  const job = String(query.job || query.action || 'self-healing').toLowerCase();
+  /* Aceita o job por tres caminhos:
+       /api/cron?job=master        (query — usado pelo pg_cron e pelo Vercel)
+       /api/cron/master            (caminho, antigo api/cron/[task].js PLACEBO)
+       /api/cron?action=...        (compatibilidade)
+     O antigo [task].js respondia {"status":"success"} sem executar NADA — era um
+     dos placebos que faziam o painel parecer 100% enquanto nada rodava. Fundido
+     aqui, /api/cron/<nome> agora executa o trabalho de verdade. */
+  const job = String(query.job || query.action || query.task || 'self-healing').toLowerCase();
 
   // Autenticacao: aceita o CRON_SECRET do banco ou a query ?key= (para cron-job.org)
   const auth = String(req.headers.authorization || '');

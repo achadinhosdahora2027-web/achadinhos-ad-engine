@@ -40,11 +40,15 @@
     {
       "source": "/ferramentas-saas",
       "destination": "/api/ads/saas"
+    },
+    {
+      "source": "/api/cron-autopilot",
+      "destination": "/api/cron?job=master"
     }
   ],
   "crons": [
     {
-      "path": "/api/cron-autopilot",
+      "path": "/api/cron?job=master",
       "schedule": "0 3 * * *"
     }
   ]
