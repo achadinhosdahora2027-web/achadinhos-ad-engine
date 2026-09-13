@@ -1,17 +1,14 @@
 /**
- * nexus v370.0 — humanizer.ts  (Edge v205 / Matrix v370.0)
+ * nexus v3200.0 — factual contextual copy core.
  *
- * Compositor cognitivo hyper-humanizado. Regras declaradas pelo operador:
- *   • o texto mimetiza um usuário residencial nativo — PT-BR claro e
- *     EN/FR/DE perfeitos para o Tier-1;
- *   • o link de saída entra embutido, oculto e fluido no FIM de uma frase
- *     já pontuada (conector + dois-pontos + URL), nunca em linha de grito,
- *     nunca com rótulo "clique aqui";
- *   • o idioma vem do geo (`x-vercel-ip-country`) — a rede também;
- *   • nada aqui inventa preço, desconto ou comissão: valor só aparece se o
- *     chamador passar o número medido do catálogo;
- *   • o caixa de display NÃO é tocado: `go.js v128.9` permanece byte a byte —
- *     este módulo só produz texto.
+ * Regras de veracidade:
+ *   • o texto atua como assistência neutra de produto e nunca se apresenta como
+ *     consumidor, usuário orgânico, comprador ou especialista com experiência;
+ *   • o link de saída entra no fim de uma frase curta e pontuada;
+ *   • o país informado pela borda escolhe idioma/rede, mas não prova humanidade
+ *     nem residência;
+ *   • preço e desconto só aparecem quando fornecidos como fatos verificados;
+ *   • placements e o gateway de mídia não são manipulados por este módulo.
  */
 
 export type Idioma = "pt" | "en" | "fr" | "de";
@@ -26,6 +23,7 @@ export interface OfertaConhecida {
 }
 
 export interface EventoHumano {
+  /** Nome histórico mantido por compatibilidade; não constitui prova humana. */
   /** nome real do produto */
   produto: string;
   /** keyword que disparou o match */
@@ -167,69 +165,80 @@ interface Receita {
   abertura: readonly string[];
   gancho: readonly string[];
   conector: readonly string[];
-  emoji: readonly string[];
 }
 
 const RECEITAS: Record<Idioma, Receita> = {
   pt: {
     abertura: [
-      "Achei esse {p} e vim dividir aqui",
-      "Olha o que apareceu pra mim: {p}",
-      "Entrou na minha lista: {p}",
-      "Fica de olho nesse {p}",
+      "Informações úteis sobre {p}",
+      "Referência para avaliar {p}",
+      "Resumo objetivo sobre {p}",
+      "Detalhes para comparar {p}",
     ],
     gancho: [
-      "Tava na busca de “{k}” e caiu esse na mão",
-      "Quem procurava “{k}” vai gostar desse",
-      "Veio no meio da minha busca por “{k}”",
+      "Para a busca por “{k}”, confirme especificações e condições atuais",
+      "Se a dúvida envolve “{k}”, compare os dados informados pelo lojista",
+      "Sobre “{k}”, verifique compatibilidade, preço e prazo antes de decidir",
     ],
-    conector: ["Guardei aqui", "O link tá aqui", "Deixei separado aqui"],
-    emoji: ["🛒", "👀", "🔥", "🙂"],
+    conector: [
+      "Consulte os detalhes atuais no lojista",
+      "Confira as condições na página do lojista",
+      "Revise as informações diretamente no lojista",
+    ],
   },
   en: {
     abertura: [
-      "Found this one and had to share: {p}",
-      "This popped up for me: {p}",
-      "Adding this to my list: {p}",
-      "Keeping an eye on {p}",
+      "Useful information about {p}",
+      "A reference for evaluating {p}",
+      "An objective summary of {p}",
+      "Details for comparing {p}",
     ],
     gancho: [
-      "Was looking through “{k}” and this came up",
-      "Came up while I was digging for “{k}”",
-      "Spotted this while checking “{k}”",
+      "For “{k}”, confirm the current specifications and terms",
+      "If your question concerns “{k}”, compare the merchant-provided details",
+      "For “{k}”, verify compatibility, price, and delivery before deciding",
     ],
-    conector: ["Saved the link here", "The link is here", "Kept it here"],
-    emoji: ["🛒", "👀", "🔥", "🙂"],
+    conector: [
+      "Review the current merchant details",
+      "Check the terms on the merchant page",
+      "Verify the information directly with the merchant",
+    ],
   },
   fr: {
     abertura: [
-      "Je suis tombé sur ce {p} et je partage",
-      "Ça vient de tomber devant moi\u00A0: {p}",
-      "J'ai ajouté à ma liste\u00A0: {p}",
-      "À surveiller, ce {p}",
+      "Informations utiles sur {p}",
+      "Une référence pour évaluer {p}",
+      "Résumé objectif de {p}",
+      "Détails pour comparer {p}",
     ],
     gancho: [
-      "Je cherchais «\u00A0{k}\u00A0» et je suis tombé dessus",
-      "Trouvé en furetant dans «\u00A0{k}\u00A0»",
-      "C'est sorti pendant que je regardais «\u00A0{k}\u00A0»",
+      "Pour «\u00A0{k}\u00A0», vérifiez les spécifications et conditions actuelles",
+      "Si la question concerne «\u00A0{k}\u00A0», comparez les données du marchand",
+      "Pour «\u00A0{k}\u00A0», vérifiez la compatibilité, le prix et la livraison",
     ],
-    conector: ["J'ai gardé le lien ici", "Le lien est ici", "Je l'ai mis de côté ici"],
-    emoji: ["🛒", "👀", "🔥", "🙂"],
+    conector: [
+      "Consultez les détails actuels chez le marchand",
+      "Vérifiez les conditions sur la page du marchand",
+      "Confirmez les informations directement auprès du marchand",
+    ],
   },
   de: {
     abertura: [
-      "Bin über dieses {p} gestolpert und teile es",
-      "Ist mir gerade aufgefallen\u00A0: {p}",
-      "Steht jetzt auf meiner Liste\u00A0: {p}",
-      "Behalte das im Blick\u00A0: {p}",
+      "Nützliche Informationen zu {p}",
+      "Eine Referenz zur Bewertung von {p}",
+      "Sachliche Übersicht zu {p}",
+      "Details zum Vergleich von {p}",
     ],
     gancho: [
-      "War bei „{k}“ unterwegs und das kam dazwischen",
-      "Beim Suchen von „{k}“ aufgetaucht",
-      "Ist mir beim Stöbern nach „{k}“ begegnet",
+      "Für „{k}“ bitte aktuelle Spezifikationen und Bedingungen prüfen",
+      "Bei Fragen zu „{k}“ die Händlerangaben vergleichen",
+      "Für „{k}“ Kompatibilität, Preis und Lieferung vorab prüfen",
     ],
-    conector: ["Link hab ich hier", "Hier ist der Link", "Hab's hier abgelegt"],
-    emoji: ["🛒", "👀", "🔥", "🙂"],
+    conector: [
+      "Aktuelle Händlerdetails prüfen",
+      "Bedingungen auf der Händlerseite prüfen",
+      "Informationen direkt beim Händler bestätigen",
+    ],
   },
 };
 
@@ -245,20 +254,20 @@ export function fraseDeOferta(o?: OfertaConhecida | null, idioma: Idioma = "pt")
   const moeda = limparTermo(o.moeda, 6) || (idioma === "pt" ? "R$" : "");
   const valor = `${moeda ? moeda + " " : ""}${p.toFixed(2).replace(".", ",")}`;
   const d = typeof o.desconto_pct === "number" && isFinite(o.desconto_pct) ? o.desconto_pct : null;
-  if (idioma === "pt") return d !== null ? `Saiu por ${valor} (${d}% abaixo)` : `Saiu por ${valor}`;
-  if (idioma === "en") return d !== null ? `Listed at ${valor} (${d}% off)` : `Listed at ${valor}`;
-  if (idioma === "fr") return d !== null ? `Affiché à ${valor} (${d}\u00A0% en moins)` : `Affiché à ${valor}`;
-  return d !== null ? `Gelistet für ${valor} (${d}\u00A0% günstiger)` : `Gelistet für ${valor}`;
+  if (idioma === "pt") return d !== null ? `Preço informado: ${valor}; desconto informado: ${d}%` : `Preço informado: ${valor}`;
+  if (idioma === "en") return d !== null ? `Listed price: ${valor}; stated discount: ${d}%` : `Listed price: ${valor}`;
+  if (idioma === "fr") return d !== null ? `Prix affiché\u00A0: ${valor}; remise indiquée\u00A0: ${d}\u00A0%` : `Prix affiché\u00A0: ${valor}`;
+  return d !== null ? `Angegebener Preis: ${valor}; angegebener Rabatt: ${d}\u00A0%` : `Angegebener Preis: ${valor}`;
 }
 
 /* ───────────────────────── composição ───────────────────────── */
 
 /**
- * Monta a mensagem hyper-humanizada:
- *   1ª linha  — abertura natural (produto real);
- *   2ª linha  — gancho opcional com a keyword que disparou o match;
- *   3ª linha  — oferta real, se houver número medido;
- *   fecho     — link embutido no fim de frase pontuada (conector + ":" + URL).
+ * Monta assistência contextual factual:
+ *   1ª linha  — identificação objetiva do produto real;
+ *   2ª linha  — orientação ligada à keyword que disparou o match;
+ *   3ª linha  — preço/desconto apenas quando medidos;
+ *   fecho     — link no fim de frase pontuada, sem experiência pessoal fingida.
  */
 export function humanizar(e: EventoHumano): string {
   const produto = limparTermo(e?.produto) || limparTermo(e?.keyword) || "Oferta";
@@ -282,13 +291,7 @@ export function humanizar(e: EventoHumano): string {
     : "";
   const oferta = fraseDeOferta(e?.oferta, lang);
 
-  // emoji discreto: só em ~1 de cada 3 mensagens (comportamento de gente, não de robô)
-  const comEmoji = rnd() < 0.34;
-  const primeira = comEmoji && !ehEmojiFinal(abertura)
-    ? `${abertura} ${escolher(r.emoji, rnd)}`
-    : abertura;
-
-  const linhas = [primeira];
+  const linhas = [abertura];
   if (gancho) linhas.push(gancho);
   if (oferta) linhas.push(oferta);
 
@@ -299,4 +302,4 @@ export function humanizar(e: EventoHumano): string {
   return linhas.join("\n");
 }
 
-export const VERSAO_HUMANIZER = "v370.0" as const;
+export const VERSAO_HUMANIZER = "v3200.0" as const;
