@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T14:32:45.473Z",
+  "generated_at": "2026-09-13T15:33:11.926Z",
   "inventory_file": "data/shopee-offer-links.json",
   "inventory_counts": {
     "offers_total": 1141,
@@ -12,50 +12,57 @@
     "keywords_unique": 17776,
     "keywords_shared": 1630
   },
-  "sent": 3,
+  "accepted": 3,
+  "queued": 3,
   "failed": 0,
   "results": [
     {
       "destination": "canal_ofertas_brasil",
-      "label": "Canal Ofertas Brasil",
-      "chat_id": "-1004317377063",
-      "tag": "tg_ofertasbrasilz",
-      "sent": true,
-      "message_id": 2224,
-      "attempts": 1,
+      "accepted": true,
+      "queued": true,
+      "duplicate": false,
       "offer_hash": "9de674e4f9137855ffef4e7f5ccc8f3b",
       "offer_name": "KIT 2 Bermuda Shorts Tactel com Elastano Academia Corrida CASUAL",
       "offer_link": "https://s.shopee.com.br/qjSLpIjPT",
-      "tagged_link": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=tg_ofertasbrasilz&slot=shopee_v330&geo=BR&offer=9de674e4f9137855ffef4e7f5ccc8f3b",
-      "commission_pct": 83
+      "commission_pct": 83,
+      "response": {
+        "id": 8,
+        "ok": true,
+        "queued": true
+      },
+      "error": null
     },
     {
-      "destination": "grupo_cliques",
-      "label": "Grupo CLIQUES",
-      "chat_id": "-1004417007577",
-      "tag": "tg_cliquesnow",
-      "sent": true,
-      "message_id": 4278,
-      "attempts": 1,
+      "destination": "canal_ofertas_brasil",
+      "accepted": true,
+      "queued": true,
+      "duplicate": false,
       "offer_hash": "2fd22aecf88fa5153b615f46063a2a3d",
       "offer_name": "Óculos de Sol Capri Feminino Quadrado Grande Premium Clássico Blogueira Com Case uv400",
       "offer_link": "https://s.shopee.com.br/BTlYYVUFd",
-      "tagged_link": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=tg_cliquesnow&slot=shopee_v330&geo=BR&offer=2fd22aecf88fa5153b615f46063a2a3d",
-      "commission_pct": 53
+      "commission_pct": 53,
+      "response": {
+        "id": 9,
+        "ok": true,
+        "queued": true
+      },
+      "error": null
     },
     {
-      "destination": "privado_admin",
-      "label": "Privado Nando (admin)",
-      "chat_id": "5808022745",
-      "tag": "tg_admin",
-      "sent": true,
-      "message_id": 537,
-      "attempts": 1,
+      "destination": "canal_ofertas_brasil",
+      "accepted": true,
+      "queued": true,
+      "duplicate": false,
       "offer_hash": "d28a21f1d41731bd26fc074e4a36e005",
       "offer_name": "Jogo/Kit 4 Toalhas de Banho Grande e Grossa Branca Volume Extra 72x140cm Algodão Premium Luxo",
       "offer_link": "https://s.shopee.com.br/1Vz98VuX2T",
-      "tagged_link": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=tg_admin&slot=shopee_v330&geo=BR&offer=d28a21f1d41731bd26fc074e4a36e005",
-      "commission_pct": 49
+      "commission_pct": 49,
+      "response": {
+        "id": 10,
+        "ok": true,
+        "queued": true
+      },
+      "error": null
     }
   ]
 }
