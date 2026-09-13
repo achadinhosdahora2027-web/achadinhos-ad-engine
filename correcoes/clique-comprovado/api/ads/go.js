@@ -375,26 +375,7 @@ module.exports = async (req, res) => {
     }
   }
   /* Slot dinâmico: keyword real + arquitetura do UA (nunca slot sintético). */
-  /* ══ v128.9 SUBORIGEM REAL ═══════════════════════════════════════════════
-     Slot genérico de campanha (jetstream_v330, header, inline, health…) não
-     identifica produto nenhum. Quando o link traz a oferta ou a palavra-chave,
-     a suborigem passa a ser o NOME REAL do produto + arquitetura — é isso que
-     aparece no relatório e no painel da rede. Slot de CTA declarado
-     (ex.: city_ananindeua_flights) continua preservado: ali a atribuição é do
-     botão, não do produto. */
-  const SLOT_GENERICO = /^(jetstream|header|inline|health|sem_keyword|radar|city|ci|lab|fanout|digest|v\d{2,3})/i;
-  let nomeOferta = '';
-  try {
-    const hOferta = String(query.offer || query.oferta || '').trim();
-    if (hOferta) {
-      const inv = (typeof getShopeeInventory === 'function') ? getShopeeInventory() : null;
-      if (inv && inv.offers && inv.offers[hOferta] && inv.offers[hOferta].n) nomeOferta = String(inv.offers[hOferta].n);
-    }
-  } catch (e) { nomeOferta = ''; }
-  if (!nomeOferta) nomeOferta = String(query.kw || query.q || query.keyword || '').trim();
-  const slotGenerico = SLOT_GENERICO.test(String(query.slot || 'header'));
-  const keywordDoClique = ((slotGenerico && nomeOferta) ? nomeOferta
-    : String(query.q || query.kw || query.keyword || (typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.n) || '')).slice(0, 120);
+  const keywordDoClique = String(query.q || query.kw || query.keyword || (typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.n) || '').slice(0, 120);
   const slotDinamico2 = slotDinamico_(keywordDoClique, headers['user-agent']);
   /* Regra de precedência da suborigem:
        1) keyword REAL do produto que disparou o match  → <keyword>_<arquitetura>
@@ -406,11 +387,7 @@ module.exports = async (req, res) => {
   const slotFinal = keywordDoClique ? slotDinamico2
                   : (slotEhSintetico ? slotDinamico2 : (slotLink || slotDinamico2));
   /* sid final: tag do destino (explicita) ou derivada com o SLOT DINÂMICO */
-  /* v128.9: quando a suborigem é a palavra-chave real, o slot dinâmico JÁ traz
-     a arquitetura no fim (`<produto>_mobile`). Anexar o device de novo gerava
-     `..._mobile_mobile` (medido). Só acrescenta se ainda não estiver lá. */
-  const slotParaSid = String(slotFinal).slice(0, 40);
-  const sid = sidExplicito || `${site}_${country.toLowerCase()}_${slotParaSid}${slotParaSid.toLowerCase().endsWith(String(device).toLowerCase()) ? '' : '_' + device}`;
+  const sid = sidExplicito || `${site}_${country.toLowerCase()}_${String(slotFinal).slice(0, 40)}_${device}`;
   const sidTag = String(sid).replace(/[^a-zA-Z0-9_]/g, '').slice(0, 60);
 
   /* ══ v128.7 GATE HUMANO ══════════════════════════════════════════════════

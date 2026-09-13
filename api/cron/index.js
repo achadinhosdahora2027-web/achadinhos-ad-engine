@@ -213,6 +213,27 @@ async function jobTgFlush() {
   const H = { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json' };
   const HREP = { ...H, Prefer: 'return=representation' };
   const TBL = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`;
+
+  /* v128.9 — suborigem real: o produtor manda a oferta, mas a palavra-chave é
+     que identifica o produto no relatório. O link publicado ganha &kw= antes de
+     sair; se já tiver kw, não duplica. */
+  function enriquecerLink(texto, payload) {
+    const kw = String((payload && (payload.keyword || payload.palavra_chave)) || '').trim();
+    if (!kw || !texto) return texto;
+    return String(texto).replace(/(https?:\/\/[^\s"'<)]*ads\/go\?[^\s"'<)]*)/g, (url) => {
+      if (/[?&]kw=/.test(url)) return url;
+      return url + (url.includes('?') ? '&' : '?') + 'kw=' + encodeURIComponent(kw.slice(0, 120));
+    });
+  }
+
+  /* Chave do porteiro: oferta > palavra-chave > texto normalizado. É o que
+     impede o mesmo conteúdo de repetir para o mesmo destino. */
+  function chavePorteiro(payload, texto) {
+    const k = String(
+      (payload && (payload.oferta || payload.keyword)) || ''
+    ).trim() || String(texto || '').replace(/\s+/g, ' ').slice(0, 120);
+    return k.toLowerCase().slice(0, 120);
+  }
   const nowIso = new Date().toISOString();
   /* ATENÇÃO: nexus_telegram_message_buffer.request_id é BIGINT. Uma string aqui
      devolvia HTTP 400 no claim e a rodada terminava "com sucesso" sem processar
@@ -287,7 +308,7 @@ async function jobTgFlush() {
         .filter((d) => !feitos[d.id])
         .map((d) => ({
           id: d.id, chat_id: String(d.chat_id), label: d.label || d.id,
-          texto: fanout.bodyFor(d, row.body_text, {})
+          texto: enriquecerLink(fanout.bodyFor(d, row.body_text, {}), payload)
         }))
         .filter((a) => (por_destino[a.id] = por_destino[a.id] || 0) < CAP);
       if (!dests.length) {
@@ -315,13 +336,31 @@ async function jobTgFlush() {
         continue;
       }
     } else {
-      alvos = [{ id: 'direto', chat_id: String(row.chat_id), label: 'direto', texto: row.body_text }];
+      alvos = [{ id: 'direto', chat_id: String(row.chat_id), label: 'direto', texto: enriquecerLink(row.body_text, payload) }];
     }
 
     /* Entrega uma cópia por destino, com a tag do destino no link. */
     const done = ehFanout ? { ...(payload.fanout_done || {}) } : null;
     let algumOk = false, algumErro = '';
+    let adiarMs = 0;
+    const chaveMsg = chavePorteiro(payload, row.body_text);
     for (const alvo of alvos) {
+      /* v128.9 — porteiro anti-flood: mesma matéria-prima não repete e nenhum
+         destino passa do teto por minuto/hora. Telegram pune rajada. */
+      let porteiro = { pode: true };
+      try {
+        porteiro = await rpc('nexus_telegram_gate', { p_destino: alvo.id, p_chave: chaveMsg });
+      } catch (e) { porteiro = { pode: true, erro_porteiro: String((e && e.message) || e).slice(0, 80) }; }
+      if (porteiro && porteiro.pode === false) {
+        if (porteiro.motivo === 'duplicado_recente') {
+          puladas++; if (done) done[alvo.id] = new Date().toISOString();
+        } else {
+          adiadas++;
+          adiarMs = Math.max(adiarMs, Number(porteiro.esperar_ms) || 60000);
+        }
+        enviados.push({ id: row.id, destino: alvo.id, ok: false, contido: true, motivo: porteiro.motivo });
+        continue;
+      }
       const sendRes = await raw(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -368,7 +407,7 @@ async function jobTgFlush() {
       method: 'PATCH', headers: H,
       body: JSON.stringify(completo
         ? { status: 'sent', sent_at: new Date().toISOString(), request_id: null, payload: { ...payload, fanout_done: done }, response_body: `fanout completo (${Object.keys(done).length} destinos)`, updated_at: new Date().toISOString() }
-        : { status: 'pending', request_id: null, payload: { ...payload, fanout_done: done }, attempts: (row.attempts || 0) + 1, last_error: String(algumErro || 'aguardando destinos restantes').slice(0, 300), not_before: new Date(Date.now() + 60000).toISOString(), updated_at: new Date().toISOString() })
+        : { status: 'pending', request_id: null, payload: { ...payload, fanout_done: done }, attempts: (row.attempts || 0) + 1, last_error: String(algumErro || (adiarMs ? 'adiado pelo porteiro anti-flood' : 'aguardando destinos restantes')).slice(0, 300), not_before: new Date(Date.now() + Math.max(adiarMs, 60000)).toISOString(), updated_at: new Date().toISOString() })
     });
   }
 

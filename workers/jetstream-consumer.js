@@ -127,7 +127,9 @@ function main() {
     if (!oferta) return;
     const handle = (ev.did || 'bsky').slice(-12);
     const tag = `bsky_${handle}`;
-    const link = `${GATEWAY}?brand=shopee&site=${encodeURIComponent(tag)}&slot=jetstream_v330&geo=BR&offer=${hit.hash}`;
+    /* v128.9 — a palavra-chave vai NO LINK: é ela que dá a suborigem real do
+       clique (antes o relatório só mostrava o nome genérico da campanha). */
+    const link = `${GATEWAY}?brand=shopee&site=${encodeURIComponent(tag)}&slot=jetstream_v330&geo=BR&offer=${hit.hash}&kw=${encodeURIComponent(String(hit.kw || '').slice(0, 120))}`;
     const payload = { tipo: 'jetstream_match', keyword: hit.kw, oferta: hit.hash, loja: oferta.s, comissao: oferta.c, bsky_did: ev.did, link, em: new Date().toISOString() };
     const signature = HMAC_KEY ? crypto.createHmac('sha256', HMAC_KEY).update(JSON.stringify(payload)).digest('hex') : null;
 
