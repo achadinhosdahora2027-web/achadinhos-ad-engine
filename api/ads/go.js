@@ -263,6 +263,45 @@ module.exports = async (req, res) => {
       clearTimeout(tmr);
     }
   } catch (e) {}
+
+  // ── v330.0 — FILA UNLOGGED (public.nexus_telegram_message_buffer) ──────────
+  // Clique HUMANO legítimo entra na fila; o cron 'tg-flush' entrega em blocos de
+  // 18/min ao grupo privado (evita HTTP 429). Robô/crawler não entra na fila.
+  // Falha aqui NUNCA afeta o visitante: timeout curto e erro engolido (0ms).
+  try {
+    const sbUrl = process.env.SUPABASE_URL;
+    const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
+    const bufferChat = process.env.TELEGRAM_BUFFER_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID;
+    if (sbUrl && sbKey && bufferChat && !IS_BOT) {
+      const ctrl2 = new AbortController();
+      const tmr2 = setTimeout(() => ctrl2.abort(), 1200);
+      const agora = new Date().toISOString();
+      fetch(`${sbUrl.replace(/\/$/, '')}/rest/v1/nexus_telegram_message_buffer`, {
+        method: 'POST',
+        headers: {
+          apikey: sbKey, Authorization: `Bearer ${sbKey}`,
+          'Content-Type': 'application/json', Prefer: 'return=minimal'
+        },
+        body: JSON.stringify([{
+          dedupe_key: `click:${sid}:${agora.slice(0, 16)}`,
+          chat_id: String(bufferChat),
+          body_text: `🖱️ <b>Clique</b> ${String(brandKey || '')} | ${String(country || '')}\n`
+            + `tag: <code>${String(sid || '').slice(0, 60)}</code>\n`
+            + `slot: ${String(slot || '')} | ${IS_BOT ? 'bot' : 'humano'}`,
+          parse_mode: 'HTML',
+          payload: {
+            tipo: 'clique', brand: brandKey, country, sid,
+            slot, site, oferta: (shopeeHit && shopeeHit.hash) || null,
+            destino: String(targetUrl || '').slice(0, 300), em: agora
+          },
+          status: 'pending', attempts: 0, max_attempts: 3
+        }]),
+        signal: ctrl2.signal
+      }).catch(() => {});
+      clearTimeout(tmr2);
+    }
+  } catch (e) {}
+
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('X-Affiliate-Engine', 'Achadinhos-Global-Gateway-2026-v128');

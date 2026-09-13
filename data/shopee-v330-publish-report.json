@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-09-13T02:44:14.986Z",
+  "inventory_file": "data/shopee-offer-links.json",
+  "inventory_counts": {
+    "offers_total": 701,
+    "by_kind": {
+      "shopee_product": 500,
+      "shopee_store": 200,
+      "shopee_category": 1
+    },
+    "keywords_total": 11504,
+    "keywords_unique": 9731,
+    "keywords_shared": 972
+  },
+  "sent": 3,
+  "failed": 0,
+  "results": [
+    {
+      "destination": "canal_ofertas_brasil",
+      "label": "Canal Ofertas Brasil",
+      "chat_id": "-1004317377063",
+      "tag": "tg_ofertasbrasilz",
+      "sent": true,
+      "message_id": 1584,
+      "attempts": 1,
+      "offer_hash": "3236680798e9e612352a787bc204a80a",
+      "offer_name": "Fonte Eletrônica 12V 2A 3A 5A e 10A Bivolt 110V 220V Plug P4",
+      "offer_link": "https://s.shopee.com.br/4qFb586XtN",
+      "tagged_link": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=tg_ofertasbrasilz&slot=shopee_v330&geo=BR&offer=3236680798e9e612352a787bc204a80a",
+      "commission_pct": 33
+    },
+    {
+      "destination": "grupo_cliques",
+      "label": "Grupo CLIQUES",
+      "chat_id": "-1004417007577",
+      "tag": "tg_cliquesnow",
+      "sent": true,
+      "message_id": 3157,
+      "attempts": 1,
+      "offer_hash": "61b5de6810dbf3d5cdf115949aff1dad",
+      "offer_name": "Carregador Portátil Mini Power Bank 10000mAh Com 02 Saídas Tipo-C / Lightning",
+      "offer_link": "https://s.shopee.com.br/50Z1HR5uYQ",
+      "tagged_link": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=tg_cliquesnow&slot=shopee_v330&geo=BR&offer=61b5de6810dbf3d5cdf115949aff1dad",
+      "commission_pct": 28
+    },
+    {
+      "destination": "privado_admin",
+      "label": "Privado Nando (admin)",
+      "chat_id": "5808022745",
+      "tag": "tg_admin",
+      "sent": true,
+      "message_id": 5381,
+      "attempts": 1,
+      "offer_hash": "2b7c300ab3a5fb6e14da6124e127e445",
+      "offer_name": "Carregador Portátil Mini Power Bank 10000mAh Com 02 Saídas Tipo-C / Lightning",
+      "offer_link": "https://s.shopee.com.br/5AsRTk5HDT",
+      "tagged_link": "https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=tg_admin&slot=shopee_v330&geo=BR&offer=2b7c300ab3a5fb6e14da6124e127e445",
+      "commission_pct": 28
+    }
+  ]
+}

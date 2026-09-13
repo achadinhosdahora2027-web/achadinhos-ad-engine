@@ -175,12 +175,72 @@ async function jobTwitter() {
   };
 }
 
+/* ---------------------------------------------------------------- v330.0 */
+/**
+ * Flush do buffer UNLOGGED public.nexus_telegram_message_buffer.
+ * Espelha o cronjob 'v325-tg-flush' da spec: entrega em blocos (padrão 18/min,
+ * teto que evita HTTP 429 do Telegram) e marca cada linha como sent/failed.
+ * Cliques humanos legítimos entram nessa fila pelo gateway /api/ads/go.
+ */
+async function jobTgFlush() {
+  const BLOCK = Math.max(1, Math.min(50, Number(process.env.TG_FLUSH_BLOCK_SIZE || 18)));
+  const token = process.env.TELEGRAM_BOT_TOKEN || '';
+  if (!SUPABASE_KEY) return { ok: false, reason: 'supabase_key_ausente' };
+  if (!token) return { ok: false, reason: 'telegram_token_ausente' };
+
+  const nowIso = new Date().toISOString();
+  const url = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`
+    + `?status=eq.pending&not_before=lte.${encodeURIComponent(nowIso)}`
+    + `&order=id.asc&limit=${BLOCK}`;
+  const rows = await timedFetch(url, {
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json' }
+  }, 8000).then((r) => (Array.isArray(r) ? r : [])).catch(() => []);
+
+  const results = [];
+  let sent = 0, failed = 0;
+  for (const row of rows) {
+    let ok = false, body = '';
+    try {
+      const res = await timedFetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: row.chat_id,
+          text: row.body_text,
+          parse_mode: row.parse_mode || 'HTML',
+          disable_web_page_preview: true
+        })
+      }, 8000);
+      ok = Boolean(res && res.ok);
+      body = JSON.stringify(res && res.result ? { message_id: res.result.message_id } : (res || {})).slice(0, 400);
+    } catch (e) { body = String(e.message || e).slice(0, 400); }
+
+    if (ok) sent++; else failed++;
+    await timedFetch(`${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer?id=eq.${row.id}`, {
+      method: 'PATCH',
+      headers: {
+        apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json', Prefer: 'return=minimal'
+      },
+      body: JSON.stringify(ok
+        ? { status: 'sent', sent_at: new Date().toISOString(), response_body: body, attempts: (row.attempts || 0) + 1 }
+        : { status: (row.attempts || 0) + 1 >= (row.max_attempts || 3) ? 'failed' : 'pending',
+            attempts: (row.attempts || 0) + 1, last_error: body,
+            // backoff: 2^tentativas minutos (erro 57014/timeout não martela o grupo)
+            not_before: new Date(Date.now() + Math.pow(2, (row.attempts || 0) + 1) * 60000).toISOString() })
+    }, 8000).catch(() => {});
+    results.push({ id: row.id, ok, message_id: ok ? undefined : undefined });
+  }
+  return { ok: true, block_size: BLOCK, pending_encontrados: rows.length, enviados: sent, falhas: failed, results };
+}
+
 const JOBS = {
   telegram: jobTelegram,
   indexer: jobGlobalIndexer,
   'global-indexer': jobGlobalIndexer,
   'self-healing': jobSelfHealing,
   'cj-radar': jobCjRadar,
+  'tg-flush': jobTgFlush,
   instagram: jobInstagram,
   twitter: jobTwitter
 };
@@ -220,7 +280,7 @@ module.exports = async (req, res) => {
   }
 
   // "master" executa todos os jobs reais em sequencia
-  const targets = job === 'master' ? ['telegram', 'self-healing', 'global-indexer', 'cj-radar'] : [job];
+  const targets = job === 'master' ? ['telegram', 'self-healing', 'global-indexer', 'cj-radar', 'tg-flush'] : [job];
   const results = {};
 
   for (const t of targets) {

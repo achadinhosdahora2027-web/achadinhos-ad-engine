@@ -1,7 +1,7 @@
 {
   "version": "2026.9-MULTI-DESTINATION",
   "updated_at": "2026-09-13T01:30:00Z",
-  "notes": "Registro central de TODOS os destinos de notificacao 24/7. Cada destino tem uma TAG propria que entra no link de afiliado (SID/subid) para atribuir origem de clique e venda.",
+  "notes": "Registro central de TODOS os destinos de notificacao 24/7. Cada destino tem uma TAG propria que entra no link de afiliado (SID/subid) para atribuir origem de clique e venda. Campo receives adicionado no v330.0: activeDestinations(reg,kind) filtrava tudo e o pipeline nao encontrava destino nenhum.",
   "affiliate_gateway": "https://achadinhos-ad-engine.vercel.app/api/ads/go",
   "dedupe_window_hours": 6,
   "destinations": [
@@ -15,7 +15,10 @@
       "enabled": true,
       "verified": true,
       "role": "publicacao_de_ofertas",
-      "receives": ["deal", "digest"]
+      "receives": [
+        "publish",
+        "digest"
+      ]
     },
     {
       "id": "grupo_cliques",
@@ -27,7 +30,10 @@
       "enabled": true,
       "verified": true,
       "role": "trafego_e_cliques",
-      "receives": ["deal", "digest"]
+      "receives": [
+        "publish",
+        "clicks"
+      ]
     },
     {
       "id": "grupo_vendas",
@@ -40,7 +46,10 @@
       "verified": false,
       "pending_reason": "chat_id nao resolvido - aguardando auto-descoberta",
       "role": "vendas_e_comissoes",
-      "receives": ["deal", "digest", "sale"]
+      "receives": [
+        "publish",
+        "sales"
+      ]
     },
     {
       "id": "grupo_captura_atendimento",
@@ -53,7 +62,10 @@
       "verified": false,
       "pending_reason": "chat_id nao resolvido - aguardando auto-descoberta",
       "role": "captura_de_leads",
-      "receives": ["deal", "digest"]
+      "receives": [
+        "publish",
+        "capture"
+      ]
     },
     {
       "id": "privado_admin",
@@ -65,7 +77,11 @@
       "enabled": true,
       "verified": true,
       "role": "painel_executivo",
-      "receives": ["deal", "digest", "sale", "alert"]
+      "receives": [
+        "publish",
+        "digest",
+        "alerts"
+      ]
     }
   ]
 }
