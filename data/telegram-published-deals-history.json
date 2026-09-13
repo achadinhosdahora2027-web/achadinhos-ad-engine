@@ -10,7 +10,7 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 49,
+  "total_published": 52,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
@@ -29,13 +29,14 @@
       "br_surfshark_vpn",
       "br_parallels_mac",
       "br_soundcore_audio",
-      "br_aliexpress_global"
+      "br_aliexpress_global",
+      "br_switchbot_casa"
     ],
-    "total": 16,
-    "last_published_at": "2026-09-13T09:59:40.537Z",
-    "last_deal_id": "br_aliexpress_global"
+    "total": 17,
+    "last_published_at": "2026-09-13T10:34:04.032Z",
+    "last_deal_id": "br_switchbot_casa"
   },
-  "last_run_at": "2026-09-13T09:59:40.537Z",
+  "last_run_at": "2026-09-13T10:34:04.033Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
@@ -53,11 +54,12 @@
       "br_nordpass_gerenciador",
       "br_corel_software",
       "br_novakid_ingles",
-      "br_ebay_deals"
+      "br_ebay_deals",
+      "br_bluetti_energia"
     ],
-    "total": 16,
-    "last_published_at": "2026-09-13T09:59:40.537Z",
-    "last_deal_id": "br_ebay_deals"
+    "total": 17,
+    "last_published_at": "2026-09-13T10:34:04.033Z",
+    "last_deal_id": "br_bluetti_energia"
   },
   "privado_admin": {
     "published_ids": [
@@ -76,10 +78,11 @@
       "br_wondershare",
       "br_switchbot_casa",
       "br_amazon_air_fryer",
-      "br_parallels_mac"
+      "br_parallels_mac",
+      "br_nordvpn_cyber"
     ],
-    "total": 16,
-    "last_published_at": "2026-09-13T09:59:40.537Z",
-    "last_deal_id": "br_parallels_mac"
+    "total": 17,
+    "last_published_at": "2026-09-13T10:34:04.033Z",
+    "last_deal_id": "br_nordvpn_cyber"
   }
 }
