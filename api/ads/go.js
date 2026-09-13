@@ -244,7 +244,9 @@ module.exports = async (req, res) => {
   const UA_RAW = String(headers['user-agent'] || '');
   const IS_BOT = !UA_RAW || /bot|crawl|spider|slurp|headless|preview|scan|curl|wget|python|java|go-http|okhttp|libwww|httpclient|facebookexternalhit|whatsapp|telegrambot|skytab|claude|gptbot|ccbot|anthropic|perplexity|bytespider|amazonbot|applebot|skywatch|healthcheck|canary\/|pubkyweb|friendica|akkoma|lightpanda|http\.rb|mastodon\/|pleroma|misskey|gotosocial|writefreely|nodebb|peertube|owncast|castopod|funkwhale|bookwyrm|hubzilla|iceshrimp|sharkey|calckey|firefish|fediverse|activitypub|webfinger|undici|node-fetch|axios|got\/|superagent|guzzle|restsharp|postman|insomnia|urllib|aiohttp|requests|scrapy|semrush|ahrefs|mj12|dotbot|petalbot|dataforseo|lighthouse|pagespeed|pingdom|uptimerobot|lexicore|monitor|synthetic|mention_c|mention_ca|mention_car/i.test(UA_RAW) || UA_RAW.trim() === 'Mozilla/5.0' || UA_RAW.trim().length < 20;
   const device = detectDevice(headers['user-agent'] || '');
-  const sid = query.sid || `${site}_${country.toLowerCase()}_${slot}_${device}`;
+  /* sid inicial; é RECALCULADO depois que o slot dinâmico é resolvido — senão a
+     suborigem sintética ('_health_desktop') viajaria dentro da tag de atribuição. */
+  const sidExplicito = query.sid ? String(query.sid).replace(/[^a-zA-Z0-9_]/g, '').slice(0, 60) : null;
   if (!brandKey || brandKey === 'auto') {
     if (REGIONS.LATAM.includes(country)) {
       if (slot.includes('travel')) brandKey = 'booking';
@@ -369,18 +371,21 @@ module.exports = async (req, res) => {
   const slotEhSintetico = SLOTS_SINTETICOS.includes(slotLink.toLowerCase());
   const slotFinal = keywordDoClique ? slotDinamico2
                   : (slotEhSintetico ? slotDinamico2 : (slotLink || slotDinamico2));
+  /* sid final: tag do destino (explicita) ou derivada com o SLOT DINÂMICO */
+  const sid = sidExplicito || `${site}_${country.toLowerCase()}_${String(slotFinal).slice(0, 40)}_${device}`;
+  const sidTag = String(sid).replace(/[^a-zA-Z0-9_]/g, '').slice(0, 60);
 
   try {
     if (!NON_MONETIZED.has(brandKey)) {
       const urlObj = new URL(targetUrl);
-      urlObj.searchParams.set('sid', sid);
-      urlObj.searchParams.set('aff_sub', sid);
+      urlObj.searchParams.set('sid', sidTag);
+      urlObj.searchParams.set('aff_sub', sidTag);
       urlObj.searchParams.set('aff_sub2', country);
-      urlObj.searchParams.set('subid', sid);
+      urlObj.searchParams.set('subid', sidTag);
       urlObj.searchParams.set('subid1', country);
-      urlObj.searchParams.set('subId1', sid);
-      if (urlObj.hostname.includes('shopee')) urlObj.searchParams.set('sub_id', sid);
-      if (urlObj.hostname.includes('ebay')) urlObj.searchParams.set('customid', sid);
+      urlObj.searchParams.set('subId1', sidTag);
+      if (urlObj.hostname.includes('shopee')) urlObj.searchParams.set('sub_id', sidTag);
+      if (urlObj.hostname.includes('ebay')) urlObj.searchParams.set('customid', sidTag);
       targetUrl = urlObj.toString();
     }
   } catch (e) {
@@ -407,7 +412,7 @@ module.exports = async (req, res) => {
           ad_id: String((typeof shopeeHit !== 'undefined' && shopeeHit && shopeeHit.hash) || brandKey || '').slice(0, 80) || null,
           network: net,
           click_url: String(targetUrl).slice(0, 500),
-          click_ref: String(sid || '').slice(0, 120),
+          click_ref: String(sidTag || '').slice(0, 120),
           country: country || null,
           user_agent: String(headers['user-agent'] || '').slice(0, 200),
           referrer: String(headers.referer || '').slice(0, 300),
@@ -460,19 +465,19 @@ module.exports = async (req, res) => {
           'Content-Type': 'application/json', Prefer: 'return=minimal'
         },
         body: JSON.stringify([{
-          dedupe_key: `click:${sid}:${(shopeeHit && shopeeHit.hash) || brandKey}:${agora.slice(0, 16)}`,
+          dedupe_key: `click:${sidTag}:${(shopeeHit && shopeeHit.hash) || brandKey}:${agora.slice(0, 16)}`,
           /* v336.0 — FAN-OUT: em vez de um único chat (era o privado do admin, e os
              grupos não recebiam nada), a linha vai para 'fanout'. O flush do cron
              entrega uma cópia por destino ativo, cada uma com a TAG do grupo no
              link de afiliado (site=<tag> → utm_content/subid/customid). */
           chat_id: 'fanout',
           body_text: `🖱️ <b>Clique</b> ${String(brandKey || '')} | ${String(country || '')}\n`
-            + `tag: <code>${String(sid || '').slice(0, 60)}</code>\n`
+            + `tag: <code>${String(sidTag || '').slice(0, 60)}</code>\n`
             + `slot: <code>${String(slotFinal || '')}</code> | ${IS_BOT ? 'bot' : 'humano'}`
             + (brLock === 'aplicada' ? `\n🔒 trava BR: moeda estrangeira bloqueada (${brLockMotivo})` : ''),
           parse_mode: 'HTML',
           payload: {
-            tipo: 'clique', kind: 'clicks', fanout: true, brand: brandKey, country, sid,
+            tipo: 'clique', kind: 'clicks', fanout: true, brand: brandKey, country, sid: sidTag,
             slot: slotFinal, slot_dinamico: Boolean(keywordDoClique), slot_origem: slotLink || null,
             keyword: keywordDoClique || null, arquitetura: arquiteturaUA(headers['user-agent']),
             br_lock: brLock, br_lock_motivo: brLockMotivo,
