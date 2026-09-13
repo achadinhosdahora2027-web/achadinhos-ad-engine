@@ -185,53 +185,83 @@ async function jobTwitter() {
 async function jobTgFlush() {
   const BLOCK = Math.max(1, Math.min(50, Number(process.env.TG_FLUSH_BLOCK_SIZE || 18)));
   const token = process.env.TELEGRAM_BOT_TOKEN || '';
-  if (!SUPABASE_KEY) return { ok: false, reason: 'supabase_key_ausente' };
-  if (!token) return { ok: false, reason: 'telegram_token_ausente' };
+  const diag = {
+    tem_url: Boolean(SUPABASE_URL),
+    tem_chave: Boolean(SUPABASE_KEY),
+    tem_token: Boolean(token)
+  };
+  if (!SUPABASE_KEY) return { ok: false, reason: 'supabase_key_ausente', diag };
+  if (!token) return { ok: false, reason: 'telegram_token_ausente', diag };
+
+  /* fetch próprio: o helper timedFetch trunca o corpo em 400 chars, o que quebra
+     a leitura de listas. Aqui precisamos do JSON completo das linhas da fila. */
+  async function raw(url, opts = {}, ms = 9000) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ms);
+    try {
+      const r = await fetch(url, { ...opts, signal: ctrl.signal });
+      const txt = await r.text();
+      return { ok: r.ok, status: r.status, text: txt };
+    } catch (e) {
+      return { ok: false, status: 0, text: String(e.name === 'AbortError' ? 'timeout' : (e.message || e)) };
+    } finally { clearTimeout(t); }
+  }
 
   const nowIso = new Date().toISOString();
-  const url = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`
+  const listUrl = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`
     + `?status=eq.pending&not_before=lte.${encodeURIComponent(nowIso)}`
     + `&order=id.asc&limit=${BLOCK}`;
-  const rows = await timedFetch(url, {
+  const listRes = await raw(listUrl, {
     headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json' }
-  }, 8000).then((r) => (Array.isArray(r) ? r : [])).catch(() => []);
+  });
+  let rows = [];
+  try { rows = JSON.parse(listRes.text); } catch (e) { rows = []; }
+  if (!Array.isArray(rows)) rows = [];
+  diag.fila_status = listRes.status;
+  diag.fila_resposta = String(listRes.text).slice(0, 200);
 
-  const results = [];
   let sent = 0, failed = 0;
+  const enviados = [];
   for (const row of rows) {
-    let ok = false, body = '';
-    try {
-      const res = await timedFetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: row.chat_id,
-          text: row.body_text,
-          parse_mode: row.parse_mode || 'HTML',
-          disable_web_page_preview: true
-        })
-      }, 8000);
-      ok = Boolean(res && res.ok);
-      body = JSON.stringify(res && res.result ? { message_id: res.result.message_id } : (res || {})).slice(0, 400);
-    } catch (e) { body = String(e.message || e).slice(0, 400); }
+    const sendRes = await raw(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: row.chat_id,
+        text: row.body_text,
+        parse_mode: row.parse_mode || 'HTML',
+        disable_web_page_preview: true
+      })
+    });
+    let ok = false, mid = null, erro = '';
+    try { const j = JSON.parse(sendRes.text); ok = Boolean(j.ok); mid = j.result && j.result.message_id; erro = j.description || ''; }
+    catch (e) { erro = sendRes.text; }
 
     if (ok) sent++; else failed++;
-    await timedFetch(`${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer?id=eq.${row.id}`, {
+    enviados.push({ id: row.id, ok, message_id: mid || undefined, erro: ok ? undefined : erro });
+
+    const patch = ok
+      ? { status: 'sent', sent_at: new Date().toISOString(), response_body: `message_id=${mid}`, attempts: (row.attempts || 0) + 1 }
+      : { status: ((row.attempts || 0) + 1 >= (row.max_attempts || 3)) ? 'failed' : 'pending',
+          attempts: (row.attempts || 0) + 1, last_error: String(erro).slice(0, 300),
+          /* backoff exponencial: 57014/timeout de madrugada nao martela o grupo */
+          not_before: new Date(Date.now() + Math.pow(2, (row.attempts || 0) + 1) * 60000).toISOString() };
+    await raw(`${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer?id=eq.${row.id}`, {
       method: 'PATCH',
-      headers: {
-        apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`,
-        'Content-Type': 'application/json', Prefer: 'return=minimal'
-      },
-      body: JSON.stringify(ok
-        ? { status: 'sent', sent_at: new Date().toISOString(), response_body: body, attempts: (row.attempts || 0) + 1 }
-        : { status: (row.attempts || 0) + 1 >= (row.max_attempts || 3) ? 'failed' : 'pending',
-            attempts: (row.attempts || 0) + 1, last_error: body,
-            // backoff: 2^tentativas minutos (erro 57014/timeout não martela o grupo)
-            not_before: new Date(Date.now() + Math.pow(2, (row.attempts || 0) + 1) * 60000).toISOString() })
-    }, 8000).catch(() => {});
-    results.push({ id: row.id, ok, message_id: ok ? undefined : undefined });
+      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify(patch)
+    });
   }
-  return { ok: true, block_size: BLOCK, pending_encontrados: rows.length, enviados: sent, falhas: failed, results };
+
+  /* telemetria: a onda passa a ser visível no painel (nexus_sat_telemetry) */
+  await raw(`${SUPABASE_URL}/rest/v1/nexus_sat_telemetry`, {
+    method: 'POST',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify([{ job: 'v325-tg-flush', status: failed ? 'PARCIAL' : 'OK',
+      message: `bloco=${BLOCK} pendentes=${rows.length} enviados=${sent} falhas=${failed}` }])
+  }, 5000);
+
+  return { ok: failed === 0, block_size: BLOCK, pendentes: rows.length, enviados: sent, falhas: failed, detalhe: enviados, diag };
 }
 
 const JOBS = {

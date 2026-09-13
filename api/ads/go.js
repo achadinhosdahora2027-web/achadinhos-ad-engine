@@ -272,6 +272,10 @@ module.exports = async (req, res) => {
     const sbUrl = process.env.SUPABASE_URL;
     const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
     const bufferChat = process.env.TELEGRAM_BUFFER_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID;
+    // Diagnóstico observável: X-Buffer-Enqueued diz se o clique entrou na fila e,
+    // se não entrou, exatamente qual peça de configuração faltou.
+    res.setHeader('X-Buffer-Enqueued', !sbUrl ? 'sem_supabase_url'
+      : (!sbKey ? 'sem_supabase_key' : (!bufferChat ? 'sem_chat_id' : (IS_BOT ? 'ignorado_bot' : 'sim'))));
     if (sbUrl && sbKey && bufferChat && !IS_BOT) {
       const ctrl2 = new AbortController();
       const tmr2 = setTimeout(() => ctrl2.abort(), 1200);
