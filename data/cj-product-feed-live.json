@@ -1,0 +1,459 @@
+{
+  "generated_at": "2026-09-13T01:49:13.459Z",
+  "endpoint": "https://ads.api.cj.com/query",
+  "company_id": "8041957",
+  "publisher_id": "101859672",
+  "filter": {
+    "currency": "BRL",
+    "country": "BR",
+    "keywords": [
+      "desconto",
+      "fone"
+    ],
+    "limit": 15
+  },
+  "busca_com_nosso_pid": {
+    "total": 0
+  },
+  "mercado_sem_filtro_de_pid": {
+    "desconto": {
+      "total": 91410,
+      "amostra": 15
+    },
+    "fone": {
+      "total": 3369,
+      "amostra": 15
+    }
+  },
+  "diagnostico": {
+    "produtos_unicos": 20,
+    "com_link_rastreavel": 0,
+    "joined_status_true": 0,
+    "anunciantes_vistos": [
+      "SHEIN"
+    ],
+    "bloqueio": "joinedStatus=false para o publisher 101859672. Necessário inscrever o publisher nos anunciantes no painel da CJ (não há API de inscrição)."
+  },
+  "produtos": [
+    {
+      "id": "st25071522776442734",
+      "adId": null,
+      "title": "Meias GLOW SOCK 2PP Femininas, Meias Longas, Pacote com Desconto",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "84.90",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/07/15/88/1752556402618af058656816e0f863a36d42a82482_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Women-s-GLOW-SOCK-2PP-Socks-Long-Socks-Discount-Pack-p-127860306-cat-4330.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "st25032620330760782",
+      "adId": null,
+      "title": "2025 Meias de Tornozelo JD9570 Pacote de Desconto 3 Unidades, Unissex",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "102.90",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/03/26/74/1742953452c7bdfb3161772e0bd6760c2c2ad3bea5_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/2025-Men-Women-3-Pack-PRF-T-CC-LOW-Ankle-Socks-JD9570-Discount-Pack-p-62631899-cat-4330.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sz25060539531954434",
+      "adId": null,
+      "title": "Denim Casuais Afunilados Sem Elasticidade para Mulheres Plus Size, Com Desconto",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "196.99",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/pi/2026/02/27/6c/1772178774897ed5972c72c3a5ea8bb14f67fcace6_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Plus-Size-Women-s-Non-Stretch-Casual-Tapered-Jeans-Discounted-p-106792711-cat-2055.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sz25052747572527755",
+      "adId": null,
+      "title": "Nova Regata Soltinha de Verão Sem Mangas para Mulheres com Gola, Desconto, Emagrecedora",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "54.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/pi/2026/07/22/72/17847064177621dbf6766cbcbc8f5c9108149cf0d7_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=1779&goods_id=92770788&feed_tp=LMTT"
+    },
+    {
+      "id": "sz25060508720406765",
+      "adId": null,
+      "title": "Jeans Justos Casuais com Desconto Não Elásticos Tapered Plus Size, Todas as Estações",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "193.99",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/pi/2026/01/04/7f/1767484827683608e7402a4f006fe3fe031a5e52d2_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Plus-Size-Women-s-Non-Stretch-Casual-Discounted-Tapered-Jeans-All-Season-p-106792505-cat-2055.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sz25052709288971004",
+      "adId": null,
+      "title": "Nova Regata Casual Feminina Larga Sem Mangas com Alça Larga e Decote Quadrado, Desconto",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "44.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/pi/2025/06/03/a5/1748929936be48f6e23cff608dda2b690eb845eee4_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Summer-New-Sleeveless-Large-Shoulder-Strap-Square-Neck-Discounted-Loose-Women-Casual-Tank-Top-p-92735155-cat-1779.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "st260318164610719602269",
+      "adId": null,
+      "title": "Pacote de desconto para meias curtas masculinas e femininas 3S 2L 1/4 S 2P JX5199",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 2.77,
+      "price": {
+        "amount": "77.99",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": null,
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=4330&goods_id=425536566&feed_tp=LMTT"
+    },
+    {
+      "id": "sg2305185507146044",
+      "adId": null,
+      "title": "Bolsa com Pregas na Borda, Aba e Alça Transversal, Estilo Vintage, Desconto de Tempo Limitado",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 0.66,
+      "price": {
+        "amount": "76.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/images3_spmp/2024/03/05/cf/1709603034a320bb8742c6e6338d03a1f8a065f36b_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=2155&goods_id=31095482&feed_tp=LMTT"
+    },
+    {
+      "id": "st251218112009942435844",
+      "adId": null,
+      "title": "2 peças/Pacote Meias Unissex MOD SP CRW, Pacote de Desconto de Meias Longas KC0249",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 2.05,
+      "price": {
+        "amount": "102.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/12/18/e0/176602803021f46cab18dc53dec41144c417fb7cfc_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/2pcs-Pack-Unisex-MOD-SP-CRW-Socks-Long-Socks-Discount-Pack-KC0249-p-330628067-cat-4330.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sw25020362262204020",
+      "adId": null,
+      "title": "Estojo de Fone de Ouvido Borboleta, Estojo de Fone de Ouvido Feito à Mão, Estojo de Fone de Ouvido com Corrente, Estojo de Fone de Ouvido Fofo, ParaAi",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 9.98,
+      "price": {
+        "amount": "22.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/images3_spmp/2025/02/03/ca/1738563381bd11010fc59ad3efc2d0da8f73cc7400_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=2488&goods_id=55164252&feed_tp=LMTT"
+    },
+    {
+      "id": "sw2407310711316344",
+      "adId": null,
+      "title": "Capa Protetora de Silicone para Fone de Ouvido DANYCASE, Acessórios Anti-Arranhões para Fone de Ouvido, Capa Protetora para Fone de Ouvido, Compatível",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 9.97,
+      "price": {
+        "amount": "16.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/03/11/ed/17732209196415afadd387b191407728dfd5e0d6f7_square_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=2488&goods_id=40145111&feed_tp=LMTT"
+    },
+    {
+      "id": "se25072422314789824",
+      "adId": null,
+      "title": "Fone de Ouvido Universal para Walkie Talkie, Fone de Ouvido Estilo Gancho de Orelha para Telefone Walkie Talkie, Fone de Ouvido com Plugue Tipo K",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "22.99",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/08/09/56/1754705688bb5d09b701e18208a423cd6d729877cc_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Universal-Walkie-Talkie-Earphone-Ear-Hook-Style-Earphone-For-Walkie-Talkie-Phone-Earphone-With-K-Type-Plug-p-147337757-cat-8485.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sg260716163641551894108",
+      "adId": null,
+      "title": "Gancho para Fone de Ouvido, Suporte Adesivo para Fone de Ouvido sob Mesa/Monitor, Suporte Universal para Fone de Ouvido com Adesivo, Economiza Espaço,",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 4.61,
+      "price": {
+        "amount": "19.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/07/16/f1/178419109927ccfe0654b6de4a4efb77d806d67e65_square_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/1pc-2pcs-4PCSHeadphone-Hanger-Hook-Under-Desk-Monitor-Adhesive-Headset-Stand-Holder-Universal-Headphone-Mount-With-Sticker-Space-Saving-For-PCGaming-p-534863887-cat-4289.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "se2306068030978767",
+      "adId": null,
+      "title": "Fone De Ouvido Vintage De Metal",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 12,
+      "price": {
+        "amount": "123.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/07/30/82/1785384272be83a393ffc11ee659dd134d9b062cf0_square_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Vintage-Metal-Headset-Headphones-p-28845313-cat-3306.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sw25032895355271141",
+      "adId": null,
+      "title": "Estojo de Fone de Ouvido com Casca de Tartaruga e Coral, Capas, Estojo de Fone de Ouvido Oceânico, Estojo de Fone de Ouvido Quadrado Transparente com",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 11.98,
+      "price": {
+        "amount": "18.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/06/13/89/174978141959a99b92b8a286f2e73442ef200a566e_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=2488&goods_id=104900416&feed_tp=LMTT"
+    },
+    {
+      "id": "sr260824162135353130438",
+      "adId": null,
+      "title": "Suporte Minimalista para Fone de Ouvido, Suporte Simples para Fone de Ouvido para Amantes de Música, Rack de Metal Resistente para Fone de Ouvido para",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 1.26,
+      "price": {
+        "amount": "11.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/09/04/f2/17885143007c0cd14ab494e7af927190518416eacd_square_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=5178&goods_id=561118070&feed_tp=LMTT"
+    },
+    {
+      "id": "se25043039933233123",
+      "adId": null,
+      "title": "4 Peças Ganchos de Fone de Ouvido Sem Fio, Ganchos Anti-Queda e Anti-Perda para Fone de Ouvido, Ganchos de Fone de Ouvido de 6mm",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 0.33,
+      "price": {
+        "amount": "14.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2025/04/30/79/1746006956c41f16b6ac2cd0d328baecf0cd3f9f6c_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=9710&goods_id=73395393&feed_tp=LMTT"
+    },
+    {
+      "id": "sw260127225114901293803",
+      "adId": null,
+      "title": "1 Peça Estojo de Couro para Fone de Ouvido Max, Capa Protetora para Fone de Ouvido",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": null,
+      "price": {
+        "amount": "23.95",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/01/27/b7/17695256155d114912d8004e696ccdb556b1f10e0b_square_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/1pc-Max-Headphone-Leather-Case-Headphone-Protective-Cover-p-402583698-cat-8960.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    },
+    {
+      "id": "sh260318131955041075550",
+      "adId": null,
+      "title": "Suporte de Parede para Fone de Ouvido, Gancho Autoadesivo, Suporte de Exibição de Fone de Ouvido de Plástico Durável, Suporte de Fone de Ouvido de Com",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 10.01,
+      "price": {
+        "amount": "11.99",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": null,
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://app.shein.com/0/goods-p-br?cat_id=3581&goods_id=428271160&feed_tp=LMTT"
+    },
+    {
+      "id": "sh260608181276542902273",
+      "adId": null,
+      "title": "Decoração de Fone de Ouvido Duplo, Clipe de Diamante para Fone de Ouvido Esportivo, Acessórios de Fone de Ouvido Feminino, Formatos de Borboleta e Dia",
+      "brand": "SHEIN",
+      "advertiser": "SHEIN",
+      "advertiser_id": "3773223",
+      "advertiser_country": "SG",
+      "target_country": "BR",
+      "availability": "in stock",
+      "discount_percentage": 2.45,
+      "price": {
+        "amount": "22.90",
+        "currency": "BRL"
+      },
+      "sale_price": null,
+      "image": "https://img.ltwebstatic.com/v4/j/spmp/2026/06/08/f8/17809144498dcc8ab3fae5dedb672eaf6611cc90d5_thumbnail_405x552.jpg",
+      "joined": false,
+      "link_rastreavel": null,
+      "link_direto": "https://br.shein.com/Fashion-Dual-Ear-Headphone-Decoration-Sports-Headphone-Diamond-Clip-Women-s-Headphone-Accessories-Butterfly-And-Diamond-Shapes-Gifts-p-505183104-cat-11555.html?&feed_tp=LMTT&network={network}&keyword={keyword}"
+    }
+  ]
+}

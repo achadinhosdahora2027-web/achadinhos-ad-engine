@@ -70,12 +70,12 @@ jobs:
           CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$SUPABASE_URL/rest/v1/brands?select=id&limit=1" -H "apikey: $SUPABASE_SERVICE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_KEY")
           [ "$CODE" = "200" ] && echo "PASS Supabase REST 200" || echo "FAIL Supabase REST HTTP $CODE"
 
-      - name: CJ Affiliate — token GraphQL
+      - name: CJ Affiliate — token GraphQL (ads.api.cj.com/query)
         env:
           CJ_ACCESS_TOKEN: ${{ secrets.CJ_ACCESS_TOKEN }}
         run: |
           if [ -z "$CJ_ACCESS_TOKEN" ]; then echo "SKIP CJ: secret ausente"; exit 0; fi
-          CODE=$(curl -s -o /tmp/cj -w '%{http_code}' --max-time 20 "https://ads.api.cj.com/graphql" \
+          CODE=$(curl -s -o /tmp/cj -w '%{http_code}' --max-time 20 "https://ads.api.cj.com/query" \
             -H "Authorization: Bearer $CJ_ACCESS_TOKEN" -H 'Content-Type: application/json' \
             -d '{"query":"{ publisherId }"}')
           [ "$CODE" = "200" ] && echo "PASS CJ GraphQL 200" || echo "FAIL CJ GraphQL HTTP $CODE → $(head -c 160 /tmp/cj)"
