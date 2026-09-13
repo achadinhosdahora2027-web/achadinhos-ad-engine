@@ -52,6 +52,25 @@ function resolveShopeeOffer(query) {
   for (const t of tokens) {
     if (t.length >= 6 && inv.keywords[t]) return { hash: inv.keywords[t], ...inv.offers[inv.keywords[t]], matched_by: 'keyword_termo' };
   }
+  // 4) conjunto de termos: em conversa real as palavras vêm fora de ordem e com
+  //    palavras no meio ("kit higiene bebe" x "Kit Higiene Cuidados Bebe"). Aqui a
+  //    consulta é comparada com o NOME de cada oferta e vence quem cobre mais termos
+  //    (mínimo 2, para não casar em cima de uma palavra genérica só). Empate vai
+  //    para a maior comissão — o melhor anúncio paga o clique.
+  const fortes = tokens.filter((t) => t.length >= 4);
+  if (fortes.length >= 2) {
+    let melhor = null, melhorScore = 0;
+    for (const [h, o] of Object.entries(inv.offers)) {
+      if (!o.n) continue;
+      const alvo = o.n.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      let score = 0;
+      for (const t of fortes) if (alvo.includes(t)) score++;
+      if (score < 2) continue;
+      const peso = score * 1000 + (o.c || 0);
+      if (peso > melhorScore) { melhorScore = peso; melhor = { h, o, score }; }
+    }
+    if (melhor) return { hash: melhor.h, ...melhor.o, matched_by: `token_set_${melhor.score}` };
+  }
   return null;
 }
 const CJ_CID = '8041957';
