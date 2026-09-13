@@ -24,7 +24,12 @@ async function testGo(query, headers) {
     setHeader: (k, v) => { out[k.toLowerCase()] = v; if (k === 'Location') location = v; },
     status: (code) => { statusCode = code; return { end: (b) => { out.body = b; }, json: (o) => { out.json = o; } }; }
   };
-  try { await goHandler(req, res); } catch (e) { out.erro = String(e.message); }
+  // go.js contains legacy diagnostic logging with full destinations. Suppress it
+  // in CI so affiliate tracking URLs/PIDs never enter build logs.
+  const originalLog = console.log;
+  try { console.log = () => {}; await goHandler(req, res); }
+  catch (e) { out.erro = String(e.message); }
+  finally { console.log = originalLog; }
   return { statusCode, location, headers: out };
 }
 
@@ -70,7 +75,7 @@ async function testGo(query, headers) {
   assert.strictEqual(r6.statusCode, 307);
   assert.strictEqual(r6.headers['x-nexus-counted'], '0');
   assert.ok(!r6.location.endsWith('/api/ads/status'), 'noint preserva o destino real, não o neutro');
-  assert.ok(/shopee|meli\.la|click-1018|ebay\.com/i.test(r6.location), 'destino monetizado preservado: ' + r6.location.slice(0, 60));
+  assert.ok(/shopee|meli\.la|\/click-|ebay\.com/i.test(r6.location), 'destino monetizado preservado sem expor a URL');
   console.log('✓ ?noint=1 → destino real preservado · contado=0');
 
   // 8) v128.8 — navegação humana COM gesto: token de clique comprovado emitido

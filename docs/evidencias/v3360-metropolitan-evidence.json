@@ -1,0 +1,594 @@
+{
+  "version": "v3360.0",
+  "generated_at": "2026-09-13T21:46:00.044581+00:00",
+  "publication_state": "internal_foundation_deployed_no_public_pages_or_redirect",
+  "city_evidence": {
+    "input_documents": [
+      {
+        "country": "US",
+        "file": "grandes_cidades_metropolitanas_eua 2.pdf",
+        "sha256": "ee0e0657ec678b52b2c0b74ba4e1b56396a1b72e7407b75a8a3d3b7fd5809d99"
+      },
+      {
+        "country": "CN",
+        "file": "grandes_cidades_metropolitanas_china.pdf",
+        "sha256": "f14d4a2a7d7432a7401119f4a6bc846ca966e2b6145a76db98bff2c23cdc7db0"
+      },
+      {
+        "country": "RU",
+        "file": "grandes_cidades_metropolitanas_russia.pdf",
+        "sha256": "c33b5c5e987a717d88887a1bcd25b8b484c3a29ad6a9b15c09d10168706a4c6f"
+      },
+      {
+        "country": "DE",
+        "file": "grandes_cidades_metropolitanas_alemanha.pdf",
+        "sha256": "5b352a7b04d637f4b90478e31cac5591736b4263eb6aaf363db93c64f3832f46"
+      },
+      {
+        "country": "BR",
+        "file": "grandes_cidades_metropolitanas_brasil.pdf",
+        "sha256": "e7c8e5e727a088df8d7d9495214adcb40decf8a1d2a26e924023b603a783c24d"
+      },
+      {
+        "country": "GB",
+        "file": "grandes_cidades_metropolitanas_reino_unido.pdf",
+        "sha256": "95ffca83e120eed8812a41025a5f48cce05bacb5b0db3a260bf08fb620f9ca12"
+      },
+      {
+        "country": "JP",
+        "file": "grandes_cidades_metropolitanas_japao.pdf",
+        "sha256": "594b3c9f9a90ef72d0c4a0ba0255e4dc2fd6771bf650c97d2ac6b5649485ca18"
+      },
+      {
+        "country": "IN",
+        "file": "grandes_cidades_metropolitanas_india.pdf",
+        "sha256": "7d60c64bce10e6f7c631aef157352dabff1d9e7d228a4e1791a2f80d7d478851"
+      }
+    ],
+    "raw_rows": 854,
+    "logical_rows": 853,
+    "validated_rows": 853,
+    "v3340_overlap_not_duplicated": 37,
+    "delta_rows": 816,
+    "delta_by_source_country": {
+      "BR": 50,
+      "CN": 115,
+      "DE": 92,
+      "GB": 39,
+      "IN": 74,
+      "JP": 50,
+      "RU": 127,
+      "US": 269
+    },
+    "routing_eligible_delta_rows": 812,
+    "routing_disabled_rows": [
+      {
+        "source_country_code": "RU",
+        "routing_country_code": "RU",
+        "destination_name": "Novomoskovsky Administrative Okrug",
+        "reason": "source_entity_is_administrative_district_not_city"
+      },
+      {
+        "source_country_code": "RU",
+        "routing_country_code": "UA",
+        "destination_name": "Sevastopol",
+        "reason": "territorial_status_disputed_fail_closed"
+      },
+      {
+        "source_country_code": "RU",
+        "routing_country_code": "UA",
+        "destination_name": "Simferopol",
+        "reason": "territorial_status_disputed_fail_closed"
+      },
+      {
+        "source_country_code": "CN",
+        "routing_country_code": "CN",
+        "destination_name": "Changhai County",
+        "reason": "source_entity_is_county_not_city"
+      }
+    ],
+    "admin_disambiguation_required_rows": 27,
+    "alias_collision_groups": 13,
+    "records_with_aliases": 449,
+    "records_with_non_ascii_aliases": 390,
+    "geonames": {
+      "matched_rows": 853,
+      "source": {
+        "name": "GeoNames alternateNamesV2",
+        "url": "https://download.geonames.org/export/dump/alternateNamesV2.zip",
+        "sha256": "6ebd03faf9f99ec405ec8263bc88ac51aa0c6220ca221f92defddae38082089b",
+        "retrieved_local_date": "2026-09-13"
+      },
+      "cities15000_sha256": "15b9401f1e3216219bc58474a1d150c1c9e81dfbfb58e6188c96261f94a393db",
+      "admin1_sha256": "590651498043f674accda2b7f46d21286cda0e290b02f8561c5005eee9a5448c"
+    },
+    "resolved_source_anomalies": [
+      {
+        "country": "BR",
+        "raw_pair": [
+          "Anápolis",
+          "Anápolis"
+        ],
+        "issue": "source_admin_area_anomaly_resolved",
+        "resolved_admin_area": "Goiás",
+        "resolution_source": "https://biblioteca.ibge.gov.br/biblioteca-catalogo.html?id=31268&view=detalhes",
+        "ibge_municipality_code": "5201108"
+      },
+      {
+        "country": "CN",
+        "raw_destination": "Huanggan",
+        "issue": "source_spelling_anomaly_resolved",
+        "resolved_destination": "Huanggang",
+        "resolution_source": "http://en.hubei.gov.cn/hubei_info/administrative/201305/t20130521_449946.shtml"
+      }
+    ],
+    "source_anomaly_count": 20
+  },
+  "cj_evidence": {
+    "joined_advertisers": 223,
+    "joined_active_advertisers": 223,
+    "market_product_feeds_reported": 15663,
+    "market_product_feeds_initially_collected": 10000,
+    "joined_product_feeds_complete": 402,
+    "joined_feed_source_types": {
+      "GOOGLE": 389,
+      "NONE": 3,
+      "TRAVEL": 5,
+      "null": 5
+    },
+    "program_terms": {
+      "total_contracts": 242,
+      "records_collected": 242,
+      "status_counts": {
+        "PENDING_OFFER": 1,
+        "ACTIVE": 229,
+        "EXPIRED": 11,
+        "CANCELLED": 1
+      },
+      "active_contracts": 229,
+      "active_contracts_with_explicit_bound_property_commission": 0,
+      "active_view_through_commission_rules": 0
+    },
+    "nonjoined_travel_keyword_discovery": {
+      "total": 337,
+      "routing_eligible": false,
+      "application_mutation_performed": false
+    },
+    "link_search_scopes": {
+      "GLOBAL": {
+        "total_matched": 2724,
+        "records_collected": 2724,
+        "collection_capped": false,
+        "unique_records_collected": 2686,
+        "api_records_returned": 2724,
+        "api_duplicate_records": 38
+      },
+      "US": {
+        "total_matched": 335,
+        "records_collected": 334,
+        "collection_capped": false,
+        "unique_records_collected": 334,
+        "api_records_returned": 335,
+        "api_duplicate_records": 1
+      },
+      "CN": {
+        "total_matched": 33,
+        "records_collected": 33,
+        "collection_capped": false,
+        "unique_records_collected": 33,
+        "api_records_returned": 33,
+        "api_duplicate_records": 0
+      },
+      "RU": {
+        "total_matched": 0,
+        "records_collected": 0,
+        "collection_capped": false,
+        "unique_records_collected": 0,
+        "api_records_returned": 0,
+        "api_duplicate_records": 0
+      },
+      "DE": {
+        "total_matched": 81,
+        "records_collected": 81,
+        "collection_capped": false,
+        "unique_records_collected": 81,
+        "api_records_returned": 81,
+        "api_duplicate_records": 0
+      },
+      "BR": {
+        "total_matched": 53,
+        "records_collected": 53,
+        "collection_capped": false,
+        "unique_records_collected": 53,
+        "api_records_returned": 53,
+        "api_duplicate_records": 0
+      },
+      "GB": {
+        "total_matched": 190,
+        "records_collected": 190,
+        "collection_capped": false,
+        "unique_records_collected": 190,
+        "api_records_returned": 190,
+        "api_duplicate_records": 0
+      },
+      "JP": {
+        "total_matched": 42,
+        "records_collected": 42,
+        "collection_capped": false,
+        "unique_records_collected": 42,
+        "api_records_returned": 42,
+        "api_duplicate_records": 0
+      },
+      "IN": {
+        "total_matched": 38,
+        "records_collected": 38,
+        "collection_capped": false,
+        "unique_records_collected": 38,
+        "api_records_returned": 38,
+        "api_duplicate_records": 0
+      }
+    },
+    "country_product_coverage": {
+      "US": {
+        "shoppingProducts": {
+          "market_total": 173315075,
+          "joined_total": 446137
+        },
+        "travelExperienceProducts": {
+          "market_total": 131335,
+          "joined_total": 0
+        }
+      },
+      "CN": {
+        "shoppingProducts": {
+          "market_total": 27799,
+          "joined_total": 0
+        },
+        "travelExperienceProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        }
+      },
+      "RU": {
+        "shoppingProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        },
+        "travelExperienceProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        }
+      },
+      "DE": {
+        "shoppingProducts": {
+          "market_total": 1164858,
+          "joined_total": 0
+        },
+        "travelExperienceProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        }
+      },
+      "BR": {
+        "shoppingProducts": {
+          "market_total": 13895,
+          "joined_total": 0
+        },
+        "travelExperienceProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        }
+      },
+      "GB": {
+        "shoppingProducts": {
+          "market_total": 45773055,
+          "joined_total": 6
+        },
+        "travelExperienceProducts": {
+          "market_total": 1844954,
+          "joined_total": 0
+        }
+      },
+      "JP": {
+        "shoppingProducts": {
+          "market_total": 431674,
+          "joined_total": 0
+        },
+        "travelExperienceProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        }
+      },
+      "IN": {
+        "shoppingProducts": {
+          "market_total": 23156,
+          "joined_total": 0
+        },
+        "travelExperienceProducts": {
+          "market_total": 0,
+          "joined_total": 0
+        }
+      }
+    },
+    "country_policy_pool": {
+      "US": {
+        "api_records": 334,
+        "eligible_before_bounding": 70,
+        "selected_placements": 33,
+        "advertisers": 12,
+        "locales": {
+          "en-US": 29,
+          "es-US": 4
+        },
+        "intents": {
+          "car_rental": 3,
+          "travel": 11,
+          "flight": 6,
+          "hotel": 10,
+          "vacation": 3
+        },
+        "routing_ready": true
+      },
+      "CN": {
+        "api_records": 33,
+        "eligible_before_bounding": 1,
+        "selected_placements": 1,
+        "advertisers": 1,
+        "locales": {
+          "zh-CN": 1
+        },
+        "intents": {
+          "flight": 1
+        },
+        "routing_ready": true
+      },
+      "RU": {
+        "api_records": 0,
+        "eligible_before_bounding": 0,
+        "selected_placements": 0,
+        "advertisers": 0,
+        "locales": {},
+        "intents": {},
+        "routing_ready": false
+      },
+      "DE": {
+        "api_records": 81,
+        "eligible_before_bounding": 18,
+        "selected_placements": 10,
+        "advertisers": 4,
+        "locales": {
+          "de-DE": 10
+        },
+        "intents": {
+          "travel": 7,
+          "hotel": 3
+        },
+        "routing_ready": true
+      },
+      "BR": {
+        "api_records": 53,
+        "eligible_before_bounding": 8,
+        "selected_placements": 3,
+        "advertisers": 1,
+        "locales": {
+          "pt-BR": 3
+        },
+        "intents": {
+          "travel": 3
+        },
+        "routing_ready": true
+      },
+      "GB": {
+        "api_records": 190,
+        "eligible_before_bounding": 77,
+        "selected_placements": 34,
+        "advertisers": 14,
+        "locales": {
+          "en-GB": 34
+        },
+        "intents": {
+          "hotel": 17,
+          "car_rental": 3,
+          "wellness_travel": 1,
+          "travel": 9,
+          "flight": 1,
+          "vacation": 3
+        },
+        "routing_ready": true
+      },
+      "JP": {
+        "api_records": 42,
+        "eligible_before_bounding": 1,
+        "selected_placements": 1,
+        "advertisers": 1,
+        "locales": {
+          "ja-JP": 1
+        },
+        "intents": {
+          "flight": 1
+        },
+        "routing_ready": true
+      },
+      "IN": {
+        "api_records": 38,
+        "eligible_before_bounding": 17,
+        "selected_placements": 5,
+        "advertisers": 3,
+        "locales": {
+          "en-IN": 5
+        },
+        "intents": {
+          "flight": 2,
+          "vacation": 3
+        },
+        "routing_ready": true
+      }
+    },
+    "selected_policy_records": 87,
+    "selected_unique_links": 69,
+    "affiliate_urls_recorded": false,
+    "affiliate_urls_followed": false,
+    "clicks_performed": false,
+    "sales_claimed": false,
+    "promotional_properties": {
+      "active_total": 3,
+      "bound_properties_active_and_visible": 3,
+      "property_ids_recorded": false,
+      "website_urls_recorded": false
+    },
+    "market_product_feeds_complete": {
+      "total_reported": 15663,
+      "records_collected_unique": 15663,
+      "complete": true,
+      "country_partitions_queried": 252,
+      "country_partition_total_sum": 15663,
+      "source_feed_types": {
+        "GOOGLE": 14656,
+        "null": 592,
+        "TRAVEL": 306,
+        "NONE": 90,
+        "FINANCE": 19
+      }
+    },
+    "joined_feed_currencies": {
+      "USD": 181,
+      "SAR": 1,
+      "GBP": 22,
+      "null": 3,
+      "EUR": 117,
+      "AUD": 4,
+      "CAD": 7,
+      "CHF": 5,
+      "DKK": 5,
+      "HUF": 4,
+      "MXN": 3,
+      "PLN": 4,
+      "SGD": 1,
+      "BRL": 1,
+      "UAH": 1,
+      "SEK": 4,
+      "JPY": 4,
+      "RON": 13,
+      "NZD": 2,
+      "CZK": 5,
+      "HRK": 1,
+      "THB": 1,
+      "INR": 1,
+      "RUB": 4,
+      "NOK": 1,
+      "BGN": 2,
+      "CNY": 1,
+      "RSD": 1,
+      "KRW": 1,
+      "ILS": 1,
+      "AED": 1
+    },
+    "joined_feed_languages": {
+      "en": 272,
+      "ar": 2,
+      "null": 3,
+      "de": 29,
+      "hu": 4,
+      "es": 9,
+      "pl": 4,
+      "da": 4,
+      "nl": 5,
+      "pt": 3,
+      "it": 11,
+      "ja": 4,
+      "cs": 9,
+      "ro": 13,
+      "sv": 3,
+      "fr": 11,
+      "bg": 3,
+      "uk": 1,
+      "ru": 4,
+      "no": 1,
+      "zh-Hans": 1,
+      "sl": 3,
+      "fi": 1,
+      "ko": 1,
+      "he": 1
+    },
+    "joined_advertiser_capabilities": {
+      "mobile_tracking_certified_true": 174,
+      "cookieless_tracking_enabled_true": 180,
+      "mobile_supported_field_present": 0,
+      "total": 223
+    },
+    "selected_pool_capabilities": {
+      "mobile_optimized": 72,
+      "cookieless_tracking_enabled": 44,
+      "cross_device_only": 0,
+      "promotion_types": {
+        "Product": 6,
+        "N/A": 57,
+        "Sale/Discount": 15,
+        "Coupon": 9
+      },
+      "dated_promotions": 32
+    },
+    "link_hydration_preflight": {
+      "observed_at": "2026-09-13T21:35:02.806298+00:00",
+      "selected_placements": 87,
+      "exact_link_country_checks": 87,
+      "all_links_active": true,
+      "all_target_country_filtered": true,
+      "all_accounts_active_joined": true,
+      "all_terms_active": true,
+      "affiliate_urls_recorded_in_reports": false,
+      "affiliate_urls_followed": false,
+      "clicks_performed": false,
+      "protected_payload_mode": "0o600",
+      "plaintext_credentials_recorded": false
+    }
+  },
+  "implementation": {
+    "migration": "supabase/migrations/supabase_v3360_metropolitan_expansion.sql",
+    "edge": "supabase/functions/nexus-metropolitan-v3360/index.ts",
+    "cj_sync_corrected": "scripts/cj-product-catalog-sync.js",
+    "city_pages_published": false,
+    "seo_indexing_enabled": false,
+    "redirect_endpoint_deployed": false,
+    "routes_default_enabled": false,
+    "protected_go_modified": false,
+    "protected_compose_modified": false,
+    "migration_sha256": "712d907e0ad4e2f5c0654156a8a82a70c56325cc0586588c8035e1ff82e5d4de",
+    "sql_rollback_dryrun": {
+      "observed_at": "2026-09-13T21:37:40.531063+00:00",
+      "target": "validated_master_project",
+      "migration_sha256": "08cd38b82aeaaf3483d348480dc44c51ae10988c47e604fe86811db2ff5fb934",
+      "no_payload_rollback": {
+        "http": 201,
+        "ok": true
+      },
+      "synthetic_hydration_rollback": {
+        "http": 201,
+        "ok": true,
+        "synthetic_non_affiliate_rows": 87,
+        "ready_path_tested": true,
+        "ambiguous_fail_closed_tested": true,
+        "no_country_route_fail_closed_tested": true
+      },
+      "post_rollback_verification": {
+        "http": 201,
+        "physically_verified": true
+      },
+      "production_objects_persisted": false,
+      "actual_affiliate_urls_used": false,
+      "plaintext_credentials_recorded": false
+    },
+    "production_schema_committed": true,
+    "production_schema_physically_verified": true,
+    "encrypted_affiliate_urls_installed": 87,
+    "internal_routes_enabled": 87,
+    "hydration_rpc_dropped": true,
+    "edge_function_deployed": true,
+    "edge_function_physically_verified": true,
+    "affiliate_urls_returned_by_resolver": false,
+    "clicks_generated": 0,
+    "impressions_generated": 0,
+    "conversions_claimed": 0,
+    "production_evidence_file": "docs/evidencias/v3360-production-deploy.json"
+  }
+}

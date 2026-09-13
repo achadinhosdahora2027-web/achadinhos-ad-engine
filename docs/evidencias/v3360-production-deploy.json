@@ -1,0 +1,122 @@
+{
+  "observed_at": "2026-09-13T21:38:32.456353+00:00",
+  "target": "validated_master_project",
+  "migration_sha256": "08cd38b82aeaaf3483d348480dc44c51ae10988c47e604fe86811db2ff5fb934",
+  "http": 201,
+  "schema_commit_ok": true,
+  "plaintext_credentials_recorded": false,
+  "affiliate_urls_in_request": false,
+  "post_commit_schema_verification": {
+    "observed_at": "2026-09-13T21:39:22.810603+00:00",
+    "http": 201,
+    "physical_schema_verified": true,
+    "checks": {
+      "city_rows": 816,
+      "routing_rows": 812,
+      "policy_rows": 87,
+      "enabled_routes": 0,
+      "encrypted_urls": 0,
+      "keyword_rows": 17605,
+      "resolver_private": true,
+      "service_resolver": true,
+      "service_hydrator": true,
+      "hydrator_private": true,
+      "city_capability": true,
+      "discovery_capability": true,
+      "routes_capability": false,
+      "publication_capability": false
+    },
+    "catalogs_preserved_by_transactional_migration_assertions": true,
+    "plaintext_credentials_recorded": false
+  },
+  "hydration": {
+    "observed_at": "2026-09-13T21:40:00.539650+00:00",
+    "transport": "PostgREST prepared request body",
+    "http": 200,
+    "hydration_ok": true,
+    "installed": 87,
+    "encrypted": true,
+    "plaintext_returned": false,
+    "affiliate_urls_in_status_or_report": false,
+    "affiliate_urls_followed": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false
+  },
+  "post_hydration_verification": {
+    "observed_at": "2026-09-13T21:40:30.373327+00:00",
+    "http": 201,
+    "physical_hydration_verified": true,
+    "checks": {
+      "enabled_encrypted": 87,
+      "distinct_urls": 86,
+      "valid_decrypted_urls": 87,
+      "distinct_host_hashes": 5,
+      "all_fresh": true,
+      "ready_state": "ok",
+      "resolver_url_absent": true,
+      "ambiguous_reason": "admin_area_required_for_ambiguous_destination",
+      "no_route_reason": "fresh_encrypted_affiliate_route_unavailable",
+      "routes_capability": true,
+      "disabled_city_rows": 4
+    },
+    "affiliate_urls_returned_or_recorded": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false
+  },
+  "hydrator_cleanup": {
+    "observed_at": "2026-09-13T21:40:40.252184+00:00",
+    "http_drop": 201,
+    "http_verify": 201,
+    "temporary_hydrator_dropped": true,
+    "encrypted_routes_preserved": true,
+    "ok": true,
+    "plaintext_credentials_recorded": false
+  },
+  "edge_deploy": {
+    "observed_at": "2026-09-13T21:41:13.652042+00:00",
+    "edge_secret_set": true,
+    "function_deploy_ok": true,
+    "verify_jwt_disabled_for_custom_internal_secret": true,
+    "plaintext_secret_recorded": false,
+    "cli_output_recorded": false
+  },
+  "edge_verification": {
+    "observed_at": "2026-09-13T21:45:31.321809+00:00",
+    "physical_edge_verified": true,
+    "checks": {
+      "get_http": 200,
+      "get_mode": "internal_metropolitan_intent_data_adapter",
+      "get_city_pages_published": false,
+      "unauthorized_http": 401,
+      "ready_http": 200,
+      "ready_estado": "ok",
+      "ready_disclosure": "#ad",
+      "ready_affiliate_url": null,
+      "ambiguous_http": 422,
+      "ambiguous_reason": "admin_area_required_for_ambiguous_destination",
+      "disabled_http": 422,
+      "disabled_reason": "destination_validated_but_routing_disabled",
+      "spoof_http": 422,
+      "spoof_reason": "destination_not_in_v3360_delta",
+      "responses_sensitive_values_absent": true
+    },
+    "affiliate_urls_requested_or_followed": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false
+  },
+  "disabled_entity_resolver_correction": {
+    "observed_at": "2026-09-13T21:45:21.411876+00:00",
+    "corrected_migration_sha256": "712d907e0ad4e2f5c0654156a8a82a70c56325cc0586588c8035e1ff82e5d4de",
+    "schema_reapply_http": 201,
+    "schema_reapply_ok": true,
+    "hydration_rpc_http": 200,
+    "rehydration_ok": true,
+    "temporary_hydrator_dropped": true,
+    "post_correction_physical_verification": true,
+    "affiliate_urls_in_status_or_report": false,
+    "affiliate_urls_followed": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false,
+    "schema_cache_reload_requested": true
+  }
+}

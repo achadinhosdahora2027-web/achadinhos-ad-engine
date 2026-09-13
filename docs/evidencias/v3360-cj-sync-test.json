@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-09-13T21:28:36.090677+00:00",
+  "exit_code": 0,
+  "stdout_json": {
+    "version": "v3360.0",
+    "generated_at": "2026-09-13T21:28:36.085Z",
+    "country": "BR",
+    "currency": "BRL",
+    "query_failures_present": false,
+    "unique_products_sampled": 0,
+    "pid_generated_links_sampled": 0,
+    "routing_ready": false,
+    "sensitive_values_emitted": false
+  },
+  "report_sensitive_values_absent": true,
+  "report_affiliate_urls_recorded": false,
+  "report_clicks_performed": false,
+  "query_failures_present": false
+}
