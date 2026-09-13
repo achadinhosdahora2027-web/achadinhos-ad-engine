@@ -1,0 +1,4149 @@
+{
+  "summary": {
+    "rows": 319,
+    "by_country": {
+      "AU": {
+        "rows": 51,
+        "matched_existing_v3340_or_v3360": 0,
+        "incremental_candidates": 51
+      },
+      "GB": {
+        "rows": 53,
+        "matched_existing_v3340_or_v3360": 43,
+        "incremental_candidates": 10
+      },
+      "ID": {
+        "rows": 66,
+        "matched_existing_v3340_or_v3360": 0,
+        "incremental_candidates": 66
+      },
+      "IN": {
+        "rows": 99,
+        "matched_existing_v3340_or_v3360": 74,
+        "incremental_candidates": 25
+      },
+      "MX": {
+        "rows": 50,
+        "matched_existing_v3340_or_v3360": 0,
+        "incremental_candidates": 50
+      }
+    },
+    "duplicate_attachment_hashes": {
+      "US": true,
+      "GB_original": true,
+      "IN_original": true
+    }
+  },
+  "records": [
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 1,
+      "source_city_raw": "Cidade do México (CDMX)",
+      "destination_name": "Cidade do México",
+      "source_admin_area": "Vale do México",
+      "aliases_from_source": [
+        "CDMX"
+      ],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 2,
+      "source_city_raw": "Ecatepec de Morelos",
+      "destination_name": "Ecatepec de Morelos",
+      "source_admin_area": "Vale do México",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 3,
+      "source_city_raw": "Nezahualcóyotl",
+      "destination_name": "Nezahualcóyotl",
+      "source_admin_area": "Vale do México",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 4,
+      "source_city_raw": "Naucalpan de Juárez",
+      "destination_name": "Naucalpan de Juárez",
+      "source_admin_area": "Vale do México",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 5,
+      "source_city_raw": "Tlalnepantla de Baz",
+      "destination_name": "Tlalnepantla de Baz",
+      "source_admin_area": "Vale do México",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 6,
+      "source_city_raw": "Chimalhuacán",
+      "destination_name": "Chimalhuacán",
+      "source_admin_area": "Vale do México",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 7,
+      "source_city_raw": "Guadalajara",
+      "destination_name": "Guadalajara",
+      "source_admin_area": "Jalisco / ZM Guadalajara",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 8,
+      "source_city_raw": "Zapopan",
+      "destination_name": "Zapopan",
+      "source_admin_area": "Jalisco / ZM Guadalajara",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 9,
+      "source_city_raw": "Tlaquepaque",
+      "destination_name": "Tlaquepaque",
+      "source_admin_area": "Jalisco / ZM Guadalajara",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 10,
+      "source_city_raw": "Tonalá",
+      "destination_name": "Tonalá",
+      "source_admin_area": "Jalisco / ZM Guadalajara",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 11,
+      "source_city_raw": "Monterrey",
+      "destination_name": "Monterrey",
+      "source_admin_area": "Nuevo León / ZM Monterrey",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 12,
+      "source_city_raw": "Guadalupe",
+      "destination_name": "Guadalupe",
+      "source_admin_area": "Nuevo León / ZM Monterrey",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 13,
+      "source_city_raw": "Apodaca",
+      "destination_name": "Apodaca",
+      "source_admin_area": "Nuevo León / ZM Monterrey",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 14,
+      "source_city_raw": "San Nicolás de los Garza",
+      "destination_name": "San Nicolás de los Garza",
+      "source_admin_area": "Nuevo León / ZM Monterrey",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 15,
+      "source_city_raw": "Tijuana",
+      "destination_name": "Tijuana",
+      "source_admin_area": "Baja California",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 16,
+      "source_city_raw": "Ciudad Juárez",
+      "destination_name": "Ciudad Juárez",
+      "source_admin_area": "Chihuahua",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 17,
+      "source_city_raw": "Puebla de Zaragoza",
+      "destination_name": "Puebla de Zaragoza",
+      "source_admin_area": "Puebla",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 18,
+      "source_city_raw": "León",
+      "destination_name": "León",
+      "source_admin_area": "Guanajuato",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 19,
+      "source_city_raw": "Santiago de Querétaro",
+      "destination_name": "Santiago de Querétaro",
+      "source_admin_area": "Querétaro",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 20,
+      "source_city_raw": "Toluca de Lerdo",
+      "destination_name": "Toluca de Lerdo",
+      "source_admin_area": "Estado do México",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 21,
+      "source_city_raw": "Mérida",
+      "destination_name": "Mérida",
+      "source_admin_area": "Yucatán",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 22,
+      "source_city_raw": "San Luis Potosí",
+      "destination_name": "San Luis Potosí",
+      "source_admin_area": "San Luis Potosí",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 23,
+      "source_city_raw": "Aguascalientes",
+      "destination_name": "Aguascalientes",
+      "source_admin_area": "Aguascalientes",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 24,
+      "source_city_raw": "Hermosillo",
+      "destination_name": "Hermosillo",
+      "source_admin_area": "Sonora",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 25,
+      "source_city_raw": "Saltillo",
+      "destination_name": "Saltillo",
+      "source_admin_area": "Coahuila",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 26,
+      "source_city_raw": "Mexicali",
+      "destination_name": "Mexicali",
+      "source_admin_area": "Baja California",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 27,
+      "source_city_raw": "Culiacán Rosales",
+      "destination_name": "Culiacán Rosales",
+      "source_admin_area": "Sinaloa",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 28,
+      "source_city_raw": "Acapulco de Juárez",
+      "destination_name": "Acapulco de Juárez",
+      "source_admin_area": "Guerrero",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 29,
+      "source_city_raw": "Cancún",
+      "destination_name": "Cancún",
+      "source_admin_area": "Quintana Roo",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 30,
+      "source_city_raw": "Veracruz",
+      "destination_name": "Veracruz",
+      "source_admin_area": "Veracruz",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 31,
+      "source_city_raw": "Morelia",
+      "destination_name": "Morelia",
+      "source_admin_area": "Michoacán",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 32,
+      "source_city_raw": "Chihuahua",
+      "destination_name": "Chihuahua",
+      "source_admin_area": "Chihuahua",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 33,
+      "source_city_raw": "Torreón",
+      "destination_name": "Torreón",
+      "source_admin_area": "Coahuila",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 34,
+      "source_city_raw": "Tampico",
+      "destination_name": "Tampico",
+      "source_admin_area": "Tamaulipas",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 35,
+      "source_city_raw": "Reynosa",
+      "destination_name": "Reynosa",
+      "source_admin_area": "Tamaulipas",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 36,
+      "source_city_raw": "Tuxtla Gutiérrez",
+      "destination_name": "Tuxtla Gutiérrez",
+      "source_admin_area": "Chiapas",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 37,
+      "source_city_raw": "Cuernavaca",
+      "destination_name": "Cuernavaca",
+      "source_admin_area": "Morelos",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 38,
+      "source_city_raw": "Oaxaca de Juárez",
+      "destination_name": "Oaxaca de Juárez",
+      "source_admin_area": "Oaxaca",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 39,
+      "source_city_raw": "Durango",
+      "destination_name": "Durango",
+      "source_admin_area": "Durango",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 40,
+      "source_city_raw": "Matamoros",
+      "destination_name": "Matamoros",
+      "source_admin_area": "Tamaulipas",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 41,
+      "source_city_raw": "Xalapa",
+      "destination_name": "Xalapa",
+      "source_admin_area": "Veracruz",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 42,
+      "source_city_raw": "Mazatlán",
+      "destination_name": "Mazatlán",
+      "source_admin_area": "Sinaloa",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 43,
+      "source_city_raw": "Irapuato",
+      "destination_name": "Irapuato",
+      "source_admin_area": "Guanajuato",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 44,
+      "source_city_raw": "Villahermosa",
+      "destination_name": "Villahermosa",
+      "source_admin_area": "Tabasco",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 45,
+      "source_city_raw": "Coatzacoalcos",
+      "destination_name": "Coatzacoalcos",
+      "source_admin_area": "Veracruz",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 46,
+      "source_city_raw": "Celaya",
+      "destination_name": "Celaya",
+      "source_admin_area": "Guanajuato",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 47,
+      "source_city_raw": "Ensenada",
+      "destination_name": "Ensenada",
+      "source_admin_area": "Baja California",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 48,
+      "source_city_raw": "Tepic",
+      "destination_name": "Tepic",
+      "source_admin_area": "Nayarit",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 49,
+      "source_city_raw": "Ciudad Victoria",
+      "destination_name": "Ciudad Victoria",
+      "source_admin_area": "Tamaulipas",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "MX",
+      "source_document": "grandes_cidades_metropolitanas_mexico.pdf",
+      "source_ordinal": 50,
+      "source_city_raw": "Pachuca de Soto",
+      "destination_name": "Pachuca de Soto",
+      "source_admin_area": "Hidalgo",
+      "aliases_from_source": [],
+      "source_sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 1,
+      "source_city_raw": "Sydney",
+      "destination_name": "Sydney",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 2,
+      "source_city_raw": "Newcastle",
+      "destination_name": "Newcastle",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 3,
+      "source_city_raw": "Wollongong",
+      "destination_name": "Wollongong",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 4,
+      "source_city_raw": "Central Coast",
+      "destination_name": "Central Coast",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 5,
+      "source_city_raw": "Tweed Heads",
+      "destination_name": "Tweed Heads",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 6,
+      "source_city_raw": "Albury",
+      "destination_name": "Albury",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 7,
+      "source_city_raw": "Wagga Wagga",
+      "destination_name": "Wagga Wagga",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 8,
+      "source_city_raw": "Coffs Harbour",
+      "destination_name": "Coffs Harbour",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 9,
+      "source_city_raw": "Tamworth",
+      "destination_name": "Tamworth",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 10,
+      "source_city_raw": "Orange",
+      "destination_name": "Orange",
+      "source_admin_area": "New South Wales",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 11,
+      "source_city_raw": "Melbourne",
+      "destination_name": "Melbourne",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 12,
+      "source_city_raw": "Geelong",
+      "destination_name": "Geelong",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 13,
+      "source_city_raw": "Ballarat",
+      "destination_name": "Ballarat",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 14,
+      "source_city_raw": "Bendigo",
+      "destination_name": "Bendigo",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 15,
+      "source_city_raw": "Shepparton - Mooroopna",
+      "destination_name": "Shepparton - Mooroopna",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 16,
+      "source_city_raw": "Wodonga",
+      "destination_name": "Wodonga",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 17,
+      "source_city_raw": "Mildura",
+      "destination_name": "Mildura",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 18,
+      "source_city_raw": "Traralgon - Morwell",
+      "destination_name": "Traralgon - Morwell",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 19,
+      "source_city_raw": "Warrnambool",
+      "destination_name": "Warrnambool",
+      "source_admin_area": "Victoria",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 20,
+      "source_city_raw": "Brisbane",
+      "destination_name": "Brisbane",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 21,
+      "source_city_raw": "Gold Coast",
+      "destination_name": "Gold Coast",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 22,
+      "source_city_raw": "Sunshine Coast",
+      "destination_name": "Sunshine Coast",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 23,
+      "source_city_raw": "Townsville",
+      "destination_name": "Townsville",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 24,
+      "source_city_raw": "Cairns",
+      "destination_name": "Cairns",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 25,
+      "source_city_raw": "Toowoomba",
+      "destination_name": "Toowoomba",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 26,
+      "source_city_raw": "Rockhampton",
+      "destination_name": "Rockhampton",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 27,
+      "source_city_raw": "Mackay",
+      "destination_name": "Mackay",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 28,
+      "source_city_raw": "Bundaberg",
+      "destination_name": "Bundaberg",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 29,
+      "source_city_raw": "Gladstone",
+      "destination_name": "Gladstone",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 30,
+      "source_city_raw": "Hervey Bay",
+      "destination_name": "Hervey Bay",
+      "source_admin_area": "Queensland",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 31,
+      "source_city_raw": "Perth",
+      "destination_name": "Perth",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 32,
+      "source_city_raw": "Mandurah",
+      "destination_name": "Mandurah",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 33,
+      "source_city_raw": "Bunbury",
+      "destination_name": "Bunbury",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 34,
+      "source_city_raw": "Kalgoorlie - Boulder",
+      "destination_name": "Kalgoorlie - Boulder",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 35,
+      "source_city_raw": "Geraldton",
+      "destination_name": "Geraldton",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 36,
+      "source_city_raw": "Albany",
+      "destination_name": "Albany",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 37,
+      "source_city_raw": "Busselton",
+      "destination_name": "Busselton",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 38,
+      "source_city_raw": "Karratha",
+      "destination_name": "Karratha",
+      "source_admin_area": "Western Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 39,
+      "source_city_raw": "Adelaide",
+      "destination_name": "Adelaide",
+      "source_admin_area": "South Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 40,
+      "source_city_raw": "Mount Gambier",
+      "destination_name": "Mount Gambier",
+      "source_admin_area": "South Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 41,
+      "source_city_raw": "Whyalla",
+      "destination_name": "Whyalla",
+      "source_admin_area": "South Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 42,
+      "source_city_raw": "Murray Bridge",
+      "destination_name": "Murray Bridge",
+      "source_admin_area": "South Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 43,
+      "source_city_raw": "Port Augusta",
+      "destination_name": "Port Augusta",
+      "source_admin_area": "South Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 44,
+      "source_city_raw": "Port Lincoln",
+      "destination_name": "Port Lincoln",
+      "source_admin_area": "South Australia",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 45,
+      "source_city_raw": "Hobart",
+      "destination_name": "Hobart",
+      "source_admin_area": "Tasmania",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 46,
+      "source_city_raw": "Launceston",
+      "destination_name": "Launceston",
+      "source_admin_area": "Tasmania",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 47,
+      "source_city_raw": "Devonport",
+      "destination_name": "Devonport",
+      "source_admin_area": "Tasmania",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 48,
+      "source_city_raw": "Burnie",
+      "destination_name": "Burnie",
+      "source_admin_area": "Tasmania",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 49,
+      "source_city_raw": "Canberra",
+      "destination_name": "Canberra",
+      "source_admin_area": "Australian Capital Territory",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 50,
+      "source_city_raw": "Darwin",
+      "destination_name": "Darwin",
+      "source_admin_area": "Northern Territory",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "AU",
+      "source_document": "grandes_cidades_metropolitanas_australia.pdf",
+      "source_ordinal": 51,
+      "source_city_raw": "Alice Springs",
+      "destination_name": "Alice Springs",
+      "source_admin_area": "Northern Territory",
+      "aliases_from_source": [],
+      "source_sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 1,
+      "source_city_raw": "Jacarta (Capital/DKI)",
+      "destination_name": "Jacarta",
+      "source_admin_area": "Jabodetabek (Grande Jacarta)",
+      "aliases_from_source": [
+        "Capital",
+        "DKI"
+      ],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 2,
+      "source_city_raw": "Bekasi",
+      "destination_name": "Bekasi",
+      "source_admin_area": "Jabodetabek (Grande Jacarta)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 3,
+      "source_city_raw": "Tangerang",
+      "destination_name": "Tangerang",
+      "source_admin_area": "Jabodetabek (Grande Jacarta)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 4,
+      "source_city_raw": "Depok",
+      "destination_name": "Depok",
+      "source_admin_area": "Jabodetabek (Grande Jacarta)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 5,
+      "source_city_raw": "Bogor",
+      "destination_name": "Bogor",
+      "source_admin_area": "Jabodetabek (Grande Jacarta)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 6,
+      "source_city_raw": "Tangerang do Sul (Tangerang Selatan)",
+      "destination_name": "Tangerang do Sul",
+      "source_admin_area": "Jabodetabek (Grande Jacarta)",
+      "aliases_from_source": [
+        "Tangerang Selatan"
+      ],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 7,
+      "source_city_raw": "Surabaya",
+      "destination_name": "Surabaya",
+      "source_admin_area": "Java Oriental (Gerbangkertosusila)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 8,
+      "source_city_raw": "Sidoarjo",
+      "destination_name": "Sidoarjo",
+      "source_admin_area": "Java Oriental (Gerbangkertosusila)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 9,
+      "source_city_raw": "Gresik",
+      "destination_name": "Gresik",
+      "source_admin_area": "Java Oriental (Gerbangkertosusila)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 10,
+      "source_city_raw": "Bangkalan",
+      "destination_name": "Bangkalan",
+      "source_admin_area": "Java Oriental (Gerbangkertosusila)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 11,
+      "source_city_raw": "Mojokerto",
+      "destination_name": "Mojokerto",
+      "source_admin_area": "Java Oriental (Gerbangkertosusila)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 12,
+      "source_city_raw": "Bandung",
+      "destination_name": "Bandung",
+      "source_admin_area": "Java Occidental (Grande Bandung)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 13,
+      "source_city_raw": "Cimahi",
+      "destination_name": "Cimahi",
+      "source_admin_area": "Java Occidental (Grande Bandung)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 14,
+      "source_city_raw": "Sumedang",
+      "destination_name": "Sumedang",
+      "source_admin_area": "Java Occidental (Grande Bandung)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 15,
+      "source_city_raw": "Medan",
+      "destination_name": "Medan",
+      "source_admin_area": "Sumatra Setentrional (Mebidangro)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 16,
+      "source_city_raw": "Binjai",
+      "destination_name": "Binjai",
+      "source_admin_area": "Sumatra Setentrional (Mebidangro)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 17,
+      "source_city_raw": "Deli Serdang",
+      "destination_name": "Deli Serdang",
+      "source_admin_area": "Sumatra Setentrional (Mebidangro)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 18,
+      "source_city_raw": "Makassar",
+      "destination_name": "Makassar",
+      "source_admin_area": "Celebes Meridional (Mamminasata)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 19,
+      "source_city_raw": "Maros",
+      "destination_name": "Maros",
+      "source_admin_area": "Celebes Meridional (Mamminasata)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 20,
+      "source_city_raw": "Gowa",
+      "destination_name": "Gowa",
+      "source_admin_area": "Celebes Meridional (Mamminasata)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 21,
+      "source_city_raw": "Semarang",
+      "destination_name": "Semarang",
+      "source_admin_area": "Java Central (Kedungsapur)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 22,
+      "source_city_raw": "Salatiga",
+      "destination_name": "Salatiga",
+      "source_admin_area": "Java Central (Kedungsapur)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 23,
+      "source_city_raw": "Kendal",
+      "destination_name": "Kendal",
+      "source_admin_area": "Java Central (Kedungsapur)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 24,
+      "source_city_raw": "Demak",
+      "destination_name": "Demak",
+      "source_admin_area": "Java Central (Kedungsapur)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 25,
+      "source_city_raw": "Palembang",
+      "destination_name": "Palembang",
+      "source_admin_area": "Sumatra Meridional (Patungraya Agung)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 26,
+      "source_city_raw": "Ogan Ilir",
+      "destination_name": "Ogan Ilir",
+      "source_admin_area": "Sumatra Meridional (Patungraya Agung)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 27,
+      "source_city_raw": "Pekanbaru",
+      "destination_name": "Pekanbaru",
+      "source_admin_area": "Riau",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 28,
+      "source_city_raw": "Dumai",
+      "destination_name": "Dumai",
+      "source_admin_area": "Riau",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 29,
+      "source_city_raw": "Batam",
+      "destination_name": "Batam",
+      "source_admin_area": "Ilhas Riau (Batam)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 30,
+      "source_city_raw": "Tanjung Pinang",
+      "destination_name": "Tanjung Pinang",
+      "source_admin_area": "Ilhas Riau",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 31,
+      "source_city_raw": "Balikpapan",
+      "destination_name": "Balikpapan",
+      "source_admin_area": "Kalimantan Oriental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 32,
+      "source_city_raw": "Samarinda",
+      "destination_name": "Samarinda",
+      "source_admin_area": "Kalimantan Oriental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 33,
+      "source_city_raw": "Nusantara",
+      "destination_name": "Nusantara",
+      "source_admin_area": "Nusantara (Nova Capital)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 34,
+      "source_city_raw": "Malang",
+      "destination_name": "Malang",
+      "source_admin_area": "Leste de Java",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 35,
+      "source_city_raw": "Batu",
+      "destination_name": "Batu",
+      "source_admin_area": "Leste de Java",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 36,
+      "source_city_raw": "Kediri",
+      "destination_name": "Kediri",
+      "source_admin_area": "Leste de Java",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 37,
+      "source_city_raw": "Madiun",
+      "destination_name": "Madiun",
+      "source_admin_area": "Leste de Java",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 38,
+      "source_city_raw": "Yogyakarta",
+      "destination_name": "Yogyakarta",
+      "source_admin_area": "Yogyakarta (Kartamantul)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 39,
+      "source_city_raw": "Sleman",
+      "destination_name": "Sleman",
+      "source_admin_area": "Yogyakarta (Kartamantul)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 40,
+      "source_city_raw": "Bantul",
+      "destination_name": "Bantul",
+      "source_admin_area": "Yogyakarta (Kartamantul)",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 41,
+      "source_city_raw": "Surakarta (Solo)",
+      "destination_name": "Surakarta",
+      "source_admin_area": "Java Central",
+      "aliases_from_source": [
+        "Solo"
+      ],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 42,
+      "source_city_raw": "Tegal",
+      "destination_name": "Tegal",
+      "source_admin_area": "Java Central",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 43,
+      "source_city_raw": "Pekalongan",
+      "destination_name": "Pekalongan",
+      "source_admin_area": "Java Central",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 44,
+      "source_city_raw": "Cirebon",
+      "destination_name": "Cirebon",
+      "source_admin_area": "Java Ocidental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 45,
+      "source_city_raw": "Sukabumi",
+      "destination_name": "Sukabumi",
+      "source_admin_area": "Java Ocidental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 46,
+      "source_city_raw": "Tasikmalaya",
+      "destination_name": "Tasikmalaya",
+      "source_admin_area": "Java Ocidental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 47,
+      "source_city_raw": "Padang",
+      "destination_name": "Padang",
+      "source_admin_area": "Sumatra Ocidental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 48,
+      "source_city_raw": "Bandar Lampung",
+      "destination_name": "Bandar Lampung",
+      "source_admin_area": "Lampung",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 49,
+      "source_city_raw": "Pontianak",
+      "destination_name": "Pontianak",
+      "source_admin_area": "Kalimantan Ocidental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 50,
+      "source_city_raw": "Banjarmasin",
+      "destination_name": "Banjarmasin",
+      "source_admin_area": "Kalimantan Meridional",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 51,
+      "source_city_raw": "Palangkaraya",
+      "destination_name": "Palangkaraya",
+      "source_admin_area": "Kalimantan Central",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 52,
+      "source_city_raw": "Manado",
+      "destination_name": "Manado",
+      "source_admin_area": "Celebes Setentrional",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 53,
+      "source_city_raw": "Palu",
+      "destination_name": "Palu",
+      "source_admin_area": "Celebes Central",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 54,
+      "source_city_raw": "Kendari",
+      "destination_name": "Kendari",
+      "source_admin_area": "Celebes Sudeste",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 55,
+      "source_city_raw": "Ambon",
+      "destination_name": "Ambon",
+      "source_admin_area": "Molucas",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 56,
+      "source_city_raw": "Jayapura",
+      "destination_name": "Jayapura",
+      "source_admin_area": "Papua",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 57,
+      "source_city_raw": "Denpasar",
+      "destination_name": "Denpasar",
+      "source_admin_area": "Bali",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 58,
+      "source_city_raw": "Mataram",
+      "destination_name": "Mataram",
+      "source_admin_area": "Nusa Tenggara Ocidental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 59,
+      "source_city_raw": "Kupang",
+      "destination_name": "Kupang",
+      "source_admin_area": "Nusa Tenggara Oriental",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 60,
+      "source_city_raw": "Serang",
+      "destination_name": "Serang",
+      "source_admin_area": "Banten",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 61,
+      "source_city_raw": "Cilegon",
+      "destination_name": "Cilegon",
+      "source_admin_area": "Banten",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 62,
+      "source_city_raw": "Banda Aceh",
+      "destination_name": "Banda Aceh",
+      "source_admin_area": "Aceh",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 63,
+      "source_city_raw": "Lhokseumawe",
+      "destination_name": "Lhokseumawe",
+      "source_admin_area": "Aceh",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 64,
+      "source_city_raw": "Jambi",
+      "destination_name": "Jambi",
+      "source_admin_area": "Jambi",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 65,
+      "source_city_raw": "Bengkulu",
+      "destination_name": "Bengkulu",
+      "source_admin_area": "Bengkulu",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "ID",
+      "source_document": "grandes_cidades_metropolitanas_indonesia.pdf",
+      "source_ordinal": 66,
+      "source_city_raw": "Pangkal Pinang",
+      "destination_name": "Pangkal Pinang",
+      "source_admin_area": "Bangka-Belitung",
+      "aliases_from_source": [],
+      "source_sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 1,
+      "source_city_raw": "Guntur",
+      "destination_name": "Guntur",
+      "source_admin_area": "Andhra Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Guntur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 2,
+      "source_city_raw": "Kurnool",
+      "destination_name": "Kurnool",
+      "source_admin_area": "Andhra Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 3,
+      "source_city_raw": "Nellore",
+      "destination_name": "Nellore",
+      "source_admin_area": "Andhra Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 4,
+      "source_city_raw": "Vijayawada",
+      "destination_name": "Vijayawada",
+      "source_admin_area": "Andhra Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Vijayawada"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 5,
+      "source_city_raw": "Visakhapatnam",
+      "destination_name": "Visakhapatnam",
+      "source_admin_area": "Andhra Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Visakhapatnam"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 6,
+      "source_city_raw": "Guwahati",
+      "destination_name": "Guwahati",
+      "source_admin_area": "Assam",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Guwahati"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 7,
+      "source_city_raw": "Bhagalpur",
+      "destination_name": "Bhagalpur",
+      "source_admin_area": "Bihar",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 8,
+      "source_city_raw": "Gaya",
+      "destination_name": "Gaya",
+      "source_admin_area": "Bihar",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 9,
+      "source_city_raw": "Muzaffarpur",
+      "destination_name": "Muzaffarpur",
+      "source_admin_area": "Bihar",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 10,
+      "source_city_raw": "Patna",
+      "destination_name": "Patna",
+      "source_admin_area": "Bihar",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Patna"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 11,
+      "source_city_raw": "Chandigarh",
+      "destination_name": "Chandigarh",
+      "source_admin_area": "Chandigarh (U.T.)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Chandigarh"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 12,
+      "source_city_raw": "Bhilai",
+      "destination_name": "Bhilai",
+      "source_admin_area": "Chhattisgarh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 13,
+      "source_city_raw": "Raipur",
+      "destination_name": "Raipur",
+      "source_admin_area": "Chhattisgarh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Raipur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 14,
+      "source_city_raw": "Delhi",
+      "destination_name": "Delhi",
+      "source_admin_area": "Delhi (NCR)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Delhi"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 15,
+      "source_city_raw": "New Delhi",
+      "destination_name": "New Delhi",
+      "source_admin_area": "Delhi (NCR)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 16,
+      "source_city_raw": "Ahmedabad",
+      "destination_name": "Ahmedabad",
+      "source_admin_area": "Gujarat",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Ahmedabad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 17,
+      "source_city_raw": "Bhavnagar",
+      "destination_name": "Bhavnagar",
+      "source_admin_area": "Gujarat",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 18,
+      "source_city_raw": "Jamnagar",
+      "destination_name": "Jamnagar",
+      "source_admin_area": "Gujarat",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Jamnagar"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 19,
+      "source_city_raw": "Rajkot",
+      "destination_name": "Rajkot",
+      "source_admin_area": "Gujarat",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Rajkot"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 20,
+      "source_city_raw": "Surat",
+      "destination_name": "Surat",
+      "source_admin_area": "Gujarat",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Surat"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 21,
+      "source_city_raw": "Vadodara (Baroda)",
+      "destination_name": "Vadodara",
+      "source_admin_area": "Gujarat",
+      "aliases_from_source": [
+        "Baroda"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Vadodara"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 22,
+      "source_city_raw": "Faridabad",
+      "destination_name": "Faridabad",
+      "source_admin_area": "Haryana (NCR)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Faridabad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 23,
+      "source_city_raw": "Gurgaon (Gurugram)",
+      "destination_name": "Gurgaon",
+      "source_admin_area": "Haryana (NCR)",
+      "aliases_from_source": [
+        "Gurugram"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Gurugram"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 24,
+      "source_city_raw": "Jammu",
+      "destination_name": "Jammu",
+      "source_admin_area": "Jammu and Kashmir",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 25,
+      "source_city_raw": "Srinagar",
+      "destination_name": "Srinagar",
+      "source_admin_area": "Jammu and Kashmir",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Srinagar"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 26,
+      "source_city_raw": "Dhanbad",
+      "destination_name": "Dhanbad",
+      "source_admin_area": "Jharkhand",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Dhanbad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 27,
+      "source_city_raw": "Jamshedpur",
+      "destination_name": "Jamshedpur",
+      "source_admin_area": "Jharkhand",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Jamshedpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 28,
+      "source_city_raw": "Ranchi",
+      "destination_name": "Ranchi",
+      "source_admin_area": "Jharkhand",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Ranchi"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 29,
+      "source_city_raw": "Bangalore (Bengaluru)",
+      "destination_name": "Bangalore",
+      "source_admin_area": "Karnataka",
+      "aliases_from_source": [
+        "Bengaluru"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Bengaluru"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 30,
+      "source_city_raw": "Belgaum (Belagavi)",
+      "destination_name": "Belgaum",
+      "source_admin_area": "Karnataka",
+      "aliases_from_source": [
+        "Belagavi"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 31,
+      "source_city_raw": "Gulbarga (Kalaburagi)",
+      "destination_name": "Gulbarga",
+      "source_admin_area": "Karnataka",
+      "aliases_from_source": [
+        "Kalaburagi"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 32,
+      "source_city_raw": "Hubli-Dharwad",
+      "destination_name": "Hubli-Dharwad",
+      "source_admin_area": "Karnataka",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Hubballi-Dharwad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 33,
+      "source_city_raw": "Mangalore (Mangaluru)",
+      "destination_name": "Mangalore",
+      "source_admin_area": "Karnataka",
+      "aliases_from_source": [
+        "Mangaluru"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 34,
+      "source_city_raw": "Mysore (Mysuru)",
+      "destination_name": "Mysore",
+      "source_admin_area": "Karnataka",
+      "aliases_from_source": [
+        "Mysuru"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Mysuru"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 35,
+      "source_city_raw": "Kochi (Cochim)",
+      "destination_name": "Kochi",
+      "source_admin_area": "Kerala",
+      "aliases_from_source": [
+        "Cochim"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Kochi"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 36,
+      "source_city_raw": "Kozhikode",
+      "destination_name": "Kozhikode",
+      "source_admin_area": "Kerala",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 37,
+      "source_city_raw": "Thiruvananthapuram",
+      "destination_name": "Thiruvananthapuram",
+      "source_admin_area": "Kerala",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Thiruvananthapuram"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 38,
+      "source_city_raw": "Bhopal",
+      "destination_name": "Bhopal",
+      "source_admin_area": "Madhya Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Bhopal"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 39,
+      "source_city_raw": "Gwalior",
+      "destination_name": "Gwalior",
+      "source_admin_area": "Madhya Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Gwalior"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 40,
+      "source_city_raw": "Indore",
+      "destination_name": "Indore",
+      "source_admin_area": "Madhya Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Indore"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 41,
+      "source_city_raw": "Jabalpur",
+      "destination_name": "Jabalpur",
+      "source_admin_area": "Madhya Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Jabalpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 42,
+      "source_city_raw": "Ujjain",
+      "destination_name": "Ujjain",
+      "source_admin_area": "Madhya Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 43,
+      "source_city_raw": "Amravati",
+      "destination_name": "Amravati",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Amravati"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 44,
+      "source_city_raw": "Aurangabad (Chhatrapati Sambhajinagar)",
+      "destination_name": "Aurangabad (Chhatrapati",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [
+        "Chhatrapati Sambhajinagar"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Aurangabad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 45,
+      "source_city_raw": "Bhiwandi",
+      "destination_name": "Bhiwandi",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Bhiwandi"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 46,
+      "source_city_raw": "Kalyan-Dombivli",
+      "destination_name": "Kalyan-Dombivli",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Kalyan-Dombivli"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 47,
+      "source_city_raw": "Kolhapur",
+      "destination_name": "Kolhapur",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 48,
+      "source_city_raw": "Mira-Bhayandar",
+      "destination_name": "Mira-Bhayandar",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 49,
+      "source_city_raw": "Mumbai",
+      "destination_name": "Mumbai",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Mumbai"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 50,
+      "source_city_raw": "Nagpur",
+      "destination_name": "Nagpur",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Nagpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 51,
+      "source_city_raw": "Nashik",
+      "destination_name": "Nashik",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Nashik"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 52,
+      "source_city_raw": "Navi Mumbai",
+      "destination_name": "Navi Mumbai",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Navi Mumbai"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 53,
+      "source_city_raw": "Pimpri-Chinchwad",
+      "destination_name": "Pimpri-Chinchwad",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Pimpri-Chinchwad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 54,
+      "source_city_raw": "Pune",
+      "destination_name": "Pune",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Pune"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 55,
+      "source_city_raw": "Solapur",
+      "destination_name": "Solapur",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Solapur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 56,
+      "source_city_raw": "Thane",
+      "destination_name": "Thane",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Thane"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 57,
+      "source_city_raw": "Vasai-Virar",
+      "destination_name": "Vasai-Virar",
+      "source_admin_area": "Maharashtra",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Vasai-Virar"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 58,
+      "source_city_raw": "Bhubaneswar",
+      "destination_name": "Bhubaneswar",
+      "source_admin_area": "Odisha",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Bhubaneswar"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 59,
+      "source_city_raw": "Cuttack",
+      "destination_name": "Cuttack",
+      "source_admin_area": "Odisha",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Cuttack"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 60,
+      "source_city_raw": "Amritsar",
+      "destination_name": "Amritsar",
+      "source_admin_area": "Punjab",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Amritsar"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 61,
+      "source_city_raw": "Jalandhar",
+      "destination_name": "Jalandhar",
+      "source_admin_area": "Punjab",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Jalandhar"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 62,
+      "source_city_raw": "Ludhiana",
+      "destination_name": "Ludhiana",
+      "source_admin_area": "Punjab",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Ludhiana"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 63,
+      "source_city_raw": "Ajmer",
+      "destination_name": "Ajmer",
+      "source_admin_area": "Rajasthan",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 64,
+      "source_city_raw": "Bikaner",
+      "destination_name": "Bikaner",
+      "source_admin_area": "Rajasthan",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Bikaner"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 65,
+      "source_city_raw": "Jaipur",
+      "destination_name": "Jaipur",
+      "source_admin_area": "Rajasthan",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Jaipur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 66,
+      "source_city_raw": "Jodhpur",
+      "destination_name": "Jodhpur",
+      "source_admin_area": "Rajasthan",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Jodhpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 67,
+      "source_city_raw": "Kota",
+      "destination_name": "Kota",
+      "source_admin_area": "Rajasthan",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Kota"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 68,
+      "source_city_raw": "Udaipur",
+      "destination_name": "Udaipur",
+      "source_admin_area": "Rajasthan",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 69,
+      "source_city_raw": "Ambattur",
+      "destination_name": "Ambattur",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 70,
+      "source_city_raw": "Chennai",
+      "destination_name": "Chennai",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Chennai"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 71,
+      "source_city_raw": "Coimbatore",
+      "destination_name": "Coimbatore",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Coimbatore"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 72,
+      "source_city_raw": "Madurai",
+      "destination_name": "Madurai",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Madurai"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 73,
+      "source_city_raw": "Salem",
+      "destination_name": "Salem",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Salem"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 74,
+      "source_city_raw": "Tiruchirappalli",
+      "destination_name": "Tiruchirappalli",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Tiruchirappalli"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 75,
+      "source_city_raw": "Tiruppur",
+      "destination_name": "Tiruppur",
+      "source_admin_area": "Tamil Nadu",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Tiruppur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 76,
+      "source_city_raw": "Hyderabad",
+      "destination_name": "Hyderabad",
+      "source_admin_area": "Telangana",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Hyderabad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 77,
+      "source_city_raw": "Nizamabad",
+      "destination_name": "Nizamabad",
+      "source_admin_area": "Telangana",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 78,
+      "source_city_raw": "Warangal",
+      "destination_name": "Warangal",
+      "source_admin_area": "Telangana",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Warangal"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 79,
+      "source_city_raw": "Agra",
+      "destination_name": "Agra",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Agra"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 80,
+      "source_city_raw": "Aligarh",
+      "destination_name": "Aligarh",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Aligarh"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 81,
+      "source_city_raw": "Bareilly",
+      "destination_name": "Bareilly",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Bareilly"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 82,
+      "source_city_raw": "Gorakhpur",
+      "destination_name": "Gorakhpur",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Gorakhpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 83,
+      "source_city_raw": "Jhansi",
+      "destination_name": "Jhansi",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 84,
+      "source_city_raw": "Kanpur",
+      "destination_name": "Kanpur",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Kanpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 85,
+      "source_city_raw": "Lucknow",
+      "destination_name": "Lucknow",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Lucknow"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 86,
+      "source_city_raw": "Meerut",
+      "destination_name": "Meerut",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Meerut"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 87,
+      "source_city_raw": "Moradabad",
+      "destination_name": "Moradabad",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 88,
+      "source_city_raw": "Prayagraj (Allahabad)",
+      "destination_name": "Prayagraj",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [
+        "Allahabad"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Prayagraj"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 89,
+      "source_city_raw": "Saharanpur",
+      "destination_name": "Saharanpur",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Saharanpur"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 90,
+      "source_city_raw": "Varanasi (Benares)",
+      "destination_name": "Varanasi",
+      "source_admin_area": "Uttar Pradesh",
+      "aliases_from_source": [
+        "Benares"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Varanasi"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 91,
+      "source_city_raw": "Ghaziabad",
+      "destination_name": "Ghaziabad",
+      "source_admin_area": "Uttar Pradesh (NCR)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Ghaziabad"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 92,
+      "source_city_raw": "Greater Noida",
+      "destination_name": "Greater Noida",
+      "source_admin_area": "Uttar Pradesh (NCR)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 93,
+      "source_city_raw": "Noida",
+      "destination_name": "Noida",
+      "source_admin_area": "Uttar Pradesh (NCR)",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Noida"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 94,
+      "source_city_raw": "Dehradun",
+      "destination_name": "Dehradun",
+      "source_admin_area": "Uttarakhand",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Dehradun"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 95,
+      "source_city_raw": "Asansol",
+      "destination_name": "Asansol",
+      "source_admin_area": "West Bengal",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Asansol"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 96,
+      "source_city_raw": "Durgapur",
+      "destination_name": "Durgapur",
+      "source_admin_area": "West Bengal",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 97,
+      "source_city_raw": "Howrah",
+      "destination_name": "Howrah",
+      "source_admin_area": "West Bengal",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Howrah"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 98,
+      "source_city_raw": "Kolkata (Calcutá)",
+      "destination_name": "Kolkata",
+      "source_admin_area": "West Bengal",
+      "aliases_from_source": [
+        "Calcutá"
+      ],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [
+        "Calcutá"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "IN",
+      "source_document": "grandes_cidades_metropolitanas_india 2.pdf",
+      "source_ordinal": 99,
+      "source_city_raw": "Siliguri",
+      "destination_name": "Siliguri",
+      "source_admin_area": "West Bengal",
+      "aliases_from_source": [],
+      "source_sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 1,
+      "source_city_raw": "Londres (Greater London)",
+      "destination_name": "Londres",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [
+        "Greater London"
+      ],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "London"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 2,
+      "source_city_raw": "Birmingham",
+      "destination_name": "Birmingham",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Birmingham",
+        "Birmingham [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 3,
+      "source_city_raw": "Manchester",
+      "destination_name": "Manchester",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Manchester",
+        "Manchester [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 4,
+      "source_city_raw": "Leeds",
+      "destination_name": "Leeds",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Leeds"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 5,
+      "source_city_raw": "Liverpool",
+      "destination_name": "Liverpool",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Liverpool",
+        "Liverpool [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 6,
+      "source_city_raw": "Newcastle upon Tyne",
+      "destination_name": "Newcastle upon Tyne",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Newcastle upon Tyne"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 7,
+      "source_city_raw": "Nottingham",
+      "destination_name": "Nottingham",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Nottingham"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 8,
+      "source_city_raw": "Sheffield",
+      "destination_name": "Sheffield",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Sheffield"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 9,
+      "source_city_raw": "Bristol",
+      "destination_name": "Bristol",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Bristol",
+        "Bristol [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 10,
+      "source_city_raw": "Leicester",
+      "destination_name": "Leicester",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Leicester"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 11,
+      "source_city_raw": "Coventry",
+      "destination_name": "Coventry",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Coventry"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 12,
+      "source_city_raw": "Bradford",
+      "destination_name": "Bradford",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Bradford"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 13,
+      "source_city_raw": "Hull (Kingston upon Hull)",
+      "destination_name": "Hull",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [
+        "Kingston upon Hull"
+      ],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Kingston upon Hull"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 14,
+      "source_city_raw": "Plymouth",
+      "destination_name": "Plymouth",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Plymouth"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 15,
+      "source_city_raw": "Stoke-on-Trent",
+      "destination_name": "Stoke-on-Trent",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Stoke-on-Trent"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 16,
+      "source_city_raw": "Wolverhampton",
+      "destination_name": "Wolverhampton",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Wolverhampton"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 17,
+      "source_city_raw": "Southampton",
+      "destination_name": "Southampton",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Southampton"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 18,
+      "source_city_raw": "Portsmouth",
+      "destination_name": "Portsmouth",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Portsmouth"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 19,
+      "source_city_raw": "Salford",
+      "destination_name": "Salford",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Salford"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 20,
+      "source_city_raw": "Sunderland",
+      "destination_name": "Sunderland",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Sunderland"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 21,
+      "source_city_raw": "Southend-on-Sea",
+      "destination_name": "Southend-on-Sea",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Southend-on-Sea"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 22,
+      "source_city_raw": "Walsall",
+      "destination_name": "Walsall",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 23,
+      "source_city_raw": "Bournemouth",
+      "destination_name": "Bournemouth",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Bournemouth"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 24,
+      "source_city_raw": "Bolton",
+      "destination_name": "Bolton",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Bolton"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 25,
+      "source_city_raw": "Middlesbrough",
+      "destination_name": "Middlesbrough",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Middlesbrough"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 26,
+      "source_city_raw": "Reading",
+      "destination_name": "Reading",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Reading"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 27,
+      "source_city_raw": "Huddersfield",
+      "destination_name": "Huddersfield",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 28,
+      "source_city_raw": "Poole",
+      "destination_name": "Poole",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 29,
+      "source_city_raw": "Blackpool",
+      "destination_name": "Blackpool",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Blackpool"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 30,
+      "source_city_raw": "Northampton",
+      "destination_name": "Northampton",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 31,
+      "source_city_raw": "Luton",
+      "destination_name": "Luton",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Luton"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 32,
+      "source_city_raw": "Swindon",
+      "destination_name": "Swindon",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 33,
+      "source_city_raw": "Preston",
+      "destination_name": "Preston",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Preston"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 34,
+      "source_city_raw": "Milton Keynes",
+      "destination_name": "Milton Keynes",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Milton Keynes"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 35,
+      "source_city_raw": "Rotherham",
+      "destination_name": "Rotherham",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 36,
+      "source_city_raw": "Peterborough",
+      "destination_name": "Peterborough",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 37,
+      "source_city_raw": "Ipswich",
+      "destination_name": "Ipswich",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 38,
+      "source_city_raw": "York",
+      "destination_name": "York",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "York [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 39,
+      "source_city_raw": "Gloucester",
+      "destination_name": "Gloucester",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 40,
+      "source_city_raw": "Cambridge",
+      "destination_name": "Cambridge",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Cambridge",
+        "Cambridge [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 41,
+      "source_city_raw": "Oxford",
+      "destination_name": "Oxford",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Oxford",
+        "Oxford [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 42,
+      "source_city_raw": "Brighton and Hove",
+      "destination_name": "Brighton and Hove",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Brighton & Hove"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 43,
+      "source_city_raw": "Exeter",
+      "destination_name": "Exeter",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [],
+      "incremental_candidate": true
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 44,
+      "source_city_raw": "Norwich",
+      "destination_name": "Norwich",
+      "source_admin_area": "Inglaterra",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Norwich"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 45,
+      "source_city_raw": "Glasgow",
+      "destination_name": "Glasgow",
+      "source_admin_area": "Escócia",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Glasgow",
+        "Glasgow [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 46,
+      "source_city_raw": "Edimburgo",
+      "destination_name": "Edimburgo",
+      "source_admin_area": "Escócia",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Edinburgh"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 47,
+      "source_city_raw": "Aberdeen",
+      "destination_name": "Aberdeen",
+      "source_admin_area": "Escócia",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Aberdeen"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 48,
+      "source_city_raw": "Dundee",
+      "destination_name": "Dundee",
+      "source_admin_area": "Escócia",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Dundee"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 49,
+      "source_city_raw": "Cardiff",
+      "destination_name": "Cardiff",
+      "source_admin_area": "País de Gales",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Cardiff",
+        "Cardiff [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 50,
+      "source_city_raw": "Swansea",
+      "destination_name": "Swansea",
+      "source_admin_area": "País de Gales",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Swansea"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 51,
+      "source_city_raw": "Newport",
+      "destination_name": "Newport",
+      "source_admin_area": "País de Gales",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Newport"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 52,
+      "source_city_raw": "Belfast",
+      "destination_name": "Belfast",
+      "source_admin_area": "Irlanda do Norte",
+      "aliases_from_source": [],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Belfast",
+        "Belfast [v3340]"
+      ],
+      "incremental_candidate": false
+    },
+    {
+      "source_country_code": "GB",
+      "source_document": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+      "source_ordinal": 53,
+      "source_city_raw": "Derry (Londonderry)",
+      "destination_name": "Derry",
+      "source_admin_area": "Irlanda do Norte",
+      "aliases_from_source": [
+        "Londonderry"
+      ],
+      "source_sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+      "v3360_matches": [
+        "Londonderry"
+      ],
+      "incremental_candidate": false
+    }
+  ]
+}

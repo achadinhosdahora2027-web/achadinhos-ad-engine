@@ -64,7 +64,8 @@
     ],
     "byte_identical_prior_documents": 3,
     "logical_rows_parsed_from_new_or_extended_documents": 319,
-    "existing_v3340_or_v3360_rows_not_duplicated": 117
+    "existing_v3340_or_v3360_rows_not_duplicated": 117,
+    "source_dedup_evidence_file": "docs/evidencias/v3370-source-dedup-evidence.json"
   },
   "city_evidence": {
     "delta_rows": 202,
@@ -97,7 +98,8 @@
         "destination_name": "Ogan Ilir",
         "reason": "source_metropolitan_component_is_administrative_regency_not_city"
       }
-    ]
+    ],
+    "geonames_sources_file": "docs/evidencias/v3370-geonames-sources.json"
   },
   "cj_evidence": {
     "joined_advertisers": 223,

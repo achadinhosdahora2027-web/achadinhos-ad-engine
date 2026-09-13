@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-09-13",
+  "sources": [
+    {
+      "url": "https://download.geonames.org/export/dump/cities15000.zip",
+      "scope": "baseline candidates for all countries",
+      "sha256": "15b9401f1e3216219bc58474a1d150c1c9e81dfbfb58e6188c96261f94a393db"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+      "scope": "administrative region validation",
+      "sha256": "590651498043f674accda2b7f46d21286cda0e290b02f8561c5005eee9a5448c"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/alternateNamesV2.zip",
+      "scope": "native and transliterated aliases for the selected GeoNames IDs",
+      "sha256": "6ebd03faf9f99ec405ec8263bc88ac51aa0c6220ca221f92defddae38082089b"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/AU.zip",
+      "scope": "Australian places below cities15000 threshold and non-P features",
+      "sha256": "b9200785e920b071c2ce846eb17711fa490f3022e3891dd84ce7c480d0798920"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/ID.zip",
+      "scope": "Indonesian places and administrative entities below cities15000 threshold",
+      "sha256": "1ffb138d813a1f00bed4e8752a5d310b1f047af344f26e7eb83630aa91c91ebe"
+    }
+  ],
+  "temporary_country_archives_persisted": false
+}
