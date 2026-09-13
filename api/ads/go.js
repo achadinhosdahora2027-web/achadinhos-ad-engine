@@ -291,7 +291,7 @@ module.exports = async (req, res) => {
           'Content-Type': 'application/json', Prefer: 'return=minimal'
         },
         body: JSON.stringify([{
-          dedupe_key: `click:${sid}:${agora.slice(0, 16)}`,
+          dedupe_key: `click:${sid}:${(shopeeHit && shopeeHit.hash) || brandKey}:${agora.slice(0, 16)}`,
           chat_id: String(bufferChat),
           body_text: `🖱️ <b>Clique</b> ${String(brandKey || '')} | ${String(country || '')}\n`
             + `tag: <code>${String(sid || '').slice(0, 60)}</code>\n`
