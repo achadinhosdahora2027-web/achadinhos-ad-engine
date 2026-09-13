@@ -44,6 +44,10 @@
     {
       "source": "/api/cron-autopilot",
       "destination": "/api/cron?job=master"
+    },
+    {
+      "source": "/api/cron/:job",
+      "destination": "/api/cron?task=:job"
     }
   ],
   "crons": [
