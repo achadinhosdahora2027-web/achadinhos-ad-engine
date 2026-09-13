@@ -1,0 +1,212 @@
+{
+  "version": "v3370.0",
+  "generated_at": "2026-09-13T22:14:54.490432+00:00",
+  "publication_state": "internal_foundation_deployed_no_public_pages_or_redirect",
+  "pdf_evidence": {
+    "attachments": 8,
+    "documents": [
+      {
+        "filename": "grandes_cidades_metropolitanas_eua 2.pdf",
+        "sha256": "ee0e0657ec678b52b2c0b74ba4e1b56396a1b72e7407b75a8a3d3b7fd5809d99",
+        "pages": 12,
+        "characters_extracted": 6446,
+        "byte_identical_to_prior_source": true
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_mexico.pdf",
+        "sha256": "f1f72292b814ca37c590385d4a26a36c8fc932dd1bb99742dd593d459cad4a6b",
+        "pages": 4,
+        "characters_extracted": 4012,
+        "byte_identical_to_prior_source": false
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_reino_unido.pdf",
+        "sha256": "95ffca83e120eed8812a41025a5f48cce05bacb5b0db3a260bf08fb620f9ca12",
+        "pages": 3,
+        "characters_extracted": 2171,
+        "byte_identical_to_prior_source": true
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_australia.pdf",
+        "sha256": "ab7829c5686759535b8835300375a30082da3f48c8bd186e0ac0d1f44150f9bc",
+        "pages": 3,
+        "characters_extracted": 3915,
+        "byte_identical_to_prior_source": false
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_indonesia.pdf",
+        "sha256": "48b6ea2008817717fecd25d9ec00bc669d5a4a594af290997f2bfd99fdd6dcfa",
+        "pages": 3,
+        "characters_extracted": 2350,
+        "byte_identical_to_prior_source": false
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_india 2.pdf",
+        "sha256": "ce919ad9fc4ea49b09fc1d2a4280e0c24cc403d848ef2b16b1eb69004490081b",
+        "pages": 5,
+        "characters_extracted": 4818,
+        "byte_identical_to_prior_source": false
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_india.pdf",
+        "sha256": "7d60c64bce10e6f7c631aef157352dabff1d9e7d228a4e1791a2f80d7d478851",
+        "pages": 3,
+        "characters_extracted": 2281,
+        "byte_identical_to_prior_source": true
+      },
+      {
+        "filename": "grandes_cidades_metropolitanas_reino_unido 2.pdf",
+        "sha256": "137efebc4792976f1232495959d6d087b038c880e9d861f96acb21504a515bdc",
+        "pages": 3,
+        "characters_extracted": 3851,
+        "byte_identical_to_prior_source": false
+      }
+    ],
+    "byte_identical_prior_documents": 3,
+    "logical_rows_parsed_from_new_or_extended_documents": 319,
+    "existing_v3340_or_v3360_rows_not_duplicated": 117
+  },
+  "city_evidence": {
+    "delta_rows": 202,
+    "routing_eligible_delta_rows": 199,
+    "delta_by_country": {
+      "AU": 51,
+      "GB": 10,
+      "ID": 66,
+      "IN": 25,
+      "MX": 50
+    },
+    "all_delta_rows_geonames_crosschecked": true,
+    "records_with_aliases": 126,
+    "records_with_non_latin_aliases": 22,
+    "within_delta_alias_collisions": 0,
+    "cross_version_alias_collisions": 0,
+    "disabled_rows": [
+      {
+        "country_code": "ID",
+        "destination_name": "Deli Serdang",
+        "reason": "source_metropolitan_component_is_administrative_regency_not_city"
+      },
+      {
+        "country_code": "ID",
+        "destination_name": "Gowa",
+        "reason": "source_metropolitan_component_is_administrative_regency_not_city"
+      },
+      {
+        "country_code": "ID",
+        "destination_name": "Ogan Ilir",
+        "reason": "source_metropolitan_component_is_administrative_regency_not_city"
+      }
+    ]
+  },
+  "cj_evidence": {
+    "joined_advertisers": 223,
+    "joined_active": 223,
+    "contracts": 242,
+    "active_contracts": 229,
+    "active_promotional_properties": 3,
+    "target_country_link_search": {
+      "MX": {
+        "total_matched": 86,
+        "api_records_returned": 86,
+        "unique_records": 86,
+        "api_duplicate_records": 0
+      },
+      "AU": {
+        "total_matched": 170,
+        "api_records_returned": 170,
+        "unique_records": 170,
+        "api_duplicate_records": 0
+      },
+      "ID": {
+        "total_matched": 31,
+        "api_records_returned": 31,
+        "unique_records": 31,
+        "api_duplicate_records": 0
+      }
+    },
+    "selected_placements": 7,
+    "selected_unique_links": 7,
+    "country_readiness": {
+      "AU": {
+        "api_records": 170,
+        "selected_placements": 7,
+        "advertisers": 2,
+        "intents": {
+          "car_rental": 2,
+          "attractions": 1,
+          "flight": 1,
+          "hotel": 3
+        },
+        "routing_ready": true
+      },
+      "MX": {
+        "api_records": 86,
+        "selected_placements": 0,
+        "routing_ready": false,
+        "reason": "no_current_Spanish_travel_relevant_text_link; Services records are legal templates and English Vacation records are Italy-specific"
+      },
+      "ID": {
+        "api_records": 31,
+        "selected_placements": 0,
+        "routing_ready": false,
+        "reason": "no_current_Indonesian_or_local-market_travel-relevant_text_link; English records are Italy-specific and the Air record is a Polish banner"
+      }
+    },
+    "market_product_feed_country_totals_from_complete_partition": {
+      "MX": 3,
+      "AU": 57,
+      "ID": 0
+    },
+    "product_search_sync_test": {
+      "AU": {
+        "exit_code": 0,
+        "query_failures_present": false,
+        "unique_products_sampled": 25,
+        "pid_generated_links_sampled": 0,
+        "routing_ready": false,
+        "sensitive_values_emitted": false
+      },
+      "MX": {
+        "exit_code": 0,
+        "query_failures_present": false,
+        "unique_products_sampled": 10,
+        "pid_generated_links_sampled": 0,
+        "routing_ready": false,
+        "sensitive_values_emitted": false
+      },
+      "ID": {
+        "exit_code": 0,
+        "query_failures_present": false,
+        "unique_products_sampled": 0,
+        "pid_generated_links_sampled": 0,
+        "routing_ready": false,
+        "sensitive_values_emitted": false
+      }
+    },
+    "affiliate_urls_recorded_in_evidence": false,
+    "affiliate_urls_followed": false,
+    "clicks_performed": false
+  },
+  "implementation": {
+    "migration_sha256": "95b1670a39c809844483ae45edcb1375653e843a60de3490359b16d324c68097",
+    "sql_no_payload_rollback_passed": true,
+    "sql_synthetic_hydration_rollback_passed": true,
+    "post_rollback_physically_verified": true,
+    "production_schema_committed": true,
+    "encrypted_affiliate_urls_installed": 7,
+    "edge_function_deployed": true,
+    "city_pages_published": false,
+    "redirect_endpoint_deployed": false,
+    "seo_indexing_enabled": false,
+    "clicks_generated": 0,
+    "impressions_generated": 0,
+    "conversions_claimed": 0,
+    "production_schema_physically_verified": true,
+    "internal_au_routes_enabled": 7,
+    "hydration_rpc_dropped": true,
+    "edge_function_physically_verified": true,
+    "affiliate_urls_returned_by_resolver": false,
+    "production_evidence_file": "docs/evidencias/v3370-production-deploy.json"
+  }
+}

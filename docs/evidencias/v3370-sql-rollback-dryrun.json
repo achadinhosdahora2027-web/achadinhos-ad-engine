@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-09-13T22:11:38.945147+00:00",
+  "target": "validated_master_project",
+  "migration_sha256": "95b1670a39c809844483ae45edcb1375653e843a60de3490359b16d324c68097",
+  "no_payload_rollback": {
+    "http": 201,
+    "ok": true
+  },
+  "synthetic_hydration_rollback": {
+    "http": 201,
+    "ok": true,
+    "synthetic_non_affiliate_rows": 7,
+    "AU_ready_path_tested": true,
+    "MX_no_route_tested": true,
+    "ID_disabled_tested": true,
+    "GB_IN_inherited_routes_tested": true
+  },
+  "post_rollback_physically_verified": true,
+  "production_objects_persisted": false,
+  "actual_affiliate_urls_used": false,
+  "plaintext_credentials_recorded": false
+}

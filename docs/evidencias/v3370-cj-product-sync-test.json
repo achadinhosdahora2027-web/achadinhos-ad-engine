@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-09-13T22:06:32.113588+00:00",
+  "markets": {
+    "AU": {
+      "exit_code": 0,
+      "query_failures_present": false,
+      "unique_products_sampled": 25,
+      "pid_generated_links_sampled": 0,
+      "routing_ready": false,
+      "sensitive_values_emitted": false
+    },
+    "MX": {
+      "exit_code": 0,
+      "query_failures_present": false,
+      "unique_products_sampled": 10,
+      "pid_generated_links_sampled": 0,
+      "routing_ready": false,
+      "sensitive_values_emitted": false
+    },
+    "ID": {
+      "exit_code": 0,
+      "query_failures_present": false,
+      "unique_products_sampled": 0,
+      "pid_generated_links_sampled": 0,
+      "routing_ready": false,
+      "sensitive_values_emitted": false
+    }
+  },
+  "read_only": true,
+  "affiliate_urls_recorded": false,
+  "clicks_performed": false,
+  "credentials_recorded": false
+}

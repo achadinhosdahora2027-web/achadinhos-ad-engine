@@ -1,0 +1,101 @@
+{
+  "observed_at": "2026-09-13T22:13:37.459186+00:00",
+  "target": "validated_master_project",
+  "migration_sha256": "95b1670a39c809844483ae45edcb1375653e843a60de3490359b16d324c68097",
+  "schema_http": 201,
+  "schema_commit_ok": true,
+  "affiliate_urls_in_schema_request": false,
+  "plaintext_credentials_recorded": false,
+  "schema_physical_verification": {
+    "http": 201,
+    "ok": true,
+    "checks": {
+      "city_rows": 202,
+      "routing_rows": 199,
+      "policy_rows": 7,
+      "enabled_routes": 0,
+      "resolver_private": true,
+      "service_resolver": true,
+      "service_hydrator": true,
+      "keyword_rows": 17605
+    }
+  },
+  "master_service_key_stored_protected": true,
+  "hydration": {
+    "observed_at": "2026-09-13T22:13:54.434767+00:00",
+    "transport": "PostgREST prepared request body",
+    "schema_cache_reload_requested": true,
+    "http": 200,
+    "hydration_ok": true,
+    "installed": 7,
+    "encrypted": true,
+    "plaintext_returned": false,
+    "affiliate_urls_in_status_or_report": false,
+    "affiliate_urls_followed": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false
+  },
+  "post_hydration_verification": {
+    "observed_at": "2026-09-13T22:14:19.363317+00:00",
+    "http_verify": 201,
+    "physical_hydration_verified": true,
+    "checks": {
+      "enabled_encrypted": 7,
+      "distinct_urls": 7,
+      "valid_decrypted_urls": 7,
+      "all_fresh": true,
+      "au_state": "ok",
+      "au_source": "v3370",
+      "au_url_absent": true,
+      "mx_reason": "fresh_encrypted_affiliate_route_unavailable",
+      "id_reason": "destination_validated_but_routing_disabled",
+      "in_state": "ok",
+      "in_source": "v3360",
+      "gb_state": "ok",
+      "gb_source": "v3360",
+      "keyword_rows": 17605
+    },
+    "temporary_hydrator_dropped": true,
+    "encrypted_routes_preserved": true,
+    "cleanup_ok": true,
+    "affiliate_urls_returned_or_recorded": false,
+    "affiliate_urls_followed": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false
+  },
+  "edge_deploy": {
+    "observed_at": "2026-09-13T22:14:34.064383+00:00",
+    "edge_secret_set": true,
+    "function_deploy_ok": true,
+    "verify_jwt_disabled_for_custom_internal_secret": true,
+    "plaintext_secret_recorded": false,
+    "cli_output_recorded": false
+  },
+  "edge_verification": {
+    "observed_at": "2026-09-13T22:14:48.139414+00:00",
+    "physical_edge_verified": true,
+    "checks": {
+      "get_http": 200,
+      "get_mode": "internal_metropolitan_additional_batch_adapter",
+      "get_pages": false,
+      "unauthorized_http": 401,
+      "au_http": 200,
+      "au_state": "ok",
+      "au_source": "v3370",
+      "au_url": null,
+      "mx_http": 422,
+      "mx_reason": "fresh_encrypted_affiliate_route_unavailable",
+      "id_http": 422,
+      "id_reason": "destination_validated_but_routing_disabled",
+      "in_http": 200,
+      "in_state": "ok",
+      "in_source": "v3360",
+      "spoof_http": 422,
+      "spoof_reason": "destination_not_in_v3370_delta",
+      "sensitive_values_absent": true
+    },
+    "affiliate_urls_requested_or_followed": false,
+    "clicks_performed": false,
+    "plaintext_credentials_recorded": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-09-13T22:06:53.998308+00:00",
+  "selected_placements": 7,
+  "exact_link_country_checks": 7,
+  "all_links_active": true,
+  "all_target_country_filtered": true,
+  "all_accounts_active_joined": true,
+  "all_terms_active": true,
+  "affiliate_urls_recorded_in_reports": false,
+  "affiliate_urls_followed": false,
+  "clicks_performed": false,
+  "protected_payload_mode": "0o600",
+  "plaintext_credentials_recorded": false
+}
