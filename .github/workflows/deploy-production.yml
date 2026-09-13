@@ -3,6 +3,11 @@ name: Deploy Production (Vercel CLI)
 on:
   push:
     branches: [ main ]
+    # Dado atualizado pelo robo nao muda codigo: nao vale gastar implantacao.
+    paths-ignore:
+      - 'data/**'
+      - '**.md'
+      - 'public/feeds/**'
   workflow_dispatch:
 
 env:

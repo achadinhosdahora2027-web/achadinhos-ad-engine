@@ -115,6 +115,11 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nada novo para commitar."
           else
-            git commit -m "chore(orquestrador): dados atualizados em $(date -u +'%Y-%m-%d %H:%M UTC')"
+            # [skip ci] evita re-disparar o proprio GitHub Actions em loop.
+            # [vercel skip] evita gastar uma implantacao por atualizacao de dado —
+            # foi assim que a cota diaria do Vercel estourou ("Too many requests -
+            # try again in 24 hours (more than 5000, code: api-upload-free)") e
+            # deixou site e gateway sem publicar por um dia inteiro.
+            git commit -m "chore(orquestrador): dados atualizados em $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci] [vercel skip]"
             git push origin HEAD:main
           fi
