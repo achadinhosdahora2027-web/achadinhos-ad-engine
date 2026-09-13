@@ -253,12 +253,22 @@ async function jobTgFlush() {
     });
   }
 
-  /* telemetria: a onda passa a ser visível no painel (nexus_sat_telemetry) */
-  await raw(`${SUPABASE_URL}/rest/v1/nexus_sat_telemetry`, {
+  /* Telemetria no lugar certo: no projeto MESTRE existe nexus_telegram_dispatch_state
+     (a nexus_sat_telemetry só existe nos shards — gravar nela daqui daria 404).
+     Atualiza o estado do dispatcher que o painel lê. */
+  await raw(`${SUPABASE_URL}/rest/v1/nexus_telegram_dispatch_state?on_conflict=id`, {
     method: 'POST',
-    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-    body: JSON.stringify([{ job: 'v325-tg-flush', status: failed ? 'PARCIAL' : 'OK',
-      message: `bloco=${BLOCK} pendentes=${rows.length} enviados=${sent} falhas=${failed}` }])
+    headers: {
+      apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`,
+      'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal'
+    },
+    body: JSON.stringify([{
+      id: true,
+      block_size: BLOCK,
+      block_ms: 60000,
+      last_dispatch_at: new Date().toISOString(),
+      last_result: { job: 'v325-tg-flush', pendentes: rows.length, enviados: sent, falhas: failed, em: nowIso }
+    }])
   }, 5000);
 
   return { ok: failed === 0, block_size: BLOCK, pendentes: rows.length, enviados: sent, falhas: failed, detalhe: enviados, diag };

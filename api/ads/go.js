@@ -277,10 +277,14 @@ module.exports = async (req, res) => {
     res.setHeader('X-Buffer-Enqueued', !sbUrl ? 'sem_supabase_url'
       : (!sbKey ? 'sem_supabase_key' : (!bufferChat ? 'sem_chat_id' : (IS_BOT ? 'ignorado_bot' : 'sim'))));
     if (sbUrl && sbKey && bufferChat && !IS_BOT) {
+      // OBS: precisa ser AGUARDADO. Sem await, a Vercel encerra a função assim que
+      // a resposta sai e o INSERT é morto no meio — o clique nunca entrava na fila
+      // (o header dizia 'sim' e o banco ficava vazio). Teto curto de 800ms: se o
+      // banco estiver lento, seguimos sem a linha e o visitante não espera mais.
       const ctrl2 = new AbortController();
-      const tmr2 = setTimeout(() => ctrl2.abort(), 1200);
+      const tmr2 = setTimeout(() => ctrl2.abort(), 800);
       const agora = new Date().toISOString();
-      fetch(`${sbUrl.replace(/\/$/, '')}/rest/v1/nexus_telegram_message_buffer`, {
+      await fetch(`${sbUrl.replace(/\/$/, '')}/rest/v1/nexus_telegram_message_buffer`, {
         method: 'POST',
         headers: {
           apikey: sbKey, Authorization: `Bearer ${sbKey}`,
@@ -301,7 +305,8 @@ module.exports = async (req, res) => {
           status: 'pending', attempts: 0, max_attempts: 3
         }]),
         signal: ctrl2.signal
-      }).catch(() => {});
+      }).then((r) => res.setHeader('X-Buffer-Enqueued', r.ok ? 'sim_confirmado' : 'sim_http_' + r.status))
+        .catch((e) => res.setHeader('X-Buffer-Enqueued', 'sim_falhou_' + String(e.name || e).slice(0, 18)));
       clearTimeout(tmr2);
     }
   } catch (e) {}
