@@ -74,26 +74,16 @@ async function count(table, filter = '') {
 
 /* ---------------------------------------------------------------- jobs */
 
-/** JOB: telegram — drena a fila de mensagens do banco para a API do Telegram */
+/** JOB: telegram — somente observabilidade. A entrega é exclusiva do Job 60. */
 async function jobTelegram() {
-  const steps = {};
-  steps.flush = await rpc('nexus_telegram_message_buffer_flush', { p_force: false });
-  steps.reap = await rpc('nexus_telegram_message_buffer_reap', { p_limit: 200 });
-  const pend = await timedFetch(`${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer?status=eq.pending&select=id`, {
+  if (!SUPABASE_KEY) return { ok: false, reason: 'supabase_key_ausente' };
+  const status = await timedFetch(`${SUPABASE_URL}/rest/v1/nexus_v420_status_v?select=*`, {
     headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }
-  }, 7000);
-  let pendingCount = null;
-  try {
-    pendingCount = JSON.parse(pend.body).length;
-  } catch (e) {}
-  const ok = steps.flush.ok !== false;
+  }, 1900);
   return {
-    ok,
-    detail: {
-      buffer_flush: steps.flush,
-      buffer_reap: steps.reap,
-      mensagens_pendentes_restantes: pendingCount
-    }
+    ok: status.ok,
+    delegated_to: 'pg_cron job 60 v360-tg-flush-10s',
+    detail: status.ok ? status.body : { estado: 'Sintonizado em Análise', http_status: status.status || 0, erro: status.error || status.body }
   };
 }
 
@@ -175,266 +165,14 @@ async function jobTwitter() {
   };
 }
 
-/* ---------------------------------------------------------------- v330.0 */
+/* ---------------------------------------------------------------- v420.0 */
 /**
- * Flush do buffer UNLOGGED public.nexus_telegram_message_buffer.
- * Espelha o cronjob 'v325-tg-flush' da spec: entrega em blocos (padrão 18/min,
- * teto que evita HTTP 429 do Telegram) e marca cada linha como sent/failed.
- * Cliques humanos legítimos entram nessa fila pelo gateway /api/ads/go.
+ * O endpoint HTTP não disputa mais o lease do Job 60, não lê o buffer legado e
+ * não possui transporte sendMessage. O alias permanece apenas para clientes
+ * antigos obterem a fotografia de saúde read-only da separação soberana.
  */
 async function jobTgFlush() {
-  const BLOCK = Math.max(1, Math.min(50, Number(process.env.TG_FLUSH_BLOCK_SIZE || 18)));
-  /* Teto POR DESTINO por rodada (= por minuto, já que o cron roda de 1 em 1 min).
-     O limite real do Telegram é ~20 mensagens/min por grupo; 18 dá folga. */
-  const CAP = Math.max(1, Math.min(30, Number(process.env.TG_DEST_CAP || 18)));
-  const token = process.env.TELEGRAM_BOT_TOKEN || '';
-  const fanout = require('../../lib/telegram/fanout');
-  const diag = {
-    tem_url: Boolean(SUPABASE_URL),
-    tem_chave: Boolean(SUPABASE_KEY),
-    tem_token: Boolean(token)
-  };
-  if (!SUPABASE_KEY) return { ok: false, reason: 'supabase_key_ausente', diag };
-  if (!token) return { ok: false, reason: 'telegram_token_ausente', diag };
-
-  /* fetch próprio: o helper timedFetch trunca o corpo em 400 chars, o que quebra
-     a leitura de listas. Aqui precisamos do JSON completo das linhas da fila. */
-  async function raw(url, opts = {}, ms = 9000) {
-    const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), ms);
-    try {
-      const r = await fetch(url, { ...opts, signal: ctrl.signal });
-      const txt = await r.text();
-      return { ok: r.ok, status: r.status, text: txt };
-    } catch (e) {
-      return { ok: false, status: 0, text: String(e.name === 'AbortError' ? 'timeout' : (e.message || e)) };
-    } finally { clearTimeout(t); }
-  }
-  const H = { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json' };
-  const HREP = { ...H, Prefer: 'return=representation' };
-  const TBL = `${SUPABASE_URL}/rest/v1/nexus_telegram_message_buffer`;
-
-  /* v128.9 — suborigem real: o produtor manda a oferta, mas a palavra-chave é
-     que identifica o produto no relatório. O link publicado ganha &kw= antes de
-     sair; se já tiver kw, não duplica. */
-  function enriquecerLink(texto, payload) {
-    const kw = String((payload && (payload.keyword || payload.palavra_chave)) || '').trim();
-    if (!kw || !texto) return texto;
-    return String(texto).replace(/(https?:\/\/[^\s"'<)]*ads\/go\?[^\s"'<)]*)/g, (url) => {
-      if (/[?&]kw=/.test(url)) return url;
-      return url + (url.includes('?') ? '&' : '?') + 'kw=' + encodeURIComponent(kw.slice(0, 120));
-    });
-  }
-
-  /* Chave do porteiro: oferta > palavra-chave > texto normalizado. É o que
-     impede o mesmo conteúdo de repetir para o mesmo destino. */
-  function chavePorteiro(payload, texto) {
-    const k = String(
-      (payload && (payload.oferta || payload.keyword)) || ''
-    ).trim() || String(texto || '').replace(/\s+/g, ' ').slice(0, 120);
-    return k.toLowerCase().slice(0, 120);
-  }
-  const nowIso = new Date().toISOString();
-  /* ATENÇÃO: nexus_telegram_message_buffer.request_id é BIGINT. Uma string aqui
-     devolvia HTTP 400 no claim e a rodada terminava "com sucesso" sem processar
-     NADA — o defeito mais perigoso possível numa fila. Só inteiro. */
-  const runId = Date.now();
-
-  /* ── 0) Registro de destinos ─────────────────────────────────────────────── */
-  const registry = fanout.loadRegistry();
-  const registryIds = (registry.destinations || []).map((d) => `${d.id}=${d.chat_id || 'SEM_CHAT_ID'}`);
-  diag.registro = registryIds;
-  diag.registro_arquivo = fanout.registryPath();
-
-  /* ── 0.1) Linhas presas em 'dispatched' por uma rodada que morreu (timeout 57014,
-     deploy no meio, etc.) voltam para 'pending' depois de 5 minutos. Sem isso a
-     fila entope e as notificações param em silêncio. */
-  const staleCut = new Date(Date.now() - 5 * 60000).toISOString();
-  await raw(`${TBL}?status=eq.dispatched&updated_at=lt.${encodeURIComponent(staleCut)}`, {
-    method: 'PATCH', headers: H,
-    body: JSON.stringify({ status: 'pending', request_id: null, last_error: 'retomado de dispatched preso' })
-  });
-
-  /* ── 1) Reivindicação atômica do bloco ────────────────────────────────────
-     Lê os ids elegíveis e marca como 'dispatched' com filtro status=eq.pending:
-     o que voltar em return=representation é EXATAMENTE o que esta rodada é dona.
-     Duas rodadas concorrentes (pg_cron do shard, GitHub Actions e Vercel) nunca
-     entregam a mesma linha duas vezes. */
-  const listRes = await raw(`${TBL}?status=eq.pending&not_before=lte.${encodeURIComponent(nowIso)}&order=id.asc&limit=${BLOCK}`, { headers: H });
-  let candidatos = [];
-  try { candidatos = JSON.parse(listRes.text); } catch (e) { candidatos = []; }
-  if (!Array.isArray(candidatos)) candidatos = [];
-  diag.fila_status = listRes.status;
-  diag.fila_resposta = String(listRes.text).slice(0, 160);
-  /* FAIL-CLOSED: fila ilegível (401/403/404/erro de rede) NUNCA pode ser lida
-     como "fila vazia" — foi assim que uma chave inválida reportava sucesso com a
-     fila parada. Aqui o job falha alto e o painel vê. */
-  if (!listRes.ok || !Array.isArray(candidatos)) {
-    return { ok: false, reason: 'fila_indisponivel', status_http: listRes.status, diag };
-  }
-
-  let rows = [];
-  if (candidatos.length) {
-    const ids = candidatos.map((r) => r.id).join(',');
-    const claim = await raw(`${TBL}?id=in.(${ids})&status=eq.pending`, {
-      method: 'PATCH', headers: HREP,
-      body: JSON.stringify({ status: 'dispatched', request_id: runId, updated_at: new Date().toISOString() })
-    });
-    try { rows = JSON.parse(claim.text); } catch (e) { rows = []; }
-    if (!Array.isArray(rows)) rows = [];
-    if (!claim.ok) {
-      return { ok: false, reason: 'claim_falhou', status_http: claim.status,
-               resposta: String(claim.text).slice(0, 200), run_id: runId, diag };
-    }
-  }
-  diag.reivindicadas = rows.length;
-  diag.candidatas = candidatos.length;
-
-  let sent = 0, failed = 0, puladas = 0, adiadas = 0;
-  const enviados = [];
-  const por_destino = {};
-
-  for (const row of rows) {
-    const payload = row.payload && typeof row.payload === 'object' ? row.payload : {};
-    const ehFanout = row.chat_id === 'fanout' || payload.fanout === true;
-
-    /* Monta a lista de alvos desta linha. */
-    let alvos;
-    if (ehFanout) {
-      const kind = payload.kind || 'publish';
-      const dests = fanout.destinationsFor(kind, registry);
-      const feitos = payload.fanout_done && typeof payload.fanout_done === 'object' ? payload.fanout_done : {};
-      alvos = dests
-        .filter((d) => !feitos[d.id])
-        .map((d) => ({
-          id: d.id, chat_id: String(d.chat_id), label: d.label || d.id,
-          texto: enriquecerLink(fanout.bodyFor(d, row.body_text, {}), payload)
-        }))
-        .filter((a) => (por_destino[a.id] = por_destino[a.id] || 0) < CAP);
-      if (!dests.length) {
-        /* Nenhum destino resolvido: NÃO some com a mensagem. Volta para a fila
-           e a causa fica registrada (o operador resolve e a fila drena). */
-        await raw(`${TBL}?id=eq.${row.id}`, {
-          method: 'PATCH', headers: H,
-          body: JSON.stringify({
-            status: 'pending', request_id: null, attempts: (row.attempts || 0) + 1,
-            last_error: 'fanout sem destino com chat_id resolvido',
-            not_before: new Date(Date.now() + 5 * 60000).toISOString(), updated_at: new Date().toISOString()
-          })
-        });
-        adiadas++; enviados.push({ id: row.id, fanout: true, ok: false, erro: 'sem_destino_resolvido' }); continue;
-      }
-      if (!alvos.length) { /* todos os destinos já receberam ou bateram o teto agora */
-        const todosFeitos = dests.every((d) => (payload.fanout_done || {})[d.id]);
-        await raw(`${TBL}?id=eq.${row.id}`, {
-          method: 'PATCH', headers: H,
-          body: JSON.stringify(todosFeitos
-            ? { status: 'sent', sent_at: new Date().toISOString(), request_id: null, response_body: 'fanout completo', updated_at: new Date().toISOString() }
-            : { status: 'pending', request_id: null, not_before: new Date(Date.now() + 60000).toISOString(), updated_at: new Date().toISOString() })
-        });
-        if (todosFeitos) sent++; else adiadas++;
-        continue;
-      }
-    } else {
-      alvos = [{ id: 'direto', chat_id: String(row.chat_id), label: 'direto', texto: enriquecerLink(row.body_text, payload) }];
-    }
-
-    /* Entrega uma cópia por destino, com a tag do destino no link. */
-    const done = ehFanout ? { ...(payload.fanout_done || {}) } : null;
-    let algumOk = false, algumErro = '';
-    let adiarMs = 0;
-    const chaveMsg = chavePorteiro(payload, row.body_text);
-    for (const alvo of alvos) {
-      /* v128.9 — porteiro anti-flood: mesma matéria-prima não repete e nenhum
-         destino passa do teto por minuto/hora. Telegram pune rajada. */
-      /* rpc() devolve { ok, data }. Sem desembrulhar o data o porteiro virava
-         fail-open (medido 13/09: 4ª mensagem do minuto foi enviada assim mesmo). */
-      let porteiro = { pode: true };
-      try {
-        const g = await rpc('nexus_telegram_gate', { p_destino: alvo.id, p_chave: chaveMsg });
-        porteiro = (g && g.ok && g.data) ? g.data : { pode: true, erro_porteiro: String((g && g.error) || 'sem_data').slice(0, 80) };
-      } catch (e) { porteiro = { pode: true, erro_porteiro: String((e && e.message) || e).slice(0, 80) }; }
-      if (porteiro && porteiro.pode === false) {
-        if (porteiro.motivo === 'duplicado_recente') {
-          puladas++; if (done) done[alvo.id] = new Date().toISOString();
-        } else {
-          adiadas++;
-          adiarMs = Math.max(adiarMs, Number(porteiro.esperar_ms) || 60000);
-        }
-        enviados.push({ id: row.id, destino: alvo.id, ok: false, contido: true, motivo: porteiro.motivo });
-        continue;
-      }
-      const sendRes = await raw(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: alvo.chat_id,
-          text: alvo.texto,
-          parse_mode: row.parse_mode || 'HTML',
-          disable_web_page_preview: true
-        })
-      });
-      let ok = false, mid = null, erro = '';
-      try {
-        const j = JSON.parse(sendRes.text);
-        ok = Boolean(j.ok); mid = j.result && j.result.message_id;
-        erro = j.description || '';
-      } catch (e) { erro = sendRes.text; }
-
-      if (ok) {
-        sent++; algumOk = true;
-        por_destino[alvo.id] = (por_destino[alvo.id] || 0) + 1;
-        if (done) done[alvo.id] = new Date().toISOString();
-      } else {
-        failed++; if (!algumErro) algumErro = `${alvo.id}: ${erro}`;
-      }
-      enviados.push({ id: row.id, destino: alvo.id, chat_id: alvo.chat_id, ok, message_id: mid || undefined, erro: ok ? undefined : erro });
-      await new Promise((r) => setTimeout(r, 350)); /* respiro entre envios */
-    }
-
-    if (!ehFanout) {
-      const patch = algumOk
-        ? { status: 'sent', sent_at: new Date().toISOString(), response_body: `message_id=${enviados[enviados.length - 1].message_id}`, request_id: null, attempts: (row.attempts || 0) + 1, updated_at: new Date().toISOString() }
-        : { status: ((row.attempts || 0) + 1 >= (row.max_attempts || 3)) ? 'failed' : 'pending',
-            attempts: (row.attempts || 0) + 1, request_id: null, last_error: String(algumErro).slice(0, 300),
-            not_before: new Date(Date.now() + Math.pow(2, (row.attempts || 0) + 1) * 60000).toISOString(),
-            updated_at: new Date().toISOString() };
-      await raw(`${TBL}?id=eq.${row.id}`, { method: 'PATCH', headers: H, body: JSON.stringify(patch) });
-      continue;
-    }
-
-    /* Linha de fan-out: grava o progresso por destino. Só vira 'sent' quando
-       TODOS os destinos ativos receberam. O que faltar continua na fila. */
-    const restantes = fanout.destinationsFor(payload.kind || 'publish', registry);
-    const completo = restantes.every((d) => done[d.id]);
-    await raw(`${TBL}?id=eq.${row.id}`, {
-      method: 'PATCH', headers: H,
-      body: JSON.stringify(completo
-        ? { status: 'sent', sent_at: new Date().toISOString(), request_id: null, payload: { ...payload, fanout_done: done }, response_body: `fanout completo (${Object.keys(done).length} destinos)`, updated_at: new Date().toISOString() }
-        : { status: 'pending', request_id: null, payload: { ...payload, fanout_done: done }, attempts: (row.attempts || 0) + 1, last_error: String(algumErro || (adiarMs ? 'adiado pelo porteiro anti-flood' : 'aguardando destinos restantes')).slice(0, 300), not_before: new Date(Date.now() + Math.max(adiarMs, 60000)).toISOString(), updated_at: new Date().toISOString() })
-    });
-  }
-
-  /* Telemetria no lugar certo: no projeto MESTRE existe nexus_telegram_dispatch_state
-     (a nexus_sat_telemetry só existe nos shards — gravar nela daqui daria 404). */
-  await raw(`${SUPABASE_URL}/rest/v1/nexus_telegram_dispatch_state?on_conflict=id`, {
-    method: 'POST',
-    headers: { ...H, Prefer: 'resolution=merge-duplicates,return=minimal' },
-    body: JSON.stringify([{
-      id: true,
-      block_size: BLOCK,
-      block_ms: 60000,
-      last_dispatch_at: new Date().toISOString(),
-      last_result: {
-        job: 'v336-tg-flush', run_id: String(runId), pendentes: rows.length, enviados: sent, falhas: failed,
-        adiadas, por_destino, destinos_com_chat: registryIds.filter((x) => !x.endsWith('SEM_CHAT_ID')),
-        destinos_sem_chat: registryIds.filter((x) => x.endsWith('SEM_CHAT_ID')), em: nowIso
-      },
-      updated_at: new Date().toISOString()
-    }])
-  }, 5000);
-
-  return { ok: failed === 0, run_id: String(runId), block_size: BLOCK, cap_por_destino: CAP,
-           pendentes: rows.length, enviados: sent, falhas: failed, adiadas, por_destino, diag, detalhe: enviados };
+  return jobTelegram();
 }
 
 const JOBS = {

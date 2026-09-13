@@ -1,15 +1,10 @@
 /**
- * nexus v370.0 — composição textual (compose).
+ * nexus v420.0 — composição textual + divulgação legal isolada.
  *
- * v370 mudou UMA coisa: o texto passou a sair do `humanizer.ts`
- * (compositor cognitivo hyper-humanizado: PT-BR claro, EN/FR/DE Tier-1,
- * link embutido no fim de frase pontuada). Nada mais mudou:
- *
- *   • o link embutido continua sendo o do shortener (intersticial), com as
- *     mídias programáticas decididas por host no momento do clique — a
- *     fiação do `/api/ads/go` (go.js v128.9) permanece SEM alteração de código;
- *   • frases fechadas com pontuação rígida e NUNCA ponto depois de emoji;
- *   • nada aqui inventa preço, desconto ou comissão: só o que veio medido.
+ * O texto continua saindo do `humanizer.ts` e mantém as regras de idioma,
+ * pontuação e zero invenção. v420 acrescenta uma única garantia estrutural:
+ * `#publi` (PT) ou `#ad` (Tier-1) ocupa linha própria imediatamente antes da
+ * linha que contém o link de ação.
  */
 
 import {
@@ -47,9 +42,34 @@ export interface EventoComposicao {
   seed?: number | null;
 }
 
+/** Divulgação obrigatória isolada. PT-BR usa #publi; Tier-1 usa #ad. */
+export function rotuloDivulgacao(idioma: Idioma): "#publi" | "#ad" {
+  return idioma === "pt" ? "#publi" : "#ad";
+}
+
 /**
- * Monta a mensagem v370. Delega ao humanizer e mantém a assinatura v360
- * (os chamadores antigos seguem funcionando sem mudança).
+ * Insere a divulgação em linha própria imediatamente antes da linha que contém
+ * o link de ação. Se o compositor não devolver o link recebido, falha fechado:
+ * não tenta adivinhar outra URL nem cria uma divulgação fora de contexto.
+ */
+export function isolarDivulgacao(texto: string, link: string, idioma: Idioma): string {
+  const url = String(link ?? "").trim();
+  if (!url) return texto;
+  const linhas = String(texto ?? "").split("\n");
+  const indice = linhas.findIndex((linha) => linha.includes(url));
+  if (indice < 0) return texto;
+  const rotulo = rotuloDivulgacao(idioma);
+  if (indice > 0 && /^(#publi|#ad)$/i.test(linhas[indice - 1].trim())) {
+    linhas[indice - 1] = rotulo;
+  } else {
+    linhas.splice(indice, 0, rotulo);
+  }
+  return linhas.join("\n");
+}
+
+/**
+ * Monta a mensagem v420. Delega ao humanizer, preserva a assinatura v360 e
+ * aplica a divulgação legal sem misturá-la ao texto nem ao URL.
  */
 export function compor(e: EventoComposicao): string {
   const idioma: Idioma = ((): Idioma => {
@@ -58,7 +78,7 @@ export function compor(e: EventoComposicao): string {
     return idiomaDoPais(e?.country, "pt");
   })();
 
-  return humanizar({
+  const texto = humanizar({
     produto: e?.produto,
     keyword: e?.keyword,
     link: e?.link,
@@ -68,6 +88,7 @@ export function compor(e: EventoComposicao): string {
     oferta: e?.oferta ?? null,
     seed: e?.seed ?? null,
   });
+  return isolarDivulgacao(texto, e?.link, idioma);
 }
 
 /** Assinatura do shortener: uma linha só, para reuso nos posts. */
@@ -84,4 +105,4 @@ export function linkDoShortener(base: string, p: {
   return u.toString();
 }
 
-export const VERSAO_COMPOSE = "v370.0" as const;
+export const VERSAO_COMPOSE = "v420.0" as const;

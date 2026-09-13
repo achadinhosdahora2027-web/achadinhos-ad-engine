@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * jetstream-consumer.js — Consumidor do firehose do Bluesky (v330.0)
+ * jetstream-consumer.js — Consumidor analítico do firehose Bluesky (v420.0)
  *
  * Fluxo (event-driven, sem polling):
- *   WebSocket Jetstream  →  autômato Aho-Corasick sobre o inventário real da Shopee
- *   →  no milissegundo do match de um post humano: enfileira a oferta na fila
- *      UNLOGGED (nexus_telegram_message_buffer) com a tag do destino e assina um
- *      registro HMAC-SHA256 em nexus_webhook_audit.
+ *   WebSocket Jetstream → autômato Aho-Corasick sobre o inventário real da Shopee
+ *   → no match humano, grava somente auditoria HMAC-SHA256 em nexus_webhook_audit.
+ *   Não existe envio Telegram/fan-out neste worker: captura para atendimento só
+ *   nasce em public.nexus_v385_nostr_mentions no mestre.
  *
  * Verificado contra o firehose real: 1.621 posts em 55s; o filtro de keywords foi
  * endurecido depois disso porque números soltos ('1000', '2026') casavam com
@@ -33,7 +33,6 @@ const SECONDS = secIdx >= 0 ? parseInt(args[secIdx + 1], 10) : 0;
 
 const SB_URL = process.env.SUPABASE_URL || '';
 const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || '';
-const BUFFER_CHAT = process.env.TELEGRAM_BUFFER_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID || '';
 const GATEWAY = process.env.AFFILIATE_GATEWAY || 'https://achadinhos-ad-engine.vercel.app/api/ads/go';
 const HMAC_KEY = process.env.WEBHOOK_HMAC_KEY || '';
 
@@ -79,18 +78,22 @@ function search(nodes, text) {
 }
 
 const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 async function post(pathname, body, headers = {}) {
   if (!SB_URL || !SB_KEY) return { ok: false, error: 'supabase_nao_configurado' };
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 1900);
   try {
     const r = await fetch(`${SB_URL.replace(/\/$/, '')}${pathname}`, {
       method: 'POST',
       headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', ...headers },
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
+      signal: ctrl.signal
     });
     return { ok: r.ok, status: r.status, text: (await r.text()).slice(0, 200) };
-  } catch (e) { return { ok: false, error: String(e.message || e) }; }
+  } catch (e) {
+    return { ok: false, error: e && e.name === 'AbortError' ? 'Sintonizado em Análise: timeout PostgREST' : String(e.message || e) };
+  } finally { clearTimeout(timer); }
 }
 
 function main() {
@@ -103,7 +106,7 @@ function main() {
   let WS;
   try { WS = require('ws'); } catch (e) { console.error('[jetstream] módulo ws ausente (npm i ws)'); process.exit(2); }
 
-  const stats = { posts: 0, matches: 0, enfileirados: 0, falhas: 0, por_keyword: {} };
+  const stats = { posts: 0, matches: 0, auditados: 0, falhas: 0, por_keyword: {} };
   const started = Date.now();
   const ws = new WS(JETSTREAM);
 
@@ -135,34 +138,23 @@ function main() {
 
     if (DRY) { console.log('[dry] match:', hit.kw, '→', oferta.s, oferta.u); return; }
 
-    // 1) fila UNLOGGED: o cron 'tg-flush' entrega em blocos de 18/min POR DESTINO.
-    //    v336.0: chat_id = 'fanout' — o flush expande para TODOS os destinos ativos
-    //    do registro, com a TAG de cada grupo dentro do link de afiliado. Antes o
-    //    chat_id era o privado do admin e os GRUPOS ficavam sem notificacao nenhuma.
-    if (BUFFER_CHAT) {
-      const r = await post('/rest/v1/nexus_telegram_message_buffer', [{
-        dedupe_key: `jetstream:${hit.hash}:${handle}:${new Date().toISOString().slice(0, 16)}`,
-        chat_id: 'fanout',
-        body_text: `🐦 <b>Buscou no Bluesky:</b> “${esc(hit.kw)}”\n`
-          + `🛒 <b>${esc(oferta.n)}</b>\n🏬 ${esc(oferta.s || 'Shopee')}`
-          + (oferta.p != null ? ` • R$ ${Number(oferta.p).toFixed(2)}` : '')
-          + `\n👉 <a href="${link}">Ver oferta na Shopee</a>`,
-        parse_mode: 'HTML',
-        payload: { ...payload, fanout: true, kind: 'publish' },
-        status: 'pending', attempts: 0, max_attempts: 3
-      }], { Prefer: 'return=minimal' });
-      if (r.ok) stats.enfileirados++; else { stats.falhas++; console.error('[jetstream] fila:', r.status || r.error, r.text || ''); }
-    }
-    // 2) auditoria do webhook (nexus_webhook_audit existe nos shards/mestre)
-    await post('/rest/v1/nexus_webhook_audit', [{
+    // v420: este stream é analítico e não corresponde a nenhuma das quatro fontes
+    // Telegram autorizadas. Portanto NÃO escreve no buffer e NÃO faz fan-out.
+    // Menções destinadas ao atendimento entram exclusivamente pela tabela
+    // public.nexus_v385_nostr_mentions e seu trigger 1:1 no banco mestre.
+
+    // Auditoria do webhook (nexus_webhook_audit existe nos shards/mestre)
+    const audit = await post('/rest/v1/nexus_webhook_audit', [{
       event_type: 'jetstream_match', keyword: hit.kw, offer_hash: hit.hash, signature,
       requester_did: ev.did || null, delivered: true, created_at: new Date().toISOString()
-    }], { Prefer: 'return=minimal' }).catch(() => {});
+    }], { Prefer: 'return=minimal' }).catch((e) => ({ ok: false, error: String(e && e.message || e) }));
+    if (audit && audit.ok) stats.auditados++;
+    else { stats.falhas++; console.error('[jetstream] auditoria:', audit && (audit.status || audit.error)); }
   });
 
   const stop = () => {
     const seg = ((Date.now() - started) / 1000).toFixed(0);
-    console.log(`[jetstream] ${seg}s | posts=${stats.posts} matches=${stats.matches} enfileirados=${stats.enfileirados} falhas=${stats.falhas}`);
+    console.log(`[jetstream] ${seg}s | posts=${stats.posts} matches=${stats.matches} auditados=${stats.auditados} falhas=${stats.falhas}`);
     const top = Object.entries(stats.por_keyword).sort((a, b) => b[1] - a[1]).slice(0, 8);
     if (top.length) console.log('[jetstream] top keywords:', top.map(([k, n]) => `${k}(${n})`).join(', '));
     try { ws.close(); } catch (e) {}

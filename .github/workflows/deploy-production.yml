@@ -40,10 +40,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run Affiliate Gateway Tests
+      - name: Run Affiliate Gateway + v420 Separation Tests
         run: |
           node tests/go.test.js
-          node tests/currency.test.js
+          npm test
+          node --check api/cron/index.js
+          node --check scripts/telegram-brazil-deals-publisher.js
+          node --check scripts/publish-shopee-v330-deals.js
+          node --check workers/jetstream-consumer.js
 
       - name: Link Vercel Project
         run: npx -y vercel@latest link --yes --project achadinhos-ad-engine --scope aqui-tem-achadinhos --token=${{ secrets.VERCEL_TOKEN }}

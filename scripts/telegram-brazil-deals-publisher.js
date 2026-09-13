@@ -1,20 +1,9 @@
 /**
- * ==============================================================================
- * TELEGRAM OFERTAS BRASIL 24/7 — MULTI-DESTINATION PUBLISHER  (v3.0 — 2026)
- * ==============================================================================
- * O QUE MUDOU EM RELACAO A v2 (e por que):
+ * TELEGRAM OFERTAS BRASIL 24/7 — produtor C2 v420.
  *
- *  v2 (defeituoso)                        v3 (esta versao)
- *  -------------------------------------  -------------------------------------
- *  Enviava para UM unico destino          Envia para TODOS os destinos ativos
- *  (TELEGRAM_DEALS_CHANNEL)               (canal + 3 grupos + privado admin)
- *  Link de afiliado sem tag de origem     Link TAGEADO por destino: cada grupo
- *                                         tem sua propria tag rastreavel
- *  Sem retry / sem tratamento de 429      Retry com backoff + respeita retry_after
- *  Falha silenciosa (log e nada mais)     Resultado auditavel por destino
- *  Historico unico global                 Anti-repeticao POR destino
- *  Sem auto-descoberta de grupos          Auto-descobre chat_id dos grupos
- * ==============================================================================
+ * O produtor não chama mais a API sendMessage e não faz fan-out. Ele valida
+ * preço/link do catálogo, insere a oferta na fonte C2 do mestre e deixa o Job 60
+ * consolidar o lote com botões no único canal permitido: Ofertas Brasil.
  */
 
 const https = require('https');
@@ -22,12 +11,9 @@ const fs = require('fs');
 const path = require('path');
 const {
   loadRegistry,
-  saveRegistry,
   activeDestinations,
-  pendingDestinations,
   buildTaggedLink,
-  broadcast,
-  discoverChatIds,
+  enqueueV420Offer,
   attributionFooter
 } = require('../lib/telegram/multi-destination-sender');
 
@@ -196,27 +182,12 @@ function recordPublication(history, destination, deal) {
 async function publishToAllDestinations(options = {}) {
   const channel = options.channel;
   console.log('='.repeat(80));
-  console.log('🛒 PUBLICADOR MULTI-DESTINO 24/7 — OFERTAS BRASIL (v3.0)');
+  console.log('🛒 PRODUTOR C2 SOBERANO — OFERTAS BRASIL (v420.0)');
   console.log('='.repeat(80));
 
-  // 1. auto-descoberta de grupos pendentes
+  // 1. resolve exatamente um destino no registro; não consulta a API Telegram.
   const reg = loadRegistry();
-  const pend = pendingDestinations(reg);
-  if (pend.length) {
-    console.log(`\n🔎 ${pend.length} destino(s) sem chat_id — tentando auto-descoberta...`);
-    const disc = await discoverChatIds(reg);
-    if (disc.error) console.log(`   ↳ Telegram respondeu: ${disc.error}`);
-    if (disc.discovered && disc.discovered.length) {
-      console.log(`   ✅ Resolvido(s): ${disc.discovered.join(', ')}`);
-    } else {
-      console.log(`   ⏳ Ainda pendente(s): ${pend.map((d) => d.label).join(', ')}`);
-      console.log(`      Ação (20s): abra o grupo e envie -> /start@NandimFernandesBot`);
-    }
-  }
-
-  // 2. destinos ativos
-  const reg2 = loadRegistry();
-  let destinations = activeDestinations(reg2, 'deal');
+  let destinations = activeDestinations(reg, 'deal');
   if (channel) destinations = destinations.filter((d) => d.username === channel || d.id === channel);
 
   if (!destinations.length) {
@@ -249,46 +220,79 @@ async function publishToAllDestinations(options = {}) {
     console.log(`   • ${dest.label.padEnd(28)} -> [${deal.id}] ${deal.title.slice(0, 42)}...`);
   });
 
-  // 5. disparo
-  console.log('\n🚀 Disparando...\n');
-  const res = await broadcast(
-    (dest) => {
-      const item = plan.find((p) => p.dest.id === dest.id);
-      const tpl = (history[dest.id]?.total || 0) % 3;
-      return item ? formatDealPost(item.deal, dest, tpl) : null;
-    },
-    plan.map((p) => p.dest),
-    { gapMs: 900 }
-  );
+  const dryRun = options.dryRun === true || process.env.DRY_RUN === '1';
+  if (dryRun) {
+    console.log('\n🧪 DRY RUN: plano validado; nenhuma RPC executada.');
+    return { success: true, dry_run: true, queued: 0, failed: 0, total: plan.length,
+      plan: plan.map((p) => ({ destination: p.dest.id, deal: p.deal.id, tag: p.dest.tag })) };
+  }
 
-  // 6. registra historico somente dos que foram enviados
-  res.results.forEach((r) => {
-    if (r.sent) {
+  // 5. v420: materializa na fonte C2. O runner NÃO chama sendMessage.
+  console.log('\n📥 Enfileirando no mestre v420 (sem envio unitário)...\n');
+  const results = [];
+  const parseBrl = (v) => {
+    const raw = String(v == null ? '' : v).trim();
+    const normalized = raw.includes(',') ? raw.replace(/\./g, '').replace(',', '.') : raw;
+    const n = Number(normalized);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  };
+  for (const { dest, deal } of plan) {
+    const price = parseBrl(deal.promo_price);
+    const original = parseBrl(deal.original_price);
+    const clickUrl = String(deal.link_verified || '').trim();
+    if (!price || !/^https:\/\//i.test(clickUrl)) {
+      results.push({ destination: dest.id, queued: false, error: 'preco_brl_ou_link_verificado_ausente' });
+      continue;
+    }
+    const q = await enqueueV420Offer({
+      source_key: `github:viral:${deal.id}:${new Date().toISOString().slice(0, 10)}`,
+      offer_id: String(deal.id),
+      title: deal.title,
+      merchant: deal.store,
+      brand: deal.brand,
+      price_brl: price,
+      original_price_brl: original,
+      coupon: deal.coupon || null,
+      click_url: clickUrl,
+      button_text: 'Ver oferta',
+      metadata: {
+        link_verified_at: deal.link_verified_at || null,
+        discount_label: deal.discount || null,
+        source: 'github_brazilian_viral_catalog_v420'
+      }
+    });
+    const accepted = Boolean(q.ok);
+    const queued = accepted && q.data && q.data.queued === true;
+    results.push({ destination: dest.id, accepted, queued, duplicate: accepted && !queued,
+      response: q.data, error: q.error || null });
+  }
+
+  // 6. histórico registra aceitação/duplicata contida; nunca registra falha de RPC.
+  results.forEach((r) => {
+    if (r.accepted) {
       const item = plan.find((p) => p.dest.id === r.destination);
       if (item) recordPublication(history, item.dest, item.deal);
     }
   });
-  saveJson(HISTORY_PATH, history);
+  if (results.some((r) => r.accepted)) saveJson(HISTORY_PATH, history);
 
-  // 7. relatorio
+  const accepted = results.filter((r) => r.accepted).length;
+  const queued = results.filter((r) => r.queued).length;
+  const failed = results.length - accepted;
   console.log('\n' + '='.repeat(80));
-  console.log('📊 RELATORIO DE ENTREGA');
+  console.log('📊 RELATÓRIO DE ENFILEIRAMENTO v420');
   console.log('='.repeat(80));
-  res.results.forEach((r) => {
-    const icon = r.sent ? '✅' : '❌';
-    console.log(
-      `  ${icon} ${String(r.label || r.destination).padEnd(28)} ${r.sent ? `msg_id=${r.message_id} (tentativa ${r.attempts})` : `FALHA: ${r.error}`}`
-    );
-  });
-  console.log(`\n  Total: ${res.sent}/${res.total} entregues | ${res.failed} falha(s)`);
+  results.forEach((r) => console.log(`  ${r.accepted ? '✅' : '❌'} ${r.destination}: ${r.queued ? 'enfileirada no lote 1:1' : (r.duplicate ? 'duplicata contida' : r.error)}`));
+  console.log(`\n  Total: ${accepted}/${results.length} aceitas (${queued} novas) | ${failed} falha(s)`);
   console.log('='.repeat(80));
 
   return {
-    success: res.sent > 0,
-    sent: res.sent,
-    failed: res.failed,
-    total: res.total,
-    results: res.results,
+    success: accepted > 0 && failed === 0,
+    accepted,
+    queued,
+    failed,
+    total: results.length,
+    results,
     plan: plan.map((p) => ({ destination: p.dest.id, deal: p.deal.id, tag: p.dest.tag }))
   };
 }
@@ -298,21 +302,13 @@ async function publishToAllDestinations(options = {}) {
 // ------------------------------------------------------------------
 if (require.main === module) {
   const args = process.argv.slice(2);
-  const opts = {};
-  if (args.includes('--discover-only')) {
-    (async () => {
-      const reg = loadRegistry();
-      const r = await discoverChatIds(reg);
-      console.log(JSON.stringify(r, null, 2));
-    })();
-  } else {
-    publishToAllDestinations(opts)
-      .then((r) => process.exit(r.success ? 0 : 1))
-      .catch((e) => {
-        console.error('💥 Erro fatal:', e.message);
-        process.exit(1);
-      });
-  }
+  const opts = { dryRun: args.includes('--dry') || args.includes('--dry-run') };
+  publishToAllDestinations(opts)
+    .then((r) => process.exit(r.success ? 0 : 1))
+    .catch((e) => {
+      console.error('💥 Erro fatal:', e.message);
+      process.exit(1);
+    });
 }
 
 module.exports = { publishToAllDestinations, formatDealPost, pickDealForDestination };

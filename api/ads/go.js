@@ -480,13 +480,8 @@ module.exports = async (req, res) => {
   /* v128.8 — o INSERT em ads_clicks saiu daqui: o GET do link não grava mais
      clique (era assim que 45.025 cliques de robô entraram em 7 dias). Quem grava
      agora é /api/ads/click, chamado pelo intersticial com token assinado. */
-  // ── v330.0 — FILA UNLOGGED (public.nexus_telegram_message_buffer) ──────────
-  // Clique HUMANO legítimo entra na fila; o cron 'tg-flush' entrega em blocos de
-  // 18/min ao grupo privado (evita HTTP 429). Robô/crawler não entra na fila.
-  // Falha aqui NUNCA afeta o visitante: timeout curto e erro engolido (0ms).
-  /* v128.8 — o aviso no Telegram saiu daqui pelo mesmo motivo do banco: quem
-     enfileira é /api/ads/click, e só com clique comprovado. O que o visitante
-     recebe continua idêntico (intersticial + destino). */
+  /* v420 — esta rota só resolve destino. O evento nasce em /api/ads/click após
+     prova humana; o trigger 1:1 de public.ads_clicks alimenta o lote CLIQUES. */
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('X-Affiliate-Engine', 'Achadinhos-Global-Gateway-2026-v340');

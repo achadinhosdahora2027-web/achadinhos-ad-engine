@@ -1,5 +1,5 @@
 /**
- * nexus v365.0 — cliente da frota (edge) · publica o evento assinado nos 13 nós.
+ * nexus v420.0 — cliente da frota (edge) · publica o evento assinado nos 13 nós.
  *
  * Contrato medido em 13/09/2026:
  *   • endpoint de cada satélite = https://<project_ref>.supabase.co/rest/v1/nexus_satellite_mentions
@@ -92,10 +92,12 @@ export async function despacharFrota(
   const corpo = JSON.stringify(corpoDoEvento(evento));
   const assinatura = await assinarHex(corpo, opt.segredoHmac);
   const porteiro = new Porteiro(opt.maxMinuto ?? 3, opt.maxHora ?? 40);
-  const saida: ResultadoNo[] = [];
+  // v420: 13 PostgRESTs em paralelo e teto rígido <2s. Um nó instável não segura
+  // os outros nem mantém recursos de borda presos por 12s × 13.
+  const timeoutMs = Math.max(250, Math.min(opt.timeoutMs ?? 1900, 1900));
 
-  for (const no of nos) {
-    if (!porteiro.pode(no.node)) { saida.push({ node: no.node, http: 0, veredito: "contido" }); continue; }
+  return Promise.all(nos.map(async (no): Promise<ResultadoNo> => {
+    if (!porteiro.pode(no.node)) return { node: no.node, http: 0, veredito: "contido" };
     try {
       const r = await fetch(urlDoNo(no), {
         method: "POST",
@@ -109,21 +111,25 @@ export async function despacharFrota(
           "X-Nexus-Signature-256": `sha256=${assinatura}`,
         },
         body: corpo,
-        signal: AbortSignal.timeout(opt.timeoutMs ?? 12000),
+        signal: AbortSignal.timeout(timeoutMs),
       });
-      if (r.status === 201 || r.status === 200) { saida.push({ node: no.node, http: r.status, veredito: "espelhado" }); continue; }
+      if (r.status === 201 || r.status === 200) {
+        return { node: no.node, http: r.status, veredito: "espelhado" };
+      }
       const texto = (await r.text()).slice(0, 200);
       const duplicado = r.status === 409 || texto.includes("23505");
-      saida.push({
+      return {
         node: no.node, http: r.status,
         veredito: duplicado ? "duplicado" : "falha",
         detalhe: texto,
-      });
+      };
     } catch (e) {
-      saida.push({ node: no.node, http: 0, veredito: "falha", detalhe: String((e as Error)?.message ?? e) });
+      return {
+        node: no.node, http: 0, veredito: "falha",
+        detalhe: `Sintonizado em Análise · ${String((e as Error)?.message ?? e).slice(0, 160)}`,
+      };
     }
-  }
-  return saida;
+  }));
 }
 
 /** Resumo para telemetria — nenhuma invenção: conta o que voltou. */

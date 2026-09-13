@@ -58,15 +58,12 @@ jobs:
             echo "inventario Shopee ausente - pule"
           fi
 
-      - name: "5. Flush da fila UNLOGGED de cliques (blocos de 18/min)"
+      - name: "5. Entrega delegada ao Job 60 v420 (10s)"
         if: always()
-        env:
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: |
-          # cronjob 'v325-tg-flush': entrega os cliques humanos enfileirados pelo
-          # gateway em blocos de 18 por minuto (evita HTTP 429 do Telegram).
-          curl -s -m 60 -H "Authorization: Bearer ${CRON_SECRET}" \
-            "https://achadinhos-ad-engine.vercel.app/api/cron?job=tg-flush" || true
+          # O runner apenas materializa ofertas na fonte C2. O Job 60 do mestre
+          # consolida e envia; chamar o flush legado aqui reabriria a corrida dupla.
+          echo "v420: sem fan-out e sem flush HTTP concorrente"
 
 
       - name: "3. Persistir historico anti-repeticao"
