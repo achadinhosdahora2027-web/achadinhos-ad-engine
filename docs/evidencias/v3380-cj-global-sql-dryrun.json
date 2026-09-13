@@ -1,0 +1,10 @@
+{
+  "affiliate_urls_in_request": false,
+  "duration_ms": 1894,
+  "http": 201,
+  "migration_sha256": "404d173f0c92700268ecb71feed3d817025860dcb928a48c5fbe35eb683c4516",
+  "plaintext_credentials_recorded": false,
+  "result": "pass",
+  "schema_version": "v3380-cj-global-dryrun-1",
+  "transaction_rolled_back": true
+}

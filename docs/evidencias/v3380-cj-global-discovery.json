@@ -1,0 +1,4111 @@
+{
+  "advertisers": {
+    "active_joined": 223,
+    "pages": 3,
+    "status": "ok",
+    "total_joined": 223
+  },
+  "contracts": {
+    "active_contract_advertisers": 229,
+    "pages": 3,
+    "status": "ok",
+    "total_contracts": 242
+  },
+  "country_link_search": {
+    "AD": {
+      "active_joined_contract_records": 384,
+      "api_records_returned": 384,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 382,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 21
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 384,
+      "tracking_urls_present": 384,
+      "unique_records": 384
+    },
+    "AE": {
+      "active_joined_contract_records": 444,
+      "api_records_returned": 444,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 442,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 410,
+        "EvergreenLink": 1,
+        "Flash Link": 2,
+        "Text Link": 31
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 444,
+      "tracking_urls_present": 442,
+      "unique_records": 444
+    },
+    "AF": {
+      "active_joined_contract_records": 371,
+      "api_records_returned": 371,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 369,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 371,
+      "tracking_urls_present": 371,
+      "unique_records": 371
+    },
+    "AG": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "AL": {
+      "active_joined_contract_records": 420,
+      "api_records_returned": 420,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 417,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 383,
+        "Text Link": 37
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 420,
+      "tracking_urls_present": 420,
+      "unique_records": 420
+    },
+    "AM": {
+      "active_joined_contract_records": 396,
+      "api_records_returned": 396,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 394,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 383,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 396,
+      "tracking_urls_present": 396,
+      "unique_records": 396
+    },
+    "AO": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "AR": {
+      "active_joined_contract_records": 418,
+      "api_records_returned": 418,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 413,
+        "Polish": 2,
+        "Spanish": 3
+      },
+      "link_type_counts": {
+        "Banner": 389,
+        "Text Link": 29
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 418,
+      "tracking_urls_present": 418,
+      "unique_records": 418
+    },
+    "AT": {
+      "active_joined_contract_records": 658,
+      "api_records_returned": 658,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 535,
+        "French": 15,
+        "German": 90,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 471,
+        "EvergreenLink": 1,
+        "Text Link": 186
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 658,
+      "tracking_urls_present": 658,
+      "unique_records": 658
+    },
+    "AU": {
+      "active_joined_contract_records": 895,
+      "api_records_returned": 895,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 848,
+        "French": 15,
+        "German": 15,
+        "Polish": 2,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 584,
+        "EvergreenLink": 1,
+        "Text Link": 310
+      },
+      "pages": 1,
+      "protected_travel_candidates": 24,
+      "status": "ok",
+      "total_matched": 895,
+      "tracking_urls_present": 895,
+      "unique_records": 895
+    },
+    "AZ": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "BA": {
+      "active_joined_contract_records": 445,
+      "api_records_returned": 445,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 442,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 404,
+        "Text Link": 41
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 445,
+      "tracking_urls_present": 445,
+      "unique_records": 445
+    },
+    "BB": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BD": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "BE": {
+      "active_joined_contract_records": 627,
+      "api_records_returned": 627,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Dutch": 22,
+        "English": 515,
+        "French": 55,
+        "German": 17,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 458,
+        "EvergreenLink": 1,
+        "Text Link": 168
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 627,
+      "tracking_urls_present": 627,
+      "unique_records": 627
+    },
+    "BF": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BG": {
+      "active_joined_contract_records": 470,
+      "api_records_returned": 470,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Bulgarian": 16,
+        "English": 451,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 420,
+        "Text Link": 50
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 470,
+      "tracking_urls_present": 470,
+      "unique_records": 470
+    },
+    "BH": {
+      "active_joined_contract_records": 380,
+      "api_records_returned": 380,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 378,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 368,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 380,
+      "tracking_urls_present": 380,
+      "unique_records": 380
+    },
+    "BI": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 11
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "BJ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BN": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BO": {
+      "active_joined_contract_records": 406,
+      "api_records_returned": 406,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 388,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 8
+      },
+      "link_type_counts": {
+        "Banner": 387,
+        "Text Link": 19
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 406,
+      "tracking_urls_present": 406,
+      "unique_records": 406
+    },
+    "BR": {
+      "active_joined_contract_records": 599,
+      "api_records_returned": 599,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 513,
+        "French": 15,
+        "German": 15,
+        "Polish": 2,
+        "Portuguese": 31,
+        "Spanish": 23
+      },
+      "link_type_counts": {
+        "Banner": 480,
+        "Text Link": 119
+      },
+      "pages": 1,
+      "protected_travel_candidates": 30,
+      "status": "ok",
+      "total_matched": 599,
+      "tracking_urls_present": 599,
+      "unique_records": 599
+    },
+    "BS": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BT": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BW": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "BY": {
+      "active_joined_contract_records": 10,
+      "api_records_returned": 10,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 10
+      },
+      "link_type_counts": {
+        "Banner": 5,
+        "Text Link": 5
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 10,
+      "tracking_urls_present": 10,
+      "unique_records": 10
+    },
+    "BZ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "CA": {
+      "active_joined_contract_records": 1123,
+      "api_records_returned": 1123,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 1071,
+        "French": 18,
+        "German": 15,
+        "Polish": 4,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 674,
+        "EvergreenLink": 1,
+        "Flash Link": 4,
+        "Text Link": 444
+      },
+      "pages": 2,
+      "protected_travel_candidates": 29,
+      "status": "ok",
+      "total_matched": 1123,
+      "tracking_urls_present": 1119,
+      "unique_records": 1123
+    },
+    "CD": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 11
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "CF": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 11
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "CG": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "CH": {
+      "active_joined_contract_records": 753,
+      "api_records_returned": 753,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 528,
+        "French": 57,
+        "German": 99,
+        "Italian": 51,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 509,
+        "EvergreenLink": 1,
+        "Text Link": 243
+      },
+      "pages": 1,
+      "protected_travel_candidates": 17,
+      "status": "ok",
+      "total_matched": 753,
+      "tracking_urls_present": 753,
+      "unique_records": 753
+    },
+    "CI": {
+      "active_joined_contract_records": 373,
+      "api_records_returned": 373,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 371,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 10
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 373,
+      "tracking_urls_present": 373,
+      "unique_records": 373
+    },
+    "CL": {
+      "active_joined_contract_records": 508,
+      "api_records_returned": 508,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 442,
+        "French": 15,
+        "German": 15,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 26
+      },
+      "link_type_counts": {
+        "Banner": 407,
+        "Text Link": 101
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 508,
+      "tracking_urls_present": 508,
+      "unique_records": 508
+    },
+    "CM": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "CO": {
+      "active_joined_contract_records": 437,
+      "api_records_returned": 437,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 416,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 11
+      },
+      "link_type_counts": {
+        "Banner": 397,
+        "Text Link": 40
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 437,
+      "tracking_urls_present": 437,
+      "unique_records": 437
+    },
+    "CR": {
+      "active_joined_contract_records": 399,
+      "api_records_returned": 399,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 380,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 9
+      },
+      "link_type_counts": {
+        "Banner": 378,
+        "Text Link": 21
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 399,
+      "tracking_urls_present": 399,
+      "unique_records": 399
+    },
+    "CU": {
+      "active_joined_contract_records": 0,
+      "api_records_returned": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {},
+      "link_type_counts": {},
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 0,
+      "tracking_urls_present": 0,
+      "unique_records": 0
+    },
+    "CV": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "CY": {
+      "active_joined_contract_records": 68,
+      "api_records_returned": 68,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 67,
+        "Polish": 1
+      },
+      "link_type_counts": {
+        "Banner": 34,
+        "EvergreenLink": 1,
+        "Text Link": 33
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 68,
+      "tracking_urls_present": 68,
+      "unique_records": 68
+    },
+    "CZ": {
+      "active_joined_contract_records": 655,
+      "api_records_returned": 655,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Czech": 132,
+        "English": 475,
+        "French": 15,
+        "German": 15,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 500,
+        "EvergreenLink": 1,
+        "Text Link": 154
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 655,
+      "tracking_urls_present": 655,
+      "unique_records": 655
+    },
+    "DJ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "DK": {
+      "active_joined_contract_records": 558,
+      "api_records_returned": 558,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Danish": 4,
+        "English": 506,
+        "French": 15,
+        "German": 15,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 416,
+        "EvergreenLink": 1,
+        "Text Link": 141
+      },
+      "pages": 1,
+      "protected_travel_candidates": 17,
+      "status": "ok",
+      "total_matched": 558,
+      "tracking_urls_present": 558,
+      "unique_records": 558
+    },
+    "DM": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "DO": {
+      "active_joined_contract_records": 378,
+      "api_records_returned": 378,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2,
+        "Spanish": 2
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 378,
+      "tracking_urls_present": 378,
+      "unique_records": 378
+    },
+    "DZ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "EC": {
+      "active_joined_contract_records": 394,
+      "api_records_returned": 394,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 10
+      },
+      "link_type_counts": {
+        "Banner": 373,
+        "Text Link": 21
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 394,
+      "tracking_urls_present": 394,
+      "unique_records": 394
+    },
+    "EE": {
+      "active_joined_contract_records": 468,
+      "api_records_returned": 468,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 465,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 414,
+        "Text Link": 54
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 468,
+      "tracking_urls_present": 468,
+      "unique_records": 468
+    },
+    "EG": {
+      "active_joined_contract_records": 379,
+      "api_records_returned": 379,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 376,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 365,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 379,
+      "tracking_urls_present": 379,
+      "unique_records": 379
+    },
+    "ER": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "ES": {
+      "active_joined_contract_records": 744,
+      "api_records_returned": 744,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 588,
+        "French": 23,
+        "German": 23,
+        "Italian": 8,
+        "Polish": 3,
+        "Portuguese": 8,
+        "Spanish": 91
+      },
+      "link_type_counts": {
+        "Banner": 537,
+        "EvergreenLink": 1,
+        "Text Link": 206
+      },
+      "pages": 1,
+      "protected_travel_candidates": 35,
+      "status": "ok",
+      "total_matched": 744,
+      "tracking_urls_present": 744,
+      "unique_records": 744
+    },
+    "ET": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "FI": {
+      "active_joined_contract_records": 615,
+      "api_records_returned": 615,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 522,
+        "Finnish": 46,
+        "French": 15,
+        "German": 15,
+        "Polish": 2,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 456,
+        "EvergreenLink": 1,
+        "Text Link": 158
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 615,
+      "tracking_urls_present": 615,
+      "unique_records": 615
+    },
+    "FJ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "FM": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "FR": {
+      "active_joined_contract_records": 816,
+      "api_records_returned": 816,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 633,
+        "French": 150,
+        "German": 15,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 573,
+        "EvergreenLink": 1,
+        "Text Link": 242
+      },
+      "pages": 1,
+      "protected_travel_candidates": 26,
+      "status": "ok",
+      "total_matched": 816,
+      "tracking_urls_present": 816,
+      "unique_records": 816
+    },
+    "GA": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "GB": {
+      "active_joined_contract_records": 1192,
+      "api_records_returned": 1192,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 1091,
+        "French": 28,
+        "German": 30,
+        "Italian": 2,
+        "Polish": 3,
+        "Spanish": 38
+      },
+      "link_type_counts": {
+        "Banner": 758,
+        "EvergreenLink": 1,
+        "Text Link": 433
+      },
+      "pages": 2,
+      "protected_travel_candidates": 97,
+      "status": "ok",
+      "total_matched": 1192,
+      "tracking_urls_present": 1192,
+      "unique_records": 1192
+    },
+    "GD": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "GE": {
+      "active_joined_contract_records": 377,
+      "api_records_returned": 377,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 377,
+      "tracking_urls_present": 377,
+      "unique_records": 377
+    },
+    "GF": {
+      "active_joined_contract_records": 379,
+      "api_records_returned": 379,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "French": 3,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 15
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 379,
+      "tracking_urls_present": 379,
+      "unique_records": 379
+    },
+    "GH": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "GM": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "GN": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "GP": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "GQ": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2,
+        "Spanish": 1
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "GR": {
+      "active_joined_contract_records": 568,
+      "api_records_returned": 568,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 514,
+        "French": 15,
+        "German": 15,
+        "Greek": 6,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 437,
+        "EvergreenLink": 1,
+        "Text Link": 130
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 568,
+      "tracking_urls_present": 568,
+      "unique_records": 568
+    },
+    "GT": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2,
+        "Spanish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "GW": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "GY": {
+      "active_joined_contract_records": 382,
+      "api_records_returned": 382,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2,
+        "Portuguese": 4,
+        "Spanish": 4
+      },
+      "link_type_counts": {
+        "Banner": 370,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 382,
+      "tracking_urls_present": 382,
+      "unique_records": 382
+    },
+    "HN": {
+      "active_joined_contract_records": 382,
+      "api_records_returned": 382,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 378,
+        "Polish": 2,
+        "Spanish": 2
+      },
+      "link_type_counts": {
+        "Banner": 368,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 382,
+      "tracking_urls_present": 382,
+      "unique_records": 382
+    },
+    "HR": {
+      "active_joined_contract_records": 555,
+      "api_records_returned": 555,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 552,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 488,
+        "EvergreenLink": 1,
+        "Text Link": 66
+      },
+      "pages": 1,
+      "protected_travel_candidates": 24,
+      "status": "ok",
+      "total_matched": 555,
+      "tracking_urls_present": 555,
+      "unique_records": 555
+    },
+    "HT": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "HU": {
+      "active_joined_contract_records": 649,
+      "api_records_returned": 649,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 502,
+        "French": 15,
+        "German": 15,
+        "Hungarian": 98,
+        "Polish": 3,
+        "Romanian": 1,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 480,
+        "Text Link": 169
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 649,
+      "tracking_urls_present": 649,
+      "unique_records": 649
+    },
+    "ID": {
+      "active_joined_contract_records": 419,
+      "api_records_returned": 419,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 416,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 389,
+        "Text Link": 30
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 419,
+      "tracking_urls_present": 419,
+      "unique_records": 419
+    },
+    "IE": {
+      "active_joined_contract_records": 513,
+      "api_records_returned": 513,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 510,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 432,
+        "EvergreenLink": 1,
+        "Text Link": 80
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 513,
+      "tracking_urls_present": 513,
+      "unique_records": 513
+    },
+    "IL": {
+      "active_joined_contract_records": 437,
+      "api_records_returned": 437,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 434,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 401,
+        "EvergreenLink": 1,
+        "Text Link": 35
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 437,
+      "tracking_urls_present": 437,
+      "unique_records": 437
+    },
+    "IQ": {
+      "active_joined_contract_records": 371,
+      "api_records_returned": 371,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 369,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 371,
+      "tracking_urls_present": 371,
+      "unique_records": 371
+    },
+    "IR": {
+      "active_joined_contract_records": 8,
+      "api_records_returned": 8,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 8
+      },
+      "link_type_counts": {
+        "Banner": 5,
+        "Text Link": 3
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 8,
+      "tracking_urls_present": 8,
+      "unique_records": 8
+    },
+    "IS": {
+      "active_joined_contract_records": 452,
+      "api_records_returned": 452,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 449,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 401,
+        "EvergreenLink": 1,
+        "Text Link": 50
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 452,
+      "tracking_urls_present": 452,
+      "unique_records": 452
+    },
+    "IT": {
+      "active_joined_contract_records": 728,
+      "api_records_returned": 728,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 590,
+        "French": 16,
+        "German": 17,
+        "Italian": 86,
+        "Polish": 4,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 530,
+        "EvergreenLink": 1,
+        "Text Link": 197
+      },
+      "pages": 1,
+      "protected_travel_candidates": 37,
+      "status": "ok",
+      "total_matched": 728,
+      "tracking_urls_present": 728,
+      "unique_records": 728
+    },
+    "JM": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "JO": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "JP": {
+      "active_joined_contract_records": 678,
+      "api_records_returned": 678,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 664,
+        "Japanese": 11,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 492,
+        "EvergreenLink": 1,
+        "Text Link": 185
+      },
+      "pages": 1,
+      "protected_travel_candidates": 19,
+      "status": "ok",
+      "total_matched": 678,
+      "tracking_urls_present": 678,
+      "unique_records": 678
+    },
+    "KE": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "KG": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "KH": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "KI": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "KM": {
+      "active_joined_contract_records": 373,
+      "api_records_returned": 373,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 371,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 10
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 373,
+      "tracking_urls_present": 373,
+      "unique_records": 373
+    },
+    "KN": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "KP": {
+      "active_joined_contract_records": 0,
+      "api_records_returned": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {},
+      "link_type_counts": {},
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 0,
+      "tracking_urls_present": 0,
+      "unique_records": 0
+    },
+    "KR": {
+      "active_joined_contract_records": 481,
+      "api_records_returned": 481,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 473,
+        "Korean": 5,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 419,
+        "EvergreenLink": 1,
+        "Text Link": 61
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 481,
+      "tracking_urls_present": 481,
+      "unique_records": 481
+    },
+    "KW": {
+      "active_joined_contract_records": 418,
+      "api_records_returned": 418,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 416,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 382,
+        "EvergreenLink": 1,
+        "Text Link": 35
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 418,
+      "tracking_urls_present": 418,
+      "unique_records": 418
+    },
+    "KZ": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 3,
+        "Russian": 1
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "LA": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "LB": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "LC": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "LI": {
+      "active_joined_contract_records": 418,
+      "api_records_returned": 418,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 414,
+        "German": 2,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 379,
+        "Text Link": 39
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 418,
+      "tracking_urls_present": 418,
+      "unique_records": 418
+    },
+    "LK": {
+      "active_joined_contract_records": 412,
+      "api_records_returned": 412,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 410,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 379,
+        "Text Link": 33
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 412,
+      "tracking_urls_present": 412,
+      "unique_records": 412
+    },
+    "LR": {
+      "active_joined_contract_records": 371,
+      "api_records_returned": 371,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 369,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 371,
+      "tracking_urls_present": 371,
+      "unique_records": 371
+    },
+    "LS": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "LT": {
+      "active_joined_contract_records": 455,
+      "api_records_returned": 455,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 452,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 390,
+        "Text Link": 65
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 455,
+      "tracking_urls_present": 455,
+      "unique_records": 455
+    },
+    "LU": {
+      "active_joined_contract_records": 471,
+      "api_records_returned": 471,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 449,
+        "French": 11,
+        "German": 8,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 391,
+        "EvergreenLink": 1,
+        "Text Link": 79
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 471,
+      "tracking_urls_present": 471,
+      "unique_records": 471
+    },
+    "LV": {
+      "active_joined_contract_records": 453,
+      "api_records_returned": 453,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 450,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 392,
+        "EvergreenLink": 1,
+        "Text Link": 60
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 453,
+      "tracking_urls_present": 453,
+      "unique_records": 453
+    },
+    "LY": {
+      "active_joined_contract_records": 371,
+      "api_records_returned": 371,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 369,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 371,
+      "tracking_urls_present": 371,
+      "unique_records": 371
+    },
+    "MA": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "MC": {
+      "active_joined_contract_records": 443,
+      "api_records_returned": 443,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 441,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 387,
+        "EvergreenLink": 1,
+        "Text Link": 55
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 443,
+      "tracking_urls_present": 443,
+      "unique_records": 443
+    },
+    "MD": {
+      "active_joined_contract_records": 406,
+      "api_records_returned": 406,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 403,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 378,
+        "Text Link": 28
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 406,
+      "tracking_urls_present": 406,
+      "unique_records": 406
+    },
+    "ME": {
+      "active_joined_contract_records": 443,
+      "api_records_returned": 443,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 441,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 402,
+        "Text Link": 41
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 443,
+      "tracking_urls_present": 443,
+      "unique_records": 443
+    },
+    "MG": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "MH": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "MK": {
+      "active_joined_contract_records": 411,
+      "api_records_returned": 411,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 408,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 381,
+        "Text Link": 30
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 411,
+      "tracking_urls_present": 411,
+      "unique_records": 411
+    },
+    "ML": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "MM": {
+      "active_joined_contract_records": 371,
+      "api_records_returned": 371,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 369,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 371,
+      "tracking_urls_present": 371,
+      "unique_records": 371
+    },
+    "MN": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "MQ": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "MR": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "MT": {
+      "active_joined_contract_records": 423,
+      "api_records_returned": 423,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 420,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 381,
+        "Text Link": 42
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 423,
+      "tracking_urls_present": 423,
+      "unique_records": 423
+    },
+    "MU": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "MV": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "MW": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "MX": {
+      "active_joined_contract_records": 551,
+      "api_records_returned": 551,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 472,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 69
+      },
+      "link_type_counts": {
+        "Banner": 446,
+        "Text Link": 105
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 551,
+      "tracking_urls_present": 551,
+      "unique_records": 551
+    },
+    "MY": {
+      "active_joined_contract_records": 423,
+      "api_records_returned": 423,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 421,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 393,
+        "Text Link": 30
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 423,
+      "tracking_urls_present": 423,
+      "unique_records": 423
+    },
+    "MZ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "NA": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "NE": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "NG": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "NI": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2,
+        "Spanish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "NL": {
+      "active_joined_contract_records": 684,
+      "api_records_returned": 684,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Dutch": 55,
+        "English": 575,
+        "French": 15,
+        "German": 21,
+        "Polish": 3,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 494,
+        "EvergreenLink": 1,
+        "Text Link": 189
+      },
+      "pages": 1,
+      "protected_travel_candidates": 20,
+      "status": "ok",
+      "total_matched": 684,
+      "tracking_urls_present": 684,
+      "unique_records": 684
+    },
+    "NO": {
+      "active_joined_contract_records": 520,
+      "api_records_returned": 520,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 486,
+        "Norwegian": 31,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 418,
+        "EvergreenLink": 1,
+        "Text Link": 101
+      },
+      "pages": 1,
+      "protected_travel_candidates": 17,
+      "status": "ok",
+      "total_matched": 520,
+      "tracking_urls_present": 520,
+      "unique_records": 520
+    },
+    "NP": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "NR": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "NZ": {
+      "active_joined_contract_records": 640,
+      "api_records_returned": 640,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 593,
+        "French": 15,
+        "German": 15,
+        "Polish": 2,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 463,
+        "EvergreenLink": 1,
+        "Text Link": 176
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 640,
+      "tracking_urls_present": 640,
+      "unique_records": 640
+    },
+    "OM": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "PA": {
+      "active_joined_contract_records": 384,
+      "api_records_returned": 384,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2,
+        "Portuguese": 4,
+        "Spanish": 5
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 20
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 384,
+      "tracking_urls_present": 384,
+      "unique_records": 384
+    },
+    "PE": {
+      "active_joined_contract_records": 393,
+      "api_records_returned": 393,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 9
+      },
+      "link_type_counts": {
+        "Banner": 372,
+        "Text Link": 21
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 393,
+      "tracking_urls_present": 393,
+      "unique_records": 393
+    },
+    "PG": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "PH": {
+      "active_joined_contract_records": 413,
+      "api_records_returned": 413,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 411,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 383,
+        "Text Link": 30
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 413,
+      "tracking_urls_present": 413,
+      "unique_records": 413
+    },
+    "PK": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "PL": {
+      "active_joined_contract_records": 643,
+      "api_records_returned": 643,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 521,
+        "French": 15,
+        "German": 15,
+        "Polish": 77,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 478,
+        "EvergreenLink": 1,
+        "Text Link": 164
+      },
+      "pages": 1,
+      "protected_travel_candidates": 24,
+      "status": "ok",
+      "total_matched": 643,
+      "tracking_urls_present": 643,
+      "unique_records": 643
+    },
+    "PS": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "PT": {
+      "active_joined_contract_records": 613,
+      "api_records_returned": 613,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 517,
+        "French": 15,
+        "German": 15,
+        "Polish": 3,
+        "Portuguese": 48,
+        "Spanish": 15
+      },
+      "link_type_counts": {
+        "Banner": 448,
+        "EvergreenLink": 1,
+        "Text Link": 164
+      },
+      "pages": 1,
+      "protected_travel_candidates": 21,
+      "status": "ok",
+      "total_matched": 613,
+      "tracking_urls_present": 613,
+      "unique_records": 613
+    },
+    "PW": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "PY": {
+      "active_joined_contract_records": 378,
+      "api_records_returned": 378,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2,
+        "Spanish": 3
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 378,
+      "tracking_urls_present": 378,
+      "unique_records": 378
+    },
+    "QA": {
+      "active_joined_contract_records": 392,
+      "api_records_returned": 392,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 390,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 373,
+        "EvergreenLink": 1,
+        "Text Link": 18
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 392,
+      "tracking_urls_present": 392,
+      "unique_records": 392
+    },
+    "RE": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "RO": {
+      "active_joined_contract_records": 493,
+      "api_records_returned": 493,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 443,
+        "Polish": 3,
+        "Romanian": 47
+      },
+      "link_type_counts": {
+        "Banner": 421,
+        "Text Link": 72
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 493,
+      "tracking_urls_present": 493,
+      "unique_records": 493
+    },
+    "RS": {
+      "active_joined_contract_records": 505,
+      "api_records_returned": 505,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 502,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 466,
+        "Text Link": 39
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 505,
+      "tracking_urls_present": 505,
+      "unique_records": 505
+    },
+    "RW": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SA": {
+      "active_joined_contract_records": 411,
+      "api_records_returned": 411,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 409,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 382,
+        "EvergreenLink": 1,
+        "Text Link": 28
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 411,
+      "tracking_urls_present": 411,
+      "unique_records": 411
+    },
+    "SB": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SC": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SD": {
+      "active_joined_contract_records": 373,
+      "api_records_returned": 373,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 371,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 373,
+      "tracking_urls_present": 373,
+      "unique_records": 373
+    },
+    "SE": {
+      "active_joined_contract_records": 634,
+      "api_records_returned": 634,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 522,
+        "French": 16,
+        "German": 15,
+        "Polish": 3,
+        "Spanish": 15,
+        "Swedish": 63
+      },
+      "link_type_counts": {
+        "Banner": 456,
+        "EvergreenLink": 1,
+        "Text Link": 177
+      },
+      "pages": 1,
+      "protected_travel_candidates": 17,
+      "status": "ok",
+      "total_matched": 634,
+      "tracking_urls_present": 634,
+      "unique_records": 634
+    },
+    "SG": {
+      "active_joined_contract_records": 491,
+      "api_records_returned": 491,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 488,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 424,
+        "EvergreenLink": 1,
+        "Text Link": 66
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 491,
+      "tracking_urls_present": 491,
+      "unique_records": 491
+    },
+    "SI": {
+      "active_joined_contract_records": 508,
+      "api_records_returned": 508,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 447,
+        "Polish": 3,
+        "Slovenian": 58
+      },
+      "link_type_counts": {
+        "Banner": 450,
+        "Text Link": 58
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 508,
+      "tracking_urls_present": 508,
+      "unique_records": 508
+    },
+    "SK": {
+      "active_joined_contract_records": 482,
+      "api_records_returned": 482,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Czech": 36,
+        "English": 443,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 422,
+        "Text Link": 60
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 482,
+      "tracking_urls_present": 482,
+      "unique_records": 482
+    },
+    "SL": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SM": {
+      "active_joined_contract_records": 414,
+      "api_records_returned": 414,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 412,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 378,
+        "Text Link": 36
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 414,
+      "tracking_urls_present": 414,
+      "unique_records": 414
+    },
+    "SN": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SO": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 11
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "SR": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SS": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 11
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "ST": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "SV": {
+      "active_joined_contract_records": 392,
+      "api_records_returned": 392,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 381,
+        "Polish": 2,
+        "Portuguese": 4,
+        "Spanish": 5
+      },
+      "link_type_counts": {
+        "Banner": 369,
+        "Text Link": 23
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 392,
+      "tracking_urls_present": 392,
+      "unique_records": 392
+    },
+    "SY": {
+      "active_joined_contract_records": 0,
+      "api_records_returned": 0,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {},
+      "link_type_counts": {},
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 0,
+      "tracking_urls_present": 0,
+      "unique_records": 0
+    },
+    "SZ": {
+      "active_joined_contract_records": 384,
+      "api_records_returned": 384,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 382,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 368,
+        "Text Link": 16
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 384,
+      "tracking_urls_present": 384,
+      "unique_records": 384
+    },
+    "TD": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TG": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TH": {
+      "active_joined_contract_records": 420,
+      "api_records_returned": 420,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 418,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 387,
+        "Text Link": 33
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 420,
+      "tracking_urls_present": 420,
+      "unique_records": 420
+    },
+    "TJ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TL": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TM": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TN": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TO": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TR": {
+      "active_joined_contract_records": 427,
+      "api_records_returned": 427,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 424,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 384,
+        "Text Link": 43
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 427,
+      "tracking_urls_present": 427,
+      "unique_records": 427
+    },
+    "TT": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TV": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "TW": {
+      "active_joined_contract_records": 435,
+      "api_records_returned": 435,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "Chinese (Traditional)": 2,
+        "English": 431,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 394,
+        "Text Link": 41
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 435,
+      "tracking_urls_present": 435,
+      "unique_records": 435
+    },
+    "TZ": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "UA": {
+      "active_joined_contract_records": 76,
+      "api_records_returned": 76,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 74,
+        "Polish": 1,
+        "Ukrainian": 1
+      },
+      "link_type_counts": {
+        "Banner": 33,
+        "Text Link": 43
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 76,
+      "tracking_urls_present": 76,
+      "unique_records": 76
+    },
+    "UG": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 374,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "US": {
+      "active_joined_contract_records": 2812,
+      "api_records_returned": 2812,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 2746,
+        "French": 15,
+        "German": 17,
+        "Italian": 1,
+        "Polish": 5,
+        "Spanish": 28
+      },
+      "link_type_counts": {
+        "Banner": 1576,
+        "EvergreenLink": 3,
+        "Flash Link": 4,
+        "Text Link": 1229
+      },
+      "pages": 3,
+      "protected_travel_candidates": 103,
+      "status": "ok",
+      "total_matched": 2812,
+      "tracking_urls_present": 2808,
+      "unique_records": 2812
+    },
+    "UY": {
+      "active_joined_contract_records": 378,
+      "api_records_returned": 378,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2,
+        "Spanish": 3
+      },
+      "link_type_counts": {
+        "Banner": 364,
+        "Text Link": 14
+      },
+      "pages": 1,
+      "protected_travel_candidates": 1,
+      "status": "ok",
+      "total_matched": 378,
+      "tracking_urls_present": 378,
+      "unique_records": 378
+    },
+    "UZ": {
+      "active_joined_contract_records": 376,
+      "api_records_returned": 376,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2,
+        "Russian": 1
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 13
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 376,
+      "tracking_urls_present": 376,
+      "unique_records": 376
+    },
+    "VC": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "VE": {
+      "active_joined_contract_records": 422,
+      "api_records_returned": 422,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 402,
+        "Polish": 2,
+        "Portuguese": 8,
+        "Spanish": 10
+      },
+      "link_type_counts": {
+        "Banner": 387,
+        "Text Link": 35
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 422,
+      "tracking_urls_present": 422,
+      "unique_records": 422
+    },
+    "VN": {
+      "active_joined_contract_records": 420,
+      "api_records_returned": 420,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 417,
+        "Polish": 3
+      },
+      "link_type_counts": {
+        "Banner": 384,
+        "EvergreenLink": 1,
+        "Text Link": 35
+      },
+      "pages": 1,
+      "protected_travel_candidates": 16,
+      "status": "ok",
+      "total_matched": 420,
+      "tracking_urls_present": 420,
+      "unique_records": 420
+    },
+    "VU": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "WS": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "YE": {
+      "active_joined_contract_records": 405,
+      "api_records_returned": 405,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 403,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 379,
+        "Text Link": 26
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 405,
+      "tracking_urls_present": 405,
+      "unique_records": 405
+    },
+    "YT": {
+      "active_joined_contract_records": 374,
+      "api_records_returned": 374,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 372,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 362,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 374,
+      "tracking_urls_present": 374,
+      "unique_records": 374
+    },
+    "ZA": {
+      "active_joined_contract_records": 421,
+      "api_records_returned": 421,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 419,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 390,
+        "Text Link": 31
+      },
+      "pages": 1,
+      "protected_travel_candidates": 15,
+      "status": "ok",
+      "total_matched": 421,
+      "tracking_urls_present": 421,
+      "unique_records": 421
+    },
+    "ZM": {
+      "active_joined_contract_records": 375,
+      "api_records_returned": 375,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 373,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 12
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 375,
+      "tracking_urls_present": 375,
+      "unique_records": 375
+    },
+    "ZW": {
+      "active_joined_contract_records": 372,
+      "api_records_returned": 372,
+      "duplicates": 0,
+      "errors": 0,
+      "language_counts": {
+        "English": 370,
+        "Polish": 2
+      },
+      "link_type_counts": {
+        "Banner": 363,
+        "Text Link": 9
+      },
+      "pages": 1,
+      "protected_travel_candidates": 0,
+      "status": "ok",
+      "total_matched": 372,
+      "tracking_urls_present": 372,
+      "unique_records": 372
+    }
+  },
+  "delta_countries_queried": 196,
+  "observed_at": "2026-09-14T00:01:27.361061+00:00",
+  "properties": {
+    "active_properties": 3,
+    "configured_active": 3,
+    "pages": 1,
+    "status": "ok"
+  },
+  "protected_payload": {
+    "mode": "0600",
+    "path_not_recorded": true,
+    "plaintext_in_repository": false
+  },
+  "read_only": true,
+  "schema_version": "v3380-cj-global-discovery-2",
+  "summary": {
+    "affiliate_urls_followed": false,
+    "affiliate_urls_recorded_in_evidence": false,
+    "clicks_performed": false,
+    "countries_api_error": 0,
+    "countries_ok": 196,
+    "countries_with_protected_candidates": 74,
+    "country_target_is_city_serviceability_proof": false,
+    "impressions_created": false,
+    "protected_active_joined_travel_candidates": 1266,
+    "sales_claimed": false,
+    "total_api_records": 84100,
+    "total_unique_country_link_records": 84100
+  }
+}
