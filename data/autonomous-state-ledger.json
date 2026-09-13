@@ -2,7 +2,7 @@
   "system_version": "2026.5-LIVE-TRACKER",
   "orchestrator_role": "Ultra Diretor Geral & Gerente Executivo 24/7",
   "initialized_at": "2026-08-31T04:45:00.000Z",
-  "last_audit_timestamp": "2026-09-13T01:44:50.551Z",
+  "last_audit_timestamp": "2026-09-13T01:47:32.307Z",
   "last_telegram_digest_at": "2026-09-02T05:00:44.444Z",
   "sprint_day": 14,
   "sprint_total_days": 21,
@@ -12,7 +12,7 @@
       "date": "2026-09-11",
       "pageviews": 299,
       "source": "supabase.metrics_events (real)",
-      "measured_at": "2026-09-13T01:44:50.551Z"
+      "measured_at": "2026-09-13T01:47:32.307Z"
     },
     "current_date": "2026-09-12",
     "today_metrics": {
@@ -23,7 +23,7 @@
       "daily_target_pageviews": 4048,
       "daily_pageviews_progress_percent": 3.4,
       "data_source": "supabase.metrics_events (leitura real)",
-      "measured_at": "2026-09-13T01:44:50.551Z"
+      "measured_at": "2026-09-13T01:47:32.307Z"
     },
     "sprint_and_month_metrics": {
       "sprint_name": "Sprint de 21 Dias - Fundação & Tração",
@@ -67,7 +67,7 @@
       "specialty": "IndexNow, Bing, Yandex, Seznam, Naver, Yep",
       "frequency": "A cada 4 horas (24/7)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_02_ai_creator",
@@ -76,7 +76,7 @@
       "specialty": "Cards 1080x1080 SVG + Legendas de Alta Conversão",
       "frequency": "3x ao dia (09h, 14h, 20h BRT)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_03_multilang_creator",
@@ -85,7 +85,7 @@
       "specialty": "6 Idiomas (PT, EN, ES, FR, DE, JA) para 195 Países",
       "frequency": "3x ao dia (24/7)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_04_meta_publisher",
@@ -94,7 +94,7 @@
       "specialty": "Publicação em @achadinhosdahora24hrs e @aquitatem",
       "frequency": "3x ao dia (24/7)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_05_spintax_responder",
@@ -103,7 +103,7 @@
       "specialty": "Matching de Anunciantes CJ/Shopee + 20.000 Variações",
       "frequency": "Em tempo real & Polling a cada 2h",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_06_fb_syndication",
@@ -112,7 +112,7 @@
       "specialty": "Guias para Grupos de Viagem, Cupons e Tarot",
       "frequency": "A cada 4 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_07_tag_seo_sniffer",
@@ -121,7 +121,7 @@
       "specialty": "Landing pages de busca para Shopee, Booking, NordVPN",
       "frequency": "A cada 4 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_08_memory_ledger",
@@ -130,7 +130,7 @@
       "specialty": "Auditoria Canário, Autocura e Rollover Diário",
       "frequency": "A cada 2 horas (Perpétuo)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_09_pinterest_engine",
@@ -139,7 +139,7 @@
       "specialty": "Geração de feeds RSS/JSON de Rich Pins verticais",
       "frequency": "A cada 6 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_10_tarot_viral",
@@ -148,7 +148,7 @@
       "specialty": "Feed diário dos 12 signos com desbloqueio de cupons",
       "frequency": "Diário (00:00 BRT)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_11_twitter_publisher",
@@ -157,7 +157,7 @@
       "specialty": "Posts virais com anti-duplicação 72h (dedupe Supabase)",
       "frequency": "A cada 3 horas (24/7)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_12_affiliate_watchdog",
@@ -166,7 +166,7 @@
       "specialty": "Varredura das páginas e validação de pixels CJ",
       "frequency": "A cada 4 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_13_coupon_radar",
@@ -175,7 +175,7 @@
       "specialty": "Auditoria de integridade dos links de afiliados",
       "frequency": "A cada 6 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_14_yield_maximizer",
@@ -184,7 +184,7 @@
       "specialty": "Otimização de lances e CTR (AdSense/Monetag/Infolinks)",
       "frequency": "A cada 6 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_15_weather_deals",
@@ -193,7 +193,7 @@
       "specialty": "Sincronização climática de 129 capitais com Booking",
       "frequency": "A cada 12 horas",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     },
     {
       "id": "bot_16_telegram_notifier",
@@ -202,7 +202,7 @@
       "specialty": "Painel consolidado com dados 100% reais do banco",
       "frequency": "A cada 2 horas (24/7)",
       "health": "healthy",
-      "last_run": "2026-09-13T01:44:50.551Z"
+      "last_run": "2026-09-13T01:47:32.307Z"
     }
   ],
   "cumulative_telemetry": {
@@ -225,6 +225,16 @@
     "total_clicks": 886
   },
   "self_healing_audit_log": [
+    {
+      "timestamp": "2026-09-13T01:48:43.403Z",
+      "action": "CJ_PIXEL_HIGH_PRIORITY_UPGRADE",
+      "result": "3424 páginas HTML blindadas com disparo imediato de pixels CJ (PID correto por site) e zero bloqueio lazy-load."
+    },
+    {
+      "timestamp": "2026-09-13T01:47:32.307Z",
+      "action": "HONEST_TELEMETRY_V2",
+      "result": "Painel reconstruído com leitura direta do banco: 0 PVs reais no sprint, R$ 0.00 confirmados. Zero números chumbados."
+    },
     {
       "timestamp": "2026-09-13T01:46:01.381Z",
       "action": "CJ_PIXEL_HIGH_PRIORITY_UPGRADE",
@@ -314,20 +324,10 @@
       "timestamp": "2026-09-02T01:11:47.436Z",
       "action": "DYNAMIC_DAILY_ROLLOVER_AND_SEARCH_CONSOLE_SYNC",
       "result": "Dia 2 ativo (2026-09-01): 1845 PVs hoje. Acumulado: 3265 PVs. 10.600 páginas indexadas no Google."
-    },
-    {
-      "timestamp": "2026-09-01T20:28:32.254Z",
-      "action": "DYNAMIC_DAILY_ROLLOVER_AND_SEARCH_CONSOLE_SYNC",
-      "result": "Dia 2 ativo (2026-09-01): 1845 PVs hoje. Acumulado: 3265 PVs. 10.600 páginas indexadas no Google."
-    },
-    {
-      "timestamp": "2026-09-01T20:20:42.303Z",
-      "action": "DYNAMIC_LEDGER_AND_SEARCH_CONSOLE_SYNC",
-      "result": "10.600 páginas indexadas no Google (+1.510 no ciclo recente). 216 páginas auditadas com 100% de uptime."
     }
   ],
   "dynamic_learning_matrix": {
-    "updated_at": "2026-09-13T01:46:01.419Z",
+    "updated_at": "2026-09-13T01:48:43.438Z",
     "top_winning_product": "NordVPN Proteção Total 70% OFF + 3 Meses Grátis",
     "top_winning_brand": "NordVPN",
     "top_winning_category": "Cibersegurança & Tech",
@@ -373,7 +373,7 @@
     "total_divisions": 15,
     "status": "100_PERCENT_OPERATIONAL_24_7",
     "countries_count": 195,
-    "last_planetary_radar_at": "2026-09-13T01:46:01.447Z"
+    "last_planetary_radar_at": "2026-09-13T01:48:43.466Z"
   },
   "google_search_console_metrics": {
     "data_source": "manual_audit (sem API ao vivo)",
@@ -416,7 +416,7 @@
       }
     },
     "last_response_at": "2026-09-13T01:26:01.172Z",
-    "measured_at": "2026-09-13T01:44:50.551Z"
+    "measured_at": "2026-09-13T01:47:32.307Z"
   },
   "ad_networks_balances": {
     "data_source": "none",
@@ -430,7 +430,7 @@
   },
   "bing_webmaster_metrics": {
     "data_source": "ssl.bing.com/webmaster/api.svc (API oficial)",
-    "measured_at": "2026-09-13T01:44:53.298Z",
+    "measured_at": "2026-09-13T01:47:34.890Z",
     "sites": {
       "aquitemachadinhos.com.br": {
         "verified": true,

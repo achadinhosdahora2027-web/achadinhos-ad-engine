@@ -10,40 +10,43 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 13,
+  "total_published": 16,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
       "br_shopee_fone_tws",
       "br_booking_gramado",
       "br_ml_lampada_smart",
-      "br_ebay_deals"
+      "br_ebay_deals",
+      "br_nordpass_gerenciador"
     ],
-    "total": 4,
-    "last_published_at": "2026-09-13T01:46:53.442Z",
-    "last_deal_id": "br_ebay_deals"
+    "total": 5,
+    "last_published_at": "2026-09-13T01:49:32.375Z",
+    "last_deal_id": "br_nordpass_gerenciador"
   },
-  "last_run_at": "2026-09-13T01:46:53.442Z",
+  "last_run_at": "2026-09-13T01:49:32.375Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
       "br_nordvpn_cyber",
       "br_aliexpress_global",
-      "br_surfshark_vpn"
+      "br_surfshark_vpn",
+      "br_economybookings_aluguel"
     ],
-    "total": 4,
-    "last_published_at": "2026-09-13T01:46:53.442Z",
-    "last_deal_id": "br_surfshark_vpn"
+    "total": 5,
+    "last_published_at": "2026-09-13T01:49:32.375Z",
+    "last_deal_id": "br_economybookings_aluguel"
   },
   "privado_admin": {
     "published_ids": [
       "br_booking_gramado",
       "br_ml_lampada_smart",
       "br_ebay_deals",
-      "br_nordpass_gerenciador"
+      "br_nordpass_gerenciador",
+      "br_malwarebytes"
     ],
-    "total": 4,
-    "last_published_at": "2026-09-13T01:46:53.442Z",
-    "last_deal_id": "br_nordpass_gerenciador"
+    "total": 5,
+    "last_published_at": "2026-09-13T01:49:32.375Z",
+    "last_deal_id": "br_malwarebytes"
   }
 }
