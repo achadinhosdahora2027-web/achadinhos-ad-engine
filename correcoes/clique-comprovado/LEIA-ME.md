@@ -40,3 +40,19 @@ node tests/go.test.js                          # testes automatizados do gateway
 - Cloudflare: tokens `cfat_…` estão 401 — sem eles o `www.aquitemachadinhos.com.br/api/ads/go`
   continua 404 e o ads.txt novo não sobe.
 - `workers/jetstream-consumer.js`: passar `&kw=<produto>` para a suborigem por produto.
+
+## v128.9 (13/09/2026) — pasta `v128.9/`
+
+Suborigem real do produto no clique + freio de excesso no Telegram.
+
+- `go.engine.v128.9.js` — gateway do engine em produção: suborigem = nome real do produto
+  (oferta via catálogo → `kw`), slot de CTA preservado, sem `_mobile_mobile`.
+- `go.aquitem.v128.9.js` — mesmo comportamento no app das cidades.
+- `cron.index.v128.9.js` — flush: `&kw=<produto>` no link de cada destino + porteiro anti-flood.
+- `jetstream-consumer.v128.9.js` — `kw` no link do match (origem).
+- `supabase_v128_9_telegram_excesso.sql` — trigger de dedupe (6 h/30 min/1 h) + `nexus_telegram_gate`
+  (3/min, 40/h por destino) + `nexus_telegram_delivery_log`.
+- `patch_*.py` — geradores idempotentes dos patches acima.
+
+Laudo com as medições: `docs/evidencias/relatorio-v128.9-freio-tags-2026-09-13.md`.
+Armadilha registrada: `rpc()` devolve `{ok,data}` — ler `data.pode`, senão o porteiro vira fail-open.
