@@ -704,7 +704,7 @@ select cron.alter_job(64,active:=false) where exists(select 1 from cron.job wher
 -- 7. Evidence view: reports measured state and refuses unmeasured claims.
 -- -----------------------------------------------------------------------------
 create or replace view public.nexus_v1510_status_v
-with (security_invoker=true)
+with (security_invoker=false)
 as
 select
   'v1510.0'::text as version,
