@@ -235,13 +235,18 @@ async function socketLoop(
   onOpen: (ws: WebSocket)=>void, onMessage: (raw: string)=>Promise<void>,
 ): Promise<void> {
   let backoff=1_000;
+  const relayOrigin=new URL(url).origin.replace(/^http/,"ws");
   while (!signal.aborted && stats.frames<MAX_EVENTS) {
     await new Promise<void>((resolve) => {
       const ws=new WebSocket(url); stats.sockets[label]="connecting";
       const tasks=new Set<Promise<void>>();
       const close=()=>{try{ws.close(1000,"bounded_session_end");}catch{/* closed */}};
       signal.addEventListener("abort",close,{once:true});
-      ws.onopen=()=>{stats.sockets[label]="open";backoff=1_000;try{onOpen(ws);}catch(e){sintonizado(stats,label,e);close();}};
+      ws.onopen=()=>{
+        stats.sockets[label]="open";backoff=1_000;
+        console.log(JSON.stringify({version:VERSION,event:"socket_open",label,relay_origin:relayOrigin}));
+        try{onOpen(ws);}catch(e){sintonizado(stats,label,e);close();}
+      };
       ws.onmessage=(message)=>{
         if (tasks.size>=MAX_IN_FLIGHT) { stats.rejected++; return; }
         stats.frames++;
@@ -249,7 +254,12 @@ async function socketLoop(
         tasks.add(task);
       };
       ws.onerror=()=>{stats.sockets[label]="error";};
-      ws.onclose=()=>{signal.removeEventListener("abort",close);stats.sockets[label]="closed";void Promise.allSettled(tasks).finally(resolve);};
+      ws.onclose=(event)=>{
+        signal.removeEventListener("abort",close);stats.sockets[label]="closed";
+        console.log(JSON.stringify({version:VERSION,event:"socket_close",label,relay_origin:relayOrigin,
+          code:event.code,clean:event.wasClean}));
+        void Promise.allSettled(tasks).finally(resolve);
+      };
     });
     if (signal.aborted) break;
     stats.reconnects++;
@@ -261,8 +271,10 @@ async function socketLoop(
 async function runSession(): Promise<SessionStats> {
   const stats: SessionStats={started_at:new Date().toISOString(),patterns:0,frames:0,matched:0,accepted:0,
     duplicates:0,rejected:0,rpc_errors:0,triggers_queued:0,reconnects:0,sockets:{},last_error:null};
+  console.log(JSON.stringify({version:VERSION,event:"session_start",max_session_ms:MAX_SESSION_MS}));
   try {
     const ac=await automaton(); stats.patterns=ac.tamanho;
+    console.log(JSON.stringify({version:VERSION,event:"automaton_loaded",patterns:stats.patterns}));
     const controller=new AbortController();
     const timer=setTimeout(()=>controller.abort("bounded_session_end"),MAX_SESSION_MS);
     const loops=[socketLoop("jetstream",JETSTREAM_URL,controller.signal,stats,()=>{},(raw)=>handleJetstream(raw,ac,stats))];
@@ -274,7 +286,9 @@ async function runSession(): Promise<SessionStats> {
     }
     await Promise.allSettled(loops); clearTimeout(timer);
   } catch (error) { sintonizado(stats,"session",error); }
-  stats.ended_at=new Date().toISOString(); lastStats=stats; return stats;
+  stats.ended_at=new Date().toISOString(); lastStats=stats;
+  console.log(JSON.stringify({version:VERSION,event:"session_complete",stats}));
+  return stats;
 }
 
 Deno.serve(async (request: Request): Promise<Response> => {

@@ -1,8 +1,10 @@
 #!/bin/sh
 # Nexus v3005.0 — fail-closed deployment of nexus-edge-ingest-v3000.
 #
-# Required:
-#   SUPABASE_ACCESS_TOKEN          Management API token with all 13 projects
+# Required management authentication (choose one):
+#   SUPABASE_ACCESS_TOKEN          one PAT with all 13 projects; or
+#   NEXUS_MANAGEMENT_TOKENS_FILE   chmod-600 JSON object {"project_ref":"sbp_..."}
+# Required runtime secrets:
 #   NEXUS_INGEST_HMAC              >=32 characters; must match master ingest
 #   NEXUS_MASTER_URL               https://<master-ref>.supabase.co
 #   NEXUS_MASTER_SERVICE_ROLE_KEY  server-side key used only as Edge secret
@@ -13,8 +15,6 @@
 # Management API preflight. It never decrypts nexus_satellites_kms: that KMS
 # protects webhook credentials, not Supabase account-management authorization.
 set -eu
-
-: "${SUPABASE_ACCESS_TOKEN:?SUPABASE_ACCESS_TOKEN is required}"
 
 FUNCTION_NAME="nexus-edge-ingest-v3000"
 API="https://api.supabase.com/v1"
@@ -34,6 +34,33 @@ hodcyytojobguvbcevct
 snkauzzqnzirngacoxiv
 "
 
+if [ -n "${NEXUS_MANAGEMENT_TOKENS_FILE:-}" ]; then
+  [ -r "$NEXUS_MANAGEMENT_TOKENS_FILE" ] || {
+    echo 'NEXUS_MANAGEMENT_TOKENS_FILE must be a readable JSON file' >&2; exit 40;
+  }
+elif [ -z "${SUPABASE_ACCESS_TOKEN:-}" ]; then
+  echo 'SUPABASE_ACCESS_TOKEN or NEXUS_MANAGEMENT_TOKENS_FILE is required' >&2
+  exit 40
+fi
+
+token_for_ref() {
+  ref=$1
+  if [ -n "${NEXUS_MANAGEMENT_TOKENS_FILE:-}" ]; then
+    python3 - "$NEXUS_MANAGEMENT_TOKENS_FILE" "$ref" <<'PY'
+import json,sys
+try:
+    value=json.load(open(sys.argv[1]))[sys.argv[2]]
+except (OSError,KeyError,TypeError,ValueError,json.JSONDecodeError):
+    raise SystemExit(1)
+if not isinstance(value,str) or not value.startswith('sbp_') or len(value)<20:
+    raise SystemExit(1)
+sys.stdout.write(value)
+PY
+  else
+    printf '%s' "$SUPABASE_ACCESS_TOKEN"
+  fi
+}
+
 work=$(mktemp -d "${TMPDIR:-/tmp}/nexus-v3005.XXXXXX")
 cleanup() { rm -rf "$work"; }
 trap cleanup EXIT HUP INT TERM
@@ -41,8 +68,12 @@ trap cleanup EXIT HUP INT TERM
 missing=""
 accessible=0
 for ref in $PROJECTS; do
+  if ! token=$(token_for_ref "$ref"); then
+    missing="$missing $ref:no_token"
+    continue
+  fi
   code=$(curl -sS -o "$work/$ref.json" -w '%{http_code}' \
-    -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+    -H "Authorization: Bearer $token" \
     -H 'Accept: application/json' "$API/projects/$ref" || printf '000')
   if [ "$code" = "200" ]; then
     accessible=$((accessible+1))
@@ -64,21 +95,27 @@ fi
 case "$NEXUS_MASTER_URL" in https://*.supabase.co|https://*.supabase.co/) ;; *) echo 'invalid NEXUS_MASTER_URL' >&2; exit 44;; esac
 start_secret=${NEXUS_V3000_START_SECRET:-$NEXUS_INGEST_HMAC}
 
+secret_failures=""
 for ref in $PROJECTS; do
+  token=$(token_for_ref "$ref")
   printf 'configuring %s\n' "$ref"
-  npx --yes supabase@latest secrets set --project-ref "$ref" \
+  if ! SUPABASE_ACCESS_TOKEN="$token" npx --yes supabase@latest secrets set --project-ref "$ref" \
     NEXUS_INGEST_HMAC="$NEXUS_INGEST_HMAC" \
     NEXUS_V3000_START_SECRET="$start_secret" \
     NEXUS_MASTER_URL="$NEXUS_MASTER_URL" \
-    NEXUS_MASTER_SERVICE_ROLE_KEY="$NEXUS_MASTER_SERVICE_ROLE_KEY" >/dev/null
-
+    NEXUS_MASTER_SERVICE_ROLE_KEY="$NEXUS_MASTER_SERVICE_ROLE_KEY" >/dev/null; then
+    secret_failures="$secret_failures $ref"
+    printf 'secret configuration failed: %s\n' "$ref" >&2
+  fi
 done
+[ -z "$secret_failures" ] || { printf 'secret configuration failures:%s\n' "$secret_failures" >&2; exit 47; }
 
 # Parallelize only after all projects have their server-side secrets.
 pids=""
 for ref in $PROJECTS; do
+  token=$(token_for_ref "$ref")
   (
-    npx --yes supabase@latest functions deploy "$FUNCTION_NAME" \
+    SUPABASE_ACCESS_TOKEN="$token" npx --yes supabase@latest functions deploy "$FUNCTION_NAME" \
       --project-ref "$ref" --use-api
   ) >"$work/$ref.deploy.log" 2>&1 &
   pids="$pids $!:${ref}"
@@ -94,12 +131,13 @@ for item in $pids; do
     printf 'deploy accepted: %s\n' "$ref"
   fi
 done
-[ -z "$failed" ] || { printf 'deployment failures:%s\n' "$failed" >&2; exit 45; }
+[ -z "$failed" ] || printf 'deployment command failures (reconciling through Management API):%s\n' "$failed" >&2
 
 verified=0
 for ref in $PROJECTS; do
+  token=$(token_for_ref "$ref")
   code=$(curl -sS -o "$work/$ref.functions.json" -w '%{http_code}' \
-    -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+    -H "Authorization: Bearer $token" \
     -H 'Accept: application/json' "$API/projects/$ref/functions")
   if [ "$code" = "200" ] && python3 - "$work/$ref.functions.json" <<'PY'
 import json,sys
@@ -113,4 +151,7 @@ PY
   fi
 done
 printf 'deployment verification configured=13 active=%s\n' "$verified"
-[ "$verified" -eq 13 ] || exit 46
+if [ "$verified" -ne 13 ]; then
+  [ -z "$failed" ] || exit 45
+  exit 46
+fi
