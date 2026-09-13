@@ -224,10 +224,20 @@ module.exports = async (req, res) => {
      qualquer link (inclusive de robô ou de terceiro) forçava a rota do país que
      quisesse. Agora a ordem é: x-vercel-ip-country → cf-ipcountry → x-country-code
      → e só então o parâmetro, que fica reservado para teste explícito (?geoforce=1). */
+  /* Ordem de confiança:
+       1) DICA DE BORDA (geoforce=1) — quando quem chama é a NOSSA Pages Function,
+          que já mediu o IP real do visitante em request.cf.country. Vence porque
+          neste cenário o x-vercel-ip-country é o IP da CLOUDFLARE, não do leitor
+          (medido em produção: o motor classificava todo mundo como US).
+       2) IP REAL do visitante (x-vercel-ip-country → cf-ipcountry → x-country-code)
+          para chamadas diretas do navegador.
+       3) Parâmetro ?geo= só com GEO_PARAM_ALLOW=1 (teste controlado).
+       4) Default BR (mercado principal). */
   const geoForcado = String(query.geoforce || '') === '1';
+  const dicaBorda = geoForcado && geoOverride.length === 2 ? geoOverride : '';
   const country = (
-    headers['x-vercel-ip-country'] || headers['cf-ipcountry'] || headers['x-country-code']
-    || (geoForcado && geoOverride.length === 2 ? geoOverride : '')
+    dicaBorda
+    || headers['x-vercel-ip-country'] || headers['cf-ipcountry'] || headers['x-country-code']
     || (geoOverride.length === 2 && process.env.GEO_PARAM_ALLOW === '1' ? geoOverride : '')
     || 'BR'
   ).toUpperCase().substring(0, 2);
@@ -485,6 +495,7 @@ module.exports = async (req, res) => {
   if (brLockMotivo) res.setHeader('X-Br-Lock-Motivo', brLockMotivo);
   res.setHeader('X-Slot-Dinamico', String(slotFinal || ''));
   res.setHeader('X-Tier1-Core', TIER1_CORE.join(','));
+  res.setHeader('X-Geo-Fonte', dicaBorda ? 'dica_borda' : (headers['x-vercel-ip-country'] ? 'ip_real_vercel' : headers['cf-ipcountry'] ? 'ip_real_cf' : 'default'));
   res.setHeader('X-Routed-Country', country);
   res.setHeader('X-Routed-Brand', brandKey);
   if (shopeeHit) {
