@@ -8,6 +8,7 @@ const core = require('../workers/traffic-core-v1510.js');
 const ROOT = path.resolve(__dirname, '..');
 const SQL = fs.readFileSync(path.join(ROOT, 'supabase/migrations/supabase_v1510_hybrid_alignment.sql'), 'utf8');
 const WORKER = fs.readFileSync(path.join(ROOT, 'workers/traffic-core-v1510.js'), 'utf8');
+const ORCHESTRATOR = fs.readFileSync(path.join(ROOT, 'scripts/orchestrator-run.sh'), 'utf8');
 const COMPOSE = fs.readFileSync(path.join(ROOT, 'edge/jetstream/compose.ts'), 'utf8');
 
 assert.strictEqual(core.EXPECTED_KEYWORDS, 17605);
@@ -64,6 +65,7 @@ assert.match(WORKER, /Promise\.allSettled\(/);
 assert.match(WORKER, /verifyEvent\(note\)/);
 assert.match(WORKER, /no residential-IP claim/);
 assert.doesNotMatch(WORKER, /setInterval\s*\(/, 'no polling loop');
+assert.match(ORCHESTRATOR, /telegram-brazil-deals-publisher\.js --dry/, 'push orchestrator must not materialize duplicate C2 offers');
 assert.match(COMPOSE, /linhas\.splice\(indice, 0, rotulo\)/, 'disclosure remains on its own line before URL');
 
 console.log('v1510 hybrid alignment static/unit tests: PASS');

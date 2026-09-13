@@ -137,7 +137,9 @@ run_step "16. Canario de afiliados do site (live)"   scripts/affiliate-health-ch
 run_step "17. Paginas de tag SEO"                    scripts/generate-tag-seo-pages.js
 run_step "18. Rascunhos para grupos do Facebook"     scripts/facebook-group-syndication-engine.js
 run_step "19. Responder de comentarios Instagram"    scripts/instagram-comments-auto-responder.js
-run_step "20. ENTREGADOR TELEGRAM MULTI-DESTINO"     scripts/telegram-brazil-deals-publisher.js
+# v420/v1510: o orquestrador apenas valida o produtor. Materialização C2 pertence
+# ao workflow dedicado; executar de novo em cada push criaria concorrência indevida.
+run_step "20. VALIDAR PRODUTOR C2 (DRY-RUN)"            scripts/telegram-brazil-deals-publisher.js --dry
 run_step "21. Sitemaps sincronizados (100% paginas)" scripts/sync-sitemaps.js
 run_step "22. Auditoria de schemas JSON-LD"          scripts/audit-schemas.js
 run_step "23. Suite global omni-teste 195 paises"    scripts/master-global-omni-test-suite.js
