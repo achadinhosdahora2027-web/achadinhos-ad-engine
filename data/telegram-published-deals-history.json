@@ -10,34 +10,37 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 7,
+  "total_published": 10,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
       "br_shopee_fone_tws",
-      "br_booking_gramado"
+      "br_booking_gramado",
+      "br_ml_lampada_smart"
     ],
-    "total": 2,
-    "last_published_at": "2026-09-13T01:38:52.074Z",
-    "last_deal_id": "br_booking_gramado"
+    "total": 3,
+    "last_published_at": "2026-09-13T01:41:25.080Z",
+    "last_deal_id": "br_ml_lampada_smart"
   },
-  "last_run_at": "2026-09-13T01:38:52.074Z",
+  "last_run_at": "2026-09-13T01:41:25.081Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer",
-      "br_nordvpn_cyber"
+      "br_nordvpn_cyber",
+      "br_aliexpress_global"
     ],
-    "total": 2,
-    "last_published_at": "2026-09-13T01:38:52.074Z",
-    "last_deal_id": "br_nordvpn_cyber"
+    "total": 3,
+    "last_published_at": "2026-09-13T01:41:25.081Z",
+    "last_deal_id": "br_aliexpress_global"
   },
   "privado_admin": {
     "published_ids": [
       "br_booking_gramado",
-      "br_ml_lampada_smart"
+      "br_ml_lampada_smart",
+      "br_ebay_deals"
     ],
-    "total": 2,
-    "last_published_at": "2026-09-13T01:38:52.074Z",
-    "last_deal_id": "br_ml_lampada_smart"
+    "total": 3,
+    "last_published_at": "2026-09-13T01:41:25.081Z",
+    "last_deal_id": "br_ebay_deals"
   }
 }

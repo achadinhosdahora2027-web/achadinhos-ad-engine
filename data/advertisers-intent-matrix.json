@@ -1,5 +1,5 @@
 {
-  "version": "2026.3",
+  "version": "2026.3+MONETIZATION-FLAGGED",
   "advertisers": [
     {
       "brand": "carla",
@@ -8,8 +8,19 @@
       "payout_model": "CPA ($12 a $35 por locação)",
       "discount_badge": "Aluguel de Carros com Menor Tarifa Garantida",
       "keywords": [
-        "carro", "carros", "aluguel de carro", "alugar carro", "locadora", "rent a car", "car rental", "veiculo",
-        "alquiler de autos", "rentar carro", "coche", "voiture", "mietwagen"
+        "carro",
+        "carros",
+        "aluguel de carro",
+        "alugar carro",
+        "locadora",
+        "rent a car",
+        "car rental",
+        "veiculo",
+        "alquiler de autos",
+        "rentar carro",
+        "coche",
+        "voiture",
+        "mietwagen"
       ],
       "dm_templates": {
         "pt": "🚗 *Aqui está o seu Cupom de Aluguel de Carros!*\n\nCompare as melhores locadoras (Localiza, Movida, Hertz, Avis) com a menor tarifa garantida:\n\n👉 *Alugue com desconto aqui:* {LINK}",
@@ -20,7 +31,8 @@
         "pt": "🚗 Te enviei a cotação com desconto de aluguel de carros no seu direct! 📩",
         "en": "🚗 Sent you the best car rental rates in your DM! 📩",
         "es": "🚗 ¡Te envié las mejores tarifas de autos en tu direct! 📩"
-      }
+      },
+      "monetized": true
     },
     {
       "brand": "booking",
@@ -29,11 +41,33 @@
       "payout_model": "CPA (4% a 25% por reserva)",
       "discount_badge": "15% a 30% OFF em Hotéis",
       "keywords": [
-        "hotel", "hoteis", "pousada", "reserva", "hospedagem", "viagem", "viajar", "gramado", "resort",
-        "stay", "hotels", "lodging", "vacation", "trip", "booking",
-        "hoteles", "viajes", "alojamiento", "hospedaje", "vacaciones",
-        "hôtel", "voyage", "vacances", "hébergement",
-        "reise", "urlaub", "unterkunft"
+        "hotel",
+        "hoteis",
+        "pousada",
+        "reserva",
+        "hospedagem",
+        "viagem",
+        "viajar",
+        "gramado",
+        "resort",
+        "stay",
+        "hotels",
+        "lodging",
+        "vacation",
+        "trip",
+        "booking",
+        "hoteles",
+        "viajes",
+        "alojamiento",
+        "hospedaje",
+        "vacaciones",
+        "hôtel",
+        "voyage",
+        "vacances",
+        "hébergement",
+        "reise",
+        "urlaub",
+        "unterkunft"
       ],
       "dm_templates": {
         "pt": "🏨 *Aqui está o seu Desconto no Booking.com!*\n\nConseguimos uma condição especial de 15% a 30% OFF para hotéis e pousadas verificadas!\n\n👉 *Acesse agora e garanta sua reserva:* {LINK}\n\n⚡ Vagas limitadas para a alta temporada!",
@@ -48,17 +82,31 @@
         "es": "✨ ¡Te envié el enlace oficial con descuento en tu direct! Revisa tus mensajes 📩🚀",
         "fr": "✨ Je vous ai envoyé le lien avec réduction en message privé! Vérifiez vos messages 📩🚀",
         "de": "✨ Ich habe dir den exklusiven Rabattlink per DM geschickt! Schau in dein Postfach 📩🚀"
-      }
+      },
+      "monetized": true
     },
     {
       "brand": "tarot",
       "name": "Tarot 3D & Astrologia",
       "category": "Oráculo & Entretenimento",
-      "payout_model": "Engajamento + Monetização Integrada",
+      "payout_model": "SEM CPA ATIVO (link de valor / engajamento)",
       "discount_badge": "Tiragem 100% Gratuita dos Arcanos Maiores",
       "keywords": [
-        "tarot", "carta", "oraculo", "previsao", "signo", "astrologia", "sorte", "horoscopo", "compatibilidade", "vedico",
-        "oracle", "horoscope", "zodiac", "astrology", "vedic"
+        "tarot",
+        "carta",
+        "oraculo",
+        "previsao",
+        "signo",
+        "astrologia",
+        "sorte",
+        "horoscopo",
+        "compatibilidade",
+        "vedico",
+        "oracle",
+        "horoscope",
+        "zodiac",
+        "astrology",
+        "vedic"
       ],
       "dm_templates": {
         "pt": "🔮 *Aqui está o seu Acesso ao Tarot 3D Interativo!*\n\nTire sua carta dos Arcanos Maiores agora em tempo real e receba seu conselho cósmico com cupom desbloqueado:\n\n👉 *Tirar Carta do Dia Grátis:* {LINK}",
@@ -69,7 +117,9 @@
         "pt": "🔮 O link do Tarot 3D já está no seu direct! Tire sua carta agora 🃏✨",
         "en": "🔮 3D Tarot link is in your DM! Draw your card now 🃏✨",
         "es": "🔮 ¡El enlace del Tarot 3D ya está en tu direct! 🃏✨"
-      }
+      },
+      "monetized": false,
+      "monetization_note": "Pagina proprietaria de engajamento (sem rede de afiliado). Nao gera CPA — serve de isca para as ofertas monetizadas."
     },
     {
       "brand": "nordvpn",
@@ -78,8 +128,25 @@
       "payout_model": "CPA (40% a 100% de comissão)",
       "discount_badge": "74% OFF + 3 Meses Grátis",
       "keywords": [
-        "vpn", "seguranca", "privacidade", "antivirus", "ip", "hack", "wi-fi", "wifi", "streaming", "bloqueio", "anonimo",
-        "privacy", "security", "cybersecurity", "proxy", "unblock", "stream", "seguridad", "ciberseguridad"
+        "vpn",
+        "seguranca",
+        "privacidade",
+        "antivirus",
+        "ip",
+        "hack",
+        "wi-fi",
+        "wifi",
+        "streaming",
+        "bloqueio",
+        "anonimo",
+        "privacy",
+        "security",
+        "cybersecurity",
+        "proxy",
+        "unblock",
+        "stream",
+        "seguridad",
+        "ciberseguridad"
       ],
       "dm_templates": {
         "pt": "🛡️ *Aqui está o seu Cupom NordVPN (74% OFF + 3 Meses Grátis)!*\n\nProteja seus dados, navegue 100% anônimo e libere streamings e sites bloqueados no mundo inteiro:\n\n👉 *Ativar Proteção com 74% OFF:* {LINK}",
@@ -90,17 +157,31 @@
         "pt": "🛡️ Link do NordVPN com 74% OFF enviado no seu direct! 📩🔒",
         "en": "🛡️ NordVPN 74% OFF voucher sent to your DM! 📩🔒",
         "es": "🛡️ ¡Enlace de NordVPN con 74% OFF enviado a tu direct! 📩🔒"
-      }
+      },
+      "monetized": true
     },
     {
       "brand": "udemy",
       "name": "Udemy",
       "category": "Cursos & Educação Online",
-      "payout_model": "CPA (10% a 15% por curso)",
+      "payout_model": "SEM CPA ATIVO (link de valor / engajamento)",
       "discount_badge": "Cursos Certificados a partir de R$ 27,90",
       "keywords": [
-        "curso", "cursos", "aprender", "programacao", "python", "inteligencia artificial", "design", "marketing", "estudar", "faculdade",
-        "course", "courses", "learn", "coding", "udemy"
+        "curso",
+        "cursos",
+        "aprender",
+        "programacao",
+        "python",
+        "inteligencia artificial",
+        "design",
+        "marketing",
+        "estudar",
+        "faculdade",
+        "course",
+        "courses",
+        "learn",
+        "coding",
+        "udemy"
       ],
       "dm_templates": {
         "pt": "🎓 *Aqui está o seu Desconto Exclusivo na Udemy!*\n\nMais de 200.000 cursos certificados de Programação, IA, Negócios e Design a partir de R$ 27,90:\n\n👉 *Acessar Cursos com Desconto:* {LINK}",
@@ -111,7 +192,9 @@
         "pt": "🎓 Link com os cursos mais bem avaliados e com desconto enviado no seu direct! 📚💡",
         "en": "🎓 Top-rated courses with discount link sent to your DM! 📚💡",
         "es": "🎓 ¡Enlace con cursos en descuento enviado a tu direct! 📚💡"
-      }
+      },
+      "monetized": false,
+      "monetization_note": "SEM PROGRAMA DE AFILIADO ATIVO nesta conta: o gateway marca udemy/faculdade como NON_MONETIZED e NAO adiciona a tag. Qualquer trafego enviado aqui nao gera comissao nem rastreio."
     },
     {
       "brand": "amazon_us",
@@ -120,7 +203,15 @@
       "payout_model": "CPA (Amazon Associates)",
       "discount_badge": "Amazon Prime & Best Deals",
       "keywords": [
-        "amazon", "prime", "kindle", "echo", "alexa", "amazon_us", "livro", "livros", "importados"
+        "amazon",
+        "prime",
+        "kindle",
+        "echo",
+        "alexa",
+        "amazon_us",
+        "livro",
+        "livros",
+        "importados"
       ],
       "dm_templates": {
         "en": "📦 *Here is your Amazon Prime & Daily Deals Link!*\n\nGet top-rated electronics, gadgets, and verified best-sellers:\n\n👉 *Shop on Amazon here:* {LINK}",
@@ -129,7 +220,8 @@
       "public_comment_reply": {
         "en": "📦 Amazon verified deals sent to your DM! 🛍️",
         "pt": "📦 Link de ofertas da Amazon enviado no seu direct! 🛍️"
-      }
+      },
+      "monetized": true
     },
     {
       "brand": "mercadolivre",
@@ -138,7 +230,11 @@
       "payout_model": "CPA (Afiliados Meli)",
       "discount_badge": "Entrega Full & Cupons Meli",
       "keywords": [
-        "mercado livre", "meli", "full", "entrega rapida", "comprar meli"
+        "mercado livre",
+        "meli",
+        "full",
+        "entrega rapida",
+        "comprar meli"
       ],
       "dm_templates": {
         "pt": "📦 *Aqui está a Lista de Ofertas com Entrega Full no Mercado Livre!*\n\nProdutos verificados com desconto e entrega ultra-rápida:\n\n👉 *Ver ofertas no Mercado Livre:* {LINK}"
@@ -147,7 +243,8 @@
         "pt": "📦 Link das ofertas com entrega Full enviado no seu direct! 🚀",
         "en": "📦 Mercado Livre deals sent to your DM! 🚀",
         "es": "📦 ¡Ofertas enviadas a tu direct! 🚀"
-      }
+      },
+      "monetized": true
     },
     {
       "brand": "shopee",
@@ -156,7 +253,18 @@
       "payout_model": "CPA (3% a 14% por compra)",
       "discount_badge": "Frete Grátis & Cupons até 70% OFF",
       "keywords": [
-        "shopee", "cupom", "cupons", "achadinho", "achados", "compras", "frete gratis", "promocao", "desconto", "casa", "moda", "eletronico"
+        "shopee",
+        "cupom",
+        "cupons",
+        "achadinho",
+        "achados",
+        "compras",
+        "frete gratis",
+        "promocao",
+        "desconto",
+        "casa",
+        "moda",
+        "eletronico"
       ],
       "dm_templates": {
         "pt": "🛍️ *Aqui está o Radar de Cupons Secretos da Shopee!*\n\nResgate cupons de frete grátis e descontos relâmpago de até 70% OFF verificados hoje:\n\n👉 *Acessar Cupons da Shopee:* {LINK}",
@@ -167,7 +275,8 @@
         "pt": "🛍️ Lista de cupons da Shopee com frete grátis enviada no seu direct! 📦✨",
         "en": "🛍️ Shopee VIP deals sent to your DM! 📦✨",
         "es": "🛍️ ¡Cupones de compras enviados a tu direct! 📦✨"
-      }
+      },
+      "monetized": true
     }
   ]
 }

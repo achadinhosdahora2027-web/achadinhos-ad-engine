@@ -1,5 +1,25 @@
 name: Master Autonomous Hierarchical Orchestrator 24/7 (Full Growth & Watchdog)
 
+# ==============================================================================
+# POR QUE ESTE WORKFLOW MUDOU (auditoria de 13/09/2026)
+# ------------------------------------------------------------------------------
+# 1) Ele clonava UM repositorio so. O orquestrador mestre e um sistema de DOIS
+#    repositorios lado a lado: os scripts do site importam
+#        ../../achadinhos-ad-engine/data/*.json
+#    Por isso 4 etapas legitimas (canario de afiliados, tags SEO, sindicacao,
+#    omni-teste) nunca conseguiam rodar no CI — nao era o script que faltava,
+#    era o repositorio vizinho.
+# 2) Cada etapa era executada como `node scripts/x.js || true`. O `|| true`
+#    escondia erro de sintaxe, modulo ausente e token faltando. O job ficava
+#    verde dizendo "SISTEMA 100% ALINHADO 24/7" com 5 etapas que nao rodavam.
+#    Agora quem executa e scripts/orchestrator-run.sh, que classifica cada etapa
+#    em OK / AUSENTE / FALHOU e deixa o job VERMELHO quando algo real quebra.
+# 3) O workflow nunca carregava as credenciais nas etapas que precisavam delas
+#    (o entregador do Telegram falhava com "TELEGRAM_BOT_TOKEN ausente" mesmo
+#    com o secret configurado no repositorio). Agora o bloco `env:` desce os
+#    secrets para o processo.
+# ==============================================================================
+
 on:
   schedule:
     - cron: "0 */2 * * *"
@@ -7,6 +27,13 @@ on:
     branches:
       - main
   workflow_dispatch:
+
+concurrency:
+  group: orchestrator-mestre
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 env:
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -25,108 +52,69 @@ env:
   META_PAGE_TOKEN_2: ${{ secrets.META_PAGE_TOKEN_2 }}
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  CJ_ACCESS_TOKEN: ${{ secrets.CJ_ACCESS_TOKEN }}
+  CJ_CID: ${{ secrets.CJ_CID }}
   BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
   YANDEX_OAUTH_CLIENT_ID: ${{ secrets.YANDEX_OAUTH_CLIENT_ID }}
   YANDEX_OAUTH_CLIENT_SECRET: ${{ secrets.YANDEX_OAUTH_CLIENT_SECRET }}
+  YANDEX_OAUTH_ACCESS_TOKEN: ${{ secrets.YANDEX_OAUTH_ACCESS_TOKEN }}
+  INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+  CRON_SECRET: ${{ secrets.CRON_SECRET }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  AFFILIATE_GATEWAY: ${{ secrets.AFFILIATE_GATEWAY }}
 
 jobs:
   orchestrator:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
-      - name: Checkout Repository
+      - name: Checkout do motor (achadinhos-ad-engine)
         uses: actions/checkout@v4
+        with:
+          path: achadinhos-ad-engine
+          token: ${{ secrets.GH_PAT }}
 
-      - name: Setup Node.js Environment
+      - name: Checkout do site (aquitemachadinhos)
+        uses: actions/checkout@v4
+        with:
+          repository: achadinhosdahora2027-web/aquitemachadinhos
+          path: aquitemachadinhos
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Node 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: 1. Execute Autonomous Council & Hierarchical Governance Audit
-        run: |
-          node scripts/autonomous-hierarchical-governance-engine.js || true
-
-      - name: 2. Run Autonomous Memory Ledger & Dynamic Escalation Engine
-        run: |
-          node scripts/autonomous-memory-ledger-engine.js || true
-          node scripts/bing-webmaster-sync.js || true
-          node scripts/yandex-webmaster-sync.js || true
-
-      - name: 3. Run 24/7 Affiliate Impressions, Clicks & Pixel Integrity Watchdog
-        run: |
-          node scripts/affiliate-impressions-and-links-watchdog.js || true
-
-      - name: 4. Execute Controlled High-Impact 15-Offer Production & Dynamic Scale
-        run: |
-          node scripts/controlled-production-learning-engine.js || true
-
-      - name: 5. Execute 300,000 Ultra Robots Planetary Social Capture Mega-Swarm (195 Countries)
-        run: |
-          node scripts/ultra-300k-planetary-swarm-engine.js || true
-
-      - name: 6. Run Pinterest Rich Pin & Vertical Visual Syndication Engine
-        run: |
-          node scripts/pinterest-rich-pin-engine.js || true
-
-      - name: 7. Run Meta Commerce & Instagram Shop Catalog Sync
-        run: |
-          node scripts/meta-commerce-catalog-sync.js || true
-
-      - name: 8. Run Tarot 3D & Cosmic Forecast Viral Traffic Magnet
-        run: |
-          node scripts/tarot-viral-traffic-magnet.js || true
-
-      - name: 9. Run Google Search Console & SEO Health Optimizer
-        run: |
-          node scripts/google-search-console-optimizer.js || true
-
-      - name: 10. Run Multi-Engine Global Search Indexing Pinger (IndexNow & Global)
-        run: |
-          node scripts/multi-engine-global-pinger.js || true
-
-      - name: 11. Run Coupon Freshness & Live Price Drop Radar
-        run: |
-          node scripts/coupon-radar-validator.js || true
-
-      - name: 12. Run Canário Affiliate & Self-Healing Guard
-        run: |
-          node scripts/affiliate-health-check.js || true
-
-      - name: 13. Refresh Tag SEO & Intent Pages
-        run: |
-          node scripts/generate-tag-seo-pages.js || true
-
-      - name: 14. Refresh Facebook Groups Viral Syndication
-        run: |
-          node scripts/facebook-group-syndication-engine.js || true
-
-      - name: 15. Run Spintax Anti-Ban Comment Responder
-        run: |
-          node scripts/instagram-comments-auto-responder.js || true
-
-      - name: 16. Execute Twitter / X Viral Publisher & Multi-Country Syndication
-        run: |
+      - name: Executar orquestracao autonoma (diagnostico honesto)
         env:
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          SITE_REPO: ${{ github.workspace }}/aquitemachadinhos
+          CHECK_LIVE: "1"
+        run: bash achadinhos-ad-engine/scripts/orchestrator-run.sh
 
-      - name: 17. Dispatch 24/7 Consolidated Live Executive Digest to Telegram
-        run: |
-          node scripts/telegram-autonomous-notifier.js || true
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Guardar relatorios gerados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorios-orquestrador
+          path: |
+            achadinhos-ad-engine/data/affiliate-health-report.json
+            achadinhos-ad-engine/data/telegram-published-deals-history.json
+            aquitemachadinhos/data/instagram-reply-drafts.json
+          if-no-files-found: warn
+          retention-days: 14
 
-      - name: 18. Execute Master Global Omni-Test Suite (195 Countries)
+      - name: Commitar dados atualizados pelo motor
+        if: success()
         run: |
-          node scripts/master-global-omni-test-suite.js || true
-        env:
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
-          MANYCHAT_API_TOKEN: ${{ secrets.MANYCHAT_API_TOKEN }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          cd achadinhos-ad-engine
+          git config user.name "orchestrator-bot"
+          git config user.email "orchestrator-bot@users.noreply.github.com"
+          git add data/ || true
+          if git diff --cached --quiet; then
+            echo "Nada novo para commitar."
+          else
+            git commit -m "chore(orquestrador): dados atualizados em $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push origin HEAD:main
+          fi

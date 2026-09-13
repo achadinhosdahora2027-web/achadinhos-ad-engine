@@ -1,7 +1,7 @@
 {
   "catalog_version": "2026.9-VERIFIED-MULTI-NETWORK",
   "updated_at": "2026-09-12T16:00:00-03:00",
-  "metodo": "Cada anunciante abaixo foi testado AO VIVO (curl -L, ate 12 hops) e resolveu no dominio do proprio anunciante. Os links de campanha sao gerados em tempo de execucao pelo gateway /api/ads/go, que injeta a TAG do destino (grupo/canal) em sid/subid/customid/utm_content.",
+  "metodo": "Cada anunciante abaixo foi testado AO VIVO (curl -L, ate 12 hops) e resolveu no dominio do proprio anunciante. Os links de campanha sao gerados em tempo de execucao pelo gateway /api/ads/go, que injeta a TAG do destino (grupo/canal) em sid/subid/customid/utm_content. | links reconstruidos e reverificados ao vivo em 2026-09-13T01:31:22.372Z | links reconstruidos e reverificados ao vivo em 2026-09-13T01:34:02.384Z | links reconstruidos e reverificados ao vivo em 2026-09-13T01:36:00.974Z | links reconstruidos e reverificados ao vivo em 2026-09-13T01:40:40.844Z",
   "total_deals": 22,
   "deals": [
     {
@@ -22,8 +22,17 @@
       ],
       "category": "Eletrônicos",
       "link_verified": "https://s.shopee.com.br/30n7ohzzU6",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "shopee.com.br (HTTP 200)"
+      "link_verified_at": "2026-09-13T01:40:38.999Z",
+      "link_final": "s.shopee.com.br (HTTP 301 -> shopee.com.br)",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 301,
+        "outbound_host": "shopee.com.br",
+        "latency_ms": 320,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:38.999Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_amazon_air_fryer",
@@ -43,8 +52,17 @@
       ],
       "category": "Cozinha",
       "link_verified": "https://amazon.com.br/?tag=aquitemachadinhos-20",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "amazon.com.br (HTTP 200)"
+      "link_verified_at": "2026-09-13T01:40:39.237Z",
+      "link_final": "amazon.com.br (HTTP 301 -> www.amazon.com.br)",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 301,
+        "outbound_host": "www.amazon.com.br",
+        "latency_ms": 238,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:39.237Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_booking_gramado",
@@ -62,9 +80,21 @@
         "Localização privilegiada no centro de Gramado e Canela"
       ],
       "category": "Viagens & Hotéis",
-      "link_verified": "CJ Affiliate (kqzyfj.com click-101859672-17293138)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "booking.com (HTTP 202 — challenge antibot, link CJ válido)"
+      "link_verified": "https://www.kqzyfj.com/click-101859672-17293138",
+      "link_verified_at": "2026-09-13T01:40:39.344Z",
+      "link_final": "www.kqzyfj.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (kqzyfj.com click-101859672-17293138)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "17293138",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 107,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:39.344Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_nordvpn_cyber",
@@ -82,9 +112,21 @@
         "Garantia de reembolso de 30 dias"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-13914989)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "nordvpn.com (HTTP 403 — bloqueio de datacenter; link CJ válido)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-13914989",
+      "link_verified_at": "2026-09-13T01:40:39.447Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-13914989)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "13914989",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 103,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:39.447Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_ml_lampada_smart",
@@ -104,8 +146,17 @@
       ],
       "category": "Casa Inteligente",
       "link_verified": "https://meli.la/1U3rtgV",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "mercadolivre.com.br/social/danielfsantos (HTTP 200)"
+      "link_verified_at": "2026-09-13T01:40:39.579Z",
+      "link_final": "meli.la (HTTP 301 -> www.mercadolivre.com.br)",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 301,
+        "outbound_host": "www.mercadolivre.com.br",
+        "latency_ms": 132,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:39.579Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_aliexpress_global",
@@ -123,9 +174,21 @@
         "Proteção ao comprador em todos os pedidos"
       ],
       "category": "Importados",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-17242061)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "aliexpress.com (HTTP 200)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-17242061",
+      "link_verified_at": "2026-09-13T01:40:39.600Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-17242061)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "17242061",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 21,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:39.600Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_ebay_deals",
@@ -143,9 +206,21 @@
         "Programa de proteção ao comprador eBay"
       ],
       "category": "Marketplace Global",
-      "link_verified": "eBay Partner Network (campid 5339193749)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "ebay.com/deals (HTTP 200)"
+      "link_verified": "https://www.ebay.com/deals?campid=5339193749&toolid=10001&mkevt=1&mkcid=1&mkrid=711-53200-19255-0",
+      "link_verified_at": "2026-09-13T01:40:40.078Z",
+      "link_final": "www.ebay.com (HTTP 200)",
+      "link_network_ref": "eBay Partner Network (campid 5339193749)",
+      "link_network": "ebay",
+      "link_network_advertiser_id": "5339193749",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 200,
+        "outbound_host": null,
+        "latency_ms": 478,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.078Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_surfshark_vpn",
@@ -163,9 +238,21 @@
         "Servidores em 100 países"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (tkqlhce.com click-101859672-15736773)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "surfshark.com (HTTP 200)"
+      "link_verified": "https://www.tkqlhce.com/click-101859672-15736773",
+      "link_verified_at": "2026-09-13T01:40:40.185Z",
+      "link_final": "www.tkqlhce.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (tkqlhce.com click-101859672-15736773)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15736773",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 107,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.185Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_nordpass_gerenciador",
@@ -183,9 +270,21 @@
         "Scanner de vazamentos de dados"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-17262576)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "nordpass.com/special (HTTP 200)"
+      "link_verified": "https://www.dpbolvw.net/click-101859672-17262576",
+      "link_verified_at": "2026-09-13T01:40:40.286Z",
+      "link_final": "www.dpbolvw.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (dpbolvw.net click-101859672-17262576)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "17262576",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 101,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.286Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_economybookings_aluguel",
@@ -203,9 +302,21 @@
         "Atendimento em português"
       ],
       "category": "Viagens & Hotéis",
-      "link_verified": "CJ Affiliate (kqzyfj.com click-101859672-15736982)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "economybookings.com (HTTP 200)"
+      "link_verified": "https://www.kqzyfj.com/click-101859672-15736982",
+      "link_verified_at": "2026-09-13T01:40:40.307Z",
+      "link_final": "www.kqzyfj.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (kqzyfj.com click-101859672-15736982)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15736982",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 21,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.307Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_malwarebytes",
@@ -223,9 +334,21 @@
         "Não deixa o computador lento"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-15734534)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "malwarebytes.com (HTTP 200)"
+      "link_verified": "https://www.dpbolvw.net/click-101859672-15734534",
+      "link_verified_at": "2026-09-13T01:40:40.328Z",
+      "link_final": "www.dpbolvw.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (dpbolvw.net click-101859672-15734534)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15734534",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 21,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.328Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_wondershare",
@@ -243,9 +366,21 @@
         "Licença perpétua disponível"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15733675)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "wondershare.com (HTTP 200)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-15733675",
+      "link_verified_at": "2026-09-13T01:40:40.349Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-15733675)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15733675",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 21,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.349Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_movavi",
@@ -263,9 +398,21 @@
         "Versão de teste gratuita disponível"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15735540)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "movavi.com (HTTP 200)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-15735540",
+      "link_verified_at": "2026-09-13T01:40:40.449Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-15735540)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15735540",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 100,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.449Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_parallels_mac",
@@ -283,9 +430,21 @@
         "Otimizado para chips Apple M-series"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (jdoqocy.com click-101859672-15733336)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "parallels.com (HTTP 200)"
+      "link_verified": "https://www.jdoqocy.com/click-101859672-15733336",
+      "link_verified_at": "2026-09-13T01:40:40.586Z",
+      "link_final": "www.jdoqocy.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (jdoqocy.com click-101859672-15733336)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15733336",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 137,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.586Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_corel_software",
@@ -303,9 +462,21 @@
         "VideoStudio para produção de vídeos"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (tkqlhce.com click-101859672-15734376)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "corel.com (HTTP 200)"
+      "link_verified": "https://www.tkqlhce.com/click-101859672-15734376",
+      "link_verified_at": "2026-09-13T01:40:40.608Z",
+      "link_final": "www.tkqlhce.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (tkqlhce.com click-101859672-15734376)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15734376",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 22,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.608Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_sucuri_seguranca",
@@ -323,9 +494,21 @@
         "Ideal para quem tem loja virtual ou blog"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (tkqlhce.com click-101859672-15735343)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "sucuri.net (HTTP 200)"
+      "link_verified": "https://www.tkqlhce.com/click-101859672-15735343",
+      "link_verified_at": "2026-09-13T01:40:40.708Z",
+      "link_final": "www.tkqlhce.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (tkqlhce.com click-101859672-15735343)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15735343",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 100,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.708Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_updf_editor",
@@ -343,9 +526,21 @@
         "Assinatura digital e proteção por senha"
       ],
       "category": "Segurança & Software",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15820753)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "updf.com (HTTP 200)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-15820753",
+      "link_verified_at": "2026-09-13T01:40:40.734Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-15820753)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15820753",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 26,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.734Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_switchbot_casa",
@@ -363,9 +558,21 @@
         "Instalação sem fiação, sem obra"
       ],
       "category": "Casa Inteligente",
-      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-15735830)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "switch-bot.com (HTTP 200)"
+      "link_verified": "https://www.dpbolvw.net/click-101859672-15735830",
+      "link_verified_at": "2026-09-13T01:40:40.756Z",
+      "link_final": "www.dpbolvw.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (dpbolvw.net click-101859672-15735830)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15735830",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 22,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.756Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_bluetti_energia",
@@ -383,9 +590,21 @@
         "Ideal para camping, motorhome e emergência"
       ],
       "category": "Casa & Utilidades",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-15736238)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "bluettipower.com (HTTP 200)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-15736238",
+      "link_verified_at": "2026-09-13T01:40:40.777Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-15736238)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15736238",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 21,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.777Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_soundcore_audio",
@@ -403,9 +622,21 @@
         "Caixas Bluetooth resistentes à água"
       ],
       "category": "Eletrônicos",
-      "link_verified": "CJ Affiliate (anrdoezrs.net click-101859672-17033430)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "soundcore.com (HTTP 200)"
+      "link_verified": "https://www.anrdoezrs.net/click-101859672-17033430",
+      "link_verified_at": "2026-09-13T01:40:40.798Z",
+      "link_final": "www.anrdoezrs.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (anrdoezrs.net click-101859672-17033430)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "17033430",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 21,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.798Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_novakid_ingles",
@@ -423,9 +654,21 @@
         "Horários flexíveis, inclusive fim de semana"
       ],
       "category": "Educação",
-      "link_verified": "CJ Affiliate (dpbolvw.net click-101859672-15735619)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "novakidschool.com (HTTP 200)"
+      "link_verified": "https://www.dpbolvw.net/click-101859672-15735619",
+      "link_verified_at": "2026-09-13T01:40:40.822Z",
+      "link_final": "www.dpbolvw.net (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (dpbolvw.net click-101859672-15735619)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "15735619",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 24,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.822Z",
+        "method": "url-ja-existente"
+      }
     },
     {
       "id": "br_booking_barretos_peao",
@@ -443,9 +686,21 @@
         "Fique perto do Parque do Peão"
       ],
       "category": "Viagens & Hotéis",
-      "link_verified": "CJ Affiliate (kqzyfj.com click-101859672-17293138)",
-      "link_verified_at": "2026-09-13T01:00:00Z",
-      "link_final": "booking.com (HTTP 202 — challenge antibot, link CJ válido)"
+      "link_verified": "https://www.kqzyfj.com/click-101859672-17293138",
+      "link_verified_at": "2026-09-13T01:40:40.844Z",
+      "link_final": "www.kqzyfj.com (HTTP 302 -> cj.dotomi.com)",
+      "link_network_ref": "CJ Affiliate (kqzyfj.com click-101859672-17293138)",
+      "link_network": "cj",
+      "link_network_advertiser_id": "17293138",
+      "link_rebuild": {
+        "status": "OK",
+        "http_status": 302,
+        "outbound_host": "cj.dotomi.com",
+        "latency_ms": 22,
+        "error": null,
+        "checked_at": "2026-09-13T01:40:40.844Z",
+        "method": "url-ja-existente"
+      }
     }
   ],
   "inactive_removed": [
@@ -474,5 +729,13 @@
       "reason": "Apontava para o MESMO shortlink do fone TWS (30n7ohzzU6) — duplicidade enganosa.",
       "removed_at": "2026-09-13"
     }
-  ]
+  ],
+  "link_audit": {
+    "audited_at": "2026-09-13T01:40:40.844Z",
+    "converted_from_label": 0,
+    "already_valid": 22,
+    "unrecoverable": 0,
+    "failed": 0,
+    "total": 22
+  }
 }

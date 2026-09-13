@@ -1,0 +1,116 @@
+name: Diagnostico de Credenciais (verdade ou mentira?)
+
+# ==============================================================================
+# Roda manualmente (ou todo dia as 09:10 UTC) e responde, credencial por
+# credencial, se ela FUNCIONA de verdade — sem nunca imprimir o valor do secret.
+#
+# Nasceu da auditoria de 13/09/2026, quando descobrimos que:
+#   • o data/meta-config.json guardava a string "ENV:META_PAGE_TOKEN_A" no campo
+#     do token (um placeholder que nunca funcionou);
+#   • o SUPABASE_SERVICE_ROLE_KEY do Vercel pertencia a OUTRO projeto Supabase;
+#   • varios workflows ficavam verdes sem que nenhuma credencial fosse testada.
+#
+# Cada bloco imprime "PASS" ou "FAIL" + o motivo exato devolvido pelo servico.
+# ==============================================================================
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 9 * * *"
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Telegram — getMe + destinos
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then echo "FAIL Telegram: secret ausente"; exit 0; fi
+          R=$(curl -s --max-time 15 "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getMe")
+          echo "$R" | grep -q '"ok":true' && echo "PASS Telegram getMe → $(echo $R | head -c 120)" || echo "FAIL Telegram getMe → $(echo $R | head -c 200)"
+
+      - name: Telegram — entrega real no canal de ofertas
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_DEALS_CHANNEL: ${{ secrets.TELEGRAM_DEALS_CHANNEL }}
+        run: |
+          if [ -z "$TELEGRAM_DEALS_CHANNEL" ]; then echo "SKIP Telegram canal: secret ausente"; exit 0; fi
+          R=$(curl -s --max-time 15 -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+              -H 'Content-Type: application/json' \
+              -d "{\"chat_id\":\"$TELEGRAM_DEALS_CHANNEL\",\"text\":\"🔎 Diagnóstico de credenciais (GitHub Actions) — sem ação necessária.\",\"disable_notification\":true}")
+          echo "$R" | grep -q '"ok":true' && echo "PASS Telegram envio no canal de ofertas" || echo "FAIL Telegram canal → $(echo $R | head -c 200)"
+
+      - name: Gateway de afiliados — 307 + tag
+        run: |
+          U="https://achadinhos-ad-engine.vercel.app/api/ads/go?brand=shopee&site=diagnostico&slot=ci&geo=BR&noint=1"
+          CODE=$(curl -s -o /tmp/g -w '%{http_code}' --max-time 20 "$U")
+          LOC=$(curl -s -o /dev/null -w '%{redirect_url}' --max-time 20 "$U")
+          if [ "$CODE" = "307" ] && echo "$LOC" | grep -q "diagnostico"; then
+            echo "PASS Gateway: HTTP 307 e a tag 'diagnostico' viajou → $(echo $LOC | head -c 90)"
+          else
+            echo "FAIL Gateway: HTTP $CODE | Location: $(echo $LOC | head -c 120)"
+          fi
+
+      - name: Supabase — service key contra a URL configurada
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_KEY" ]; then echo "SKIP Supabase: secrets ausentes"; exit 0; fi
+          REF_URL=$(echo "$SUPABASE_URL" | sed -E 's|https://([a-z0-9]+)\.supabase\.co.*|\1|')
+          REF_KEY=$(echo "$SUPABASE_SERVICE_KEY" | cut -d. -f2 | tr '_-' '/+' | base64 -d 2>/dev/null | grep -o '"ref":"[a-z0-9]*"' | cut -d'"' -f4)
+          echo "URL aponta para o projeto: $REF_URL"
+          echo "A chave pertence ao projeto: ${REF_KEY:-<ilegivel>}"
+          if [ "$REF_URL" != "$REF_KEY" ]; then
+            echo "FAIL Supabase: a service key e de OUTRO projeto ($REF_KEY) — vai devolver 401 na URL ($REF_URL)."
+            exit 0
+          fi
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$SUPABASE_URL/rest/v1/brands?select=id&limit=1" -H "apikey: $SUPABASE_SERVICE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_KEY")
+          [ "$CODE" = "200" ] && echo "PASS Supabase REST 200" || echo "FAIL Supabase REST HTTP $CODE"
+
+      - name: CJ Affiliate — token GraphQL
+        env:
+          CJ_ACCESS_TOKEN: ${{ secrets.CJ_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$CJ_ACCESS_TOKEN" ]; then echo "SKIP CJ: secret ausente"; exit 0; fi
+          CODE=$(curl -s -o /tmp/cj -w '%{http_code}' --max-time 20 "https://ads.api.cj.com/graphql" \
+            -H "Authorization: Bearer $CJ_ACCESS_TOKEN" -H 'Content-Type: application/json' \
+            -d '{"query":"{ publisherId }"}')
+          [ "$CODE" = "200" ] && echo "PASS CJ GraphQL 200" || echo "FAIL CJ GraphQL HTTP $CODE → $(head -c 160 /tmp/cj)"
+
+      - name: IndexNow — chave publicada no dominio
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          if [ -z "$INDEXNOW_KEY" ]; then echo "SKIP IndexNow: secret ausente"; exit 0; fi
+          for HOST in https://www.aquitemachadinhos.com.br https://achadinhos-ad-engine.vercel.app; do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$HOST/$INDEXNOW_KEY.txt")
+            echo "IndexNow $HOST/$INDEXNOW_KEY.txt → HTTP $CODE $([ "$CODE" = "200" ] && echo PASS || echo FAIL)"
+          done
+
+      - name: Meta / Instagram — token de pagina
+        env:
+          META_PAGE_TOKEN_A: ${{ secrets.META_PAGE_TOKEN_A }}
+          META_PAGE_TOKEN_B: ${{ secrets.META_PAGE_TOKEN_B }}
+          META_MASTER_USER_TOKEN: ${{ secrets.META_MASTER_USER_TOKEN }}
+        run: |
+          for NAME in META_PAGE_TOKEN_A META_PAGE_TOKEN_B META_MASTER_USER_TOKEN; do
+            VAL=$(eval echo \$$NAME)
+            if [ -z "$VAL" ]; then echo "SKIP $NAME: secret ausente"; continue; fi
+            R=$(curl -s --max-time 15 "https://graph.facebook.com/v21.0/me?access_token=$VAL")
+            if echo "$R" | grep -q '"error"'; then
+              echo "FAIL $NAME → $(echo $R | head -c 150)"
+            else
+              echo "PASS $NAME → $(echo $R | head -c 90)"
+            fi
+          done
+
+      - name: Vercel — token e projetos
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then echo "SKIP Vercel: secret ausente"; exit 0; fi
+          CODE=$(curl -s -o /tmp/v -w '%{http_code}' --max-time 20 "https://api.vercel.com/v2/user" -H "Authorization: Bearer $VERCEL_TOKEN")
+          [ "$CODE" = "200" ] && echo "PASS Vercel token" || echo "FAIL Vercel HTTP $CODE"
