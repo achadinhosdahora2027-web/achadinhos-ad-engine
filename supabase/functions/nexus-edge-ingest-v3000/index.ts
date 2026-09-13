@@ -173,7 +173,12 @@ async function dispatch(event: MatchEvent, stats: SessionStats): Promise<void> {
     }, 900);
   }));
   stats.triggers_queued += settled.filter((x) => x.status === "fulfilled" && x.value.ok === true).length;
-  stats.rpc_errors += settled.filter((x) => x.status === "rejected").length;
+  for (const result of settled) {
+    if (result.status === "rejected") {
+      stats.rpc_errors++;
+      sintonizado(stats,"queue_content_trigger",result.reason);
+    }
+  }
 }
 
 function toEvent(base: Omit<MatchEvent,"content_sha256"|"signature">): Promise<MatchEvent> {
@@ -248,6 +253,7 @@ async function socketLoop(
         try{onOpen(ws);}catch(e){sintonizado(stats,label,e);close();}
       };
       ws.onmessage=(message)=>{
+        if (stats.frames>=MAX_EVENTS) { close(); return; }
         if (tasks.size>=MAX_IN_FLIGHT) { stats.rejected++; return; }
         stats.frames++;
         const task=onMessage(String(message.data)).catch((e)=>sintonizado(stats,label,e)).finally(()=>tasks.delete(task));

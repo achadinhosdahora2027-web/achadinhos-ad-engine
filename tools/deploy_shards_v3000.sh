@@ -10,6 +10,7 @@
 #   NEXUS_MASTER_SERVICE_ROLE_KEY  server-side key used only as Edge secret
 # Optional:
 #   NEXUS_V3000_START_SECRET       defaults to NEXUS_INGEST_HMAC
+#   V3000_SESSION_MS               defaults to 120000; accepted 10000..140000
 #
 # The script deploys nothing unless every configured satellite passes the
 # Management API preflight. It never decrypts nexus_satellites_kms: that KMS
@@ -94,6 +95,11 @@ fi
 [ "${#NEXUS_INGEST_HMAC}" -ge 32 ] || { echo 'NEXUS_INGEST_HMAC must be >=32 characters' >&2; exit 43; }
 case "$NEXUS_MASTER_URL" in https://*.supabase.co|https://*.supabase.co/) ;; *) echo 'invalid NEXUS_MASTER_URL' >&2; exit 44;; esac
 start_secret=${NEXUS_V3000_START_SECRET:-$NEXUS_INGEST_HMAC}
+session_ms=${V3000_SESSION_MS:-120000}
+case "$session_ms" in *[!0-9]*|'') echo 'V3000_SESSION_MS must be an integer' >&2; exit 48;; esac
+[ "$session_ms" -ge 10000 ] && [ "$session_ms" -le 140000 ] || {
+  echo 'V3000_SESSION_MS must be between 10000 and 140000' >&2; exit 48;
+}
 
 secret_failures=""
 for ref in $PROJECTS; do
@@ -103,7 +109,8 @@ for ref in $PROJECTS; do
     NEXUS_INGEST_HMAC="$NEXUS_INGEST_HMAC" \
     NEXUS_V3000_START_SECRET="$start_secret" \
     NEXUS_MASTER_URL="$NEXUS_MASTER_URL" \
-    NEXUS_MASTER_SERVICE_ROLE_KEY="$NEXUS_MASTER_SERVICE_ROLE_KEY" >/dev/null; then
+    NEXUS_MASTER_SERVICE_ROLE_KEY="$NEXUS_MASTER_SERVICE_ROLE_KEY" \
+    V3000_SESSION_MS="$session_ms" >/dev/null; then
     secret_failures="$secret_failures $ref"
     printf 'secret configuration failed: %s\n' "$ref" >&2
   fi
