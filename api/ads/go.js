@@ -274,9 +274,14 @@ module.exports = async (req, res) => {
     const bufferChat = process.env.TELEGRAM_BUFFER_CHAT_ID || process.env.TELEGRAM_ADMIN_CHAT_ID;
     // Diagnóstico observável: X-Buffer-Enqueued diz se o clique entrou na fila e,
     // se não entrou, exatamente qual peça de configuração faltou.
+    // Tráfego SINTÉTICO não entra na fila: sem isso o próprio health-check do CI
+    // (que chama o gateway 21 marcas × 5 tags com UA de navegador) enchia a fila
+    // com cliques que nunca existiram — 40 linhas pendentes observadas na prática.
+    const ehTeste = String(query.noint || '') === '1' || slot.startsWith('health') || String(query.monitor || '') === '1';
     res.setHeader('X-Buffer-Enqueued', !sbUrl ? 'sem_supabase_url'
-      : (!sbKey ? 'sem_supabase_key' : (!bufferChat ? 'sem_chat_id' : (IS_BOT ? 'ignorado_bot' : 'sim'))));
-    if (sbUrl && sbKey && bufferChat && !IS_BOT) {
+      : (!sbKey ? 'sem_supabase_key' : (!bufferChat ? 'sem_chat_id'
+        : (IS_BOT ? 'ignorado_bot' : (ehTeste ? 'ignorado_sintetico' : 'sim')))));
+    if (sbUrl && sbKey && bufferChat && !IS_BOT && !ehTeste) {
       // OBS: precisa ser AGUARDADO. Sem await, a Vercel encerra a função assim que
       // a resposta sai e o INSERT é morto no meio — o clique nunca entrava na fila
       // (o header dizia 'sim' e o banco ficava vazio). Teto curto de 800ms: se o
