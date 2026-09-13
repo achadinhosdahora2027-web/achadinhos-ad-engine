@@ -31,12 +31,27 @@ function resolveShopeeOffer(query) {
   if (inv.keywords[kwq] && inv.offers[inv.keywords[kwq]]) {
     return { hash: inv.keywords[kwq], ...inv.offers[inv.keywords[kwq]], matched_by: 'keyword_exata' };
   }
-  // chave mais longa contida na consulta = match mais específico (autômato simples)
+  // 1) chave mais longa contida na consulta = match mais específico
   let best = '';
   for (const k of Object.keys(inv.keywords)) {
     if (k.length > best.length && kwq.includes(k)) best = k;
   }
   if (best) return { hash: inv.keywords[best], ...inv.offers[inv.keywords[best]], matched_by: 'keyword_contida' };
+  // 2) fallback por n-grama: "kit higiene bebe" não casa com "kit higiene cuidados bebe"
+  //    (a frase tem 'cuidados' no meio). Geramos as combinações da PRÓPRIA consulta e
+  //    testamos da maior para a menor — assim a busca do grupo acha a oferta certa sem
+  //    precisar adivinhar; se nenhuma combinação existir, cai no link genérico.
+  const tokens = kwq.split(/\s+/).filter((t) => t.length > 1);
+  for (let n = Math.min(4, tokens.length); n >= 2; n--) {
+    for (let i = 0; i + n <= tokens.length; i++) {
+      const gram = tokens.slice(i, i + n).join(' ');
+      if (inv.keywords[gram]) return { hash: inv.keywords[gram], ...inv.offers[inv.keywords[gram]], matched_by: 'keyword_ngrama' };
+    }
+  }
+  // 3) termo único forte (marca/modelo com número, ex.: '10000mah', 'tp link' já coberto acima)
+  for (const t of tokens) {
+    if (t.length >= 6 && inv.keywords[t]) return { hash: inv.keywords[t], ...inv.offers[inv.keywords[t]], matched_by: 'keyword_termo' };
+  }
   return null;
 }
 const CJ_CID = '8041957';
