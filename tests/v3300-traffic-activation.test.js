@@ -47,8 +47,10 @@ assert.match(EVIDENCE, /'sub_1ms_guaranteed',false/);
 assert.match(EVIDENCE, /'placement_added_or_duplicated',false/);
 assert.doesNotMatch(EVIDENCE, /'satellites_deployed',13|'fourteen_account_deployment_claimed',true|'sub_1ms_guaranteed',true/);
 
-assert.match(EDGE, /V3300_POLICY_VERSION/);
-assert.match(EDGE, /V3300_ACTIVATION_PROFILE/);
+// A safe cumulative successor may advance only the environment key/profile;
+// the factual copy policy remains v3200 and the metadata contract remains.
+assert.match(EDGE, /V33(?:00|10)_POLICY_VERSION/);
+assert.match(EDGE, /V33(?:00|10)_ACTIVATION_PROFILE/);
 assert.match(EDGE, /policy_version: POLICY_VERSION/);
 assert.match(EDGE, /activation_profile: ACTIVATION_PROFILE/);
 assert.match(EDGE, /publication_claimed: false/);
