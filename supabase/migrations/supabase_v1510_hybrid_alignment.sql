@@ -6,7 +6,7 @@
 --   * 17,605 measured keyword mappings are the current source universe;
 --   * ads remains read-only (this migration never writes public.ads);
 --   * /api/ads/go remains the only affiliate gateway (application code);
---   * Jobs 15, 16 and 64 stay OFF. Job 60 is replaced by source-event triggers;
+--   * Jobs 15, 16, 18 and 64 stay OFF. Job 60 is replaced by source-event triggers;
 --   * WebSocket connections live in a process worker, never inside PostgreSQL;
 --   * no latency, reach, conversion or residential-human claim is manufactured.
 --
@@ -740,6 +740,7 @@ revoke all on function public.nexus_v1510_immutability_guard()
 -- -----------------------------------------------------------------------------
 select cron.alter_job(15,active:=false) where exists(select 1 from cron.job where jobid=15);
 select cron.alter_job(16,active:=false) where exists(select 1 from cron.job where jobid=16);
+select cron.alter_job(18,active:=false) where exists(select 1 from cron.job where jobid=18);
 select cron.alter_job(60,active:=false) where exists(select 1 from cron.job where jobid=60);
 select cron.alter_job(64,active:=false) where exists(select 1 from cron.job where jobid=64);
 
@@ -762,7 +763,7 @@ select
   (select count(*) from public.nexus_v1510_ingress_buffer) as ingress_buffer_depth,
   (select count(*) from public.nexus_v420_channel_outbox) as telegram_outbox_depth,
   (select count(*) from public.nexus_telegram_message_buffer) as legacy_buffer_depth,
-  not exists(select 1 from cron.job where jobid in(15,16,60,64) and active) as prohibited_polling_jobs_off,
+  not exists(select 1 from cron.job where jobid in(15,16,18,60,64) and active) as prohibited_polling_jobs_off,
   (select count(*) from pg_trigger where tgname like 'trg_v1510_%_source_flush' and tgenabled='O') as source_event_triggers,
   'not_claimed_without_external_runtime_measurement'::text as persistent_websocket_sla,
   'not_claimed_without_network_measurement'::text as ttfb_sla;

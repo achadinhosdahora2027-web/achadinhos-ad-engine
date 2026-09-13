@@ -45,6 +45,7 @@ assert.match(SQL, /for update skip locked/i);
 assert.match(SQL, /grant execute on function public\.nexus_v1510_ingest_event\(jsonb\) to anon,authenticated,service_role/i);
 assert.match(SQL, /cron\.alter_job\(15,active:=false\)/i);
 assert.match(SQL, /cron\.alter_job\(16,active:=false\)/i);
+assert.match(SQL, /cron\.alter_job\(18,active:=false\)/i);
 assert.match(SQL, /cron\.alter_job\(60,active:=false\)/i);
 assert.match(SQL, /cron\.alter_job\(64,active:=false\)/i);
 assert.match(SQL, /trg_v1510_click_source_flush/i);
