@@ -119,10 +119,10 @@ assert.match(EDGE, /fallback_anti_404_deployed: false/);
 assert.doesNotMatch(EDGE, /Response\.redirect|location\s*:/i);
 
 // Copy policy and immutable protected surfaces.
-assert.match(COPY, /V33(?:20|30)_POLICY_VERSION/);
-assert.match(COPY, /V33(?:20|30)_ACTIVATION_PROFILE/);
+assert.match(COPY, /V33(?:20|30|40|50)_POLICY_VERSION/);
+assert.match(COPY, /V33(?:20|30|40|50)_ACTIVATION_PROFILE/);
 assert.match(COPY, /"v3200\.0"/);
-assert.match(COPY, /"v33(?:20|30)\.0"/);
+assert.match(COPY, /"v33(?:20|30|40|50)\.0"/);
 assert.match(COMPOSE, /#publi/);
 assert.match(COMPOSE, /#ad/);
 assert.match(COMPOSE, /linhas\.splice\(indice, 0, rotulo\)/);

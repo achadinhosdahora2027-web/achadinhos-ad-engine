@@ -113,10 +113,10 @@ assert.match(EVIDENCE, /'affiliate_url_followed_by_automation',false/i);
 assert.doesNotMatch(EVIDENCE, /'cloudflare_pages_deployed',true|'sub_1ms_guaranteed',true|'commission_lossless_guaranteed',true/i);
 
 // Copy policy and protected surfaces.
-assert.match(COPY, /V3330_POLICY_VERSION/);
-assert.match(COPY, /V3330_ACTIVATION_PROFILE/);
+assert.match(COPY, /V33(?:30|40|50)_POLICY_VERSION/);
+assert.match(COPY, /V33(?:30|40|50)_ACTIVATION_PROFILE/);
 assert.match(COPY, /"v3200\.0"/);
-assert.match(COPY, /"v3330\.0"/);
+assert.match(COPY, /"v33(?:30|40|50)\.0"/);
 assert.match(COMPOSE, /#publi/);
 assert.match(COMPOSE, /#ad/);
 assert.match(COMPOSE, /linhas\.splice\(indice, 0, rotulo\)/);

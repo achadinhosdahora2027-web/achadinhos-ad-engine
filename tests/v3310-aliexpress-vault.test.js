@@ -99,10 +99,10 @@ assert.match(ROUTE_EDGE, /fallback_anti_404_deployed: false/);
 assert.doesNotMatch(ROUTE_EDGE, /Response\.redirect|location\s*:/i);
 
 // Copy policy is still v3200, with the activation profile advanced only to v3310.
-assert.match(COPY_EDGE, /V33(?:10|20|30)_POLICY_VERSION/);
-assert.match(COPY_EDGE, /V33(?:10|20|30)_ACTIVATION_PROFILE/);
+assert.match(COPY_EDGE, /V33(?:10|20|30|40|50)_POLICY_VERSION/);
+assert.match(COPY_EDGE, /V33(?:10|20|30|40|50)_ACTIVATION_PROFILE/);
 assert.match(COPY_EDGE, /"v3200\.0"/);
-assert.match(COPY_EDGE, /"v33(?:10|20|30)\.0"/);
+assert.match(COPY_EDGE, /"v33(?:10|20|30|40|50)\.0"/);
 assert.match(COMPOSE, /#publi/);
 assert.match(COMPOSE, /#ad/);
 assert.match(COMPOSE, /linhas\.splice\(indice, 0, rotulo\)/);

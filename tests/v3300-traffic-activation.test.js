@@ -49,8 +49,8 @@ assert.doesNotMatch(EVIDENCE, /'satellites_deployed',13|'fourteen_account_deploy
 
 // A safe cumulative successor may advance only the environment key/profile;
 // the factual copy policy remains v3200 and the metadata contract remains.
-assert.match(EDGE, /V33(?:00|10|20|30)_POLICY_VERSION/);
-assert.match(EDGE, /V33(?:00|10|20|30)_ACTIVATION_PROFILE/);
+assert.match(EDGE, /V33(?:00|10|20|30|40|50)_POLICY_VERSION/);
+assert.match(EDGE, /V33(?:00|10|20|30|40|50)_ACTIVATION_PROFILE/);
 assert.match(EDGE, /policy_version: POLICY_VERSION/);
 assert.match(EDGE, /activation_profile: ACTIVATION_PROFILE/);
 assert.match(EDGE, /publication_claimed: false/);
