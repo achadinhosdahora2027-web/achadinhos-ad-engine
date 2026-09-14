@@ -10,18 +10,19 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 107,
+  "total_published": 108,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
       "br_amazon_air_fryer",
-      "br_ml_lampada_smart"
+      "br_ml_lampada_smart",
+      "br_shopee_fone_tws"
     ],
-    "total": 60,
-    "last_published_at": "2026-09-14T18:38:27.703Z",
-    "last_deal_id": "br_ml_lampada_smart"
+    "total": 61,
+    "last_published_at": "2026-09-14T19:34:30.804Z",
+    "last_deal_id": "br_shopee_fone_tws"
   },
-  "last_run_at": "2026-09-14T18:38:27.703Z",
+  "last_run_at": "2026-09-14T19:34:30.804Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer"
