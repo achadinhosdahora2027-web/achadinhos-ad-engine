@@ -1,0 +1,29 @@
+{
+  "schema_version": "v3700-production-install-1",
+  "installed_at": "2026-09-14T02:40:03.141062+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "result": "installed",
+  "migration_sha256": "f761e76b4c320d4d19c60c54faa451e8221108bb6c3839e850993fea7c49bb83",
+  "rollback_sha256": "5e390c98560da8cb5e5a4dce3fe6bfdadb5105dcebeb6bb89db20fe40cc4e45b",
+  "hydration_transport": "one-time authenticated PostgREST RPC",
+  "encrypted_rows": 7,
+  "ciphertext_roundtrip_verified": true,
+  "hydration_entrypoint_dropped": true,
+  "plaintext_credential_in_git": false,
+  "server_version": "17.6",
+  "physical": {
+    "vault_persistence": "p",
+    "ledger_persistence": "p",
+    "outbox_persistence": "p",
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "shopee": 1201,
+    "job60": true,
+    "unexpected_subminute": 0,
+    "active_jobs": 29
+  },
+  "x_rules_changed": false,
+  "x_stream_connections_opened": 0,
+  "secrets_recorded": false
+}

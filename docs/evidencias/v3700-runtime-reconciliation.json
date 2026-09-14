@@ -1,0 +1,13 @@
+{
+  "schema_version": "v3700-runtime-reconciliation-install-1",
+  "verified_at": "2026-09-14T02:44:45.574629+00:00",
+  "result": "pass",
+  "migration_sha256": "476e53443cc4577339c6104596e1a43cdf477aa23287428205a0e8491bad697b",
+  "dryrun_transaction_rolled_back": true,
+  "capabilities_enabled": 7,
+  "capabilities_disabled": 5,
+  "x_stream_active": false,
+  "deepseek_active": false,
+  "continuous_24x7_proven": false,
+  "secrets_recorded": false
+}

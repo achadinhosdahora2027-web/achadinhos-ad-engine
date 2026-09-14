@@ -1,0 +1,18 @@
+{
+  "schema_version": "v3700-bounded-stream-proof-1",
+  "verified_at": "2026-09-14T02:41:59.127247+00:00",
+  "result": "fail",
+  "edge_http": 502,
+  "version": "v3700.0",
+  "transport": "persistent HTTP stream",
+  "rfc6455_websocket": false,
+  "upstream_http": 402,
+  "pattern_count": 17605,
+  "aho_build_ms": 267.811,
+  "publication_performed": false,
+  "error": "x_stream_unavailable",
+  "simultaneous_x_stream_connections": 0,
+  "stream_connection_closed_before_evidence_write": true,
+  "continuous_connection_active_after_test": false,
+  "secrets_recorded": false
+}

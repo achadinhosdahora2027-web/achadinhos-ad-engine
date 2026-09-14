@@ -1,0 +1,31 @@
+{
+  "schema_version": "v3700-x-rules-install-1",
+  "verified_at": "2026-09-14T02:41:08.829352+00:00",
+  "result": "pass",
+  "rules_before": 0,
+  "rules_added": 2,
+  "rules_after": 2,
+  "get_http": 200,
+  "post_http": 201,
+  "rules": [
+    {
+      "tag": "nexus-v3700-br-sp-radius",
+      "query": "point_radius:[-46.6333 -23.5505 40km] -is:retweet",
+      "query_sha256": "a80174eaad959e214b6651f753093b73d5fc313e5460d0cf6cc2a813e6faf436",
+      "location_basis": "geotagged post/place within 40km point radius",
+      "city_or_residence_proof": false
+    },
+    {
+      "tag": "nexus-v3700-us-ny-radius",
+      "query": "point_radius:[-74.0060 40.7128 40km] -is:retweet",
+      "query_sha256": "236842d68d41cdc3d33add2881f39eb354d0942d52eb6ecc77005b13875dffbf",
+      "location_basis": "geotagged post/place within 40km point radius",
+      "city_or_residence_proof": false
+    }
+  ],
+  "filtered_stream_is_full_firehose": false,
+  "rfc6455_websocket_used": false,
+  "stream_connections_opened": 0,
+  "posts_read": 0,
+  "secrets_recorded": false
+}

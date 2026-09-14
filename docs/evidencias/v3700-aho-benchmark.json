@@ -1,0 +1,18 @@
+{
+  "schema_version": "v3700-aho-benchmark-1",
+  "verified_at": "2026-09-14T02:43:55.226779+00:00",
+  "result": "pass",
+  "patterns": 17605,
+  "samples": 2000,
+  "correct": 2000,
+  "build_ms": 178.741,
+  "p50_ms": 0.008149,
+  "p95_ms": 0.021072,
+  "p99_ms": 0.036615,
+  "max_ms": 5.96744,
+  "synthetic_sample_texts": true,
+  "x_delivery_latency_measured": false,
+  "end_to_end_latency_measured": false,
+  "sub_1ms_end_to_end_guaranteed": false,
+  "secrets_recorded": false
+}

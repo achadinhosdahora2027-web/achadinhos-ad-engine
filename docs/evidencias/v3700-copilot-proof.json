@@ -1,0 +1,36 @@
+{
+  "schema_version": "v3700-copilot-proof-1",
+  "verified_at": "2026-09-14T02:43:18.837376+00:00",
+  "result": "partial",
+  "fanout": "Promise.allSettled",
+  "publication_performed": false,
+  "links_generated": false,
+  "synthetic_prompts_only": true,
+  "secrets_recorded": false,
+  "rows": [
+    {
+      "scope": "br_sp_msa",
+      "http": 200,
+      "providers": {
+        "groq": true,
+        "deepseek": false
+      },
+      "template_policy_shape": {
+        "groq": true
+      },
+      "generated_text_recorded": false
+    },
+    {
+      "scope": "us_ny_msa",
+      "http": 200,
+      "providers": {
+        "groq": true,
+        "deepseek": false
+      },
+      "template_policy_shape": {
+        "groq": true
+      },
+      "generated_text_recorded": false
+    }
+  ]
+}

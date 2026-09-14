@@ -1,0 +1,363 @@
+{
+  "schema_version": "v3700-master-preflight-1",
+  "observations": {
+    "server_version": "17.6",
+    "keyword_columns": [
+      {
+        "udt": "text",
+        "name": "kw",
+        "type": "text"
+      },
+      {
+        "udt": "text",
+        "name": "oferta",
+        "type": "text"
+      },
+      {
+        "udt": "timestamptz",
+        "name": "carregado_em",
+        "type": "timestamp with time zone"
+      }
+    ],
+    "keyword_rows": 17605,
+    "ads_rows": 14301,
+    "active_ads_rows": 12165,
+    "jobs": [
+      {
+        "jobid": 1,
+        "active": true,
+        "jobname": "nexus-cache-sweep-hourly",
+        "schedule": "0 * * * *",
+        "command_sha256": "1fc937b20f418d4551b523100bcdfc5bdd43c1f23552b9175c3f4ea1cf86d2e7"
+      },
+      {
+        "jobid": 2,
+        "active": true,
+        "jobname": "nexus-mv-offers-madrugada",
+        "schedule": "30 6 * * *",
+        "command_sha256": "b94f4fa387103c479f89a88d88c69adc4c9fddd87e36635e25ae25b2fc0c2173"
+      },
+      {
+        "jobid": 3,
+        "active": true,
+        "jobname": "nexus-orphans-4h",
+        "schedule": "20 */4 * * *",
+        "command_sha256": "65ab1f4338d85a527ce3d185017696b9fe1adadbd132d1102b3beafc9aeb69d2"
+      },
+      {
+        "jobid": 4,
+        "active": true,
+        "jobname": "nexus-fx-50min",
+        "schedule": "50 * * * *",
+        "command_sha256": "ed619bd392821b597f8fff08648cb6579c6b2b45226c8f8ba3bb8fa191e60042"
+      },
+      {
+        "jobid": 5,
+        "active": true,
+        "jobname": "nexus-heartbeat-4h",
+        "schedule": "40 */4 * * *",
+        "command_sha256": "c18beb5a93172a5d754650b107eebaf507fbbac1600e08b99035837202ffecb7"
+      },
+      {
+        "jobid": 10,
+        "active": true,
+        "jobname": "nexus-social-traffic-central",
+        "schedule": "10 */4 * * *",
+        "command_sha256": "20bf8ad146138a95b16337d344b34cff23c2651633755f7bd83e91beff6aa63f"
+      },
+      {
+        "jobid": 11,
+        "active": true,
+        "jobname": "nexus-telegram-c2-ofertas",
+        "schedule": "30 8 * * *",
+        "command_sha256": "76104c90da87494f83d666adc3dc7c185466fbe573ffac396247f8422d9ac1f1"
+      },
+      {
+        "jobid": 12,
+        "active": true,
+        "jobname": "nexus-galaxy-rail-status",
+        "schedule": "15 12 * * *",
+        "command_sha256": "38a82c17b45c1a949eaf933de36baf3bd8b43ca2946f350f0450f38077b44fbb"
+      },
+      {
+        "jobid": 14,
+        "active": true,
+        "jobname": "nexus-keyword-expansion",
+        "schedule": "0 3 * * *",
+        "command_sha256": "34c6e02e37b0c91e77c8c213196513eac71bbbb606adf613c7fd89b7bc8afdfc"
+      },
+      {
+        "jobid": 15,
+        "active": false,
+        "jobname": "nexus-stream-keepalive",
+        "schedule": "10 seconds",
+        "command_sha256": "c60347a28459e2e4ec434cb4989d09c8f663c0b9c7049949a2cb8be59904ce84"
+      },
+      {
+        "jobid": 16,
+        "active": false,
+        "jobname": "nexus-stream-keepalive-60s",
+        "schedule": "* * * * *",
+        "command_sha256": "c60347a28459e2e4ec434cb4989d09c8f663c0b9c7049949a2cb8be59904ce84"
+      },
+      {
+        "jobid": 17,
+        "active": true,
+        "jobname": "nexus-raiox-c1",
+        "schedule": "0 * * * *",
+        "command_sha256": "e69eb1751cef2ec9d62073ef5191253b3e3c6ddd29469e9d26b5635c5763a8da"
+      },
+      {
+        "jobid": 18,
+        "active": false,
+        "jobname": "nexus-stream-sentinel",
+        "schedule": "*/2 * * * *",
+        "command_sha256": "e65bc464505620d866a870dc3ab50979b51e5c1025134de4f22e46b24261e426"
+      },
+      {
+        "jobid": 21,
+        "active": false,
+        "jobname": "nexus-hunt-retry-sweeper",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "1459586d9950bb3f0cdeae99f66297a5c5cf06b39925a350ac65de205830bb15"
+      },
+      {
+        "jobid": 22,
+        "active": true,
+        "jobname": "nexus-demand-intel-refresh",
+        "schedule": "5 * * * *",
+        "command_sha256": "d716c232c67e7fd27820a5e96197d61aec4e5aefed760118c3af3d70d239c40a"
+      },
+      {
+        "jobid": 23,
+        "active": false,
+        "jobname": "nexus-oferta-indexnow-push",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "a90ce41863a79b8e00bf6900bc592d35820668baad9c56e3a0fcf3c690125330"
+      },
+      {
+        "jobid": 24,
+        "active": true,
+        "jobname": "nexus-seo-polymorphic-enrich",
+        "schedule": "30 3 * * *",
+        "command_sha256": "a22b83b6f520ed25697cbd532dabfab0f2c27c3195975267d234910c7961ff29"
+      },
+      {
+        "jobid": 27,
+        "active": true,
+        "jobname": "nexus-hyper-core",
+        "schedule": "25 * * * *",
+        "command_sha256": "c9992835086b4cad3310e74d7c36f719af33d17853f703a42524e1e61967b3c3"
+      },
+      {
+        "jobid": 28,
+        "active": true,
+        "jobname": "nexus-cj-rail",
+        "schedule": "40 * * * *",
+        "command_sha256": "c95c6109efedad32aa6c88c51c93561b50e636d3696aee092845ffc50e531e14"
+      },
+      {
+        "jobid": 29,
+        "active": true,
+        "jobname": "nexus-vacuum-analyze-6h",
+        "schedule": "0 */6 * * *",
+        "command_sha256": "025bd614bd25a876f510672633b0233b5b62f1130b4e90982aef19dfa5edb903"
+      },
+      {
+        "jobid": 30,
+        "active": true,
+        "jobname": "nexus-cluster-conversions",
+        "schedule": "30 3 1 * *",
+        "command_sha256": "e3221963c7e45268baa4923309634b798b6f68340281b96b9dedcc3da714e999"
+      },
+      {
+        "jobid": 31,
+        "active": true,
+        "jobname": "v26-coupon-pulse-hourly",
+        "schedule": "10 * * * *",
+        "command_sha256": "95da35bcd81d05db14b5bbda1cbea2444537eb01295f2d730ad7dfdd37fe4bf5"
+      },
+      {
+        "jobid": 32,
+        "active": true,
+        "jobname": "v26-growth-rollup-hourly",
+        "schedule": "20 * * * *",
+        "command_sha256": "6c4dafb24da459d3feb346c50b3f3812580b94067ea2fa456858f10473dd350c"
+      },
+      {
+        "jobid": 33,
+        "active": false,
+        "jobname": "v26-indexnow-daily",
+        "schedule": "35 3 * * *",
+        "command_sha256": "fbbc62db8eb0d3efa983d526ca6e161a87dcad4657bf60c7a62e999380e7b42a"
+      },
+      {
+        "jobid": 34,
+        "active": true,
+        "jobname": "v27-financial-pulse-hourly",
+        "schedule": "30 * * * *",
+        "command_sha256": "3d5a122472179aebb3513735d01b82cc576f440a71c7e5979d9b3ca40b2da315"
+      },
+      {
+        "jobid": 35,
+        "active": false,
+        "jobname": "v27-queue-drain-10min",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "1ddef3ed3b1cfd5bf428a2f239b26d46cc63606b7bceed822ce3fcb29be0858e"
+      },
+      {
+        "jobid": 36,
+        "active": false,
+        "jobname": "v99-galaxy-wave-sweep-2min",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "12b0fb3b59a4a082fa4b73e82d540edc25f1110cf223e39ad325b2d1935cbd14"
+      },
+      {
+        "jobid": 38,
+        "active": false,
+        "jobname": "v102-adsterra-watch",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "6cd633738d4b5d74ca674125da9664658a3590b37540b6d3bae96f812eade5a9"
+      },
+      {
+        "jobid": 40,
+        "active": false,
+        "jobname": "v110-satellite-pull",
+        "schedule": "*/15 * * * *",
+        "command_sha256": "34a6c90b39432711695ebdcf612fdb47723f20d796c54b060853f5d09726495b"
+      },
+      {
+        "jobid": 41,
+        "active": false,
+        "jobname": "v112-telegram-flush-10s",
+        "schedule": "10 seconds",
+        "command_sha256": "3136f78615c6f751166299c9ac9781b6186a887a42f81eec701f2a51a6a97747"
+      },
+      {
+        "jobid": 42,
+        "active": true,
+        "jobname": "v165-global-balance-hourly",
+        "schedule": "0 * * * *",
+        "command_sha256": "8c5133f96bf6b441a1aff695f45ab6a586bc06bc6348ca61fb8bcf9c3fe62463"
+      },
+      {
+        "jobid": 43,
+        "active": true,
+        "jobname": "v165-global-balance-close",
+        "schedule": "5 * * * *",
+        "command_sha256": "00ebab1454a197c484f7391dde33e1f00f7ea37816fc9d6c6788800429862056"
+      },
+      {
+        "jobid": 44,
+        "active": false,
+        "jobname": "v185-pushlog-reconcile",
+        "schedule": "*/5 * * * *",
+        "command_sha256": "4b4f3d0a337b925de3e774c0ffb4c0acc484d23ea31f0e95668fd78f6c14e8c7"
+      },
+      {
+        "jobid": 45,
+        "active": true,
+        "jobname": "v215-guard-rotas-hourly",
+        "schedule": "15 * * * *",
+        "command_sha256": "9e4bede8915a664e022809bd8551a5e9a928e553e3b77abc7e9b46ece90d79f1"
+      },
+      {
+        "jobid": 46,
+        "active": true,
+        "jobname": "v240-purga-estoque-24h",
+        "schedule": "25 3 * * *",
+        "command_sha256": "ccb5602d77d13a5b210574181865dbe6eb4abaf1f085d5a18c560e193b54699f"
+      },
+      {
+        "jobid": 47,
+        "active": false,
+        "jobname": "v255-guard-tags",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "67bdf68afb276d77c88dfad0bd25e07125e56fac61e299a94943807f6b1f77ae"
+      },
+      {
+        "jobid": 48,
+        "active": false,
+        "jobname": "v255-guard-tags-close",
+        "schedule": "3-59/10 * * * *",
+        "command_sha256": "616c5713079188868cf5e7f36c8aa59daeabb2ed830b02e5762f0126a558d044"
+      },
+      {
+        "jobid": 49,
+        "active": true,
+        "jobname": "v275-guard-receita",
+        "schedule": "40 */3 * * *",
+        "command_sha256": "2aba16b2b41dbf64311144cd8f32073d2cb17aeb3a731c3ec91855ace3d8bdba"
+      },
+      {
+        "jobid": 59,
+        "active": true,
+        "jobname": "v245-financial-traffic-audit-6hours",
+        "schedule": "0 */6 * * *",
+        "command_sha256": "373090a393fba454785e4cdf576d66ffab362dd59cc606ba9ab8377dd10729c2"
+      },
+      {
+        "jobid": 60,
+        "active": true,
+        "jobname": "v360-tg-flush-10s",
+        "schedule": "10 seconds",
+        "command_sha256": "1aef9c218e048585dbe06ac2327de633c4f78059657b97d6f7ce31d621f1a8be"
+      },
+      {
+        "jobid": 61,
+        "active": true,
+        "jobname": "v365-yield-hourly",
+        "schedule": "7 * * * *",
+        "command_sha256": "e7ff019002113d35e8ece18f5f2226ea9281274a875d0c568bffb89cbcf8e7ca"
+      },
+      {
+        "jobid": 62,
+        "active": false,
+        "jobname": "v365-yield-consume-2min",
+        "schedule": "*/2 * * * *",
+        "command_sha256": "4c460d0e3901f0263626b36801ff27dc9317ff599b30d5cd7b18495a5e365b89"
+      },
+      {
+        "jobid": 63,
+        "active": false,
+        "jobname": "v380-embed-cycle-2min",
+        "schedule": "*/2 * * * *",
+        "command_sha256": "e99d4ccf8d63b07f50f471650fcfc448d8d864c157cf773ffda9b58eec9f48ea"
+      },
+      {
+        "jobid": 64,
+        "active": false,
+        "jobname": "v385-nostr-ingest-2min",
+        "schedule": "*/2 * * * *",
+        "command_sha256": "fd9da7214ad950e2382bc852068bbdfa49191f69b3cddf705d8fde9c94dca994"
+      },
+      {
+        "jobid": 65,
+        "active": false,
+        "jobname": "v390-compose-redrain-5min",
+        "schedule": "*/5 * * * *",
+        "command_sha256": "28af1a232e9220355bb2fe307c961d09b508dc03ec70921555beea93eff0771c"
+      },
+      {
+        "jobid": 70,
+        "active": true,
+        "jobname": "v3010-indexnow-durable-10min",
+        "schedule": "*/10 * * * *",
+        "command_sha256": "ec80cb8510c0a256f70ed424c3faa2ddc628e3ed4eb23764a0cb9e0bfd53156c"
+      },
+      {
+        "jobid": 71,
+        "active": true,
+        "jobname": "v3010-trends-hourly",
+        "schedule": "17 * * * *",
+        "command_sha256": "fb3c0f65d2b84aa1a75da776711089b01b7ebfaf8de51a85dc56233cc5bbba9a"
+      }
+    ],
+    "logged_outbox_persistence": "p",
+    "channel_outbox_persistence": "u",
+    "shopee_rows": 1201,
+    "matrix_rows": 27
+  },
+  "secrets_recorded": false,
+  "urls_recorded": false
+}

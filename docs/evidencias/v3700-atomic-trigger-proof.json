@@ -1,0 +1,13 @@
+{
+  "schema_version": "v3700-atomic-trigger-proof-1",
+  "verified_at": "2026-09-14T02:43:40.919838+00:00",
+  "result": "pass",
+  "transaction_rolled_back": true,
+  "lease_released": true,
+  "atomic_event_and_outbox_observed_inside_transaction": true,
+  "channel_key": "atendimento",
+  "raw_text_persisted": false,
+  "publication_performed": false,
+  "external_exactly_once_claimed": false,
+  "secrets_recorded": false
+}

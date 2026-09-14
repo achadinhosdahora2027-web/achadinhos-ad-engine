@@ -1,0 +1,36 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),path=require('path'),crypto=require('crypto');
+const root=path.join(__dirname,'..');const read=p=>fs.readFileSync(path.join(root,p),'utf8');const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const sql=read('supabase/migrations/supabase_v3700_twitter_vault.sql');
+const rollback=read('supabase/migrations/rollback_v3700_twitter_vault.sql');
+const reconciliation=read('supabase/migrations/supabase_v3700_runtime_verification.sql');
+const stream=read('supabase/functions/nexus-twitter-stream-v3700/index.ts');
+const aho=read('supabase/functions/nexus-twitter-stream-v3700/aho.ts');
+const copilot=read('supabase/functions/nexus-twitter-copilot-v3700/index.ts');
+
+assert.match(sql,/^-- Nexus v3700\.0/);assert.match(sql,/begin;[\s\S]*set local statement_timeout='4000ms'/i);assert.match(sql,/set local lock_timeout='1000ms'/i);
+assert.match(sql,/create table public\.nexus_v3700_twitter_vault/);assert.match(sql,/credential_enc bytea not null/);assert.match(sql,/extensions\.pgp_sym_encrypt\(/);assert.match(sql,/key='nexus_satellites_kms'/);
+assert.match(sql,/revoke all on table public\.nexus_v3700_twitter_vault from public,anon,authenticated,service_role/);assert.match(sql,/force row level security/);assert.match(sql,/nexus_v3700_vault_mutation_guard/);
+assert.doesNotMatch(sql,/credential_plain|token_plain|secret_plain/i);assert.match(sql,/create table public\.nexus_v3700_twitter_event_ledger/);assert.match(sql,/create table public\.nexus_v3700_twitter_inbound_outbox/);
+assert.match(sql,/create trigger trg_v3700_event_to_outbox after insert/);assert.match(sql,/pg_notify\('nexus_v3700_twitter_inbound'/);assert.match(sql,/raw_text_persisted boolean not null default false check\(not raw_text_persisted\)/);
+assert.match(sql,/publication_performed boolean not null default false check\(not publication_performed\)/);assert.match(sql,/click_recorded boolean not null default false check\(not click_recorded\)/);
+assert.match(sql,/count\(\*\) from public\.nexus_v370_keyword_source/);assert.match(sql,/keyword_rows<>17605/);assert.match(sql,/jobid=60 and jobname='v360-tg-flush-10s' and active and schedule='10 seconds'/);
+assert.match(sql,/jobid in\(15,16,18,21,35,36,38,40,41,44,47,48,62,63,64,65\) and active/);
+assert.doesNotMatch(sql,/(insert\s+into|update|delete\s+from)\s+public\.(?:ads|nexus_v370_keyword_source|nexus_shopee_offers|nexus_v3680_intent_target_matrix)\b/i);
+assert.match(sql,/'v3700_continuous_24x7',false/);assert.match(sql,/'v3700_anti404_fallback',false/);assert.doesNotMatch(sql,/sub_1ms_guaranteed',true|sub_50ms_guaranteed',true|human_or_residential_proven',true/i);
+assert.match(rollback,/drop table public\.nexus_v3700_twitter_vault/);assert.doesNotMatch(rollback,/update\s+cron\.job/i);
+assert.match(reconciliation,/'v3700_x_filtered_http_stream',false/);assert.match(reconciliation,/'last_upstream_http',402/);assert.match(reconciliation,/'v3700_copilot_groq',true/);assert.match(reconciliation,/'v3700_copilot_deepseek',false/);assert.match(reconciliation,/'v3700_continuous_24x7',false/);assert.match(reconciliation,/'v3700_anti404_fallback',false/);
+
+assert.match(stream,/search\/stream\?tweet\.fields/);assert.match(stream,/transport:'persistent HTTP stream'/);assert.match(stream,/rfc6455_websocket:false/);assert.match(stream,/bounded_session_max_seconds:90/);assert.match(stream,/continuous_24x7_proven:false/);
+assert.match(stream,/new AhoCorasick\(patterns\)/);assert.match(stream,/snapshot\.patterns\.length!==17605/);assert.match(stream,/nexus_v3700_acquire_stream_lease/);assert.match(stream,/nexus_v3700_ingest_matches/);assert.match(stream,/nexus_v3700_finish_stream_session/);
+assert.match(stream,/point_radius|nexus-v3700-br-sp-radius/);assert.match(stream,/copilot_preview===true/);assert.match(stream,/publication_performed:false/);assert.doesNotMatch(stream,/new WebSocket|wss:\/\//);
+assert.match(aho,/class AhoCorasick/);assert.match(aho,/searchAll\(/);assert.match(aho,/wordChar/);
+assert.match(copilot,/Promise\.allSettled/);assert.match(copilot,/GROQ_API_KEY/);assert.match(copilot,/DEEPSEEK_API_KEY/);assert.match(copilot,/\?['"]#ad['"]:['"]#publi['"]/);
+assert.match(copilot,/\$\{disclosure\}\\n\{\{SHORT_LINK\}\}/);assert.match(copilot,/links_generated:false/);assert.match(copilot,/publication_performed:false/);assert.match(copilot,/const forbidden=/);
+const dry=JSON.parse(read('docs/evidencias/v3700-sql-dryrun.json')),install=JSON.parse(read('docs/evidencias/v3700-production-install.json')),deploy=JSON.parse(read('docs/evidencias/v3700-14-project-edge-deploy.json')),rules=JSON.parse(read('docs/evidencias/v3700-x-rules-install.json')),bounded=JSON.parse(read('docs/evidencias/v3700-bounded-stream-proof.json')),pool=JSON.parse(read('docs/evidencias/v3700-copilot-proof.json')),atomic=JSON.parse(read('docs/evidencias/v3700-atomic-trigger-proof.json')),bench=JSON.parse(read('docs/evidencias/v3700-aho-benchmark.json')),runtime=JSON.parse(read('docs/evidencias/v3700-runtime-reconciliation.json')),scan=JSON.parse(read('docs/evidencias/v3700-plaintext-secret-scan.json'));
+assert.strictEqual(dry.result,'pass');assert.strictEqual(dry.migration_sha256,sha('supabase/migrations/supabase_v3700_twitter_vault.sql'));assert.strictEqual(install.encrypted_rows,7);assert.strictEqual(install.hydration_entrypoint_dropped,true);assert.strictEqual(deploy.bounded_stream_gateway_deployed,14);assert.strictEqual(deploy.x_stream_connections_opened_during_deploy,0);assert.strictEqual(rules.rules_after,2);assert.strictEqual(rules.stream_connections_opened,0);
+assert.strictEqual(bounded.result,'fail');assert.strictEqual(bounded.upstream_http,402);assert.strictEqual(bounded.pattern_count,17605);assert.strictEqual(pool.result,'partial');assert(pool.rows.every(x=>x.providers.groq===true&&x.providers.deepseek===false));assert.strictEqual(atomic.result,'pass');assert.strictEqual(bench.patterns,17605);assert.strictEqual(bench.correct,2000);assert.strictEqual(bench.end_to_end_latency_measured,false);assert.strictEqual(runtime.x_stream_active,false);assert.strictEqual(runtime.deepseek_active,false);assert.strictEqual(scan.plaintext_secret_findings,0);
+for(const evidence of [dry,install,deploy,rules,bounded,pool,atomic,bench,runtime,scan])assert.strictEqual(evidence.secrets_recorded,false);
+assert.strictEqual(sha('api/ads/go.js'),'e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716');
+assert.strictEqual(sha('edge/jetstream/compose.ts'),'d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0');
+console.log('v3700 truthful X HTTP-stream tests: PASS');

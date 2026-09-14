@@ -1,0 +1,76 @@
+{
+  "schema_version": "v3700-definitive-production-audit-1",
+  "verified_at": "2026-09-14T02:46:17.371217+00:00",
+  "result": "pass",
+  "master_project_ref": "etbxbaaaspdcoiakifbb",
+  "database": {
+    "server_version": "17.6",
+    "vault_rows": 7,
+    "plaintext_named_columns": 0,
+    "vault_persistence": "p",
+    "ledger_persistence": "p",
+    "outbox_persistence": "p",
+    "vault_private": true,
+    "hydration_dropped": true,
+    "sessions": 2,
+    "sessions_http402": 2,
+    "stream_http200_sessions": 0,
+    "events": 0,
+    "outbox": 0,
+    "lease_free": true,
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "shopee": 1201,
+    "matrix": 27,
+    "active_jobs": 29,
+    "unexpected_subminute": 0,
+    "legacy_pollers_active": 0,
+    "job60": true,
+    "job60_pacing_3m_40h": true
+  },
+  "x": {
+    "rules_get_http": 200,
+    "rules": 2,
+    "expected_tags_present": true,
+    "filtered_stream_probe_http": 402,
+    "connection_established": false,
+    "connections_active_from_v3700": 0,
+    "posts_read": 0,
+    "posts_written": 0,
+    "filtered_stream_is_full_firehose": false,
+    "transport": "persistent HTTP",
+    "rfc6455_websocket": false
+  },
+  "edge": {
+    "projects_deployed": 14,
+    "status_verified": 14,
+    "custom_secret_verified": 14,
+    "unauthorized_rejected": 14,
+    "bounded_session_max_seconds": 90,
+    "continuous_24x7_proven": false
+  },
+  "copilot": {
+    "groq_active": true,
+    "deepseek_active": false,
+    "pool_complete": false,
+    "publication_performed": false
+  },
+  "protected_sources": {
+    "go_js_sha256": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "compose_ts_sha256": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0",
+    "go_js_modified": false,
+    "compose_ts_modified": false,
+    "placements_modified": false
+  },
+  "claims": {
+    "sub_1ms_end_to_end_guaranteed": false,
+    "sub_50ms_fallback_guaranteed": false,
+    "anti404_fallback_deployed": false,
+    "human_or_residential_proven": false,
+    "sales_claimed": false,
+    "programmatic_clicks_performed": false,
+    "external_exactly_once_claimed": false
+  },
+  "secrets_recorded": false
+}
