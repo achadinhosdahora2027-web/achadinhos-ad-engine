@@ -1,0 +1,16 @@
+{
+  "affiliate_urls_returned": false,
+  "clicks_performed": false,
+  "end_to_end_edge_latency_measured": false,
+  "max_ms": 4.285,
+  "p50_ms": 0.25,
+  "p95_ms": 0.297,
+  "p99_ms": 0.407,
+  "recorded_at": "2026-09-14T00:19:21.091399+00:00",
+  "result": "pass",
+  "samples": 250,
+  "schema_version": "v3500-route-readiness-benchmark-1",
+  "scope": "server-side warm repeated metadata-only readiness function for AU/en-AU/hotel/CJ",
+  "secrets_recorded": false,
+  "sub_1ms_guaranteed": false
+}

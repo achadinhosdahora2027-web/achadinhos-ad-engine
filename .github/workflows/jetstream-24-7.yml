@@ -25,7 +25,7 @@ env:
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
   NEXUS_INGEST_HMAC: ${{ secrets.NEXUS_INGEST_HMAC }}
   JETSTREAM_URL: "wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post"
-  NOSTR_RELAYS: "wss://relay.primal.net,wss://nos.lol"
+  NOSTR_RELAYS: "wss://nos.lol,wss://relay.damus.io"
 
 jobs:
   consume-streams:

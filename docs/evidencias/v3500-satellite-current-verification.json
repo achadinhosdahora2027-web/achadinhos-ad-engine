@@ -1,0 +1,110 @@
+{
+  "clicks_performed": false,
+  "configured": 13,
+  "endpoint_rejected_unauthenticated_request_http_401": 13,
+  "function_active_verified_currently": 9,
+  "function_status_currently_unverified": 4,
+  "health_get_http_200_verified_currently": 0,
+  "http_201_delivery_test_performed": false,
+  "management_accessible_with_current_credentials": 9,
+  "permanent_24x7_proven": false,
+  "previous_bounded_session_evidence_preserved": true,
+  "projects": [
+    {
+      "function_active": null,
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "ayzpzuoyhgtfsbfreiap",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": null,
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "xyzpfccmzvekfvcpqlke",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": null,
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "gionwubuzicttggpclrg",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": null,
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "kfuwmalepnctoykkkkgx",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "rdirplibrghfbazkieeo",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "gztiuddoiekytwwlpeyq",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "foxcedesytfhiqdtnlgg",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "lknnxwbezqmpkuxwxgur",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "ucviyoteadgwjnwecopw",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "duipcjiiytrfxzyktswk",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "tpoqmpjnffuvfoqqasqn",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "hodcyytojobguvbcevct",
+      "unauthenticated_endpoint_http": 401
+    },
+    {
+      "function_active": true,
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "snkauzzqnzirngacoxiv",
+      "unauthenticated_endpoint_http": 401
+    }
+  ],
+  "result": "partial_current_verification",
+  "schema_version": "v3500-satellite-current-verification-1",
+  "secrets_recorded": false,
+  "verified_at": "2026-09-14T00:22:05.907686+00:00",
+  "websocket_session_started": false
+}

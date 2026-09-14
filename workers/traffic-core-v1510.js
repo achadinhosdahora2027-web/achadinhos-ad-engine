@@ -31,7 +31,7 @@ const secAt = process.argv.indexOf('--seconds');
 const RUN_SECONDS = secAt >= 0 ? Math.max(0, Number(process.argv[secAt + 1]) || 0) : 0;
 const JETSTREAM_URL = process.env.JETSTREAM_URL ||
   'wss://jetstream2.us-east.bsky.network/subscribe?wantedCollections=app.bsky.feed.post';
-const NOSTR_RELAYS = String(process.env.NOSTR_RELAYS || 'wss://relay.primal.net,wss://nos.lol')
+const NOSTR_RELAYS = String(process.env.NOSTR_RELAYS || 'wss://nos.lol,wss://relay.damus.io')
   .split(',').map((x) => x.trim()).filter((x) => /^wss:\/\//.test(x)).slice(0, 4);
 const ALLOWED_LANGS = new Set(['pt', 'en', 'fr', 'de']);
 const RECONNECT_MAX_MS = 60000;

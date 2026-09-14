@@ -1,0 +1,33 @@
+{
+  "accepted": 0,
+  "candidates": 1,
+  "clicks_performed": false,
+  "database_writes": false,
+  "dry_run": true,
+  "duration_seconds": 12,
+  "endpoints": {
+    "jetstream2.us-east.bsky.network": {
+      "connected": true
+    },
+    "nos.lol": {
+      "connected": true
+    },
+    "relay.damus.io": {
+      "connected": true,
+      "subsequent_http_521_reconnect_observed": true
+    }
+  },
+  "frames": 458,
+  "impressions_created": false,
+  "keyword_mappings": 17605,
+  "permanent_24x7_proven": false,
+  "rejected_intent": 1,
+  "result": "pass_with_reconnect_observed",
+  "rpc_errors": 0,
+  "sales_claimed": false,
+  "schema_version": "v3500-local-rfc6455-dryrun-1",
+  "secrets_recorded": false,
+  "triggers_failed": 0,
+  "triggers_queued": 0,
+  "verified_at": "2026-09-14T00:23:53.684706+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "cj_backlog_rows_preserved": 1266,
+  "duration_ms": 3278,
+  "http": 201,
+  "polling_jobs_reactivated": false,
+  "post_test_status_function_preserved": true,
+  "post_test_trigger_preserved": true,
+  "recorded_at": "2026-09-14T00:20:37.888252+00:00",
+  "result": "pass",
+  "rollback_sha256": "5d7b7cdb61b23e02f69d2dd92fe5c63540ad224a82f1eea59b8d4701a7203790",
+  "schema_version": "v3500-rollback-dryrun-1",
+  "secrets_recorded": false,
+  "transaction_rolled_back": true
+}

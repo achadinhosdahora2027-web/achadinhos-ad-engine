@@ -1,0 +1,11 @@
+{
+  "affiliate_urls_in_request": false,
+  "duration_ms": 1977,
+  "http": 201,
+  "installed_at": "2026-09-14T00:18:32.634233+00:00",
+  "migration_sha256": "5f4dc15e9b2f7b09daedb7ce9f0b9160b971af9c7f42d7000cf488ec07421b70",
+  "placements_modified": false,
+  "result": "installed",
+  "schema_version": "v3500-production-deploy-1",
+  "secrets_recorded": false
+}
