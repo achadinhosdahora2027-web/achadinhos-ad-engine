@@ -1,0 +1,16 @@
+{
+  "schema_version": "v3750-cloudflare-access-preflight-1",
+  "verified_at": "2026-09-14T03:24:42.575713+00:00",
+  "account_token_verify_http": 200,
+  "pages_list_http": 200,
+  "pages_project_count": 3,
+  "aquitem_present": true,
+  "aquitem_production_branch": "main",
+  "local_static_files": 39,
+  "exact_static_matches": 8,
+  "static_mismatches": 31,
+  "production_deploy_allowed_by_integrity_gate": false,
+  "reason": "31 local/live mismatches; direct upload could replace protected production artifact",
+  "token_value_recorded": false,
+  "secrets_recorded": false
+}

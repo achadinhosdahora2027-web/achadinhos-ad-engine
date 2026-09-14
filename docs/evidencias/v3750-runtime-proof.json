@@ -1,0 +1,58 @@
+{
+  "schema_version": "v3750-runtime-proof-1",
+  "verified_at": "2026-09-14T03:24:12.983434+00:00",
+  "result": "pass",
+  "copilot_rows": [
+    {
+      "country_hint": "BR",
+      "http": 200,
+      "providers": {
+        "groq": true,
+        "openrouter_gemma": false,
+        "openrouter_nemotron": false
+      },
+      "template_policy_shape": {
+        "groq": true
+      },
+      "generated_text_recorded": false
+    },
+    {
+      "country_hint": "US",
+      "http": 200,
+      "providers": {
+        "groq": true,
+        "openrouter_gemma": false,
+        "openrouter_nemotron": false
+      },
+      "template_policy_shape": {
+        "groq": true
+      },
+      "generated_text_recorded": false
+    }
+  ],
+  "replay": {
+    "dry_run": true,
+    "items": 1,
+    "matched_items": 1,
+    "keyword_mappings": 17605,
+    "aho_build_ms": 290.512,
+    "provider_calls": 1,
+    "country_is_context_hint": true,
+    "human_or_residential_proven": false,
+    "raw_text_persisted": false,
+    "database_writes": false,
+    "publication_performed": false,
+    "direct_redirect": false,
+    "x_transport_used": false,
+    "third_party_cookie_used": false,
+    "scraper_used": false,
+    "continuous_24x7_proven": false
+  },
+  "forbidden_session_field_http": 422,
+  "openrouter_models_requested": [
+    "google/gemma-4-26b-a4b-it:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "synthetic_text_recorded": false,
+  "secrets_recorded": false
+}

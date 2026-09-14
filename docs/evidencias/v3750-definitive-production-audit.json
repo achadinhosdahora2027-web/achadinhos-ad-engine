@@ -1,0 +1,90 @@
+{
+  "schema_version": "v3750-definitive-production-audit-1",
+  "verified_at": "2026-09-14T03:25:51.238072+00:00",
+  "result": "pass",
+  "database": {
+    "server_version": "17.6",
+    "provider_rows": 3,
+    "openrouter_free_rows": 2,
+    "batches": 0,
+    "events": 0,
+    "outbox": 0,
+    "ledger_persistence": "p",
+    "outbox_persistence": "p",
+    "forbidden_columns": 0,
+    "session_vault_tables": 0,
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "shopee": 1201,
+    "matrix": 27,
+    "active_jobs": 29,
+    "unexpected_subminute": 0,
+    "legacy_pollers_active": 0,
+    "job60": true,
+    "job60_pacing": true
+  },
+  "edge": {
+    "projects_deployed": 14,
+    "status_verified": 14,
+    "unauthorized_rejected": 14,
+    "bounded_replay_proven": true
+  },
+  "providers": {
+    "groq_runtime_success": true,
+    "openrouter_runtime_success": false,
+    "openrouter_observed": "HTTP 429 and timeout",
+    "http_402_observed": false,
+    "cost_zero_guaranteed": false
+  },
+  "cloudflare": {
+    "credential_valid": true,
+    "aquitem_present": true,
+    "production_deployed": false,
+    "reason": "31 static mismatches blocked direct upload",
+    "versioned_patch_only": true
+  },
+  "ads_txt_hosts": [
+    {
+      "host": "aquitemachadinhos.com.br",
+      "http": 200,
+      "matches_repository_ads_txt": false
+    },
+    {
+      "host": "solvegrid.com.br",
+      "http": 200,
+      "matches_repository_ads_txt": false
+    },
+    {
+      "host": "nexusplataforma.ia.br",
+      "http": 200,
+      "matches_repository_ads_txt": false
+    }
+  ],
+  "protected_sources": {
+    "go_js_sha256": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "compose_ts_sha256": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0",
+    "go_js_modified": false,
+    "compose_ts_modified": false,
+    "placements_modified": false
+  },
+  "exclusions": {
+    "x_transport_used": false,
+    "third_party_cookie_used": false,
+    "scraper_used": false,
+    "human_emulation_used": false,
+    "affiliate_clicks_generated": false,
+    "publication_performed": false
+  },
+  "claims": {
+    "country_is_context_hint": true,
+    "human_or_residential_proven": false,
+    "sub_1ms_end_to_end_guaranteed": false,
+    "sub_50ms_fallback_guaranteed": false,
+    "direct_fallback_deployed": false,
+    "commission_lossless_guaranteed": false,
+    "continuous_24x7_proven": false
+  },
+  "cloudflare_credential_file_mode": "0o600",
+  "secrets_recorded": false
+}

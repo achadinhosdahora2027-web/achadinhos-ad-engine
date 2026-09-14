@@ -1,0 +1,200 @@
+{
+  "schema_version": "v3750-aquitem-static-preflight-1",
+  "verified_at": "2026-09-14T03:19:32.651479+00:00",
+  "host": "aquitem-21j.pages.dev",
+  "local_files": 39,
+  "http_200": 32,
+  "exact_sha256_matches": 8,
+  "mismatches": [
+    {
+      "path": "ads.txt",
+      "http": 200,
+      "local_bytes": 1082,
+      "remote_bytes": 683
+    },
+    {
+      "path": "bio.html",
+      "http": 200,
+      "local_bytes": 19481,
+      "remote_bytes": 21009
+    },
+    {
+      "path": "8469089b876439517e6c5247573c6e21.html",
+      "http": 404,
+      "local_bytes": 481,
+      "remote_bytes": 0
+    },
+    {
+      "path": "black-friday-2026-cupons.html",
+      "http": 200,
+      "local_bytes": 5116,
+      "remote_bytes": 11259
+    },
+    {
+      "path": "cirio-de-nazare-belem-2026.html",
+      "http": 200,
+      "local_bytes": 5118,
+      "remote_bytes": 11422
+    },
+    {
+      "path": "comunidade-vip.html",
+      "http": 200,
+      "local_bytes": 6465,
+      "remote_bytes": 7904
+    },
+    {
+      "path": "entretenimento.html",
+      "http": 200,
+      "local_bytes": 76909,
+      "remote_bytes": 78105
+    },
+    {
+      "path": "festa-do-peao-barretos-2027-ingressos.html",
+      "http": 200,
+      "local_bytes": 5129,
+      "remote_bytes": 11323
+    },
+    {
+      "path": "index.html",
+      "http": 200,
+      "local_bytes": 9057,
+      "remote_bytes": 10640
+    },
+    {
+      "path": "links.html",
+      "http": 200,
+      "local_bytes": 19483,
+      "remote_bytes": 21018
+    },
+    {
+      "path": "monetag8469089b876439517e6c5247573c6e21.html",
+      "http": 404,
+      "local_bytes": 481,
+      "remote_bytes": 0
+    },
+    {
+      "path": "monetag_8469089b876439517e6c5247573c6e21.html",
+      "http": 404,
+      "local_bytes": 481,
+      "remote_bytes": 0
+    },
+    {
+      "path": "mundial.html",
+      "http": 200,
+      "local_bytes": 26982,
+      "remote_bytes": 33798
+    },
+    {
+      "path": "natal-luz-2026.html",
+      "http": 200,
+      "local_bytes": 5106,
+      "remote_bytes": 11858
+    },
+    {
+      "path": "newsletter.html",
+      "http": 200,
+      "local_bytes": 6461,
+      "remote_bytes": 7908
+    },
+    {
+      "path": "o-que-fazer-em-gramado.html",
+      "http": 200,
+      "local_bytes": 5114,
+      "remote_bytes": 11422
+    },
+    {
+      "path": "oktoberfest-blumenau-2026.html",
+      "http": 200,
+      "local_bytes": 5117,
+      "remote_bytes": 11295
+    },
+    {
+      "path": "radar-mundial.html",
+      "http": 200,
+      "local_bytes": 26988,
+      "remote_bytes": 33941
+    },
+    {
+      "path": "robots.txt",
+      "http": 200,
+      "local_bytes": 3364,
+      "remote_bytes": 3011
+    },
+    {
+      "path": "rock-in-rio-2026.html",
+      "http": 200,
+      "local_bytes": 5108,
+      "remote_bytes": 11200
+    },
+    {
+      "path": "sitemap-index.xml",
+      "http": 200,
+      "local_bytes": 1367,
+      "remote_bytes": 661
+    },
+    {
+      "path": "transportes.html",
+      "http": 200,
+      "local_bytes": 7247,
+      "remote_bytes": 8761
+    },
+    {
+      "path": "feeds/facebook-catalog-feed.csv",
+      "http": 200,
+      "local_bytes": 6202,
+      "remote_bytes": 6640
+    },
+    {
+      "path": "feeds/facebook-catalog-feed.xml",
+      "http": 200,
+      "local_bytes": 10094,
+      "remote_bytes": 10791
+    },
+    {
+      "path": "feeds/tarot-daily-feed.json",
+      "http": 200,
+      "local_bytes": 5914,
+      "remote_bytes": 5915
+    },
+    {
+      "path": "js/affiliate-telemetry.js",
+      "http": 200,
+      "local_bytes": 3893,
+      "remote_bytes": 5561
+    },
+    {
+      "path": "js/growth-cro-engine.js",
+      "http": 200,
+      "local_bytes": 7901,
+      "remote_bytes": 15789
+    },
+    {
+      "path": "sitemaps/sitemap-bing-global-10k.xml",
+      "http": 404,
+      "local_bytes": 2392069,
+      "remote_bytes": 0
+    },
+    {
+      "path": "sitemaps/sitemap-naver-apac-10k.xml",
+      "http": 404,
+      "local_bytes": 2400210,
+      "remote_bytes": 0
+    },
+    {
+      "path": "sitemaps/sitemap-seznam-eu-10k.xml",
+      "http": 404,
+      "local_bytes": 2404288,
+      "remote_bytes": 0
+    },
+    {
+      "path": "sitemaps/sitemap-yandex-cis-10k.xml",
+      "http": 404,
+      "local_bytes": 2413266,
+      "remote_bytes": 0
+    }
+  ],
+  "browser_executed": false,
+  "ad_impressions_generated": false,
+  "affiliate_clicks_generated": false,
+  "secrets_recorded": false
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "v3750-sql-dryrun-1",
+  "verified_at": "2026-09-14T03:22:02.212765+00:00",
+  "result": "pass",
+  "migration_transaction_rolled_back": true,
+  "rollback_transaction_rolled_back": true,
+  "migration_sha256": "93aaa25fd1acc8dd08ea3e0fac0663325945f8ddd8388e5d964089f7586a1eef",
+  "rollback_sha256": "718dd36f68d3f3f9b61bb020f37dccb159d3bbe995d47dd53a87a42d54749435",
+  "secrets_recorded": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "v3750-runtime-reconciliation-1",
+  "verified_at": "2026-09-14T03:25:25.569995+00:00",
+  "result": "pass",
+  "migration_sha256": "00874814a9f538582774fde5bedb13959dc6c17841bb2538c2e829f4bd986080",
+  "dryrun_transaction_rolled_back": true,
+  "capabilities_enabled": 6,
+  "capabilities_disabled": 4,
+  "openrouter_runtime_success": false,
+  "cloudflare_production_deployed": false,
+  "direct_fallback_deployed": false,
+  "continuous_24x7_proven": false,
+  "secrets_recorded": false
+}
