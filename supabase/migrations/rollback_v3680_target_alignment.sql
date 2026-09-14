@@ -22,6 +22,12 @@ drop function if exists public.nexus_v3680_refresh_network_readiness();
 drop trigger if exists trg_v3680_shopee_immutable on public.nexus_shopee_offers;
 drop trigger if exists trg_v3680_matrix_immutable on public.nexus_v3680_intent_target_matrix;
 drop trigger if exists trg_v3680_policy_immutable on public.nexus_v3680_category_country_policy;
+do $reach$ begin
+  if to_regclass('public.nexus_v3680_deployment_reach') is not null then
+    execute 'drop trigger if exists trg_v3680_reach_immutable on public.nexus_v3680_deployment_reach';
+  end if;
+end $reach$;
+drop table if exists public.nexus_v3680_deployment_reach;
 drop function if exists public.nexus_v3680_reject_immutable_mutation();
 drop table public.nexus_v3680_network_readiness;
 drop table public.nexus_v3680_intent_target_matrix;
@@ -41,6 +47,7 @@ delete from public.nexus_v3000_capability_registry where capability like 'v3680%
 do $assert$
 begin
   if to_regclass('public.nexus_v3680_intent_target_matrix') is not null
+     or to_regclass('public.nexus_v3680_deployment_reach') is not null
      or to_regclass('public.nexus_shopee_offers') is not null
      or exists(select 1 from public.nexus_v3000_capability_registry where capability like 'v3680%') then
     raise exception 'v3680 rollback incomplete';

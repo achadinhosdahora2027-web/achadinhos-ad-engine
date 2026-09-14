@@ -1,0 +1,54 @@
+{
+  "schema_version": "v3680-shopee-source-manifest-1",
+  "source_scope": "operator_resupplied_preexisting_shopee_product_exports",
+  "source_files": [
+    {
+      "file": "BatchProductLinks20260912232203-0a35f92c7623406a8d470f803ecf8721.csv",
+      "sha256": "7323a5a9182bbf79cd70bbefe45dca4fe100c4cd3be092df2fc361d86896ba44",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912232238-371045aa9eb44280884262dd8f28a197.csv",
+      "sha256": "8c3c9f5053a3fe4bc5f4dac44de003bb676154781a058ef0101fae2e25c9788f",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912232322-f484454c0eac489e828c5e290b1005db.csv",
+      "sha256": "e8dc676d92df054a2940f7b4238b8d8a3b89217490b45783c4e997fd323c7b93",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912232348-4cde5291c9a54e28b7e2c625268a1077.csv",
+      "sha256": "648ef6026f7ed7966d78ee2210a39619226958478d76e596a4a61b4e12637452",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912232418-f9850050bfdb49b19ff0c96f04cc2dcc.csv",
+      "sha256": "457c3264fab5a928738b5d756ee79c39f93a24cc764f9b428d4ef80e2220a735",
+      "rows": 100,
+      "kind": "product"
+    }
+  ],
+  "total_rows": 500,
+  "rows_by_kind": {
+    "product": 500,
+    "shop": 0,
+    "campaign": 0
+  },
+  "unique_source_rows": 500,
+  "product_rows": 500,
+  "unique_product_item_ids": 500,
+  "validated_affiliate_host": "s.shopee.com.br",
+  "validated_primary_hosts": [
+    "shopee.com.br",
+    "www.shopee.com.br"
+  ],
+  "exact_binary_matches_to_preexisting_repository_batches": 5,
+  "plaintext_urls_newly_versioned": false,
+  "links_followed": false,
+  "clicks_performed": false
+}

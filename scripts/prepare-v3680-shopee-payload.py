@@ -16,7 +16,9 @@ import re
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "data/v3680-shopee-source-manifest.json"
+MANIFEST = Path(os.environ.get(
+    "NEXUS_SHOPEE_MANIFEST", str(ROOT / "data/v3680-shopee-source-manifest.json")
+))
 SOURCE_DIR = Path(os.environ.get("NEXUS_SHOPEE_SOURCE_DIR", "/home/user/uploads"))
 OUTPUT = Path(os.environ.get("NEXUS_SHOPEE_PAYLOAD", "/home/user/.v3370-protected/v3680-shopee-payload.json"))
 
@@ -98,13 +100,15 @@ def main() -> None:
                 "offer_period_start": start, "offer_period_end": end, "offer_type": offer_type,
                 "source_file": source.name, "source_sha256": digest, "source_row_sha256": row_hash,
             })
-    if len(protected_rows) != 701 or len({row["offer_key"] for row in protected_rows}) != 701:
+    expected_rows = int(manifest["total_rows"])
+    expected_unique_items = int(manifest["unique_product_item_ids"])
+    if len(protected_rows) != expected_rows or len({row["offer_key"] for row in protected_rows}) != expected_rows:
         raise RuntimeError("protected_payload_count_invalid")
-    if len({row["item_id"] for row in protected_rows if row["source_kind"] == "product"}) != 463:
+    if len({row["item_id"] for row in protected_rows if row["source_kind"] == "product"}) != expected_unique_items:
         raise RuntimeError("protected_item_identity_count_invalid")
     payload = {
         "schema_version": "v3680-protected-shopee-payload-1",
-        "row_count": 701,
+        "row_count": expected_rows,
         "files": observed_files,
         "rows": protected_rows,
     }
@@ -113,7 +117,7 @@ def main() -> None:
     with os.fdopen(descriptor, "w", encoding="utf-8") as stream:
         json.dump(payload, stream, ensure_ascii=False, separators=(",", ":"))
     os.chmod(OUTPUT, 0o600)
-    print(json.dumps({"ok": True, "rows": 701, "files": 8, "output_mode": "0600", "plaintext_urls_printed": False}))
+    print(json.dumps({"ok": True, "rows": expected_rows, "files": len(observed_files), "output_mode": "0600", "plaintext_urls_printed": False}))
 
 
 if __name__ == "__main__":

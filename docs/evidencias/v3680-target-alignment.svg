@@ -3,7 +3,7 @@
 <rect width="1500" height="1410" fill="#09121f"/>
 <rect x="50" y="45" width="1400" height="120" rx="26" fill="#111f31" stroke="#29415f"/>
 <text x="90" y="94" fill="#eef6ff" font-family="Arial,sans-serif" font-size="30" font-weight="700">SOVEREIGN TARGET ALIGNMENT · v3680.0</text>
-<text x="90" y="137" fill="#91a8c4" font-family="Arial,sans-serif" font-size="19">27 supplied zones  ·  19 fresh route metadata  ·  8 fail closed  ·  master verified 1/14</text>
+<text x="90" y="137" fill="#91a8c4" font-family="Arial,sans-serif" font-size="19">27 supplied zones  ·  19 fresh route metadata  ·  8 fail closed  ·  Edge gateways 14/14 · master matrix 1</text>
 <rect x="50" y="210" width="675" height="590" rx="24" fill="#111f31" stroke="#29415f"/>
 <rect x="50" y="210" width="9" height="590" rx="5" fill="#6fd3c8"/>
 <text x="85" y="258" fill="#6fd3c8" font-family="Arial,sans-serif" font-size="20" font-weight="700">TRAVEL / HOTELS</text>

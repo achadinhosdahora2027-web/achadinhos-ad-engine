@@ -1,0 +1,210 @@
+{
+  "schema_version": "v3680-14-project-post-append-verification-1",
+  "verified_at": "2026-09-14T02:09:29.200962+00:00",
+  "configured_projects": 14,
+  "gateways_verified": 14,
+  "expected_route_catalog_rows": "1201 encrypted Shopee source rows plus one Mercado Livre binding metadata row",
+  "all_14_post_append_verified": true,
+  "affiliate_urls_recorded": false,
+  "clicks_performed": false,
+  "impressions_recorded": false,
+  "continuous_24x7_proven": false,
+  "rows": [
+    {
+      "project_ref": "etbxbaaaspdcoiakifbb",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "ayzpzuoyhgtfsbfreiap",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "xyzpfccmzvekfvcpqlke",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "gionwubuzicttggpclrg",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "kfuwmalepnctoykkkkgx",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "rdirplibrghfbazkieeo",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "gztiuddoiekytwwlpeyq",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "foxcedesytfhiqdtnlgg",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "lknnxwbezqmpkuxwxgur",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "ucviyoteadgwjnwecopw",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "duipcjiiytrfxzyktswk",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "tpoqmpjnffuvfoqqasqn",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "hodcyytojobguvbcevct",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    },
+    {
+      "project_ref": "snkauzzqnzirngacoxiv",
+      "http": 200,
+      "estado": "ok",
+      "country": "BR",
+      "target_zone": "Santos",
+      "route_catalog_rows": 1202,
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url_returned": false,
+      "redirect_performed": false
+    }
+  ]
+}

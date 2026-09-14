@@ -1,0 +1,63 @@
+{
+  "schema_version": "v3680-final-verification-2",
+  "verified_at": "2026-09-14T02:13:38.047504+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "database": {
+    "matrix_rows": 27,
+    "shopee_source_rows": 1201,
+    "product_rows": 1000,
+    "shop_rows": 200,
+    "campaign_rows": 1,
+    "unique_item_hashes": 940,
+    "shopee_readiness_rows": 1201,
+    "ads_rows": 14301,
+    "active_ads_rows": 12165,
+    "keyword_rows": 17605,
+    "vector_rows": 11568,
+    "job_60": {
+      "active": true,
+      "command": "select public.nexus_v1510_flush_event(40);",
+      "schedule": "10 seconds"
+    },
+    "legacy_pollers_active": 0,
+    "matrix_persistence": "p",
+    "inventory_persistence": "p",
+    "plaintext_source_columns": 0,
+    "deployment_reach": {
+      "verified_at": "2026-09-14T02:06:13.055889+00:00",
+      "configured_projects": 14,
+      "edge_gateways_active": 14,
+      "management_accessible": 14,
+      "continuous_24x7_proven": false,
+      "edge_resolvers_verified": 14,
+      "satellite_catalog_copies": 0,
+      "all_14_edge_gateways_proven": true,
+      "master_logged_matrix_copies": 1,
+      "all_14_database_copies_proven": false,
+      "cross_project_transactionality_proven": false
+    }
+  },
+  "edge_gateways_verified": 14,
+  "master_logged_matrix_copies": 1,
+  "satellite_catalog_copies": 0,
+  "source_csvs_preserved": 13,
+  "source_csv_modes": [
+    "0600"
+  ],
+  "protected_csv_copies": 13,
+  "protected_copy_modes": [
+    "0600"
+  ],
+  "supabase_credential_source_mode": "0600",
+  "protected_runtime_hashes": {
+    "api_ads_go_sha256": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "correction_go_sha256": "7da009550dcbad0d86b297f58ed9520e239c15d0f88a84d853ec9c703b000e9c",
+    "compose_sha256": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0"
+  },
+  "affiliate_urls_recorded": false,
+  "credentials_recorded": false,
+  "clicks_performed": false,
+  "impressions_recorded": false,
+  "sales_claimed": false,
+  "continuous_24x7_proven": false
+}

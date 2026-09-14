@@ -1,0 +1,22 @@
+{
+  "schema_version": "v3680-rollback-dry-run-2",
+  "verified_at": "2026-09-14T02:13:30.934014+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "rollbacks": [
+    {
+      "file": "rollback_v3680_shopee_source_append.sql",
+      "sha256": "0a17ad4e66e7140f26aa8fd3e6dd615ab0f5bc84ccf181dedf61ce546ed162af",
+      "dry_run_http": 201,
+      "transaction_rolled_back": true
+    },
+    {
+      "file": "rollback_v3680_target_alignment.sql",
+      "sha256": "e221e6d162c2eabbd0f4ab6266c475c47e6c41718032929dd213602fe1e72ec6",
+      "dry_run_http": 201,
+      "transaction_rolled_back": true
+    }
+  ],
+  "production_changes_persisted": false,
+  "secrets_recorded": false,
+  "clicks_performed": false
+}

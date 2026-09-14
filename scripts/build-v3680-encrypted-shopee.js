@@ -71,7 +71,7 @@ function seal(value, aad, key) {
 async function main() {
   const runtime = JSON.parse(fs.readFileSync(runtimePath, "utf8"));
   const payload = JSON.parse(fs.readFileSync(payloadPath, "utf8"));
-  if (payload.schema_version !== "v3680-protected-shopee-payload-1" || payload.row_count !== 701 || payload.rows?.length !== 701) {
+  if (payload.schema_version !== "v3680-protected-shopee-payload-1" || !Number.isInteger(payload.row_count) || payload.row_count < 1 || payload.rows?.length !== payload.row_count) {
     throw new Error("protected_payload_invariant_failed");
   }
   const token = await managementToken(managementTokens(runtime));
@@ -106,14 +106,14 @@ async function main() {
     };
   });
   const unique = new Set(encryptedRows.map((row) => row.offer_key));
-  if (unique.size !== 701 || encryptedRows.some((row) => !row.affiliate_url_enc || row.affiliate_host !== "s.shopee.com.br")) {
+  if (unique.size !== payload.row_count || encryptedRows.some((row) => !row.affiliate_url_enc || row.affiliate_host !== "s.shopee.com.br")) {
     throw new Error("encrypted_payload_invariant_failed");
   }
   const output = {
     schema_version: "v3680-encrypted-shopee-payload-1",
     encryption_profile: "AES-256-GCM; HKDF-SHA256; envelope-v1; per-field random IV; authenticated AAD",
     kms_key_name: "nexus_satellites_kms",
-    row_count: 701,
+    row_count: payload.row_count,
     files: payload.files,
     rows: encryptedRows,
   };

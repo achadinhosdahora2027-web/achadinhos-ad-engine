@@ -57,6 +57,9 @@ assert.match(migration, /'#publi'/);
 assert.match(migration, /'#ad'/);
 
 assert.match(edge, /NEXUS_V3680_EDGE_SECRET/);
+assert.match(edge, /NEXUS_MASTER_URL/);
+assert.match(edge, /NEXUS_MASTER_SERVICE_ROLE_KEY/);
+assert.match(edge, /single_master_no_catalog_replication/);
 assert.match(edge, /explicit_category_and_zone_required/);
 assert.match(edge, /delete route\.affiliate_url/);
 assert.match(edge, /affiliate_url: null/);

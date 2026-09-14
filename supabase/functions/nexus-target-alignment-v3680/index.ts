@@ -58,6 +58,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
       human_or_residential_proven: false,
       disclosure_own_line_before_link: true,
       placements_modified: false,
+      database_topology: "single_master_no_catalog_replication",
+      satellite_gateway_supported: true,
       continuous_24x7_proven: false,
       sub_1ms_guaranteed: false,
       fallback_deployed: false,
@@ -99,8 +101,11 @@ Deno.serve(async (request: Request): Promise<Response> => {
   }
 
   try {
-    const url = Deno.env.get("SUPABASE_URL") ?? "";
-    const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+    // Satellites use the existing protected master binding; the catalog is not
+    // replicated. The master also has these bindings, with local variables as a
+    // fail-safe compatibility path.
+    const url = Deno.env.get("NEXUS_MASTER_URL") ?? Deno.env.get("SUPABASE_URL") ?? "";
+    const key = Deno.env.get("NEXUS_MASTER_SERVICE_ROLE_KEY") ?? Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
     if (!url || !key) {
       return json({ version: VERSION, estado: "Sintonizado em Análise", motivo: "service_binding_unavailable", affiliate_url: null }, 503);
     }

@@ -1,0 +1,16 @@
+{
+  "schema_version": "v3680-14-gateway-evidence-sql-deploy-1",
+  "deployed_at": "2026-09-14T02:06:13.186345+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "migration": "supabase/migrations/supabase_v3680_14_gateway_evidence.sql",
+  "migration_sha256": "4727996d8d091153c09cf4279588c8209be33b86b84a7304c461fb485d582a5f",
+  "dry_run_http": 201,
+  "dry_run_rolled_back": true,
+  "deploy_http": 201,
+  "elapsed_ms": 1709.755,
+  "transaction_committed": true,
+  "response_bytes": 2,
+  "ads_dml_performed": false,
+  "secrets_recorded": false,
+  "clicks_performed": false
+}

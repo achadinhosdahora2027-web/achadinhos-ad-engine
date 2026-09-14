@@ -1,0 +1,19 @@
+{
+  "schema_version": "v3680-shopee-source-append-deploy-1",
+  "deployed_at": "2026-09-14T02:08:53.940150+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "migration": "supabase/migrations/supabase_v3680_shopee_source_append.sql",
+  "migration_sha256": "ef738aa79df6f383746f524f00ece12ce60fe50bbbceb5c40ba7f99947b06d97",
+  "dry_run_http": 201,
+  "dry_run_rolled_back": true,
+  "deploy_http": 201,
+  "elapsed_ms": 5756.262,
+  "transaction_committed": true,
+  "encrypted_rows_appended": 500,
+  "combined_source_rows": 1201,
+  "combined_unique_item_hashes": 940,
+  "plaintext_urls_transmitted_in_sql": false,
+  "ads_dml_performed": false,
+  "secrets_recorded": false,
+  "clicks_performed": false
+}
