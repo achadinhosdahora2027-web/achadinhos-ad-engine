@@ -1,0 +1,25 @@
+{
+  "schema_version": "v3755-production-install-1",
+  "installed_at": "2026-09-14T03:39:19.756480+00:00",
+  "result": "installed",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "migration_sha256": "ebd511aa40ac99eb4372b2bfe52148265c172fb1f51755f29e7873e9b4770fe5",
+  "server_version": "17.6",
+  "physical": {
+    "server_version": "17.6",
+    "liquid_policy": 1,
+    "quarantine_persistence": "p",
+    "cloudflare_blocked": true,
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "shopee": 1201,
+    "matrix": 27,
+    "active_jobs": 29,
+    "unexpected_subminute": 0,
+    "job60": true
+  },
+  "cloudflare_production_deployed": false,
+  "protected_placements_modified": false,
+  "secrets_recorded": false
+}

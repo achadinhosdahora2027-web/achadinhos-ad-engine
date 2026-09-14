@@ -1,0 +1,17 @@
+{
+  "schema_version": "v3755-runtime-reconciliation-1",
+  "verified_at": "2026-09-14T03:47:54.437612+00:00",
+  "result": "pass",
+  "migration_sha256": "5bb16a12a91f43a7dee60825115263ddd5d7b919113ec37f859680d2ace9a87e",
+  "dryrun_transaction_rolled_back": true,
+  "capabilities_enabled": 4,
+  "capabilities_disabled": 3,
+  "liquid_runtime_http": 200,
+  "liquid_output_accepted": false,
+  "groq_selected": true,
+  "replay_gateways_verified": 14,
+  "cloudflare_production_deployed": false,
+  "direct_upload_executed": false,
+  "continuous_24x7_proven": false,
+  "secrets_recorded": false
+}

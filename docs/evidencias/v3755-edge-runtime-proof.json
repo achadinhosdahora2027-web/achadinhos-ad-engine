@@ -1,0 +1,55 @@
+{
+  "schema_version": "v3755-edge-runtime-proof-2",
+  "verified_at": "2026-09-14T03:47:07.264042+00:00",
+  "result": "pass",
+  "copywriter_version": 31,
+  "copywriter_status": "ACTIVE",
+  "copywriter_verify_jwt": false,
+  "copywriter_get_http": 200,
+  "copywriter_unauthorized_post_http": 401,
+  "copywriter_authenticated_post_http": 200,
+  "fanout": "Promise.allSettled",
+  "selected_provider": "groq",
+  "provider_states": {
+    "groq": "ok",
+    "openrouter_liquid": "unsafe_shape_rejected"
+  },
+  "provider_http": {
+    "groq": 200,
+    "openrouter_liquid": 200
+  },
+  "liquid_output_accepted": false,
+  "disclosure_own_line_before_link": true,
+  "generated_copy_recorded": false,
+  "replay_gateways_http_200": 14,
+  "replay_gateway_status_codes": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "replay_execution_performed": false,
+  "publication_performed": false,
+  "affiliate_click_performed": false,
+  "continuous_24x7_proven": false,
+  "cost_zero_guaranteed": false,
+  "secrets_recorded": false,
+  "deployment_http": 201,
+  "copywriter_source_sha256": "3bab29870f7f04bec8b0efbcede005ee280310bc7c0b2b11e8d981d487ece6ef",
+  "deployment_files": [
+    "index.ts",
+    "copilot-v3200.ts",
+    "compose.ts",
+    "humanizer.ts"
+  ]
+}

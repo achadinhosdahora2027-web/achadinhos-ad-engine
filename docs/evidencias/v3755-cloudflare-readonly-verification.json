@@ -1,0 +1,24 @@
+{
+  "schema_version": "v3755-cloudflare-readonly-verification-1",
+  "verified_at": "2026-09-14T03:44:09.648075+00:00",
+  "result": "pass",
+  "project": "aquitem",
+  "project_subdomain": "aquitem-21j.pages.dev",
+  "latest_production_deployment": {
+    "id": "880b9d8b-a19a-4b6c-a083-5fac00cc3282",
+    "created_on": "2026-09-13T15:07:55.163378Z",
+    "modified_on": "2026-09-13T15:07:57.118379Z",
+    "environment": "production",
+    "stage_status": "success",
+    "deployment_trigger_type": "ad_hoc",
+    "source_branch": "main"
+  },
+  "deployments_observed": 5,
+  "read_only_requests": 2,
+  "asset_downloads": 0,
+  "direct_uploads": 0,
+  "production_deployments_by_v3755": 0,
+  "project_mutations": 0,
+  "protected_placements_modified": false,
+  "secrets_recorded": false
+}

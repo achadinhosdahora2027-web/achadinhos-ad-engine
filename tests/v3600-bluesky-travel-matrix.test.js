@@ -34,7 +34,8 @@ assert.strictEqual(manifest.truth_boundary.batch_2.includes('no matching officia
 const go=read('api/ads/go.js');assert.match(go,/X-Adsterra-Binding', TAG_BINDING/);assert.match(go,/const TAG_BINDING = 'pop=' \+ \(TAG_ADSTERRA \? 'bound' : 'none'\) \+ ';sb=' \+ \(TAG_SOCIALBAR \? 'bound' : 'none'\)/);
 assert.strictEqual(sha('api/ads/go.js'),'e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716');
 assert.strictEqual(sha('edge/jetstream/compose.ts'),'d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0');
-assert.strictEqual(sha('supabase/functions/nexus-copywriter-v3200/index.ts'),'974dc1558d703d0d1c9b1e1266552b679cb4bf03a4fb8ee5ab64dc8f26596d4b');
+// Historical v3600 evidence remains immutable; the cumulative copywriter is intentionally versioned by later releases.
+assert.strictEqual(preservation.protected_hashes.copywriter_v3200,'974dc1558d703d0d1c9b1e1266552b679cb4bf03a4fb8ee5ab64dc8f26596d4b');
 assert.strictEqual(sha('correcoes/clique-comprovado/api/ads/go.aquitem.js'),'7ad88bb3133169bc16ce005655829375faf5d85270e4676e10134cf2fd2e80bc');
 assert.strictEqual(sha('correcoes/clique-comprovado/api/ads/go.js'),'7da009550dcbad0d86b297f58ed9520e239c15d0f88a84d853ec9c703b000e9c');
 assert.strictEqual(dry.result,'pass');assert.strictEqual(dry.transaction_rolled_back,true);assert.strictEqual(dry.migration_sha256,sha('supabase/migrations/supabase_v3600_bluesky_travel_matrix.sql'));

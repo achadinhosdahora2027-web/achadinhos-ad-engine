@@ -1,0 +1,20 @@
+{
+  "schema_version": "v3755-wrangler-config-preflight-1",
+  "verified_at": "2026-09-14T03:41:40.157377+00:00",
+  "wrangler_version": "4.131.1",
+  "node_runtime_for_preflight": "22 via ephemeral npx package",
+  "command_exit_code": 0,
+  "config_downloaded": true,
+  "config_filename": "wrangler.toml",
+  "config_sha256": "7437ab6d4b625c163cf001aff5312605618ac7423ec40ffdb3fa80be50dc7c7b",
+  "config_key_names": [
+    "compatibility_date",
+    "name"
+  ],
+  "asset_files_downloaded": 0,
+  "asset_download_command_exists": false,
+  "pages_production_deployed": false,
+  "direct_upload_executed": false,
+  "static_mismatches_preserved": 31,
+  "secrets_recorded": false
+}

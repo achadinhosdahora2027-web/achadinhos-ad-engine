@@ -1,0 +1,126 @@
+{
+  "schema_version": "v3755-evidence-manifest-1",
+  "generated_at": "2026-09-14T03:49:20.894738+00:00",
+  "release": "v3755.0",
+  "base_commit": "eee3ccd6e7e9b8f806c61d11b3eca7ddf5452a13",
+  "master_project_ref": "etbxbaaaspdcoiakifbb",
+  "database_migrations_installed": 2,
+  "copywriter_deployed_version": 31,
+  "cloudflare_pages_production_deployed": false,
+  "direct_upload_executed": false,
+  "liquid_runtime_http": 200,
+  "liquid_output_accepted": false,
+  "replay_gateways_http_200": 14,
+  "files": [
+    {
+      "path": "RELATORIO_FINAL_V3755.md",
+      "bytes": 7749,
+      "sha256": "1a41b1aedd838deee8bca140d5d3da98896744c4de82faa36b71ff642e66fd8e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1630,
+      "sha256": "be1314353750d28ee295e77a68c55275f4665c12fd12b63a222321e4281d31fd"
+    },
+    {
+      "path": "supabase/functions/nexus-copywriter-v3200/index.ts",
+      "bytes": 12731,
+      "sha256": "3bab29870f7f04bec8b0efbcede005ee280310bc7c0b2b11e8d981d487ece6ef"
+    },
+    {
+      "path": "supabase/functions/nexus-copywriter-v3200/copilot-v3200.ts",
+      "bytes": 3782,
+      "sha256": "7e9a002595376f95c22a56f5883635c24e40c85a5fdfbe2c56fbcf80363e25c2"
+    },
+    {
+      "path": "supabase/functions/nexus-copywriter-v3200/compose.ts",
+      "bytes": 3664,
+      "sha256": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0"
+    },
+    {
+      "path": "supabase/functions/nexus-copywriter-v3200/humanizer.ts",
+      "bytes": 11987,
+      "sha256": "9ed99dab05aa4a922f2129fe40503d96eec50f31ee6bdf4c186c7ac43035645e"
+    },
+    {
+      "path": "supabase/migrations/supabase_v3755_free_optimization.sql",
+      "bytes": 6533,
+      "sha256": "ebd511aa40ac99eb4372b2bfe52148265c172fb1f51755f29e7873e9b4770fe5"
+    },
+    {
+      "path": "supabase/migrations/supabase_v3755_runtime_verification.sql",
+      "bytes": 3465,
+      "sha256": "5bb16a12a91f43a7dee60825115263ddd5d7b919113ec37f859680d2ace9a87e"
+    },
+    {
+      "path": "supabase/migrations/rollback_v3755_free_optimization.sql",
+      "bytes": 1181,
+      "sha256": "2decaab057fbc3262002955762ac921e991401b1aa10e341ad007a334210b6c2"
+    },
+    {
+      "path": "tests/v3350-ai-vault.test.js",
+      "bytes": 4376,
+      "sha256": "318cbc909863500792466e574befa3dbe4d69ced9d5ae5f6a72a60535b63d711"
+    },
+    {
+      "path": "tests/v3600-bluesky-travel-matrix.test.js",
+      "bytes": 9086,
+      "sha256": "3af0d20f2f67e0728795a4347875ef43fcf05aeed4554d6f0810b4c0f2c9bfdc"
+    },
+    {
+      "path": "tests/v3755-liquid-quarantine.test.js",
+      "bytes": 3858,
+      "sha256": "531da23e9588f64aa3b90b4cd42750e95932614b5b899a6e3d031a41f09c2ec9"
+    },
+    {
+      "path": "docs/evidencias/v3755-cloudflare-readonly-verification.json",
+      "bytes": 775,
+      "sha256": "970ca08679be0f5f4b03b57e8b958916f5cc2ed93736cc13fdcd5254e6b85200"
+    },
+    {
+      "path": "docs/evidencias/v3755-complete-test-suite.json",
+      "bytes": 562,
+      "sha256": "60f19a4d494004a3e683929c40cf66f2da1db77c12228d957c05a93762033a63"
+    },
+    {
+      "path": "docs/evidencias/v3755-definitive-production-audit.json",
+      "bytes": 2674,
+      "sha256": "5d09d4e13092ab9e520f5010814377aa01d14a44a7209920f5b8a5e35b2e54d7"
+    },
+    {
+      "path": "docs/evidencias/v3755-edge-runtime-proof.json",
+      "bytes": 1323,
+      "sha256": "0bd19b6ce8c22199a8bbddb38ba53cf97b94923e49852ad55b62837faf89905a"
+    },
+    {
+      "path": "docs/evidencias/v3755-production-install.json",
+      "bytes": 723,
+      "sha256": "83d3daecb1804b4f8f6fafec2c2a613519716dae00b63d4145049becec4a7c9b"
+    },
+    {
+      "path": "docs/evidencias/v3755-runtime-reconciliation.json",
+      "bytes": 587,
+      "sha256": "1159d5c63f3557b7c40b45ecba083ecd597edf565196636efe8a3ac3f3724606"
+    },
+    {
+      "path": "docs/evidencias/v3755-secret-scan.json",
+      "bytes": 422,
+      "sha256": "9b962e293f4082c30633fa35090065696e3c38da80f95f16ee18ea26be43ecec"
+    },
+    {
+      "path": "docs/evidencias/v3755-sql-dryrun.json",
+      "bytes": 415,
+      "sha256": "6d374c255094aba4557bedbea2856f4fe258bbed01c198f593e6338321452557"
+    },
+    {
+      "path": "docs/evidencias/v3755-wrangler-config-preflight.json",
+      "bytes": 668,
+      "sha256": "6281644624be23e360547a7cbc4e16aaf602483934cf8467729e4aa2969abe03"
+    }
+  ],
+  "protected_checksums": {
+    "api/ads/go.js": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "edge/jetstream/compose.ts": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0"
+  },
+  "secrets_recorded": false
+}

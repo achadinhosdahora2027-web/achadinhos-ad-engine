@@ -7,10 +7,11 @@ import {
   countryFromCdnHeaders,
   VERSAO_COPILOT,
   type CopyRequest,
-} from "../../../edge/jetstream/copilot-v3200.ts";
+} from "./copilot-v3200.ts";
 
 const START_SECRET = Deno.env.get("NEXUS_V3200_COPY_SECRET") ?? "";
 const AI_PREVIEW_SECRET = Deno.env.get("NEXUS_V3350_AI_PREVIEW_SECRET") ?? "";
+const V3755_COPY_SECRET = Deno.env.get("NEXUS_V3755_COPY_SECRET") ?? "";
 const POLICY_VERSION = Deno.env.get("V3350_POLICY_VERSION") ?? "v3200.0";
 const ACTIVATION_PROFILE = Deno.env.get("V3350_ACTIVATION_PROFILE") ?? "v3350.0";
 const ALLOWED_HOSTS = new Set(
@@ -29,17 +30,19 @@ const RESPONSE_HEADERS = {
 
 type PoolRequest = CopyRequest & { ai_pool?: boolean; ai_locale?: string | null };
 type Provider = {
-  key: "groq" | "openrouter" | "mistral" | "deepseek";
+  key: "groq" | "openrouter_liquid";
   env: string;
   url: string;
   model: string;
+  catalogPriceZeroVerified: boolean;
 };
 
+// v3755: Groq remains the preferred accepted result; Liquid is called in
+// parallel as the current catalog-price-zero backup. Price and availability
+// are observations, never a cost or uptime guarantee.
 const PROVIDERS: Provider[] = [
-  { key: "groq", env: "GROQ_API_KEY", url: "https://api.groq.com/openai/v1/chat/completions", model: "openai/gpt-oss-20b" },
-  { key: "openrouter", env: "OPENROUTER_API_KEY", url: "https://openrouter.ai/api/v1/chat/completions", model: "openai/gpt-4o-mini" },
-  { key: "mistral", env: "MISTRAL_API_KEY", url: "https://api.mistral.ai/v1/chat/completions", model: "mistral-small-latest" },
-  { key: "deepseek", env: "DEEPSEEK_API_KEY", url: "https://api.deepseek.com/chat/completions", model: "deepseek-flash" },
+  { key: "groq", env: "GROQ_API_KEY", url: "https://api.groq.com/openai/v1/chat/completions", model: "openai/gpt-oss-20b", catalogPriceZeroVerified: false },
+  { key: "openrouter_liquid", env: "OPENROUTER_API_KEY", url: "https://openrouter.ai/api/v1/chat/completions", model: "liquid/lfm-2.5-2.6b:free", catalogPriceZeroVerified: true },
 ];
 
 function response(body: unknown, status = 200): Response {
@@ -106,67 +109,76 @@ async function aiSuggestion(payload: PoolRequest, country: string | null): Promi
     "Do not add or change any fact, URL, hashtag, price, discount, urgency, endorsement, personal experience, buyer claim, or affiliate claim.",
     `Locale: ${facts.locale}. Country routing hint: ${facts.country}. BEGIN ${expected} END`,
   ].join(" ");
-  const attempts: Array<Record<string, unknown>> = [];
-  for (const provider of PROVIDERS) {
+  const calls = PROVIDERS.map(async (provider) => {
     const token = Deno.env.get(provider.env) ?? "";
-    if (!token) {
-      attempts.push({ provider: provider.key, state: "missing_secret" });
-      continue;
-    }
+    if (!token) return { provider, attempt: { provider: provider.key, state: "missing_secret" }, suggestion: null as string | null };
     try {
+      const requestHeaders: Record<string, string> = {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "User-Agent": "Nexus-v3755-copy-preview/1.0",
+      };
+      if (provider.url.includes("openrouter.ai")) {
+        requestHeaders["HTTP-Referer"] = "https://aquitem-21j.pages.dev";
+        requestHeaders["X-Title"] = "Nexus v3755 White-Hat Copy";
+      }
+      const messages = [
+        { role: "system", content: "You produce neutral factual preview copy only." },
+        { role: "user", content: prompt },
+      ];
+      const requestBody = provider.key === "groq"
+        ? { model: provider.model, messages, temperature: 0, max_completion_tokens: 220, reasoning_effort: "low" }
+        : { model: provider.model, messages, temperature: 0, max_tokens: 90 };
       const result = await fetch(provider.url, {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-          "User-Agent": "Nexus-v3350-copy-preview/1.0",
-        },
-        body: JSON.stringify({
-          model: provider.model,
-          messages: [
-            { role: "system", content: "You produce neutral factual preview copy only." },
-            { role: "user", content: prompt },
-          ],
-          temperature: 0.1,
-          max_tokens: 90,
-        }),
-        signal: AbortSignal.timeout(3500),
+        headers: requestHeaders,
+        body: JSON.stringify(requestBody),
+        signal: AbortSignal.timeout(8000),
       });
-      if (!result.ok) {
-        attempts.push({ provider: provider.key, http: result.status, state: "rejected" });
-        if ([400, 401, 402, 404, 408, 409, 429].includes(result.status) || result.status >= 500) continue;
-        break;
-      }
+      if (!result.ok) return { provider, attempt: { provider: provider.key, model: provider.model, http: result.status, state: "rejected" }, suggestion: null };
       const body = await result.json().catch(() => null) as Record<string, unknown> | null;
       const choices = body && Array.isArray(body.choices) ? body.choices : [];
       const first = choices[0] as Record<string, unknown> | undefined;
-      const message = first && typeof first.message === "object" && first.message
-        ? first.message as Record<string, unknown>
-        : null;
+      const message = first && typeof first.message === "object" && first.message ? first.message as Record<string, unknown> : null;
       const suggestion = safeSuggestion(message?.content, expected);
-      if (!suggestion) {
-        attempts.push({ provider: provider.key, http: result.status, state: "unsafe_shape_rejected" });
-        continue;
-      }
-      attempts.push({ provider: provider.key, http: result.status, state: "ok" });
-      return {
-        state: "ok",
-        provider: provider.key,
-        model: provider.model,
-        suggestion,
-        attempts,
-        deterministic_copy_remains_canonical: true,
-        publication_claimed: false,
-      };
+      return suggestion
+        ? { provider, attempt: { provider: provider.key, model: provider.model, http: result.status, state: "ok" }, suggestion }
+        : { provider, attempt: { provider: provider.key, model: provider.model, http: result.status, state: "unsafe_shape_rejected" }, suggestion: null };
     } catch (_error) {
-      attempts.push({ provider: provider.key, state: "network_or_timeout" });
+      return { provider, attempt: { provider: provider.key, model: provider.model, state: "network_or_timeout" }, suggestion: null };
     }
+  });
+  const settled = await Promise.allSettled(calls);
+  const results = settled.map((item, index) => item.status === "fulfilled" ? item.value : {
+    provider: PROVIDERS[index], attempt: { provider: PROVIDERS[index].key, model: PROVIDERS[index].model, state: "promise_rejected" }, suggestion: null,
+  });
+  const attempts = results.map((item) => item.attempt);
+  const accepted = results.find((item) => item.provider.key === "groq" && item.suggestion) ??
+    results.find((item) => item.provider.key === "openrouter_liquid" && item.suggestion);
+  if (accepted?.suggestion) {
+    return {
+      state: "ok",
+      provider: accepted.provider.key,
+      model: accepted.provider.model,
+      suggestion: accepted.suggestion,
+      attempts,
+      fanout: "Promise.allSettled",
+      groq_result_preferred: true,
+      openrouter_liquid_catalog_price_zero_verified: true,
+      selected_provider_catalog_price_zero_verified: accepted.provider.catalogPriceZeroVerified,
+      cost_zero_guaranteed: false,
+      deterministic_copy_remains_canonical: true,
+      publication_claimed: false,
+    };
   }
   return {
     state: "Sintonizado em Análise",
     provider: null,
     suggestion: null,
     attempts,
+    fanout: "Promise.allSettled",
+    groq_result_preferred: true,
+    cost_zero_guaranteed: false,
     deterministic_copy_remains_canonical: true,
     publication_claimed: false,
   };
@@ -180,6 +192,10 @@ Deno.serve(async (request: Request): Promise<Response> => {
       activation_profile: ACTIVATION_PROFILE,
       mode: "factual_product_assistance_with_optional_ai_preview",
       ai_pool_priority: PROVIDERS.map((p) => p.key),
+      ai_pool_models: PROVIDERS.map((p) => ({ provider: p.key, model: p.model, catalog_price_zero_verified: p.catalogPriceZeroVerified })),
+      ai_pool_fanout: "Promise.allSettled",
+      groq_result_preferred: true,
+      cost_zero_guaranteed: false,
       ai_pool_key_based: true,
       keyless_service: false,
       deterministic_copy_remains_canonical: true,
@@ -194,7 +210,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
 
   const suppliedInternalSecret = request.headers.get("x-nexus-v3200-secret") ?? "";
   const authenticated = await sameSecret(suppliedInternalSecret, START_SECRET) ||
-    await sameSecret(suppliedInternalSecret, AI_PREVIEW_SECRET);
+    await sameSecret(suppliedInternalSecret, AI_PREVIEW_SECRET) ||
+    await sameSecret(suppliedInternalSecret, V3755_COPY_SECRET);
   if (!authenticated) return response({ error: "unauthorized" }, 401);
   const contentLength = Number(request.headers.get("content-length") ?? "0");
   if (Number.isFinite(contentLength) && contentLength > 65_536) return response({ error: "payload_too_large" }, 413);

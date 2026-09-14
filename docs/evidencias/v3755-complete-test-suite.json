@@ -1,0 +1,16 @@
+{
+  "schema_version": "v3755-complete-test-suite-1",
+  "verified_at": "2026-09-14T03:47:35.870341+00:00",
+  "result": "pass",
+  "npm_ci_audit_vulnerabilities": 0,
+  "npm_test_exit_code": 0,
+  "test_files_executed": 26,
+  "v3755_test": "pass",
+  "ad_binding_local_handler_test": "pop=bound;sb=bound",
+  "affiliate_route_network_request_performed": false,
+  "affiliate_click_performed": false,
+  "esbuild_bundle": "pass",
+  "bundle_sha256": "67398f3248f72651e545ff6876829c80a02699068ace77f2c58f82ef872f000e",
+  "bundle_bytes": 22230,
+  "secrets_recorded": false
+}
