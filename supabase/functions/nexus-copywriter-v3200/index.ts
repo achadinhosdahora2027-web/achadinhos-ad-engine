@@ -1,4 +1,4 @@
-// Nexus v3200.0 policy / v4310.0 bounded activation — factual copy preview plus
+// Nexus v3200.0 policy / v4400.0 bounded activation — factual copy preview plus
 // concurrent multi-provider AI suggestion. Deterministic compose output remains
 // canonical. No publication, click, redirect, media injection, persistent
 // WebSocket loop, personal endorsement, secret return, or residential proof.
@@ -13,7 +13,8 @@ const START_SECRET = Deno.env.get("NEXUS_V3200_COPY_SECRET") ?? "";
 const AI_PREVIEW_SECRET = Deno.env.get("NEXUS_V3350_AI_PREVIEW_SECRET") ?? "";
 const V3755_COPY_SECRET = Deno.env.get("NEXUS_V3755_COPY_SECRET") ?? "";
 const V4310_COPY_SECRET = Deno.env.get("NEXUS_V4310_COPY_SECRET") ?? "";
-const MATRIX_VERSION = "v4310.0";
+const V4400_COPY_SECRET = Deno.env.get("NEXUS_V4400_COPY_SECRET") ?? "";
+const MATRIX_VERSION = "v4400.0";
 const POLICY_VERSION = Deno.env.get("V3350_POLICY_VERSION") ?? "v3200.0";
 const ACTIVATION_PROFILE = Deno.env.get("V3350_ACTIVATION_PROFILE") ?? "v3350.0";
 const ALLOWED_HOSTS = new Set(
@@ -121,11 +122,11 @@ async function aiSuggestion(payload: PoolRequest, country: string | null): Promi
       const requestHeaders: Record<string, string> = {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
-        "User-Agent": "Nexus-v4310-copy-preview/1.0",
+        "User-Agent": "Nexus-v4400-copy-preview/1.0",
       };
       if (provider.url.includes("openrouter.ai")) {
         requestHeaders["HTTP-Referer"] = "https://aquitem-21j.pages.dev";
-        requestHeaders["X-Title"] = "Nexus v4310 Bounded Factual Copy";
+        requestHeaders["X-Title"] = "Nexus v4400 Bounded Factual Copy";
       }
       const messages = [
         { role: "system", content: "You produce neutral factual preview copy only." },
@@ -214,6 +215,9 @@ Deno.serve(async (request: Request): Promise<Response> => {
       availability_guaranteed: false,
       permanent_websocket_runtime: false,
       websocket_reconnect_loop_installed: false,
+      shadow_dom_injection_enabled: false,
+      automatic_impression_enabled: false,
+      billable_impression_claimed: false,
       ai_pool_key_based: true,
       keyless_service: false,
       deterministic_copy_remains_canonical: true,
@@ -230,7 +234,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
   const authenticated = await sameSecret(suppliedInternalSecret, START_SECRET) ||
     await sameSecret(suppliedInternalSecret, AI_PREVIEW_SECRET) ||
     await sameSecret(suppliedInternalSecret, V3755_COPY_SECRET) ||
-    await sameSecret(suppliedInternalSecret, V4310_COPY_SECRET);
+    await sameSecret(suppliedInternalSecret, V4310_COPY_SECRET) ||
+    await sameSecret(suppliedInternalSecret, V4400_COPY_SECRET);
   if (!authenticated) return response({ error: "unauthorized" }, 401);
   const contentLength = Number(request.headers.get("content-length") ?? "0");
   if (Number.isFinite(contentLength) && contentLength > 65_536) return response({ error: "payload_too_large" }, 413);
@@ -266,6 +271,9 @@ Deno.serve(async (request: Request): Promise<Response> => {
       ...result,
       ai_pool: pool,
       matrix_version: MATRIX_VERSION,
+      shadow_dom_injection_enabled: false,
+      automatic_impression_enabled: false,
+      billable_impression_claimed: false,
       policy_version: POLICY_VERSION,
       activation_profile: ACTIVATION_PROFILE,
       geo_source: payload.country ? "signed_payload" : edgeCountry.source,

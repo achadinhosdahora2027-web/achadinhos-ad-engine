@@ -1,0 +1,93 @@
+{
+  "schema_version": "v4400-operator-screen-1",
+  "verified_at": "2026-09-14T05:07:50.140107+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "operator_status": {
+    "fleet": {
+      "edge_v950_assigned": false,
+      "configured_projects": 14,
+      "safety_gate_http_200": 14,
+      "replay_gateways_http_200": 14,
+      "copywriter_master_version": 35,
+      "permanent_websocket_runtime_projects": 0,
+      "automatic_impression_enabled_projects": 0
+    },
+    "claims": {
+      "sub_1ms_guaranteed": false,
+      "sub_50ms_guaranteed": false,
+      "publication_performed": false,
+      "affiliate_click_performed": false,
+      "billable_impressions_created": false,
+      "commission_lossless_guaranteed": false
+    },
+    "models": [
+      {
+        "model_id": "liquid/lfm-2.5-2.6b:free",
+        "catalog_present": true,
+        "enabled_in_broker": true,
+        "cost_zero_guaranteed": false
+      },
+      {
+        "model_id": "meta-llama/llama-3-8b-instruct:free",
+        "catalog_present": false,
+        "enabled_in_broker": false,
+        "cost_zero_guaranteed": false
+      }
+    ],
+    "version": "v4400.0",
+    "database": {
+      "vectors": 11568,
+      "keywords": 17605,
+      "diagnostics": 0,
+      "outbox_rows": 0,
+      "server_version": "17.6",
+      "diagnostic_ledger_persistence": "p",
+      "diagnostic_outbox_persistence": "p"
+    },
+    "telegram": {
+      "job_60": {
+        "active": true,
+        "schedule": "10 seconds"
+      },
+      "pacing": "max 3/min and 40/hour per destination",
+      "channel_outbox_persistence": "u"
+    },
+    "readiness": {
+      "reasons": [
+        "automatic Shadow DOM rendering would modify protected behavior",
+        "is_bot=false is not proof of a residential human",
+        "Deno Edge is not a durable 24/7 supervisor",
+        "KV fallback and lossless commission are unverified"
+      ],
+      "automatic_impression_yield_active": false,
+      "requested_full_horizontal_readiness": false,
+      "safe_impression_safety_matrix_ready": true
+    },
+    "placements": [
+      {
+        "host": "achadinhos-ad-engine.vercel.app",
+        "expected_binding_header": "pop=bound;sb=bound",
+        "placement_mutation_allowed": false,
+        "automatic_impression_enabled": false,
+        "shadow_dom_injection_enabled": false
+      },
+      {
+        "host": "aquitemachadinhos.com.br",
+        "expected_binding_header": "pop=bound;sb=bound",
+        "placement_mutation_allowed": false,
+        "automatic_impression_enabled": false,
+        "shadow_dom_injection_enabled": false
+      },
+      {
+        "host": "solvegrid.com.br",
+        "expected_binding_header": "pop=bound;sb=bound",
+        "placement_mutation_allowed": false,
+        "automatic_impression_enabled": false,
+        "shadow_dom_injection_enabled": false
+      }
+    ],
+    "observed_at": "2026-09-14T05:07:50.005768+00:00"
+  },
+  "secrets_recorded": false
+}

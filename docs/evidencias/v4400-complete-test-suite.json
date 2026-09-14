@@ -1,0 +1,25 @@
+{
+  "schema_version": "v4400-complete-test-suite-1",
+  "verified_at": "2026-09-14T05:07:40.587657+00:00",
+  "result": "pass",
+  "npm_test_exit_code": 0,
+  "test_files_executed": 28,
+  "v4400_test": "pass",
+  "esbuild": {
+    "copywriter": {
+      "result": "pass",
+      "sha256": "2ea0fdc76a0e731589ec8922ab77a421ec8cf1387f888c0ecb48315380058dc3",
+      "bytes": 23926
+    },
+    "fleet_safety_gate": {
+      "result": "pass",
+      "sha256": "8a78a3db5223cb06ff6185b0d8749a6fd02b37f2bd689caea6fa9af64b218232",
+      "bytes": 3445
+    }
+  },
+  "ad_binding_local_handler_test": "pop=bound;sb=bound",
+  "affiliate_route_network_request_performed": false,
+  "network_impression_request_performed": false,
+  "affiliate_click_performed": false,
+  "secrets_recorded": false
+}

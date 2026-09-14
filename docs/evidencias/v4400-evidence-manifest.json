@@ -1,0 +1,124 @@
+{
+  "schema_version": "v4400-evidence-manifest-1",
+  "generated_at": "2026-09-14T05:08:23.923873+00:00",
+  "release": "v4400.0",
+  "base_commit": "73b92208e5c9af79d4ab92b3fc68ade5b30b83bf",
+  "master_project_ref": "etbxbaaaspdcoiakifbb",
+  "database_migrations_installed": 2,
+  "copywriter_deployed_version": 35,
+  "fleet_safety_gates_deployed": 14,
+  "safe_impression_safety_matrix_ready": true,
+  "automatic_impression_yield_active": false,
+  "requested_full_horizontal_readiness": false,
+  "shadow_dom_injection_enabled": false,
+  "permanent_websocket_runtime_projects": 0,
+  "cloudflare_pages_production_deployed": false,
+  "replay_gateways_http_200": 14,
+  "files": [
+    {
+      "path": "RELATORIO_FINAL_V4400.md",
+      "bytes": 6440,
+      "sha256": "65ae25c2b24d7ac454cf35b1a702ba7bfbaa9415dab3df73caceea89ef427bec"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1718,
+      "sha256": "485ad6e5c1a7174f10cdebeb5bfefbbfec905ebd493ccb3fe29f7cefe21736a2"
+    },
+    {
+      "path": "supabase/functions/nexus-copywriter-v3200/index.ts",
+      "bytes": 14524,
+      "sha256": "40d524f9e8631fd865d80fe540dec4032746e4fe453113337b843d8cda1fda64"
+    },
+    {
+      "path": "supabase/functions/nexus-impression-safety-v4400/index.ts",
+      "bytes": 3077,
+      "sha256": "b7a9ddefe41cc17fe96becb35361624eb5d33d7d395c41a56e9ab1ea4e8669a9"
+    },
+    {
+      "path": "supabase/migrations/supabase_v4400_impression_yield.sql",
+      "bytes": 13523,
+      "sha256": "5225c953bc330dc4d1098a080d7aa9aeaf613839b27470df1092b769e0835daa"
+    },
+    {
+      "path": "supabase/migrations/supabase_v4400_runtime_verification.sql",
+      "bytes": 7256,
+      "sha256": "2054aec2d290cd8d08efcf29897de0a490b7482fdd78201360659bbd18f07e6c"
+    },
+    {
+      "path": "supabase/migrations/rollback_v4400_impression_yield.sql",
+      "bytes": 2065,
+      "sha256": "455dbbe87c1116b45349e07ebb64f8285f62efe1065b75e69e1474eabd275e81"
+    },
+    {
+      "path": "tests/v4400-impression-safety.test.js",
+      "bytes": 4953,
+      "sha256": "4d30bd602bfaf1cfc66977fc3297b8c3eaae23334c91b402298d0719e66e51db"
+    },
+    {
+      "path": "docs/evidencias/v4400-14-project-safety-deployment.json",
+      "bytes": 8514,
+      "sha256": "760323688741f3b7f7d4454de7d8b080d860cea7f1430740cd8c9710577ee582"
+    },
+    {
+      "path": "docs/evidencias/v4400-cloudflare-readonly-verification.json",
+      "bytes": 622,
+      "sha256": "d9e05645e47fd283655412c05c97a136578f450038232bd53b11e3355b3bcc43"
+    },
+    {
+      "path": "docs/evidencias/v4400-complete-test-suite.json",
+      "bytes": 771,
+      "sha256": "4e0950bc908f677cfc49c36501feb718893bfdef96cff53c8ab0b4098d29dcaf"
+    },
+    {
+      "path": "docs/evidencias/v4400-definitive-production-audit.json",
+      "bytes": 4924,
+      "sha256": "4e9044a4f00ea1671b0b8e292e04f1095a554bfde71337597d9ec5cf792e8b99"
+    },
+    {
+      "path": "docs/evidencias/v4400-edge-runtime-proof.json",
+      "bytes": 1236,
+      "sha256": "d67de65dd80ed001396123a8dd1f927ff38e65dcccc71216feaaf218652e7093"
+    },
+    {
+      "path": "docs/evidencias/v4400-master-preflight.json",
+      "bytes": 1745,
+      "sha256": "dc3979180b47049433f0ff9b36e69e1a548780aba5176053c214e4568c43ee75"
+    },
+    {
+      "path": "docs/evidencias/v4400-operator-screen.json",
+      "bytes": 2937,
+      "sha256": "b644d1ec2034d5cf7ca21a7907c5073a0ebe09cdc0a7309ad2580325d59ac19a"
+    },
+    {
+      "path": "docs/evidencias/v4400-production-install.json",
+      "bytes": 897,
+      "sha256": "8755082ed82f91071533e22dd9514c1caafadec136d9aee669844ac5eba3e958"
+    },
+    {
+      "path": "docs/evidencias/v4400-runtime-reconciliation.json",
+      "bytes": 3354,
+      "sha256": "1fc0cb834c8055984c45e85ecaab1e546b6411fa0db7ea6f0271aafd04a94c8c"
+    },
+    {
+      "path": "docs/evidencias/v4400-secret-scan.json",
+      "bytes": 422,
+      "sha256": "ba2feecd14a97c15facee354e004949bc5648344d2ef6863b68f76bb21fad35f"
+    },
+    {
+      "path": "docs/evidencias/v4400-selector-benchmark.json",
+      "bytes": 575,
+      "sha256": "6da19206fd276e436316bb6b40acd6f4fb4ab16c37b15fe0eb564e15f0808a04"
+    },
+    {
+      "path": "docs/evidencias/v4400-sql-dryrun.json",
+      "bytes": 579,
+      "sha256": "6bdf31a3ffbf6968c7c1cac166f366cbba4dc6759867c79bb14dea02e59d79d4"
+    }
+  ],
+  "protected_checksums": {
+    "api/ads/go.js": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "edge/jetstream/compose.ts": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0"
+  },
+  "secrets_recorded": false
+}

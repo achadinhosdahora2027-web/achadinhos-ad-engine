@@ -1,0 +1,41 @@
+{
+  "schema_version": "v4400-edge-runtime-proof-1",
+  "verified_at": "2026-09-14T05:04:15.432596+00:00",
+  "result": "pass",
+  "copywriter_version": 35,
+  "get_http": 200,
+  "unauthorized_post_http": 401,
+  "authenticated_post_http": 200,
+  "matrix_version": "v4400.0",
+  "fanout": "Promise.allSettled",
+  "selected_provider": "groq",
+  "provider_states": {
+    "groq": "ok",
+    "openrouter_liquid": "unsafe_shape_rejected",
+    "openrouter_gemma4": "rejected",
+    "openrouter_nemotron": "unsafe_shape_rejected"
+  },
+  "provider_http": {
+    "groq": 200,
+    "openrouter_liquid": 200,
+    "openrouter_gemma4": 429,
+    "openrouter_nemotron": 200
+  },
+  "disclosure_own_line_before_link": true,
+  "generated_copy_recorded": false,
+  "automatic_impression_enabled": false,
+  "shadow_dom_injection_enabled": false,
+  "diagnostic_database_rows_after_proof": {
+    "diagnostics": 0,
+    "outbox": 0
+  },
+  "safety_gate_status_http_200": 14,
+  "replay_gateways_http_200": 14,
+  "permanent_websocket_runtime": false,
+  "background_reconnect_loop": false,
+  "continuous_24x7_proven": false,
+  "network_impression_request_performed": false,
+  "publication_performed": false,
+  "affiliate_click_performed": false,
+  "secrets_recorded": false
+}

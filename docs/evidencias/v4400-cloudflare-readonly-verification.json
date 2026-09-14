@@ -1,0 +1,19 @@
+{
+  "schema_version": "v4400-cloudflare-readonly-verification-1",
+  "verified_at": "2026-09-14T05:05:28.070954+00:00",
+  "result": "pass",
+  "project": "aquitem",
+  "latest_production_deployment": {
+    "id": "880b9d8b-a19a-4b6c-a083-5fac00cc3282",
+    "created_on": "2026-09-13T15:07:55.163378Z",
+    "modified_on": "2026-09-13T15:07:57.118379Z",
+    "environment": "production",
+    "stage_status": "success"
+  },
+  "read_only_requests": 2,
+  "production_deployments_by_v4400": 0,
+  "direct_uploads_by_v4400": 0,
+  "project_mutations_by_v4400": 0,
+  "protected_placements_modified": false,
+  "secrets_recorded": false
+}

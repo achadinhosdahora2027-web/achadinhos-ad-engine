@@ -1,0 +1,69 @@
+{
+  "schema_version": "v4400-master-preflight-1",
+  "verified_at": "2026-09-14T04:59:45.454832+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "database": {
+    "server_version": "17.6",
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "vectors": 11568,
+    "shopee": 1201,
+    "v4310_ledger": "p",
+    "v4310_outbox": "p",
+    "telegram_outbox": "u",
+    "unexpected_subminute": 0,
+    "legacy_pollers_active": 0,
+    "job60": true,
+    "pacing": true,
+    "tracking_locks": 5,
+    "go_alignments_verified": 0,
+    "hnsw_indexes": 3
+  },
+  "complete_bound_hosts": [
+    {
+      "host": "achadinhos-ad-engine.vercel.app",
+      "socialbar_bound": true,
+      "popunder_bound": true,
+      "is_active": true
+    },
+    {
+      "host": "aquitemachadinhos.com.br",
+      "socialbar_bound": true,
+      "popunder_bound": true,
+      "is_active": true
+    },
+    {
+      "host": "solvegrid.com.br",
+      "socialbar_bound": true,
+      "popunder_bound": true,
+      "is_active": true
+    }
+  ],
+  "complete_bound_host_count": 3,
+  "openrouter_catalog_count": 445,
+  "requested_models": [
+    {
+      "model_id": "meta-llama/llama-3-8b-instruct:free",
+      "present": false,
+      "prompt": null,
+      "completion": null,
+      "eligible": false
+    },
+    {
+      "model_id": "liquid/lfm-2.5-2.6b:free",
+      "present": true,
+      "prompt": "0",
+      "completion": "0",
+      "eligible": true
+    }
+  ],
+  "automatic_impression_authorized": false,
+  "shadow_dom_injection_authorized": false,
+  "residential_human_emulation_authorized": false,
+  "permanent_edge_websocket_supported": false,
+  "kv_fallback_verified": false,
+  "cloudflare_pages_deployment_planned": false,
+  "secrets_recorded": false
+}

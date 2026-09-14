@@ -1,0 +1,19 @@
+{
+  "schema_version": "v4400-selector-benchmark-1",
+  "verified_at": "2026-09-14T05:04:26.369439+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "server_side_samples": 250,
+  "raw_header_shape": "CF-IPCountry JSONB key",
+  "p50_ms": 0.64,
+  "p95_ms": 0.689,
+  "p99_ms": 0.865,
+  "max_ms": 12.29,
+  "transaction_rolled_back": true,
+  "end_to_end_latency_measured": false,
+  "postgrest_network_latency_measured": false,
+  "sub_1ms_observed_p50": true,
+  "sub_1ms_guaranteed": false,
+  "automatic_impression_enabled": false,
+  "secrets_recorded": false
+}
