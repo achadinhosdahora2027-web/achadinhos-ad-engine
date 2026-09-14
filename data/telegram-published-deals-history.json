@@ -10,17 +10,18 @@
       "channel": "@ofertasbrasilz"
     }
   ],
-  "total_published": 103,
+  "total_published": 104,
   "last_published_at": "2026-09-02T05:31:43.414Z",
   "canal_ofertas_brasil": {
     "published_ids": [
-      "br_amazon_air_fryer"
+      "br_amazon_air_fryer",
+      "br_shopee_fone_tws"
     ],
-    "total": 56,
-    "last_published_at": "2026-09-14T15:36:23.689Z",
-    "last_deal_id": "br_amazon_air_fryer"
+    "total": 57,
+    "last_published_at": "2026-09-14T16:35:43.083Z",
+    "last_deal_id": "br_shopee_fone_tws"
   },
-  "last_run_at": "2026-09-14T15:36:23.689Z",
+  "last_run_at": "2026-09-14T16:35:43.083Z",
   "grupo_cliques": {
     "published_ids": [
       "br_amazon_air_fryer"
