@@ -1,0 +1,16 @@
+{
+  "duration_ms": 3750,
+  "embedding_dimensions": 384,
+  "embedding_rows": 20,
+  "http": 201,
+  "indexed_readiness_rows_tested": 9,
+  "manifest_sha256": "c1725cbee5dcf90c47cc2c1370879b26421dc60221c790e44537af40ac77e943",
+  "migration_sha256": "ace33e684d77eeabe40d3355b1a114cea1287fbf0f496282652378d62e281276",
+  "placements_modified": false,
+  "production_mutated": false,
+  "recorded_at": "2026-09-14T01:03:55.886493+00:00",
+  "result": "pass",
+  "schema_version": "v3600-sql-dryrun-2",
+  "secrets_recorded": false,
+  "transaction_rolled_back": true
+}

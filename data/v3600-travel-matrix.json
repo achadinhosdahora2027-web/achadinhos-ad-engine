@@ -1,0 +1,420 @@
+{
+  "schema_version": "nexus-v3600-travel-matrix-1",
+  "release": "v3600.0",
+  "generated_on": "2026-09-13",
+  "truth_boundary": {
+    "batch_1": "Corroborated against Booking.com Traveller Review Awards 2026 official newsroom release; the list is most welcoming cities, not a conversion or search-volume ranking.",
+    "batch_2": "Operator-supplied ranking; no matching official Booking.com global top-10 source for this exact list and period was independently located.",
+    "cdn_country": "Routing hint only; not proof of city, timezone, residence, humanity, intent, serviceability or currency preference.",
+    "traffic_share": "Dated third-party web-traffic estimate, not official Bluesky user distribution or a current guarantee."
+  },
+  "sources": {
+    "booking_awards_2026": "https://news.booking.com/traveller-review-awards-2026-celebrate-181-million-partners-worldwide-and-reveal-the-most-welcoming-destinations-for-the-year-ahead/",
+    "bluesky_april_2026_secondary": "https://www.socialpilot.co/blog/bluesky-statistics"
+  },
+  "traffic_share_snapshot": [
+    {
+      "country_code": "US",
+      "share_pct": 48.87,
+      "rank": 1,
+      "as_of": "2026-04",
+      "scope": "third_party_estimated_bsky_app_web_traffic"
+    },
+    {
+      "country_code": "GB",
+      "share_pct": 8.26,
+      "rank": 2,
+      "as_of": "2026-04",
+      "scope": "third_party_estimated_bsky_app_web_traffic"
+    },
+    {
+      "country_code": "JP",
+      "share_pct": 5.54,
+      "rank": 3,
+      "as_of": "2026-04",
+      "scope": "third_party_estimated_bsky_app_web_traffic"
+    },
+    {
+      "country_code": "DE",
+      "share_pct": 5.02,
+      "rank": 4,
+      "as_of": "2026-04",
+      "scope": "third_party_estimated_bsky_app_web_traffic"
+    },
+    {
+      "country_code": "CA",
+      "share_pct": 4.35,
+      "rank": 5,
+      "as_of": "2026-04",
+      "scope": "third_party_estimated_bsky_app_web_traffic"
+    }
+  ],
+  "destinations": [
+    {
+      "batch": 1,
+      "rank": 1,
+      "display_name": "Montepulciano",
+      "canonical_name": "Montepulciano",
+      "country_code": "IT",
+      "locale": "it-IT",
+      "admin_area": "Tuscany",
+      "aliases": [
+        "Montepulciano"
+      ],
+      "country_currency": "EUR",
+      "eligible_networks": [
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 1,
+      "rank": 2,
+      "display_name": "Magong",
+      "canonical_name": "Magong",
+      "country_code": "TW",
+      "locale": "zh-TW",
+      "admin_area": "Penghu",
+      "aliases": [
+        "Magong",
+        "Makung"
+      ],
+      "country_currency": "TWD",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 1,
+      "rank": 3,
+      "display_name": "San Martín de los Andes",
+      "canonical_name": "San Martín de los Andes",
+      "country_code": "AR",
+      "locale": "es-AR",
+      "admin_area": "Neuquén",
+      "aliases": [
+        "San Martín de los Andes",
+        "San Martin de los Andes"
+      ],
+      "country_currency": "ARS",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 1,
+      "rank": 4,
+      "display_name": "Harrogate",
+      "canonical_name": "Harrogate",
+      "country_code": "GB",
+      "locale": "en-GB",
+      "admin_area": "England",
+      "aliases": [
+        "Harrogate"
+      ],
+      "country_currency": "GBP",
+      "eligible_networks": [
+        "booking_uk",
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "booking_uk",
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 1,
+      "rank": 5,
+      "display_name": "Fredericksburg",
+      "canonical_name": "Fredericksburg",
+      "country_code": "US",
+      "locale": "en-US",
+      "admin_area": "Texas",
+      "aliases": [
+        "Fredericksburg",
+        "Fredericksburg Texas"
+      ],
+      "country_currency": "USD",
+      "eligible_networks": [
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 1,
+      "rank": 6,
+      "display_name": "Pirenópolis",
+      "canonical_name": "Pirenópolis",
+      "country_code": "BR",
+      "locale": "pt-BR",
+      "admin_area": "Goiás",
+      "aliases": [
+        "Pirenópolis",
+        "Pirenopolis"
+      ],
+      "country_currency": "BRL",
+      "eligible_networks": [
+        "mercadolivre",
+        "shopee"
+      ],
+      "verified_networks": [
+        "mercadolivre"
+      ]
+    },
+    {
+      "batch": 1,
+      "rank": 7,
+      "display_name": "Swakopmund",
+      "canonical_name": "Swakopmund",
+      "country_code": "NA",
+      "locale": "en-NA",
+      "admin_area": "Erongo",
+      "aliases": [
+        "Swakopmund"
+      ],
+      "country_currency": "NAD",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 1,
+      "rank": 8,
+      "display_name": "Takayama",
+      "canonical_name": "Takayama",
+      "country_code": "JP",
+      "locale": "ja-JP",
+      "admin_area": "Gifu",
+      "aliases": [
+        "Takayama"
+      ],
+      "country_currency": "JPY",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 1,
+      "rank": 9,
+      "display_name": "Noosa Heads",
+      "canonical_name": "Noosa Heads",
+      "country_code": "AU",
+      "locale": "en-AU",
+      "admin_area": "Queensland",
+      "aliases": [
+        "Noosa Heads",
+        "Noosa"
+      ],
+      "country_currency": "AUD",
+      "eligible_networks": [
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 1,
+      "rank": 10,
+      "display_name": "Klaipėda",
+      "canonical_name": "Klaipėda",
+      "country_code": "LT",
+      "locale": "lt-LT",
+      "admin_area": "Klaipėda County",
+      "aliases": [
+        "Klaipėda",
+        "Klaipeda"
+      ],
+      "country_currency": "EUR",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 2,
+      "rank": 1,
+      "display_name": "Roma",
+      "canonical_name": "Roma",
+      "country_code": "IT",
+      "locale": "it-IT",
+      "admin_area": "Lazio",
+      "aliases": [
+        "Roma",
+        "Rome"
+      ],
+      "country_currency": "EUR",
+      "eligible_networks": [
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 2,
+      "rank": 2,
+      "display_name": "Londres",
+      "canonical_name": "London",
+      "country_code": "GB",
+      "locale": "en-GB",
+      "admin_area": "England",
+      "aliases": [
+        "London",
+        "Londres"
+      ],
+      "country_currency": "GBP",
+      "eligible_networks": [
+        "booking_uk",
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "booking_uk",
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 2,
+      "rank": 3,
+      "display_name": "Dubai",
+      "canonical_name": "Dubai",
+      "country_code": "AE",
+      "locale": "ar-AE",
+      "admin_area": "Dubai",
+      "aliases": [
+        "Dubai"
+      ],
+      "country_currency": "AED",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 2,
+      "rank": 4,
+      "display_name": "Paris",
+      "canonical_name": "Paris",
+      "country_code": "FR",
+      "locale": "fr-FR",
+      "admin_area": "Île-de-France",
+      "aliases": [
+        "Paris"
+      ],
+      "country_currency": "EUR",
+      "eligible_networks": [
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 2,
+      "rank": 5,
+      "display_name": "São Paulo",
+      "canonical_name": "São Paulo",
+      "country_code": "BR",
+      "locale": "pt-BR",
+      "admin_area": "São Paulo",
+      "aliases": [
+        "São Paulo",
+        "Sao Paulo"
+      ],
+      "country_currency": "BRL",
+      "eligible_networks": [
+        "mercadolivre",
+        "shopee"
+      ],
+      "verified_networks": [
+        "mercadolivre"
+      ]
+    },
+    {
+      "batch": 2,
+      "rank": 6,
+      "display_name": "Tóquio",
+      "canonical_name": "Tokyo",
+      "country_code": "JP",
+      "locale": "ja-JP",
+      "admin_area": "Tokyo",
+      "aliases": [
+        "Tokyo",
+        "Tóquio"
+      ],
+      "country_currency": "JPY",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 2,
+      "rank": 7,
+      "display_name": "Milão",
+      "canonical_name": "Milano",
+      "country_code": "IT",
+      "locale": "it-IT",
+      "admin_area": "Lombardy",
+      "aliases": [
+        "Milano",
+        "Milan",
+        "Milão"
+      ],
+      "country_currency": "EUR",
+      "eligible_networks": [
+        "ebay_epn"
+      ],
+      "verified_networks": [
+        "ebay_epn"
+      ]
+    },
+    {
+      "batch": 2,
+      "rank": 8,
+      "display_name": "Atenas",
+      "canonical_name": "Athens",
+      "country_code": "GR",
+      "locale": "el-GR",
+      "admin_area": "Attica",
+      "aliases": [
+        "Athens",
+        "Atenas"
+      ],
+      "country_currency": "EUR",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 2,
+      "rank": 9,
+      "display_name": "Manila",
+      "canonical_name": "Manila",
+      "country_code": "PH",
+      "locale": "fil-PH",
+      "admin_area": "Metro Manila",
+      "aliases": [
+        "Manila",
+        "Maynila"
+      ],
+      "country_currency": "PHP",
+      "eligible_networks": [],
+      "verified_networks": []
+    },
+    {
+      "batch": 2,
+      "rank": 10,
+      "display_name": "Rio de Janeiro",
+      "canonical_name": "Rio de Janeiro",
+      "country_code": "BR",
+      "locale": "pt-BR",
+      "admin_area": "Rio de Janeiro",
+      "aliases": [
+        "Rio de Janeiro",
+        "Rio"
+      ],
+      "country_currency": "BRL",
+      "eligible_networks": [
+        "mercadolivre",
+        "shopee"
+      ],
+      "verified_networks": [
+        "mercadolivre"
+      ]
+    }
+  ]
+}

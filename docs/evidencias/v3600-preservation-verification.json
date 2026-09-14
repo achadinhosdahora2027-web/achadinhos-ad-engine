@@ -1,0 +1,47 @@
+{
+  "affiliate_urls_followed": false,
+  "clicks_performed": false,
+  "compose_modified": false,
+  "copywriter_v3200_modified": false,
+  "expected_x_adsterra_binding_on_success": "pop=bound;sb=bound",
+  "functions": [
+    {
+      "slug": "nexus-copywriter-v3200",
+      "status": "ACTIVE",
+      "updated_at": 1789331598671,
+      "verify_jwt": true,
+      "version": 18
+    },
+    {
+      "slug": "nexus-quantum-inbound-v3500",
+      "status": "ACTIVE",
+      "updated_at": 1789345179372,
+      "verify_jwt": false,
+      "version": 2
+    },
+    {
+      "slug": "nexus-travel-matrix-v3600",
+      "status": "ACTIVE",
+      "updated_at": 1789347378185,
+      "verify_jwt": false,
+      "version": 1
+    }
+  ],
+  "live_api_ads_go_reason": "programmatic affiliate/ad route requests are prohibited",
+  "live_api_ads_go_request_performed": false,
+  "placements_modified": false,
+  "protected_copy_mode": "0o600",
+  "protected_hashes": {
+    "api_ads_go_js": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "aquitem_go": "7ad88bb3133169bc16ce005655829375faf5d85270e4676e10134cf2fd2e80bc",
+    "compose_ts": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0",
+    "copywriter_v3200": "974dc1558d703d0d1c9b1e1266552b679cb4bf03a4fb8ee5ab64dc8f26596d4b",
+    "secondary_go": "7da009550dcbad0d86b297f58ed9520e239c15d0f88a84d853ec9c703b000e9c"
+  },
+  "result": "pass",
+  "schema_version": "v3600-preservation-verification-1",
+  "secrets_recorded": false,
+  "supplied_credential_bundle_preserved": true,
+  "supplied_credential_file_mode": "0o600",
+  "verified_at": "2026-09-14T01:07:33.366293+00:00"
+}

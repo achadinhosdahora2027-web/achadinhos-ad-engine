@@ -1,0 +1,17 @@
+{
+  "duration_ms": 3737,
+  "http": 201,
+  "placements_modified": false,
+  "polling_jobs_reactivated": false,
+  "post_test_ads_rows": 14301,
+  "post_test_job60_ok": true,
+  "post_test_matrix_preserved": true,
+  "post_test_readiness_preserved": true,
+  "post_test_travel_rows": 108,
+  "recorded_at": "2026-09-14T01:05:40.064066+00:00",
+  "result": "pass",
+  "rollback_sha256": "de09ca2ed285d2b171e6b9f1f244b10a6aafebaf2ad514a8779e41561575593d",
+  "schema_version": "v3600-rollback-dryrun-1",
+  "secrets_recorded": false,
+  "transaction_rolled_back": true
+}

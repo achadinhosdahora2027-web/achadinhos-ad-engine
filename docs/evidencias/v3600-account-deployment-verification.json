@@ -1,0 +1,152 @@
+{
+  "additional_accessible_non_catalog_projects": [
+    "efvuzxdhsirpvxclgdfg"
+  ],
+  "all_14_accounts_active_proven": false,
+  "clicks_performed": false,
+  "configured_accounts": 14,
+  "configured_master": 1,
+  "configured_satellites": 13,
+  "management_accessible_configured": 10,
+  "management_inaccessible_configured": 4,
+  "permanent_24x7_proven": false,
+  "result": "partial_master_only",
+  "rows": [
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "etbxbaaaspdcoiakifbb",
+      "role": "master",
+      "v3000_ingest_active": false,
+      "v3000_unauthenticated_http": null,
+      "v3600_matrix_active": true
+    },
+    {
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "ayzpzuoyhgtfsbfreiap",
+      "role": "satellite",
+      "v3000_ingest_active": null,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": null
+    },
+    {
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "xyzpfccmzvekfvcpqlke",
+      "role": "satellite",
+      "v3000_ingest_active": null,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": null
+    },
+    {
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "gionwubuzicttggpclrg",
+      "role": "satellite",
+      "v3000_ingest_active": null,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": null
+    },
+    {
+      "function_list_http": null,
+      "management_accessible": false,
+      "project_ref": "kfuwmalepnctoykkkkgx",
+      "role": "satellite",
+      "v3000_ingest_active": null,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": null
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "rdirplibrghfbazkieeo",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "gztiuddoiekytwwlpeyq",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "foxcedesytfhiqdtnlgg",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "lknnxwbezqmpkuxwxgur",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "ucviyoteadgwjnwecopw",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "duipcjiiytrfxzyktswk",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "tpoqmpjnffuvfoqqasqn",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "hodcyytojobguvbcevct",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    },
+    {
+      "function_list_http": 200,
+      "management_accessible": true,
+      "project_ref": "snkauzzqnzirngacoxiv",
+      "role": "satellite",
+      "v3000_ingest_active": true,
+      "v3000_unauthenticated_http": 401,
+      "v3600_matrix_active": false
+    }
+  ],
+  "satellite_deployment_attempted": false,
+  "satellite_deployment_refused_reason": "all-or-nothing preflight failed for four configured satellites",
+  "schema_version": "v3600-account-deployment-verification-1",
+  "secrets_recorded": false,
+  "v3000_satellite_endpoints_reject_unauthenticated_http_401": 13,
+  "v3000_satellite_ingest_active_verified": 9,
+  "v3600_function_active_configured": 1,
+  "v3600_master_active": true,
+  "v3600_satellites_active_verified": 0,
+  "verified_at": "2026-09-14T01:06:03.756524+00:00"
+}

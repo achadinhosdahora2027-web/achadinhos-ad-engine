@@ -1,0 +1,35 @@
+{
+  "affiliate_urls_followed": false,
+  "checks": {
+    "affiliate_url_returned": false,
+    "br_disclosure": "#publi",
+    "br_resolve_http": 200,
+    "br_route_ready": true,
+    "click_recorded": false,
+    "continuous_24x7_proven": false,
+    "get_http": 200,
+    "placements_modified": false,
+    "publication_performed": false,
+    "redirect_performed": false,
+    "timezone_proven": false,
+    "tw_resolve_http": 422,
+    "tw_route_ready": false,
+    "tw_state": "Sintonizado em Análise",
+    "unauthorized_http": 401,
+    "us_disclosure": "#ad",
+    "us_resolve_http": 200,
+    "us_route_ready": true,
+    "us_traffic_share_hint_pct": 48.87
+  },
+  "embedding_release": {
+    "dimensions": 384,
+    "generation": "20 authenticated sequential Edge calls after one 20-way call was contained by the runtime resource limit",
+    "model": "gte-small",
+    "vectors": 20,
+    "vectors_recorded_in_repository": false
+  },
+  "result": "pass",
+  "schema_version": "v3600-edge-verification-1",
+  "secrets_recorded": false,
+  "verified_at": "2026-09-14T01:02:22.733517+00:00"
+}

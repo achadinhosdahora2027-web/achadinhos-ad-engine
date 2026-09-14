@@ -1,0 +1,15 @@
+{
+  "affiliate_urls_in_request": false,
+  "credentials_recorded": false,
+  "duration_ms": 3756,
+  "embedding_dimensions": 384,
+  "embedding_rows_supplied": 20,
+  "http": 201,
+  "indexed_readiness_rows": 9,
+  "installed_at": "2026-09-14T01:04:14.681079+00:00",
+  "manifest_sha256": "c1725cbee5dcf90c47cc2c1370879b26421dc60221c790e44537af40ac77e943",
+  "migration_sha256": "ace33e684d77eeabe40d3355b1a114cea1287fbf0f496282652378d62e281276",
+  "placements_modified": false,
+  "result": "installed",
+  "schema_version": "v3600-production-deploy-2"
+}

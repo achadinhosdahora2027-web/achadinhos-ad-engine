@@ -1,0 +1,37 @@
+{
+  "affiliate_urls_returned": false,
+  "clicks_performed": false,
+  "concurrent_load_tested": false,
+  "edge_end_to_end": {
+    "max_ms": 2438.555,
+    "p50_ms": 586.839,
+    "p95_ms": 1393.431,
+    "p99_ms": 2229.53,
+    "samples": 20
+  },
+  "edge_scope": "authenticated Edge request including gte-small inference and database RPC from the test client",
+  "header_and_indexed_readiness_microbenchmark": {
+    "max_ms": 9.094,
+    "p50_ms": 0.046,
+    "p95_ms": 0.073,
+    "p99_ms": 0.151,
+    "samples": 250
+  },
+  "header_and_indexed_readiness_p99_below_1ms_observed": true,
+  "header_and_indexed_readiness_scope": "server-side JSONB country extraction plus indexed readiness lookup only; not Edge, vector matching, network transit, or SLA",
+  "recorded_at": "2026-09-14T01:05:08.034544+00:00",
+  "result": "pass",
+  "schema_version": "v3600-route-benchmark-2",
+  "secrets_recorded": false,
+  "server_scope": "warm repeated full metadata route using indexed prevalidated route readiness",
+  "server_side": {
+    "max_ms": 7.617,
+    "p50_ms": 0.458,
+    "p95_ms": 0.619,
+    "p99_ms": 1.14,
+    "samples": 250
+  },
+  "sub_1ms_guaranteed": false,
+  "sub_1ms_server_p99_observed": false,
+  "sub_50ms_edge_guaranteed": false
+}
