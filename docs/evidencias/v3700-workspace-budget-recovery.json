@@ -4,9 +4,9 @@
   "platform_reported_session_size_mb": 175.0,
   "platform_reported_unsaved_files": 7,
   "initial_total_workspace_bytes_observed": 207036416,
-  "final_total_workspace_bytes_observed": 97455104,
+  "final_total_workspace_bytes_observed": 97275904,
   "final_total_workspace_human": "93 MiB",
-  "final_noncache_file_count": 2348,
+  "final_noncache_file_count": 2337,
   "workspace_limit_bytes": 134217728,
   "under_workspace_limit": true,
   "head_commit_recovered": "2fb30c3e80e1311d2651a7161cbf9472333c6893",
@@ -34,7 +34,9 @@
     "preserved_current_worktree": "nexus-v3700-work",
     "preserved_recovery_worktree": "nexus-v3380-recovered",
     "preserved_historical_audit": "nexus-v420-audit",
-    "user_uploads_deleted": 0
+    "user_uploads_deleted": 0,
+    "tracked_node_modules_files_removed": 20,
+    "reason": "node_modules is ignored by Git and excluded from Arena workspace snapshots"
   },
   "result": "pass",
   "secrets_recorded": false
