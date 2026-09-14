@@ -1,0 +1,23 @@
+{
+  "schema_version": "v3500-hnsw-benchmark-1",
+  "recorded_at": "2026-09-14T00:17:13Z",
+  "project": "master",
+  "server_version": "PostgreSQL 17.6",
+  "pgvector_version": "0.8.2",
+  "table": "public.nexus_v380_keyword_vectors",
+  "table_rows": 11568,
+  "index": "nexus_v380_kw_hnsw",
+  "index_plan_observed": true,
+  "operator": "halfvec_cosine_ops",
+  "limit": 10,
+  "samples": 250,
+  "p50_ms": 0.429,
+  "p95_ms": 0.469,
+  "p99_ms": 0.522,
+  "max_ms": 437.959,
+  "benchmark_scope": "server-side warm repeated nearest-neighbor query using one existing vector with sequential scans disabled",
+  "end_to_end_latency_measured": false,
+  "sub_1ms_guaranteed": false,
+  "continuous_runtime_proven": false,
+  "query_vector_recorded": false
+}

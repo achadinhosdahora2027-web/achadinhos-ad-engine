@@ -101,7 +101,8 @@ export function classificarAutomacao(rec: {
   if (!texto.trim()) return { is_bot: true, motivo: "texto_vazio" };
   if (texto.length > 280 * 4) return { is_bot: true, motivo: "texto_fora_de_limite_humano" };
   if (/\b(?:deal|promo)\s*(?:bot|feed)\b/i.test(texto)) return { is_bot: true, motivo: "texto_de_robo" };
-  return { is_bot: false, motivo: "residencial_humano" };
+  // Passing heuristics is not proof of a human, residence, or residential IP.
+  return { is_bot: false, motivo: "human_likely_not_residential_proof" };
 }
 
 /* ────────────────────── webhook assinado (HMAC-SHA256) ─────────────────── */
