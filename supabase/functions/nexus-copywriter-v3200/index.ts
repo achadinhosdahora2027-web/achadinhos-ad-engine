@@ -1,7 +1,7 @@
-// Nexus v3200.0 policy / v3350.0 activation — factual copy preview plus
-// optional bounded multi-provider AI suggestion. Deterministic compose output
-// remains canonical. No publication, click, redirect, media injection, personal
-// endorsement, secret return, or human/residential proof.
+// Nexus v3200.0 policy / v4310.0 bounded activation — factual copy preview plus
+// concurrent multi-provider AI suggestion. Deterministic compose output remains
+// canonical. No publication, click, redirect, media injection, persistent
+// WebSocket loop, personal endorsement, secret return, or residential proof.
 import {
   composeFactualCopy,
   countryFromCdnHeaders,
@@ -12,6 +12,8 @@ import {
 const START_SECRET = Deno.env.get("NEXUS_V3200_COPY_SECRET") ?? "";
 const AI_PREVIEW_SECRET = Deno.env.get("NEXUS_V3350_AI_PREVIEW_SECRET") ?? "";
 const V3755_COPY_SECRET = Deno.env.get("NEXUS_V3755_COPY_SECRET") ?? "";
+const V4310_COPY_SECRET = Deno.env.get("NEXUS_V4310_COPY_SECRET") ?? "";
+const MATRIX_VERSION = "v4310.0";
 const POLICY_VERSION = Deno.env.get("V3350_POLICY_VERSION") ?? "v3200.0";
 const ACTIVATION_PROFILE = Deno.env.get("V3350_ACTIVATION_PROFILE") ?? "v3350.0";
 const ALLOWED_HOSTS = new Set(
@@ -30,20 +32,23 @@ const RESPONSE_HEADERS = {
 
 type PoolRequest = CopyRequest & { ai_pool?: boolean; ai_locale?: string | null };
 type Provider = {
-  key: "groq" | "openrouter_liquid";
+  key: "groq" | "openrouter_liquid" | "openrouter_gemma4" | "openrouter_nemotron";
   env: string;
   url: string;
   model: string;
   catalogPriceZeroVerified: boolean;
 };
 
-// v3755: Groq remains the preferred accepted result; Liquid is called in
-// parallel as the current catalog-price-zero backup. Price and availability
-// are observations, never a cost or uptime guarantee.
+// v4310: Groq remains the preferred accepted result. Only OpenRouter IDs
+// observed in the live zero-price catalog are called. Price and availability
+// are observations, never billing or uptime guarantees.
 const PROVIDERS: Provider[] = [
   { key: "groq", env: "GROQ_API_KEY", url: "https://api.groq.com/openai/v1/chat/completions", model: "openai/gpt-oss-20b", catalogPriceZeroVerified: false },
   { key: "openrouter_liquid", env: "OPENROUTER_API_KEY", url: "https://openrouter.ai/api/v1/chat/completions", model: "liquid/lfm-2.5-2.6b:free", catalogPriceZeroVerified: true },
+  { key: "openrouter_gemma4", env: "OPENROUTER_API_KEY", url: "https://openrouter.ai/api/v1/chat/completions", model: "google/gemma-4-26b-a4b-it:free", catalogPriceZeroVerified: true },
+  { key: "openrouter_nemotron", env: "OPENROUTER_API_KEY", url: "https://openrouter.ai/api/v1/chat/completions", model: "nvidia/nemotron-3.5-lightning:free", catalogPriceZeroVerified: true },
 ];
+const REQUESTED_UNAVAILABLE_MODELS = ["meta-llama/llama-3-8b-instruct:free", "google/gemma-2-9b-it:free"] as const;
 
 function response(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status, headers: RESPONSE_HEADERS });
@@ -116,11 +121,11 @@ async function aiSuggestion(payload: PoolRequest, country: string | null): Promi
       const requestHeaders: Record<string, string> = {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
-        "User-Agent": "Nexus-v3755-copy-preview/1.0",
+        "User-Agent": "Nexus-v4310-copy-preview/1.0",
       };
       if (provider.url.includes("openrouter.ai")) {
         requestHeaders["HTTP-Referer"] = "https://aquitem-21j.pages.dev";
-        requestHeaders["X-Title"] = "Nexus v3755 White-Hat Copy";
+        requestHeaders["X-Title"] = "Nexus v4310 Bounded Factual Copy";
       }
       const messages = [
         { role: "system", content: "You produce neutral factual preview copy only." },
@@ -154,7 +159,7 @@ async function aiSuggestion(payload: PoolRequest, country: string | null): Promi
   });
   const attempts = results.map((item) => item.attempt);
   const accepted = results.find((item) => item.provider.key === "groq" && item.suggestion) ??
-    results.find((item) => item.provider.key === "openrouter_liquid" && item.suggestion);
+    results.find((item) => item.suggestion);
   if (accepted?.suggestion) {
     return {
       state: "ok",
@@ -164,9 +169,13 @@ async function aiSuggestion(payload: PoolRequest, country: string | null): Promi
       attempts,
       fanout: "Promise.allSettled",
       groq_result_preferred: true,
-      openrouter_liquid_catalog_price_zero_verified: true,
+      openrouter_catalog_price_zero_models_verified: PROVIDERS.filter((p) => p.catalogPriceZeroVerified).map((p) => p.model),
+      requested_unavailable_models: REQUESTED_UNAVAILABLE_MODELS,
       selected_provider_catalog_price_zero_verified: accepted.provider.catalogPriceZeroVerified,
       cost_zero_guaranteed: false,
+      availability_guaranteed: false,
+      permanent_websocket_runtime: false,
+      continuous_24x7_proven: false,
       deterministic_copy_remains_canonical: true,
       publication_claimed: false,
     };
@@ -178,7 +187,11 @@ async function aiSuggestion(payload: PoolRequest, country: string | null): Promi
     attempts,
     fanout: "Promise.allSettled",
     groq_result_preferred: true,
+    requested_unavailable_models: REQUESTED_UNAVAILABLE_MODELS,
     cost_zero_guaranteed: false,
+    availability_guaranteed: false,
+    permanent_websocket_runtime: false,
+    continuous_24x7_proven: false,
     deterministic_copy_remains_canonical: true,
     publication_claimed: false,
   };
@@ -188,14 +201,19 @@ Deno.serve(async (request: Request): Promise<Response> => {
   if (request.method === "GET") {
     return response({
       version: VERSAO_COPILOT,
+      matrix_version: MATRIX_VERSION,
       policy_version: POLICY_VERSION,
       activation_profile: ACTIVATION_PROFILE,
       mode: "factual_product_assistance_with_optional_ai_preview",
       ai_pool_priority: PROVIDERS.map((p) => p.key),
       ai_pool_models: PROVIDERS.map((p) => ({ provider: p.key, model: p.model, catalog_price_zero_verified: p.catalogPriceZeroVerified })),
+      requested_unavailable_models: REQUESTED_UNAVAILABLE_MODELS,
       ai_pool_fanout: "Promise.allSettled",
       groq_result_preferred: true,
       cost_zero_guaranteed: false,
+      availability_guaranteed: false,
+      permanent_websocket_runtime: false,
+      websocket_reconnect_loop_installed: false,
       ai_pool_key_based: true,
       keyless_service: false,
       deterministic_copy_remains_canonical: true,
@@ -211,7 +229,8 @@ Deno.serve(async (request: Request): Promise<Response> => {
   const suppliedInternalSecret = request.headers.get("x-nexus-v3200-secret") ?? "";
   const authenticated = await sameSecret(suppliedInternalSecret, START_SECRET) ||
     await sameSecret(suppliedInternalSecret, AI_PREVIEW_SECRET) ||
-    await sameSecret(suppliedInternalSecret, V3755_COPY_SECRET);
+    await sameSecret(suppliedInternalSecret, V3755_COPY_SECRET) ||
+    await sameSecret(suppliedInternalSecret, V4310_COPY_SECRET);
   if (!authenticated) return response({ error: "unauthorized" }, 401);
   const contentLength = Number(request.headers.get("content-length") ?? "0");
   if (Number.isFinite(contentLength) && contentLength > 65_536) return response({ error: "payload_too_large" }, 413);
@@ -246,6 +265,7 @@ Deno.serve(async (request: Request): Promise<Response> => {
     return response({
       ...result,
       ai_pool: pool,
+      matrix_version: MATRIX_VERSION,
       policy_version: POLICY_VERSION,
       activation_profile: ACTIVATION_PROFILE,
       geo_source: payload.country ? "signed_payload" : edgeCountry.source,

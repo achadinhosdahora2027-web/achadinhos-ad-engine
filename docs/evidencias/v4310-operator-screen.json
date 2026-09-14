@@ -1,0 +1,121 @@
+{
+  "schema_version": "v4310-operator-screen-1",
+  "verified_at": "2026-09-14T04:54:06.059825+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "operator_status": {
+    "edge": {
+      "fanout": "Promise.allSettled",
+      "selected_provider": "groq",
+      "copywriter_version": 33,
+      "continuous_24x7_proven": false,
+      "permanent_websocket_runtime": false,
+      "bounded_signal_ingress_version": 3
+    },
+    "claims": {
+      "sub_1ms_guaranteed": false,
+      "sub_50ms_guaranteed": false,
+      "publication_performed": false,
+      "affiliate_click_performed": false,
+      "commission_lossless_guaranteed": false
+    },
+    "models": [
+      {
+        "model_id": "google/gemma-2-9b-it:free",
+        "provider": "openrouter",
+        "catalog_present": false,
+        "enabled_in_broker": false,
+        "cost_zero_guaranteed": false
+      },
+      {
+        "model_id": "google/gemma-4-26b-a4b-it:free",
+        "provider": "openrouter",
+        "catalog_present": true,
+        "enabled_in_broker": true,
+        "cost_zero_guaranteed": false
+      },
+      {
+        "model_id": "liquid/lfm-2.5-2.6b:free",
+        "provider": "openrouter",
+        "catalog_present": true,
+        "enabled_in_broker": true,
+        "cost_zero_guaranteed": false
+      },
+      {
+        "model_id": "meta-llama/llama-3-8b-instruct:free",
+        "provider": "openrouter",
+        "catalog_present": false,
+        "enabled_in_broker": false,
+        "cost_zero_guaranteed": false
+      },
+      {
+        "model_id": "nvidia/nemotron-3.5-lightning:free",
+        "provider": "openrouter",
+        "catalog_present": true,
+        "enabled_in_broker": true,
+        "cost_zero_guaranteed": false
+      }
+    ],
+    "version": "v4310.0",
+    "database": {
+      "signals": 0,
+      "vectors": 11568,
+      "keywords": 17605,
+      "outbox_rows": 0,
+      "server_version": "17.6",
+      "signal_ledger_persistence": "p",
+      "signal_outbox_persistence": "p"
+    },
+    "telegram": {
+      "job_60": {
+        "active": true,
+        "schedule": "10 seconds"
+      },
+      "pacing": "max 3/min and 40/hour per destination",
+      "channel_outbox_persistence": "u"
+    },
+    "tracking": [
+      {
+        "network": "aliexpress",
+        "verified": true,
+        "selector_mode": "service_role_v3310_resolver",
+        "protected_go_alignment_verified": false
+      },
+      {
+        "network": "amazon",
+        "verified": true,
+        "selector_mode": "service_role_v3320_resolver",
+        "protected_go_alignment_verified": false
+      },
+      {
+        "network": "mercadolivre",
+        "verified": true,
+        "selector_mode": "service_role_v360_resolver",
+        "protected_go_alignment_verified": false
+      },
+      {
+        "network": "shein",
+        "verified": true,
+        "selector_mode": "service_role_v3330_resolver",
+        "protected_go_alignment_verified": false
+      },
+      {
+        "network": "shopee",
+        "verified": true,
+        "selector_mode": "indexed_encrypted_offer_metadata",
+        "protected_go_alignment_verified": false
+      }
+    ],
+    "readiness": {
+      "reasons": [
+        "no durable WebSocket supervisor",
+        "no verified KV fallback",
+        "immutable go.js tracking alignment not proven"
+      ],
+      "safe_bounded_core_ready": true,
+      "requested_full_global_readiness": false
+    },
+    "observed_at": "2026-09-14T04:54:05.921993+00:00"
+  },
+  "secrets_recorded": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "v4310-complete-test-suite-1",
+  "verified_at": "2026-09-14T04:54:32.520614+00:00",
+  "result": "pass",
+  "npm_ci_audit_vulnerabilities": 0,
+  "npm_test_exit_code": 0,
+  "test_files_executed": 27,
+  "v4310_test": "pass",
+  "esbuild": {
+    "copywriter": {
+      "result": "pass",
+      "sha256": "af03e493552f9be8e00c1a4134d03a1830d84b3e5cb1801e295ef222dc568694",
+      "bytes": 23536
+    },
+    "bounded_signal_ingress": {
+      "result": "pass",
+      "sha256": "6dbc25f073ae64e7a16efba36f7e2e7973075e0925ab1f91264bb0698535e0b5",
+      "bytes": 10092
+    }
+  },
+  "ad_binding_local_handler_test": "pop=bound;sb=bound",
+  "affiliate_route_network_request_performed": false,
+  "affiliate_click_performed": false,
+  "secrets_recorded": false
+}

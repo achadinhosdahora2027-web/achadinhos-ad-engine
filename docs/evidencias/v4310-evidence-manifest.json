@@ -1,0 +1,138 @@
+{
+  "schema_version": "v4310-evidence-manifest-1",
+  "generated_at": "2026-09-14T04:56:15.590042+00:00",
+  "release": "v4310.0",
+  "base_commit": "484b4101df0ed9fb3e1c5cf96ff083da729f4525",
+  "master_project_ref": "etbxbaaaspdcoiakifbb",
+  "database_migrations_installed": 2,
+  "copywriter_deployed_version": 33,
+  "bounded_signal_ingress_deployed_version": 3,
+  "safe_bounded_core_ready": true,
+  "requested_full_global_readiness": false,
+  "permanent_websocket_runtime": false,
+  "kv_404_fallback_enabled": false,
+  "cloudflare_pages_production_deployed": false,
+  "replay_gateways_http_200": 14,
+  "files": [
+    {
+      "path": "RELATORIO_FINAL_V4310.md",
+      "bytes": 7674,
+      "sha256": "a4f086427331548d34e2b6073a3cab582d700d90bd8d765b9b2fd4ca207c6bcc"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1672,
+      "sha256": "4d4aecc9fd8748a75563120f74d3339cf61c53a5ad96fd8b26390b7633512ed9"
+    },
+    {
+      "path": "supabase/functions/nexus-copywriter-v3200/index.ts",
+      "bytes": 14128,
+      "sha256": "c6a54e106dd8d090bf395426297957ed0920863b3f8c75004d8e5a13d001e2ec"
+    },
+    {
+      "path": "supabase/functions/nexus-passive-yield-v4310/index.ts",
+      "bytes": 7170,
+      "sha256": "d11df08c192a4c7f2fbfbdc04ea7e927a3907827d375133fe3628713ff523b5b"
+    },
+    {
+      "path": "supabase/functions/nexus-passive-yield-v4310/aho.ts",
+      "bytes": 2395,
+      "sha256": "2ab18201815b7f10ed5c931f48bc453bde2fabe958019ca16c4733c819f3db99"
+    },
+    {
+      "path": "supabase/migrations/supabase_v4310_passive_yield_core.sql",
+      "bytes": 23485,
+      "sha256": "6d126c0a74773bd88ddafd9034b7f3a928a07c3bdedbe3e0e2ae6f7cc3ddd69b"
+    },
+    {
+      "path": "supabase/migrations/supabase_v4310_runtime_verification.sql",
+      "bytes": 7039,
+      "sha256": "75509243f064059000b2b21873e679f9468854a9760d68306c719ee36450da8f"
+    },
+    {
+      "path": "supabase/migrations/rollback_v4310_passive_yield_core.sql",
+      "bytes": 2198,
+      "sha256": "c6e66e3e252fa71281067692f021e73d5d44d17f640e1c474dca2e537f373d92"
+    },
+    {
+      "path": "tests/v4310-passive-yield.test.js",
+      "bytes": 5314,
+      "sha256": "7f111065006469aabf75f0ca81e750bb963167b93e0989a414bea11634d6e78f"
+    },
+    {
+      "path": "docs/evidencias/v4310-cloudflare-readonly-verification.json",
+      "bytes": 622,
+      "sha256": "5aaf2d4e7fb4bc26b36d84c8bb986eae2306e0d69c0e2f4fb260935dbce9f6d1"
+    },
+    {
+      "path": "docs/evidencias/v4310-complete-test-suite.json",
+      "bytes": 765,
+      "sha256": "2677d01dadc44b3970aece2fa88652950d2e53d3abb0c85813d80b24c5906e09"
+    },
+    {
+      "path": "docs/evidencias/v4310-definitive-production-audit.json",
+      "bytes": 5049,
+      "sha256": "834375b7b175b883a91ec46309f0a27e78d7e5622c691883e40510dc1aa29f08"
+    },
+    {
+      "path": "docs/evidencias/v4310-edge-deployment.json",
+      "bytes": 847,
+      "sha256": "744a16216c8ac40a77484829976ef8e1c6574be9141b12a367276523b7ed3053"
+    },
+    {
+      "path": "docs/evidencias/v4310-edge-runtime-proof.json",
+      "bytes": 1637,
+      "sha256": "b8602616cb0e544c9cf81b63d2b7cec6ffdac8d6a5f93f8e84423342f4998cf9"
+    },
+    {
+      "path": "docs/evidencias/v4310-master-preflight.json",
+      "bytes": 7990,
+      "sha256": "b30110629de7f677e2827e2e7ebeb182a20a25eb50c16c4e810844a16e7166a4"
+    },
+    {
+      "path": "docs/evidencias/v4310-openrouter-catalog-audit.json",
+      "bytes": 1385,
+      "sha256": "cae4df4b087e275401040130659874152fa8c14d6ddce889e1e2eff2a6e69f1a"
+    },
+    {
+      "path": "docs/evidencias/v4310-operator-screen.json",
+      "bytes": 3482,
+      "sha256": "bd6be0e1953bd1f145740ec4e4d8eca91ac9a63462d8bf5d89839d6a359f3afe"
+    },
+    {
+      "path": "docs/evidencias/v4310-production-install.json",
+      "bytes": 926,
+      "sha256": "ea55b657db3ab730538d397e377fa82740ac6a1a5ed859e151ab5d44aad650c3"
+    },
+    {
+      "path": "docs/evidencias/v4310-route-and-queue-proof.json",
+      "bytes": 1016,
+      "sha256": "3a2c6ff534e600a72b30fe20fdf5d9330099454889719c1c1c6a3e6b5fa11ccd"
+    },
+    {
+      "path": "docs/evidencias/v4310-runtime-reconciliation.json",
+      "bytes": 628,
+      "sha256": "e2a11bd80e0cc3d1b7d87a33e3da31d003e4e817ab081fb1af16951fa7ab4931"
+    },
+    {
+      "path": "docs/evidencias/v4310-secret-scan.json",
+      "bytes": 422,
+      "sha256": "d05a8eb26c0c6fa5c7326e9ecd5be891bd6bd88653e19d4f317659ba2abcbaf6"
+    },
+    {
+      "path": "docs/evidencias/v4310-selector-benchmark.json",
+      "bytes": 708,
+      "sha256": "7ffa80a218344634ae221a604d5124d249b00d77c7c793213a58ba21d1adac9f"
+    },
+    {
+      "path": "docs/evidencias/v4310-sql-dryrun.json",
+      "bytes": 579,
+      "sha256": "a90afe0dd8e26c60b175c68aabfbc0ac56d7ae0f883a68260f682123afa4133c"
+    }
+  ],
+  "protected_checksums": {
+    "api/ads/go.js": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "edge/jetstream/compose.ts": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0"
+  },
+  "secrets_recorded": false
+}

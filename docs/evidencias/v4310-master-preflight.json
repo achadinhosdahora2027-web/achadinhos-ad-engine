@@ -1,0 +1,350 @@
+{
+  "schema_version": "v4310-master-preflight-1",
+  "verified_at": "2026-09-14T04:36:44.220119+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "physical": {
+    "server_version": "17.6",
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "vectors": 11568,
+    "durable_outbox_persistence": "p",
+    "telegram_outbox_persistence": "u",
+    "unexpected_subminute": 0,
+    "legacy_pollers_active": 0,
+    "job60": true,
+    "pacing": true,
+    "hnsw_indexes": 3,
+    "aliexpress_vault_rows": 1,
+    "amazon_vault_rows": 1,
+    "shein_vault_rows": 1,
+    "shopee_rows": 1201,
+    "replay_triggers": 2,
+    "replay_outbox_persistence": "p"
+  },
+  "cron_inventory": [
+    {
+      "jobid": 1,
+      "jobname": "nexus-cache-sweep-hourly",
+      "schedule": "0 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 2,
+      "jobname": "nexus-mv-offers-madrugada",
+      "schedule": "30 6 * * *",
+      "active": true
+    },
+    {
+      "jobid": 3,
+      "jobname": "nexus-orphans-4h",
+      "schedule": "20 */4 * * *",
+      "active": true
+    },
+    {
+      "jobid": 4,
+      "jobname": "nexus-fx-50min",
+      "schedule": "50 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 5,
+      "jobname": "nexus-heartbeat-4h",
+      "schedule": "40 */4 * * *",
+      "active": true
+    },
+    {
+      "jobid": 10,
+      "jobname": "nexus-social-traffic-central",
+      "schedule": "10 */4 * * *",
+      "active": true
+    },
+    {
+      "jobid": 11,
+      "jobname": "nexus-telegram-c2-ofertas",
+      "schedule": "30 8 * * *",
+      "active": true
+    },
+    {
+      "jobid": 12,
+      "jobname": "nexus-galaxy-rail-status",
+      "schedule": "15 12 * * *",
+      "active": true
+    },
+    {
+      "jobid": 14,
+      "jobname": "nexus-keyword-expansion",
+      "schedule": "0 3 * * *",
+      "active": true
+    },
+    {
+      "jobid": 15,
+      "jobname": "nexus-stream-keepalive",
+      "schedule": "10 seconds",
+      "active": false
+    },
+    {
+      "jobid": 16,
+      "jobname": "nexus-stream-keepalive-60s",
+      "schedule": "* * * * *",
+      "active": false
+    },
+    {
+      "jobid": 17,
+      "jobname": "nexus-raiox-c1",
+      "schedule": "0 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 18,
+      "jobname": "nexus-stream-sentinel",
+      "schedule": "*/2 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 21,
+      "jobname": "nexus-hunt-retry-sweeper",
+      "schedule": "*/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 22,
+      "jobname": "nexus-demand-intel-refresh",
+      "schedule": "5 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 23,
+      "jobname": "nexus-oferta-indexnow-push",
+      "schedule": "*/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 24,
+      "jobname": "nexus-seo-polymorphic-enrich",
+      "schedule": "30 3 * * *",
+      "active": true
+    },
+    {
+      "jobid": 27,
+      "jobname": "nexus-hyper-core",
+      "schedule": "25 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 28,
+      "jobname": "nexus-cj-rail",
+      "schedule": "40 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 29,
+      "jobname": "nexus-vacuum-analyze-6h",
+      "schedule": "0 */6 * * *",
+      "active": true
+    },
+    {
+      "jobid": 30,
+      "jobname": "nexus-cluster-conversions",
+      "schedule": "30 3 1 * *",
+      "active": true
+    },
+    {
+      "jobid": 31,
+      "jobname": "v26-coupon-pulse-hourly",
+      "schedule": "10 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 32,
+      "jobname": "v26-growth-rollup-hourly",
+      "schedule": "20 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 33,
+      "jobname": "v26-indexnow-daily",
+      "schedule": "35 3 * * *",
+      "active": false
+    },
+    {
+      "jobid": 34,
+      "jobname": "v27-financial-pulse-hourly",
+      "schedule": "30 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 35,
+      "jobname": "v27-queue-drain-10min",
+      "schedule": "*/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 36,
+      "jobname": "v99-galaxy-wave-sweep-2min",
+      "schedule": "*/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 38,
+      "jobname": "v102-adsterra-watch",
+      "schedule": "*/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 40,
+      "jobname": "v110-satellite-pull",
+      "schedule": "*/15 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 41,
+      "jobname": "v112-telegram-flush-10s",
+      "schedule": "10 seconds",
+      "active": false
+    },
+    {
+      "jobid": 42,
+      "jobname": "v165-global-balance-hourly",
+      "schedule": "0 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 43,
+      "jobname": "v165-global-balance-close",
+      "schedule": "5 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 44,
+      "jobname": "v185-pushlog-reconcile",
+      "schedule": "*/5 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 45,
+      "jobname": "v215-guard-rotas-hourly",
+      "schedule": "15 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 46,
+      "jobname": "v240-purga-estoque-24h",
+      "schedule": "25 3 * * *",
+      "active": true
+    },
+    {
+      "jobid": 47,
+      "jobname": "v255-guard-tags",
+      "schedule": "*/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 48,
+      "jobname": "v255-guard-tags-close",
+      "schedule": "3-59/10 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 49,
+      "jobname": "v275-guard-receita",
+      "schedule": "40 */3 * * *",
+      "active": true
+    },
+    {
+      "jobid": 59,
+      "jobname": "v245-financial-traffic-audit-6hours",
+      "schedule": "0 */6 * * *",
+      "active": true
+    },
+    {
+      "jobid": 60,
+      "jobname": "v360-tg-flush-10s",
+      "schedule": "10 seconds",
+      "active": true
+    },
+    {
+      "jobid": 61,
+      "jobname": "v365-yield-hourly",
+      "schedule": "7 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 62,
+      "jobname": "v365-yield-consume-2min",
+      "schedule": "*/2 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 63,
+      "jobname": "v380-embed-cycle-2min",
+      "schedule": "*/2 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 64,
+      "jobname": "v385-nostr-ingest-2min",
+      "schedule": "*/2 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 65,
+      "jobname": "v390-compose-redrain-5min",
+      "schedule": "*/5 * * * *",
+      "active": false
+    },
+    {
+      "jobid": 70,
+      "jobname": "v3010-indexnow-durable-10min",
+      "schedule": "*/10 * * * *",
+      "active": true
+    },
+    {
+      "jobid": 71,
+      "jobname": "v3010-trends-hourly",
+      "schedule": "17 * * * *",
+      "active": true
+    }
+  ],
+  "provider_policy": [
+    {
+      "provider": "groq",
+      "model_id": "openai/gpt-oss-20b",
+      "enabled": true,
+      "catalog_price_zero_verified": false,
+      "cost_zero_guaranteed": false
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "google/gemma-4-26b-a4b-it:free",
+      "enabled": true,
+      "catalog_price_zero_verified": true,
+      "cost_zero_guaranteed": false
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "liquid/lfm-2.5-2.6b:free",
+      "enabled": true,
+      "catalog_price_zero_verified": true,
+      "cost_zero_guaranteed": false
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "enabled": true,
+      "catalog_price_zero_verified": true,
+      "cost_zero_guaranteed": false
+    }
+  ],
+  "hnsw_historical_benchmark": {
+    "source": "docs/evidencias/v3500-hnsw-benchmark.json",
+    "p50_ms": 0.429,
+    "scope": "server-side warm repeated nearest-neighbor query; end-to-end not measured",
+    "sub_1ms_guaranteed": false
+  },
+  "permanent_edge_websocket_supported": false,
+  "direct_affiliate_fallback_authorized": false,
+  "cloudflare_pages_deployment_planned": false,
+  "secrets_recorded": false
+}

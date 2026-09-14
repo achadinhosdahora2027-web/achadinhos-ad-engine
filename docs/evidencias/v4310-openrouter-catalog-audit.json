@@ -1,0 +1,48 @@
+{
+  "schema_version": "v4310-openrouter-catalog-audit-1",
+  "verified_at": "2026-09-14T04:36:53.929650+00:00",
+  "source": "https://openrouter.ai/api/v1/models",
+  "catalog_models_observed": 445,
+  "result": "pass",
+  "models": [
+    {
+      "model_id": "meta-llama/llama-3-8b-instruct:free",
+      "present": false,
+      "catalog_prompt_price": null,
+      "catalog_completion_price": null,
+      "eligible_for_activation": false
+    },
+    {
+      "model_id": "google/gemma-2-9b-it:free",
+      "present": false,
+      "catalog_prompt_price": null,
+      "catalog_completion_price": null,
+      "eligible_for_activation": false
+    },
+    {
+      "model_id": "liquid/lfm-2.5-2.6b:free",
+      "present": true,
+      "catalog_prompt_price": "0",
+      "catalog_completion_price": "0",
+      "eligible_for_activation": true
+    },
+    {
+      "model_id": "google/gemma-4-26b-a4b-it:free",
+      "present": true,
+      "catalog_prompt_price": "0",
+      "catalog_completion_price": "0",
+      "eligible_for_activation": true
+    },
+    {
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "present": true,
+      "catalog_prompt_price": "0",
+      "catalog_completion_price": "0",
+      "eligible_for_activation": true
+    }
+  ],
+  "requested_absent_models_activated": false,
+  "cost_zero_guaranteed": false,
+  "availability_guaranteed": false,
+  "secrets_recorded": false
+}

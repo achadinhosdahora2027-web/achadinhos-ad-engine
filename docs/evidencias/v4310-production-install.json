@@ -1,0 +1,30 @@
+{
+  "schema_version": "v4310-production-install-1",
+  "verified_at": "2026-09-14T04:48:15.945455+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "migration_sha256": "6d126c0a74773bd88ddafd9034b7f3a928a07c3bdedbe3e0e2ae6f7cc3ddd69b",
+  "migration_installed": true,
+  "rollback_sha256": "c6e66e3e252fa71281067692f021e73d5d44d17f640e1c474dca2e537f373d92",
+  "rollback_transaction_tested": true,
+  "physical": {
+    "server_version": "17.6",
+    "ledger_persistence": "p",
+    "outbox_persistence": "p",
+    "tracking_locks": 5,
+    "enabled_catalog_models": 3,
+    "absent_models_enabled": 0,
+    "signals": 0,
+    "outbox_rows": 0,
+    "legacy_pollers_active": 0,
+    "job60": true,
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "vectors": 11568,
+    "shopee": 1201
+  },
+  "protected_placements_modified": false,
+  "cloudflare_pages_deployed": false,
+  "secrets_recorded": false
+}

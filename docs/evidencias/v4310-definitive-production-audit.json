@@ -1,0 +1,165 @@
+{
+  "schema_version": "v4310-definitive-production-audit-1",
+  "verified_at": "2026-09-14T04:55:03.818455+00:00",
+  "result": "pass_safe_bounded_core",
+  "full_requested_global_readiness": false,
+  "database": {
+    "server_version": "17.6",
+    "signal_ledger": "p",
+    "signal_outbox": "p",
+    "telegram_outbox": "u",
+    "signals": 0,
+    "signal_outbox_rows": 0,
+    "tracking_locks": 5,
+    "go_alignments_verified": 0,
+    "catalog_models_enabled": 3,
+    "absent_models_enabled": 0,
+    "signal_triggers": 2,
+    "unexpected_subminute": 0,
+    "legacy_pollers_active": 0,
+    "job60": true,
+    "pacing": true,
+    "telegram_routes": 2,
+    "ads": 14301,
+    "active_ads": 12165,
+    "keywords": 17605,
+    "vectors": 11568,
+    "shopee": 1201,
+    "hnsw_indexes": 3,
+    "selector_private": true,
+    "ingress_rpc_private": true
+  },
+  "selector": {
+    "route_matrix": {
+      "amazon_ready": true,
+      "aliexpress_ready": true,
+      "shein_ready": true,
+      "mercado_ready": true,
+      "shopee_metadata_ready": true,
+      "shopee_url_not_decrypted": true,
+      "us_currency": true,
+      "gb_currency": true,
+      "eu_currency": true,
+      "conflict_fail_closed": true
+    },
+    "benchmark": {
+      "samples": 250,
+      "p50_ms": 0.599,
+      "p95_ms": 0.657,
+      "p99_ms": 0.916,
+      "max_ms": 20.753,
+      "end_to_end_measured": false,
+      "sub_1ms_guaranteed": false
+    },
+    "protected_go_alignment_verified": false,
+    "direct_redirect_performed": false
+  },
+  "edge": {
+    "schema_version": "v4310-edge-runtime-proof-1",
+    "verified_at": "2026-09-14T04:50:49.182078+00:00",
+    "result": "pass",
+    "copywriter": {
+      "version": 33,
+      "get_http": 200,
+      "unauthorized_post_http": 401,
+      "authenticated_post_http": 200,
+      "matrix_version": "v4310.0",
+      "fanout": "Promise.allSettled",
+      "selected_provider": "groq",
+      "provider_states": {
+        "groq": "ok",
+        "openrouter_liquid": "unsafe_shape_rejected",
+        "openrouter_gemma4": "rejected",
+        "openrouter_nemotron": "unsafe_shape_rejected"
+      },
+      "provider_http": {
+        "groq": 200,
+        "openrouter_liquid": 200,
+        "openrouter_gemma4": 429,
+        "openrouter_nemotron": 200
+      },
+      "disclosure_own_line_before_link": true,
+      "generated_copy_recorded": false
+    },
+    "bounded_signal_ingress": {
+      "version": 3,
+      "get_http": 200,
+      "unauthorized_post_http": 401,
+      "aho_dryrun_http": 200,
+      "aho_matched_events": 1,
+      "keyword_mappings": 17605,
+      "database_writes": false,
+      "route_http": 200,
+      "route_state": "ok",
+      "route_currency_context": "BRL",
+      "route_material_returned": true,
+      "route_material_recorded": false
+    },
+    "database_after_dryrun": {
+      "signals": 0,
+      "outbox": 0
+    },
+    "replay_gateways_http_200": 14,
+    "permanent_websocket_runtime": false,
+    "background_reconnect_loop": false,
+    "continuous_24x7_proven": false,
+    "kv_404_fallback_enabled": false,
+    "sub_50ms_guaranteed": false,
+    "commission_lossless_guaranteed": false,
+    "publication_performed": false,
+    "affiliate_click_performed": false,
+    "cloudflare_pages_deployed": false,
+    "secrets_recorded": false
+  },
+  "operator_readiness": {
+    "reasons": [
+      "no durable WebSocket supervisor",
+      "no verified KV fallback",
+      "immutable go.js tracking alignment not proven"
+    ],
+    "safe_bounded_core_ready": true,
+    "requested_full_global_readiness": false
+  },
+  "cloudflare": {
+    "latest_production_deployment": {
+      "id": "880b9d8b-a19a-4b6c-a083-5fac00cc3282",
+      "created_on": "2026-09-13T15:07:55.163378Z",
+      "modified_on": "2026-09-13T15:07:57.118379Z",
+      "environment": "production",
+      "stage_status": "success"
+    },
+    "production_deployments_by_v4310": 0,
+    "direct_uploads_by_v4310": 0,
+    "protected_placements_modified": false
+  },
+  "protected_sources": {
+    "api_ads_go_sha256": "e77aab2895e8a194542866bf7c9e997a0fe37138638ce57125c8536009827716",
+    "edge_jetstream_compose_sha256": "d99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0",
+    "go_js_modified": false,
+    "compose_ts_modified": false,
+    "ad_binding_local_handler_test": "pop=bound;sb=bound"
+  },
+  "hnsw_historical_observation": {
+    "rows": 11568,
+    "p50_ms": 0.429,
+    "source": "v3500 bounded warm server-side benchmark",
+    "end_to_end_measured": false,
+    "sub_1ms_guaranteed": false
+  },
+  "claims": {
+    "edge_v940_assigned": false,
+    "actual_copywriter_edge_version": 33,
+    "actual_signal_ingress_edge_version": 3,
+    "permanent_websocket_runtime": false,
+    "continuous_24x7_proven": false,
+    "all_free_models_accepted": false,
+    "kv_404_fallback_enabled": false,
+    "sub_50ms_guaranteed": false,
+    "commission_lossless_guaranteed": false,
+    "fleet_wide_v4310_ingress_deployed": false,
+    "replay_gateways_http_200": 14,
+    "publication_performed": false,
+    "affiliate_click_performed": false
+  },
+  "secrets_recorded": false
+}

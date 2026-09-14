@@ -1,0 +1,13 @@
+{
+  "schema_version": "v4310-sql-dryrun-1",
+  "verified_at": "2026-09-14T04:53:54.040628+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "server_version": "17.6",
+  "migration_sha256": "6d126c0a74773bd88ddafd9034b7f3a928a07c3bdedbe3e0e2ae6f7cc3ddd69b",
+  "migration_predeploy_transaction_rolled_back": true,
+  "migration_predeploy_verified_at": "2026-09-14T04:46:00.328712+00:00",
+  "rollback_sha256": "c6e66e3e252fa71281067692f021e73d5d44d17f640e1c474dca2e537f373d92",
+  "rollback_postinstall_transaction_rolled_back": true,
+  "secrets_recorded": false
+}

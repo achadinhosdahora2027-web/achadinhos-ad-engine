@@ -1,0 +1,18 @@
+{
+  "schema_version": "v4310-runtime-reconciliation-1",
+  "verified_at": "2026-09-14T04:53:50.013403+00:00",
+  "result": "pass",
+  "migration_sha256": "75509243f064059000b2b21873e679f9468854a9760d68306c719ee36450da8f",
+  "dryrun_transaction_rolled_back": true,
+  "installed": true,
+  "capabilities_enabled": 5,
+  "capabilities_disabled": 3,
+  "copywriter_version": 33,
+  "bounded_signal_ingress_version": 3,
+  "liquid_output_accepted": false,
+  "permanent_websocket_runtime": false,
+  "kv_404_fallback_enabled": false,
+  "protected_go_alignment_verified": false,
+  "continuous_24x7_proven": false,
+  "secrets_recorded": false
+}

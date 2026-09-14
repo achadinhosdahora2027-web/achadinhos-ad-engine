@@ -1,0 +1,36 @@
+{
+  "schema_version": "v4310-route-and-queue-proof-1",
+  "verified_at": "2026-09-14T04:51:45.322141+00:00",
+  "result": "pass",
+  "routes": {
+    "amazon_ready": true,
+    "aliexpress_ready": true,
+    "shein_ready": true,
+    "mercado_ready": true,
+    "shopee_metadata_ready": true,
+    "shopee_url_not_decrypted": true,
+    "us_currency": true,
+    "gb_currency": true,
+    "eu_currency": true,
+    "conflict_fail_closed": true
+  },
+  "infrastructure": {
+    "tracking_locks": 5,
+    "go_alignments_verified": 0,
+    "ledger_persistence": "p",
+    "signal_outbox_persistence": "p",
+    "telegram_outbox_persistence": "u",
+    "telegram_routes": 2,
+    "pacing": true,
+    "unexpected_subminute": 0,
+    "legacy_pollers_active": 0,
+    "job60": true
+  },
+  "affiliate_urls_recorded": false,
+  "tracking_identifiers_recorded": false,
+  "protected_go_alignment_verified": false,
+  "direct_redirect_performed": false,
+  "affiliate_click_performed": false,
+  "sub_1ms_guaranteed": false,
+  "secrets_recorded": false
+}

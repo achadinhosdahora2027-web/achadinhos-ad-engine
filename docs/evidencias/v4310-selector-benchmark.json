@@ -1,0 +1,21 @@
+{
+  "schema_version": "v4310-selector-benchmark-1",
+  "verified_at": "2026-09-14T04:51:13.598432+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "server_side_samples": 250,
+  "route": "BR context -> AliExpress service-role resolver",
+  "raw_header_shape": "CF-IPCountry JSONB key",
+  "p50_ms": 0.599,
+  "p95_ms": 0.657,
+  "p99_ms": 0.916,
+  "max_ms": 20.753,
+  "transaction_rolled_back": true,
+  "end_to_end_latency_measured": false,
+  "postgrest_network_latency_measured": false,
+  "sub_1ms_observed_p50": true,
+  "sub_1ms_guaranteed": false,
+  "table_scan_claimed": false,
+  "lookup_shape": "direct JSON key access plus indexed singleton vault lookup",
+  "secrets_recorded": false
+}

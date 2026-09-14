@@ -1,0 +1,25 @@
+{
+  "schema_version": "v4310-edge-deployment-1",
+  "verified_at": "2026-09-14T04:50:37.934461+00:00",
+  "result": "pass",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "secrets_http": 201,
+  "copywriter": {
+    "deploy_http": 201,
+    "version": 33,
+    "verify_jwt": false,
+    "source_sha256": "c6a54e106dd8d090bf395426297957ed0920863b3f8c75004d8e5a13d001e2ec"
+  },
+  "bounded_signal_ingress": {
+    "deploy_http": 201,
+    "version": 3,
+    "verify_jwt": false,
+    "source_sha256": "d11df08c192a4c7f2fbfbdc04ea7e927a3907827d375133fe3628713ff523b5b",
+    "aho_sha256": "2ab18201815b7f10ed5c931f48bc453bde2fabe958019ca16c4733c819f3db99"
+  },
+  "permanent_websocket_runtime_deployed": false,
+  "background_reconnect_loop_deployed": false,
+  "cloudflare_pages_deployed": false,
+  "protected_placements_modified": false,
+  "secrets_recorded": false
+}
