@@ -46,4 +46,28 @@ assert.strictEqual(sha('api/ads/go.js'), 'e77aab2895e8a194542866bf7c9e997a0fe371
 assert.strictEqual(sha('edge/jetstream/compose.ts'), 'd99ce7b5ca412102659f44d6d58f8f84f1b111f0f08865f208f13fd12cc730d0');
 assert.strictEqual(sha('correcoes/clique-comprovado/api/ads/go.aquitem.js'), '7ad88bb3133169bc16ce005655829375faf5d85270e4676e10134cf2fd2e80bc');
 assert.strictEqual(sha('correcoes/clique-comprovado/api/ads/go.js'), '7da009550dcbad0d86b297f58ed9520e239c15d0f88a84d853ec9c703b000e9c');
+const discoveryPath = path.join(root, 'docs/evidencias/v3380-cj-global-discovery.json');
+if (fs.existsSync(discoveryPath)) {
+  const discovery = JSON.parse(fs.readFileSync(discoveryPath, 'utf8'));
+  assert.strictEqual(discovery.delta_countries_queried, 196);
+  assert.strictEqual(discovery.summary.countries_ok, 196);
+  assert.strictEqual(discovery.summary.countries_api_error, 0);
+  assert.strictEqual(discovery.summary.total_api_records, 84100);
+  assert.strictEqual(discovery.summary.protected_active_joined_travel_candidates, 1266);
+  assert.strictEqual(discovery.summary.countries_with_protected_candidates, 74);
+  assert.strictEqual(discovery.summary.country_target_is_city_serviceability_proof, false);
+  assert.doesNotMatch(JSON.stringify(discovery), /https?:\/\//i);
+}
+const deployPath = path.join(root, 'docs/evidencias/v3380-cj-global-production-deploy.json');
+if (fs.existsSync(deployPath)) {
+  const deploy = JSON.parse(fs.readFileSync(deployPath, 'utf8'));
+  assert.strictEqual(deploy.result, 'pass');
+  assert.strictEqual(deploy.candidate_rows, 1266);
+  assert.strictEqual(deploy.hydration.sealed, true);
+  assert.strictEqual(deploy.hydration.bulk_routes_activated, 0);
+  assert.strictEqual(deploy.production_verification.checks.encrypted_rows, 1266);
+  assert.strictEqual(deploy.production_verification.checks.selected_fresh_routes, 19);
+  assert.strictEqual(deploy.production_verification.checks.keyword_rows, 17605);
+  assert.doesNotMatch(JSON.stringify(deploy), /https?:\/\//i);
+}
 console.log('v3380 encrypted CJ global backlog tests: PASS');

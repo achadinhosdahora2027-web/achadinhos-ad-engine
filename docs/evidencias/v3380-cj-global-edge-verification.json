@@ -1,0 +1,27 @@
+{
+  "affiliate_urls_requested_or_followed": false,
+  "checks": {
+    "affiliate_url_returned": false,
+    "authorized_http": 200,
+    "bulk_routes_activated": 0,
+    "click_recorded": false,
+    "countries_with_candidates": 74,
+    "encrypted_backlog_rows": 1266,
+    "get_geo_swap_deployed": false,
+    "get_http": 200,
+    "get_mode": "internal_encrypted_cj_global_backlog_status",
+    "get_public_redirect_deployed": false,
+    "get_sub_1ms_guaranteed": false,
+    "get_sub_50ms_fallback_guaranteed": false,
+    "impression_recorded": false,
+    "redirect_performed": false,
+    "sale_claimed": false,
+    "selected_policy_routes": 19,
+    "unauthorized_http": 401
+  },
+  "programmatic_clicks_performed": false,
+  "result": "pass",
+  "schema_version": "v3380-cj-global-edge-verification-1",
+  "secrets_recorded": false,
+  "verified_at": "2026-09-14T00:02:49.448200+00:00"
+}
