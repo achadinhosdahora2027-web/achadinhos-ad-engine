@@ -1,0 +1,596 @@
+{
+  "schema_version": "v3680-deployed-target-matrix-1",
+  "observed_at": "2026-09-14T01:32:50.112136+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "rows": [
+    {
+      "target_id": 1,
+      "category_key": "travel_hotels",
+      "country_code": "US",
+      "target_zone": "Orlando",
+      "zone_type": "city",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 2,
+      "category_key": "travel_hotels",
+      "country_code": "US",
+      "target_zone": "Miami",
+      "zone_type": "city",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 3,
+      "category_key": "travel_hotels",
+      "country_code": "US",
+      "target_zone": "Fredericksburg",
+      "zone_type": "city",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 4,
+      "category_key": "travel_hotels",
+      "country_code": "GB",
+      "target_zone": "London",
+      "zone_type": "city",
+      "primary_locale": "en-GB",
+      "country_native_currency": "GBP",
+      "yield_currency_context": "GBP",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "booking_uk"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 5,
+      "category_key": "travel_hotels",
+      "country_code": "ES",
+      "target_zone": "Madrid",
+      "zone_type": "city",
+      "primary_locale": "es-ES",
+      "country_native_currency": "EUR",
+      "yield_currency_context": "EUR",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 6,
+      "category_key": "travel_hotels",
+      "country_code": "ES",
+      "target_zone": "Barcelona",
+      "zone_type": "city",
+      "primary_locale": "es-ES",
+      "country_native_currency": "EUR",
+      "yield_currency_context": "EUR",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 7,
+      "category_key": "travel_hotels",
+      "country_code": "FR",
+      "target_zone": "Paris",
+      "zone_type": "city",
+      "primary_locale": "fr-FR",
+      "country_native_currency": "EUR",
+      "yield_currency_context": "EUR",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 8,
+      "category_key": "travel_hotels",
+      "country_code": "IT",
+      "target_zone": "Rome",
+      "zone_type": "city",
+      "primary_locale": "it-IT",
+      "country_native_currency": "EUR",
+      "yield_currency_context": "EUR",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 9,
+      "category_key": "travel_hotels",
+      "country_code": "IT",
+      "target_zone": "Milan",
+      "zone_type": "city",
+      "primary_locale": "it-IT",
+      "country_native_currency": "EUR",
+      "yield_currency_context": "EUR",
+      "requested_networks": [
+        "booking_uk"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [],
+      "fresh_route_metadata": false
+    },
+    {
+      "target_id": 10,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "Brooklyn",
+      "zone_type": "borough",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [],
+      "zone_evidence_scope": "operator_supplied_zone_not_catalog_cross_checked",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 11,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "Manhattan",
+      "zone_type": "borough",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [],
+      "zone_evidence_scope": "operator_supplied_zone_not_catalog_cross_checked",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 12,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "Queens",
+      "zone_type": "borough",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [],
+      "zone_evidence_scope": "operator_supplied_zone_not_catalog_cross_checked",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 13,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "Bronx",
+      "zone_type": "borough",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [],
+      "zone_evidence_scope": "operator_supplied_zone_not_catalog_cross_checked",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 14,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "Los Angeles",
+      "zone_type": "city",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 15,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "San Diego",
+      "zone_type": "city",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 16,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "US",
+      "target_zone": "San Jose",
+      "zone_type": "city",
+      "primary_locale": "en-US",
+      "country_native_currency": "USD",
+      "yield_currency_context": "USD",
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 17,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "CA",
+      "target_zone": "Toronto",
+      "zone_type": "city",
+      "primary_locale": "en-CA",
+      "country_native_currency": "CAD",
+      "yield_currency_context": null,
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 18,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "CA",
+      "target_zone": "Montreal",
+      "zone_type": "city",
+      "primary_locale": "fr-CA",
+      "country_native_currency": "CAD",
+      "yield_currency_context": null,
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 19,
+      "category_key": "supplements_gamer_tech",
+      "country_code": "CA",
+      "target_zone": "Ottawa",
+      "zone_type": "city",
+      "primary_locale": "en-CA",
+      "country_native_currency": "CAD",
+      "yield_currency_context": null,
+      "requested_networks": [
+        "ebay_epn",
+        "cj_backlog"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#ad",
+      "fresh_available_networks": [
+        "ebay_epn"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 20,
+      "category_key": "home_utilities_utensils",
+      "country_code": "BR",
+      "target_zone": "Grande São Paulo (bairros metropolitanos)",
+      "zone_type": "operator_aggregate",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "catalog_evidence_sources": [],
+      "zone_evidence_scope": "aggregate_phrase_only_no_neighborhood_list_supplied",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "mercadolivre",
+        "shopee"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 21,
+      "category_key": "home_utilities_utensils",
+      "country_code": "BR",
+      "target_zone": "Santos",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "mercadolivre",
+        "shopee"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 22,
+      "category_key": "home_utilities_utensils",
+      "country_code": "BR",
+      "target_zone": "Campinas",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "mercadolivre",
+        "shopee"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 23,
+      "category_key": "fashion_style_collectibles",
+      "country_code": "BR",
+      "target_zone": "Rio de Janeiro",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shein_br"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3340_travel_lexicon",
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "shein_br"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 24,
+      "category_key": "fashion_style_collectibles",
+      "country_code": "BR",
+      "target_zone": "Salvador",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shein_br"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "shein_br"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 25,
+      "category_key": "fashion_style_collectibles",
+      "country_code": "BR",
+      "target_zone": "Brasília",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shein_br"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "shein_br"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 26,
+      "category_key": "fashion_style_collectibles",
+      "country_code": "BR",
+      "target_zone": "Fortaleza",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shein_br"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "shein_br"
+      ],
+      "fresh_route_metadata": true
+    },
+    {
+      "target_id": 27,
+      "category_key": "fashion_style_collectibles",
+      "country_code": "BR",
+      "target_zone": "Belo Horizonte",
+      "zone_type": "city",
+      "primary_locale": "pt-BR",
+      "country_native_currency": "BRL",
+      "yield_currency_context": "BRL",
+      "requested_networks": [
+        "shein_br"
+      ],
+      "catalog_evidence_sources": [
+        "nexus_v3360_city_delta"
+      ],
+      "zone_evidence_scope": "cross_checked_existing_catalog",
+      "disclosure_token": "#publi",
+      "fresh_available_networks": [
+        "shein_br"
+      ],
+      "fresh_route_metadata": true
+    }
+  ],
+  "row_count": 27,
+  "fresh_route_metadata_rows": 19,
+  "affiliate_urls_in_export": false,
+  "clicks_performed": false
+}

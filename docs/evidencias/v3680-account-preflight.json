@@ -1,0 +1,129 @@
+{
+  "schema_version": "v3680-account-preflight-1",
+  "verified_at": "2026-09-14T01:28:58.459401+00:00",
+  "configured_projects": 14,
+  "configured_master": 1,
+  "configured_satellites": 13,
+  "management_accessible_configured": 10,
+  "management_inaccessible_configured": 4,
+  "all_14_management_accessible": false,
+  "all_or_nothing_satellite_preflight_passed": false,
+  "satellite_deployment_authorized_by_preflight": false,
+  "v3680_function_active_before_deploy": 0,
+  "secrets_recorded": false,
+  "clicks_performed": false,
+  "rows": [
+    {
+      "project_ref": "etbxbaaaspdcoiakifbb",
+      "role": "master",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "ayzpzuoyhgtfsbfreiap",
+      "role": "satellite",
+      "management_accessible": false,
+      "project_http": 403,
+      "function_list_http": null,
+      "v3680_function_active": null
+    },
+    {
+      "project_ref": "xyzpfccmzvekfvcpqlke",
+      "role": "satellite",
+      "management_accessible": false,
+      "project_http": 403,
+      "function_list_http": null,
+      "v3680_function_active": null
+    },
+    {
+      "project_ref": "gionwubuzicttggpclrg",
+      "role": "satellite",
+      "management_accessible": false,
+      "project_http": 403,
+      "function_list_http": null,
+      "v3680_function_active": null
+    },
+    {
+      "project_ref": "kfuwmalepnctoykkkkgx",
+      "role": "satellite",
+      "management_accessible": false,
+      "project_http": 403,
+      "function_list_http": null,
+      "v3680_function_active": null
+    },
+    {
+      "project_ref": "rdirplibrghfbazkieeo",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "gztiuddoiekytwwlpeyq",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "foxcedesytfhiqdtnlgg",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "lknnxwbezqmpkuxwxgur",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "ucviyoteadgwjnwecopw",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "duipcjiiytrfxzyktswk",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "tpoqmpjnffuvfoqqasqn",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "hodcyytojobguvbcevct",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    },
+    {
+      "project_ref": "snkauzzqnzirngacoxiv",
+      "role": "satellite",
+      "management_accessible": true,
+      "project_http": 200,
+      "function_list_http": 200,
+      "v3680_function_active": false
+    }
+  ]
+}

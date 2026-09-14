@@ -1,0 +1,45 @@
+{
+  "schema_version": "v3680-final-verification-1",
+  "verified_at": "2026-09-14T01:43:19.178209+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "final_migration_sha256": "4f5fa5d411fd4d2dd534b8a352ec375de70df16b1a9e25e0d35a9be1d9560a17",
+  "observations": {
+    "matrix_rows": 27,
+    "shopee_rows": 701,
+    "ready_network_rows": 7,
+    "ads_rows": 14301,
+    "active_ads_rows": 12165,
+    "keyword_rows": 17605,
+    "vector_rows": 11568,
+    "resolver_provolatile": "v",
+    "status_provolatile": "v",
+    "matrix_persistence": "p",
+    "inventory_persistence": "p",
+    "plaintext_source_columns": 0,
+    "job_60": {
+      "active": true,
+      "command": "select public.nexus_v1510_flush_event(40);",
+      "schedule": "10 seconds"
+    },
+    "legacy_pollers_active": 0,
+    "edge_active": true,
+    "edge_version": 2,
+    "configured_projects": 14,
+    "projects_verified_with_v3680": 1,
+    "all_14_proven": false,
+    "source_files_preserved": 8,
+    "source_modes": [
+      "0o600"
+    ],
+    "protected_copies": 8,
+    "protected_copy_modes": [
+      "0o600"
+    ],
+    "runtime_mode": "0o600"
+  },
+  "affiliate_urls_recorded": false,
+  "secrets_recorded": false,
+  "clicks_performed": false,
+  "redirects_performed": false,
+  "continuous_24x7_proven": false
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "v3680-shopee-source-manifest-1",
+  "source_scope": "operator_supplied_shopee_affiliate_exports",
+  "source_files": [
+    {
+      "file": "BatchProductLinks20260912234402-cf9541b054f64d14886979d22496142d.csv",
+      "sha256": "f90d3244516905ea74fbc3db7243f5d82514c39c59206b31b6460d9996551691",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912234444-2e6673148ca146f1a17d1f7a87be2ad6.csv",
+      "sha256": "8655907f014999e9f83df3b4d5e70064bb938261762ece16062f417833d7aa48",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912234517-2530150bc74040a5a12ee1416eaf0191.csv",
+      "sha256": "adef2571ffe057c18002023fa57177c642735875d33b8906ac716540090a4539",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912235112-0a8587b6b18b410f9580d04690195e17.csv",
+      "sha256": "c534aec91c87ca03139e2734eb9ac3a5618232fb049fd1bf24aa9beafafb1809",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchProductLinks20260912235152-d2af8cb262f84c19b65445ac64f136f0.csv",
+      "sha256": "6fdc7f13739b5411a7d11257187586c19d9bd7551c5c9357237de48d5c115005",
+      "rows": 100,
+      "kind": "product"
+    },
+    {
+      "file": "BatchShopLinks20260912232917-aeba7902c789436a89325f3274c3a30e.csv",
+      "sha256": "540497555f265247af9b3e631c86bc4cda6c534b519f57d93f9569d221bccc62",
+      "rows": 100,
+      "kind": "shop"
+    },
+    {
+      "file": "BatchShopLinks20260912232954-60365486225946609d10446304d84646.csv",
+      "sha256": "6f8b9a197f00efb2c70a45d5ac5caf70dbc28850a732ca429746f6f15d0199ae",
+      "rows": 100,
+      "kind": "shop"
+    },
+    {
+      "file": "BatchShopeeLinks20260912232525-6de7e818b28547b4b3cc5e430a8ffa69.csv",
+      "sha256": "567cd7b0ca1922775582fedbd4c015d12522c2167ead0a3cd362f028cc15806a",
+      "rows": 1,
+      "kind": "campaign"
+    }
+  ],
+  "total_rows": 701,
+  "rows_by_kind": {
+    "product": 500,
+    "shop": 200,
+    "campaign": 1
+  },
+  "unique_source_rows": 701,
+  "product_rows": 500,
+  "unique_product_item_ids": 463,
+  "validated_affiliate_host": "s.shopee.com.br",
+  "validated_primary_hosts": [
+    "shopee.com.br",
+    "www.shopee.com.br"
+  ],
+  "plaintext_urls_versioned": false,
+  "links_followed": false,
+  "clicks_performed": false
+}

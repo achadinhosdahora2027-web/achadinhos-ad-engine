@@ -1,0 +1,18 @@
+{
+  "schema_version": "v3680-master-edge-deploy-1",
+  "deployed_at": "2026-09-14T01:30:35.650054+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "function_slug": "nexus-target-alignment-v3680",
+  "source_sha256": "9ca31295f01bc182d95da75a6b92a16b64447c44c63521aa731cfef7417dff42",
+  "secret_upsert_http": 201,
+  "deploy_http": 201,
+  "function_version": 1,
+  "function_status": "ACTIVE",
+  "verify_jwt": false,
+  "own_constant_time_secret_required": true,
+  "satellite_deployment_attempted": false,
+  "satellite_refusal_reason": "all-or-nothing management preflight remained 10/14",
+  "secrets_recorded": false,
+  "clicks_performed": false,
+  "redirects_performed": false
+}

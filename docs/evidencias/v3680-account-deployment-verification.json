@@ -1,0 +1,118 @@
+{
+  "schema_version": "v3680-account-deployment-verification-1",
+  "verified_at": "2026-09-14T01:31:50.566017+00:00",
+  "configured_projects": 14,
+  "configured_master": 1,
+  "configured_satellites": 13,
+  "management_accessible_configured": 10,
+  "management_inaccessible_configured": 4,
+  "projects_verified_with_v3680_database_and_edge": 1,
+  "v3680_master_verified": true,
+  "v3680_satellites_verified": 0,
+  "all_14_v3680_proven": false,
+  "satellite_deployment_attempted": false,
+  "satellite_deployment_refused_reason": "all-or-nothing management preflight failed for four configured satellites",
+  "continuous_24x7_proven": false,
+  "clicks_performed": false,
+  "secrets_recorded": false,
+  "rows": [
+    {
+      "project_ref": "etbxbaaaspdcoiakifbb",
+      "role": "master",
+      "management_accessible": true,
+      "v3680_edge_active": true,
+      "v3680_matrix_present": true
+    },
+    {
+      "project_ref": "ayzpzuoyhgtfsbfreiap",
+      "role": "satellite",
+      "management_accessible": false,
+      "v3680_edge_active": null,
+      "v3680_matrix_present": null
+    },
+    {
+      "project_ref": "xyzpfccmzvekfvcpqlke",
+      "role": "satellite",
+      "management_accessible": false,
+      "v3680_edge_active": null,
+      "v3680_matrix_present": null
+    },
+    {
+      "project_ref": "gionwubuzicttggpclrg",
+      "role": "satellite",
+      "management_accessible": false,
+      "v3680_edge_active": null,
+      "v3680_matrix_present": null
+    },
+    {
+      "project_ref": "kfuwmalepnctoykkkkgx",
+      "role": "satellite",
+      "management_accessible": false,
+      "v3680_edge_active": null,
+      "v3680_matrix_present": null
+    },
+    {
+      "project_ref": "rdirplibrghfbazkieeo",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "gztiuddoiekytwwlpeyq",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "foxcedesytfhiqdtnlgg",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "lknnxwbezqmpkuxwxgur",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "ucviyoteadgwjnwecopw",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "duipcjiiytrfxzyktswk",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "tpoqmpjnffuvfoqqasqn",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "hodcyytojobguvbcevct",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    },
+    {
+      "project_ref": "snkauzzqnzirngacoxiv",
+      "role": "satellite",
+      "management_accessible": true,
+      "v3680_edge_active": false,
+      "v3680_matrix_present": false
+    }
+  ]
+}

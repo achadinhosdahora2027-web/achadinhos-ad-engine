@@ -1,0 +1,176 @@
+{
+  "schema_version": "v3680-master-postdeploy-evidence-1",
+  "verified_at": "2026-09-14T01:29:57.176990+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "summary": {
+    "matrix_rows": 27,
+    "policy_rows": 10,
+    "shopee_rows": 701,
+    "product_rows": 500,
+    "shop_rows": 200,
+    "campaign_rows": 1,
+    "unique_item_hashes": 463,
+    "readiness_rows": 14,
+    "fresh_ready_networks": 7,
+    "fresh_route_targets": 19,
+    "matrix_logged": true,
+    "inventory_logged": true,
+    "ads_rows": 14301,
+    "active_ads_rows": 12165,
+    "keyword_rows": 17605,
+    "vector_rows": 11568,
+    "job_60": {
+      "active": true,
+      "command": "select public.nexus_v1510_flush_event(40);",
+      "schedule": "10 seconds"
+    },
+    "legacy_pollers_active": 0,
+    "channel_outbox_unlogged": true,
+    "plaintext_source_columns": 0,
+    "service_role_inventory_select": false,
+    "min_affiliate_cipher_bytes": 62,
+    "max_affiliate_cipher_bytes": 63,
+    "operator_status": {
+      "claims": {
+        "sales_claimed": false,
+        "go_js_modified": false,
+        "fallback_deployed": false,
+        "redirect_deployed": false,
+        "sub_1ms_guaranteed": false,
+        "placements_modified": false,
+        "programmatic_clicks": false,
+        "affiliate_url_returned": false,
+        "continuous_24x7_proven": false,
+        "cdn_country_proves_city": false,
+        "is_bot_false_proves_humanity": false,
+        "sub_50ms_fallback_guaranteed": false,
+        "compose_or_copywriter_modified": false
+      },
+      "job_60": {
+        "active": true,
+        "command": "select public.nexus_v1510_flush_event(40);",
+        "schedule": "10 seconds"
+      },
+      "version": "v3680.0",
+      "ads_rows": 14301,
+      "observed_at": "2026-09-14T01:29:42.146957+00:00",
+      "vector_rows": 11568,
+      "keyword_rows": 17605,
+      "active_ads_rows": 12165,
+      "deployment_reach": {
+        "all_14_proven": false,
+        "configured_projects": 14,
+        "master_database_deployed": true,
+        "projects_verified_with_v3680": 1
+      },
+      "target_matrix_rows": 27,
+      "encrypted_shopee_rows": 701,
+      "plaintext_source_columns": 0,
+      "targets_with_fresh_route": 19,
+      "category_country_policies": 10,
+      "catalog_cross_checked_zones": 22,
+      "operator_only_or_aggregate_zones": 5
+    }
+  },
+  "resolver_cases": [
+    {
+      "case": "us_tech_brooklyn",
+      "estado": "ok",
+      "motivo": "explicit_zone_and_fresh_network_metadata",
+      "country": "US",
+      "target_zone": "Brooklyn",
+      "available_networks": [
+        "ebay_epn"
+      ],
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    },
+    {
+      "case": "gb_travel_london",
+      "estado": "ok",
+      "motivo": "explicit_zone_and_fresh_network_metadata",
+      "country": "GB",
+      "target_zone": "London",
+      "available_networks": [
+        "booking_uk"
+      ],
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    },
+    {
+      "case": "br_home_santos",
+      "estado": "ok",
+      "motivo": "explicit_zone_and_fresh_network_metadata",
+      "country": "BR",
+      "target_zone": "Santos",
+      "available_networks": [
+        "shopee",
+        "mercadolivre"
+      ],
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    },
+    {
+      "case": "br_fashion_rio",
+      "estado": "ok",
+      "motivo": "explicit_zone_and_fresh_network_metadata",
+      "country": "BR",
+      "target_zone": "Rio de Janeiro",
+      "available_networks": [
+        "shein_br"
+      ],
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    },
+    {
+      "case": "us_travel_orlando_fail_closed",
+      "estado": "Sintonizado em Análise",
+      "motivo": "verified_route_unavailable",
+      "country": "US",
+      "target_zone": "Orlando",
+      "available_networks": [],
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    },
+    {
+      "case": "gb_tech_no_supplied_zone",
+      "estado": "Sintonizado em Análise",
+      "motivo": "no_operator_supplied_zone",
+      "country": "GB",
+      "target_zone": null,
+      "available_networks": null,
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    },
+    {
+      "case": "country_conflict_fail_closed",
+      "estado": "Sintonizado em Análise",
+      "motivo": "country_headers_conflict",
+      "country": null,
+      "target_zone": null,
+      "available_networks": null,
+      "affiliate_url": null,
+      "redirect_performed": false,
+      "human_or_residential_proven": false
+    }
+  ],
+  "database_resolver_latency": {
+    "p50_ms": "0.282000",
+    "p95_ms": "0.423700",
+    "p99_ms": "0.713720",
+    "min_ms": "0.244000",
+    "max_ms": "5.873000",
+    "samples": 200
+  },
+  "latency_scope": "server-side function wall-clock in one database session; not Edge or user end-to-end",
+  "clicks_performed": false,
+  "redirects_performed": false,
+  "secrets_recorded": false,
+  "affiliate_urls_recorded": false
+}

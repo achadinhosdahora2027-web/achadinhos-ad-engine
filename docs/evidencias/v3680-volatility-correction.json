@@ -1,0 +1,13 @@
+{
+  "schema_version": "v3680-volatility-correction-1",
+  "corrected_at": "2026-09-14T01:42:15.430338+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "http_status": 201,
+  "resolver_provolatile": "v",
+  "operator_status_provolatile": "v",
+  "reason": "both functions observe wall-clock freshness and are not semantically STABLE",
+  "final_migration_sha256": "4f5fa5d411fd4d2dd534b8a352ec375de70df16b1a9e25e0d35a9be1d9560a17",
+  "transaction_committed": true,
+  "secrets_recorded": false,
+  "clicks_performed": false
+}

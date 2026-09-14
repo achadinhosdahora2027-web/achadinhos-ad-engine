@@ -1,0 +1,15 @@
+{
+  "schema_version": "v3680-master-sql-deploy-1",
+  "deployed_at": "2026-09-14T01:29:11.956019+00:00",
+  "project_ref": "etbxbaaaspdcoiakifbb",
+  "migration": "supabase/migrations/supabase_v3680_target_alignment.sql",
+  "migration_sha256": "ede46bc2da193a263fabe57bff28375a7402bb4481eb185129f24c6f218e9877",
+  "http_status": 201,
+  "elapsed_ms": 4813.184,
+  "transaction_committed": true,
+  "response_bytes": 46,
+  "plaintext_urls_transmitted_in_sql": false,
+  "clicks_performed": false,
+  "ads_dml_performed": false,
+  "secrets_recorded": false
+}

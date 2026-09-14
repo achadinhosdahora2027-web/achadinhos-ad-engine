@@ -1,0 +1,45 @@
+{
+  "schema_version": "v3680-master-edge-verification-1",
+  "verified_at": "2026-09-14T01:31:23.775298+00:00",
+  "function_url_host": "etbxbaaaspdcoiakifbb.supabase.co",
+  "get": {
+    "http": 200,
+    "mode": "internal_exact_zone_metadata_only",
+    "target_rows": 27,
+    "affiliate_url": null,
+    "redirect_performed": false
+  },
+  "unauthorized_post_http": 401,
+  "authorized_ready_case": {
+    "http": 200,
+    "estado": "ok",
+    "motivo": "explicit_zone_and_fresh_network_metadata",
+    "country": "US",
+    "target_zone": "Brooklyn",
+    "available_networks": [
+      "ebay_epn"
+    ],
+    "affiliate_url": null,
+    "redirect_performed": false
+  },
+  "authorized_fail_closed_case": {
+    "http": 422,
+    "estado": "Sintonizado em An\u00e1lise",
+    "motivo": "verified_route_unavailable",
+    "affiliate_url": null,
+    "redirect_performed": false
+  },
+  "edge_round_trip_latency_ms": {
+    "samples": 30,
+    "p50": 412.617,
+    "p95": 459.26,
+    "p99": 669.966,
+    "min": 372.858,
+    "max": 755.684
+  },
+  "latency_scope": "sandbox-to-Supabase Edge round trip including metadata-only database resolver; not user-browser or fallback latency",
+  "sub_50ms_guaranteed": false,
+  "clicks_performed": false,
+  "impressions_recorded": false,
+  "secrets_recorded": false
+}

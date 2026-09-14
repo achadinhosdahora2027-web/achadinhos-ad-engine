@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1410" viewBox="0 0 1500 1410" role="img" aria-labelledby="title desc">
+<title id="title">Nexus v3680 deployed target alignment</title><desc id="desc">Twenty-seven operator-supplied zones, nineteen with fresh route metadata and eight fail closed.</desc>
+<rect width="1500" height="1410" fill="#09121f"/>
+<rect x="50" y="45" width="1400" height="120" rx="26" fill="#111f31" stroke="#29415f"/>
+<text x="90" y="94" fill="#eef6ff" font-family="Arial,sans-serif" font-size="30" font-weight="700">SOVEREIGN TARGET ALIGNMENT · v3680.0</text>
+<text x="90" y="137" fill="#91a8c4" font-family="Arial,sans-serif" font-size="19">27 supplied zones  ·  19 fresh route metadata  ·  8 fail closed  ·  master verified 1/14</text>
+<rect x="50" y="210" width="675" height="590" rx="24" fill="#111f31" stroke="#29415f"/>
+<rect x="50" y="210" width="9" height="590" rx="5" fill="#6fd3c8"/>
+<text x="85" y="258" fill="#6fd3c8" font-family="Arial,sans-serif" font-size="20" font-weight="700">TRAVEL / HOTELS</text>
+<text x="85" y="290" fill="#91a8c4" font-family="Arial,sans-serif" font-size="15">9 zones · 1 fresh · 8 fail closed</text>
+<circle cx="93" cy="327" r="6" fill="#ffb86b"/>
+<text x="110" y="333" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Orlando</text>
+<text x="510" y="333" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="355" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="374" r="6" fill="#ffb86b"/>
+<text x="110" y="380" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Miami</text>
+<text x="510" y="380" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="402" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="421" r="6" fill="#ffb86b"/>
+<text x="110" y="427" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Fredericksburg</text>
+<text x="510" y="427" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="449" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="468" r="6" fill="#59d98e"/>
+<text x="110" y="474" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">GB · London</text>
+<text x="510" y="474" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="110" y="496" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">booking_uk</text>
+<circle cx="93" cy="515" r="6" fill="#ffb86b"/>
+<text x="110" y="521" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">ES · Madrid</text>
+<text x="510" y="521" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="543" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="562" r="6" fill="#ffb86b"/>
+<text x="110" y="568" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">ES · Barcelona</text>
+<text x="510" y="568" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="590" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="609" r="6" fill="#ffb86b"/>
+<text x="110" y="615" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">FR · Paris</text>
+<text x="510" y="615" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="637" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="656" r="6" fill="#ffb86b"/>
+<text x="110" y="662" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">IT · Rome</text>
+<text x="510" y="662" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="684" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<circle cx="93" cy="703" r="6" fill="#ffb86b"/>
+<text x="110" y="709" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">IT · Milan</text>
+<text x="510" y="709" fill="#ffb86b" font-family="Arial,sans-serif" font-size="12" font-weight="700">FAIL CLOSED</text>
+<text x="110" y="731" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">no verified route</text>
+<rect x="775" y="210" width="675" height="640" rx="24" fill="#111f31" stroke="#29415f"/>
+<rect x="775" y="210" width="9" height="640" rx="5" fill="#8bb8ff"/>
+<text x="810" y="258" fill="#8bb8ff" font-family="Arial,sans-serif" font-size="20" font-weight="700">SUPPLEMENTS / GAMER / TECH</text>
+<text x="810" y="290" fill="#91a8c4" font-family="Arial,sans-serif" font-size="15">10 zones · 10 fresh · 0 fail closed</text>
+<circle cx="818" cy="327" r="6" fill="#59d98e"/>
+<text x="835" y="333" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Brooklyn</text>
+<text x="1235" y="333" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="355" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="374" r="6" fill="#59d98e"/>
+<text x="835" y="380" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Manhattan</text>
+<text x="1235" y="380" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="402" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="421" r="6" fill="#59d98e"/>
+<text x="835" y="427" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Queens</text>
+<text x="1235" y="427" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="449" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="468" r="6" fill="#59d98e"/>
+<text x="835" y="474" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Bronx</text>
+<text x="1235" y="474" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="496" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="515" r="6" fill="#59d98e"/>
+<text x="835" y="521" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · Los Angeles</text>
+<text x="1235" y="521" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="543" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="562" r="6" fill="#59d98e"/>
+<text x="835" y="568" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · San Diego</text>
+<text x="1235" y="568" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="590" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="609" r="6" fill="#59d98e"/>
+<text x="835" y="615" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">US · San Jose</text>
+<text x="1235" y="615" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="637" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="656" r="6" fill="#59d98e"/>
+<text x="835" y="662" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">CA · Toronto</text>
+<text x="1235" y="662" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="684" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="703" r="6" fill="#59d98e"/>
+<text x="835" y="709" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">CA · Montreal</text>
+<text x="1235" y="709" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="731" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<circle cx="818" cy="750" r="6" fill="#59d98e"/>
+<text x="835" y="756" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">CA · Ottawa</text>
+<text x="1235" y="756" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="778" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">ebay_epn</text>
+<line x1="810" y1="805" x2="1415" y2="805" stroke="#29415f"/>
+<text x="810" y="834" fill="#ffb86b" font-family="Arial,sans-serif" font-size="14">GB country scope: 0 zones supplied — none invented</text>
+<rect x="50" y="890" width="675" height="450" rx="24" fill="#111f31" stroke="#29415f"/>
+<rect x="50" y="890" width="9" height="450" rx="5" fill="#f4c86a"/>
+<text x="85" y="938" fill="#f4c86a" font-family="Arial,sans-serif" font-size="20" font-weight="700">HOME / UTILITIES / UTENSILS</text>
+<text x="85" y="970" fill="#91a8c4" font-family="Arial,sans-serif" font-size="15">3 zones · 3 fresh · 0 fail closed</text>
+<circle cx="93" cy="1007" r="6" fill="#59d98e"/>
+<text x="110" y="1013" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Grande São Paulo (bairros metropolitanos)</text>
+<text x="510" y="1013" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="110" y="1035" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">mercadolivre, shopee</text>
+<circle cx="93" cy="1054" r="6" fill="#59d98e"/>
+<text x="110" y="1060" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Santos</text>
+<text x="510" y="1060" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="110" y="1082" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">mercadolivre, shopee</text>
+<circle cx="93" cy="1101" r="6" fill="#59d98e"/>
+<text x="110" y="1107" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Campinas</text>
+<text x="510" y="1107" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="110" y="1129" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">mercadolivre, shopee</text>
+<rect x="775" y="890" width="675" height="450" rx="24" fill="#111f31" stroke="#29415f"/>
+<rect x="775" y="890" width="9" height="450" rx="5" fill="#d9a7ff"/>
+<text x="810" y="938" fill="#d9a7ff" font-family="Arial,sans-serif" font-size="20" font-weight="700">FASHION / STYLE / COLLECTIBLES</text>
+<text x="810" y="970" fill="#91a8c4" font-family="Arial,sans-serif" font-size="15">5 zones · 5 fresh · 0 fail closed</text>
+<circle cx="818" cy="1007" r="6" fill="#59d98e"/>
+<text x="835" y="1013" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Rio de Janeiro</text>
+<text x="1235" y="1013" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="1035" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">shein_br</text>
+<circle cx="818" cy="1054" r="6" fill="#59d98e"/>
+<text x="835" y="1060" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Salvador</text>
+<text x="1235" y="1060" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="1082" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">shein_br</text>
+<circle cx="818" cy="1101" r="6" fill="#59d98e"/>
+<text x="835" y="1107" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Brasília</text>
+<text x="1235" y="1107" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="1129" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">shein_br</text>
+<circle cx="818" cy="1148" r="6" fill="#59d98e"/>
+<text x="835" y="1154" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Fortaleza</text>
+<text x="1235" y="1154" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="1176" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">shein_br</text>
+<circle cx="818" cy="1195" r="6" fill="#59d98e"/>
+<text x="835" y="1201" fill="#eef6ff" font-family="Arial,sans-serif" font-size="16" font-weight="600">BR · Belo Horizonte</text>
+<text x="1235" y="1201" fill="#59d98e" font-family="Arial,sans-serif" font-size="12" font-weight="700">READY</text>
+<text x="835" y="1223" fill="#7890ad" font-family="Arial,sans-serif" font-size="12">shein_br</text>
+<rect x="50" y="1360" width="1400" height="1" fill="#29415f"/>
+<text x="50" y="1390" fill="#7890ad" font-family="Arial,sans-serif" font-size="14">Route metadata ≠ click, impression, sale, buyer intent, humanity, residence, or city proof. No affiliate URL is shown.</text>
+</svg>
