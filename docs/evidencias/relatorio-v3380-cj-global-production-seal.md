@@ -53,6 +53,8 @@ Ela foi validada primeiro por transação real com `ROLLBACK` no PostgreSQL de p
 
 `supabase/migrations/rollback_v3380_cj_global_ingestion.sql`
 
+A reversão também foi executada dentro de uma transação de teste e revertida; as 1.266 linhas lacradas permaneceram presentes após o ensaio.
+
 ## 3. Separação entre backlog e roteamento aprovado
 
 O backlog global é um acervo cifrado de evidências, não uma autorização automática de roteamento.

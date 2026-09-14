@@ -1,0 +1,10 @@
+{
+  "duration_ms": 3711,
+  "http": 201,
+  "plaintext_credentials_recorded": false,
+  "post_test_rows_preserved": 1266,
+  "result": "pass",
+  "rollback_sha256": "aecb51e91f1eafdc25027ad7bfe45b627bb22a4902c242de989b931528c405b4",
+  "schema_version": "v3380-cj-global-rollback-dryrun-1",
+  "transaction_rolled_back": true
+}
