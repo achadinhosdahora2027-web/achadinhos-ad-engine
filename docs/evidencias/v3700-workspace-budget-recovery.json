@@ -1,0 +1,41 @@
+{
+  "schema_version": "v3700-workspace-budget-recovery-1",
+  "recovered_at": "2026-09-14T03:00:30.402528+00:00",
+  "platform_reported_session_size_mb": 175.0,
+  "platform_reported_unsaved_files": 7,
+  "initial_total_workspace_bytes_observed": 207036416,
+  "final_total_workspace_bytes_observed": 97455104,
+  "final_total_workspace_human": "93 MiB",
+  "final_noncache_file_count": 2348,
+  "workspace_limit_bytes": 134217728,
+  "under_workspace_limit": true,
+  "head_commit_recovered": "2fb30c3e80e1311d2651a7161cbf9472333c6893",
+  "git_worktree_recloned_from_remote": true,
+  "v3700_static_tests_passed": true,
+  "protected_recovery": {
+    "twitter_credentials_recovered_from_encrypted_production_vault": 7,
+    "twitter_credential_file_mode": "0600",
+    "internal_edge_secrets_rotated": 2,
+    "edge_projects_reconfigured_and_verified": 14,
+    "shopee_protected_copies": 13,
+    "supabase_protected_copy_restored": true,
+    "protected_directory_mode": "0700",
+    "secret_values_recorded": false
+  },
+  "cleanup": {
+    "removed_redundant_historical_worktrees": [
+      "nexus-v3360-work",
+      "nexus-v3370-work",
+      "nexus-v3380-work",
+      "nexus-v3500-work",
+      "nexus-v3600-work",
+      "nexus-v3680-work"
+    ],
+    "preserved_current_worktree": "nexus-v3700-work",
+    "preserved_recovery_worktree": "nexus-v3380-recovered",
+    "preserved_historical_audit": "nexus-v420-audit",
+    "user_uploads_deleted": 0
+  },
+  "result": "pass",
+  "secrets_recorded": false
+}
