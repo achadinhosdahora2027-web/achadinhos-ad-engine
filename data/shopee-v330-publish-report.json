@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T23:32:07.024Z",
+  "generated_at": "2026-09-16T00:04:39.473Z",
   "inventory_file": "data/shopee-offer-links.json",
   "inventory_counts": {
     "offers_total": 1141,
@@ -13,54 +13,54 @@
     "keywords_shared": 1630
   },
   "accepted": 3,
-  "queued": 0,
+  "queued": 3,
   "failed": 0,
   "results": [
     {
       "destination": "canal_ofertas_brasil",
       "accepted": true,
-      "queued": false,
-      "duplicate": true,
+      "queued": true,
+      "duplicate": false,
       "offer_hash": "9de674e4f9137855ffef4e7f5ccc8f3b",
       "offer_name": "KIT 2 Bermuda Shorts Tactel com Elastano Academia Corrida CASUAL",
       "offer_link": "https://s.shopee.com.br/qjSLpIjPT",
       "commission_pct": 83,
       "response": {
+        "id": 304,
         "ok": true,
-        "motivo": "duplicado_contido",
-        "queued": false
+        "queued": true
       },
       "error": null
     },
     {
       "destination": "canal_ofertas_brasil",
       "accepted": true,
-      "queued": false,
-      "duplicate": true,
+      "queued": true,
+      "duplicate": false,
       "offer_hash": "2fd22aecf88fa5153b615f46063a2a3d",
       "offer_name": "Óculos de Sol Capri Feminino Quadrado Grande Premium Clássico Blogueira Com Case uv400",
       "offer_link": "https://s.shopee.com.br/BTlYYVUFd",
       "commission_pct": 53,
       "response": {
+        "id": 305,
         "ok": true,
-        "motivo": "duplicado_contido",
-        "queued": false
+        "queued": true
       },
       "error": null
     },
     {
       "destination": "canal_ofertas_brasil",
       "accepted": true,
-      "queued": false,
-      "duplicate": true,
+      "queued": true,
+      "duplicate": false,
       "offer_hash": "d28a21f1d41731bd26fc074e4a36e005",
       "offer_name": "Jogo/Kit 4 Toalhas de Banho Grande e Grossa Branca Volume Extra 72x140cm Algodão Premium Luxo",
       "offer_link": "https://s.shopee.com.br/1Vz98VuX2T",
       "commission_pct": 49,
       "response": {
+        "id": 306,
         "ok": true,
-        "motivo": "duplicado_contido",
-        "queued": false
+        "queued": true
       },
       "error": null
     }
